@@ -4,7 +4,7 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cityofnewyork/nyco-wnyc-patterns.git"
+    "url": "https://github.com/cityofnewyork/nyco-wnyc-patterns.git"
   },
   "keywords": [
     "nycopportunity",
