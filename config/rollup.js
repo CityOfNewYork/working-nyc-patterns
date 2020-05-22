@@ -92,5 +92,19 @@ module.exports = [
     }],
     plugins: rollup.local,
     devModule: true
+  },
+  {
+    input: './src/js/polyfills.js',
+    output: [{
+      name: 'Polyfills',
+      file: `./dist/scripts/polyfills.js`,
+      sourcemap: (process.env.NODE_ENV === 'production')
+        ? false : rollup.sourcemap,
+      format: rollup.format,
+      strict: rollup.strict,
+      globals: rollup.globals
+    }],
+    plugins: rollup.local,
+    devModule: true
   }
 ];
