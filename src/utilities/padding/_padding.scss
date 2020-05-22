@@ -1,0 +1,20 @@
+@use 'config/tokens';
+@use 'config/direction';
+@use 'config/media';
+
+@mixin padding($variant: '') {
+// @responsive {
+  @each $token, $value in map-get(tokens.$tokens, 'padding') {
+    .#{$variant}pe-#{$token} {
+      padding-#{direction.$end}: $value !important
+    }
+
+    .#{$variant}ps-#{$token} {
+      padding-#{direction.$start}: $value !important
+    }
+  }
+}
+
+@include media.screens using ($variant) {
+  @include padding($variant);
+}

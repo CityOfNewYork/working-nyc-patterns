@@ -1,0 +1,37 @@
+/**
+ * Links
+ */
+
+// Dependencies
+@use 'config/tokens';
+@use 'config/cdn';
+@use 'config/colors';
+@use 'config/direction';
+// @use 'bourbon/app/assets/stylesheets/addons/triangle';
+
+// Declarations
+a, .btn-link, .button-link {
+  font-weight: map-get(map-get(tokens.$tokens, 'links'), 'font-weight');
+  text-decoration: map-get(map-get(tokens.$tokens, 'links'), 'text-decoration');
+
+  text-decoration: underline;
+  transition: color .2s ease-in;
+}
+
+// .link-more {
+//   &:after {
+//     content: '';
+//     display: inline-block;
+//     @include triangle(.6em .4em, $color-blue-dark, direction.$end);
+//     margin-#{direction.$start}: .3em;
+//   }
+// }
+
+// .link-back {
+//   &:before {
+//     content: '';
+//     display: inline-block;
+//     @include triangle(.6em .4em, $color-blue-dark, direction.$start);
+//     margin-#{direction.$end}: .3em;
+//   }
+// }

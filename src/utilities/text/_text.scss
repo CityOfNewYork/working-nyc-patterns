@@ -1,0 +1,20 @@
+// Dependencies
+@use 'config/tokens';
+@use 'config/direction';
+@use 'config/media';
+
+// Declarations
+@mixin text($variant: '') {
+// @responsive {
+  .#{$variant}text-start {
+    text-align: direction.$start !important
+  }
+
+  .#{$variant}text-end {
+    text-align: direction.$end !important
+  }
+}
+
+@include media.screens using ($variant) {
+  @include text($variant);
+}

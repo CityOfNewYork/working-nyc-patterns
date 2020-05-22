@@ -1,0 +1,135 @@
+/**
+ * Buttons
+ */
+
+// Dependencies
+@use 'config/grid';
+@use 'config/animate';
+@use 'config/colors';
+@use 'config/dimensions';
+@use 'config/direction';
+@use 'config/buttons';
+@use 'config/typography';
+@use 'config/media';
+
+// Declarations
+button {
+  @include buttons.btn-reset;
+}
+
+.btn, [class*='btn-'],
+.button, [class*='button-'] {
+  @include buttons.btn;
+  @include animate.transition;
+
+  &[aria-pressed='false'] {
+    .icon {
+      display: inline-block;
+    }
+
+    .icon-pressed {
+      display: none;
+    }
+  }
+
+  &[aria-pressed='true'] {
+    .icon {
+      display: none;
+    }
+
+    .icon-pressed {
+      display: inline-block;
+    }
+  }
+}
+
+@mixin buttons($variant: '') {
+  .#{$variant}btn {
+    @include buttons.btn-normal();
+  }
+
+  // Types
+
+  .#{$variant}btn-tag, .#{$variant}button-tag {
+    font-size: map-get(typography.$type-font-size, 'small');
+    text-transform: uppercase;
+    padding: grid.$grid (grid.$grid * 2);
+    border-radius: map-get(buttons.$btn, 'radius-tag');
+  }
+
+  .#{$variant}btn-toggle, .#{$variant}button-toggle {
+    text-align: direction.$start;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > [class*='icon'] {
+      transition: transform 0.25s
+    }
+
+    &.active {
+      > [class*='icon'] {
+        transform: rotate(-180deg)
+      }
+    }
+  }
+
+  .#{$variant}btn-small, .#{$variant}button-small {
+    font-size: map-get(typography.$type-font-size, 'small');
+    padding: (grid.$grid * 1.5) (grid.$grid * 2);
+  }
+
+  .#{$variant}btn-link, .#{$variant}button-link {
+    font-size: inherit;
+    @include typography.typeface($key: 'body');
+    text-align: inherit;
+    appearance: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .#{$variant}btn-text, .#{$variant}button-text {
+    text-align: inherit;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+}
+
+@include media.screens() using ($variant) {
+  @include buttons($variant);
+}
+
+// Button types that should override top level styling
+
+.btn-primary,
+.button-primary {
+  @include buttons.btn-color('primary-button');
+}
+
+.btn-secondary,
+.button-secondary {
+  @include buttons.btn-color('secondary-button');
+}
+
+.btn-tertiary,
+.button-tertiary {
+  @include buttons.btn-color('tertiary-button');
+}
+
+.btn-next,
+.btn-previous,
+.button-next,
+.button-previous {
+  &[class*='-next'] {
+    @include buttons.btn-next;
+  }
+
+  &[class*='-previous'] {
+    @include buttons.btn-previous;
+  }
+}

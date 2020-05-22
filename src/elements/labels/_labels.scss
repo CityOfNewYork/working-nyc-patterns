@@ -1,0 +1,12 @@
+/**
+ * Labels
+ */
+
+// Dependencies
+@use 'config/grid';
+
+// Declarations
+.label {
+  display: inline-block;
+  margin-bottom: grid.$grid * 2
+}

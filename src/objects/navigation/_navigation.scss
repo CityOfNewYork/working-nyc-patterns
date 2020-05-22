@@ -1,0 +1,39 @@
+/**
+ * Navigation
+ */
+
+// Dependencies
+@use 'config/colors';
+@use 'config/direction';
+@use 'config/dimensions';
+@use 'config/fonts';
+@use 'config/grid';
+@use 'config/media';
+@use 'config/typography';
+
+// Declarations
+.o-navigation {
+  display: flex;
+  padding: dimensions.$spacing-base;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.o-navigation__toggle,
+.o-navigation__search-toggle {
+  margin-#{direction.$start}: grid.$grid * 2;
+
+  a:link {
+    text-decoration: none
+  }
+}
+
+.o-navigation__toggle {
+  flex: 1 1 auto;
+  text-align: direction.$end;
+
+  @media screen and (min-width: media.$screen-desktop) {
+    display: none
+  }
+}

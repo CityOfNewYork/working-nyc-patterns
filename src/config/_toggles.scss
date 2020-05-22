@@ -1,0 +1,59 @@
+//
+// Variables
+//
+
+// Dependencies
+@use 'config/tokens';
+@use 'config/direction';
+@use 'config/dimensions';
+@use 'config/fonts';
+@use 'config/colors';
+
+@mixin toggles() {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+
+  transition: all 0.2s;
+  background: $color-white;
+  border: 1px solid $color-grey-mid;
+  border-radius: map-get(map-get($tokens, 'inputs'), 'checkbox-radius');
+  cursor: pointer;
+  line-height: 30px;
+  margin-#{direction.$end}: dimensions.$spacing-base * .5;
+  padding: 8px;
+  padding-#{direction.$start}: dimensions.$spacing-base * 1.75;
+  position: relative;
+  display: inline-block;
+}
+
+@mixin toggles-btn() {
+  content: '';
+
+  border: 1px solid $color-grey-mid;
+  border-radius: 50%;
+  box-shadow: 0;
+  margin-top: (map-get(map-get($tokens, 'inputs'), 'toggle-size')/2) * -1;
+
+  width: map-get(map-get($tokens, 'inputs'), 'toggle-size');
+  height: map-get(map-get($tokens, 'inputs'), 'toggle-size');
+
+  position: absolute;
+  top: 50%;
+
+  @if $direction == 'rtl' { right: 8px; } @else { left: 8px; }
+
+  transition: all 0.2s;
+}
+
+@mixin toggles-btn-toggled() {
+  background: $color-blue;
+  border: 0;
+  box-shadow: 0 0 0 2px $color-blue inset,
+              0 0 0 4px $color-white inset;
+}
+
+@mixin toggles-btn-focused() {
+  box-shadow: 0 0 0 2px $color-blue inset,
+              0 0 0 4px $color-white inset,
+              0 0 2px 2px $color-blue-bright;
+}

@@ -1,0 +1,20 @@
+//
+// Variables
+//
+
+// Dependencies
+@use 'config/language';
+@use 'config/tokens';
+
+// Variables
+$direction: ltr;
+$start: left;
+$end: right;
+
+@each $lang in map-get(tokens.$tokens, 'rtl-languages') {
+  @if language.$language == $lang {
+    $direction: rtl;
+    $start: right;
+    $end: left;
+  }
+}

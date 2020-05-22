@@ -1,0 +1,70 @@
+/**
+ * Search Box
+ */
+
+// Dependencies
+@use 'config/colors';
+@use 'config/direction';
+@use 'config/dimensions';
+@use 'config/fonts';
+@use 'config/media';
+
+// Declarations
+.o-search-box {
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+
+  &.hidden {
+    box-shadow: none !important
+  }
+}
+
+.o-search-box__inner {
+  border-bottom: 3px solid;
+  padding: dimensions.$spacing-base 0;
+}
+
+.o-search-box__close {
+  text-align: direction.$end;
+}
+
+.o-search-box__form,
+.o-search-box__suggestions {
+  padding-top: dimensions.$spacing-base;
+  padding-bottom: dimensions.$spacing-base;
+}
+
+.o-search-box__suggestions-header {
+  margin-bottom: dimensions.$spacing-base;
+
+  @media screen and (min-width: media.$screen-tablet) {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.o-search-box__headings {
+  margin-bottom: 0;
+}
+
+.o-search-box__suggestions-body {
+  padding-bottom: dimensions.$spacing-base;
+
+  @media screen and (min-width: media.$screen-tablet) {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.o-search-box__suggestions-item {
+  padding-#{direction.$end}: dimensions.$spacing-base;
+  margin-bottom: dimensions.$spacing-base;
+
+  @media screen and (min-width: media.$screen-tablet) {
+    width: 33.33%;
+  }
+}

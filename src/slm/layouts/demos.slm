@@ -1,0 +1,38 @@
+doctype html
+html lang='en'
+  head
+    meta charset='utf-8'
+    meta http-equiv='X-UA-Compatible' content='IE=edge'
+    meta name='viewport' content='width=device-width, initial-scale=1'
+
+    / link rel='icon' type='image/x-icon' href='../images/favicon.ico'
+
+    link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CMontserrat:400,400i,700' media='all'
+    link rel='stylesheet' href='../styles/site-default.css'
+
+    title
+      - if (this.title != 'Working NYC')
+        = this.title;
+        = ' | Working NYC';
+      - else
+        = this.title;
+
+  body class='bg-blue-d3'
+    = content('content');
+
+    script src='../scripts/polyfills.js'
+    script src='../scripts/main.js'
+
+    javascript:
+      var patterns = new WorkingNyc();
+
+      patterns.icons('/svg/icons.svg');
+      patterns.toggle();
+      patterns.accordion();
+
+    = content('script');
+
+    / The reload script. This should not be compile during production builds
+    / @source https://www.npmjs.com/package/reload
+    - if this.process.env.NODE_ENV !== 'production'
+      script src='/reload/reload.js'

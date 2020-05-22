@@ -1,0 +1,119 @@
+/**
+ * Typography
+ */
+
+@use 'config/tokens';
+@use 'config/grid';
+@use 'config/fonts';
+@use 'config/typography';
+@use 'config/direction';
+
+$fonts: map-get(tokens.$tokens, 'font-family');
+
+html {
+  @include typography.type('html');
+
+  @if direction.$direction == 'rtl' {
+    direction: rtl;
+  }
+}
+
+body {
+  @include typography.type('body') {
+    font-family: map-get($fonts, 'default-sans');
+  }
+}
+
+h1, .h1 {
+  @include typography.type('h1') {
+    margin: typography.$type-margin;
+  };
+}
+
+h2, .h2 {
+  @include typography.type('h2') {
+    margin: typography.$type-margin;
+  };
+}
+
+h3, .h3 {
+  @include typography.type('h3') {
+    margin: typography.$type-margin;
+  };
+}
+
+h4, .h4 {
+  @include typography.type('h4') {
+    margin: typography.$type-margin;
+  };
+}
+
+h5, .h5 {
+  @include typography.type('h5') {
+    margin: typography.$type-margin;
+  };
+}
+
+h6, .h6 {
+  @include typography.type('h6') {
+    margin: typography.$type-margin;
+  };
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  a {
+    font-weight: inherit;
+    text-decoration: inherit;
+  }
+}
+
+small, .small {
+  @include typography.type('small');
+}
+
+blockquote, .blockquote {
+  @include typography.type('blockquote') {
+    margin: typography.$type-margin;
+  };
+
+  footer {
+    font-size: 65%;
+    font-weight: normal;
+    padding-left: grid.$grid * 3;
+  }
+
+  cite {
+    font-style: normal;
+  }
+
+  p {
+    border-left: grid.$grid solid;
+    border-color: inherit;
+    padding-left: grid.$grid * 2;
+    margin-bottom: 0.64em;
+  }
+}
+
+.jumbo {
+  @include typography.type('jumbo') {
+    margin: typography.$type-margin;
+  };
+}
+
+p, li {
+  @include typography.type('p');
+}
+
+p, ul, ol, li {
+  // margin-top: 0px;
+  margin: typography.$type-margin;
+}
+
+// @media print {
+//   html { }
+// }

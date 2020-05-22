@@ -1,0 +1,55 @@
+//
+// Variables
+//
+
+// Dependencies
+@use 'config/tokens';
+@use 'config/fonts';
+
+$colors: map-get(tokens.$tokens, 'colors');
+$combinations: map-get(tokens.$tokens, 'color-combinations');
+
+// Mixins
+@mixin combination($selector, $combination, $colors, $smoothing: false) {
+  color: map-get($colors, map-get($combination, 'color'));
+  background-color: map-get($colors, map-get($combination, 'background-color'));
+
+  @if $smoothing {
+    @include fonts.font-smooth;
+  }
+
+  #{$selector}__alt, .color__alt {
+    color: map-get($colors, map-get($combination, 'color-alt'));
+  }
+
+  a:not(.btn), .btn-link, .button-link {
+    color: map-get($colors, map-get($combination, 'hyperlinks'));
+
+    &:visited {
+      color: map-get($colors, map-get($combination, 'visited'));
+    }
+
+    &:hover, &:active, &:focus {
+      color: map-get($colors, map-get($combination, 'hover'));
+    }
+  }
+
+  h1, h2, h3,
+  .h1, .h2, .h3 {
+    color: map-get($colors, map-get($combination, 'headings'));
+  }
+
+  // .o-banner__title a:after {
+  //   background-color: map-get($colors, map-get($combination, 'hyperlinks-banner-underline'));
+  // }
+
+  // .o-banner__title {
+  //   a {
+  //     color: inherit
+  //   }
+
+  //   a:hover {
+  //     color: map-get($colors, map-get($combination, 'hyperlinks-banner-hover'));
+  //   }
+  // }
+}

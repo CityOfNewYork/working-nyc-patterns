@@ -1,0 +1,83 @@
+/**
+ * Mobile-nav
+ */
+
+// Dependencies
+@use 'config/colors';
+@use 'config/direction';
+@use 'config/dimensions';
+@use 'config/fonts';
+@use 'config/media';
+@use 'config/typography';
+
+// Declarations
+.o-mobile-nav {
+  width: dimensions.$mobile-menu-width;
+  padding: dimensions.$spacing-base;
+
+  @if direction.$direction == 'rtl' {
+    left: -(dimensions.$mobile-menu-width);
+  } @else {
+    right: -(dimensions.$mobile-menu-width);
+  }
+
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  transform: translateX(0);
+  transition: transform .2s ease-in;
+
+  z-index: 1000;
+
+  @media screen and (min-width: media.$screen-desktop) {
+    display: none;
+  }
+}
+
+.o-mobile-nav__close {
+  text-align: direction.$end;
+  text-decoration: none;
+
+  margin-#{direction.$end}: dimensions.$spacing-base;
+  margin-bottom: dimensions.$spacing-base;
+  display: block;
+
+  @media screen and (min-width: media.$screen-desktop) {
+    display: none;
+  }
+
+  .icon {
+    margin-#{direction.$start}: .3em;
+    vertical-align: middle;
+    pointer-events: none;
+  }
+}
+
+.o-mobile-nav__inner {
+  // @if direction.$direction == 'rtl' {
+  //   padding: dimensions.$spacing-base 0 (2 * dimensions.$spacing-base) dimensions.$spacing-base;
+  // } @else {
+  //   padding: dimensions.$spacing-base dimensions.$spacing-base 2*dimensions.$spacing-base 0;
+  // }
+
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.o-mobile-nav__header {
+  margin-bottom: 0;
+}
+
+// Active state for the mobile navigation
+.o-mobile-nav.hidden {
+  display: initial !important
+}
+
+.o-mobile-nav.active {
+  @if direction.$direction == 'rtl' {
+    transform: translateX(100%)
+  } @else {
+    transform: translateX(-100%)
+  }
+}

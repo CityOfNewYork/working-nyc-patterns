@@ -1,0 +1,27 @@
+// Dependencies
+@use 'config/colors';
+@use 'config/dimensions';
+@use 'config/media';
+
+// Declarations
+$input-search-icon-height: 24px;
+$input-search-icon-width: 24px;
+
+@mixin inputs() {
+  // color: $color-grey-mid;
+  padding: (.75 * dimensions.$spacing-base);
+
+  &::placeholder {
+    // color: $color-grey-mid;
+  }
+}
+
+@mixin input-icon() {
+  padding-left: 30px;
+}
+
+@mixin input-currency-icon() {
+  // color: $color-green-mid;
+  font-size: 22px;
+  font-weight: bold;
+}

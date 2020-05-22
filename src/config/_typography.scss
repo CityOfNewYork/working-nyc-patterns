@@ -1,0 +1,36 @@
+//
+// Mixins
+//
+
+@use 'config/tokens';
+
+$type: map-get(tokens.$tokens, 'type');
+$type-margin: map-get($type, 'margin');
+
+$type-font-family: map-get(tokens.$tokens, 'font-family');
+$type-font-size: map-get(tokens.$tokens, 'font-size');
+$type-font-weight: map-get(tokens.$tokens, 'font-weight');
+$type-line-height: map-get(tokens.$tokens, 'line-height');
+
+@mixin typeface($key: 'html') {
+  font-family: map-get($type-font-family, $key);
+}
+
+@mixin type($key: 'html') {
+  font-family: map-get($type-font-family, $key);
+  font-size: map-get($type-font-size, $key);
+  font-weight: map-get($type-font-weight, $key);
+  line-height: map-get($type-line-height, $key);
+
+  @content;
+}
+
+@mixin type-font-smooth() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin type-font-smooth-auto() {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}

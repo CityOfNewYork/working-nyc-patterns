@@ -1,0 +1,7 @@
+@use 'config/tokens';
+@use 'config/colors';
+
+$font-family: monospace;
+$combination: map-get(colors.$combinations, 'code');
+$color: map-get(colors.$colors, map-get($combination, 'color'));
+$background-color: map-get(colors.$colors, map-get($combination, 'background-color'));

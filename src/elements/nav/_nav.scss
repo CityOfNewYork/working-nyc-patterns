@@ -1,0 +1,17 @@
+/**
+ * Nav
+ */
+
+// Dependencies
+@use 'config/media';
+@use 'config/nav';
+
+// Declarations
+@mixin nav($variant: '') {
+  @include nav.inline($variant);
+  @include nav.block($variant);
+}
+
+@include media.screens using ($variant) {
+  @include nav($variant);
+}

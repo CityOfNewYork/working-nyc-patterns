@@ -1,0 +1,19 @@
+//
+// Variables
+//
+
+// Dependencies
+@use 'config/tokens';
+@use 'config/grid';
+
+// Variables
+// $grid: map-get($tokens, 'grid');
+$dimensions: map-get(tokens.$tokens, 'dimensions');
+$mobile-menu-width: map-get($dimensions, 'mobile-menu-width');
+$content-width: map-get($dimensions, 'content-width');
+$site-max-width: map-get($dimensions, 'site-max-width');
+$site-min-width: map-get($dimensions, 'site-min-width');
+
+$spacing-base: grid.$grid * 3;
+$site-margins: grid.$grid * 3;
+$site-margins-mobile: grid.$grid * 2;

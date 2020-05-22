@@ -1,0 +1,81 @@
+@use 'config/grid';
+@use 'config/fonts';
+@use 'config/colors';
+@use 'config/typography';
+@use 'config/media';
+@use 'config/direction';
+@use 'config/dimensions';
+
+@mixin icon {
+  svg {
+    text-decoration: none;
+    pointer-events: none;
+  }
+
+  .icon {
+    margin-#{direction.$end}: grid.$grid;
+    vertical-align: middle;
+    margin-top: -2px
+  }
+}
+
+@mixin inline($variant: '') {
+  .#{$variant}nav-inline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a, button {
+      display: inline-flex;
+      border-bottom: none;
+      padding: initial;
+      margin-#{direction.$end}: 1em;
+
+      &:first-child {
+        margin-#{direction.$start}: 0;
+      }
+
+      &:last-child {
+        margin-#{direction.$end}: 0;
+      }
+    }
+
+    .active {
+      font-weight: bold;
+    }
+
+    .text-start & a,
+    .text-start & button { // based on utilities/text/text
+      margin-left: 0;
+      margin-right: 1em;
+    }
+
+    .text-end & a,
+    .text-end & button { // based on utilities/text/text
+      margin-right: 0;
+      margin-left: 1em;
+    }
+
+    @include icon;
+  }
+}
+
+@mixin block($variant: '') {
+  .#{$variant}nav-block {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a, button {
+      display: block;
+      border-bottom: 1px solid;
+      padding: dimensions.$spacing-base 0
+    }
+
+    .active {
+      font-weight: bold;
+    }
+
+    @include icon;
+  }
+}

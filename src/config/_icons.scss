@@ -1,0 +1,85 @@
+// Dependencies
+@use 'config/tokens' as *;
+@use 'config/colors';
+@use 'config/dimensions';
+
+// Declarations
+@mixin sizes($variant: '') {
+  @each $key, $var in map-get($tokens, 'icons-sizes') {
+    .#{$variant}icon-#{$key} {
+      width: nth($var, 1) !important;
+      height: nth($var, 2) !important;
+    }
+  }
+}
+
+@mixin ui {
+  [class*='icon-wnyc-ui'] {
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+
+    circle {
+      fill: currentColor;
+    }
+  }
+}
+
+@mixin subway {
+  [class*='icon-subway'] {
+    color: $color-white;
+    font-size: 65%;
+    font-family: helvetica, arial, sans-serif;
+    font-weight: bold;
+    @include font-smooth();
+    padding: 1px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 9999px;
+    display: inline-flex;
+
+    width: dimensions.$spacing-base;
+    height: dimensions.$spacing-base;
+    min-width: dimensions.$spacing-base;
+    min-height: dimensions.$spacing-base;
+
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+
+    &.bg-broadway {
+      color: $color-black;
+    }
+  }
+
+  .icon-subway-express {
+    position: relative;
+    z-index: 1;
+
+    &[class*='bg-'] {
+      background-color: transparent !important;
+    }
+
+    &:before, &:after {
+      content: '';
+      border: 15px solid transparent;
+      width: 0;
+      height: 0;
+      position: absolute;
+      left: -3px;
+      z-index: -1;
+    }
+
+    &:before {
+      top: -18px;
+      border-bottom-color: inherit;
+    }
+
+    &:after {
+      bottom: -18px;
+      border-top-color: inherit;
+    }
+  }
+}

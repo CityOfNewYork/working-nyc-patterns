@@ -1,0 +1,20 @@
+@use 'config/tokens';
+@use 'config/direction';
+@use 'config/media';
+
+@mixin margins($variant: '') {
+// @responsive {
+  @each $token, $value in map-get(tokens.$tokens, 'margin') {
+    .#{$variant}me-#{$token} {
+      margin-#{direction.$end}: $value !important
+    }
+
+    .#{$variant}ms-#{$token} {
+      margin-#{direction.$start}: $value !important
+    }
+  }
+}
+
+@include media.screens using ($variant) {
+  @include margins($variant);
+}

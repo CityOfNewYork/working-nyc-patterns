@@ -1,0 +1,117 @@
+//
+// Variables
+//
+
+// Dependencies
+@use 'config/tokens' as *;
+@use 'config/grid' as *;
+@use 'config/colors';
+@use 'config/fonts';
+@use 'config/dimensions';
+@use 'config/direction';
+@use 'config/typography';
+
+// Declaration
+$btn: map-get($tokens, 'buttons');
+$btn-radius: map-get($btn, 'radius');
+
+@mixin btn-reset() {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  overflow: visible;
+
+  > * {
+    pointer-events: none
+  }
+}
+
+@mixin btn-normal() {
+  @include typography.type('button');
+
+  line-height: 1;
+  padding: (.6666 * dimensions.$spacing-base) dimensions.$spacing-base;
+}
+
+@mixin btn() {
+  @include btn-normal();
+
+  appearance: none;
+  background-color: lightgrey;
+  border: 0;
+  border-radius: $btn-radius;
+
+  display: inline-flex;
+  align-items: center;
+
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: background .2s ease-in, color .2s ease-in;
+
+  > [class*='icon']:first-child {
+    margin-#{direction.$start}: -($grid / 2);
+    margin-#{direction.$end}: $grid;
+  }
+
+  > [class*='icon']:last-child {
+    margin-#{direction.$start}: $grid;
+    margin-#{direction.$end}: -($grid / 2);
+  }
+}
+
+@mixin btn-color($key: 'primary-button', $important: null) {
+  $combination: map-get(map-get($tokens, 'color-combinations'), $key);
+
+  $c: map-get(colors.$colors, map-get($combination, 'color'));
+  $bg: map-get(colors.$colors, map-get($combination, 'background-color'));
+
+  color: $c $important;
+  background-color: $bg $important;
+
+  @if map-get($combination, 'smooth') {
+    @include typography.font-smooth;
+  }
+
+  &:link,
+  &:visited {
+    color: $c $important;
+    background-color: $bg $important;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $c $important;
+    background-color: saturate(darken($bg, 5%), 5%) $important;
+  }
+}
+
+@mixin btn-next() {
+  @if direction.$direction == 'ltr' {
+    > [class*='icon']:first-child {
+      display: none
+    }
+  } @else {
+    > [class*='icon']:last-child {
+      display: none
+    }
+  }
+}
+
+@mixin btn-previous() {
+  @if direction.$direction == 'ltr' {
+    > [class*='icon']:last-child {
+      display: none
+    }
+  } @else {
+    > [class*='icon']:first-child {
+      display: none
+    }
+  }
+}

@@ -1,0 +1,21 @@
+/**
+ * Icons
+ */
+
+// Dependencies
+@use 'config/icons';
+@use 'config/media';
+
+// Declarations
+[class*='icon-'] {
+  overflow: visible !important;
+  max-width: 100%;
+}
+
+@include icons.ui;
+// @include icons.subway;
+
+// Create our responsive icon size utilty
+@include media.screens() using ($variant) {
+  @include icons.sizes($variant);
+}
