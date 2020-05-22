@@ -26,7 +26,7 @@ html lang='en'
     javascript:
       var patterns = new WorkingNyc();
 
-      patterns.icons('/svg/icons.svg');
+      patterns.icons('../svg/icons.svg');
       patterns.toggle();
       patterns.accordion();
 
