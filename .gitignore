@@ -1,0 +1,67 @@
+# osx noise
+.DS_Store
+profile
+
+# svn
+.svn
+
+# npm
+node_modules
+npm-debug.log
+
+# Hide in-progress work by default
+
+*.md
+/dist/*
+/src/elements/*
+/src/components/*
+/src/objects/*
+/src/utilities/*
+/src/elements/**/*.slm
+/src/objects/**/*.slm
+/src/components/**/*.slm
+/src/utilities/**/*.slm
+
+/src/views/*
+/src/slm/layouts/*
+/src/slm/partials/*
+/src/slm/section/*
+
+# Keepsies
+
+!/README.md
+
+!/dist/svg
+!/dist/demos
+!/dist/scripts
+!/dist/styles
+
+!/src/objects/banner
+!/src/objects/mobile-nav
+!/src/objects/navigation
+!/src/objects/search-box
+
+!/src/components/accordion
+
+!/src/elements/base
+!/src/elements/buttons
+!/src/elements/code
+!/src/elements/forms
+!/src/elements/icons
+!/src/elements/inputs
+!/src/elements/labels
+!/src/elements/layouts
+!/src/elements/links
+!/src/elements/nav
+
+!/src/utilities/animate
+!/src/utilities/tailwindcss
+!/src/utilities/color
+!/src/utilities/margin
+!/src/utilities/padding
+!/src/utilities/text
+!/src/utilities/toggle
+!/src/utilities/typography
+
+!/src/slm/layouts/demos.slm
+!/src/views/demos
