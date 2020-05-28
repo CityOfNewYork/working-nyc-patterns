@@ -162,7 +162,7 @@ module.exports = {
   'dimensions': {
     'mobile-menu-width': '80vw',
     'content-width': '800px',
-    'site-max-width': '1400px',
+    'site-max-width': '1440px',
     'site-min-width': '320px'
   },
   'animate': {

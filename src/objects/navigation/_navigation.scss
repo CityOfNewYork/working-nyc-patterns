@@ -13,6 +13,8 @@
 
 // Declarations
 .o-navigation {
+  @include typography.type('small');
+
   display: flex;
   padding: dimensions.$spacing-base;
 
