@@ -7,35 +7,70 @@ const package = require('../package.json');
 module.exports = {
   'output': '"./src/config/_tokens.scss"',
   'version': package.version,
-  'cdn': '"https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-wnyc-patterns@v' + package.version + '/dist/"',
-  'languages': ['default', 'ar', 'es', 'kr', 'ur', 'tc'],
-  'rtl-languages': ['ar', 'ur'],
+  'cdn': `"https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-wnyc-patterns@v${package.version}/dist/"`,
+  'languages': [
+    'default',
+    'ar',
+    'es',
+    'kr',
+    'ur',
+    'tc'
+  ],
+  'languages-rtl': [
+    'ar',
+    'ur'
+  ],
   'font-family': {
     'system': [
-      '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto',
-      'Oxygen-Sans', 'Ubuntu', 'Cantarell', '"Helvetica Neue"', 'sans-serif'
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      'Oxygen-Sans',
+      'Ubuntu',
+      'Cantarell',
+      '"Helvetica Neue"',
+      'sans-serif'
     ],
     'inherit': 'inherit',
-    'body': ['"Montserrat"', 'sans-serif'],
-    'h1': ['"Montserrat"', 'sans-serif'],
-    'h2': ['"Montserrat"', 'sans-serif'],
-    'h3': ['"Montserrat"', 'sans-serif'],
-    'h4': ['"Montserrat"', 'sans-serif'],
-    'h5': ['"Montserrat"', 'sans-serif'],
-    'h6': ['"Montserrat"', 'sans-serif'],
-    'p': ['"Lato"', 'sans-serif'],
-    'button': ['"Lato"', 'sans-serif'],
-    'primary': ['"Montserrat"', 'sans-serif'],
-    'secondary': ['"Lato"', 'sans-serif']
+    'primary': [
+      '"Montserrat"',
+      'sans-serif'
+    ],
+    'primary-ar': [],
+    'primary-zh-hant': [],
+    // ...
+    'secondary': [
+      '"Lato"',
+      'sans-serif'
+    ],
+    'secondary-ar': [],
+    'secondary-zh-hant': [],
+    // ...
+    'code': ['monospace']
+  },
+  'font': {
+    'body': 'primary',
+    'h1': 'primary',
+    'h2': 'primary',
+    'h3': 'primary',
+    'blockquote': 'primary',
+    'h4': 'primary',
+    'h5': 'primary',
+    'h6': 'primary',
+    'p': 'secondary',
+    'button': 'secondary',
+    'code': 'code'
   },
   'font-weight': {
     'body': 'normal',
     'h1': 'bold',
     'h2': 'bold',
     'h3': 'bold',
+    'blockquote': 'normal',
     'h4': 'bold',
     'h5': 'bold',
-    'h6': 'bold',
+    'h6': 'italic',
     'p': 'normal',
     'small': 'normal',
     'button': 'bold',
@@ -48,9 +83,10 @@ module.exports = {
     'h1': '3rem',
     'h2': '2.5rem',
     'h3': '2rem',
+    'blockquote': '2rem',
     'h4': '1.5rem',
     'h5': '1rem',
-    'h6': '0.5rem',
+    'h6': '1rem',
     'p': '0.9rem',
     'small': '0.72rem',
     'button': '1rem'
@@ -60,12 +96,13 @@ module.exports = {
     'h1': '1.2',
     'h2': '1.3',
     'h3': '1.3',
+    'blockquote': '1.3',
     'h4': 'normal',
     'h5': 'normal',
     'h6': 'normal',
-    'p': '1.3',
+    'p': '1.5',
     'small': 'normal',
-    'button': '1'
+    'button': 'normal'
   },
   'type': {
     'margin': '1.250rem 0 0.64rem'
@@ -79,77 +116,119 @@ module.exports = {
     'radius-tag': '50px'
   },
   'colors': {
-    'blue-d4': '#031837',
-    'blue-d3': '#071F42',
-    'blue-d2': '#0C264D',
-    'blue': '#003C7A',
-    'blue-l1-alt': '#1E78BE',
-    'blue-l1': '#3194E0',
-    'blue-l2': '#68B7F4',
-    'blue-l3': '#C9EEFE',
+    'scale-0': 'var(--color-scale-0)',
+    'scale-1': 'var(--color-scale-1)',
+    'scale-2': 'var(--color-scale-2)',
+    'scale-3': 'var(--color-scale-3)',
+    'scale-4': 'var(--color-scale-4)',
+    'default': {
+      '0': '#03142C',
+      '1': '#031837',
+      '2': '#071F42',
+      '3': '#0C264D',
+      '4': '#003C7A'
+    },
+    'dark': {
+      '0': '#171717',
+      '1': '#1C1C1C',
+      '2': '#252525',
+      '3': '#2D2D2D',
+      '4': '#3D3D3D'
+    },
+    'mid': {
+      '0': '#203A60',
+      '1': '#284777',
+      '2': '#2A4E83',
+      '3': '#31568C',
+      '4': '#336599'
+    },
+    'light': {
+      '1': '#FFFFFF',
+      '2': '#FCFCFC',
+      '3': '#F7F7F7',
+      '4': '#F0F0F0'
+    },
+    'blue': '#1E78BE',
+    'blue-l-1': '#3194E0',
+    'blue-l-2': '#68B7F4',
+    'blue-l-3': '#C9EEFE',
     'green': '#006333',
-    'green-l1': '#008E46',
-    'green-l2': '#4BAC4C',
-    'green-l3': '#A8DD7C',
+    'green-l-1': '#008E46',
+    'green-l-2': '#4BAC4C',
+    'green-l-3': '#A8DD7C',
+    'yellow-d-2': '#755C00',
+    'yellow-d-1': '#8F6F00',
     'yellow': '#FFD029',
-    'yellow-l1': '#FAD457',
-    'yellow-l2': '#F6D772',
-    'yellow-l3': '#FDE9A6',
+    'yellow-l-1': '#FAD457',
+    'yellow-l-2': '#F6D772',
+    'yellow-l-3': '#FDE9A6',
     'black': '#000000',
     'white': '#FFFFFF',
     'transparent': 'rgba(255, 255, 255, 0)',
     'inherit': 'inherit'
   },
-  'color-combinations': {
-    'light-background': {
-      'color': 'blue',
-      'headings': 'blue',
-      'color-alt': 'blue-l1-alt',
-      'hyperlinks': 'blue-l1',
-      'visited': 'blue-l1',
-      'hover': 'blue-l1',
-      'background-color': 'white'
-    },
-    'mid-background': {
-      'color': 'blue-d2',
-      'headings': 'blue-d2',
-      'color-alt': 'blue',
-      'hyperlinks': 'blue-l1-alt',
-      'visited': 'blue-l1-alt',
-      'hover': 'blue-l1-alt',
-      'background-color': 'blue-l3'
-    },
-    'dark-background': {
-      'color': 'white',
-      'font-smooth': true,
-      'headings': 'white',
-      'color-alt': 'blue-l3',
-      'hyperlinks': 'blue-l1',
-      'visited': 'blue-l1',
-      'hover': 'blue-l1',
-      'background-color': 'blue-d4'
-    },
-    'primary-button': {
-      'color': 'blue-l1',
-      'font-smooth': true,
-      'background-color': 'blue-d3'
-    },
-    'secondary-button': {
-      'color': 'green-l3',
-      'font-smooth': true,
-      'background-color': 'blue-d3'
-    },
-    'tertiary-button': {
-      'color': 'yellow-l1',
-      'font-smooth': true,
-      'background-color': 'blue-d3'
-    },
-    'code': {
-      'color': 'blue-d2',
-      'hyperlinks': 'blue-l1-alt',
-      'visited': 'blue-l1-alt',
-      'hover': 'blue-l1-alt',
-      'background-color': 'blue-l3'
+  'color-modes': {
+    'default': {
+      'text': 'white',
+      'text-alt': 'blue-l-3',
+      'hyperlinks': 'blue-l-1',
+      'hyperlinks-hover': 'blue-l-3',
+      'hyperlinks-visited': 'blue-l-3',
+      'background': 'scale-1',
+      'smoothing': true,
+
+      'card-header': 'scale-2',
+      'card-body': 'scale-3',
+
+      'modal': {
+        'text': 'scale-1',
+        'text-alt': 'scale-2',
+        'background': 'blue-l-3',
+        'hyperlinks': 'scale-4',
+        'hyperlinks-hover': 'scale-3',
+        'hyperlinks-visited': 'scale-3',
+        'smoothing': false
+      },
+
+      'input-text': 'default-1',
+      'input-background': 'white',
+
+      'option-text': 'blue',
+      'option-text-hover ': 'blue-l-3',
+      'option-text-active': 'blue-l-3',
+      'option-background': 'scale-2',
+      'option-background-hover': 'scale-0',
+      'option-border': 'transparent',
+      'option-border-active': 'blue-l-3',
+
+      'button': {
+        'primary': {
+          'text': 'blue-l-1',
+          'text-hover': 'blue-l-2',
+          'background': 'scale-2',
+          'background-hover': 'scale-0'
+        },
+        'secondary': {
+          'text': 'green-l-3',
+          'text-hover': 'green-l-3',
+          'background': 'scale-2',
+          'background-hover': 'scale-0'
+        },
+        'tertiary': {
+          'text': 'yellow-l-2',
+          'text-hover': 'yellow-l-3',
+          'background': 'scale-2',
+          'background-hover': 'scale-0'
+        }
+      },
+
+      'shadow-up': '0 3px 12px 2px rgba(0, 0, 0, 0.25)',
+
+      'code': {
+        'text': '',
+        'background': '',
+        'border': ''
+      }
     }
   },
   'screens': {
@@ -202,16 +281,9 @@ module.exports = {
     '2': ['16px', '16px'],
     '3': ['24px', '24px'],
     '4': ['32px', '32px'],
-    '5': ['40px', '40px'],
-    '6': ['48px', '48px'],
-    '7': ['56px', '56px'],
-    '8': ['64px', '64px'],
-    '9': ['72px', '72px'],
-    '10': ['80px', '80px'],
-    '11': ['88px', '88px'],
-    '12': ['96px', '96px'],
-    'large': ['136px', '136px'],
-    'xlarge': ['256px', '256px']
+    'logo-standard-menu-item': ['130px', '18px'],
+    'logo-standard-tagline': ['320px', '30px'],
+    'logo-stacked-menu-item': ['100px', '32px']
   },
   'inputs': {
     'checkbox-radius': '8px',
@@ -240,7 +312,7 @@ module.exports = {
     'layout-topbar': true
   },
   'shadows': {
-    'up': '0 3px 12px 2px rgba(0, 0, 0, 0.25)',
+    'up': 'var(--shadow-up)',
     'none': 'none'
   }
 };

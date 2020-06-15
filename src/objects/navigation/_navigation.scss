@@ -3,28 +3,88 @@
  */
 
 // Dependencies
-@use 'config/colors';
+@use 'config/grid' as *;
+@use 'config/color';
 @use 'config/direction';
 @use 'config/dimensions';
-@use 'config/fonts';
-@use 'config/grid';
 @use 'config/media';
+@use 'config/nav';
 @use 'config/typography';
 
 // Declarations
 .o-navigation {
-  @include typography.type('small');
+  @include typography.set('small');
 
-  display: flex;
   padding: dimensions.$spacing-base;
 
+  display: flex;
   align-items: center;
   justify-content: space-between;
+  flex: 1;
+
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+
+  @media screen and (max-width: media.$screen-tablet) {
+    z-index: 1010;
+  }
+
+  @media screen and (min-width: media.$screen-tablet) {
+    @include nav.inline();
+    padding: dimensions.$spacing-base;
+
+    justify-content: flex-end;
+
+    position: sticky;
+    top: 0;
+  }
+
+  @media screen and (min-width: media.$screen-desktop) {
+    position: static;
+  }
+}
+
+.o-navigation__logo {
+  @media screen and (min-width: media.$screen-tablet) {
+    margin-#{direction.$end}: auto !important
+  }
+}
+
+// Mobile Menu Items
+@media screen and (max-width: media.$screen-tablet) {
+  .o-navigation__menu-item {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    flex-direction: column;
+
+    text-align: center;
+    line-height: normal;
+  }
+
+  [class*=btn-].o-navigation__menu-item > [class*=icon]:first-child {
+    margin: 0;
+  }
+}
+
+.o-navigation__menu-icon {
+  width: $grid * 4;
+  height: $grid * 4;
+
+  @media screen and (min-width: media.$screen-tablet) {
+    width: $grid * 2;
+    height: $grid * 2;
+  }
+}
+
+.o-navigation__menu-label {
+  display: block;
 }
 
 .o-navigation__toggle,
 .o-navigation__search-toggle {
-  margin-#{direction.$start}: grid.$grid * 2;
+  margin-#{direction.$start}: $grid * 2;
 
   a:link {
     text-decoration: none

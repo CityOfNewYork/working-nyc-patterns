@@ -9,6 +9,7 @@ html lang='en'
 
     link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CMontserrat:400,400i,700' media='all'
     link rel='stylesheet' href='../styles/site-default.css'
+    link rel='stylesheet' href='../styles/site-color-default.css'
 
     title
       - if (this.title != 'Working NYC')
@@ -17,7 +18,7 @@ html lang='en'
       - else
         = this.title;
 
-  body class='bg-blue-d3'
+  body class='color bg-scale-2'
     = content('content');
 
     script src='../scripts/polyfills.js'
@@ -29,6 +30,8 @@ html lang='en'
       patterns.icons('../svg/icons.svg');
       patterns.toggle();
       patterns.accordion();
+      patterns.mobileNav();
+      patterns.searchBox();
 
     = content('script');
 

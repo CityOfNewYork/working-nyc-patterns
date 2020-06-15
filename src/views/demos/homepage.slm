@@ -3,38 +3,41 @@
 
 / Content blocks
 = content('head');
+  - this.title = 'Working NYC'
   = mixin('head', 'Homepage');
 
 = content('content');
-  div class='page-min-max sticky top-0 screen-desktop:static'
-    = partial('/objects/navigation/navigation.slm');
+  = partial('/objects/navigation/navigation.slm');
 
-    = partial('/objects/search-box/search-box.slm');
+  = partial('/objects/search-box/search-box.slm');
 
   = partial('/objects/mobile-nav/mobile-nav.slm');
 
   div class='page-min-max layout-map flex-row-reverse screen-desktop:layout-columns screen-desktop:flex-row'
-    header class='layout-map__map layout__column o-banner color-dark-background bg-blue-d3 flex items-center'
+    header class='layout-map__map layout__column o-banner bg-scale-2 flex items-center'
       div class='o-banner__inner my-4'
         h2 class='h3 m-0'
           span class='font-normal' The Official Resource of
 
           a href='/' class='text-white uppercase no-underline'
-            span class='text-blue-l3' Working
-            span class='text-blue-l2' NYC
+            span class='sr-only' Working N Y C
 
-    main class='layout-map__sidebar layout__column color-dark-background p-2 screen-desktop:p-3'
-      - for (let i in this.sectors)
-        - let sector = this.sectors[i]
+            svg class='icon-logo-standard-tagline fill-white text-blue-l-2' aria-hidden='true'
+              use xlink:href='#logo-wnyc-standard'
+
+
+    main class='bg-scale-1 layout-map__sidebar layout__column p-2 screen-desktop:p-3'
+      - for (let i in this.segments)
+        - let segment = this.segments[i]
         - let active = (i == 0);
 
-        - sector.slug = sector.name.replace(/ /g, '-').toLowerCase();
+        - segment.slug = segment.name.replace(/ /g, '-').toLowerCase();
 
-        article class='c-accordion shadow-up mb-1'
-          header class='c-accordion__header bg-blue-d3'
-            button class='c-accordion__toggle w-full text-start print:hidden ${active ? 'active' : ''}' data-js='accordion' aria-controls='aria-c-${sector.slug}' aria-expanded='${active.toString()}'
-              span class='c-accordion__heading mt-0' id='aria-lb-${sector.slug}'
-                span = sector.name
+        article class='c-accordion mb-1'
+          header class='c-accordion__header'
+            button class='c-accordion__toggle w-full text-start print:hidden ${active ? 'active' : ''}' data-js='accordion' aria-controls='aria-c-${segment.slug}' aria-expanded='${active.toString()}'
+              span class='c-accordion__heading mt-0' id='aria-lb-${segment.slug}'
+                span = segment.name
 
               span class='c-accordion__toggle-active'
                 svg class='icon-wnyc-ui icon-3' aria-hidden='true'
@@ -46,21 +49,21 @@
                   use xlink:href='#icon-wnyc-ui-chevron-up'
                 span class='sr-only' show this list
 
-          div id='aria-c-${sector.slug}' role='region' class='c-accordion__body color-dark-background bg-blue-d2 print:active hidden:overflow animated ${active ? 'active' : 'hidden'}' aria-labelledby='aria-lb-${sector.slug}' aria-hidden='${active ? 'false' : 'true'}'
+          div id='aria-c-${segment.slug}' role='region' class='c-accordion__body bg-scale-3 print:active hidden:overflow animated ${active ? 'active' : 'hidden'}' aria-labelledby='aria-lb-${segment.slug}' aria-hidden='${active ? 'false' : 'true'}'
             div class='c-accordion__padding'
-              - for (let y in sector.occupations)
-                - let occupation = sector.occupations[y]
+              - for (let y in segment.segments)
+                - let subSegment = segment.segments[y]
 
                 a href='#' class='btn btn-secondary btn-next w-full mb-1'
                   svg class='icon-wnyc-ui icon-3' aria-hidden='true'
                     use xlink:href='#icon-wnyc-ui-arrow-left'
 
-                  span = occupation.name
+                  span = subSegment.name
 
                   svg class='icon-wnyc-ui icon-3' aria-hidden='true'
                     use xlink:href='#icon-wnyc-ui-arrow-right'
 
-  footer class='color-dark-background bg-blue-d3 text-small py-3'
+  footer class='bg-scale-2 text-small py-3'
     div class='page-min-max wrap'
       nav class='nav-block screen-tablet:nav-inline mb-2'
         a href='#' class='no-underline' NYC Opportunity

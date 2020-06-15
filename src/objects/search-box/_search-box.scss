@@ -3,11 +3,11 @@
  */
 
 // Dependencies
-@use 'config/colors';
+@use 'config/color';
 @use 'config/direction';
 @use 'config/dimensions';
-@use 'config/fonts';
 @use 'config/media';
+@use 'config/typography';
 
 // Declarations
 .o-search-box {
@@ -16,17 +16,28 @@
   width: 100%;
   z-index: 1000;
 
+  position: fixed !important;
+  height: 100% !important;
+
+  z-index: 1000;
+
+  @media screen and (min-width: media.$screen-tablet) {
+    position: static;
+    height: inherit !important;
+  }
+
   &.hidden {
     box-shadow: none !important
   }
 }
 
 .o-search-box__inner {
-  border-bottom: 3px solid;
   padding: dimensions.$spacing-base 0;
 }
 
 .o-search-box__close {
+  @include typography.set('small');
+
   text-align: direction.$end;
 }
 

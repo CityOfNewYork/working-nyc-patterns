@@ -1,0 +1,166 @@
+//
+// Variables
+//
+
+// Dependencies
+@use 'config/tokens';
+@use 'config/typography';
+
+$mode: '' !default;
+$colors: map-get(tokens.$tokens, 'colors');
+$shadows: map-get(tokens.$tokens, 'shadows');
+$modes: map-get(tokens.$tokens, 'color-modes');
+
+// Mixins
+@mixin set-scale-vars($mode: 'default') {
+  $combination: map-get($modes, $mode);
+
+  // Set the shadow up token
+  --shadow-up: #{map-get($combination, 'shadow-up')};
+
+  // Set the color scale
+  @each $token, $color in map-get($colors, $mode) {
+    --color-scale-#{$token}: #{$color};
+  }
+}
+
+/**
+ * Base mixin for setting text and background colors.
+ *
+ * @param  $combination  The combination set to use
+ */
+@mixin base($combination) {
+  $token-text: map-get($combination, 'text');
+  $token-text-alt: map-get($combination, 'text-alt');
+  $token-background: map-get($combination, 'background');
+  $token-smoothing: map-get($combination, 'smoothing');
+
+  color: map-get($colors, $token-text);
+  background-color: map-get($colors, $token-background);
+
+  @if $token-smoothing {
+    @include typography.font-smooth;
+  } @else {
+    @include typography.font-smooth-auto;
+  }
+
+  .color-text-alt {
+    color: map-get($colors, $token-text-alt);
+  }
+}
+
+/**
+ * Mixin for styling hyperlinks within a color combination.
+ *
+ * @param  $combination  The combination set to use
+ */
+@mixin hyperlinks($combination) {
+  $token-hyperlinks: map-get($combination, 'hyperlinks');
+  $token-hyperlinks-hover: map-get($combination, 'hyperlinks-hover');
+  $token-hyperlinks-visited: map-get($combination, 'hyperlinks-visited');
+
+  a:not(.btn), .btn-link, .button-link {
+    color: map-get($colors, $token-hyperlinks);
+
+    &:hover, &:active, &:focus {
+      color: map-get($colors, $token-hyperlinks-hover);
+    }
+
+    &:visited {
+      color: map-get($colors, $token-hyperlinks-visited);
+    }
+  }
+}
+
+@mixin card($combination) {
+  $token-card-header: map-get($combination, 'card-header');
+  $token-card-body: map-get($combination, 'card-body');
+
+  .color-card,
+  .c-accordion {
+    box-shadow: map-get($shadows, 'up');
+  }
+
+  .color-card__header,
+  .c-accordion, .c-accordion__header {
+    background-color: map-get($colors, $token-card-header);
+  }
+
+  .color-card__body,
+  .c-accordion__body {
+    background-color: map-get($colors, $token-card-body);
+  }
+}
+
+@mixin modal($combination) {
+  $combination-modal: map-get($combination, 'modal');
+
+  .color-modal,
+  .o-search-box, .o-mobile-nav {
+    @include base($combination-modal);
+    @include hyperlinks($combination-modal);
+
+    box-shadow: map-get($shadows, 'up');
+  }
+}
+
+@mixin input {
+  // 'input-text': 'scale-default-1', // and border
+  // 'input-background': 'white',
+}
+
+@mixin option() {
+  // 'option-text': 'blue',
+  // 'option-text-hover ': 'blue-l-3',
+  // 'option-text-active': 'blue-l-3',
+  // 'option-background': 'scale-default-2',
+  // 'option-background-hover': 'forumla',
+  // 'option-background-active': 'formula',
+  // 'option-border': 'transparent',
+  // 'option-border-active': 'blue-l-3',
+}
+
+@mixin button($combination) {
+  @each $type, $combo in map-get($combination, 'button') {
+    $token-text: map-get($combo, 'text');
+    $token-background: map-get($combo, 'background');
+
+    $token-text-hover: map-get($combo, 'text-hover');
+    $token-background-hover: map-get($combo, 'background-hover');
+
+    .btn-#{$type}, .button-#{$type} {
+      color: map-get($colors, $token-text);
+      background-color: map-get($colors, $token-background);
+
+      &:link,
+      &:visited {
+        color: map-get($colors, $token-text);
+        background-color: map-get($colors, $token-background);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: map-get($colors, $token-text-hover);
+        background-color: map-get($colors, $token-background-hover);
+      }
+    }
+  }
+}
+
+@mixin code() {
+  // 'code-text': '',
+  // 'code-background': '',
+  // 'code-border': ''
+}
+
+@mixin combination($mode: 'default') {
+  $combination: map-get($modes, $mode);
+
+  @include base($combination);
+  @include hyperlinks($combination);
+  @include card($combination);
+  @include modal($combination);
+  @include button($combination);
+  // @include ...
+}

@@ -87,8 +87,7 @@ module.exports = [
       sourcemap: (process.env.NODE_ENV === 'production')
         ? false : rollup.sourcemap,
       format: rollup.format,
-      strict: rollup.strict,
-      globals: rollup.globals
+      strict: rollup.strict
     }],
     plugins: rollup.local,
     devModule: true
@@ -101,8 +100,7 @@ module.exports = [
       sourcemap: (process.env.NODE_ENV === 'production')
         ? false : rollup.sourcemap,
       format: rollup.format,
-      strict: rollup.strict,
-      globals: rollup.globals
+      strict: rollup.strict
     }],
     plugins: rollup.local,
     devModule: true

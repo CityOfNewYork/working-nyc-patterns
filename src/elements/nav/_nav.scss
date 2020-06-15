@@ -8,8 +8,13 @@
 
 // Declarations
 @mixin nav($variant: '') {
-  @include nav.inline($variant);
-  @include nav.block($variant);
+  .#{$variant}nav-inline {
+    @include nav.inline($variant);
+  }
+
+  .#{$variant}nav-block {
+    @include nav.block($variant);
+  }
 }
 
 @include media.screens using ($variant) {

@@ -16,10 +16,6 @@ input, textarea {
   @media screen and (min-width: media.$screen-tablet) {
     width: auto;
   }
-
-  .c-question__container.error & {
-    // border-color: $color-red;
-  }
 }
 
 input[type='number'] {
@@ -70,20 +66,12 @@ input[type='number'] {
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
-    // color: $color-blue;
     content: '+1';
     font-size: 22px;
     font-weight: bold;
     text-align: left;
     z-index: 2;
     pointer-events: none;
-  }
-}
-
-.error.input-phone-us,
-.error.input-currency-usd {
-  &::after {
-    // color: $color-red;
   }
 }
 
@@ -111,48 +99,3 @@ input[type='number'] {
     margin: 0;
   }
 }
-
-/**
- * Autocomplete
- */
-
-// .input-autocomplete {
-//   display: inline-block;
-// }
-
-// .input-autocomplete__dropdown {
-//   position: relative;
-// }
-
-// .input-autocomplete__dropdown > ul {
-//   background: $color-white;
-//   color: $color-black;
-
-//   position: absolute;
-//   right: 0;
-//   left: 0;
-//   box-sizing: border-box;
-//   width: 100%;
-
-//   margin: 0;
-//   padding: 0;
-
-//   list-style: none;
-//   text-align: left;
-//   border: 1.5rem solid background-color;
-//   margin-top: 1px;
-//   z-index: 1;
-
-//   box-shadow: map-get(map-get($tokens, 'shadows'), 'up');
-// }
-
-// .input-autocomplete__dropdown > ul > li {
-//   @include inputs;
-//   @include transition;
-//   cursor: pointer;
-// }
-
-// .input-autocomplete__dropdown > ul > .input-autocomplete__highlight {
-//   background-color: $color-blue-light;
-
-// }

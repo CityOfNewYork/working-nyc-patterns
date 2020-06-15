@@ -3,10 +3,9 @@
 //
 
 // Dependencies
-@use 'config/fonts';
 @use 'config/dimensions';
 @use 'config/direction';
-@use 'config/colors';
+@use 'config/color';
 
 // Declarations
 @mixin question() {

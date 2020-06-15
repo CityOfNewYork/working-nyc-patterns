@@ -3,23 +3,23 @@
  */
 
 // Dependencies
-@use 'config/colors';
+@use 'config/color';
 @use 'config/direction';
 @use 'config/dimensions';
-@use 'config/fonts';
 @use 'config/media';
 @use 'config/typography';
 
 // Declarations
 .o-mobile-nav {
-  width: dimensions.$mobile-menu-width;
-  padding: dimensions.$spacing-base;
+  width: 100vw;
 
   @if direction.$direction == 'rtl' {
-    left: -(dimensions.$mobile-menu-width);
+    left: -100vw;
   } @else {
-    right: -(dimensions.$mobile-menu-width);
+    right: -100vw;
   }
+
+  padding: dimensions.$spacing-base;
 
   display: block;
   position: fixed;
@@ -30,28 +30,42 @@
 
   z-index: 1000;
 
+  &.hidden {
+    box-shadow: none !important
+  }
+
+  @media screen and (min-width: media.$screen-tablet) {
+    width: dimensions.$mobile-menu-width;
+
+    @if direction.$direction == 'rtl' {
+      left: -(dimensions.$mobile-menu-width);
+    } @else {
+      right: -(dimensions.$mobile-menu-width);
+    }
+  }
+
   @media screen and (min-width: media.$screen-desktop) {
     display: none;
   }
 }
 
 .o-mobile-nav__close {
+  @include typography.set('small');
+
   text-align: direction.$end;
-  text-decoration: none;
+  // margin-#{direction.$end}: dimensions.$spacing-base;
+  // margin-bottom: dimensions.$spacing-base;
+  // display: block;
 
-  margin-#{direction.$end}: dimensions.$spacing-base;
-  margin-bottom: dimensions.$spacing-base;
-  display: block;
+  // @media screen and (min-width: media.$screen-desktop) {
+  //   display: none;
+  // }
 
-  @media screen and (min-width: media.$screen-desktop) {
-    display: none;
-  }
-
-  .icon {
-    margin-#{direction.$start}: .3em;
-    vertical-align: middle;
-    pointer-events: none;
-  }
+  // .icon {
+  //   margin-#{direction.$start}: .3em;
+  //   vertical-align: middle;
+  //   pointer-events: none;
+  // }
 }
 
 .o-mobile-nav__inner {

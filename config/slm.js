@@ -36,6 +36,66 @@ module.exports = {
       NODE_ENV: process.env.NODE_ENV
     }
   },
+  segments: [
+    {
+      name: 'Find Work',
+      segments: [
+        {
+          name: 'Employment',
+          segments: [
+            {
+              name: 'Employment Services'
+            },
+            {
+              name: 'Coordination & Barrier Reduction'
+            }
+          ]
+        },
+        {
+          name: 'Internships',
+          segments: [
+            {
+              name: 'In School'
+            },
+            {
+              name: 'Out of School'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'Get Skills'
+    },
+    {
+      name: 'Education',
+      segments: [
+        {
+          name: 'Adult (Basic & ESOL)'
+        },
+        {
+          name: 'College Support'
+        },
+        {
+          name: 'Bridge'
+        },
+        {
+          name: 'College and Career Prep'
+        }
+      ]
+    },
+    {
+      name: 'Careers',
+      segments: [
+        {
+          name: 'Sectors'
+        },
+        {
+          name: 'Occupations'
+        }
+      ]
+    }
+  ],
   sectors: [
     {
       name: 'Technology',

@@ -3,7 +3,7 @@
 @use 'config/cdn';
 @use 'config/direction';
 @use 'config/dimensions';
-@use 'config/colors';
+@use 'config/color';
 
 $input-checkbox-size: map-get(map-get($tokens, 'inputs'), 'checkbox-size');
 $input-checkbox-radius: map-get(map-get($tokens, 'inputs'), 'checkbox-radius');

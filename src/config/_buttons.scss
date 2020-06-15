@@ -5,20 +5,20 @@
 // Dependencies
 @use 'config/tokens' as *;
 @use 'config/grid' as *;
-@use 'config/colors';
-@use 'config/fonts';
+@use 'config/color';
 @use 'config/dimensions';
 @use 'config/direction';
 @use 'config/typography';
 
 // Declaration
 $btn: map-get($tokens, 'buttons');
-$btn-radius: map-get($btn, 'radius');
+$radius: map-get($btn, 'radius');
 
-@mixin btn-reset() {
+@mixin reset() {
   color: inherit;
   font-size: inherit;
   font-weight: inherit;
+  font-family: inherit;
   background: transparent;
   border: none;
   padding: 0;
@@ -30,20 +30,22 @@ $btn-radius: map-get($btn, 'radius');
   }
 }
 
-@mixin btn-normal() {
-  @include typography.type('button');
+@mixin normal() {
+  @include typography.set('button');
+  // line-height: 1;
+  // line-height: normal;
+  // line-height: 0;
 
-  line-height: 1;
   padding: (.6666 * dimensions.$spacing-base) dimensions.$spacing-base;
 }
 
-@mixin btn() {
-  @include btn-normal();
+@mixin base() {
+  @include normal();
 
   appearance: none;
   background-color: lightgrey;
   border: 0;
-  border-radius: $btn-radius;
+  border-radius: $radius;
 
   display: inline-flex;
   align-items: center;
@@ -65,34 +67,29 @@ $btn-radius: map-get($btn, 'radius');
   }
 }
 
-@mixin btn-color($key: 'primary-button', $important: null) {
-  $combination: map-get(map-get($tokens, 'color-combinations'), $key);
+@mixin icon-toggle() {
+  &[aria-pressed='false'] {
+    .icon {
+      display: inline-block;
+    }
 
-  $c: map-get(colors.$colors, map-get($combination, 'color'));
-  $bg: map-get(colors.$colors, map-get($combination, 'background-color'));
-
-  color: $c $important;
-  background-color: $bg $important;
-
-  @if map-get($combination, 'smooth') {
-    @include typography.font-smooth;
+    .icon-pressed {
+      display: none;
+    }
   }
 
-  &:link,
-  &:visited {
-    color: $c $important;
-    background-color: $bg $important;
-  }
+  &[aria-pressed='true'] {
+    .icon {
+      display: none;
+    }
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: $c $important;
-    background-color: saturate(darken($bg, 5%), 5%) $important;
+    .icon-pressed {
+      display: inline-block;
+    }
   }
 }
 
-@mixin btn-next() {
+@mixin next() {
   @if direction.$direction == 'ltr' {
     > [class*='icon']:first-child {
       display: none
@@ -104,7 +101,7 @@ $btn-radius: map-get($btn, 'radius');
   }
 }
 
-@mixin btn-previous() {
+@mixin previous() {
   @if direction.$direction == 'ltr' {
     > [class*='icon']:last-child {
       display: none
@@ -113,5 +110,72 @@ $btn-radius: map-get($btn, 'radius');
     > [class*='icon']:first-child {
       display: none
     }
+  }
+}
+
+@mixin tag() {
+  font-size: map-get(typography.$font-size, 'small');
+  text-transform: uppercase;
+  padding: $grid ($grid * 2);
+  border-radius: map-get($btn, 'radius-tag');
+}
+
+@mixin toggle() {
+  text-align: direction.$start;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > [class*='icon'] {
+    transition: transform 0.25s
+  }
+
+  &.active {
+    > [class*='icon'] {
+      transform: rotate(-180deg)
+    }
+  }
+}
+
+@mixin small() {
+  font-size: map-get(typography.$font-size, 'small');
+  padding: ($grid * 1.5) ($grid * 2);
+}
+
+@mixin link() {
+  @include typography.font-family('body');
+
+  font-size: inherit;
+  text-align: inherit;
+
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+
+  > [class*='icon']:first-child {
+    margin-#{direction.$start}: initial;
+  }
+
+  > [class*='icon']:last-child {
+    margin-#{direction.$end}: initial;
+  }
+}
+
+@mixin text() {
+  text-align: inherit;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+
+  > [class*='icon']:first-child {
+    margin-#{direction.$start}: initial;
+  }
+
+  > [class*='icon']:last-child {
+    margin-#{direction.$end}: initial;
   }
 }

@@ -4,14 +4,12 @@
 
 @use 'config/tokens';
 @use 'config/grid';
-@use 'config/fonts';
+@use 'config/language';
 @use 'config/typography';
 @use 'config/direction';
 
-$fonts: map-get(tokens.$tokens, 'font-family');
-
 html {
-  @include typography.type('html');
+  @include typography.set('html');
 
   @if direction.$direction == 'rtl' {
     direction: rtl;
@@ -19,44 +17,42 @@ html {
 }
 
 body {
-  @include typography.type('body') {
-    font-family: map-get($fonts, 'default-sans');
-  }
+  @include typography.set('body');
 }
 
 h1, .h1 {
-  @include typography.type('h1') {
-    margin: typography.$type-margin;
+  @include typography.set('h1') {
+    margin: typography.$margin;
   };
 }
 
 h2, .h2 {
-  @include typography.type('h2') {
-    margin: typography.$type-margin;
+  @include typography.set('h2') {
+    margin: typography.$margin;
   };
 }
 
 h3, .h3 {
-  @include typography.type('h3') {
-    margin: typography.$type-margin;
+  @include typography.set('h3') {
+    margin: typography.$margin;
   };
 }
 
 h4, .h4 {
-  @include typography.type('h4') {
-    margin: typography.$type-margin;
+  @include typography.set('h4') {
+    margin: typography.$margin;
   };
 }
 
 h5, .h5 {
-  @include typography.type('h5') {
-    margin: typography.$type-margin;
+  @include typography.set('h5') {
+    margin: typography.$margin;
   };
 }
 
 h6, .h6 {
-  @include typography.type('h6') {
-    margin: typography.$type-margin;
+  @include typography.set('h6') {
+    margin: typography.$margin;
   };
 }
 
@@ -73,12 +69,12 @@ h6, .h6 {
 }
 
 small, .small {
-  @include typography.type('small');
+  @include typography.set('small');
 }
 
 blockquote, .blockquote {
-  @include typography.type('blockquote') {
-    margin: typography.$type-margin;
+  @include typography.set('blockquote') {
+    margin: typography.$margin;
   };
 
   footer {
@@ -99,20 +95,29 @@ blockquote, .blockquote {
   }
 }
 
-.jumbo {
-  @include typography.type('jumbo') {
-    margin: typography.$type-margin;
-  };
-}
-
 p, li {
-  @include typography.type('p');
+  @include typography.set('p');
 }
 
 p, ul, ol, li {
-  // margin-top: 0px;
-  margin: typography.$type-margin;
+  margin: typography.$margin;
 }
+
+// .font-primary {
+//   @if language.$language == '' {
+
+//   } @else {
+
+//   }
+// }
+
+// .font-secondary {
+//   @if language.$language == '' {
+
+//   } @else {
+
+//   }
+// }
 
 // @media print {
 //   html { }

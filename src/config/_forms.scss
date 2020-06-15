@@ -4,7 +4,7 @@
 
 // Dependencies
 @use 'config/media';
-@use 'config/colors';
+@use 'config/color';
 
 @mixin fieldset-reset() {
   border-width: 0;

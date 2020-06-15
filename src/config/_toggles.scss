@@ -6,8 +6,7 @@
 @use 'config/tokens';
 @use 'config/direction';
 @use 'config/dimensions';
-@use 'config/fonts';
-@use 'config/colors';
+@use 'config/color';
 
 @mixin toggles() {
   font-size: $font-size-base;

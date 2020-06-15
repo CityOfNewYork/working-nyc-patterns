@@ -20,6 +20,8 @@ import Accordion from '../components/accordion/accordion';
 // import WebShare from '../components/web-share/web-share';
 
 // Objects
+import MobileNav from '../objects/mobile-nav/mobile-nav';
+import SearchBox from '../objects/search-box/search-box';
 // import AlertBanner from '../objects/alert-banner/alert-banner';
 // import Newsletter from '../objects/newsletter/newsletter';
 // import TextController from '../objects/text-controller/text-controller';
@@ -173,6 +175,14 @@ class main {
   // textController(element = document.querySelector(TextController.selector)) {
   //   return (element) ? new TextController(element) : null;
   // }
+
+  mobileNav() {
+    return new MobileNav();
+  }
+
+  searchBox() {
+    return new SearchBox();
+  }
 }
 
 export default main;

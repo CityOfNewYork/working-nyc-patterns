@@ -3,34 +3,43 @@
 //
 
 @use 'config/tokens';
+@use 'config/language';
 
 $type: map-get(tokens.$tokens, 'type');
-$type-margin: map-get($type, 'margin');
+$margin: map-get($type, 'margin');
 
-$type-font-family: map-get(tokens.$tokens, 'font-family');
-$type-font-size: map-get(tokens.$tokens, 'font-size');
-$type-font-weight: map-get(tokens.$tokens, 'font-weight');
-$type-line-height: map-get(tokens.$tokens, 'line-height');
+$font: map-get(tokens.$tokens, 'font');
+$font-family: map-get(tokens.$tokens, 'font-family');
+$font-size: map-get(tokens.$tokens, 'font-size');
+$font-weight: map-get(tokens.$tokens, 'font-weight');
+$line-height: map-get(tokens.$tokens, 'line-height');
 
-@mixin typeface($key: 'html') {
-  font-family: map-get($type-font-family, $key);
+@mixin font-family($key: 'html') {
+  $font-family-key: '#{map-get($font, $key)}-#{language.$language}';
+
+  @if language.$language == '' {
+    $font-family-key: '#{map-get($font, $key)}';
+  }
+
+  font-family: map-get($font-family, $font-family-key);
 }
 
-@mixin type($key: 'html') {
-  font-family: map-get($type-font-family, $key);
-  font-size: map-get($type-font-size, $key);
-  font-weight: map-get($type-font-weight, $key);
-  line-height: map-get($type-line-height, $key);
+@mixin set($key: 'html') {
+  @include font-family($key);
+
+  font-size: map-get($font-size, $key);
+  font-weight: map-get($font-weight, $key);
+  line-height: map-get($line-height, $key);
 
   @content;
 }
 
-@mixin type-font-smooth() {
+@mixin font-smooth() {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-@mixin type-font-smooth-auto() {
+@mixin font-smooth-auto() {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
 }
