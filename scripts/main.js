@@ -769,12 +769,48 @@ var WorkingNyc = (function () {
 
   Accordion.selector = '[data-js*="accordion"]';
 
-  // import Filter from '../components/filter/filter';
-  // import NearbyStops from '../components/nearby-stops/nearby-stops';
-  // import ShareForm from '../components/share-form/share-form';
-  // import WebShare from '../components/web-share/web-share';
-  // Objects
-  // import AlertBanner from '../objects/alert-banner/alert-banner';
+  /**
+   * The Mobile Nav module
+   *
+   * @class
+   */
+
+  var MobileNav = function MobileNav() {
+    this._toggle = new Toggle({
+      selector: MobileNav.selector,
+      before: function () {}
+    });
+    return this;
+  };
+  /**
+   * The dom selector for the module
+   * @type {String}
+   */
+
+
+  MobileNav.selector = '[data-js*="mobile-nav"]';
+
+  /**
+   * The SearchBox module
+   *
+   * @class
+   */
+
+  var SearchBox = function SearchBox() {
+    this._toggle = new Toggle({
+      selector: SearchBox.selector,
+      before: function () {}
+    });
+    return this;
+  };
+  /**
+   * The dom selector for the module
+   * @type {String}
+   */
+
+
+  SearchBox.selector = '[data-js*="search-box"]';
+
   // import Newsletter from '../objects/newsletter/newsletter';
   // import TextController from '../objects/text-controller/text-controller';
 
@@ -845,6 +881,88 @@ var WorkingNyc = (function () {
 
   main.prototype.track = function track () {
     return new Track();
+  }; // /**
+  //* An API for the Tooltips element
+  //* @param{Object} settings Settings for the Tooltips Class
+  //* @return {nodelist}        Tooltip elements
+  //*/
+  // tooltips(elements = document.querySelectorAll(Tooltips.selector)) {
+  // elements.forEach(element => {
+  //   new Tooltips(element);
+  // });
+  // return (elements.length) ? elements : null;
+  // }
+  // /**
+  //* An API for the Filter Component
+  //* @return {Object} instance of Filter
+  //*/
+  // filter() {
+  // return new Filter();
+  // }
+  // /**
+  //* An API for the Nearby Stops Component
+  //* @return {Object} instance of NearbyStops
+  //*/
+  // nearbyStops() {
+  // return new NearbyStops();
+  // }
+  // /**
+  //* An API for the Newsletter Object
+  //* @return {Object} instance of Newsletter
+  //*/
+  // newsletter(element = document.querySelector(Newsletter.selector)) {
+  // return (element) ? new Newsletter(element) : null;
+  // }
+  // /**
+  //* An API for the AlertBanner Component
+  //*
+  //* @return{Object}Instance of AlertBanner
+  //*/
+  // alertBanner(element = document.querySelector(AlertBanner.selector)) {
+  // return (element) ? new AlertBanner(element) : null;
+  // }
+  // /**
+  //* An API for the ShareForm Component
+  //*
+  //* @return{Object}Instance of ShareForm
+  //*/
+  // shareForm(elements = document.querySelectorAll(ShareForm.selector)) {
+  // elements.forEach(element => {
+  //   new ShareForm(element);
+  // });
+  // return (elements.length) ? elements : null;
+  // }
+  // /**
+  //* An API for the WebShare Component
+  //*
+  //* @return{Object}Instance of WebShare
+  //*/
+  // webShare() {
+  // return new WebShare();
+  // }
+  // /**
+  //* An API for the Disclaimer Component
+  //* @return{Object}Instance of Disclaimer
+  //*/
+  // disclaimer() {
+  // return new Disclaimer();
+  // }
+  // /**
+  //* An API for the TextController Object
+  //*
+  //* @return{Object}Instance of TextController
+  //*/
+  // textController(element = document.querySelector(TextController.selector)) {
+  // return (element) ? new TextController(element) : null;
+  // }
+
+
+  main.prototype.mobileNav = function mobileNav () {
+    return new MobileNav();
+  };
+
+  main.prototype.searchBox = function searchBox () {
+    return new SearchBox();
   };
 
   return main;

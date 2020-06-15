@@ -7,87 +7,66 @@
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CMontserrat:400,400i,700" media="all" rel="stylesheet" />
   <link href="../styles/site-default.css" rel="stylesheet" />
-  <title> | Working NYC</title>
+  <link href="../styles/site-color-default.css" rel="stylesheet" />
+  <title>Working NYC</title>
 </head>
 
-<body class="bg-blue-d3">
-  <div class="page-min-max sticky top-0 screen-desktop:static">
-    <nav class="o-navigation color-dark-background items-baseline bg-blue-d3" role="navigation">
-      <a class="text-white uppercase text-small no-underline" href="/">
-        <span class="text-blue-l3">Working</span>
-        <span class="text-blue-l2">NYC</span>
-      </a>
-      <nav class="o-navigation__nav nav-inline flex text-align-end">
-        <a class="hidden screen-desktop:inline-block active" href="#">Skills Survey</a>
-        <a class="hidden screen-desktop:inline-block" href="#">Programs</a>
-        <a class="hidden screen-desktop:inline-block" href="#">Events</a>
-        <button aria-controls="aria-c-search-box" aria-expanded="false" class="btn-link screen-desktop:m-0" data-js="toggle">
-          <svg class="icon-wnyc-ui icon-2 hidden screen-tablet:block">
-            <use xlink:href="#icon-wnyc-ui-search"></use>
-          </svg>
-          <span>Search</span>
-        </button>
-        <button aria-controls="aria-c-mobile-nav" aria-expanded="false" class="btn-link screen-desktop:hidden" data-js="toggle">
-          <svg class="icon-wnyc-ui icon-2">
-            <use xlink:href="#icon-wnyc-ui-menu"></use>
-          </svg>
-          <span>Menu</span>
-        </button>
-      </nav>
-    </nav>
-    <div aria-hidden="true" class="o-search-box color-mid-background shadow-up absolute hidden:overflow animated hidden" id="aria-c-search-box">
-      <div class="o-search-box__inner">
-        <div class="wrap">
-          <div class="o-search-box__close">
-            <button aria-controls="aria-c-search-box" aria-expanded="false" class="btn-link" data-js="toggle">
-              <svg class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-x"></use>
+<body class="color bg-scale-2">
+  <nav class="o-navigation bg-scale-2" role="navigation">
+    <a class="o-navigation__logo o-navigation__menu-item text-white uppercase text-small no-underline" href="/">
+      <span class="sr-only">Working N Y C</span>
+      <svg aria-hidden="true" class="hidden screen-tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2">
+        <use xlink:href="#logo-wnyc-standard"></use>
+      </svg>
+      <svg aria-hidden="true" class="screen-tablet:hidden icon-logo-stacked-menu-item fill-white text-blue-l-2 m-auto">
+        <use xlink:href="#logo-wnyc-stacked"></use>
+      </svg>
+    </a>
+    <a class="hidden screen-desktop:inline-block" href="#">Skills Survey</a>
+    <a class="hidden screen-desktop:inline-block" href="#">Programs</a>
+    <a class="hidden screen-desktop:inline-block" href="#">Events</a>
+    <button aria-controls="aria-c-search-box" aria-expanded="false" class="o-navigation__menu-item btn-link screen-desktop:m-0" data-js="search-box">
+      <svg class="o-navigation__menu-icon icon-wnyc-ui">
+        <use xlink:href="#icon-wnyc-ui-search"></use>
+      </svg>
+      <span class="o-navigation__menu-label">Search</span>
+    </button>
+    <button aria-controls="aria-c-mobile-nav" aria-expanded="false" class="o-navigation__menu-item btn-link screen-desktop:hidden" data-js="mobile-nav">
+      <svg class="o-navigation__menu-icon icon-wnyc-ui">
+        <use xlink:href="#icon-wnyc-ui-menu"></use>
+      </svg>
+      <span class="o-navigation__menu-label">Menu</span>
+    </button>
+  </nav>
+  <div aria-hidden="true" class="o-search-box hidden" id="aria-c-search-box">
+    <div class="o-search-box__inner">
+      <div class="wrap">
+        <div class="o-search-box__close">
+          <button aria-controls="aria-c-search-box" aria-expanded="false" class="btn-link" data-js="toggle">
+            <svg class="icon-wnyc-ui icon-2">
+              <use xlink:href="#icon-wnyc-ui-x"></use>
+            </svg>
+            <span>Close</span>
+          </button>
+        </div>
+        <form class="o-search-box__form">
+          <label class="label" for="search-field">Search for programs and occupations</label>
+          <div class="input-search">
+            <input id="search-field" name="s" placeholder="Search" type="text" value="" />
+            <button class="btn-link input-search__submit" type="submit">
+              <svg class="icon-wnyc-ui icon-4">
+                <use xlink:href="#icon-wnyc-ui-search"></use>
               </svg>
-              <span>Close</span>
             </button>
           </div>
-          <form class="o-search-box__form">
-            <label class="label" for="search-field">Search for programs and occupations</label>
-            <div class="input-search">
-              <input id="search-field" name="s" placeholder="Search" type="text" value="" />
-              <button class="btn-link input-search__submit" type="submit">
-                <svg class="icon-wnyc-ui icon-4">
-                  <use xlink:href="#icon-wnyc-ui-search"></use>
-                </svg>
-              </button>
-            </div>
-          </form>
-          <div class="o-search-box__suggestions">
-            <h3 class="o-search-box__suggestions-header">Occupations</h3>
-            <div class="o-search-box__suggestions-body">
-              <div class="o-search-box__suggestions-item">
-                <a class="btn btn-link" href="#">Entrepreneurship</a>
-              </div>
-              <div class="o-search-box__suggestions-item">
-                <a class="btn btn-link" href="#">Software Development</a>
-              </div>
-              <div class="o-search-box__suggestions-item">
-                <a class="btn btn-link" href="#">Computer Technician</a>
-              </div>
-            </div>
-            <a aria-hidden="true" class="btn btn-link btn-next w-full" href="#">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
-              </svg>
-              <span>See all occupations</span>
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
-  <aside aria-hidden="true" class="o-mobile-nav color-mid-background shadow-up hidden" id="aria-c-mobile-nav" role="navigation">
-    <div class="text-end">
+  <aside aria-hidden="true" class="o-mobile-nav color-mid-background hidden" id="aria-c-mobile-nav" role="navigation">
+    <div class="o-mobile-nav__close">
       <button aria-controls="aria-c-mobile-nav" aria-expanded="false" class="btn-link" data-js="toggle">
-        <svg class="icon-wnyc-ui icon-3">
+        <svg class="icon-wnyc-ui icon-2">
           <use xlink:href="#icon-wnyc-ui-x"></use>
         </svg>
         <span>Close</span>
@@ -105,23 +84,25 @@
     </div>
   </aside>
   <div class="page-min-max layout-map flex-row-reverse screen-desktop:layout-columns screen-desktop:flex-row">
-    <header class="layout-map__map layout__column o-banner color-dark-background bg-blue-d3 flex items-center">
+    <header class="layout-map__map layout__column o-banner bg-scale-2 flex items-center">
       <div class="o-banner__inner my-4">
         <h2 class="h3 m-0">
           <span class="font-normal">The Official Resource of</span>
           <a class="text-white uppercase no-underline" href="/">
-            <span class="text-blue-l3">Working</span>
-            <span class="text-blue-l2">NYC</span>
+            <span class="sr-only">Working N Y C</span>
+            <svg aria-hidden="true" class="icon-logo-standard-tagline fill-white text-blue-l-2">
+              <use xlink:href="#logo-wnyc-standard"></use>
+            </svg>
           </a>
         </h2>
       </div>
     </header>
-    <main class="layout-map__sidebar layout__column color-dark-background p-2 screen-desktop:p-3">
-      <article class="c-accordion shadow-up mb-1">
-        <header class="c-accordion__header bg-blue-d3">
-          <button aria-controls="aria-c-technology" aria-expanded="true" class="c-accordion__toggle w-full text-start print:hidden active" data-js="accordion">
-            <span class="c-accordion__heading mt-0" id="aria-lb-technology">
-              <span>Technology</span>
+    <main class="bg-scale-1 layout-map__sidebar layout__column p-2 screen-desktop:p-3">
+      <article class="c-accordion mb-1">
+        <header class="c-accordion__header">
+          <button aria-controls="aria-c-find-work" aria-expanded="true" class="c-accordion__toggle w-full text-start print:hidden active" data-js="accordion">
+            <span class="c-accordion__heading mt-0" id="aria-lb-find-work">
+              <span>Find Work</span>
             </span>
             <span class="c-accordion__toggle-active">
               <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
@@ -137,13 +118,13 @@
             </span>
           </button>
         </header>
-        <div aria-hidden="false" aria-labelledby="aria-lb-technology" class="c-accordion__body color-dark-background bg-blue-d2 print:active hidden:overflow animated active" id="aria-c-technology" role="region">
+        <div aria-hidden="false" aria-labelledby="aria-lb-find-work" class="c-accordion__body bg-scale-3 print:active hidden:overflow animated active" id="aria-c-find-work" role="region">
           <div class="c-accordion__padding">
             <a class="btn btn-secondary btn-next w-full mb-1" href="#">
               <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
                 <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
               </svg>
-              <span>Entrepreneurship</span>
+              <span>Employment</span>
               <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
                 <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
               </svg>
@@ -152,16 +133,7 @@
               <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
                 <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
               </svg>
-              <span>Software Development</span>
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
-              </svg>
-            </a>
-            <a class="btn btn-secondary btn-next w-full mb-1" href="#">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
-              </svg>
-              <span>Computer Technician</span>
+              <span>Internships</span>
               <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
                 <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
               </svg>
@@ -169,11 +141,11 @@
           </div>
         </div>
       </article>
-      <article class="c-accordion shadow-up mb-1">
-        <header class="c-accordion__header bg-blue-d3">
-          <button aria-controls="aria-c-culinary" aria-expanded="false" class="c-accordion__toggle w-full text-start print:hidden " data-js="accordion">
-            <span class="c-accordion__heading mt-0" id="aria-lb-culinary">
-              <span>Culinary</span>
+      <article class="c-accordion mb-1">
+        <header class="c-accordion__header">
+          <button aria-controls="aria-c-get-skills" aria-expanded="false" class="c-accordion__toggle w-full text-start print:hidden " data-js="accordion">
+            <span class="c-accordion__heading mt-0" id="aria-lb-get-skills">
+              <span>Get Skills</span>
             </span>
             <span class="c-accordion__toggle-active">
               <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
@@ -189,13 +161,64 @@
             </span>
           </button>
         </header>
-        <div aria-hidden="true" aria-labelledby="aria-lb-culinary" class="c-accordion__body color-dark-background bg-blue-d2 print:active hidden:overflow animated hidden" id="aria-c-culinary" role="region">
+        <div aria-hidden="true" aria-labelledby="aria-lb-get-skills" class="c-accordion__body bg-scale-3 print:active hidden:overflow animated hidden" id="aria-c-get-skills" role="region">
+          <div class="c-accordion__padding"></div>
+        </div>
+      </article>
+      <article class="c-accordion mb-1">
+        <header class="c-accordion__header">
+          <button aria-controls="aria-c-education" aria-expanded="false" class="c-accordion__toggle w-full text-start print:hidden " data-js="accordion">
+            <span class="c-accordion__heading mt-0" id="aria-lb-education">
+              <span>Education</span>
+            </span>
+            <span class="c-accordion__toggle-active">
+              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+                <use xlink:href="#icon-wnyc-ui-chevron-down"></use>
+              </svg>
+              <span class="sr-only">hide this list</span>
+            </span>
+            <span class="c-accordion__toggle-inactive">
+              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+                <use xlink:href="#icon-wnyc-ui-chevron-up"></use>
+              </svg>
+              <span class="sr-only">show this list</span>
+            </span>
+          </button>
+        </header>
+        <div aria-hidden="true" aria-labelledby="aria-lb-education" class="c-accordion__body bg-scale-3 print:active hidden:overflow animated hidden" id="aria-c-education" role="region">
           <div class="c-accordion__padding">
             <a class="btn btn-secondary btn-next w-full mb-1" href="#">
               <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
                 <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
               </svg>
-              <span>Multiple</span>
+              <span>Adult (Basic &amp; ESOL)</span>
+              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+              </svg>
+            </a>
+            <a class="btn btn-secondary btn-next w-full mb-1" href="#">
+              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+              </svg>
+              <span>College Support</span>
+              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+              </svg>
+            </a>
+            <a class="btn btn-secondary btn-next w-full mb-1" href="#">
+              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+              </svg>
+              <span>Bridge</span>
+              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+              </svg>
+            </a>
+            <a class="btn btn-secondary btn-next w-full mb-1" href="#">
+              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+              </svg>
+              <span>College and Career Prep</span>
               <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
                 <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
               </svg>
@@ -203,11 +226,11 @@
           </div>
         </div>
       </article>
-      <article class="c-accordion shadow-up mb-1">
-        <header class="c-accordion__header bg-blue-d3">
-          <button aria-controls="aria-c-security" aria-expanded="false" class="c-accordion__toggle w-full text-start print:hidden " data-js="accordion">
-            <span class="c-accordion__heading mt-0" id="aria-lb-security">
-              <span>Security</span>
+      <article class="c-accordion mb-1">
+        <header class="c-accordion__header">
+          <button aria-controls="aria-c-careers" aria-expanded="false" class="c-accordion__toggle w-full text-start print:hidden " data-js="accordion">
+            <span class="c-accordion__heading mt-0" id="aria-lb-careers">
+              <span>Careers</span>
             </span>
             <span class="c-accordion__toggle-active">
               <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
@@ -223,285 +246,22 @@
             </span>
           </button>
         </header>
-        <div aria-hidden="true" aria-labelledby="aria-lb-security" class="c-accordion__body color-dark-background bg-blue-d2 print:active hidden:overflow animated hidden" id="aria-c-security" role="region">
+        <div aria-hidden="true" aria-labelledby="aria-lb-careers" class="c-accordion__body bg-scale-3 print:active hidden:overflow animated hidden" id="aria-c-careers" role="region">
           <div class="c-accordion__padding">
             <a class="btn btn-secondary btn-next w-full mb-1" href="#">
               <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
                 <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
               </svg>
-              <span>Security Guard</span>
+              <span>Sectors</span>
               <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
                 <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
               </svg>
             </a>
-          </div>
-        </div>
-      </article>
-      <article class="c-accordion shadow-up mb-1">
-        <header class="c-accordion__header bg-blue-d3">
-          <button aria-controls="aria-c-construction" aria-expanded="false" class="c-accordion__toggle w-full text-start print:hidden " data-js="accordion">
-            <span class="c-accordion__heading mt-0" id="aria-lb-construction">
-              <span>Construction</span>
-            </span>
-            <span class="c-accordion__toggle-active">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-down"></use>
-              </svg>
-              <span class="sr-only">hide this list</span>
-            </span>
-            <span class="c-accordion__toggle-inactive">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-up"></use>
-              </svg>
-              <span class="sr-only">show this list</span>
-            </span>
-          </button>
-        </header>
-        <div aria-hidden="true" aria-labelledby="aria-lb-construction" class="c-accordion__body color-dark-background bg-blue-d2 print:active hidden:overflow animated hidden" id="aria-c-construction" role="region">
-          <div class="c-accordion__padding">
             <a class="btn btn-secondary btn-next w-full mb-1" href="#">
               <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
                 <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
               </svg>
-              <span>Multiple</span>
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </article>
-      <article class="c-accordion shadow-up mb-1">
-        <header class="c-accordion__header bg-blue-d3">
-          <button aria-controls="aria-c-business" aria-expanded="false" class="c-accordion__toggle w-full text-start print:hidden " data-js="accordion">
-            <span class="c-accordion__heading mt-0" id="aria-lb-business">
-              <span>Business</span>
-            </span>
-            <span class="c-accordion__toggle-active">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-down"></use>
-              </svg>
-              <span class="sr-only">hide this list</span>
-            </span>
-            <span class="c-accordion__toggle-inactive">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-up"></use>
-              </svg>
-              <span class="sr-only">show this list</span>
-            </span>
-          </button>
-        </header>
-        <div aria-hidden="true" aria-labelledby="aria-lb-business" class="c-accordion__body color-dark-background bg-blue-d2 print:active hidden:overflow animated hidden" id="aria-c-business" role="region">
-          <div class="c-accordion__padding">
-            <a class="btn btn-secondary btn-next w-full mb-1" href="#">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
-              </svg>
-              <span>Multiple</span>
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </article>
-      <article class="c-accordion shadow-up mb-1">
-        <header class="c-accordion__header bg-blue-d3">
-          <button aria-controls="aria-c-healthcare" aria-expanded="false" class="c-accordion__toggle w-full text-start print:hidden " data-js="accordion">
-            <span class="c-accordion__heading mt-0" id="aria-lb-healthcare">
-              <span>Healthcare</span>
-            </span>
-            <span class="c-accordion__toggle-active">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-down"></use>
-              </svg>
-              <span class="sr-only">hide this list</span>
-            </span>
-            <span class="c-accordion__toggle-inactive">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-up"></use>
-              </svg>
-              <span class="sr-only">show this list</span>
-            </span>
-          </button>
-        </header>
-        <div aria-hidden="true" aria-labelledby="aria-lb-healthcare" class="c-accordion__body color-dark-background bg-blue-d2 print:active hidden:overflow animated hidden" id="aria-c-healthcare" role="region">
-          <div class="c-accordion__padding">
-            <a class="btn btn-secondary btn-next w-full mb-1" href="#">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
-              </svg>
-              <span>Multiple</span>
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </article>
-      <article class="c-accordion shadow-up mb-1">
-        <header class="c-accordion__header bg-blue-d3">
-          <button aria-controls="aria-c-driving" aria-expanded="false" class="c-accordion__toggle w-full text-start print:hidden " data-js="accordion">
-            <span class="c-accordion__heading mt-0" id="aria-lb-driving">
-              <span>Driving</span>
-            </span>
-            <span class="c-accordion__toggle-active">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-down"></use>
-              </svg>
-              <span class="sr-only">hide this list</span>
-            </span>
-            <span class="c-accordion__toggle-inactive">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-up"></use>
-              </svg>
-              <span class="sr-only">show this list</span>
-            </span>
-          </button>
-        </header>
-        <div aria-hidden="true" aria-labelledby="aria-lb-driving" class="c-accordion__body color-dark-background bg-blue-d2 print:active hidden:overflow animated hidden" id="aria-c-driving" role="region">
-          <div class="c-accordion__padding">
-            <a class="btn btn-secondary btn-next w-full mb-1" href="#">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
-              </svg>
-              <span>Multiple</span>
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </article>
-      <article class="c-accordion shadow-up mb-1">
-        <header class="c-accordion__header bg-blue-d3">
-          <button aria-controls="aria-c-theater" aria-expanded="false" class="c-accordion__toggle w-full text-start print:hidden " data-js="accordion">
-            <span class="c-accordion__heading mt-0" id="aria-lb-theater">
-              <span>Theater</span>
-            </span>
-            <span class="c-accordion__toggle-active">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-down"></use>
-              </svg>
-              <span class="sr-only">hide this list</span>
-            </span>
-            <span class="c-accordion__toggle-inactive">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-up"></use>
-              </svg>
-              <span class="sr-only">show this list</span>
-            </span>
-          </button>
-        </header>
-        <div aria-hidden="true" aria-labelledby="aria-lb-theater" class="c-accordion__body color-dark-background bg-blue-d2 print:active hidden:overflow animated hidden" id="aria-c-theater" role="region">
-          <div class="c-accordion__padding">
-            <a class="btn btn-secondary btn-next w-full mb-1" href="#">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
-              </svg>
-              <span>Multiple</span>
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </article>
-      <article class="c-accordion shadow-up mb-1">
-        <header class="c-accordion__header bg-blue-d3">
-          <button aria-controls="aria-c-media" aria-expanded="false" class="c-accordion__toggle w-full text-start print:hidden " data-js="accordion">
-            <span class="c-accordion__heading mt-0" id="aria-lb-media">
-              <span>Media</span>
-            </span>
-            <span class="c-accordion__toggle-active">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-down"></use>
-              </svg>
-              <span class="sr-only">hide this list</span>
-            </span>
-            <span class="c-accordion__toggle-inactive">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-up"></use>
-              </svg>
-              <span class="sr-only">show this list</span>
-            </span>
-          </button>
-        </header>
-        <div aria-hidden="true" aria-labelledby="aria-lb-media" class="c-accordion__body color-dark-background bg-blue-d2 print:active hidden:overflow animated hidden" id="aria-c-media" role="region">
-          <div class="c-accordion__padding">
-            <a class="btn btn-secondary btn-next w-full mb-1" href="#">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
-              </svg>
-              <span>Multiple</span>
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </article>
-      <article class="c-accordion shadow-up mb-1">
-        <header class="c-accordion__header bg-blue-d3">
-          <button aria-controls="aria-c-human-resources" aria-expanded="false" class="c-accordion__toggle w-full text-start print:hidden " data-js="accordion">
-            <span class="c-accordion__heading mt-0" id="aria-lb-human-resources">
-              <span>Human Resources</span>
-            </span>
-            <span class="c-accordion__toggle-active">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-down"></use>
-              </svg>
-              <span class="sr-only">hide this list</span>
-            </span>
-            <span class="c-accordion__toggle-inactive">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-up"></use>
-              </svg>
-              <span class="sr-only">show this list</span>
-            </span>
-          </button>
-        </header>
-        <div aria-hidden="true" aria-labelledby="aria-lb-human-resources" class="c-accordion__body color-dark-background bg-blue-d2 print:active hidden:overflow animated hidden" id="aria-c-human-resources" role="region">
-          <div class="c-accordion__padding">
-            <a class="btn btn-secondary btn-next w-full mb-1" href="#">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
-              </svg>
-              <span>Multiple</span>
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </article>
-      <article class="c-accordion shadow-up mb-1">
-        <header class="c-accordion__header bg-blue-d3">
-          <button aria-controls="aria-c-green-infrastructure" aria-expanded="false" class="c-accordion__toggle w-full text-start print:hidden " data-js="accordion">
-            <span class="c-accordion__heading mt-0" id="aria-lb-green-infrastructure">
-              <span>Green Infrastructure</span>
-            </span>
-            <span class="c-accordion__toggle-active">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-down"></use>
-              </svg>
-              <span class="sr-only">hide this list</span>
-            </span>
-            <span class="c-accordion__toggle-inactive">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-chevron-up"></use>
-              </svg>
-              <span class="sr-only">show this list</span>
-            </span>
-          </button>
-        </header>
-        <div aria-hidden="true" aria-labelledby="aria-lb-green-infrastructure" class="c-accordion__body color-dark-background bg-blue-d2 print:active hidden:overflow animated hidden" id="aria-c-green-infrastructure" role="region">
-          <div class="c-accordion__padding">
-            <a class="btn btn-secondary btn-next w-full mb-1" href="#">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
-              </svg>
-              <span>Multiple</span>
+              <span>Occupations</span>
               <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
                 <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
               </svg>
@@ -511,7 +271,7 @@
       </article>
     </main>
   </div>
-  <footer class="color-dark-background bg-blue-d3 text-small py-3">
+  <footer class="bg-scale-2 text-small py-3">
     <div class="page-min-max wrap">
       <nav class="nav-block screen-tablet:nav-inline mb-2">
         <a class="no-underline" href="#">NYC Opportunity</a>
@@ -534,6 +294,8 @@
     patterns.icons('../svg/icons.svg');
     patterns.toggle();
     patterns.accordion();
+    patterns.mobileNav();
+    patterns.searchBox();
   </script>
 </body>
 
