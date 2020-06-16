@@ -1,0 +1,94 @@
+/**
+ * Footer
+ */
+
+// Dependencies
+@use 'config/grid' as *;
+@use 'config/typography';
+@use 'config/nav';
+@use 'config/dimensions';
+
+// Declarations
+.o-footer {
+  @include typography.set('small');
+  padding: dimensions.$spacing-base;
+}
+
+.o-footer__nav {
+  @include nav.inline();
+  margin-bottom: $grid;
+}
+
+// .o-footer__nav-list {
+//   list-style-type: none;
+
+//   list-style: none;
+//   padding: 0;
+//   margin: 0 0 dimensions.$spacing-base;
+
+//   ul {
+//     list-style: none;
+//     margin: 0 0 (2 * dimensions.$spacing-base);
+//     padding: 0;
+
+//     > li {
+//       margin-bottom: dimensions.$spacing-base;
+//     }
+//   }
+// }
+
+// .o-footer__copyright {
+//   margin: 0 dimensions.$spacing-base;
+// }
+
+// // Desktop
+// @media screen and (min-width: media.$screen-desktop) {
+//   .o-footer__nav-list {
+//     display: flex;
+//   }
+
+//   .o-footer__column-first,
+//   .o-footer__column-middle {
+//     width: 30%;
+//   }
+
+//   .o-footer__column-last {
+//     width: 40%;
+//   }
+// }
+
+// // Tablet
+// @media screen and (min-width: media.$screen-tablet) and (max-width: media.$screen-desktop) {
+//   .o-footer__nav-list {
+//     flex-wrap: wrap;
+//     display: flex;
+//   }
+
+//   .o-footer__column-first {
+//     width: 40%;
+//   }
+
+//   .o-footer__column-middle {
+//     width: 60%;
+//   }
+
+//   .o-footer__column-last {
+//     width: 100%;
+//   }
+// }
+
+// .o-footer__copyright {
+//   align-items: stretch;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: flex-start;
+//   color: $color-grey-dark;
+//   font-size: $font-size-xsmall;
+
+//   .icon-logo-nyc {
+//     width: 90px;
+//     height: 30px;
+//     float: direction.$start;
+//     margin-#{direction.$end}: .5 * dimensions.$spacing-base;
+//   }
+// }

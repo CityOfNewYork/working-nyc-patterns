@@ -37,6 +37,7 @@ npm-debug.log
 !/dist/styles
 
 !/src/objects/banner
+!/src/objects/footer
 !/src/objects/mobile-nav
 !/src/objects/navigation
 !/src/objects/search-box

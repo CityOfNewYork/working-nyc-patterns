@@ -65,22 +65,5 @@
                   svg class='icon-wnyc-ui icon-3' aria-hidden='true'
                     use xlink:href='#icon-wnyc-ui-arrow-right'
 
-  / footer class='bg-scale-2 text-small py-3'
-  /   div class='page-min-max wrap'
-  /     nav class='nav-block screen-tablet:nav-inline mb-2'
-  /       a href='#' class='no-underline' NYC Opportunity
-  /       a href='#' class='uppercase no-underline'
-  /         span class='text-blue-l3' Working&nbsp;
-  /         span class='text-blue-l2' NYC
-  /       a href='#' Skills Survey
-  /       a href='#' Programs
-  /       a href='#' Events
-
-  /     - let date = new Date();
-  /     - let year = date.getFullYear();
-
-  /     p class='small mb-1' © ${year} City of New York. All Rights Reserved.
-  /     p class='small m-0' NYC is a trademark and service mark of the City of New York
-
 = content('script');
   / javascript:

@@ -21,6 +21,8 @@ html lang='en'
   body class='color bg-scale-2'
     = content('content');
 
+    = partial('/objects/footer/footer.slm');
+
     script src='../scripts/polyfills.js'
     script src='../scripts/main.js'
 
