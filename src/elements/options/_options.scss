@@ -1,0 +1,49 @@
+/**
+ * Options
+ */
+
+// Dependencies
+@use 'config/grid' as *;
+@use 'config/options';
+@use 'config/checkboxes';
+@use 'config/screen-readers';
+
+// Declarations
+.option {
+  display: block;
+  margin-bottom: $grid;
+
+  &:last-of-type {
+    margin-bottom: 0
+  }
+
+  > input {
+    @include screen-readers.only()
+  }
+}
+
+.option__base {
+  @include options.base();
+}
+
+.option__graphic {
+  @include options.gr()
+}
+
+.option__label {
+  @include options.label()
+}
+
+input:focus + .option__base {
+  @include options.focused()
+}
+
+// input:hover + .option__base {
+//   @include options.hover()
+// }
+
+input:checked + .option__base {
+  > .option__graphic {
+    @include options.gr-checked()
+  }
+}

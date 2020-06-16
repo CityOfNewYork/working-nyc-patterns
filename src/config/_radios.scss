@@ -3,56 +3,31 @@
 @use 'config/checkboxes';
 @use 'config/direction';
 @use 'config/dimensions';
-@use 'config/color';
-@use 'config/accessibility';
-@use 'config/checkboxes';
+@use 'config/screen-readers';
 
 // Declarations
-// @mixin radio() {
-//   font-size: $font-size-base;
-//   font-weight: $font-weight-bold;
-//   cursor: pointer;
-//   display: block;
-//   padding-#{direction.$start}: 40px;
-//   position: relative;
-//   margin-bottom: dimensions.$spacing-base;
-
-//   &:last-of-type {
-//     margin-bottom: 0
-//   }
-
-//   > input {
-//     @include sr-only()
-//   }
-// }
-
-// @mixin radio-label {
-//   display: flex;
-//   line-height: map-get(map-get($tokens, 'inputs'), 'checkbox-size');
-// }
-
-@mixin radios-btn() {
+@mixin btn() {
   transition: all .2s;
 
-  background: $color-white;
-  border: 1px solid $color-grey-mid;
+  // background: white;
+  border: 1px solid;
   border-radius: 50%;
   content: '';
   display: inline-block;
 
-  width: $input-checkbox-size;
-  height: $input-checkbox-size;
-  min-width: $input-checkbox-size;
+  width: checkboxes.$size;
+  height: checkboxes.$size;
+  min-width: checkboxes.$size;
   margin-#{direction.$end}: .5 * dimensions.$spacing-base;
 }
 
-@mixin radios-btn-checked() {
-  background-color: $color-blue;
-  box-shadow: 0 0 0 2px $color-blue inset, 0 0 0 4px $color-white inset;
+@mixin btn-checked() {
+  background-color: blue;
+  box-shadow: 0 0 0 2px blue inset, 0 0 0 4px white inset;
   border: 0;
 }
 
-@mixin radios-btn-focused() {
+@mixin btn-focused() {
   border: 0;
-  box-shadow: 0 0 0 2px $color-blue inset, 0 0 0 4px $color-white inset;
+  box-shadow: 0 0 0 2px blue inset, 0 0 0 4px white inset;
 }

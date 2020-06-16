@@ -22,9 +22,7 @@
         <use xlink:href="#logo-wnyc-stacked"></use>
       </svg>
     </a>
-    <a class="hidden screen-desktop:inline-block" href="#">Skills Survey</a>
     <a class="hidden screen-desktop:inline-block" href="#">Programs</a>
-    <a class="hidden screen-desktop:inline-block" href="#">Events</a>
     <button aria-controls="aria-c-search-box" aria-expanded="false" class="o-navigation__menu-item btn-link screen-desktop:m-0" data-js="search-box">
       <svg class="o-navigation__menu-icon icon-wnyc-ui">
         <use xlink:href="#icon-wnyc-ui-search"></use>
@@ -63,7 +61,7 @@
       </div>
     </div>
   </div>
-  <aside aria-hidden="true" class="o-mobile-nav color-mid-background hidden" id="aria-c-mobile-nav" role="navigation">
+  <aside aria-hidden="true" class="o-mobile-nav color-mid-background hidden" id="aria-c-mobile-nav">
     <div class="o-mobile-nav__close">
       <button aria-controls="aria-c-mobile-nav" aria-expanded="false" class="btn-link" data-js="toggle">
         <svg class="icon-wnyc-ui icon-2">
@@ -271,20 +269,98 @@
       </article>
     </main>
   </div>
-  <footer class="bg-scale-2 text-small py-3">
-    <div class="page-min-max wrap">
-      <nav class="nav-block screen-tablet:nav-inline mb-2">
-        <a class="no-underline" href="#">NYC Opportunity</a>
-        <a class="uppercase no-underline" href="#">
-          <span class="text-blue-l3">Working&nbsp;</span>
-          <span class="text-blue-l2">NYC</span>
-        </a>
-        <a href="#">Skills Survey</a>
-        <a href="#">Programs</a>
-        <a href="#">Events</a>
-      </nav>
-      <p class="small mb-1">© 2020 City of New York. All Rights Reserved.</p>
-      <p class="small m-0">NYC is a trademark and service mark of the City of New York</p>
+  <footer class="o-footer color-mid-background">
+    <nav class="o-footer__nav"></nav>
+    <div class="color-card mb-4" data-js="newsletter">
+      <div class="color-card__header p-3">Get Updates</div>
+      <form action="https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;id=aa67394696" class="color-card__body p-3" id="mc-embedded-subscribe-form" method="post" novalidate="true" target="_blank">
+        <div class="c-question">
+          <label class="c-question__label">Receive benefits news and reminders about upcoming open enrollment periods.</label>
+          <div class="c-question__container">
+            <input class="w-full" name="EMAIL" placeholder="Email address" required="true" type="email" />
+          </div>
+        </div>
+        <div class="c-question mt-3">
+          <fieldset class="c-question">
+            <legend class="c-question__label">Which borough(s) would you like to recieve updates for?</legend>
+            <div class="c-question__container">
+              <label class="option" for="mce-group[4369]-4369-0">
+                <input id="mce-group[4369]-4369-0" name="group[4369][1]" type="checkbox" value="1" />
+                <span class="option__base">
+                  <svg aria-hidden="true" class="option__graphic">
+                    <use xlink:href="#option-wnyc-check"></use>
+                  </svg>
+                  <span class="option__label">Bronx</span>
+                </span>
+              </label>
+              <label class="option" for="mce-group[4369]-4369-4">
+                <input id="mce-group[4369]-4369-4" name="group[4369][16]" type="checkbox" value="16" />
+                <span class="option__base">
+                  <svg aria-hidden="true" class="option__graphic">
+                    <use xlink:href="#option-wnyc-check"></use>
+                  </svg>
+                  <span class="option__label">Staten Island</span>
+                </span>
+              </label>
+              <label class="option" for="mce-group[4369]-4369-3">
+                <input id="mce-group[4369]-4369-3" name="group[4369][8]" type="checkbox" value="8" />
+                <span class="option__base">
+                  <svg aria-hidden="true" class="option__graphic">
+                    <use xlink:href="#option-wnyc-check"></use>
+                  </svg>
+                  <span class="option__label">Queens</span>
+                </span>
+              </label>
+              <label class="option" for="mce-group[4369]-4369-1">
+                <input id="mce-group[4369]-4369-1" name="group[4369][2]" type="checkbox" value="2" />
+                <span class="option__base">
+                  <svg aria-hidden="true" class="option__graphic">
+                    <use xlink:href="#option-wnyc-check"></use>
+                  </svg>
+                  <span class="option__label">Brooklyn</span>
+                </span>
+              </label>
+              <label class="option" for="mce-group[4369]-4369-2">
+                <input id="mce-group[4369]-4369-2" name="group[4369][4]" type="checkbox" value="4" />
+                <span class="option__base">
+                  <svg aria-hidden="true" class="option__graphic">
+                    <use xlink:href="#option-wnyc-check"></use>
+                  </svg>
+                  <span class="option__label">Manhattan</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+          <input name="b_d04b7b607bddbd338b416fa89_98ff3f3900" tabindex="-1" type="text" value="" />
+        </div>
+        <button class="btn-primary" type="submit">Sign Up</button>
+        <article aria-hidden="true" class="c-alert-box bg-status-warning mt-3 text-small hidden" data-js-newsletter="alert-box-warning">
+          <div class="c-alert-box__icon">
+            <div class="c-alert-box__svg bg-icon-warning"></div>
+          </div>
+          <div class="c-alert-box__body" data-js-newsletter="alert-box__text"></div>
+        </article>
+        <article aria-hidden="true" class="c-alert-box bg-status-success mt-3 text-small hidden" data-js-newsletter="alert-box-success">
+          <div class="c-alert-box__icon">
+            <div class="c-alert-box__svg bg-icon-success"></div>
+          </div>
+          <div class="c-alert-box__body" data-js-newsletter="alert-box__text"></div>
+        </article>
+      </form>
+    </div>
+    <div class="o-footer__copyright mb-4">
+      <svg class="icon icon-logo-full text-blue-dark">
+        <use xlink:href="#icon-logo-full"></use>
+      </svg>
+    </div>
+    <div class="o-footer__copyright">
+      <svg class="icon icon-logo-nyc">
+        <use xlink:href="#icon-logo-nyc"></use>
+      </svg>
+      <p>City of New York, 2018 All Rights Reserved.
+        <br />NYC is a trademark and service mark of the City of New York.</p>
     </div>
   </footer>
   <script src="../scripts/polyfills.js"></script>
@@ -297,6 +373,7 @@
     patterns.mobileNav();
     patterns.searchBox();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>

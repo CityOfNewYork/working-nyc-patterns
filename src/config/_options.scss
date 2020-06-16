@@ -1,27 +1,59 @@
 // Dependencies
-@use 'config/tokens';
+@use 'config/grid' as *;
+@use 'config/tokens' as *;
 @use 'config/checkboxes';
 @use 'config/direction';
-@use 'config/accessibility';
+@use 'config/dimensions';
+@use 'config/typography';
+
+$options: map-get($tokens, 'options');
+$inner-size: map-get($options, 'inner-size');
+$radius: map-get($options, 'radius');
+$border-width: map-get($options, 'border-width');
+$border-style: map-get($options, 'border-style');
+
+$stroke-width: map-get($options, 'stroke-width');
+$stroke-line: map-get($options, 'stroke-line');
 
 // Declarations
-@mixin options() {
-  font-size: $font-size-base;
-  font-weight: $font-weight-bold;
+@mixin base() {
+  @include typography.set('option');
+  line-height: $inner-size;
 
-  // To ensure that the focus state is visible with checkboxes inside
-  // elements with overflow - hidden (ex. c-filter-multi);
-  padding-#{direction.$start}: 6px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  display: flex;
+  padding-#{direction.$start}: ($grid * 2) - $border-width;
+  padding-top: ($grid * 2) - $border-width;
+  padding-bottom: ($grid * 2) - $border-width;
+  border: $border-width $border-style;
+  border-color: transparent;
+  border-radius: $border-width;
 
   cursor: pointer;
-  display: block;
-
-  margin-bottom: dimensions.$spacing-base;
 }
 
-@mixin options-labels {
-  display: flex;
-  line-height: $input-checkbox-size;
+@mixin label() {
+  // display: flex;
+  // line-height: checkboxes.$size;
+}
+
+@mixin gr() {
+  fill: transparent;
+  stroke: transparent;
+
+  stroke-width: $stroke-width;
+  stroke-linecap: $stroke-line;
+  stroke-linejoin: $stroke-line;
+
+  width: $inner-size;
+  height: $inner-size;
+  margin-#{direction.$end}: $grid;
+}
+
+@mixin focused() {
+  border-color: currentColor;
+}
+
+@mixin gr-checked() {
+  fill: currentColor;
+  stroke: black;
 }

@@ -11,8 +11,10 @@
 @use 'config/typography';
 
 // Declaration
-$btn: map-get($tokens, 'buttons');
-$radius: map-get($btn, 'radius');
+$buttons: map-get($tokens, 'buttons');
+$inner-size: map-get($buttons, 'inner-size');
+$radius: map-get($buttons, 'radius');
+$radius-tag: map-get($buttons, 'radius-tag');
 
 @mixin reset() {
   color: inherit;
@@ -34,9 +36,9 @@ $radius: map-get($btn, 'radius');
   @include typography.set('button');
   // line-height: 1;
   // line-height: normal;
-  // line-height: 0;
+  line-height: $inner-size;
 
-  padding: (.6666 * dimensions.$spacing-base) dimensions.$spacing-base;
+  padding: ($grid * 2) ($grid * 3);
 }
 
 @mixin base() {
@@ -117,7 +119,7 @@ $radius: map-get($btn, 'radius');
   font-size: map-get(typography.$font-size, 'small');
   text-transform: uppercase;
   padding: $grid ($grid * 2);
-  border-radius: map-get($btn, 'radius-tag');
+  border-radius: map-get($buttons, 'radius-tag');
 }
 
 @mixin toggle() {

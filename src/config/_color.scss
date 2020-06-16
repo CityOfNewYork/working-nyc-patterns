@@ -1,28 +1,12 @@
-//
-// Variables
-//
-
 // Dependencies
 @use 'config/tokens';
 @use 'config/typography';
 
+// Variables
 $mode: '' !default;
 $colors: map-get(tokens.$tokens, 'colors');
 $shadows: map-get(tokens.$tokens, 'shadows');
 $modes: map-get(tokens.$tokens, 'color-modes');
-
-// Mixins
-@mixin set-scale-vars($mode: 'default') {
-  $combination: map-get($modes, $mode);
-
-  // Set the shadow up token
-  --shadow-up: #{map-get($combination, 'shadow-up')};
-
-  // Set the color scale
-  @each $token, $color in map-get($colors, $mode) {
-    --color-scale-#{$token}: #{$color};
-  }
-}
 
 /**
  * Base mixin for setting text and background colors.
@@ -50,7 +34,7 @@ $modes: map-get(tokens.$tokens, 'color-modes');
 }
 
 /**
- * Mixin for styling hyperlinks within a color combination.
+ * Styling hyperlink colors.
  *
  * @param  $combination  The combination set to use
  */
@@ -72,6 +56,11 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   }
 }
 
+/**
+ * Styling card colors.
+ *
+ * @param  $combination  The combination set to use
+ */
 @mixin card($combination) {
   $token-card-header: map-get($combination, 'card-header');
   $token-card-body: map-get($combination, 'card-body');
@@ -92,6 +81,11 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   }
 }
 
+/**
+ * Modal color styling.
+ *
+ * @param  $combination  The combination set to use
+ */
 @mixin modal($combination) {
   $combination-modal: map-get($combination, 'modal');
 
@@ -104,22 +98,85 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   }
 }
 
-@mixin input {
+/**
+ * Styling input colors.
+ *
+ * @param  $combination  The combination set to use
+ */
+@mixin input() {
   // 'input-text': 'scale-default-1', // and border
   // 'input-background': 'white',
 }
 
-@mixin option() {
-  // 'option-text': 'blue',
-  // 'option-text-hover ': 'blue-l-3',
-  // 'option-text-active': 'blue-l-3',
-  // 'option-background': 'scale-default-2',
-  // 'option-background-hover': 'forumla',
-  // 'option-background-active': 'formula',
-  // 'option-border': 'transparent',
-  // 'option-border-active': 'blue-l-3',
+/**
+ * Styling option colors.
+ *
+ * @param  $combination  The combination set to use
+ */
+@mixin option($combination) {
+  $option: map-get($combination, 'option');
+
+  $token-text: map-get($option, 'text');
+  $token-border: map-get($option, 'border');
+  $token-background: map-get($option, 'background');
+
+  $token-text-hover: map-get($option, 'text-hover');
+  $token-border-hover: map-get($option, 'border-hover');
+  $token-background-hover: map-get($option, 'background-hover');
+
+  $token-text-focus: map-get($option, 'text-focus');
+  $token-border-focus: map-get($option, 'border-focus');
+  $token-background-focus: map-get($option, 'background-focus');
+
+  $token-text-checked: map-get($option, 'text-checked');
+  $token-border-checked: map-get($option, 'border-checked');
+  $token-background-checked: map-get($option, 'background-checked');
+
+  $token-graphic-checkbox: map-get($option, 'graphic-checkbox');
+  $token-graphic-checkbox-checked: map-get($option, 'graphic-checkbox-checked');
+
+  .option > .option__base {
+    color: map-get($colors, $token-text);
+    background-color: map-get($colors, $token-background)
+  }
+
+  .option:hover > .option__base {
+    color: map-get($colors, $token-text-hover);
+    border-color: map-get($colors, $token-border-hover);
+    background-color: map-get($colors, $token-background-hover)
+  }
+
+  input:focus + .option__base {
+    color: map-get($colors, $token-text-focus);
+    border-color: map-get($colors, $token-border-focus);
+    background-color: map-get($colors, $token-background-focus)
+  }
+
+  input:checked + .option__base {
+    color: map-get($colors, $token-text-checked);
+    background-color: map-get($colors, $token-background-checked);
+  }
+
+  /**
+   * Checkbox Graphic
+   */
+
+  input[type='checkbox'] + .option__base > .option__graphic {
+    stroke: map-get($colors, $token-graphic-checkbox);
+  }
+
+  input[type='checkbox']:checked + .option__base > .option__graphic {
+    @debug $token-graphic-checkbox-checked;
+    @debug map-get($colors, $token-graphic-checkbox-checked);
+    stroke: map-get($colors, $token-graphic-checkbox-checked);
+  }
 }
 
+/**
+ * Styling button colors.
+ *
+ * @param  $combination  The combination set to use
+ */
 @mixin button($combination) {
   @each $type, $combo in map-get($combination, 'button') {
     $token-text: map-get($combo, 'text');
@@ -148,12 +205,39 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   }
 }
 
-@mixin code() {
+/**
+ * Styling code colors.
+ *
+ * @param  $combination  The combination set to use
+ */
+@mixin code($combination) {
   // 'code-text': '',
   // 'code-background': '',
   // 'code-border': ''
 }
 
+/**
+ * The mode to set the color scale
+ *
+ * @param  $mode  The combination set to use
+ */
+@mixin set-scale-vars($mode: 'default') {
+  $combination: map-get($modes, $mode);
+
+  // Set the shadow up token
+  --shadow-up: #{map-get($combination, 'shadow-up')};
+
+  // Set the color scale
+  @each $token, $color in map-get($colors, $mode) {
+    --color-scale-#{$token}: #{$color};
+  }
+}
+
+/**
+ * Styling card colors.
+ *
+ * @param  $combination  The combination set to use
+ */
 @mixin combination($mode: 'default') {
   $combination: map-get($modes, $mode);
 
@@ -162,5 +246,6 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   @include card($combination);
   @include modal($combination);
   @include button($combination);
+  @include option($combination);
   // @include ...
 }

@@ -3,56 +3,59 @@
 //
 
 // Dependencies
-@use 'config/tokens';
+@use 'config/tokens' as *;
 @use 'config/direction';
 @use 'config/dimensions';
 @use 'config/color';
 
-@mixin toggles() {
-  font-size: $font-size-base;
-  font-weight: $font-weight-bold;
-
-  transition: all 0.2s;
-  background: $color-white;
-  border: 1px solid $color-grey-mid;
-  border-radius: map-get(map-get($tokens, 'inputs'), 'checkbox-radius');
-  cursor: pointer;
+@mixin base() {
+  // font-size: $font-size-base;
+  // font-weight: $font-weight-bold;
   line-height: 30px;
-  margin-#{direction.$end}: dimensions.$spacing-base * .5;
-  padding: 8px;
-  padding-#{direction.$start}: dimensions.$spacing-base * 1.75;
+
   position: relative;
   display: inline-block;
-}
 
-@mixin toggles-btn() {
-  content: '';
+  background: white;
+  border: 1px solid grey;
+  border-radius: map-get(map-get($tokens, 'inputs'), 'checkbox-radius');
 
-  border: 1px solid $color-grey-mid;
-  border-radius: 50%;
-  box-shadow: 0;
-  margin-top: (map-get(map-get($tokens, 'inputs'), 'toggle-size')/2) * -1;
+  padding: 8px;
+  margin-#{direction.$end}: dimensions.$spacing-base * .5;
+  padding-#{direction.$start}: dimensions.$spacing-base * 1.75;
 
-  width: map-get(map-get($tokens, 'inputs'), 'toggle-size');
-  height: map-get(map-get($tokens, 'inputs'), 'toggle-size');
-
-  position: absolute;
-  top: 50%;
-
-  @if $direction == 'rtl' { right: 8px; } @else { left: 8px; }
-
+  cursor: pointer;
   transition: all 0.2s;
 }
 
-@mixin toggles-btn-toggled() {
-  background: $color-blue;
-  border: 0;
-  box-shadow: 0 0 0 2px $color-blue inset,
-              0 0 0 4px $color-white inset;
-}
+// @mixin btn() {
+//   content: '';
 
-@mixin toggles-btn-focused() {
-  box-shadow: 0 0 0 2px $color-blue inset,
-              0 0 0 4px $color-white inset,
-              0 0 2px 2px $color-blue-bright;
-}
+//   border: 1px solid;
+//   border-radius: 50%;
+//   box-shadow: 0;
+//   margin-top: (map-get(map-get($tokens, 'inputs'), 'toggle-size') / 2) * -1;
+
+//   width: map-get(map-get($tokens, 'inputs'), 'toggle-size');
+//   height: map-get(map-get($tokens, 'inputs'), 'toggle-size');
+
+//   position: absolute;
+//   top: 50%;
+
+//   @if direction.$direction == 'rtl' { right: 8px; } @else { left: 8px; }
+
+//   transition: all 0.2s;
+// }
+
+// @mixin btn-toggled() {
+//   background: blue;
+//   border: 0;
+//   box-shadow: 0 0 0 2px blue inset,
+//               0 0 0 4px white inset;
+// }
+
+// @mixin btn-focused() {
+//   box-shadow: 0 0 0 2px blue inset,
+//               0 0 0 4px white inset,
+//               0 0 2px 2px blueviolet;
+// }

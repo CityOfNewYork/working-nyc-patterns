@@ -60,7 +60,8 @@ module.exports = {
     'h6': 'primary',
     'p': 'secondary',
     'button': 'secondary',
-    'code': 'code'
+    'option': 'secondary',
+    'code': 'code',
   },
   'font-weight': {
     'body': 'normal',
@@ -75,7 +76,8 @@ module.exports = {
     'small': 'normal',
     'button': 'bold',
     'normal': 'normal',
-    'bold': 'bold'
+    'bold': 'bold',
+    'option': 'bold'
   },
   'font-size': {
     'html': '22px',
@@ -89,7 +91,8 @@ module.exports = {
     'h6': '1rem',
     'p': '0.9rem',
     'small': '0.72rem',
-    'button': '1rem'
+    'button': '1rem',
+    'option': 'inherit'
   },
   'line-height': {
     'body': 'normal',
@@ -102,7 +105,8 @@ module.exports = {
     'h6': 'normal',
     'p': '1.5',
     'small': 'normal',
-    'button': 'normal'
+    'button': 'normal',
+    'option': 'normal'
   },
   'type': {
     'margin': '1.250rem 0 0.64rem'
@@ -110,10 +114,6 @@ module.exports = {
   'links': {
     'font-weight': 'bold',
     'text-decoration': 'underline'
-  },
-  'buttons': {
-    'radius': '5px',
-    'radius-tag': '50px'
   },
   'colors': {
     'scale-0': 'var(--color-scale-0)',
@@ -193,13 +193,25 @@ module.exports = {
       'input-text': 'default-1',
       'input-background': 'white',
 
-      'option-text': 'blue',
-      'option-text-hover ': 'blue-l-3',
-      'option-text-active': 'blue-l-3',
-      'option-background': 'scale-2',
-      'option-background-hover': 'scale-0',
-      'option-border': 'transparent',
-      'option-border-active': 'blue-l-3',
+      'option': {
+        'text': 'blue',
+        'background': 'scale-2',
+        'border': 'transparent',
+
+        'text-hover ': 'blue-l-3',
+        'border-hover': 'blue-l-3',
+        'background-hover': 'scale-0',
+
+        'text-focus': 'blue-l-3',
+        'border-focus': 'blue-l-3',
+        'background-focus': 'scale-0',
+
+        'text-checked': 'blue-l-3',
+        'background-checked': 'scale-0',
+
+        'graphic-checkbox': 'tranparent',
+        'graphic-checkbox-checked': 'scale-0'
+      },
 
       'button': {
         'primary': {
@@ -285,10 +297,18 @@ module.exports = {
     'logo-standard-tagline': ['320px', '30px'],
     'logo-stacked-menu-item': ['100px', '32px']
   },
-  'inputs': {
-    'checkbox-radius': '8px',
-    'checkbox-size': '30px',
-    'toggle-size': '24px'
+  'buttons': {
+    'inner-size': '1rem',
+    'radius': '5px',
+    'radius-tag': '50px'
+  },
+  'options': {
+    'inner-size': '1rem',
+    'radius': '5px',
+    'border-style': 'solid',
+    'border-width': '2px',
+    'stroke-width': '2px',
+    'stroke-line': 'round'
   },
   'layouts': {
     'side-bar-width': '18.5rem',

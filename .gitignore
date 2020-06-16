@@ -45,6 +45,7 @@ npm-debug.log
 
 !/src/elements/base
 !/src/elements/buttons
+!/src/elements/checkboxes
 !/src/elements/code
 !/src/elements/forms
 !/src/elements/icons
@@ -53,6 +54,7 @@ npm-debug.log
 !/src/elements/layouts
 !/src/elements/links
 !/src/elements/nav
+!/src/elements/options
 
 !/src/utilities/animate
 !/src/utilities/tailwindcss

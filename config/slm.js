@@ -36,6 +36,41 @@ module.exports = {
       NODE_ENV: process.env.NODE_ENV
     }
   },
+  newsletter: {
+    action: 'https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&id=aa67394696',
+    boroughs: [
+      {
+        'id': 'mce-group[4369]-4369-0',
+        'name': 'group[4369][1]',
+        'value': '1',
+        'label': 'Bronx'
+      },
+      {
+        'id': 'mce-group[4369]-4369-4',
+        'name': 'group[4369][16]',
+        'value': '16',
+        'label': 'Staten Island'
+      },
+      {
+        'id': 'mce-group[4369]-4369-3',
+        'name': 'group[4369][8]',
+        'value': '8',
+        'label': 'Queens'
+      },
+      {
+        'id': 'mce-group[4369]-4369-1',
+        'name': 'group[4369][2]',
+        'value': '2',
+        'label': 'Brooklyn'
+      },
+      {
+        'id': 'mce-group[4369]-4369-2',
+        'name': 'group[4369][4]',
+        'value': '4',
+        'label': 'Manhattan'
+      }
+    ]
+  },
   segments: [
     {
       name: 'Find Work',

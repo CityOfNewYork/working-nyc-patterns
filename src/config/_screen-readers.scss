@@ -2,7 +2,7 @@
 // Config
 //
 
-@mixin sr-only {
+@mixin only {
   border: 0;
   clip: rect(0, 0, 0, 0);
   height: 1px;
@@ -13,7 +13,7 @@
   width: 1px;
 }
 
-@mixin sr-only-focusable {
+@mixin only-focusable {
   &:active,
   &:focus {
     clip: auto;

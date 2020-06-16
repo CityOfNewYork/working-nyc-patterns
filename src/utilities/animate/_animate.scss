@@ -12,6 +12,6 @@ body {
   @include animate.animate();
 }
 
-a, input, textarea, select, path, rect {
+a, input, textarea, select, path, rect, .option__base {
   @include animate.transition();
 }
