@@ -27,23 +27,15 @@
 }
 
 .option__graphic {
-  @include options.gr()
-}
-
-.option__label {
-  @include options.label()
+  @include options.graphic()
 }
 
 input:focus + .option__base {
   @include options.focused()
 }
 
-// input:hover + .option__base {
-//   @include options.hover()
-// }
-
 input:checked + .option__base {
   > .option__graphic {
-    @include options.gr-checked()
+    @include options.graphic-checked()
   }
 }

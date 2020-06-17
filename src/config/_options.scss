@@ -31,12 +31,7 @@ $stroke-line: map-get($options, 'stroke-line');
   cursor: pointer;
 }
 
-@mixin label() {
-  // display: flex;
-  // line-height: checkboxes.$size;
-}
-
-@mixin gr() {
+@mixin graphic() {
   fill: transparent;
   stroke: transparent;
 
@@ -53,7 +48,10 @@ $stroke-line: map-get($options, 'stroke-line');
   border-color: currentColor;
 }
 
-@mixin gr-checked() {
+@mixin graphic-checked() {
   fill: currentColor;
+
+  // This is just a placeholder or default specification.
+  // Checked colors depend on definitions in config/colors.
   stroke: black;
 }

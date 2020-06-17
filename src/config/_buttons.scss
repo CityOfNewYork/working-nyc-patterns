@@ -34,8 +34,6 @@ $radius-tag: map-get($buttons, 'radius-tag');
 
 @mixin normal() {
   @include typography.set('button');
-  // line-height: 1;
-  // line-height: normal;
   line-height: $inner-size;
 
   padding: ($grid * 2) ($grid * 3);
@@ -118,6 +116,7 @@ $radius-tag: map-get($buttons, 'radius-tag');
 @mixin tag() {
   font-size: map-get(typography.$font-size, 'small');
   text-transform: uppercase;
+
   padding: $grid ($grid * 2);
   border-radius: map-get($buttons, 'radius-tag');
 }
@@ -142,6 +141,7 @@ $radius-tag: map-get($buttons, 'radius-tag');
 
 @mixin small() {
   font-size: map-get(typography.$font-size, 'small');
+
   padding: ($grid * 1.5) ($grid * 2);
 }
 
@@ -150,6 +150,7 @@ $radius-tag: map-get($buttons, 'radius-tag');
 
   font-size: inherit;
   text-align: inherit;
+  line-height: normal;
 
   appearance: none;
   border: none;

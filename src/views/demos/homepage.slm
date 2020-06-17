@@ -25,7 +25,6 @@
             svg class='icon-logo-standard-tagline fill-white text-blue-l-2' aria-hidden='true'
               use xlink:href='#logo-wnyc-standard'
 
-
     main class='bg-scale-1 layout-map__sidebar layout__column p-2 screen-desktop:p-3'
       - for (let i in this.segments)
         - let segment = this.segments[i]
