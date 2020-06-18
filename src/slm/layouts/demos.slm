@@ -12,18 +12,18 @@ html lang='en'
     link rel='stylesheet' href='../styles/site-color-default.css'
 
     title
-      - if (this.title != 'Working NYC')
+      - if (this.title != 'WorkingNYC')
         = this.title;
-        = ' | Working NYC';
+        = ' | WorkingNYC';
       - else
         = this.title;
 
   body class='color bg-scale-2'
     = partial('/objects/navigation/navigation.slm');
 
-    = partial('/objects/search-box/search-box.slm');
-
     = partial('/objects/mobile-nav/mobile-nav.slm');
+
+    = partial('/objects/search-box/search-box.slm');
 
     = content('content');
 

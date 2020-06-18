@@ -7,6 +7,7 @@
 @use 'config/media';
 @use 'config/nav';
 @use 'config/typography';
+@use 'config/dimensions';
 
 // Declarations
 .c-utility {
@@ -17,6 +18,6 @@
   padding: ($grid * 2);
 
   @media screen and (min-width: media.$screen-tablet) {
-    padding: ($grid * 3);
+    padding: dimensions.$spacing-base;
   }
 }

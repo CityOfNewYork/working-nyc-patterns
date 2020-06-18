@@ -8,6 +8,7 @@
 @use 'config/code';
 @use 'config/color';
 @use 'config/typography';
+@use 'config/dimensions';
 
 // Declarations
 code, pre, .hljs {
@@ -71,7 +72,7 @@ pre, .hljs {
   max-width: 100%;
   overflow: hidden;
   overflow-x: auto;
-  margin-bottom: $grid * 3;
+  margin-bottom: dimensions.$spacing-base;
 }
 
 .code-block {
@@ -82,7 +83,7 @@ pre, .hljs {
   max-width: 100%;
   overflow: hidden;
   overflow-x: auto;
-  margin-bottom: $grid * 3;
+  margin-bottom: dimensions.$spacing-base;
 
   pre, .hljs {
     color: inherit;
@@ -128,7 +129,7 @@ pre, .hljs {
 // .hljs-comment {
 //   color: $color-grey-mid;
 //   display: inline-block;
-//   padding-top: $grid * 3;
+//   padding-top: dimensions.$spacing-base;
 //   padding-bottom: $grid;
 // }
 

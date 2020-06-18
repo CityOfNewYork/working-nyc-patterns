@@ -11,18 +11,14 @@
 @use 'config/media';
 @use 'config/nav';
 @use 'config/typography';
+@use 'config/z';
 
 // Declarations
 .o-navigation {
   @include typography.set('small');
 
-  padding-top: $grid * 2;
-  padding-bottom: $grid * 2;
-  padding-left: dimensions.$spacing-base;
-  padding-right: dimensions.$spacing-base;
-
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   flex: 1;
 
@@ -32,15 +28,13 @@
   bottom: 0;
 
   @media screen and (max-width: media.$screen-tablet) {
-    z-index: 1010;
+    z-index: map-get(z.$indexes, 'navigation');
   }
 
   @media screen and (min-width: media.$screen-tablet) {
     @include nav.inline();
     padding: dimensions.$spacing-base;
-
     justify-content: flex-end;
-
     position: sticky;
     top: 0;
     box-shadow: none;
@@ -53,22 +47,30 @@
 
 body {
   @media screen and (max-width: media.$screen-tablet) {
-    padding-bottom: 80px;
+    padding-bottom: dimensions.$navigation-height-mobile
   }
 }
 
 .o-navigation__logo {
+  background-color: var(--color-scale-1);
+  min-width: dimensions.$navigation-logo;
+  margin-#{direction.$end}: $grid;
+
   @media screen and (min-width: media.$screen-tablet) {
-    margin-#{direction.$end}: auto !important
+    background-color: transparent;
+    margin-#{direction.$end}: auto !important;
   }
 }
 
 // Mobile Menu Items
 @media screen and (max-width: media.$screen-tablet) {
   .o-navigation__menu-item {
+    padding: $grid * 2;
+
     display: flex;
     flex: 1;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 
     text-align: center;

@@ -29,22 +29,22 @@
               | <a href='#ae'>Brooklyn Workforce Innovations</a> and <a href='#er'>NYC Small Business Services</a>
 
             nav class='c-header__breadcrumbs'
-              a href='#a' Home
+              a Home
 
               svg class='c-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-chevron-right'
 
-              a href='#b' Programs
+              a Programs
 
               svg class='c-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-chevron-right'
 
-              a href='#c' Job Training
+              a Job Training
 
               svg class='c-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-chevron-right'
 
-              a href='#d' Commercial Driver - Red Hook on the Road
+              a Commercial Driver - Red Hook on the Road
 
             p class='small flex items-center'
               svg class='icon-wnyc-ui icon-2 me-1' aria-hidden='true'
@@ -69,14 +69,12 @@
             p This program accepts New York City residents lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
           div class='mt-4'
-            h3 class='h5 color-text-alt'
-              | Schedule
+            h3 class='h5 color-text-alt' Schedule
 
             p 4 weeks, full time. July 1–July 26, 10am–5pm
 
           div class='mt-4'
-            h3 class='h5 color-text-alt'
-              | Next Steps
+            h3 class='h5 color-text-alt' Next Steps
 
             p Fill out the Interest Form to apply. Deadline: June 10
 

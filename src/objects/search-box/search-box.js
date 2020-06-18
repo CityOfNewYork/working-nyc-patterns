@@ -2,8 +2,6 @@
 
 import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
 
-// import MobileNav from 'src/objects/mobile-nav/mobile-nav';
-
 /**
  * The SearchBox module
  *
@@ -18,8 +16,13 @@ class SearchBox {
   constructor() {
     this._toggle = new Toggle({
       selector: SearchBox.selector,
-      before: () => {
+      after: (toggle) => {
+        let el = document.querySelector(SearchBox.selector);
+        let input = document.querySelector(SearchBox.selectors.input);
 
+        if (el.className.includes('active') && input) {
+          input.focus();
+        }
       }
     });
 
@@ -32,5 +35,9 @@ class SearchBox {
  * @type {String}
  */
 SearchBox.selector = '[data-js*="search-box"]';
+
+SearchBox.selectors = {
+  input: '[data-js*="search-box__input"]'
+};
 
 export default SearchBox;

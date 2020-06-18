@@ -36,7 +36,7 @@ $radius-tag: map-get($buttons, 'radius-tag');
   @include typography.set('button');
   line-height: $inner-size;
 
-  padding: ($grid * 2) ($grid * 3);
+  padding: ($grid * 2) dimensions.$spacing-base;
 }
 
 @mixin base() {

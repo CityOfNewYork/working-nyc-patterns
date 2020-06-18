@@ -3,46 +3,24 @@
  */
 
 // Dependencies
+@use 'config/animate';
 @use 'config/color';
 @use 'config/direction';
 @use 'config/dimensions';
 @use 'config/media';
+@use 'config/nav';
 @use 'config/typography';
 
 // Declarations
 .o-mobile-nav {
-  width: 100vw;
-
-  @if direction.$direction == 'rtl' {
-    left: -100vw;
-  } @else {
-    right: -100vw;
-  }
-
   padding: dimensions.$spacing-base;
 
   display: block;
   position: fixed;
   top: 0;
   bottom: 0;
-  transform: translateX(0);
-  transition: transform .2s ease-in;
 
   z-index: 1000;
-
-  &.hidden {
-    box-shadow: none !important
-  }
-
-  @media screen and (min-width: media.$screen-tablet) {
-    width: dimensions.$mobile-menu-width;
-
-    @if direction.$direction == 'rtl' {
-      left: -(dimensions.$mobile-menu-width);
-    } @else {
-      right: -(dimensions.$mobile-menu-width);
-    }
-  }
 
   @media screen and (min-width: media.$screen-desktop) {
     display: none;
@@ -53,39 +31,32 @@
   @include typography.set('small');
 
   text-align: direction.$end;
-  // margin-#{direction.$end}: dimensions.$spacing-base;
-  // margin-bottom: dimensions.$spacing-base;
-  // display: block;
-
-  // @media screen and (min-width: media.$screen-desktop) {
-  //   display: none;
-  // }
-
-  // .icon {
-  //   margin-#{direction.$start}: .3em;
-  //   vertical-align: middle;
-  //   pointer-events: none;
-  // }
 }
 
-.o-mobile-nav__inner {
-  // @if direction.$direction == 'rtl' {
-  //   padding: dimensions.$spacing-base 0 (2 * dimensions.$spacing-base) dimensions.$spacing-base;
-  // } @else {
-  //   padding: dimensions.$spacing-base dimensions.$spacing-base 2*dimensions.$spacing-base 0;
-  // }
-
-  height: 100%;
-  overflow-y: scroll;
+.o-mobile-nav__nav {
+  @include nav.block();
 }
 
-.o-mobile-nav__header {
-  margin-bottom: 0;
+// Animation
+
+.o-mobile-nav {
+  width: dimensions.$mobile-menu-width;
+
+  @if direction.$direction == 'rtl' {
+    left: -(dimensions.$mobile-menu-width);
+  } @else {
+    right: -(dimensions.$mobile-menu-width);
+  }
+
+  @include animate.ease();
 }
 
-// Active state for the mobile navigation
 .o-mobile-nav.hidden {
-  display: initial !important
+  box-shadow: none !important;
+  display: initial !important;
+
+  transform: translateX(0);
+  @include animate.linear();
 }
 
 .o-mobile-nav.active {

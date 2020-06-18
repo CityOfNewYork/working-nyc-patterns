@@ -254,16 +254,30 @@ module.exports = {
   },
   'grid': '8px',
   'dimensions': {
+    'spacing-base': 3, // × grid
     'mobile-menu-width': '80vw',
     'content-width': '1024px',
     'site-max-width': '1440px',
-    'site-min-width': '320px'
+    'site-min-width': '320px',
+    'navigation-logo': '128px',
+    'navigation-height-mobile': '80px', // size is actually determined by padding, etc. this is a reference for other components
+  },
+  'z': {
+    '0': 0,
+    '10': 10,
+    '20': 20,
+    '30': 30,
+    '40': 40,
+    '50': 50,
+    'search-box': 1000,
+    'navigation': 1010,
+    'auto': 'auto',
   },
   'animate': {
-    'ease-in-quint': 'cubic-bezier(0.755, 0.05, 0.855, 0.06)',
-    'ease-out-quint': 'cubic-bezier(0.23, 1, 0.32, 1)',
-    'animate-scss-speed': '0.75s',
-    'animate-timing-function': 'cubic-bezier(0.23, 1, 0.32, 1)'
+    'ease-in': 'cubic-bezier(0.755, 0.05, 0.855, 0.06)', // Quint
+    'ease-out': 'cubic-bezier(0.23, 1, 0.32, 1)', // Quint
+    'duration': '0.5s',
+    'timing-function': 'cubic-bezier(0.23, 1, 0.32, 1)'
   },
   'border-widths': {
     '0': '0',

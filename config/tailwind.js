@@ -55,6 +55,7 @@ module.exports = {
       'print': {'raw': 'print'}
     },
     textColor: tokens.colors,
+    zIndex: tokens.z
   },
   variants: {
     preflight: [],

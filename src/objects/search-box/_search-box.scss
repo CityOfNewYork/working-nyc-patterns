@@ -8,74 +8,95 @@
 @use 'config/dimensions';
 @use 'config/media';
 @use 'config/typography';
+@use 'config/animate';
 
 // Declarations
 .o-search-box {
+  padding: dimensions.$spacing-base;
   left: 0;
   right: 0;
   width: 100%;
   z-index: 1000;
 
   position: fixed !important;
-  height: 100% !important;
 
-  z-index: 1000;
+  @media screen and (max-width: media.$screen-tablet) {
+    bottom: 0;
+    padding-bottom: dimensions.$spacing-base + dimensions.$navigation-height-mobile
+  }
 
   @media screen and (min-width: media.$screen-tablet) {
     position: static;
     height: inherit !important;
   }
-
-  &.hidden {
-    box-shadow: none !important
-  }
-}
-
-.o-search-box__inner {
-  padding: dimensions.$spacing-base 0;
 }
 
 .o-search-box__close {
   @include typography.set('small');
-
   text-align: direction.$end;
 }
 
-.o-search-box__form,
-.o-search-box__suggestions {
+.o-search-box__form {
   padding-top: dimensions.$spacing-base;
-  padding-bottom: dimensions.$spacing-base;
 }
 
-.o-search-box__suggestions-header {
-  margin-bottom: dimensions.$spacing-base;
+// .o-search-box__suggestions-header {
+//   margin-bottom: dimensions.$spacing-base;
+
+//   @media screen and (min-width: media.$screen-tablet) {
+//     display: flex;
+//     align-items: flex-end;
+//     justify-content: space-between;
+//   }
+// }
+
+// .o-search-box__headings {
+//   margin-bottom: 0;
+// }
+
+// .o-search-box__suggestions-body {
+//   padding-bottom: dimensions.$spacing-base;
+
+//   @media screen and (min-width: media.$screen-tablet) {
+//     align-items: flex-start;
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
+// }
+
+// .o-search-box__suggestions-item {
+//   padding-#{direction.$end}: dimensions.$spacing-base;
+//   margin-bottom: dimensions.$spacing-base;
+
+//   @media screen and (min-width: media.$screen-tablet) {
+//     width: 33.33%;
+//   }
+// }
+
+// Animation
+
+.o-search-box {
+  bottom: 100vh;
+  transition-property: transform;
+  @include animate.ease();
+}
+
+.o-search-box.hidden {
+  display: initial !important;
+  box-shadow: none !important;
+
+  transform: translateY(100%);
+  @include animate.linear();
 
   @media screen and (min-width: media.$screen-tablet) {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    transform: translateY(0%)
   }
 }
 
-.o-search-box__headings {
-  margin-bottom: 0;
-}
-
-.o-search-box__suggestions-body {
-  padding-bottom: dimensions.$spacing-base;
+.o-search-box.active {
+  transform: translateY(0);
 
   @media screen and (min-width: media.$screen-tablet) {
-    align-items: flex-start;
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
-.o-search-box__suggestions-item {
-  padding-#{direction.$end}: dimensions.$spacing-base;
-  margin-bottom: dimensions.$spacing-base;
-
-  @media screen and (min-width: media.$screen-tablet) {
-    width: 33.33%;
+    transform: translateY(100%)
   }
 }

@@ -11,7 +11,7 @@
   // background-image: $select-background-image;
   background-position: direction.$end .5rem center;
   background-repeat: no-repeat;
-  background-size: ($grid * 3) ($grid * 3);
+  background-size: dimensions.$spacing-base dimensions.$spacing-base;
   padding: .75 * dimensions.$spacing-base;
   padding-#{direction.$end}: 2.8rem;
 

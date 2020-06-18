@@ -326,8 +326,6 @@ $topbar-height: map-get($layouts, 'topbar-height');
     > .layout__column:first-child {
       margin-left: auto;
       margin-right: auto;
-      // padding-top: $grid * 4;
-      // padding-bottom: $grid * 4;
       max-width: dimensions.$content-width + (dimensions.$spacing-base * 2)
     }
   }

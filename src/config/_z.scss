@@ -1,0 +1,4 @@
+
+@use 'config/tokens' as *;
+
+$indexes: map-get($tokens, 'z');
