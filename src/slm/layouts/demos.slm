@@ -19,9 +19,15 @@ html lang='en'
         = this.title;
 
   body class='color bg-scale-2'
+    = partial('/objects/navigation/navigation.slm');
+
+    = partial('/objects/search-box/search-box.slm');
+
+    = partial('/objects/mobile-nav/mobile-nav.slm');
+
     = content('content');
 
-    = partial('/objects/footer/footer.slm');
+    / = partial('/objects/footer/footer.slm');
 
     script src='../scripts/polyfills.js'
     script src='../scripts/main.js'

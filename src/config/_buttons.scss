@@ -142,7 +142,7 @@ $radius-tag: map-get($buttons, 'radius-tag');
 @mixin small() {
   font-size: map-get(typography.$font-size, 'small');
 
-  padding: ($grid * 1.5) ($grid * 2);
+  padding: ($grid / 2) ($grid * 1.5);
 }
 
 @mixin link() {

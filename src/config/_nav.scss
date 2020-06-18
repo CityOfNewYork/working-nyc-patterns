@@ -20,13 +20,13 @@
 
 @mixin inline($variant: '') {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  // margin: 0;
+  // padding: 0;
 
   a, button {
     display: inline-flex;
     border-bottom: none;
-    padding: initial;
+    // padding: initial;
     margin-#{direction.$end}: 1em;
 
     &:first-child {

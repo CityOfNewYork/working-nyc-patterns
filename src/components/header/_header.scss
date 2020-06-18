@@ -1,0 +1,97 @@
+/**
+ * Header
+ */
+
+// Dependencies
+@use 'config/grid' as *;
+@use 'config/dimensions';
+@use 'config/direction';
+@use 'config/media';
+@use 'config/nav';
+@use 'config/typography';
+
+$icon-height: dimensions.$spacing-base * 2;
+$icon-width: dimensions.$spacing-base * 2;
+
+// Declarations
+.c-header {
+  padding-top: $grid * 4;
+  padding-bottom: $grid * 4;
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: media.$screen-mobile) {
+    align-items: flex-start;
+    display: flex;
+  }
+
+  @media screen and (min-width: media.$screen-tablet) {
+    padding: dimensions.$spacing-base;
+
+    padding-top: $grid * 7;
+    padding-bottom: $grid * 9;
+  }
+}
+
+.c-header__icon {
+  margin-bottom: dimensions.$spacing-base / 3;
+
+  @media screen and (min-width: media.$screen-mobile) {
+    margin-#{direction.$end}: dimensions.$spacing-base;
+    width: $icon-width;
+
+    .c-header__label {
+      display: none;
+    }
+  }
+}
+
+.c-header__svg {
+  width: $icon-width;
+  height: $icon-height;
+}
+
+.c-header__title {
+  @include typography.set('h2');
+  margin-top: -12px;
+}
+
+.c-header__subtitle {
+  @include typography.set('h4');
+  margin-top: 0;
+  margin-bottom: typography.$margin-bottom;
+}
+
+.c-header__supplementary {
+  @include typography.set('small');
+  margin-top: 0;
+  margin-bottom: typography.$margin-bottom;
+}
+
+.c-header__breadcrumbs {
+  @include typography.set('small');
+  margin-top: 0;
+  margin-bottom: typography.$margin-bottom;
+}
+
+.c-header__breadcrumbs-chevron {
+  width: $grid * 2;
+  height: $grid * 2;
+  vertical-align: middle;
+}
+
+.c-header__tags {
+  @media screen and (min-width: media.$screen-desktop) {
+    margin-#{direction.$start}: -($grid * 2);
+  }
+}
+
+.c-header__utility {
+  @include typography.set('small');
+  @include nav.inline();
+  display: flex;
+  justify-content: end;
+  // margin-bottom: $grid * 4;
+}

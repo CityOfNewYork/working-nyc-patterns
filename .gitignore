@@ -43,6 +43,7 @@ npm-debug.log
 !/src/objects/search-box
 
 !/src/components/accordion
+!/src/components/header
 
 !/src/elements/base
 !/src/elements/buttons

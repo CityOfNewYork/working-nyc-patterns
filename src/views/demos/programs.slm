@@ -1,0 +1,114 @@
+/ Layout
+= extend('/slm/layouts/demos');
+
+/ Content blocks
+= content('head');
+  - this.title = 'Programs'
+  = mixin('head');
+
+= content('content');
+  div class='bg-scale-2'
+    main id='content' class='bg-scale-1'
+      div class='layout-content sticky top-0 bg-scale-1 z-10'
+        div class='page-min-max'
+          div class='c-header__utility py-2 screen-tablet:py-3 wrap'
+            a class='btn-link me-auto'
+              svg class='icon-2 icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-chevron-left'
+
+              span Back
+
+            a class='btn btn-small btn-tertiary'
+              | Apply
+
+            a class='btn-link'
+              svg class='icon-2 icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-bookmark'
+
+              span Save
+
+            a class='btn-link'
+              svg class='icon-2 icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-share-2'
+
+              span Share
+
+      header class='layout-content'
+        div class='c-header page-min-max wrap'
+          / div class='c-header__icon'
+          /   a href='#'
+          /     svg class='c-header__svg' aria-hidden='true'
+          /       use xlink:href='#category-wnyc-construction'
+
+          div
+            h1 class='c-header__title'
+              | Commercial Driver <br>
+              | Red Hook on the Road
+
+            h2 class='c-header__subtitle color-text-alt'
+              | <a href='#ae'>Brooklyn Workforce Innovations</a> and <a href='#er'>NYC Small Business Services</a>
+
+            nav class='c-header__breadcrumbs'
+              a href='#a' Home
+
+              svg class='c-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-chevron-right'
+
+              a href='#b' Programs
+
+              svg class='c-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-chevron-right'
+
+              a href='#c' Job Training
+
+              svg class='c-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-chevron-right'
+
+              a href='#d' Commercial Driver - Red Hook on the Road
+
+            p class='small flex items-center'
+              svg class='icon-wnyc-ui icon-2 me-1' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-info'
+
+              | Last updated 2 days ago
+
+      section class='bg-scale-2 layout-content'
+        div class='py-4 page-min-max wrap'
+          blockquote class='pt-4 color-text-alt'
+            span class='blockquote__mark' aria-hidden='true' —
+            p Through this program students prepare to work as commercial drivers.
+
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+          div class='mt-4'
+            h3 class='h5 color-text-alt'
+              | Eligibility
+
+            a href='#' class='btn btn-tag btn-secondary mb-1' Adults 18+
+
+            p This program accepts New York City residents lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+          div class='mt-4'
+            h3 class='h5 color-text-alt'
+              | Schedule
+
+            p 4 weeks, full time. July 1–July 26, 10am–5pm
+
+          div class='mt-4'
+            h3 class='h5 color-text-alt'
+              | Next Steps
+
+            p Fill out the Interest Form to apply. Deadline: June 10
+
+      section class='bg-scale-1 layout-content'
+        div class='py-4 page-min-max wrap'
+
+          a href='#' class='btn btn-primary mb-1' Learn More
+
+          a href='#' class='btn btn-primary mb-1' Apply Online
+
+          a href='#' class='btn btn-primary mb-1' Call
+
+
+= content('script');
+  / javascript:

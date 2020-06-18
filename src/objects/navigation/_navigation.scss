@@ -3,6 +3,7 @@
  */
 
 // Dependencies
+@use 'config/tokens' as *;
 @use 'config/grid' as *;
 @use 'config/color';
 @use 'config/direction';
@@ -15,13 +16,17 @@
 .o-navigation {
   @include typography.set('small');
 
-  padding: dimensions.$spacing-base;
+  padding-top: $grid * 2;
+  padding-bottom: $grid * 2;
+  padding-left: dimensions.$spacing-base;
+  padding-right: dimensions.$spacing-base;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex: 1;
 
+  box-shadow: var(--shadow-up);
   position: fixed;
   width: 100%;
   bottom: 0;
@@ -38,10 +43,17 @@
 
     position: sticky;
     top: 0;
+    box-shadow: none;
   }
 
   @media screen and (min-width: media.$screen-desktop) {
     position: static;
+  }
+}
+
+body {
+  @media screen and (max-width: media.$screen-tablet) {
+    padding-bottom: 80px;
   }
 }
 

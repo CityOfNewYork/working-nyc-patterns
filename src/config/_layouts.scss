@@ -1,4 +1,5 @@
 // Dependencies
+@use 'config/grid' as *;
 @use 'config/tokens';
 @use 'config/dimensions';
 @use 'config/direction';
@@ -325,8 +326,8 @@ $topbar-height: map-get($layouts, 'topbar-height');
     > .layout__column:first-child {
       margin-left: auto;
       margin-right: auto;
-      padding-top: (1.5 * dimensions.$spacing-base);
-      padding-bottom: (1.5 * dimensions.$spacing-base);
+      // padding-top: $grid * 4;
+      // padding-bottom: $grid * 4;
       max-width: dimensions.$content-width + (dimensions.$spacing-base * 2)
     }
   }

@@ -166,8 +166,6 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   }
 
   input[type='checkbox']:checked + .option__base > .option__graphic {
-    @debug $token-graphic-checkbox-checked;
-    @debug map-get($colors, $token-graphic-checkbox-checked);
     stroke: map-get($colors, $token-graphic-checkbox-checked);
   }
 }

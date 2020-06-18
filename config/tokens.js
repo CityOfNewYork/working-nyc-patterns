@@ -69,7 +69,7 @@ module.exports = {
     'h2': 'bold',
     'h3': 'bold',
     'blockquote': 'normal',
-    'h4': 'bold',
+    'h4': 'normal',
     'h5': 'bold',
     'h6': 'italic',
     'p': 'normal',
@@ -80,7 +80,6 @@ module.exports = {
     'option': 'bold'
   },
   'font-size': {
-    'html': '22px',
     'body': '1rem',
     'h1': '3rem',
     'h2': '2.5rem',
@@ -108,8 +107,12 @@ module.exports = {
     'button': 'normal',
     'option': 'normal'
   },
-  'type': {
-    'margin': '1.250rem 0 0.64rem'
+  'typography': {
+    'desktop': '22px',
+    'tablet': '20px',
+    'mobile': '18px',
+    'sm-mobile': '16px',
+    'margin-bottom': '1rem'
   },
   'links': {
     'font-weight': 'bold',
@@ -252,7 +255,7 @@ module.exports = {
   'grid': '8px',
   'dimensions': {
     'mobile-menu-width': '80vw',
-    'content-width': '800px',
+    'content-width': '1024px',
     'site-max-width': '1440px',
     'site-min-width': '320px'
   },
@@ -293,6 +296,10 @@ module.exports = {
     '2': ['16px', '16px'],
     '3': ['24px', '24px'],
     '4': ['32px', '32px'],
+    '5': ['40px', '40px'],
+    '6': ['48px', '48px'],
+    '7': ['56px', '56px'],
+    '8': ['64px', '64px'],
     'logo-standard-menu-item': ['130px', '18px'],
     'logo-standard-tagline': ['320px', '30px'],
     'logo-stacked-menu-item': ['100px', '32px']

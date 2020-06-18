@@ -5,8 +5,8 @@
 @use 'config/tokens';
 @use 'config/language';
 
-$type: map-get(tokens.$tokens, 'type');
-$margin: map-get($type, 'margin');
+$typography: map-get(tokens.$tokens, 'typography');
+$margin-bottom: map-get($typography, 'margin-bottom');
 
 $font: map-get(tokens.$tokens, 'font');
 $font-family: map-get(tokens.$tokens, 'font-family');
@@ -14,7 +14,7 @@ $font-size: map-get(tokens.$tokens, 'font-size');
 $font-weight: map-get(tokens.$tokens, 'font-weight');
 $line-height: map-get(tokens.$tokens, 'line-height');
 
-@mixin font-family($key: 'html') {
+@mixin font-family($key: 'body') {
   $font-family-key: '#{map-get($font, $key)}-#{language.$language}';
 
   @if language.$language == '' {
@@ -24,7 +24,7 @@ $line-height: map-get(tokens.$tokens, 'line-height');
   font-family: map-get($font-family, $font-family-key);
 }
 
-@mixin set($key: 'html') {
+@mixin set($key: 'body') {
   @include font-family($key);
 
   font-size: map-get($font-size, $key);

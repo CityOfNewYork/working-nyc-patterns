@@ -2,17 +2,29 @@
  * Typography
  */
 
-@use 'config/tokens';
-@use 'config/grid';
-@use 'config/language';
-@use 'config/typography';
+@use 'config/grid' as *;
 @use 'config/direction';
+@use 'config/language';
+@use 'config/media';
+@use 'config/typography';
 
 html {
-  @include typography.set('html');
+  font-size: map-get(typography.$typography, 'sm-mobile');
 
   @if direction.$direction == 'rtl' {
     direction: rtl;
+  }
+
+  @media screen and (min-width: media.$screen-sm-mobile) {
+    font-size: map-get(typography.$typography, 'mobile');
+  }
+
+  @media screen and (min-width: media.$screen-tablet) {
+    font-size: map-get(typography.$typography, 'tablet');
+  }
+
+  @media screen and (min-width: media.$screen-desktop) {
+    font-size: map-get(typography.$typography, 'desktop');
   }
 }
 
@@ -21,39 +33,33 @@ body {
 }
 
 h1, .h1 {
-  @include typography.set('h1') {
-    margin: typography.$margin;
-  };
+  @include typography.set('h1');
+  margin-bottom: typography.$margin-bottom;
 }
 
 h2, .h2 {
-  @include typography.set('h2') {
-    margin: typography.$margin;
-  };
+  @include typography.set('h2');
+  margin-bottom: typography.$margin-bottom;
 }
 
 h3, .h3 {
-  @include typography.set('h3') {
-    margin: typography.$margin;
-  };
+  @include typography.set('h3');
+  margin-bottom: typography.$margin-bottom;
 }
 
 h4, .h4 {
-  @include typography.set('h4') {
-    margin: typography.$margin;
-  };
+  @include typography.set('h4');
+  margin-bottom: typography.$margin-bottom;
 }
 
 h5, .h5 {
-  @include typography.set('h5') {
-    margin: typography.$margin;
-  };
+  @include typography.set('h5');
+  margin-bottom: typography.$margin-bottom;
 }
 
 h6, .h6 {
-  @include typography.set('h6') {
-    margin: typography.$margin;
-  };
+  @include typography.set('h6');
+  margin-bottom: typography.$margin-bottom;
 }
 
 h1, .h1,
@@ -62,6 +68,8 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
+  margin-top: 0;
+
   a {
     font-weight: inherit;
     text-decoration: inherit;
@@ -73,25 +81,38 @@ small, .small {
 }
 
 blockquote, .blockquote {
-  @include typography.set('blockquote') {
-    margin: typography.$margin;
-  };
+  @include typography.set('blockquote');
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: typography.$margin-bottom;
+
+  p {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+
+    @media screen and (min-width: media.$screen-tablet) {
+      padding-#{direction.$start}: $grid * 9;
+    }
+  }
 
   footer {
     font-size: 65%;
     font-weight: normal;
-    padding-left: grid.$grid * 3;
+    padding-left: $grid * 4;
   }
 
   cite {
     font-style: normal;
   }
 
-  p {
-    border-left: grid.$grid solid;
-    border-color: inherit;
-    padding-left: grid.$grid * 2;
-    margin-bottom: 0.64em;
+  .blockquote__mark {
+    position: absolute;
+    display: none;
+
+    @media screen and (min-width: media.$screen-tablet) {
+      display: block;
+    }
   }
 }
 
@@ -100,7 +121,8 @@ p, li {
 }
 
 p, ul, ol, li {
-  margin: typography.$margin;
+  margin-top: 0;
+  margin-bottom: typography.$margin-bottom;
 }
 
 // .font-primary {
