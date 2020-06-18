@@ -85,7 +85,7 @@
     <main class="bg-scale-1" id="content">
       <div class="layout-content sticky top-0 bg-scale-1 z-10">
         <div class="page-min-max">
-          <div class="c-header__utility py-2 screen-tablet:py-3 wrap">
+          <nav class="c-utility wrap">
             <a class="btn-link me-auto">
               <svg aria-hidden="true" class="icon-2 icon-wnyc-ui">
                 <use xlink:href="#icon-wnyc-ui-chevron-left"></use>
@@ -105,7 +105,7 @@
               </svg>
               <span>Share</span>
             </a>
-          </div>
+          </nav>
         </div>
       </div>
       <header class="layout-content">
@@ -162,10 +162,42 @@
         </div>
       </section>
       <section class="bg-scale-1 layout-content">
-        <div class="py-4 page-min-max wrap">
-          <a class="btn btn-primary mb-1" href="#">Learn More</a>
-          <a class="btn btn-primary mb-1" href="#">Apply Online</a>
-          <a class="btn btn-primary mb-1" href="#">Call</a>
+        <nav class="py-2 page-min-max wrap screen-tablet:layout-three-columns-gutter">
+          <a class="btn btn-secondary btn-next mb-1 w-full" href="#">
+            <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+              <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+            </svg>Learn More<svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+              <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+            </svg>
+          </a>
+          <a class="btn btn-secondary btn-next mb-1 w-full" href="#">
+            <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+              <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+            </svg>Apply Online<svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+              <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+            </svg>
+          </a>
+          <a class="btn btn-secondary btn-next mb-1 w-full" href="#">
+            <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+              <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+            </svg>Call<svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+              <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+            </svg>
+          </a>
+        </nav>
+      </section>
+      <section class="bg-scale-1 layout-content">
+        <div class="page-min-max">
+          <div class="text-center color-text-alt mb-1">—</div>
+          <nav class="py-2 wrap">
+            <a class="btn btn-primary btn-next w-full" href="#">
+              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+              </svg>More programs at Brooklyn Workforce Innovations<svg aria-hidden="true" class="icon-wnyc-ui icon-3">
+                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+              </svg>
+            </a>
+          </nav>
         </div>
       </section>
     </main>
@@ -180,6 +212,7 @@
     patterns.mobileNav();
     patterns.searchBox();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>

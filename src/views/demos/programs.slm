@@ -11,27 +11,7 @@
     main id='content' class='bg-scale-1'
       div class='layout-content sticky top-0 bg-scale-1 z-10'
         div class='page-min-max'
-          div class='c-header__utility py-2 screen-tablet:py-3 wrap'
-            a class='btn-link me-auto'
-              svg class='icon-2 icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#icon-wnyc-ui-chevron-left'
-
-              span Back
-
-            a class='btn btn-small btn-tertiary'
-              | Apply
-
-            a class='btn-link'
-              svg class='icon-2 icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#icon-wnyc-ui-bookmark'
-
-              span Save
-
-            a class='btn-link'
-              svg class='icon-2 icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#icon-wnyc-ui-share-2'
-
-              span Share
+          = partial('/components/utility/utility.slm');
 
       header class='layout-content'
         div class='c-header page-min-max wrap'
@@ -101,14 +81,47 @@
             p Fill out the Interest Form to apply. Deadline: June 10
 
       section class='bg-scale-1 layout-content'
-        div class='py-4 page-min-max wrap'
+        nav class='py-2 page-min-max wrap screen-tablet:layout-three-columns-gutter'
+          a href='#' class='btn btn-secondary btn-next mb-1 w-full'
+            svg class='icon-wnyc-ui icon-3' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-left'
 
-          a href='#' class='btn btn-primary mb-1' Learn More
+            | Learn More
 
-          a href='#' class='btn btn-primary mb-1' Apply Online
+            svg class='icon-wnyc-ui icon-3' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-right'
 
-          a href='#' class='btn btn-primary mb-1' Call
+          a href='#' class='btn btn-secondary btn-next mb-1 w-full'
+            svg class='icon-wnyc-ui icon-3' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-left'
 
+            | Apply Online
+
+            svg class='icon-wnyc-ui icon-3' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-right'
+
+          a href='#' class='btn btn-secondary btn-next mb-1 w-full'
+            svg class='icon-wnyc-ui icon-3' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-left'
+
+            | Call
+
+            svg class='icon-wnyc-ui icon-3' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-right'
+
+      section class='bg-scale-1 layout-content'
+        div class='page-min-max'
+          div class='text-center color-text-alt mb-1' —
+
+          nav class='py-2 wrap'
+            a href='#' class='btn btn-primary btn-next w-full'
+              svg class='icon-wnyc-ui icon-3' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-arrow-left'
+
+              | More programs at Brooklyn Workforce Innovations
+
+              svg class='icon-wnyc-ui icon-3' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-arrow-right'
 
 = content('script');
   / javascript:

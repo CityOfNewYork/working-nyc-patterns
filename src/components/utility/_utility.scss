@@ -1,0 +1,22 @@
+/**
+ * Utility
+ */
+
+// Dependencies
+@use 'config/grid' as *;
+@use 'config/media';
+@use 'config/nav';
+@use 'config/typography';
+
+// Declarations
+.c-utility {
+  @include typography.set('small');
+  @include nav.inline();
+  display: flex;
+  justify-content: end;
+  padding: ($grid * 2);
+
+  @media screen and (min-width: media.$screen-tablet) {
+    padding: ($grid * 3);
+  }
+}

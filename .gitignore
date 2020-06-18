@@ -44,6 +44,7 @@ npm-debug.log
 
 !/src/components/accordion
 !/src/components/header
+!/src/components/utility
 
 !/src/elements/base
 !/src/elements/buttons
