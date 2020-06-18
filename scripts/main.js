@@ -799,7 +799,14 @@ var WorkingNyc = (function () {
   var SearchBox = function SearchBox() {
     this._toggle = new Toggle({
       selector: SearchBox.selector,
-      before: function () {}
+      after: function (toggle) {
+        var el = document.querySelector(SearchBox.selector);
+        var input = document.querySelector(SearchBox.selectors.input);
+
+        if (el.className.includes('active') && input) {
+          input.focus();
+        }
+      }
     });
     return this;
   };
@@ -810,6 +817,9 @@ var WorkingNyc = (function () {
 
 
   SearchBox.selector = '[data-js*="search-box"]';
+  SearchBox.selectors = {
+    input: '[data-js*="search-box__input"]'
+  };
 
   // import Newsletter from '../objects/newsletter/newsletter';
   // import TextController from '../objects/text-controller/text-controller';
