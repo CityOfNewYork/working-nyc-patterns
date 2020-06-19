@@ -22,7 +22,7 @@ npm-debug.log
 /src/components/**/*.slm
 /src/utilities/**/*.slm
 
-/src/views/*
+# /src/views/*
 /src/slm/layouts/*
 /src/slm/partials/*
 /src/slm/section/*
@@ -61,6 +61,7 @@ npm-debug.log
 
 !/src/utilities/animate
 !/src/utilities/tailwindcss
+!/src/utilities/clearfix
 !/src/utilities/color
 !/src/utilities/margin
 !/src/utilities/padding

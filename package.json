@@ -17,7 +17,28 @@
   "bugs": {
     "url": "https://github.com/cityofnewyork/nyco-wnyc-patterns/issues"
   },
-  "homepage": "https://github.com/cityofnewyork/nyco-wnyc-patterns#readme",
+  "cdn": {
+    "url": "https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-wnyc-patterns",
+    "source": "https://github.com/cityofnewyork/nyco-wnyc-patterns",
+    "archive": "https://github.com/cityofnewyork/nyco-wnyc-patterns/archive",
+    "npm": "https://www.npmjs.com/package/@nycopportunity/working-patterns",
+    "figma": "https://www.figma.com/file/CH7ZOCW55SgsDnsTj3UrTi/Patterns",
+    "styles": "/dist/styles/site-default.css",
+    "tailwindcss": "/dist/styles/tailwindcss.css",
+    "tailwindsass": "/dist/styles/_tailwindcss.scss",
+    "scripts": "/dist/scripts/main.js",
+    "polyfills": "/dist/scripts/polyfills.js",
+    "svg": "/dist/svg/icons.svg"
+  },
+  "src": {
+    "styles": "/src/scss/_imports.scss",
+    "scripts": "/src/js/main.js",
+    "polyfills": "/src/js/polyfills.js"
+  },
+  "instantiations": {
+    "scripts": "WorkingNyc"
+  },
+  "homepage": "https://github.com/cityofnewyork/nyco-wnyc-patterns",
   "main": "npm start",
   "scripts": {
     "start": "cross-env NODE_ENV=development cross-env PORT=7000 concurrently \"pttrn default -w\" \"pttrn serve -w\" -p \"none\"",
