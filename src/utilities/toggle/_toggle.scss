@@ -28,6 +28,10 @@
 
 // Declarations
 @mixin toggles($variant: '') {
+  .hidden {
+    box-shadow: none !important;
+  }
+
   /**
    * Hidden by overflow
     */

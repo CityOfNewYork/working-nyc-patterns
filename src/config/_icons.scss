@@ -3,9 +3,11 @@
 @use 'config/color';
 @use 'config/dimensions';
 
+$sizes: map-get($tokens, 'icons-sizes');
+
 // Declarations
 @mixin sizes($variant: '') {
-  @each $key, $var in map-get($tokens, 'icons-sizes') {
+  @each $key, $var in $sizes {
     .#{$variant}icon-#{$key} {
       width: nth($var, 1) !important;
       height: nth($var, 2) !important;

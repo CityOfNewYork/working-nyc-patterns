@@ -3,7 +3,7 @@
 div#aria-c-search-box class='o-search-box hidden' aria-hidden='true'
   div class='o-search-box__close'
     button class='btn-link' data-js='toggle' aria-controls='aria-c-search-box' aria-expanded='false'
-      svg class='icon-wnyc-ui icon-2'
+      svg class='icon-wnyc-ui'
         use xlink:href='#icon-wnyc-ui-x'
 
       span Close

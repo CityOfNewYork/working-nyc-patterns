@@ -33,13 +33,13 @@
                 span = segment.name
 
               span class='c-accordion__toggle-active'
-                svg class='icon-wnyc-ui icon-3' aria-hidden='true'
+                svg class='icon-wnyc-ui' aria-hidden='true'
                   use xlink:href='#icon-wnyc-ui-chevron-down'
 
                 span class='sr-only' hide this list
 
               span class='c-accordion__toggle-inactive'
-                svg class='icon-wnyc-ui icon-3' aria-hidden='true'
+                svg class='icon-wnyc-ui' aria-hidden='true'
                   use xlink:href='#icon-wnyc-ui-chevron-up'
 
                 span class='sr-only' show this list
@@ -50,12 +50,12 @@
                 - let subSegment = segment.segments[y]
 
                 a href='#' class='btn btn-secondary btn-next w-full mb-1'
-                  svg class='icon-wnyc-ui icon-3' aria-hidden='true'
+                  svg class='icon-wnyc-ui' aria-hidden='true'
                     use xlink:href='#icon-wnyc-ui-arrow-left'
 
                   span = subSegment.name
 
-                  svg class='icon-wnyc-ui icon-3' aria-hidden='true'
+                  svg class='icon-wnyc-ui' aria-hidden='true'
                     use xlink:href='#icon-wnyc-ui-arrow-right'
 
 = content('script');

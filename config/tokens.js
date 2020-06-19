@@ -306,6 +306,7 @@ module.exports = {
     'auto': 'auto'
   },
   'icons-sizes': {
+    'default': ['1rem', '1rem'], // = the base line height
     '1': ['8px', '8px'],
     '2': ['16px', '16px'],
     '3': ['24px', '24px'],

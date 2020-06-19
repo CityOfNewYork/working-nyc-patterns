@@ -37,6 +37,7 @@ html lang='en'
 
       patterns.icons('../svg/icons.svg');
       patterns.toggle();
+      patterns.copy();
       patterns.accordion();
       patterns.mobileNav();
       patterns.searchBox();

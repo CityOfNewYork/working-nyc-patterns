@@ -1,4 +1,4 @@
-@use 'config/grid';
+@use 'config/grid' as *;
 @use 'config/color';
 @use 'config/typography';
 @use 'config/media';
@@ -12,7 +12,7 @@
   }
 
   .icon {
-    margin-#{direction.$end}: grid.$grid;
+    margin-#{direction.$end}: $grid;
     vertical-align: middle;
     margin-top: -2px
   }
@@ -20,13 +20,10 @@
 
 @mixin inline($variant: '') {
   list-style: none;
-  // margin: 0;
-  // padding: 0;
 
   a, button {
     display: inline-flex;
     border-bottom: none;
-    // padding: initial;
     margin-#{direction.$end}: 1em;
 
     &:first-child {
@@ -62,9 +59,19 @@
   margin: 0;
   padding: 0;
 
-  a, button {
+  a:not(.btn) {
     display: block;
-    padding: dimensions.$spacing-base 0
+    padding: ($grid * 2) 0
+  }
+
+  button, .btn {
+    display: flex;
+    margin-bottom: $grid * 2;
+    width: 100%;
+
+    &:last-child {
+      margin-bottom: 0
+    }
   }
 
   .active {

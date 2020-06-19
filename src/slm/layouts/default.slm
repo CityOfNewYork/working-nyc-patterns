@@ -7,7 +7,7 @@ html lang='en' dir='ltr'
 
     = partial('../partials/header.slm');
 
-    aside#main-menu role='navigation' aria-labelledby='main-menu-control' aria-hidden='true' class='text-small hidden hidden:overflowFadeInUp animated relative' style='top: -1px'
+    aside#main-menu role='navigation' aria-labelledby='main-menu-control' aria-hidden='true' class='color-modal text-small hidden hidden:overflowFadeInUp animated relative' style='top: -1px'
       div class='page-min-max py-4 animated'
         div class='screen-tablet:flex'
           = partial('../partials/nav.slm');
@@ -31,6 +31,7 @@ html lang='en' dir='ltr'
 
       patterns.icons();
       patterns.toggle();
+      patterns.copy();
 
     = content('script');
 
