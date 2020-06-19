@@ -14,32 +14,35 @@
 <body class="color">
   <a class="sr-only" href="#main-content">Skip to main content</a>
   <header class="bg-scale-2" role="banner">
-    <div>
-      <div class="flex items-center justify-between py-2 screen-tablet:py-3 wrap">
-        <div>
-          <h1 aria-level="1" class="h4 m-0 p-0 leading-normal" role="heading">
-            <span class="sr-only">Working N Y C</span>
-            <svg aria-hidden="true" class="hidden screen-tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2">
-              <use xlink:href="#logo-wnyc-standard"></use>
+    <div class="flex items-center justify-between py-2 wrap">
+      <div>
+        <h1 aria-level="1" class="h4 m-0 p-0 leading-normal" role="heading">
+          <span class="sr-only">Working N Y C</span>
+          <svg aria-hidden="true" class="hidden screen-tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2">
+            <use xlink:href="#logo-wnyc-standard"></use>
+          </svg>
+          <svg aria-hidden="true" class="screen-tablet:hidden icon-logo-stacked-menu-item fill-white text-blue-l-2">
+            <use xlink:href="#logo-wnyc-stacked"></use>
+          </svg>
+        </h1>
+      </div>
+      <div class="flex items-center">
+        <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
+        <h2 aria-hidden="true" class="h4 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
+        <nav class="text-small flex">
+          <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-11">0.0.1-11</a>
+          <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-11">0.0.1-11</a>
+          <button aria-controls="main-menu" aria-expanded="false" class="btn btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">
+            <svg aria-hidden="true" class="icon-wnyc-ui">
+              <use xlink:href="#icon-wnyc-ui-menu"></use>
             </svg>
-            <svg aria-hidden="true" class="screen-tablet:hidden icon-logo-stacked-menu-item fill-white text-blue-l-2">
-              <use xlink:href="#logo-wnyc-stacked"></use>
-            </svg>
-          </h1>
-        </div>
-        <div class="flex items-center">
-          <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
-          <h2 aria-hidden="true" class="h4 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
-          <nav class="text-small">
-            <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-10">0.0.1-10</a>
-            <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-10">0.0.1-10</a>
-            <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
-          </nav>
-        </div>
+            <span>Menu</span>
+          </button>
+        </nav>
       </div>
     </div>
   </header>
-  <aside aria-hidden="true" aria-labelledby="main-menu-control" class="text-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="navigation" style="top: -1px">
+  <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-modal text-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="navigation" style="top: -1px">
     <div class="page-min-max py-4 animated">
       <div class="screen-tablet:flex">
         <nav class="screen-tablet:flex-1 mb-1 px-2">
@@ -91,7 +94,7 @@
   </aside>
   <main class="py-4" id="main-content" role="main">
     <article class="py-4 clearfix page-min-max wrap">
-      <h3 class="text-center">Pre-release v0.0.1-10</h3>
+      <h3 class="text-center">Pre-release v0.0.1-11</h3>
       <section class="c-accordion m-auto mb-4" style="max-width: 800px">
         <header class="c-accordion__header">
           <p class="flex items-center">
@@ -103,14 +106,22 @@
         </header>
         <div class="c-accordion__body active">
           <div class="c-accordion__padding text-center">
-            <pre>npm install @nycopportunity/working-patterns</pre>
-            <a class="btn btn-primary" href="https://www.npmjs.com/package/@nycopportunity/working-patterns" target="_blank">NPM</a>
-            <a class="btn btn-secondary" href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-10" target="_blank">
-              <svg aria-hidden="true" class="icon-wnyc-ui icon-3">
-                <use xlink:href="#icon-wnyc-ui-github"></use>
-              </svg>
-              <span>GitHub</span>
-            </a>
+            <input class="font-code w-full bg-transparent border text-inherit mb-3" data-copy-target="npm-install" id="npm-install" name="npm-install" type="text" value="npm install @nycopportunity/working-patterns@v0.0.1-11" />
+            <nav class="nav-block">
+              <button aria-pressed="false" class="btn btn-primary" data-copy="npm-install" data-js="copy">Copy to Clipboard</button>
+              <a class="btn btn-secondary" href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-11" target="_blank">
+                <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <use xlink:href="#icon-wnyc-ui-github"></use>
+                </svg>
+                <span>GitHub</span>
+              </a>
+              <a class="btn btn-tertiary" href="https://www.npmjs.com/package/@nycopportunity/working-patterns" target="_blank">
+                <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <use xlink:href="#icon-wnyc-ui-package"></use>
+                </svg>
+                <span>npm.org</span>
+              </a>
+            </nav>
           </div>
         </div>
       </section>
@@ -124,7 +135,7 @@
           </p>
         </header>
         <div class="c-accordion__body active">
-          <iframe allowfullscreen="true" class="border-0 block" height="450" src="https://www.figma.com/embed?embed_host=nyco-wnyc-patterns&amp;url=https://www.figma.com/file/CH7ZOCW55SgsDnsTj3UrTi/Patterns" width="800"></iframe>
+          <iframe allowfullscreen="true" class="border-0 block w-full" height="450" src="https://www.figma.com/embed?embed_host=nyco-wnyc-patterns&amp;url=https://www.figma.com/file/CH7ZOCW55SgsDnsTj3UrTi/Patterns"></iframe>
         </div>
       </section>
       <section class="c-accordion m-auto mb-4" style="max-width: 800px">
@@ -233,6 +244,7 @@
     var patterns = new WorkingNyc();
     patterns.icons();
     patterns.toggle();
+    patterns.copy();
   </script>
 </body>
 
