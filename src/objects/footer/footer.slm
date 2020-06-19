@@ -1,0 +1,24 @@
+/ Footer
+
+footer class='o-footer'
+  nav class='o-footer__nav'
+    a href='#' class='no-underline' NYC Opportunity
+
+    a href='#' class='uppercase no-underline'
+      span class='text-blue-l3' Working&nbsp;
+      span class='text-blue-l2' NYC
+
+    / a href='#' Skills Survey
+
+    a href='#' Programs
+
+    / a href='#' Events
+
+  / = partial('/objects/newsletter/newsletter.slm');
+
+  div class='o-footer__copyright'
+    - let date = new Date();
+    - let year = date.getFullYear();
+
+    p class='small mb-1' © ${year} City of New York. All Rights Reserved.
+    p class='small m-0' NYC is a trademark and service mark of the City of New York

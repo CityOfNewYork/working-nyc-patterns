@@ -1,0 +1,5 @@
+nav class='nav-inline'
+  a href='${link_social_github}' GitHub
+  a href='${link_social_twitter}' Twitter
+  a href='${link_social_facebook}' Facebook
+  a href='${link_social_instagram}' Instagram

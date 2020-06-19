@@ -1,0 +1,16 @@
+= mixin('head');
+  head
+    meta charset='utf-8'
+    meta http-equiv='X-UA-Compatible' content='IE=edge'
+    meta name='viewport' content='width=device-width, initial-scale=1'
+
+    link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CMontserrat:400,400i,700' media='all'
+    link rel='stylesheet' href='styles/site-default.css'
+    link rel='stylesheet' href='styles/site-color-default.css'
+
+    title
+      - if (this.title != 'WorkingNYC Patterns')
+        = this.title;
+        = ' | WorkingNYC Patterns';
+      - else
+        = this.title;

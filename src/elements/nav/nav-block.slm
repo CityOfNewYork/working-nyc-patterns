@@ -1,0 +1,11 @@
+/
+/ Nav Block
+/
+nav class='nav-block'
+  a class='active' href='#' Am I eligible?
+  a href='#' Programs
+  a href='#' Find help
+  a class='no-underline' href='#search'
+    svg class='icon icon-wnyc-ui-search'
+      use xlink:href='#icon-wnyc-ui-search'
+    | Search

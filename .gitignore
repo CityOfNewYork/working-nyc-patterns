@@ -17,15 +17,15 @@ npm-debug.log
 /src/components/*
 /src/objects/*
 /src/utilities/*
-/src/elements/**/*.slm
-/src/objects/**/*.slm
-/src/components/**/*.slm
-/src/utilities/**/*.slm
+# /src/elements/**/*.slm
+# /src/objects/**/*.slm
+# /src/components/**/*.slm
+# /src/utilities/**/*.slm
 
 # /src/views/*
-/src/slm/layouts/*
-/src/slm/partials/*
-/src/slm/section/*
+# /src/slm/layouts/*
+# /src/slm/partials/*
+# /src/slm/section/*
 
 # Keepsies
 
