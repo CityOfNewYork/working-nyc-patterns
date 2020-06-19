@@ -30,7 +30,7 @@
 
         a href='${this.package.cdn.npm}' target='_blank' class='btn btn-primary' NPM
 
-        a href='${link_source}/tree/v${this.tokens.version}' target='_blank' class='btn btn-secondary'
+        a href='${this.package.cdn.source}/releases/tag/v${this.tokens.version}' target='_blank' class='btn btn-secondary'
           svg class='icon-wnyc-ui icon-3' aria-hidden='true'
             use xlink:href='#icon-wnyc-ui-github'
 
