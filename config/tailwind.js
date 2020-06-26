@@ -39,21 +39,7 @@ module.exports = {
       'full': '100%'
     },
     padding: tokens.padding,
-    screens: {
-      'screen-desktop': {
-        'raw': `screen and (min-width: ${tokens.screens['screen-desktop']}px)`
-      },
-      'screen-tablet': {
-        'raw': `screen and (min-width: ${tokens.screens['screen-tablet']}px)`
-      },
-      'screen-mobile': {
-        'raw': `screen and (min-width: ${tokens.screens['screen-mobile']}px)`
-      },
-      'screen-sm-mobile': {
-        'raw': `screen and (min-width: ${tokens.screens['screen-sm-mobile']}px)`
-      },
-      'print': {'raw': 'print'}
-    },
+    screens: Object.assign(tokens.screens, {'print': {'raw': 'print'}}),
     textColor: tokens.colors,
     zIndex: tokens.z
   },

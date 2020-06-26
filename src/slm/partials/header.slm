@@ -4,27 +4,27 @@ header role='banner' class='bg-scale-2'
       h1 role='heading' aria-level='1' class='h4 m-0 p-0 leading-normal'
         span class='sr-only' Working N Y C
 
-        svg class='hidden screen-tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2' aria-hidden='true'
+        svg class='hidden tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2' aria-hidden='true'
           use xlink:href='#logo-wnyc-standard'
 
-        svg class='screen-tablet:hidden icon-logo-stacked-menu-item fill-white text-blue-l-2' aria-hidden='true'
+        svg class='tablet:hidden icon-logo-stacked-menu-item fill-white text-blue-l-2' aria-hidden='true'
           use xlink:href='#logo-wnyc-stacked'
 
     div class='flex items-center'
-      h2 class='text-small m-0 text-blue-dark screen-tablet:hidden'
+      h2 class='text-small m-0 text-blue-dark tablet:hidden'
         | Patterns
 
-      h2 class='h4 m-0 text-blue-dark hidden screen-tablet:inline-block' aria-hidden='true'
+      h2 class='h4 m-0 text-blue-dark hidden tablet:inline-block' aria-hidden='true'
         | Patterns
 
       nav class='text-small flex'
-        a href='${this.package.cdn.source}/releases/tag/v${this.tokens.version}' class='rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block'
+        a href='${this.package.cdn.source}/releases/tag/v${this.tokens.version}' class='rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden tablet:inline-block'
           = this.tokens.version;
 
-        a href='${this.package.cdn.source}/releases/tag/v${this.tokens.version}' class='ms-1 screen-tablet:ms-2 screen-tablet:hidden' aria-hidden='true'
+        a href='${this.package.cdn.source}/releases/tag/v${this.tokens.version}' class='ms-1 tablet:ms-2 tablet:hidden' aria-hidden='true'
           = this.tokens.version;
 
-        button#main-menu-control class='btn btn-link ms-1 screen-tablet:ms-2' aria-controls='main-menu' aria-expanded='false' data-js='toggle'
+        button#main-menu-control class='btn btn-link ms-1 tablet:ms-2' aria-controls='main-menu' aria-expanded='false' data-js='toggle'
           svg class='icon-wnyc-ui' aria-hidden='true'
             use xlink:href='#icon-wnyc-ui-menu'
 

@@ -1,0 +1,37 @@
+@use 'config/dimensions';
+
+@mixin selector($variant: '', $type: '') {
+  @if $type != '' {
+    .#{$variant}divider-#{$type} {
+      @content;
+    }
+  } @else {
+    .#{$variant}divider {
+      @content;
+    }
+  }
+}
+
+@mixin base() {
+  border: none;
+  margin: 0;
+
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid;
+  border-color: var(--color-scale-3);
+}
+
+@mixin dividers($variant: '') {
+  @include selector($variant) {
+    @include base();
+    margin-top: 1.5 * dimensions.$spacing-base;
+    margin-bottom: 1.5 * dimensions.$spacing-base;
+  }
+
+  @include selector($variant, 'large') {
+    @include base();
+    margin-top: 2.5 * dimensions.$spacing-base;
+    margin-bottom: 2.5 * dimensions.$spacing-base;
+  }
+}

@@ -1,0 +1,73 @@
+/**
+ * Web-share
+ */
+
+// Dependencies
+@use 'config/dimensions';
+@use 'config/direction';
+@use 'config/fonts';
+@use 'config/media';
+@use 'config/tokens';
+
+// Declarations
+.c-web-share {
+  position: relative;
+  text-align: direction.$start;
+  pointer-events: auto;
+}
+
+.c-web-share__item {
+  margin-#{direction.$end}: $grid;
+  margin-bottom: $grid;
+
+  @media screen and (min-width: media.$screen-tablet) {
+    margin-#{direction.$end}: $grid * 1.5;
+    margin-bottom: $grid * 2;
+  }
+}
+
+.c-web-share__fallback {
+  font-size: $font-size-small;
+  position: absolute;
+
+  margin-top: $grid;
+  margin-bottom: $grid;
+
+  box-shadow: map-get(map-get($tokens, 'shadows'), 'up');
+
+  @media screen and (min-width: media.$screen-tablet) {
+    margin-top: $grid * 2;
+    margin-bottom: $grid * 2;
+  }
+}
+
+.c-web-share__fallback-body {
+  padding: $grid * 2;
+  padding-bottom: $grid;
+
+  @media screen and (min-width: media.$screen-tablet) {
+    padding: $grid * 3;
+    padding-bottom: $grid;
+  }
+
+  > *:last-child {
+    margin-#{direction.$end}: 0;
+  }
+}
+
+.c-web-share__label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: $grid;
+}
+
+.c-web-share__input {
+  width: 100%;
+  padding: $grid;
+  margin-bottom: $grid * 2;
+}
+
+.c-web-share__icon {
+  width: $grid * 2;
+  height: $grid * 2;
+}

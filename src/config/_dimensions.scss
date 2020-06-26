@@ -3,17 +3,22 @@
 //
 
 // Dependencies
-@use 'config/tokens';
-@use 'config/grid';
+@use 'config/tokens' as *;
+@use 'config/grid' as *;
 
-// Variables
-// $grid: map-get($tokens, 'grid');
-$dimensions: map-get(tokens.$tokens, 'dimensions');
-$mobile-menu-width: map-get($dimensions, 'mobile-menu-width');
-$content-width: map-get($dimensions, 'content-width');
-$site-max-width: map-get($dimensions, 'site-max-width');
-$site-min-width: map-get($dimensions, 'site-min-width');
-$navigation-logo: map-get($dimensions, 'navigation-logo');
-$navigation-height-mobile: map-get($dimensions, 'navigation-height-mobile');
+// Dimension Variables
+$dimensions: map-get($tokens, 'dimensions');
 
-$spacing-base: grid.$grid * map-get($dimensions, 'spacing-base');
+// The calculated spacing for all elements
+$spacing-base: $grid * map-get($dimensions, 'spacing-base');
+
+/**
+ * Get a token value from the dimension set
+ *
+ * @param   {String}  $token  [$token description]
+ *
+ * @return  {Mixed}           The token value
+ */
+@function get($token) {
+  @return map-get($dimensions, $token);
+}

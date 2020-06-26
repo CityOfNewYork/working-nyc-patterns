@@ -6,6 +6,7 @@
 @use 'config/grid' as *;
 @use 'config/dimensions';
 @use 'config/direction';
+@use 'config/layouts';
 @use 'config/media';
 @use 'config/nav';
 @use 'config/typography';
@@ -15,6 +16,7 @@ $icon-width: dimensions.$spacing-base * 2;
 
 // Declarations
 .c-header {
+  @include layouts.wrap();
   padding-top: $grid * 4;
   padding-bottom: $grid * 4;
 
@@ -22,14 +24,12 @@ $icon-width: dimensions.$spacing-base * 2;
     margin-bottom: 0;
   }
 
-  @media screen and (min-width: media.$screen-mobile) {
+  @include media.screen-and-min-width('tablet') {
     align-items: flex-start;
     display: flex;
   }
 
-  @media screen and (min-width: media.$screen-tablet) {
-    padding: dimensions.$spacing-base;
-
+  @include media.screen-and-min-width('tablet') {
     padding-top: $grid * 7;
     padding-bottom: $grid * 9;
   }
@@ -38,7 +38,7 @@ $icon-width: dimensions.$spacing-base * 2;
 .c-header__icon {
   margin-bottom: dimensions.$spacing-base / 3;
 
-  @media screen and (min-width: media.$screen-mobile) {
+  @include media.screen-and-min-width('tablet') {
     margin-#{direction.$end}: dimensions.$spacing-base;
     width: $icon-width;
 
@@ -83,7 +83,7 @@ $icon-width: dimensions.$spacing-base * 2;
 }
 
 .c-header__tags {
-  @media screen and (min-width: media.$screen-desktop) {
+  @include media.screen-and-min-width('desktop') {
     margin-#{direction.$start}: -($grid * 2);
   }
 }

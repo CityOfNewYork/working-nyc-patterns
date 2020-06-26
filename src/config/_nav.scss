@@ -59,9 +59,18 @@
   margin: 0;
   padding: 0;
 
-  a:not(.btn) {
+  a:not(.btn), .btn-link {
     display: block;
-    padding: ($grid * 2) 0
+    padding-left: 0;
+    padding-right: 0;
+
+    padding-top: ($grid * 2);
+    padding-bottom: ($grid * 2);
+
+    @include media.screen-and-max-width('mobile-small') {
+      padding-top: $grid;
+      padding-bottom: $grid;
+    }
   }
 
   button, .btn {

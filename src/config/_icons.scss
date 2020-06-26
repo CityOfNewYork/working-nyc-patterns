@@ -6,6 +6,19 @@
 $sizes: map-get($tokens, 'icons-sizes');
 
 // Declarations
+@mixin selector() {
+  [class*='icon'] {
+    @content;
+  }
+}
+
+@mixin base() {
+  overflow: visible !important;
+  max-width: 100%;
+  width: nth(map-get($sizes, 'default'), 1);
+  height: nth(map-get($sizes, 'default'), 2);
+}
+
 @mixin sizes($variant: '') {
   @each $key, $var in $sizes {
     .#{$variant}icon-#{$key} {

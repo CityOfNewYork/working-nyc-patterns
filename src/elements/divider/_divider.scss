@@ -1,0 +1,12 @@
+/**
+ * Divider
+ */
+
+// Dependencies
+@use 'config/divider';
+@use 'config/media';
+
+// Declarations
+@include media.screens() using ($variant) {
+  @include divider.dividers($variant);
+}

@@ -7,10 +7,10 @@
     - let navitem = {'title': this.title, 'id': id};
     - this.navigation.push(navitem);
 
-  section id=id class='pb-2 screen-tablet:pb-4 screen-tablet:mb-4'
-    div class='page-min-max px-2 screen-desktop:px-0'
-      header class='page-min-max'
-        div class='my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between'
+  section id=id class='pb-2 tablet:pb-4 tablet:mb-4'
+    div class='page-max px-2 desktop:px-0'
+      header class='page-max'
+        div class='my-0 px-2 py-0 border-b border-grey-light tablet:flex tablet:justify-between'
           - if (this.title)
             h2 class='m-0 pt-1 pb-4'
               a href='#${id}' class='text-grey-mid font-normal no-underline capitalize'

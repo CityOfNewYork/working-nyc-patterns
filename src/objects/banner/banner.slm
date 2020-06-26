@@ -10,7 +10,7 @@ header class='o-banner color-dark-background bg-blue-d3'
 
     hr class='divider border-blue'
 
-    div class='screen-tablet:layout-columns-gutter mb-3'
+    div class='tablet:layout-columns-gutter mb-3'
       div class='o-banner__tout'
         h3 class='o-banner__tout-title' What am I eligible for?
 

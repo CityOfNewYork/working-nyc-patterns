@@ -65,8 +65,9 @@
     div class='c-accordion__body active'
       div class='c-accordion__padding text-center'
         nav class='nav-block'
-          a href='demos/homepage' Homepage
-          a href='demos/programs' Programs
+          a href='demos/homepage' Homepage (in-progress)
+          a href='demos/programs/index' Programs (in-progress)
+          a href='demos/programs/red-hook-on-the-road' Programs Single (Red Hook on the Road)
 
   section class='c-accordion m-auto mb-4' style='max-width: 800px'
     header class='c-accordion__header'

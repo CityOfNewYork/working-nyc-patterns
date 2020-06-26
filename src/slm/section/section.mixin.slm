@@ -9,8 +9,8 @@
     - this.navigation.push(navitem);
 
   section id=id class='pb-4 mb-4'
-    div class='page-min-max px-2'
-      header class='page-min-max'
+    div class='page-max px-2'
+      header class='page-max'
         div class='my-0 px-2 pt-1 pb-4 border-b border-grey-light'
           - let srcPadding = false
           - if (this.title)

@@ -7,11 +7,8 @@
 @use 'config/media';
 
 // Declarations
-[class*='icon'] {
-  overflow: visible !important;
-  max-width: 100%;
-  width: nth(map-get(icons.$sizes, 'default'), 1);
-  height: nth(map-get(icons.$sizes, 'default'), 2);
+@include icons.selector() {
+  @include icons.base();
 }
 
 @include icons.ui;

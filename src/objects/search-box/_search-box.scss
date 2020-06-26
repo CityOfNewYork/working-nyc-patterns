@@ -20,12 +20,12 @@
 
   position: fixed !important;
 
-  @media screen and (max-width: media.$screen-tablet) {
+  @include media.screen-and-max-width('tablet') {
     bottom: 0;
-    padding-bottom: dimensions.$spacing-base + dimensions.$navigation-height-mobile
+    padding-bottom: dimensions.$spacing-base + dimensions.get('navigation-height-mobile')
   }
 
-  @media screen and (min-width: media.$screen-tablet) {
+  @include media.screen-and-min-width('tablet') {
     position: static;
     height: inherit !important;
   }
@@ -43,7 +43,7 @@
 // .o-search-box__suggestions-header {
 //   margin-bottom: dimensions.$spacing-base;
 
-//   @media screen and (min-width: media.$screen-tablet) {
+//   @include media.screen-and-min-width('tablet') {
 //     display: flex;
 //     align-items: flex-end;
 //     justify-content: space-between;
@@ -57,7 +57,7 @@
 // .o-search-box__suggestions-body {
 //   padding-bottom: dimensions.$spacing-base;
 
-//   @media screen and (min-width: media.$screen-tablet) {
+//   @include media.screen-and-min-width('tablet') {
 //     align-items: flex-start;
 //     display: flex;
 //     flex-wrap: wrap;
@@ -68,7 +68,7 @@
 //   padding-#{direction.$end}: dimensions.$spacing-base;
 //   margin-bottom: dimensions.$spacing-base;
 
-//   @media screen and (min-width: media.$screen-tablet) {
+//   @include media.screen-and-min-width('tablet') {
 //     width: 33.33%;
 //   }
 // }
@@ -88,7 +88,7 @@
   transform: translateY(100%);
   @include animate.linear();
 
-  @media screen and (min-width: media.$screen-tablet) {
+  @include media.screen-and-min-width('tablet') {
     transform: translateY(0%)
   }
 }
@@ -96,7 +96,7 @@
 .o-search-box.active {
   transform: translateY(0);
 
-  @media screen and (min-width: media.$screen-tablet) {
+  @include media.screen-and-min-width('tablet') {
     transform: translateY(100%)
   }
 }

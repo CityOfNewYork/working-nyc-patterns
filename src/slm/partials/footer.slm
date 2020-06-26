@@ -1,5 +1,5 @@
 footer role='contentinfo' class='text-small py-4 z-20 relative'
-  div class='page-min-max wrap'
+  div class='page-max'
     div class='mb-4'
       p class='mb-1'
         | Maintained by&nbsp;
@@ -16,6 +16,6 @@ footer role='contentinfo' class='text-small py-4 z-20 relative'
         - let year = date.getFullYear();
         | © City of New York, ${year} All Rights Reserved. NYC is a trademark and service mark of the City of New York.
 
-  div class='page-min-max'
-    div class='screen-tablet:flex'
+  div class='page-max'
+    div class='tablet:flex'
       = partial('../partials/nav.slm');

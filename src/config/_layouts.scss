@@ -7,30 +7,42 @@
 
 // Variables
 $layouts: map-get(tokens.$tokens, 'layouts');
-$side-bar-width: map-get($layouts, 'side-bar-width');
-$side-bar-width-small: map-get($layouts, 'side-bar-width-small');
-$topbar-height: map-get($layouts, 'topbar-height');
 
 // Mixins
 @mixin wrap() {
-  .wrap {
-    padding-left: (dimensions.$spacing-base / 3) * 2;
-    padding-right: (dimensions.$spacing-base / 3) * 2;
-    margin-left: auto;
-    margin-right: auto;
+  padding-left: (dimensions.$spacing-base / 3) * 2;
+  padding-right: (dimensions.$spacing-base / 3) * 2;
 
-    @media screen and (min-width: media.$screen-tablet) {
-      padding-left: dimensions.$spacing-base;
-      padding-right: dimensions.$spacing-base
-    }
+  @include media.screen-and-min-width('tablet') {
+    padding-left: dimensions.$spacing-base;
+    padding-right: dimensions.$spacing-base
   }
+}
+
+@mixin auto() {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @mixin page-min-max($variant) {
   .#{$variant}page-min-max {
-    margin: 0 auto;
-    max-width: dimensions.$site-max-width;
-    min-width: dimensions.$site-min-width;
+    @include auto();
+    max-width: dimensions.get('site-max-width');
+    min-width: dimensions.get('site-min-width');
+  }
+}
+
+@mixin page-min($variant) {
+  .#{$variant}page-min {
+    @include auto();
+    min-width: dimensions.get('site-min-width');
+  }
+}
+
+@mixin page-max($variant) {
+  .#{$variant}page-max {
+    @include auto();
+    max-width: dimensions.get('site-max-width');
   }
 }
 
@@ -229,16 +241,16 @@ $topbar-height: map-get($layouts, 'topbar-height');
 
     > *:first-child,
     > .layout__column:first-child {
-      width: $side-bar-width;
-      max-width: $side-bar-width;
-      flex-basis: $side-bar-width
+      width: dimensions.get('side-bar-width');
+      max-width: dimensions.get('side-bar-width');
+      flex-basis: dimensions.get('side-bar-width')
     }
 
     > *:first-child + *,
     > .layout__column:first-child + .layout__column {
-      width: calc(100% - #{$side-bar-width});
-      max-width: calc(100% - #{$side-bar-width});
-      flex-basis: calc(100% - #{$side-bar-width})
+      width: calc(100% - #{dimensions.get('side-bar-width')});
+      max-width: calc(100% - #{dimensions.get('side-bar-width')});
+      flex-basis: calc(100% - #{dimensions.get('side-bar-width')})
     }
   }
 }
@@ -250,16 +262,16 @@ $topbar-height: map-get($layouts, 'topbar-height');
 
     > *:first-child,
     > .layout__column:first-child {
-      width: $side-bar-width-small;
-      max-width: $side-bar-width-small;
-      flex-basis: $side-bar-width-small
+      width: dimensions.get('side-bar-width-small');
+      max-width: dimensions.get('side-bar-width-small');
+      flex-basis: dimensions.get('side-bar-width-small')
     }
 
     > *:first-child + *,
     > .layout__column:first-child + .layout__column {
-      width: calc(100% - #{$side-bar-width-small});
-      max-width: calc(100% - #{$side-bar-width-small});
-      flex-basis: calc(100% - #{$side-bar-width-small})
+      width: calc(100% - #{dimensions.get('side-bar-width-small')});
+      max-width: calc(100% - #{dimensions.get('side-bar-width-small')});
+      flex-basis: calc(100% - #{dimensions.get('side-bar-width-small')})
     }
   }
 }
@@ -276,17 +288,17 @@ $topbar-height: map-get($layouts, 'topbar-height');
 
     > *:first-child,
     > .layout__column:first-child {
-      width: $side-bar-width;
-      max-width: $side-bar-width;
-      flex-basis: $side-bar-width;
+      width: dimensions.get('side-bar-width');
+      max-width: dimensions.get('side-bar-width');
+      flex-basis: dimensions.get('side-bar-width');
       margin-#{direction.$end}: dimensions.$spacing-base;
     }
 
     > *:first-child + *,
     > .layout__column:first-child + .layout__column {
-      width: calc(100% - #{$side-bar-width} - #{dimensions.$spacing-base});
-      max-width: calc(100% - #{$side-bar-width} - #{dimensions.$spacing-base});
-      flex-basis: calc(100% - #{$side-bar-width} - #{dimensions.$spacing-base})
+      width: calc(100% - #{dimensions.get('side-bar-width')} - #{dimensions.$spacing-base});
+      max-width: calc(100% - #{dimensions.get('side-bar-width')} - #{dimensions.$spacing-base});
+      flex-basis: calc(100% - #{dimensions.get('side-bar-width')} - #{dimensions.$spacing-base})
     }
   }
 }
@@ -303,17 +315,17 @@ $topbar-height: map-get($layouts, 'topbar-height');
 
     > *:first-child,
     > .layout__column:first-child {
-      width: $side-bar-width-small;
-      max-width: $side-bar-width-small;
-      flex-basis: $side-bar-width-small;
+      width: dimensions.get('side-bar-width-small');
+      max-width: dimensions.get('side-bar-width-small');
+      flex-basis: dimensions.get('side-bar-width-small');
       margin-#{direction.$end}: dimensions.$spacing-base;
     }
 
     > *:first-child + *,
     > .layout__column:first-child + .layout__column {
-      width: calc(100% - #{$side-bar-width-small} - #{dimensions.$spacing-base});
-      max-width: calc(100% - #{$side-bar-width-small} - #{dimensions.$spacing-base});
-      flex-basis: calc(100% - #{$side-bar-width-small} - #{dimensions.$spacing-base})
+      width: calc(100% - #{dimensions.get('side-bar-width-small')} - #{dimensions.$spacing-base});
+      max-width: calc(100% - #{dimensions.get('side-bar-width-small')} - #{dimensions.$spacing-base});
+      flex-basis: calc(100% - #{dimensions.get('side-bar-width-small')} - #{dimensions.$spacing-base})
     }
   }
 }
@@ -324,9 +336,8 @@ $topbar-height: map-get($layouts, 'topbar-height');
 
     > *:first-child,
     > .layout__column:first-child {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: dimensions.$content-width + (dimensions.$spacing-base * 2)
+      @include auto();
+      max-width: dimensions.get('content-width') + (dimensions.$spacing-base * 2)
     }
   }
 }
@@ -334,14 +345,14 @@ $topbar-height: map-get($layouts, 'topbar-height');
 @mixin topbar($variant) {
   .#{$variant}layout-topbar {
     > *:first-child {
-      height: $topbar-height
+      height: dimensions.get('topbar-height')
     }
   }
 
   .#{$variant}layout-topbar {
     > *:first-child + * {
       position: relative;
-      height: calc(100vh - #{$topbar-height});
+      height: calc(100vh - #{dimensions.get('topbar-height')});
       overflow: hidden
     }
   }
@@ -373,7 +384,7 @@ $topbar-height: map-get($layouts, 'topbar-height');
     flex-wrap: wrap;
     flex-direction: column-reverse;
 
-    @media screen and (min-width: media.$screen-desktop) {
+    @include media.screen-and-min-width('desktop') {
       height: 90vh;
       flex-direction: row
     }
@@ -382,7 +393,7 @@ $topbar-height: map-get($layouts, 'topbar-height');
       width: 100%;
       max-width: 100%;
 
-      @media screen and (min-width: media.$screen-desktop) {
+      @include media.screen-and-min-width('desktop') {
         height: 90vh;
         overflow: hidden;
         overflow-y: auto
@@ -394,7 +405,7 @@ $topbar-height: map-get($layouts, 'topbar-height');
       width: 100%;
       max-width: 100%;
 
-      @media screen and (min-width: media.$screen-desktop) {
+      @include media.screen-and-min-width('desktop') {
         height: 100%
       }
     }

@@ -7,40 +7,40 @@ html lang='en'
 
     / link rel='icon' type='image/x-icon' href='../images/favicon.ico'
 
-    link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CMontserrat:400,400i,700' media='all'
-    link rel='stylesheet' href='../styles/site-default.css'
-    link rel='stylesheet' href='../styles/site-color-default.css'
+    - if this.tokens.hasOwnProperty('google-fonts')
+      link rel='stylesheet' href='${this.tokens['google-fonts'].replace(/"/g, '')}' media='all'
 
-    title
-      - if (this.title != 'WorkingNYC')
-        = this.title;
-        = ' | WorkingNYC';
-      - else
-        = this.title;
+    link rel='stylesheet' href='${this.baseUrl}/styles/site-default.css'
+    link rel='stylesheet' href='${this.baseUrl}/styles/site-color-default.css'
+
+    - if (this.title != 'WorkingNYC')
+      title ${this.title} | WorkingNYC
+    - else
+      title ${this.title}
 
   body class='color bg-scale-2'
-    = partial('/objects/navigation/navigation.slm');
+    div class='relative z-10 shadow-up tablet:shadow-none'
+      = partial('/objects/navigation/navigation.slm');
+      = partial('/objects/mobile-nav/mobile-nav.slm');
+      = partial('/objects/search-box/search-box.slm');
 
-    = partial('/objects/mobile-nav/mobile-nav.slm');
+      = content('content');
 
-    = partial('/objects/search-box/search-box.slm');
+    = partial('/objects/footer/footer.slm');
 
-    = content('content');
-
-    / = partial('/objects/footer/footer.slm');
-
-    script src='../scripts/polyfills.js'
-    script src='../scripts/main.js'
+    script src='${this.baseUrl}/scripts/polyfills.js'
+    script src='${this.baseUrl}/scripts/main.js'
 
     javascript:
       var patterns = new WorkingNyc();
 
-      patterns.icons('../svg/icons.svg');
-      patterns.toggle();
-      patterns.copy();
       patterns.accordion();
+      patterns.copy();
+      patterns.icons('${this.baseUrl}/svg/icons.svg');
       patterns.mobileNav();
       patterns.searchBox();
+      patterns.toggle();
+      patterns.webShare();
 
     = content('script');
 

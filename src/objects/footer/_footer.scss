@@ -4,19 +4,103 @@
 
 // Dependencies
 @use 'config/grid' as *;
-@use 'config/typography';
-@use 'config/nav';
 @use 'config/dimensions';
+@use 'config/direction';
+@use 'config/layouts';
+@use 'config/media';
+@use 'config/nav';
+@use 'config/typography';
+@use 'config/z' as indexes;
 
 // Declarations
 .o-footer {
   @include typography.set('small');
-  padding: dimensions.$spacing-base;
+  @include layouts.wrap();
+  padding-top: dimensions.$spacing-base;
+  padding-bottom: dimensions.$spacing-base;
+  width: 100%;
+
+  @include media.screen-and-max-width('tablet') {
+    position: fixed;
+    bottom: dimensions.get('navigation-height-mobile');
+    z-index: indexes.get('footer')
+  }
+
+  @include media.screen-and-min-width('tablet') {
+    padding-top: $grid * 9;
+  }
+}
+
+.o-footer__divider {
+  border-bottom: 1px solid var(--color-scale-3);
 }
 
 .o-footer__nav {
-  @include nav.inline();
-  margin-bottom: $grid;
+  @include nav.block();
+
+  margin-bottom: $grid * 2;
+  padding-bottom: $grid * 2;
+  border-bottom: 1px solid var(--color-scale-3);
+
+  @include media.screen-and-min-width('tablet') {
+    border: none
+  }
+}
+
+.o-footer__wrap {
+  @include media.screen-and-min-width('tablet') {
+    display: flex;
+    flex-wrap: wrap
+  }
+}
+
+.o-footer__break {
+  flex-basis: 100%;
+
+  @include media.screen-and-min-width('tablet') {
+    display: none
+  }
+}
+
+.o-footer__nav-b,
+.o-footer__nav-a {
+  @include media.screen-and-min-width('tablet') {
+    flex-basis: 50%;
+    max-width: 50%;
+    width: 50%
+  }
+
+  @include media.screen-and-min-width('tablet') {
+    flex-basis: 22%;
+    max-width: 22%;
+    width: 22%
+  }
+}
+
+.o-footer__nav-c {
+  @include media.screen-and-max-width('tablet') {
+    flex-basis: 100%;
+    max-width: 100%;
+    width: 100%
+  }
+
+  @include media.screen-and-min-width('tablet') {
+    margin-#{direction.$start}: auto;
+  }
+
+  // @include media.screen-and-min-width('tablet') {
+  //   flex-basis: 43%;
+  //   max-width: 43%;
+  //   width: 43%;
+  //   margin-#{direction.$start}: auto
+  // }
+
+  // @include media.screen-and-min-width('desktop') {
+  //   flex-basis: 40%;
+  //   max-width: 40%;
+  //   width: 40%;
+  //   margin-#{direction.$start}: auto
+  // }
 }
 
 // .o-footer__nav-list {
@@ -42,7 +126,7 @@
 // }
 
 // // Desktop
-// @media screen and (min-width: media.$screen-desktop) {
+// @include media.screen-and-min-width('desktop') {
 //   .o-footer__nav-list {
 //     display: flex;
 //   }
@@ -58,7 +142,7 @@
 // }
 
 // // Tablet
-// @media screen and (min-width: media.$screen-tablet) and (max-width: media.$screen-desktop) {
+// @media screen and (min-width: media.get('tablet')) and (max-width: media.get('desktop')) {
 //   .o-footer__nav-list {
 //     flex-wrap: wrap;
 //     display: flex;

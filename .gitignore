@@ -12,7 +12,7 @@ npm-debug.log
 # Hide in-progress work by default
 
 *.md
-/dist/*
+# /dist/*
 /src/elements/*
 /src/components/*
 /src/objects/*
@@ -40,16 +40,20 @@ npm-debug.log
 !/src/objects/footer
 !/src/objects/mobile-nav
 !/src/objects/navigation
+!/src/objects/newsletter
 !/src/objects/search-box
+!/src/objects/text-controller
 
 !/src/components/accordion
 !/src/components/header
 !/src/components/utility
+!/src/components/web-share
 
 !/src/elements/base
 !/src/elements/buttons
 !/src/elements/checkboxes
 !/src/elements/code
+!/src/elements/divider
 !/src/elements/forms
 !/src/elements/icons
 !/src/elements/inputs
@@ -60,11 +64,11 @@ npm-debug.log
 !/src/elements/options
 
 !/src/utilities/animate
-!/src/utilities/tailwindcss
 !/src/utilities/clearfix
 !/src/utilities/color
 !/src/utilities/margin
 !/src/utilities/padding
+!/src/utilities/tailwindcss
 !/src/utilities/text
 !/src/utilities/toggle
 !/src/utilities/typography

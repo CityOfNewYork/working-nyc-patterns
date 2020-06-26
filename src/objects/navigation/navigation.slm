@@ -4,25 +4,25 @@ nav role='navigation' class='o-navigation bg-scale-2'
   a href='/' class='o-navigation__logo o-navigation__menu-item text-white uppercase text-small no-underline'
     span class='sr-only' Working N Y C
 
-    svg class='hidden screen-tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2' aria-hidden='true'
+    svg class='hidden tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2' aria-hidden='true'
       use xlink:href='#logo-wnyc-standard'
 
-    svg class='screen-tablet:hidden icon-logo-stacked-menu-item fill-white text-blue-l-2' aria-hidden='true'
+    svg class='tablet:hidden icon-logo-stacked-menu-item fill-white text-blue-l-2' aria-hidden='true'
       use xlink:href='#logo-wnyc-stacked'
 
-  / a class='hidden screen-desktop:inline-block' href='#' Skills Survey
+  a class='hidden desktop:inline-block' href='/demos/programs/index' Programs
 
-  a class='hidden screen-desktop:inline-block' Programs
+  a class='hidden desktop:inline-block' href='#' Events
 
-  / a class='hidden screen-desktop:inline-block' href='#' Events
+  a class='hidden desktop:inline-block' href='#' Trainings
 
-  button class='o-navigation__menu-item btn-link screen-desktop:m-0' data-js='search-box' aria-controls='aria-c-search-box' aria-expanded='false'
+  button class='o-navigation__menu-item btn-link desktop:m-0' data-js='search-box' aria-controls='aria-c-search-box' aria-expanded='false'
     svg class='o-navigation__menu-icon icon-wnyc-ui'
       use xlink:href='#icon-wnyc-ui-search'
 
     span class='o-navigation__menu-label' Search
 
-  button class='o-navigation__menu-item btn-link screen-desktop:hidden' data-js='mobile-nav' aria-controls='aria-c-mobile-nav' aria-expanded='false'
+  button class='o-navigation__menu-item btn-link desktop:hidden' data-js='mobile-nav' aria-controls='aria-c-mobile-nav' aria-expanded='false'
     svg class='o-navigation__menu-icon icon-wnyc-ui'
       use xlink:href='#icon-wnyc-ui-menu'
 

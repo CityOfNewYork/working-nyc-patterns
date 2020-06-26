@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CMontserrat:400,400i,700" media="all" rel="stylesheet" />
+  <link href="../styles/site-default.css" rel="stylesheet" />
+  <link href="../styles/site-color-default.css" rel="stylesheet" />
+  <title>Programs | WorkingNYC</title>
+</head>
+
+<body class="color bg-scale-2">
+  <nav class="o-navigation bg-scale-2" role="navigation">
+    <a class="o-navigation__logo o-navigation__menu-item text-white uppercase text-small no-underline" href="/">
+      <span class="sr-only">Working N Y C</span>
+      <svg aria-hidden="true" class="hidden screen-tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2">
+        <use xlink:href="#logo-wnyc-standard"></use>
+      </svg>
+      <svg aria-hidden="true" class="screen-tablet:hidden icon-logo-stacked-menu-item fill-white text-blue-l-2">
+        <use xlink:href="#logo-wnyc-stacked"></use>
+      </svg>
+    </a>
+    <a class="hidden screen-desktop:inline-block">Programs</a>
+    <button aria-controls="aria-c-search-box" aria-expanded="false" class="o-navigation__menu-item btn-link screen-desktop:m-0" data-js="search-box">
+      <svg class="o-navigation__menu-icon icon-wnyc-ui">
+        <use xlink:href="#icon-wnyc-ui-search"></use>
+      </svg>
+      <span class="o-navigation__menu-label">Search</span>
+    </button>
+    <button aria-controls="aria-c-mobile-nav" aria-expanded="false" class="o-navigation__menu-item btn-link screen-desktop:hidden" data-js="mobile-nav">
+      <svg class="o-navigation__menu-icon icon-wnyc-ui">
+        <use xlink:href="#icon-wnyc-ui-menu"></use>
+      </svg>
+      <span class="o-navigation__menu-label">Menu</span>
+    </button>
+  </nav>
+  <aside aria-hidden="true" class="o-mobile-nav hidden" id="aria-c-mobile-nav">
+    <div class="o-mobile-nav__close">
+      <button aria-controls="aria-c-mobile-nav" aria-expanded="false" class="btn-link" data-js="toggle">
+        <svg class="icon-wnyc-ui">
+          <use xlink:href="#icon-wnyc-ui-x"></use>
+        </svg>
+        <span>Close</span>
+      </button>
+    </div>
+    <nav class="o-mobile-nav__nav">
+      <a href="#">Programs</a>
+      <button aria-controls="aria-c-search-box" aria-expanded="false" class="btn-link w-full" data-js="search-box">
+        <span>Search</span>
+      </button>
+    </nav>
+  </aside>
+  <div aria-hidden="true" class="o-search-box hidden" id="aria-c-search-box">
+    <div class="o-search-box__close">
+      <button aria-controls="aria-c-search-box" aria-expanded="false" class="btn-link" data-js="toggle">
+        <svg class="icon-wnyc-ui">
+          <use xlink:href="#icon-wnyc-ui-x"></use>
+        </svg>
+        <span>Close</span>
+      </button>
+    </div>
+    <form class="o-search-box__form">
+      <label class="label" for="search-field">Search for programs and occupations</label>
+      <div class="input-search">
+        <input data-js="search-box__input" id="search-field" name="s" placeholder="Search" type="text" value="" />
+        <button class="btn-link input-search__submit" type="submit">
+          <svg class="icon-wnyc-ui icon-4">
+            <use xlink:href="#icon-wnyc-ui-search"></use>
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="bg-scale-2">
+    <main class="bg-scale-1" id="content">
+      <div class="layout-content sticky top-0 bg-scale-1 z-10">
+        <div class="page-min-max">Utility</div>
+      </div>
+      <header class="layout-content">
+        <div class="c-header page-min-max wrap">Header</div>
+      </header>
+      <section class="bg-scale-2 layout-content">
+        <div class="py-4 page-min-max wrap">Body Section</div>
+      </section>
+      <section class="bg-scale-1 layout-content" id="contact">
+        <nav class="py-2 page-min-max wrap screen-tablet:layout-three-columns-gutter"></nav>
+      </section>
+    </main>
+  </div>
+  <script src="../scripts/polyfills.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script type="text/javascript">
+    var patterns = new WorkingNyc();
+    patterns.accordion();
+    patterns.copy();
+    patterns.icons('../svg/icons.svg');
+    patterns.mobileNav();
+    patterns.searchBox();
+    patterns.toggle();
+    patterns.webShare();
+  </script>
+  <script src="/reload/reload.js"></script>
+</body>
+
+</html>

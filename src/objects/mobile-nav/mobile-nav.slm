@@ -9,11 +9,11 @@ aside#aria-c-mobile-nav class='o-mobile-nav hidden' aria-hidden='true'
       span Close
 
   nav class='o-mobile-nav__nav'
-    / a href='#' Skills Survey
+    a href='/demos/programs/index' Programs
 
-    a href='#' Programs
+    a href='#' Events
 
-    / a href='#' Events
+    a href='#' Trainings
 
     button class='btn-link w-full' data-js='search-box' aria-controls='aria-c-search-box' aria-expanded='false'
       span Search

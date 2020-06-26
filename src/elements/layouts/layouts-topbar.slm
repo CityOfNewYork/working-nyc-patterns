@@ -1,5 +1,5 @@
 
-div class='page-min-max'
+div class='page-max'
   article class='layout-topbar text-center'
     header class='bg-blue-dark text-white p-4' Topbar
     div class='bg-grey-lightest p-4'

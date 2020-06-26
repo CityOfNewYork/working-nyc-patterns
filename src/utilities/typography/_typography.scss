@@ -15,15 +15,15 @@ html {
     direction: rtl;
   }
 
-  @media screen and (min-width: media.$screen-sm-mobile) {
+  @media screen and (min-width: media.get('mobile-small')) {
     font-size: map-get(typography.$typography, 'mobile');
   }
 
-  @media screen and (min-width: media.$screen-tablet) {
+  @include media.screen-and-min-width('tablet') {
     font-size: map-get(typography.$typography, 'tablet');
   }
 
-  @media screen and (min-width: media.$screen-desktop) {
+  @include media.screen-and-min-width('desktop') {
     font-size: map-get(typography.$typography, 'desktop');
   }
 }
@@ -91,7 +91,7 @@ blockquote, .blockquote {
     font-size: inherit;
     line-height: inherit;
 
-    @media screen and (min-width: media.$screen-tablet) {
+    @include media.screen-and-min-width('tablet') {
       padding-#{direction.$start}: $grid * 9;
     }
   }
@@ -110,7 +110,7 @@ blockquote, .blockquote {
     position: absolute;
     display: none;
 
-    @media screen and (min-width: media.$screen-tablet) {
+    @include media.screen-and-min-width('tablet') {
       display: block;
     }
   }
@@ -123,6 +123,10 @@ p, li {
 p, ul, ol, li {
   margin-top: 0;
   margin-bottom: typography.$margin-bottom;
+}
+
+ul, ol {
+  margin-bottom: typography.$margin-bottom * 2;
 }
 
 // .font-primary {

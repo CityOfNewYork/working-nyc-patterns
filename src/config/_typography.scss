@@ -30,8 +30,6 @@ $line-height: map-get(tokens.$tokens, 'line-height');
   font-size: map-get($font-size, $key);
   font-weight: map-get($font-weight, $key);
   line-height: map-get($line-height, $key);
-
-  @content;
 }
 
 @mixin font-smooth() {

@@ -1,24 +1,53 @@
 / Footer
 
-footer class='o-footer'
-  nav class='o-footer__nav'
-    a href='#' class='no-underline' NYC Opportunity
+- let date = new Date();
+- let year = date.getFullYear();
 
-    a href='#' class='uppercase no-underline'
-      span class='text-blue-l3' Working&nbsp;
-      span class='text-blue-l2' NYC
+footer class='o-footer bg-scale-1'
+  div class='page-max'
+    hr class='divider'
 
-    / a href='#' Skills Survey
+    div class='o-footer__wrap'
+      nav class='o-footer__nav o-footer__nav-a'
+        a href='/' class='uppercase text-small no-underline'
+          span class='sr-only' Working N Y C
 
-    a href='#' Programs
+          svg class='icon-logo-standard-menu-item fill-white text-blue-l-2' aria-hidden='true'
+            use xlink:href='#logo-wnyc-standard'
 
-    / a href='#' Events
+        a href='#' Programs
 
-  / = partial('/objects/newsletter/newsletter.slm');
+        a href='#' Events
 
-  div class='o-footer__copyright'
-    - let date = new Date();
-    - let year = date.getFullYear();
+        a href='#' Trainings
 
-    p class='small mb-1' © ${year} City of New York. All Rights Reserved.
-    p class='small m-0' NYC is a trademark and service mark of the City of New York
+      nav class='o-footer__nav o-footer__nav-b'
+        a href='http://nyc.gov/workforcedevelopment' target='_blank' rel='nofollow noopener' class='no-underline'
+          span NYC Workforce Development
+
+        a href='http://nyc.gov/opportunity' target='_blank' rel='nofollow noopener' class='no-underline'
+          span class='sr-only' N Y C Opportunity
+
+          svg class='icon-logo-nyco-menu-item' aria-hidden='true'
+            use xlink:href='#logo-nyco-secondary'
+
+      div class='o-footer__break'
+        / Needed to break the columns
+
+      nav class='o-footer__nav o-footer__nav-c border-none mb-0 pb-0'
+        a href='http://nyc.gov' target='_blank' rel='nofollow noopener' class='font-secondary font-normal text-inherit no-underline flex items-center pb-1'
+          svg class='icon-logo-nyc-copyright fill-white me-1' aria-hidden='true'
+            use xlink:href='#logo-nyc'
+
+          span © ${year} City of New York. All Rights Reserved.
+
+        p class='small' NYC is a trademark and service mark of the City of New York
+
+        a href='https://www1.nyc.gov/home/privacy-policy.page' target='_blank' rel='nofollow noopener'
+          | Privacy Policy
+
+        a href='https://www1.nyc.gov/home/terms-of-use.page' target='_blank' rel='nofollow noopener'
+          | Terms of Use
+
+      / = partial('/objects/newsletter/newsletter.slm');
+

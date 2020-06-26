@@ -8,6 +8,28 @@ $colors: map-get(tokens.$tokens, 'colors');
 $shadows: map-get(tokens.$tokens, 'shadows');
 $modes: map-get(tokens.$tokens, 'color-modes');
 
+@mixin utils($token-selector, $token-key) {
+  .text-#{$token-selector} {
+    color: map-get($colors, $token-key);
+  }
+
+  .bg-#{$token-selector} {
+    background-color: map-get($colors, $token-key);
+  }
+
+  .border-#{$token-selector} {
+    border-color: map-get($colors, $token-key);
+  }
+
+  .fill-#{$token-selector} {
+    fill: map-get($colors, $token-key);
+  }
+
+  .stroke-#{$token-selector} {
+    stroke: map-get($colors, $token-key);
+  }
+}
+
 /**
  * Base mixin for setting text and background colors.
  *
@@ -15,6 +37,9 @@ $modes: map-get(tokens.$tokens, 'color-modes');
  */
 @mixin base($combination) {
   $token-text: map-get($combination, 'text');
+  $token-text-primary: map-get($combination, 'text-primary');
+  $token-text-secondary: map-get($combination, 'text-secondary');
+  $token-text-tertiary: map-get($combination, 'text-tertiary');
   $token-text-alt: map-get($combination, 'text-alt');
   $token-background: map-get($combination, 'background');
   $token-smoothing: map-get($combination, 'smoothing');
@@ -28,9 +53,11 @@ $modes: map-get(tokens.$tokens, 'color-modes');
     @include typography.font-smooth-auto;
   }
 
-  .color-text-alt {
-    color: map-get($colors, $token-text-alt);
-  }
+  // Make our color utilities
+  @include utils('alt', $token-text-alt);
+  @include utils('primary', $token-text-primary);
+  @include utils('secondary', $token-text-secondary);
+  @include utils('tertiary', $token-text-tertiary);
 }
 
 /**
@@ -50,7 +77,7 @@ $modes: map-get(tokens.$tokens, 'color-modes');
       color: map-get($colors, $token-hyperlinks-hover);
     }
 
-    &:visited {
+    &:visited:not([href^='#']) {
       color: map-get($colors, $token-hyperlinks-visited);
     }
   }

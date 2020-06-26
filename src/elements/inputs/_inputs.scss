@@ -13,7 +13,7 @@
 input, textarea {
   @include inputs.inputs;
 
-  @media screen and (min-width: media.$screen-tablet) {
+  @include media.screen-and-min-width('tablet') {
     width: auto;
   }
 }

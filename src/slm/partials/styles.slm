@@ -1,5 +1,5 @@
 / This is the layout styling
-- class_content_headers = 'page-min-max px-2 text-blue-dark'
+- class_content_headers = 'page-max px-2 text-blue-dark'
 
 - class_demo = 'pb-4'
 -   class_demo_headers = 'pt-1 px-2 border-b border-grey-light mb-3';
@@ -7,7 +7,7 @@
 
 - class_demo_cols = 'layout-columns';
 - class_demo_col1 = '';
-- class_demo_spec = 'page-min-max pb-3 px-2 text-small';
+- class_demo_spec = 'page-max pb-3 px-2 text-small';
 
 - class_demo_col2 = '';
 - class_demo_content = '';
@@ -19,7 +19,7 @@
 -   class_swatch__label = 'mt-1';
 
 / Styling for the nav
-- class_nav = 'screen-tablet:flex-1 mb-1 px-2';
+- class_nav = 'tablet:flex-1 mb-1 px-2';
 -   class_nav_heading = 'h3 text-small mb-1 block';
 -   class_nav_item = 'block p-1';
--   class_nav_divider = 'screen-tablet:pb-2 screen-tablet:mb-1 p-1'
+-   class_nav_divider = 'tablet:pb-2 tablet:mb-1 p-1'

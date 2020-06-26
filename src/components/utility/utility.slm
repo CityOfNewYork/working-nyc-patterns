@@ -1,14 +1,14 @@
 / Utility
 
-nav class='c-utility wrap'
+nav class='c-utility'
   a class='btn-link me-auto'
     svg class='icon-2 icon-wnyc-ui' aria-hidden='true'
       use xlink:href='#icon-wnyc-ui-chevron-left'
 
     span Back
 
-  a class='btn btn-small btn-tertiary'
-    | Apply
+  a href='#contact' class='btn btn-small btn-tertiary'
+    | Contact
 
   a class='btn-link'
     svg class='icon-2 icon-wnyc-ui' aria-hidden='true'
@@ -16,7 +16,7 @@ nav class='c-utility wrap'
 
     span Save
 
-  a class='btn-link'
+  a href='#' class='btn-link' data-js='web-share' data-web-share='{"title":"Page Title","text":"Description to of the shared content.","url":"https://url/to/share"}'
     svg class='icon-2 icon-wnyc-ui' aria-hidden='true'
       use xlink:href='#icon-wnyc-ui-share-2'
 

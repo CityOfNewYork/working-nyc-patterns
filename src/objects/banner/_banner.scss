@@ -38,12 +38,12 @@
       height: 10px;
       bottom: 2px;
 
-      @media screen and (min-width: media.$screen-tablet) {
+      @include media.screen-and-min-width('tablet') {
         height: 11px;
         bottom: 4px;
       }
 
-      @media screen and (min-width: media.$screen-desktop) {
+      @include media.screen-and-min-width('desktop') {
         height: 12px;
         bottom: 4px;
       }
@@ -61,14 +61,14 @@
 .o-banner__tout {
   margin-bottom: dimensions.$spacing-base;
 
-  @media screen and (min-width: media.$screen-tablet) {
+  @include media.screen-and-min-width('tablet') {
     display: flex;
     flex-direction: column;
   }
 }
 
 .o-banner__tout-body {
-  @media screen and (min-width: media.$screen-tablet) {
+  @include media.screen-and-min-width('tablet') {
     flex: 1 1 auto;
   }
 }

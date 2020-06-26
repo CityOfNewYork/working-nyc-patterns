@@ -1,31 +1,26 @@
 'use strict';
 
 // Utilities
-import Forms from '@nycopportunity/patterns-framework/src/utilities/forms/forms';
 import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
-import Icons from '@nycopportunity/patterns-framework/src/utilities/icons/icons';
-import Track from '@nycopportunity/patterns-framework/src/utilities/track/track';
 import Copy from '@nycopportunity/patterns-framework/src/utilities/copy/copy';
+import Icons from '@nycopportunity/patterns-framework/src/utilities/icons/icons';
+import Forms from '@nycopportunity/patterns-framework/src/utilities/forms/forms';
+// import Tooltips from '@nycopportunity/patterns-framework/src/utilities/tooltips/tooltips';
+import Track from '@nycopportunity/patterns-framework/src/utilities/track/track';
+import WebShare from '@nycopportunity/patterns-framework/src/utilities/web-share/web-share';
 
 // Elements
-// import InputsAutocomplete from '../elements/inputs/inputs-autocomplete';
-// import Tooltips from '../elements/tooltips/tooltips';
+// import ... from '../elements/...';
 
 // Components
 import Accordion from '../components/accordion/accordion';
-// import Disclaimer from '../components/disclaimer/disclaimer';
-// import Filter from '../components/filter/filter';
-// import NearbyStops from '../components/nearby-stops/nearby-stops';
-// import ShareForm from '../components/share-form/share-form';
-// import WebShare from '../components/web-share/web-share';
+// import ... from '../components/...';
 
 // Objects
 import MobileNav from '../objects/mobile-nav/mobile-nav';
 import SearchBox from '../objects/search-box/search-box';
-// import AlertBanner from '../objects/alert-banner/alert-banner';
-// import Newsletter from '../objects/newsletter/newsletter';
-// import TextController from '../objects/text-controller/text-controller';
-/** import components here as they are written. */
+// import ... from '../objects/...';
+/** import modules here as they are written. */
 
 /**
  * The Main module
@@ -34,8 +29,8 @@ import SearchBox from '../objects/search-box/search-box';
 class main {
   /**
    * An API for the Icons Utility
-   * @param  {String} path The path of the icon file
-   * @return {Object} instance of Icons
+   * @param   {String}  path  The path of the icon file
+   * @return  {Object}        instance of Icons
    */
   icons(path = 'svg/icons.svg') {
     return new Icons(path);
@@ -43,8 +38,8 @@ class main {
 
   /**
    * An API for the Toggle Utility
-   * @param  {Object} settings Settings for the Toggle Class
-   * @return {Object}          Instance of toggle
+   * @param   {Object}  settings  Settings for the Toggle Class
+   * @return  {Object}            Instance of toggle
    */
   toggle(settings = false) {
     return (settings) ? new Toggle(settings) : new Toggle();
@@ -52,8 +47,8 @@ class main {
 
   /**
    *
-   * @param {string}   selector
-   * @param {function} submit
+   * @param  {string}    selector
+   * @param  {function}  submit
    */
   valid(selector, submit) {
     this.form = new Forms(document.querySelector(selector));
@@ -151,15 +146,6 @@ class main {
   // }
 
   // /**
-  //  * An API for the WebShare Component
-  //  *
-  //  * @return  {Object}  Instance of WebShare
-  //  */
-  // webShare() {
-  //   return new WebShare();
-  // }
-
-  // /**
   //  * An API for the Disclaimer Component
   //  * @return  {Object}  Instance of Disclaimer
   //  */
@@ -176,12 +162,35 @@ class main {
   //   return (element) ? new TextController(element) : null;
   // }
 
+  /**
+   * An API for the Mobile Nav
+   *
+   * @return  {Object}  instance of MobileNav
+   */
   mobileNav() {
     return new MobileNav();
   }
 
+  /**
+   * An API for the Search Box
+   *
+   * @return  {Object}  instance of SearchBox
+   */
   searchBox() {
     return new SearchBox();
+  }
+
+  /**
+   * An API for Web Share
+   *
+   * @return  {Object}  instance of WebShare
+   */
+  webShare() {
+    return new WebShare({
+      fallback: () => {
+        console.dir('Web Share Fallback');
+      }
+    });
   }
 }
 

@@ -22,7 +22,7 @@
 
   z-index: 1000;
 
-  @media screen and (min-width: media.$screen-desktop) {
+  @include media.screen-and-min-width('desktop') {
     display: none;
   }
 }
@@ -35,17 +35,22 @@
 
 .o-mobile-nav__nav {
   @include nav.block();
+
+  a, button {
+    text-align: direction.$start;
+    justify-content: flex-start;
+  }
 }
 
 // Animation
 
 .o-mobile-nav {
-  width: dimensions.$mobile-menu-width;
+  width: dimensions.get('mobile-menu-width');
 
   @if direction.$direction == 'rtl' {
-    left: -(dimensions.$mobile-menu-width);
+    left: -(dimensions.get('mobile-menu-width'));
   } @else {
-    right: -(dimensions.$mobile-menu-width);
+    right: -(dimensions.get('mobile-menu-width'));
   }
 
   @include animate.ease();

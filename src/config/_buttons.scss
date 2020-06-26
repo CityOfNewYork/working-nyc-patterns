@@ -25,18 +25,18 @@ $radius-tag: map-get($buttons, 'radius-tag');
   background: transparent;
   border: none;
   padding: 0;
-  cursor: pointer;
   overflow: visible;
-
-  > * {
-    pointer-events: none
-  }
 }
 
 @mixin normal() {
   @include typography.set('button');
   line-height: $inner-size;
   padding: ($grid * 2) dimensions.$spacing-base;
+  cursor: pointer;
+
+  * {
+    pointer-events: none;
+  }
 }
 
 @mixin base() {
@@ -160,7 +160,7 @@ $radius-tag: map-get($buttons, 'radius-tag');
 
   appearance: none;
   border: none;
-  background: transparent;
+  background: transparent !important;
   padding: 0;
   border-radius: 0;
 

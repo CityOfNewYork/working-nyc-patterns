@@ -2,5 +2,5 @@
 / Normal Button
 /
 
-button type='button' class='btn-primary btn-small screen-desktop:btn'
+button type='button' class='btn-primary btn-small desktop:btn'
   | Responsive Button

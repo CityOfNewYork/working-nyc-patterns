@@ -8,6 +8,7 @@ module.exports = {
   'output': '"./src/config/_tokens.scss"',
   'version': package.version,
   'cdn': `"https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-wnyc-patterns@v${package.version}/dist/"`,
+  'google-fonts': '"https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CMontserrat:400,400i,700"',
   'languages': [
     'default',
     'ar',
@@ -94,6 +95,7 @@ module.exports = {
     'option': 'inherit'
   },
   'line-height': {
+    'normal': 'normal',
     'body': 'normal',
     'h1': '1.2',
     'h2': '1.3',
@@ -174,6 +176,9 @@ module.exports = {
     'default': {
       'text': 'white',
       'text-alt': 'blue-l-3',
+      'text-primary': 'blue-l-1',
+      'text-secondary': 'green-l-3',
+      'text-tertiary': 'yellow-l-2',
       'hyperlinks': 'blue-l-1',
       'hyperlinks-hover': 'blue-l-3',
       'hyperlinks-visited': 'blue-l-3',
@@ -247,10 +252,10 @@ module.exports = {
     }
   },
   'screens': {
-    'screen-desktop': 960,
-    'screen-tablet': 768,
-    'screen-mobile': 480,
-    'screen-sm-mobile': 400
+    'desktop': '960px',
+    'tablet': '768px',
+    'mobile': '480px',
+    'mobile-small': '400px'
   },
   'grid': '8px',
   'dimensions': {
@@ -261,6 +266,12 @@ module.exports = {
     'site-min-width': '320px',
     'navigation-logo': '128px',
     'navigation-height-mobile': '80px', // size is actually determined by padding, etc. this is a reference for other components
+    'footer-height-mobile-sm': '427px',
+    'footer-height-mobile': '581px',
+    'footer-height-tablet': '448px',
+    'side-bar-width': '18.5rem',
+    'side-bar-width-small': '12.5rem',
+    'topbar-height': '80px'
   },
   'z': {
     '0': 0,
@@ -269,6 +280,7 @@ module.exports = {
     '30': 30,
     '40': 40,
     '50': 50,
+    'footer': 0,
     'search-box': 1000,
     'navigation': 1010,
     'auto': 'auto',
@@ -317,7 +329,9 @@ module.exports = {
     '8': ['64px', '64px'],
     'logo-standard-menu-item': ['130px', '18px'],
     'logo-standard-tagline': ['320px', '30px'],
-    'logo-stacked-menu-item': ['100px', '32px']
+    'logo-stacked-menu-item': ['100px', '32px'],
+    'logo-nyco-menu-item': ['150px', '17px'],
+    'logo-nyc-copyright': ['41px', '15px']
   },
   'buttons': {
     'inner-size': '1rem',
@@ -333,9 +347,6 @@ module.exports = {
     'stroke-line': 'round'
   },
   'layouts': {
-    'side-bar-width': '18.5rem',
-    'side-bar-width-small': '12.5rem',
-    'topbar-height': '90px',
     'layout-columns': true,
     'layout-rows': true,
     'layout-gutter': true,

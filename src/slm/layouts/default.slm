@@ -8,15 +8,15 @@ html lang='en' dir='ltr'
     = partial('../partials/header.slm');
 
     aside#main-menu role='navigation' aria-labelledby='main-menu-control' aria-hidden='true' class='color-modal text-small hidden hidden:overflowFadeInUp animated relative' style='top: -1px'
-      div class='page-min-max py-4 animated'
-        div class='screen-tablet:flex'
+      div class='page-max py-4 animated'
+        div class='tablet:flex'
           = partial('../partials/nav.slm');
 
         div class='text-center'
           button class='btn-link' aria-controls='main-menu' aria-expanded='false' data-js='toggle' Close Menu
 
     main#main-content role='main' class='py-4'
-      article class='py-4 clearfix page-min-max wrap'
+      article class='py-4 clearfix page-max wrap'
         = content('content');
 
         = partial('../section/nav.slm');

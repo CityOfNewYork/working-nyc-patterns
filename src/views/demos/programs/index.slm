@@ -1,0 +1,30 @@
+/ Layout
+= extend('/slm/layouts/demos');
+
+/ Content blocks
+= content('head');
+  - this.title = 'Programs'
+  = mixin('head');
+
+= content('content');
+  div class='bg-scale-2'
+    main id='content' class='bg-scale-1'
+      div class='layout-content sticky top-0 bg-scale-1 z-10'
+        div class='page-max'
+          | Utility
+
+      header class='layout-content'
+        div class='c-header page-max wrap'
+          | Header
+
+      section class='bg-scale-2 layout-content'
+        div class='py-4 page-max wrap'
+          | Body Section
+
+      section#contact class='bg-scale-1 layout-content'
+        nav class='py-2 page-max wrap tablet:layout-three-columns-gutter'
+
+
+
+= content('script');
+  / javascript:

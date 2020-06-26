@@ -8,6 +8,7 @@
 @use 'config/color';
 @use 'config/direction';
 @use 'config/dimensions';
+@use 'config/layouts';
 @use 'config/media';
 @use 'config/nav';
 @use 'config/typography';
@@ -18,6 +19,7 @@
   @include typography.set('small');
   line-height: 1rem;
 
+  @include layouts.wrap();
   display: flex;
   align-items: stretch;
   justify-content: space-between;
@@ -28,43 +30,40 @@
   width: 100%;
   bottom: 0;
 
-  @media screen and (max-width: media.$screen-tablet) {
+  @include media.screen-and-max-width('tablet') {
+    padding-left: 0;
+    padding-right: 0;
     z-index: map-get(z.$indexes, 'navigation');
   }
 
-  @media screen and (min-width: media.$screen-tablet) {
+  @include media.screen-and-min-width('tablet') {
     @include nav.inline();
-    padding: dimensions.$spacing-base;
+    padding-top: $grid * 2;
+    padding-bottom: $grid * 2;
     justify-content: flex-end;
     position: sticky;
     top: 0;
     box-shadow: none;
   }
 
-  @media screen and (min-width: media.$screen-desktop) {
+  @include media.screen-and-min-width('desktop') {
     position: static;
-  }
-}
-
-body {
-  @media screen and (max-width: media.$screen-tablet) {
-    padding-bottom: dimensions.$navigation-height-mobile
   }
 }
 
 .o-navigation__logo {
   background-color: var(--color-scale-1);
-  min-width: dimensions.$navigation-logo;
+  min-width: dimensions.get('navigation-logo');
   margin-#{direction.$end}: $grid;
 
-  @media screen and (min-width: media.$screen-tablet) {
+  @include media.screen-and-min-width('tablet') {
     background-color: transparent;
     margin-#{direction.$end}: auto !important;
   }
 }
 
 // Mobile Menu Items
-@media screen and (max-width: media.$screen-tablet) {
+@include media.screen-and-max-width('tablet') {
   .o-navigation__menu-item {
     padding: $grid * 2;
 
@@ -83,7 +82,7 @@ body {
   }
 }
 
-@media screen and (max-width: media.$screen-tablet) {
+@include media.screen-and-max-width('tablet') {
   .o-navigation__menu-icon {
     width: $grid * 4 !important;
     height: $grid * 4 !important;
@@ -107,7 +106,7 @@ body {
   flex: 1 1 auto;
   text-align: direction.$end;
 
-  @media screen and (min-width: media.$screen-desktop) {
+  @include media.screen-and-min-width('desktop') {
     display: none
   }
 }

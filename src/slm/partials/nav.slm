@@ -13,14 +13,16 @@ nav class='${class_nav}'
   a class='${class_nav_item}' xhref='${this.package.cdn.npm}' NPM Package
   a class='${class_nav_item}' xhref='${this.package.cdn.source}' GitHub Repository
 
-nav class='${class_nav} screen-desktop:ps-4'
+nav class='${class_nav} desktop:ps-4'
   span class='${class_nav_heading} ${class_nav_divider}' Elements
   / a class='${class_nav_item}' xhref='badge' Badge
   a class='${class_nav_item}' xhref='buttons' Buttons
   a class='${class_nav_item}' xhref='checkboxes' Checkboxes
-  / a class='${class_nav_item}' xhref='dividers' Dividers
-  a class='${class_nav_item}' xhref='inputs' Inputs
+  a class='${class_nav_item}' xhref='code' Code
+  a class='${class_nav_item}' xhref='divider' Divider
+  a class='${class_nav_item}' xhref='forms' Forms
   a class='${class_nav_item}' xhref='icons' Icons
+  a class='${class_nav_item}' xhref='inputs' Inputs
   a class='${class_nav_item}' xhref='labels' Labels
   a class='${class_nav_item}' xhref='layouts' Layouts
   a class='${class_nav_item}' xhref='links' Links
@@ -33,24 +35,23 @@ nav class='${class_nav} screen-desktop:ps-4'
   / a class='${class_nav_item}' xhref='toggles' Toggles
   / a class='${class_nav_item}' xhref='selects' Selects
 
-nav class='${class_nav} screen-desktop:ps-4'
+nav class='${class_nav} desktop:ps-4'
   span class='${class_nav_heading} ${class_nav_divider}' Components
   a class='${class_nav_item}' xhref='accordion' Accordion
   / a class='${class_nav_item}' xhref='alert-box' Alert Box
   / a class='${class_nav_item}' xhref='card' Card
-  / a class='${class_nav_item}' xhref='checklist' Checklist
   / a class='${class_nav_item}' xhref='disclaimer' Disclaimer
   / a class='${class_nav_item}' xhref='filter' Filter
   a class='${class_nav_item}' xhref='header' Header
-  / a class='${class_nav_item}' xhref='member-list' Member List
   / a class='${class_nav_item}' xhref='nearby-stops' Nearby Stops
+  / a class='${class_nav_item}' xhref='question' Question
   / a class='${class_nav_item}' xhref='share-form' Share Form
   / a class='${class_nav_item}' xhref='share-links' Share Links
   / a class='${class_nav_item}' xhref='side-nav' Side Nav
-  / a class='${class_nav_item}' xhref='question' Question
-  / a class='${class_nav_item}' xhref='web-share' Web Share
+  a class='${class_nav_item}' xhref='question' Utility
+  a class='${class_nav_item}' xhref='web-share' Web Share
 
-nav class='${class_nav} screen-desktop:ps-4'
+nav class='${class_nav} desktop:ps-4'
   span class='${class_nav_heading} ${class_nav_divider}' Objects
   / a class='${class_nav_item}' xhref='alert-banner' Alert Banner
   / a class='${class_nav_item}' xhref='announcements' Announcements
@@ -63,11 +64,11 @@ nav class='${class_nav} screen-desktop:ps-4'
   / a class='${class_nav_item}' xhref='formstack' Formstack
   a class='${class_nav_item}' xhref='mobile-nav' Mobile Nav
   a class='${class_nav_item}' xhref='navigation' Navigation
-  / a class='${class_nav_item}' xhref='newsletter' Newsletter
+  a class='${class_nav_item}' xhref='newsletter' Newsletter
   a class='${class_nav_item}' xhref='search-box' Search Box
-  / a class='${class_nav_item}' xhref='text-controller' Text Controller
+  a class='${class_nav_item}' xhref='text-controller' Text Controller
 
-nav class='${class_nav} screen-desktop:ps-4'
+nav class='${class_nav} desktop:ps-4'
   span class='${class_nav_heading} ${class_nav_divider}' Utilities
   a class='${class_nav_item}' xhref='animate' Animate
   / a class='${class_nav_item}' xhref='clearfix' Clearfix

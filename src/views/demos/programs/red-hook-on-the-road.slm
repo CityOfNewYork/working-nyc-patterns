@@ -1,0 +1,189 @@
+/ Layout
+= extend('/slm/layouts/demos');
+
+/ Content blocks
+= content('head');
+  - this.title = 'Programs'
+  = mixin('head');
+
+= content('content');
+  div class='bg-scale-2'
+    main id='content' class='bg-scale-1'
+      div
+        div class='layout-content sticky top-0 bg-scale-1 z-10'
+          div class='page-max'
+            = partial('/components/utility/utility.slm');
+
+        div class='layout-content'
+          div class='page-max'
+            header class='c-header'
+              / div class='c-header__icon'
+              /   a href='#'
+              /     svg class='c-header__svg' aria-hidden='true'
+              /       use xlink:href='#category-wnyc-construction'
+
+              div
+                h1 class='c-header__title'
+                  | Commercial Driver <br>
+                  | Red Hook on the Road
+
+                h2 class='c-header__subtitle text-alt'
+                  | <a href='#ae'>Brooklyn Workforce Innovations</a> and <a href='#er'>NYC Small Business Services</a>
+
+                nav class='c-header__breadcrumbs'
+                  a Home
+
+                  svg class='c-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
+                    use xlink:href='#icon-wnyc-ui-chevron-right'
+
+                  a Programs
+
+                  svg class='c-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
+                    use xlink:href='#icon-wnyc-ui-chevron-right'
+
+                  a Job Training
+
+                  svg class='c-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
+                    use xlink:href='#icon-wnyc-ui-chevron-right'
+
+                  a Commercial Driver - Red Hook on the Road
+
+                p class='small'
+                  a class='btn btn-link btn-small btn-tertiary' href='#disability-accommodation'
+                    svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+                      use xlink:href='#icon-wnyc-ui-user-check'
+
+                    span Accommodates Disabilities
+
+                p class='small'
+                  a class='btn btn-link btn-small btn-tertiary' href='#language-access'
+                    svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+                      use xlink:href='#icon-wnyc-ui-translate'
+
+                    span Accommodates Multiple Languages
+
+                p class='small'
+                  span class='flex items-center'
+                    svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+                      use xlink:href='#icon-wnyc-ui-info'
+
+                    | Last updated 2 days ago
+
+        section class='bg-scale-2 layout-content'
+          div class='py-4 page-max wrap'
+            div#more-information class='pt-utility-anchor'
+              blockquote class='text-alt'
+                span class='blockquote__mark' aria-hidden='true' —
+                p Through this program students prepare to work as commercial drivers.
+
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            div#eligibility class='pt-utility-anchor'
+              h3 class='h5 text-alt'
+                a href='#eligibility' class='text-inherit' Eligibility
+
+              p
+                a href='#' class='btn btn-link btn-secondary mb-1' Adults 18+
+
+              p This program accepts New York City residents lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+            div#schedule class='pt-utility-anchor'
+              h3 class='h5 text-alt'
+                a href='#schedule' class='text-inherit' Schedule
+
+              p 4 weeks, full time. July 1–July 26, 10am–5pm
+
+            div#disability-accommodation class='pt-utility-anchor'
+              h3 class='h5 text-alt'
+                a href='#disability-accommodation' class='text-inherit' Disability Accommodation
+
+              p The following accommodations are available:
+
+              ul
+                li Wheelchair Accessible
+                li Blind or Low Vision Accessible
+                li Audio Description for TV, Film
+                li Telephone Typewriter
+                li Assistive Listening (Telephone)
+                li Sign Language Interpretation
+                li Open Captioning
+                li Assistive Listening (Ear)
+                li Large Print
+                li Universal Information
+                li Hearing with T-Coil
+                li Closed Captioning
+                li Braille
+                li Communication Access Real-Time Translation
+
+              p Attendees who need additional accommodation for disability such as a sign language translation should contact ____________ by calling <a>1 (800) 333-1122</a> or emailing <a>ada@email.gov</a>.
+
+            div#language-access class='pt-utility-anchor'
+              h3 class='h5 text-alt'
+                a href='#language-access' class='text-inherit' Lanuguage Access
+
+              p The program is avialable in the following languages:
+
+              ul
+                li English
+                li Español (Spanish)
+                li Русский (Russian)
+                li 한국어 (Korean)
+                li العربية (Arabic)
+                li Kreyol (Haitian-Creole)
+                li 繁體中文 (Traditional Chinese)
+                li Français (French)
+                li polski (Polish)
+                li اردو (Urdu)
+                li বাংলা (Bengali)
+
+            div#next-steps class='pt-utility-anchor'
+              h3 class='h5 text-alt'
+                a href='#next-steps' class='text-inherit' Next Steps
+
+              p Fill out the Interest Form to apply. Deadline: June 10
+
+      section#contact class='bg-scale-1 layout-content'
+        nav class='py-2 page-max wrap tablet:layout-three-columns-gutter'
+          a href='#' class='btn btn-secondary btn-next mb-1 w-full'
+            svg class='icon-wnyc-ui' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-left'
+
+            | Learn More
+
+            svg class='icon-wnyc-ui' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-right'
+
+          a href='#' class='btn btn-secondary btn-next mb-1 w-full'
+            svg class='icon-wnyc-ui' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-left'
+
+            | Apply Online
+
+            svg class='icon-wnyc-ui' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-right'
+
+          a href='#' class='btn btn-secondary btn-next mb-1 w-full'
+            svg class='icon-wnyc-ui' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-left'
+
+            | Call
+
+            svg class='icon-wnyc-ui' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-right'
+
+      section class='bg-scale-1 layout-content'
+        div class='page-max'
+          div class='text-center text-alt mb-1' —
+
+          nav class='py-2 wrap'
+            a href='#' class='btn btn-primary btn-next w-full'
+              svg class='icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-arrow-left'
+
+              | More programs at Brooklyn Workforce Innovations
+
+              svg class='icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-arrow-right'
+
+= content('script');
+  / javascript:

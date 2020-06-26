@@ -4,10 +4,11 @@
 
 // Dependencies
 @use 'config/grid' as *;
+@use 'config/dimensions';
+@use 'config/layouts';
 @use 'config/media';
 @use 'config/nav';
 @use 'config/typography';
-@use 'config/dimensions';
 
 // Declarations
 .c-utility {
@@ -15,9 +16,25 @@
   @include nav.inline();
   display: flex;
   justify-content: end;
-  padding: ($grid * 2);
 
-  @media screen and (min-width: media.$screen-tablet) {
-    padding: dimensions.$spacing-base;
-  }
+  @include layouts.wrap();
+  padding-top: ($grid * 2);
+  padding-bottom: ($grid * 2);
+
+  // @include media.screen-and-min-width('tablet') {
+  //   padding-left: dimensions.$spacing-base;
+  //   padding-right: dimensions.$spacing-base;
+  // }
+}
+
+.pt-utility-anchor {
+  padding-top: $grid * 8;
+}
+
+.pb-utility-anchor {
+  padding-bottom: $grid * 8;
+}
+
+.mt-utility-anchor {
+  margin-top: $grid * 8;
 }

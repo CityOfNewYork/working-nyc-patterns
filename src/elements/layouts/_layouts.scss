@@ -9,11 +9,21 @@
 // Declarations
 
 // Layouts that include media queries
-@include layouts.wrap;
-@include layouts.map;
+.wrap, .page-wrap {
+  @include layouts.wrap()
+}
+
+.wrap-auto, .page-wrap-auto {
+  @include layouts.auto();
+  @include layouts.wrap()
+}
+
+@include layouts.map();
 
 // Layouts that do not include Media queries
 @include media.screens() using ($variant) {
+  @include layouts.page-min($variant);
+  @include layouts.page-max($variant);
   @include layouts.page-min-max($variant);
   @include layouts.columns($variant);
   @include layouts.rows($variant);
@@ -34,9 +44,9 @@
 }
 
 .print-view {
-  @include layouts.print
+  @include layouts.print()
 }
 
 @media print {
-  @include layouts.print
+  @include layouts.print()
 }

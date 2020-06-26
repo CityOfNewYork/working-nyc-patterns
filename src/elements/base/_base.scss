@@ -3,8 +3,10 @@
  */
 
 // Dependencies
-@use 'config/tokens';
-@use 'config/color';
+// @use 'config/tokens' as *;
+// @use 'config/color';
+@use 'config/dimensions';
+@use 'config/media';
 
 // Declarations
 html {
@@ -67,6 +69,25 @@ figure, figcaption {
 
 *:last-child {
   margin-bottom: 0;
+}
+
+body {
+  // @include media.screen-and-max-width('tablet') {
+  //   padding-bottom: dimensions.get('navigation-height-mobile') + dimensions.get('footer-height-mobile');
+  // }
+  padding-bottom: dimensions.get('navigation-height-mobile') + dimensions.get('footer-height-mobile-sm');
+
+  @media screen and (min-width: media.get('mobile-small')) {
+    padding-bottom: dimensions.get('navigation-height-mobile') + dimensions.get('footer-height-mobile');
+  }
+
+  @include media.screen-and-min-width('tablet') {
+    padding-bottom: dimensions.get('navigation-height-mobile') + dimensions.get('footer-height-tablet');
+  }
+
+  @include media.screen-and-min-width('tablet') {
+    padding-bottom: 0;
+  }
 }
 
 @mixin base-print {

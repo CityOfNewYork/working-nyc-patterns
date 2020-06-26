@@ -7,7 +7,7 @@
   = mixin('head');
 
 = content('content');
-  div class='page-min-max layout-map flex-row-reverse screen-desktop:layout-columns screen-desktop:flex-row'
+  div class='page-max layout-map flex-row-reverse desktop:layout-columns desktop:flex-row'
     header class='o-banner layout-map__map layout__column bg-scale-2 flex items-center '
       div class='o-banner__inner my-4'
         h2 class='h3 m-0'
@@ -19,7 +19,7 @@
             svg class='icon-logo-standard-tagline fill-white text-blue-l-2' aria-hidden='true'
               use xlink:href='#logo-wnyc-standard'
 
-    main class='bg-scale-1 layout-map__sidebar layout__column p-2 screen-desktop:p-3'
+    main class='bg-scale-1 layout-map__sidebar layout__column p-2 desktop:p-3'
       - for (let i in this.segments)
         - let segment = this.segments[i]
         - let active = (i == 0);

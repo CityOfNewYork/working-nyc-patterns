@@ -36,6 +36,7 @@ module.exports = {
       NODE_ENV: process.env.NODE_ENV
     }
   },
+  baseUrl: (process.env.NODE_ENV === 'production') ? package.homepage : '',
   newsletter: {
     action: 'https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&id=aa67394696',
     boroughs: [

@@ -2,3 +2,7 @@
 @use 'config/tokens' as *;
 
 $indexes: map-get($tokens, 'z');
+
+@function get($token) {
+  @return map-get($indexes, $token);
+}
