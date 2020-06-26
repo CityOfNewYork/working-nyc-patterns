@@ -2,6 +2,332 @@ var WorkingNyc = (function () {
   'use strict';
 
   /**
+   * The Simple Toggle class. This will toggle the class 'active' and 'hidden'
+   * on target elements, determined by a click event on a selected link or
+   * element. This will also toggle the aria-hidden attribute for targeted
+   * elements to support screen readers. Target settings and other functionality
+   * can be controlled through data attributes.
+   *
+   * This uses the .matches() method which will require a polyfill for IE
+   * https://polyfill.io/v2/docs/features/#Element_prototype_matches
+   *
+   * @class
+   */
+  var Toggle = function Toggle(s) {
+    var this$1 = this;
+
+    // Create an object to store existing toggle listeners (if it doesn't exist)
+    if (!window.hasOwnProperty('ACCESS_TOGGLES'))
+      { window.ACCESS_TOGGLES = []; }
+
+    s = (!s) ? {} : s;
+
+    this.settings = {
+      selector: (s.selector) ? s.selector : Toggle.selector,
+      namespace: (s.namespace) ? s.namespace : Toggle.namespace,
+      inactiveClass: (s.inactiveClass) ? s.inactiveClass : Toggle.inactiveClass,
+      activeClass: (s.activeClass) ? s.activeClass : Toggle.activeClass,
+      before: (s.before) ? s.before : false,
+      after: (s.after) ? s.after : false
+    };
+
+    this.element = (s.element) ? s.element : false;
+
+    if (this.element)
+      { this.element.addEventListener('click', function (event) {
+        this$1.toggle(event);
+      }); }
+    else
+      // If there isn't an existing instantiated toggle, add the event listener.
+      if (!window.ACCESS_TOGGLES.hasOwnProperty(this.settings.selector))
+        { document.querySelector('body').addEventListener('click', function (event) {
+          if (!event.target.matches(this$1.settings.selector))
+            { return; }
+
+          this$1.toggle(event);
+        }); }
+
+    // Record that a toggle using this selector has been instantiated. This
+    // prevents double toggling.
+    window.ACCESS_TOGGLES[this.settings.selector] = true;
+
+    return this;
+  };
+
+  /**
+   * Logs constants to the debugger
+   * @param{object} eventThe main click event
+   * @return {object}      The class
+   */
+  Toggle.prototype.toggle = function toggle (event) {
+      var this$1 = this;
+
+    var el = event.target;
+    var target = false;
+
+    event.preventDefault();
+
+    /** Anchor Links */
+    target = (el.hasAttribute('href')) ?
+      document.querySelector(el.getAttribute('href')) : target;
+
+    /** Toggle Controls */
+    target = (el.hasAttribute('aria-controls')) ?
+      document.querySelector(("#" + (el.getAttribute('aria-controls')))) : target;
+
+    /** Main Functionality */
+    if (!target) { return this; }
+    this.elementToggle(el, target);
+
+    /** Undo */
+    if (el.dataset[((this.settings.namespace) + "Undo")]) {
+      var undo = document.querySelector(
+        el.dataset[((this.settings.namespace) + "Undo")]
+      );
+
+      undo.addEventListener('click', function (event) {
+        event.preventDefault();
+        this$1.elementToggle(el, target);
+        undo.removeEventListener('click');
+      });
+    }
+
+    return this;
+  };
+
+  /**
+   * The main toggling method
+   * @param{object} el   The current element to toggle active
+   * @param{object} target The target element to toggle active/hidden
+   * @return {object}      The class
+   */
+  Toggle.prototype.elementToggle = function elementToggle (el, target) {
+      var this$1 = this;
+
+    var i = 0;
+    var attr = '';
+    var value = '';
+
+    // Get other toggles that might control the same element
+    var others = document.querySelectorAll(
+      ("[aria-controls=\"" + (el.getAttribute('aria-controls')) + "\"]"));
+
+    /**
+     * Toggling before hook.
+     */
+    if (this.settings.before) { this.settings.before(this); }
+
+    /**
+     * Toggle Element and Target classes
+     */
+    if (this.settings.activeClass) {
+      el.classList.toggle(this.settings.activeClass);
+      target.classList.toggle(this.settings.activeClass);
+
+      // If there are other toggles that control the same element
+      if (others) { others.forEach(function (other) {
+        if (other !== el) { other.classList.toggle(this$1.settings.activeClass); }
+      }); }
+    }
+
+    if (this.settings.inactiveClass)
+      { target.classList.toggle(this.settings.inactiveClass); }
+
+    /**
+     * Target Element Aria Attributes
+     */
+    for (i = 0; i < Toggle.targetAriaRoles.length; i++) {
+      attr = Toggle.targetAriaRoles[i];
+      value = target.getAttribute(attr);
+
+      if (value != '' && value)
+        { target.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
+    }
+
+    /**
+     * Jump Links
+     */
+    if (el.hasAttribute('href')) {
+      // Reset the history state, this will clear out
+      // the hash when the jump item is toggled closed.
+      history.pushState('', '',
+        window.location.pathname + window.location.search);
+
+      // Target element toggle.
+      if (target.classList.contains(this.settings.activeClass)) {
+        window.location.hash = el.getAttribute('href');
+
+        target.setAttribute('tabindex', '-1');
+        target.focus({preventScroll: true});
+      } else
+        { target.removeAttribute('tabindex'); }
+    }
+
+    /**
+     * Toggle Element (including multi toggles) Aria Attributes
+     */
+    for (i = 0; i < Toggle.elAriaRoles.length; i++) {
+      attr = Toggle.elAriaRoles[i];
+      value = el.getAttribute(attr);
+
+      if (value != '' && value)
+        { el.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
+
+      // If there are other toggles that control the same element
+      if (others) { others.forEach(function (other) {
+        if (other !== el && other.getAttribute(attr))
+          { other.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
+      }); }
+    }
+
+    /**
+     * Toggling complete hook.
+     */
+    if (this.settings.after) { this.settings.after(this); }
+
+    return this;
+  };
+
+  /** @type {String} The main selector to add the toggling function to */
+  Toggle.selector = '[data-js*="toggle"]';
+
+  /** @type {String} The namespace for our data attribute settings */
+  Toggle.namespace = 'toggle';
+
+  /** @type {String} The hide class */
+  Toggle.inactiveClass = 'hidden';
+
+  /** @type {String} The active class */
+  Toggle.activeClass = 'active';
+
+  /** @type {Array} Aria roles to toggle true/false on the toggling element */
+  Toggle.elAriaRoles = ['aria-pressed', 'aria-expanded'];
+
+  /** @type {Array} Aria roles to toggle true/false on the target element */
+  Toggle.targetAriaRoles = ['aria-hidden'];
+
+  /**
+   * Copy to Clipboard Helper
+   */
+  var Copy = function Copy() {
+    var this$1 = this;
+
+    // Set attributes
+    this.selector = Copy.selector;
+
+    this.aria = Copy.aria;
+
+    this.notifyTimeout = Copy.notifyTimeout;
+
+    // Select the entire text when it's focused on
+    document.querySelectorAll(Copy.selectors.TARGETS).forEach(function (item) {
+      item.addEventListener('focus', function () { return this$1.select(item); });
+      item.addEventListener('click', function () { return this$1.select(item); });
+    });
+
+    // The main click event for the class
+    document.querySelector('body').addEventListener('click', function (event) {
+      if (!event.target.matches(this$1.selector))
+        { return; }
+
+      this$1.element = event.target;
+
+      this$1.element.setAttribute(this$1.aria, false);
+
+      this$1.target = this$1.element.dataset.copy;
+
+      if (this$1.copy(this$1.target)) {
+        this$1.element.setAttribute(this$1.aria, true);
+
+        clearTimeout(this$1.element['timeout']);
+
+        this$1.element['timeout'] = setTimeout(function () {
+          this$1.element.setAttribute(this$1.aria, false);
+        }, this$1.notifyTimeout);
+      }
+    });
+
+    return this;
+  };
+
+  /**
+   * The click event handler
+   *
+   * @param {String}targetContent of target data attribute
+   *
+   * @return{Boolean}       Wether copy was successful or not
+   */
+  Copy.prototype.copy = function copy (target) {
+    var selector = Copy.selectors.TARGETS.replace(']', ("=\"" + target + "\"]"));
+
+    var input = document.querySelector(selector);
+
+    this.select(input);
+
+    if (navigator.clipboard && navigator.clipboard.writeText)
+      { navigator.clipboard.writeText(input.value); }
+    else if (document.execCommand)
+      { document.execCommand('copy'); }
+    else
+      { return false; }
+
+    return true;
+  };
+
+  /**
+   * Handler for the text selection method
+   *
+   * @param {Object}inputThe input with content to select
+   */
+  Copy.prototype.select = function select (input) {
+    input.select();
+
+    input.setSelectionRange(0, 99999);
+  };
+
+  /** The main element selector */
+  Copy.selector = '[data-js*="copy"]';
+
+  /** Class selectors */
+  Copy.selectors = {
+    TARGETS: '[data-copy-target]'
+  };
+
+  /** Button aria role to toggle */
+  Copy.aria = 'aria-pressed';
+
+  /** Timeout for the "Copied!" notification */
+  Copy.notifyTimeout = 1500;
+
+  /**
+   * The Icon module
+   * @class
+   */
+  var Icons = function Icons(path) {
+    path = (path) ? path : Icons.path;
+
+    fetch(path)
+      .then(function (response) {
+        if (response.ok)
+          { return response.text(); }
+      })
+      .catch(function (error) {
+      })
+      .then(function (data) {
+        var sprite = document.createElement('div');
+        sprite.innerHTML = data;
+        sprite.setAttribute('aria-hidden', true);
+        sprite.setAttribute('style', 'display: none;');
+        document.body.appendChild(sprite);
+      });
+
+    return this;
+  };
+
+  /** @type {String} The path of the icon file */
+  Icons.path = 'svg/icons.svg';
+
+  /**
    * Utilities for Form components
    * @class
    */
@@ -236,240 +562,6 @@ var WorkingNyc = (function () {
   };
 
   /**
-   * The Simple Toggle class. This will toggle the class 'active' and 'hidden'
-   * on target elements, determined by a click event on a selected link or
-   * element. This will also toggle the aria-hidden attribute for targeted
-   * elements to support screen readers. Target settings and other functionality
-   * can be controlled through data attributes.
-   *
-   * This uses the .matches() method which will require a polyfill for IE
-   * https://polyfill.io/v2/docs/features/#Element_prototype_matches
-   *
-   * @class
-   */
-  var Toggle = function Toggle(s) {
-    var this$1 = this;
-
-    // Create an object to store existing toggle listeners (if it doesn't exist)
-    if (!window.hasOwnProperty('ACCESS_TOGGLES'))
-      { window.ACCESS_TOGGLES = []; }
-
-    s = (!s) ? {} : s;
-
-    this.settings = {
-      selector: (s.selector) ? s.selector : Toggle.selector,
-      namespace: (s.namespace) ? s.namespace : Toggle.namespace,
-      inactiveClass: (s.inactiveClass) ? s.inactiveClass : Toggle.inactiveClass,
-      activeClass: (s.activeClass) ? s.activeClass : Toggle.activeClass,
-      before: (s.before) ? s.before : false,
-      after: (s.after) ? s.after : false
-    };
-
-    this.element = (s.element) ? s.element : false;
-
-    if (this.element) {
-      this.element.addEventListener('click', function (event) {
-        this$1.toggle(event);
-      });
-    } else {
-      // If there isn't an existing instantiated toggle, add the event listener.
-      if (!window.ACCESS_TOGGLES.hasOwnProperty(this.settings.selector))
-        { document.querySelector('body').addEventListener('click', function (event) {
-          if (!event.target.matches(this$1.settings.selector))
-            { return; }
-
-          this$1.toggle(event);
-        }); }
-    }
-
-    // Record that a toggle using this selector has been instantiated. This
-    // prevents double toggling.
-    window.ACCESS_TOGGLES[this.settings.selector] = true;
-
-    return this;
-  };
-
-  /**
-   * Logs constants to the debugger
-   * @param{object} eventThe main click event
-   * @return {object}      The class
-   */
-  Toggle.prototype.toggle = function toggle (event) {
-      var this$1 = this;
-
-    var el = event.target;
-    var target = false;
-
-    event.preventDefault();
-
-    /** Anchor Links */
-    target = (el.hasAttribute('href')) ?
-      document.querySelector(el.getAttribute('href')) : target;
-
-    /** Toggle Controls */
-    target = (el.hasAttribute('aria-controls')) ?
-      document.querySelector(("#" + (el.getAttribute('aria-controls')))) : target;
-
-    /** Main Functionality */
-    if (!target) { return this; }
-    this.elementToggle(el, target);
-
-    /** Undo */
-    if (el.dataset[((this.settings.namespace) + "Undo")]) {
-      var undo = document.querySelector(
-        el.dataset[((this.settings.namespace) + "Undo")]
-      );
-
-      undo.addEventListener('click', function (event) {
-        event.preventDefault();
-        this$1.elementToggle(el, target);
-        undo.removeEventListener('click');
-      });
-    }
-
-    return this;
-  };
-
-  /**
-   * The main toggling method
-   * @param{object} el   The current element to toggle active
-   * @param{object} target The target element to toggle active/hidden
-   * @return {object}      The class
-   */
-  Toggle.prototype.elementToggle = function elementToggle (el, target) {
-      var this$1 = this;
-
-    var i = 0;
-    var attr = '';
-    var value = '';
-
-    // Get other toggles that might control the same element
-    var others = document.querySelectorAll(
-      ("[aria-controls=\"" + (el.getAttribute('aria-controls')) + "\"]"));
-
-    /**
-     * Toggling before hook.
-     */
-    if (this.settings.before) { this.settings.before(this); }
-
-    /**
-     * Toggle Element and Target classes
-     */
-    if (this.settings.activeClass) {
-      el.classList.toggle(this.settings.activeClass);
-      target.classList.toggle(this.settings.activeClass);
-
-      // If there are other toggles that control the same element
-      if (others) { others.forEach(function (other) {
-        if (other !== el) { other.classList.toggle(this$1.settings.activeClass); }
-      }); }
-    }
-
-    if (this.settings.inactiveClass)
-      { target.classList.toggle(this.settings.inactiveClass); }
-
-    /**
-     * Target Element Aria Attributes
-     */
-    for (i = 0; i < Toggle.targetAriaRoles.length; i++) {
-      attr = Toggle.targetAriaRoles[i];
-      value = target.getAttribute(attr);
-
-      if (value != '' && value)
-        { target.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
-    }
-
-    /**
-     * Jump Links
-     */
-    if (el.hasAttribute('href')) {
-      // Reset the history state, this will clear out
-      // the hash when the jump item is toggled closed.
-      history.pushState('', '',
-        window.location.pathname + window.location.search);
-
-      // Target element toggle.
-      if (target.classList.contains(this.settings.activeClass)) {
-        window.location.hash = el.getAttribute('href');
-
-        target.setAttribute('tabindex', '-1');
-        target.focus({preventScroll: true});
-      } else
-        { target.removeAttribute('tabindex'); }
-    }
-
-    /**
-     * Toggle Element (including multi toggles) Aria Attributes
-     */
-    for (i = 0; i < Toggle.elAriaRoles.length; i++) {
-      attr = Toggle.elAriaRoles[i];
-      value = el.getAttribute(attr);
-
-      if (value != '' && value)
-        { el.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
-
-      // If there are other toggles that control the same element
-      if (others) { others.forEach(function (other) {
-        if (other !== el && other.getAttribute(attr))
-          { other.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
-      }); }
-    }
-
-    /**
-     * Toggling complete hook.
-     */
-    if (this.settings.after) { this.settings.after(this); }
-
-    return this;
-  };
-
-  /** @type {String} The main selector to add the toggling function to */
-  Toggle.selector = '[data-js*="toggle"]';
-
-  /** @type {String} The namespace for our data attribute settings */
-  Toggle.namespace = 'toggle';
-
-  /** @type {String} The hide class */
-  Toggle.inactiveClass = 'hidden';
-
-  /** @type {String} The active class */
-  Toggle.activeClass = 'active';
-
-  /** @type {Array} Aria roles to toggle true/false on the toggling element */
-  Toggle.elAriaRoles = ['aria-pressed', 'aria-expanded'];
-
-  /** @type {Array} Aria roles to toggle true/false on the target element */
-  Toggle.targetAriaRoles = ['aria-hidden'];
-
-  /**
-   * The Icon module
-   * @class
-   */
-  var Icons = function Icons(path) {
-    path = (path) ? path : Icons.path;
-
-    fetch(path)
-      .then(function (response) {
-        if (response.ok)
-          { return response.text(); }
-      })
-      .catch(function (error) {
-      })
-      .then(function (data) {
-        var sprite = document.createElement('div');
-        sprite.innerHTML = data;
-        sprite.setAttribute('aria-hidden', true);
-        sprite.setAttribute('style', 'display: none;');
-        document.body.appendChild(sprite);
-      });
-
-    return this;
-  };
-
-  /** @type {String} The path of the icon file */
-  Icons.path = 'svg/icons.svg';
-
-  /**
    * Tracking bus for Google analytics and Webtrends.
    */
   var Track = function Track(s) {
@@ -543,21 +635,19 @@ var WorkingNyc = (function () {
       typeof Webtrends === 'undefined' ||
       typeof data === 'undefined' ||
       !this.desinations.includes('webtrends')
-    ) {
-      return false;
-    }
+    )
+      { return false; }
 
     var event = [{
       'WT.ti': key
     }];
 
-    if (data[0] && data[0].hasOwnProperty(Track.key)) {
-      event.push({
+    if (data[0] && data[0].hasOwnProperty(Track.key))
+      { event.push({
         'DCS.dcsuri': data[0][Track.key]
-      });
-    } else {
-      Object.assign(event, data);
-    }
+      }); }
+    else
+      { Object.assign(event, data); }
 
     // Format data for Webtrends
     var wtd = {argsa: event.flatMap(function (e) {
@@ -572,10 +662,8 @@ var WorkingNyc = (function () {
     // Webtrends doesn't send the page view for MultiTrack, add path to url
     var dcsuri = data.argsa.indexOf('DCS.dcsuri');
 
-    if (dcsuri) {
-      data.argsa[dcsuri + 1] = window.location.pathname +
-        data.argsa[dcsuri + 1];
-    }
+    if (dcsuri)
+      { data.argsa[dcsuri + 1] = window.location.pathname + data.argsa[dcsuri + 1]; }
 
     /* eslint-disable no-undef */
     if (typeof Webtrends !== 'undefined')
@@ -595,9 +683,8 @@ var WorkingNyc = (function () {
       typeof gtag === 'undefined' ||
       typeof data === 'undefined' ||
       !this.desinations.includes('gtag')
-    ) {
-      return false;
-    }
+    )
+      { return false; }
 
     var uri = data.find(function (element) { return element.hasOwnProperty(Track.key); });
 
@@ -622,9 +709,8 @@ var WorkingNyc = (function () {
       typeof gtag === 'undefined' ||
       typeof data === 'undefined' ||
       !this.desinations.includes('gtag')
-    ) {
-      return false;
-    }
+    )
+      { return false; }
 
     var view = {
       app_name: app,
@@ -651,104 +737,70 @@ var WorkingNyc = (function () {
   ];
 
   /**
-   * Copy to Clipboard Helper
-   *
-   * <input data-copy-target="web-share-url" id="web-share-url" name="web-share-url" type="text" value="https://myurl" />
-   *
-   * <button aria-pressed="false" data-copy="web-share-url" data-js="copy">
-   *   Copy to Clipboard
-   * </button>
+   * Uses the Share API to t
    */
-  var Copy = function Copy() {
+  var WebShare = function WebShare(s) {
     var this$1 = this;
+    if ( s === void 0 ) s = {};
 
-    // Set attributes
-    this.selector = Copy.selector;
+    this.selector = (s.selector) ? s.selector : WebShare.selector;
 
-    this.aria = Copy.aria;
+    this.callback = (s.callback) ? s.callback : WebShare.callback;
 
-    this.notifyTimeout = Copy.notifyTimeout;
+    this.fallback = (s.fallback) ? s.fallback : WebShare.fallback;
 
-    // Select the entire text when it's focused on
-    document.querySelectorAll(Copy.selectors.TARGETS).forEach(function (item) {
-      item.addEventListener('focus', function () { return this$1.select(item); });
-      item.addEventListener('click', function () { return this$1.select(item); });
-    });
+    if (navigator.share) {
+      // Remove fallback aria toggling attributes
+      document.querySelectorAll(this.selector).forEach(function (item) {
+        item.removeAttribute('aria-controls');
+        item.removeAttribute('aria-expanded');
+      });
 
-    // The main click event for the class
-    document.querySelector('body').addEventListener('click', function (event) {
-      if (!event.target.matches(this$1.selector))
-        { return; }
+      // Add event listener for the share click
+      document.querySelector('body').addEventListener('click', function (event) {
+        if (!event.target.matches(this$1.selector))
+          { return; }
 
-      this$1.element = event.target;
+        this$1.element = event.target;
 
-      this$1.element.setAttribute(this$1.aria, false);
+        this$1.data = JSON.parse(this$1.element.dataset.webShare);
 
-      this$1.target = this$1.element.dataset.copy;
-
-      if (this$1.copy(this$1.target)) {
-        this$1.element.setAttribute(this$1.aria, true);
-
-        clearTimeout(this$1.element['timeout']);
-
-        this$1.element['timeout'] = setTimeout(function () {
-          this$1.element.setAttribute(this$1.aria, false);
-        }, this$1.notifyTimeout);
-      }
-    });
+        this$1.share(this$1.data);
+      });
+    } else
+      { this.fallback(); } // Execute the fallback
 
     return this;
   };
 
   /**
-   * The click event handler
+   * Web Share API handler
    *
-   * @param {String}targetContent of target data attribute
+   * @param {Object}dataAn object containing title, url, and text.
    *
-   * @return{Boolean}       Wether copy was successful or not
+   * @return{Promise}     The response of the .share() method.
    */
-  Copy.prototype.copy = function copy (target) {
-    var selector = Copy.selectors.TARGETS.replace(']', ("=\"" + target + "\"]"));
+  WebShare.prototype.share = function share (data) {
+      var this$1 = this;
+      if ( data === void 0 ) data = {};
 
-    var input = document.querySelector(selector);
-
-    this.select(input);
-
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(input.value);
-    } else if (document.execCommand) {
-      document.execCommand('copy');
-    } else {
-      return false;
-    }
-
-    return true;
+    return navigator.share(data)
+      .then(function (res) {
+        this$1.callback(data);
+      }).catch(function (err) {
+      });
   };
 
-  /**
-   * Handler for the text selection method
-   *
-   * @param {Object}inputThe input with content to select
-   */
-  Copy.prototype.select = function select (input) {
-    input.select();
+  /** The html selector for the component */
+  WebShare.selector = '[data-js*="web-share"]';
 
-    input.setSelectionRange(0, 99999);
+  /** Placeholder callback for a successful send */
+  WebShare.callback = function () {
   };
 
-  /** The main element selector */
-  Copy.selector = '[data-js*="copy"]';
-
-  /** Class selectors */
-  Copy.selectors = {
-    TARGETS: '[data-copy-target]'
+  /** Placeholder for the WebShare fallback */
+  WebShare.fallback = function () {
   };
-
-  /** Button aria role to toggle */
-  Copy.aria = 'aria-pressed';
-
-  /** Timeout for the "Copied!" notification */
-  Copy.notifyTimeout = 1500;
 
   /**
    * The Accordion module
@@ -821,10 +873,7 @@ var WorkingNyc = (function () {
     input: '[data-js*="search-box__input"]'
   };
 
-  // import Newsletter from '../objects/newsletter/newsletter';
-  // import TextController from '../objects/text-controller/text-controller';
-
-  /** import components here as they are written. */
+  /** import modules here as they are written. */
 
   /**
    * The Main module
@@ -840,8 +889,8 @@ var WorkingNyc = (function () {
   };
   /**
    * An API for the Toggle Utility
-   * @param{Object} settings Settings for the Toggle Class
-   * @return {Object}        Instance of toggle
+   * @param {Object}settingsSettings for the Toggle Class
+   * @return{Object}          Instance of toggle
    */
 
 
@@ -852,8 +901,8 @@ var WorkingNyc = (function () {
   };
   /**
    *
-   * @param {string} selector
-   * @param {function} submit
+   * @param{string}  selector
+   * @param{function}submit
    */
 
 
@@ -943,14 +992,6 @@ var WorkingNyc = (function () {
   // return (elements.length) ? elements : null;
   // }
   // /**
-  //* An API for the WebShare Component
-  //*
-  //* @return{Object}Instance of WebShare
-  //*/
-  // webShare() {
-  // return new WebShare();
-  // }
-  // /**
   //* An API for the Disclaimer Component
   //* @return{Object}Instance of Disclaimer
   //*/
@@ -966,13 +1007,39 @@ var WorkingNyc = (function () {
   // return (element) ? new TextController(element) : null;
   // }
 
+  /**
+   * An API for the Mobile Nav
+   *
+   * @return{Object}instance of MobileNav
+   */
+
 
   main.prototype.mobileNav = function mobileNav () {
     return new MobileNav();
   };
+  /**
+   * An API for the Search Box
+   *
+   * @return{Object}instance of SearchBox
+   */
+
 
   main.prototype.searchBox = function searchBox () {
     return new SearchBox();
+  };
+  /**
+   * An API for Web Share
+   *
+   * @return{Object}instance of WebShare
+   */
+
+
+  main.prototype.webShare = function webShare () {
+    return new WebShare({
+      fallback: function () {
+        console.dir('Web Share Fallback');
+      }
+    });
   };
 
   return main;
