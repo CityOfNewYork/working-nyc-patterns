@@ -21,7 +21,7 @@
 @include layouts.map();
 
 // Layouts that do not include Media queries
-@include media.screens() using ($variant) {
+@include media.screens-and-min-width() using ($variant) {
   @include layouts.page-min($variant);
   @include layouts.page-max($variant);
   @include layouts.page-min-max($variant);
@@ -43,7 +43,7 @@
   @include layouts.topbar($variant);
 }
 
-.print-view {
+.print {
   @include layouts.print()
 }
 

@@ -10,6 +10,8 @@ const tailwind = require('./tailwind');
  * Config
  */
 
+console.dir(process.env.NODE_ENV);
+
 module.exports = {
   src: 'src',
   views: 'views',

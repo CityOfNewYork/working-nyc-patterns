@@ -17,6 +17,6 @@
   }
 }
 
-@include media.screens using ($variant) {
+@include media.screens-and-min-width() using ($variant) {
   @include nav($variant);
 }

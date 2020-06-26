@@ -39,7 +39,7 @@ module.exports = {
       'full': '100%'
     },
     padding: tokens.padding,
-    screens: Object.assign(tokens.screens, {'print': {'raw': 'print'}}),
+    screens: tokens.screens,
     textColor: tokens.colors,
     zIndex: tokens.z
   },

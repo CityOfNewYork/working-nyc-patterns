@@ -1,8 +1,8 @@
 // Dependencies
-@use 'config/tokens';
+@use 'config/tokens' as *;
 
 // Configuration
-$screens: map-get(tokens.$tokens, 'screens');
+$screens: map-get($tokens, 'screens');
 
 /**
  * Get a token value from the media set
@@ -49,18 +49,18 @@ $screens: map-get(tokens.$tokens, 'screens');
  * Create all min-width media queries using screen tokens. Usage requires
  * `use ($variant)` so the variant is passed in the loop. Ex;
  *
- * @include screens($screens: $screens) use ($variant) { ...
+ * @include screens-and-min-width($screens: $screens) using ($variant) { ...
  *
  * @param  {Map}  $screens  Map of screen token => value pairs.
  */
-@mixin screens($screens: $screens) {
+@mixin screens-and-min-width($screens: $screens) {
   $variant: '';
 
   @content($variant); // mobile first... then other breakpoints
 
-  @each $screen, $s in $screens {
-    @media (min-width: #{$s}px) {
-      $variant: $screen + '\\:';
+  @each $token, $value in $screens {
+    @media screen and (min-width: $value) {
+      $variant: $token + '\\:';
 
       @content($variant);
     }
