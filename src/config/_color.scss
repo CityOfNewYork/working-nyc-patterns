@@ -236,9 +236,73 @@ $modes: map-get(tokens.$tokens, 'color-modes');
  * @param  $combination  The combination set to use
  */
 @mixin code($combination) {
-  // 'code-text': '',
-  // 'code-background': '',
-  // 'code-border': ''
+  $code: map-get($combination, 'code');
+
+  $token-text: map-get($code, 'text');
+  $token-background: map-get($code, 'background');
+  $token-border: map-get($code, 'border');
+
+  code, .code, .code-block {
+    color: map-get($colors, $token-text);
+    background-color: map-get($colors, $token-background);
+    border-color: map-get($colors, $token-border);
+  }
+
+  pre, .hljs {
+    color: map-get($colors, $token-text);
+    background-color: map-get($colors, $token-background);
+    border-color: transparent;
+  }
+
+  /**
+   * Highlight.js Overrides
+   */
+
+  /*.code-block .hljs,*/
+  // .hljs-subst {
+  //   color: $color-grey-mid;
+  // }
+
+  // .hljs-tag {
+  //   color: $color-pink-light;
+  // }
+
+  // .hljs-name, .hljs-attr {
+  //   font-weight: normal;
+  //   color: $color-pink;
+  // }
+
+  // .css {
+  //   color: $color-yellow-access;
+  // }
+
+  // .javascript {
+  //   color: $color-blue-bright;
+  // }
+
+  // .hljs-keyword {
+  //   color: $color-purple;
+  // }
+
+  // .hljs-comment {
+  //   color: $color-grey-mid;
+  //   display: inline-block;
+  //   padding-top: dimensions.$spacing-base;
+  //   padding-bottom: $grid;
+  // }
+
+  // pre > code:first-of-type > .hljs-comment {
+  //   padding-top: 0;
+  // }
+
+  // .hljs-type, .hljs-string, .hljs-number, .hljs-selector-id,
+  // .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+  //   color: $color-purple;
+  // }
+
+  // .hljs-built_in {
+  //   color: $color-grey-dark;
+  // }
 }
 
 /**
@@ -272,5 +336,6 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   @include modal($combination);
   @include button($combination);
   @include option($combination);
+  @include code($combination);
   // @include ...
 }

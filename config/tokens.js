@@ -78,7 +78,8 @@ module.exports = {
     'button': 'bold',
     'normal': 'normal',
     'bold': 'bold',
-    'option': 'bold'
+    'option': 'bold',
+    'code': 'normal'
   },
   'font-size': {
     'body': '1rem',
@@ -92,7 +93,8 @@ module.exports = {
     'p': '0.9rem',
     'small': '0.72rem',
     'button': '1rem',
-    'option': 'inherit'
+    'option': 'inherit',
+    'code': '0.72rem'
   },
   'line-height': {
     'normal': 'normal',
@@ -107,7 +109,8 @@ module.exports = {
     'p': '1.5',
     'small': 'normal',
     'button': 'normal',
-    'option': 'normal'
+    'option': 'normal',
+    'code': '1.8'
   },
   'typography': {
     'desktop': '22px',
@@ -245,9 +248,9 @@ module.exports = {
       'shadow-up': '0 3px 12px 2px rgba(0, 0, 0, 0.25)',
 
       'code': {
-        'text': '',
-        'background': '',
-        'border': ''
+        'text': 'blue',
+        'background': 'scale-0',
+        'border': 'transparent'
       }
     }
   },
@@ -307,7 +310,9 @@ module.exports = {
     '1': '8px',
     '2': '16px',
     '3': '24px',
-    '4': '32px'
+    '4': '32px',
+    '5': '40px',
+    '6': '48px'
   },
   'margin': {
     '0': '0',
@@ -315,6 +320,8 @@ module.exports = {
     '2': '16px',
     '3': '24px',
     '4': '32px',
+    '5': '40px',
+    '6': '48px',
     'auto': 'auto'
   },
   'icons-sizes': {

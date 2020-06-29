@@ -10,8 +10,6 @@ const tailwind = require('./tailwind');
  * Config
  */
 
-console.dir(process.env.NODE_ENV);
-
 module.exports = {
   src: 'src',
   views: 'views',
@@ -39,6 +37,20 @@ module.exports = {
     }
   },
   baseUrl: (process.env.NODE_ENV === 'production') ? package.homepage : '',
+  links: {
+    nycopportunity: {
+      homepage: 'http://nyc.gov/opportunity',
+      social: {
+        github: 'https://github.com/nycopportunity',
+        twitter:  'https://twitter.com/nycopportunity',
+        facebook: 'https://www.facebook.com/nycopportunity',
+        instagram: 'https://www.instagram.com/nycopportunity'
+      }
+    }
+  },
+  footer: {
+    class: ''
+  },
   newsletter: {
     action: 'https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&id=aa67394696',
     boroughs: [

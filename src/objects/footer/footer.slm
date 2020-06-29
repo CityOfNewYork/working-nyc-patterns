@@ -3,7 +3,7 @@
 - let date = new Date();
 - let year = date.getFullYear();
 
-footer class='o-footer bg-scale-1'
+footer class='o-footer bg-scale-1 ${this.footer.class}'
   div class='page-max'
     hr class='divider'
 
@@ -50,4 +50,3 @@ footer class='o-footer bg-scale-1'
           | Terms of Use
 
       / = partial('/objects/newsletter/newsletter.slm');
-

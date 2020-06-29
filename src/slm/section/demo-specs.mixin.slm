@@ -1,4 +1,0 @@
-= mixin('demo-specs', 'text');
-  div class='page-max'
-    div class='my-0 pt-4 px-2 text-small table-align-start'
-      == this.include(this.text);

@@ -49,6 +49,7 @@ npm-debug.log
 !/src/components/utility
 !/src/components/web-share
 
+!/src/elements/badge
 !/src/elements/base
 !/src/elements/buttons
 !/src/elements/checkboxes

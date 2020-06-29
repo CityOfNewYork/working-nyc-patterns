@@ -1,0 +1,21 @@
+/**
+ * Badges
+ */
+
+// Dependencies
+@use 'config/badge';
+@use 'config/dimensions';
+@use 'config/typography';
+
+// Declarations
+.badge {
+  font-size: 90%;
+  line-height: inherit;
+
+  border-radius: badge.$radius;
+  display: inline;
+  font-weight: bold;
+
+  padding: badge.$padding;
+  text-transform: capitalize;
+}

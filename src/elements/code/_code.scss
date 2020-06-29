@@ -3,12 +3,9 @@
  */
 
 // Dependencies
-@use 'config/grid' as *;
-@use 'config/tokens';
-@use 'config/code';
-@use 'config/color';
-@use 'config/typography';
 @use 'config/dimensions';
+@use 'config/media';
+@use 'config/typography';
 
 // Declarations
 code, pre, .hljs {
@@ -17,23 +14,12 @@ code, pre, .hljs {
 
 .code,
 .code-block {
-  // @include type('code');
-  // font-weight: $font-weight-normal;
-  // font-size: $font-size-small;
-  // line-height: 1.8;
-
-  font-family: code.$font-family;
-  // color: code.$color;
-  // background-color: code.$background-color;
-
+  @include typography.set('code');
   border: 1px solid;
   border-radius: 3px;
 }
 
 .code {
-  // color: code.$color;
-  // background-color: code.$background-color;
-
   padding: 4px 8px;
   display: inline-block;
   overflow: initial;
@@ -43,10 +29,7 @@ code, pre, .hljs {
 }
 
 p code, li code, td code {
-  // color: code.$color;
-  // background-color: code.$background-color;
-
-  font-size: 85%;
+  font-size: 80%;
   font-family: inherit;
   letter-spacing: 0.01em;
 
@@ -62,22 +45,21 @@ td > code {
 }
 
 pre, .hljs {
-  // color: code.$color;
-  // background-color: code.$background-color;
-
   display: block;
-  padding: 16px 16px;
   border: 1px solid;
   border-radius: 3px;
   max-width: 100%;
   overflow: hidden;
   overflow-x: auto;
   margin-bottom: dimensions.$spacing-base;
+
+  padding: dimensions.$spacing-base;
+  @include media.screen-and-min-width('tablet') {
+    padding: (dimensions.$spacing-base * 2);
+  }
 }
 
 .code-block {
-  // color: code.$color;
-
   display: inline-block;
   display: block;
   max-width: 100%;
@@ -90,58 +72,12 @@ pre, .hljs {
     background-color: transparent;
 
     margin: 0;
-    padding: 16px 16px;
     border: none;
     margin-bottom: 0;
+
+    padding: dimensions.$spacing-base;
+    @include media.screen-and-min-width('tablet') {
+      padding: (dimensions.$spacing-base * 2);
+    }
   }
 }
-
-/**
- * Highlight.js Overrides
- */
-
-/*.code-block .hljs,*/
-// .hljs-subst {
-//   color: $color-grey-mid;
-// }
-
-// .hljs-tag {
-//   color: $color-pink-light;
-// }
-
-// .hljs-name, .hljs-attr {
-//   font-weight: normal;
-//   color: $color-pink;
-// }
-
-// .css {
-//   color: $color-yellow-access;
-// }
-
-// .javascript {
-//   color: $color-blue-bright;
-// }
-
-// .hljs-keyword {
-//   color: $color-purple;
-// }
-
-// .hljs-comment {
-//   color: $color-grey-mid;
-//   display: inline-block;
-//   padding-top: dimensions.$spacing-base;
-//   padding-bottom: $grid;
-// }
-
-// pre > code:first-of-type > .hljs-comment {
-//   padding-top: 0;
-// }
-
-// .hljs-type, .hljs-string, .hljs-number, .hljs-selector-id,
-// .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
-//   color: $color-purple;
-// }
-
-// .hljs-built_in {
-//   color: $color-grey-dark;
-// }

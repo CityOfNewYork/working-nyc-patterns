@@ -1,37 +1,45 @@
-= partial('demo-specs.mixin.slm');
-= partial('demo-block.mixin.slm');
 - this.navigation = (this.navigation) ? this.navigation : [];
 
-= mixin('section', 'title', 'path', 'layout = columns', 'grid = false', 'specs = true', 'code = true');
-  - id = (this.title && this.title !== '') ? this.title.toLowerCase().split(' ').join('-') : false;
-  - if (this.title)
-    - let navitem = {'title': this.title, 'id': id};
+= mixin('section', 'path', 'config = {title: false}');
+  - id = (this.config.title && this.config.title !== '') ? this.config.title.toLowerCase().split(' ').join('-') : false;
+  - grid = (this.config.grid);
+
+  - if (this.config.title)
+    - let navitem = {'title': this.config.title, 'id': id};
     - this.navigation.push(navitem);
 
+  - let source = this.path.split('/')
+  - source.splice(source.length - 1, 1)
+  - source = `${this.package.cdn.source}/releases/tag/v${this.tokens.version}/src` + source.join('/');
+
   section id=id class='pb-4 mb-4'
-    div class='page-max px-2'
-      header class='page-max'
-        div class='my-0 px-2 pt-1 pb-4 border-b border-grey-light'
-          - let srcPadding = false
-          - if (this.title)
-            - srcPadding = 'pt-2'
-            h2 class='m-0'
-              a href='#${id}' class='text-grey-mid font-normal no-underline capitalize'
-                = this.title;
+    / Render the Section header
+    header class='page-max layout-content pb-4'
+      div class='wrap'
+        - if this.config.title
+          h2
+            a href='#${id}' = this.config.title;
 
-          div class=srcPadding
-            - let source = this.path.split('/')
-            - source.splice(source.length - 1, 1)
-            - source = source.join('/');
+        p
+          = 'Source: ';
+          code
+            a href='${source}'
+              = 'src' + this.path
 
-            p class='text-small m-0'
-              = 'Source: ';
-              code
-                a href='${this.package.cdn.source}/releases/tag/v${this.tokens.version}/src/${source}'
-                  = 'src/' + this.path
+    / Render the component's text specs on the page
+    div class='page-max layout-content'
+      div class='wrap'
+        == this.include(this.path + '.md');
 
-      - if (this.specs != 'false')
-        = mixin('demo-specs', this.path + '.md');
+    / Render the component on the page
+    div class='bg-scale-2 py-6 my-4'
+      div class='page-max'
+        div class='wrap'
+          = partial(this.path + '.slm');
 
-      - if (this.code != 'false')
-        = mixin('demo-block', this.path + '.slm', this.layout, this.grid);
+    / Render the componet markup in the code block
+    div class='page-max layout-content'
+      div class='wrap'
+        div class='code-block mb-1'
+          pre
+            = this.include(this.path);

@@ -1,10 +1,7 @@
-//
 // Variables
-//
 
-// Dependencies
-@use 'dimensions';
+@use 'config/grid' as *;
 
 // Declarations
-$label-padding: 2px $grid 3px;
-$label-radius: $grid;
+$padding: 2px $grid 2px;
+$radius: $grid;

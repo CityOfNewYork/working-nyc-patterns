@@ -16,11 +16,17 @@ nav role='navigation' class='o-navigation bg-scale-2'
 
   a class='hidden desktop:inline-block' href='#' Trainings
 
-  button class='o-navigation__menu-item btn-link desktop:m-0' data-js='search-box' aria-controls='aria-c-search-box' aria-expanded='false'
+  button class='o-navigation__menu-item btn-link' data-js='search-box' aria-controls='aria-c-search-box' aria-expanded='false'
     svg class='o-navigation__menu-icon icon-wnyc-ui'
       use xlink:href='#icon-wnyc-ui-search'
 
     span class='o-navigation__menu-label' Search
+
+  button class='o-navigation__menu-item btn-link desktop:m-0' data-js='search-box' aria-controls='aria-c-search-box' aria-expanded='false'
+    svg class='o-navigation__menu-icon icon-wnyc-ui'
+      use xlink:href='#icon-wnyc-ui-translate'
+
+    span class='o-navigation__menu-label' Translate
 
   button class='o-navigation__menu-item btn-link desktop:hidden' data-js='mobile-nav' aria-controls='aria-c-mobile-nav' aria-expanded='false'
     svg class='o-navigation__menu-icon icon-wnyc-ui'

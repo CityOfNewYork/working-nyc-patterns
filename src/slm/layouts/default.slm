@@ -16,10 +16,9 @@ html lang='en' dir='ltr'
           button class='btn-link' aria-controls='main-menu' aria-expanded='false' data-js='toggle' Close Menu
 
     main#main-content role='main' class='py-4'
-      article class='py-4 clearfix page-max wrap'
+      article class='py-4 clearfix'
         = content('content');
-
-        = partial('../section/nav.slm');
+        / = partial('../section/nav.slm');
 
     = partial('../partials/footer.slm');
 

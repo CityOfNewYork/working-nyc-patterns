@@ -6,12 +6,12 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CMontserrat:400,400i,700" media="all" rel="stylesheet" />
-  <link href="https://cityofnewyork.github.io/nyco-wnyc-patterns/styles/site-default.css" rel="stylesheet" />
-  <link href="https://cityofnewyork.github.io/nyco-wnyc-patterns/styles/site-color-default.css" rel="stylesheet" />
+  <link href="/styles/site-default.css" rel="stylesheet" />
+  <link href="/styles/site-color-default.css" rel="stylesheet" />
   <title>Programs | WorkingNYC</title>
 </head>
 
-<body class="color bg-scale-2">
+<body class="color bg-scale-2 p-base">
   <div class="relative z-10 shadow-up tablet:shadow-none">
     <nav class="o-navigation bg-scale-2" role="navigation">
       <a class="o-navigation__logo o-navigation__menu-item text-white uppercase text-small no-underline" href="/">
@@ -26,11 +26,17 @@
       <a class="hidden desktop:inline-block" href="/demos/programs/index">Programs</a>
       <a class="hidden desktop:inline-block" href="#">Events</a>
       <a class="hidden desktop:inline-block" href="#">Trainings</a>
-      <button aria-controls="aria-c-search-box" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:m-0" data-js="search-box">
+      <button aria-controls="aria-c-search-box" aria-expanded="false" class="o-navigation__menu-item btn-link" data-js="search-box">
         <svg class="o-navigation__menu-icon icon-wnyc-ui">
           <use xlink:href="#icon-wnyc-ui-search"></use>
         </svg>
         <span class="o-navigation__menu-label">Search</span>
+      </button>
+      <button aria-controls="aria-c-search-box" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:m-0" data-js="search-box">
+        <svg class="o-navigation__menu-icon icon-wnyc-ui">
+          <use xlink:href="#icon-wnyc-ui-translate"></use>
+        </svg>
+        <span class="o-navigation__menu-label">Translate</span>
       </button>
       <button aria-controls="aria-c-mobile-nav" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:hidden" data-js="mobile-nav">
         <svg class="o-navigation__menu-icon icon-wnyc-ui">
@@ -95,7 +101,7 @@
       </main>
     </div>
   </div>
-  <footer class="o-footer bg-scale-1">
+  <footer class="o-footer bg-scale-1 o-footer-fixed">
     <div class="page-max">
       <hr class="divider" />
       <div class="o-footer__wrap">
@@ -136,18 +142,19 @@
       </div>
     </div>
   </footer>
-  <script src="https://cityofnewyork.github.io/nyco-wnyc-patterns/scripts/polyfills.js"></script>
-  <script src="https://cityofnewyork.github.io/nyco-wnyc-patterns/scripts/main.js"></script>
+  <script src="/scripts/polyfills.js"></script>
+  <script src="/scripts/main.js"></script>
   <script type="text/javascript">
     var patterns = new WorkingNyc();
     patterns.accordion();
     patterns.copy();
-    patterns.icons('https://cityofnewyork.github.io/nyco-wnyc-patterns/svg/icons.svg');
+    patterns.icons('/svg/icons.svg');
     patterns.mobileNav();
     patterns.searchBox();
     patterns.toggle();
     patterns.webShare();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>

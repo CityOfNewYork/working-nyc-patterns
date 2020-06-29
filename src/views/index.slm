@@ -5,7 +5,6 @@
 
 / Partials
 = partial('/slm/partials/styles.slm')
-= partial('/slm/partials/links.slm')
 = partial('/slm/partials/head.mixin.slm')
 
 / Content blocks

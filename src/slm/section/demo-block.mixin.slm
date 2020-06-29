@@ -1,13 +1,7 @@
-= mixin('demo-block', 'markup', 'layout = columns', 'grid = false');
-  div class='layout-gutter tablet:layout-${this.layout} justify-between pt-4'
-    - if (this.layout === 'columns')
-      - this.padding = 'tablet:pe-2';
-
+= mixin('demo-block', 'markup', 'grid = false');
+  div class='layout-gutter pt-4'
     - if (this.grid === 'false')
-      div class='${this.padding}'
-        - symbol = false;
-        - instance = false;
-        = partial('../' + this.markup);
+      = partial('../' + this.markup);
 
     - if (this.grid === 'false')
       div

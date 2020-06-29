@@ -18,7 +18,7 @@ html lang='en'
     - else
       title ${this.title}
 
-  body class='color bg-scale-2'
+  body class='color bg-scale-2 p-base'
     div class='relative z-10 shadow-up tablet:shadow-none'
       = partial('/objects/navigation/navigation.slm');
       = partial('/objects/mobile-nav/mobile-nav.slm');
@@ -26,7 +26,11 @@ html lang='en'
 
       = content('content');
 
+    - this.footer.class = 'o-footer-fixed';
+
     = partial('/objects/footer/footer.slm');
+
+    - this.footer.class = '';
 
     script src='${this.baseUrl}/scripts/polyfills.js'
     script src='${this.baseUrl}/scripts/main.js'

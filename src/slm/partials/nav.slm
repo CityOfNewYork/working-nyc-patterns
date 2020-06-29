@@ -60,7 +60,10 @@ nav class='${class_nav} desktop:ps-4'
   / a class='${class_nav_item}' xhref='come-back-later' Come Back Later
   / a class='${class_nav_item}' xhref='content' Content
   / a class='${class_nav_item}' xhref='emails' Emails
-  a class='${class_nav_item}' xhref='footer' Footer
+  a class='${class_nav_item}' href='footer'
+    mark class='badge' View
+    | &nbsp;Footer
+
   / a class='${class_nav_item}' xhref='formstack' Formstack
   a class='${class_nav_item}' xhref='mobile-nav' Mobile Nav
   a class='${class_nav_item}' xhref='navigation' Navigation
