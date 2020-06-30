@@ -1,0 +1,39 @@
+/**
+ * Card
+ */
+
+// Dependencies
+@use 'config/grid' as *;
+// @use 'config/dimensions';
+// @use 'config/direction';
+@use 'config/layouts';
+@use 'config/media';
+@use 'config/typography';
+
+// Declarations
+.c-card {
+
+}
+
+.c-card__header,
+.c-card__body {
+  @include layouts.wrap();
+  padding-top: $grid * 2;
+  padding-bottom: $grid * 2;
+}
+
+.c-card__title {
+  @include typography.set('h3');
+
+  @include media.screen-and-min-width('tablet') {
+    @include typography.set('h4');
+  }
+}
+
+.c-card__subtitle {
+  @include typography.set('h4');
+
+  @include media.screen-and-min-width('tablet') {
+    @include typography.set('h5');
+  }
+}

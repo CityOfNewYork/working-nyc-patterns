@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CMontserrat:400,400i,700" media="all" rel="stylesheet" />
   <link href="styles/site-default.css" rel="stylesheet" />
   <link href="styles/site-color-default.css" rel="stylesheet" />
-  <title>Footer | WorkingNYC Patterns</title>
+  <title>Card | WorkingNYC Patterns</title>
 </head>
 
 <body class="color">
@@ -108,112 +108,163 @@
     <article class="py-4 clearfix">
       <header class="page-max layout-content">
         <div class="wrap">
-          <h1>Footer</h1>
+          <h1>Card</h1>
         </div>
       </header>
       <section class="pb-4 mb-4">
         <header class="page-max layout-content pb-4">
           <div class="wrap">
             <p>Source: <code>
-                <a href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-14/src/objects/footer">src/objects/footer/footer</a>
+                <a href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-14/src/components/card">src/components/card/card</a>
               </code>
             </p>
           </div>
         </header>
         <div class="page-max layout-content">
-          <div class="wrap"></div>
+          <div class="wrap">
+            <p>Card Components are thumbnails of content and may include the following <a href="#simple-card">optional</a> elements:</p>
+            <!-- 1. Program icon. Corresponds to program category. [See the full set of icons here](./icons#program-card-icons). -->
+            <ol>
+              <li>Program label or <a href="/badge">badge</a>
+              </li>
+              <li>Plain language headline</li>
+              <li>Program name</li>
+              <li>Plain language description</li>
+              <li>Link to learn more about the program guide</li>
+              <li>“Apply Now” call-to-action <a href="/buttons">button</a>
+              </li>
+            </ol>
+          </div>
         </div>
         <div class="bg-scale-2 py-6 my-4">
           <div class="page-max">
             <div class="wrap">
-              <footer class="o-footer bg-scale-1 ">
-                <div class="page-max">
-                  <hr class="divider" />
-                  <div class="o-footer__wrap">
-                    <nav class="o-footer__nav o-footer__nav-a">
-                      <a class="uppercase text-small no-underline" href="/">
-                        <span class="sr-only">Working N Y C</span>
-                        <svg aria-hidden="true" class="icon-logo-standard-menu-item fill-white text-blue-l-2">
-                          <use xlink:href="#logo-wnyc-standard"></use>
+              <article class="c-card">
+                <header class="c-card__header">
+                  <h3 class="c-card__title">
+                    <mark class="badge">New</mark>
+                    <a href="demos/programs/red-hook-on-the-road">Commercial Driver</a>
+                  </h3>
+                </header>
+                <div class="c-card__body">
+                  <h4 class="c-card__subtitle">Red Hook on the Road</h4>
+                  <div class="c-card__summary">
+                    <p>Through this program students prepare to work as commercial drivers.</p>
+                    <p>
+                      <a href="demos/programs/red-hook-on-the-road">Learn more<span class="sr-only">: Home Energy Assistance Program</span>
+                      </a>
+                    </p>
+                    <p class="text-end">
+                      <a class="btn btn-secondary btn-next w-full tablet:w-auto" href="demos/programs/red-hook-on-the-road#next-steps">
+                        <svg aria-hidden="true" class="icon-wnyc-ui">
+                          <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+                        </svg>
+                        <span>How to Apply</span>
+                        <svg aria-hidden="true" class="icon-wnyc-ui">
+                          <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
                         </svg>
                       </a>
-                      <a href="#">Programs</a>
-                      <a href="#">Events</a>
-                      <a href="#">Trainings</a>
-                    </nav>
-                    <nav class="o-footer__nav o-footer__nav-b">
-                      <a class="no-underline" href="http://nyc.gov/workforcedevelopment" rel="nofollow noopener" target="_blank">
-                        <span>NYC Workforce Development</span>
-                      </a>
-                      <a class="no-underline" href="http://nyc.gov/opportunity" rel="nofollow noopener" target="_blank">
-                        <span class="sr-only">N Y C Opportunity</span>
-                        <svg aria-hidden="true" class="icon-logo-nyco-menu-item">
-                          <use xlink:href="#logo-nyco-secondary"></use>
-                        </svg>
-                      </a>
-                    </nav>
-                    <div class="o-footer__break"></div>
-                    <nav class="o-footer__nav o-footer__nav-c border-none mb-0 pb-0">
-                      <a class="font-secondary font-normal text-inherit no-underline flex items-center pb-1" href="http://nyc.gov" rel="nofollow noopener" target="_blank">
-                        <svg aria-hidden="true" class="icon-logo-nyc-copyright fill-white me-1">
-                          <use xlink:href="#logo-nyc"></use>
-                        </svg>
-                        <span>© 2020 City of New York. All Rights Reserved.</span>
-                      </a>
-                      <p class="small">NYC is a trademark and service mark of the City of New York</p>
-                      <a href="https://www1.nyc.gov/home/privacy-policy.page" rel="nofollow noopener" target="_blank">Privacy Policy</a>
-                      <a href="https://www1.nyc.gov/home/terms-of-use.page" rel="nofollow noopener" target="_blank">Terms of Use</a>
-                    </nav>
+                    </p>
                   </div>
                 </div>
-              </footer>
+              </article>
             </div>
           </div>
         </div>
         <div class="page-max layout-content">
           <div class="wrap">
             <div class="code-block mb-1">
-              <pre>&lt;footer class=&quot;o-footer bg-scale-1 &quot;&gt;
-  &lt;div class=&quot;page-max&quot;&gt;
-    &lt;hr class=&quot;divider&quot; /&gt;
-    &lt;div class=&quot;o-footer__wrap&quot;&gt;
-      &lt;nav class=&quot;o-footer__nav o-footer__nav-a&quot;&gt;
-        &lt;a class=&quot;uppercase text-small no-underline&quot; href=&quot;/&quot;&gt;
-          &lt;span class=&quot;sr-only&quot;&gt;Working N Y C&lt;/span&gt;
-          &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-logo-standard-menu-item fill-white text-blue-l-2&quot;&gt;
-            &lt;use xlink:href=&quot;#logo-wnyc-standard&quot;&gt;&lt;/use&gt;
+              <pre>&lt;article class=&quot;c-card&quot;&gt;
+  &lt;header class=&quot;c-card__header&quot;&gt;
+    &lt;h3 class=&quot;c-card__title&quot;&gt;
+      &lt;mark class=&quot;badge&quot;&gt;New&lt;/mark&gt;
+      &lt;a href=&quot;demos/programs/red-hook-on-the-road&quot;&gt;Commercial Driver&lt;/a&gt;
+    &lt;/h3&gt;
+  &lt;/header&gt;
+  &lt;div class=&quot;c-card__body&quot;&gt;
+    &lt;h4 class=&quot;c-card__subtitle&quot;&gt;Red Hook on the Road&lt;/h4&gt;
+    &lt;div class=&quot;c-card__summary&quot;&gt;
+      &lt;p&gt;Through this program students prepare to work as commercial drivers.&lt;/p&gt;
+      &lt;p&gt;
+        &lt;a href=&quot;demos/programs/red-hook-on-the-road&quot;&gt;Learn more&lt;span class=&quot;sr-only&quot;&gt;: Home Energy Assistance Program&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/p&gt;
+      &lt;p class=&quot;text-end&quot;&gt;
+        &lt;a class=&quot;btn btn-secondary btn-next w-full tablet:w-auto&quot; href=&quot;demos/programs/red-hook-on-the-road#next-steps&quot;&gt;
+          &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-wnyc-ui&quot;&gt;
+            &lt;use xlink:href=&quot;#icon-wnyc-ui-arrow-left&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+          &lt;span&gt;How to Apply&lt;/span&gt;
+          &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-wnyc-ui&quot;&gt;
+            &lt;use xlink:href=&quot;#icon-wnyc-ui-arrow-right&quot;&gt;&lt;/use&gt;
           &lt;/svg&gt;
         &lt;/a&gt;
-        &lt;a href=&quot;#&quot;&gt;Programs&lt;/a&gt;
-        &lt;a href=&quot;#&quot;&gt;Events&lt;/a&gt;
-        &lt;a href=&quot;#&quot;&gt;Trainings&lt;/a&gt;
-      &lt;/nav&gt;
-      &lt;nav class=&quot;o-footer__nav o-footer__nav-b&quot;&gt;
-        &lt;a class=&quot;no-underline&quot; href=&quot;http://nyc.gov/workforcedevelopment&quot; rel=&quot;nofollow noopener&quot; target=&quot;_blank&quot;&gt;
-          &lt;span&gt;NYC Workforce Development&lt;/span&gt;
-        &lt;/a&gt;
-        &lt;a class=&quot;no-underline&quot; href=&quot;http://nyc.gov/opportunity&quot; rel=&quot;nofollow noopener&quot; target=&quot;_blank&quot;&gt;
-          &lt;span class=&quot;sr-only&quot;&gt;N Y C Opportunity&lt;/span&gt;
-          &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-logo-nyco-menu-item&quot;&gt;
-            &lt;use xlink:href=&quot;#logo-nyco-secondary&quot;&gt;&lt;/use&gt;
-          &lt;/svg&gt;
-        &lt;/a&gt;
-      &lt;/nav&gt;
-      &lt;div class=&quot;o-footer__break&quot;&gt;&lt;/div&gt;
-      &lt;nav class=&quot;o-footer__nav o-footer__nav-c border-none mb-0 pb-0&quot;&gt;
-        &lt;a class=&quot;font-secondary font-normal text-inherit no-underline flex items-center pb-1&quot; href=&quot;http://nyc.gov&quot; rel=&quot;nofollow noopener&quot; target=&quot;_blank&quot;&gt;
-          &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-logo-nyc-copyright fill-white me-1&quot;&gt;
-            &lt;use xlink:href=&quot;#logo-nyc&quot;&gt;&lt;/use&gt;
-          &lt;/svg&gt;
-          &lt;span&gt;© 2020 City of New York. All Rights Reserved.&lt;/span&gt;
-        &lt;/a&gt;
-        &lt;p class=&quot;small&quot;&gt;NYC is a trademark and service mark of the City of New York&lt;/p&gt;
-        &lt;a href=&quot;https://www1.nyc.gov/home/privacy-policy.page&quot; rel=&quot;nofollow noopener&quot; target=&quot;_blank&quot;&gt;Privacy Policy&lt;/a&gt;
-        &lt;a href=&quot;https://www1.nyc.gov/home/terms-of-use.page&quot; rel=&quot;nofollow noopener&quot; target=&quot;_blank&quot;&gt;Terms of Use&lt;/a&gt;
-      &lt;/nav&gt;
+      &lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/footer&gt;</pre>
+&lt;/article&gt;</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pb-4 mb-4" id="simple-card">
+        <header class="page-max layout-content pb-4">
+          <div class="wrap">
+            <h2>
+              <a href="#simple-card">Simple Card</a>
+            </h2>
+            <p>Source: <code>
+                <a href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-14/src/components/card">src/components/card/card-simple</a>
+              </code>
+            </p>
+          </div>
+        </header>
+        <div class="page-max layout-content">
+          <div class="wrap">
+            <p>Elements can be added, removed, or modified with <a href="tailwindcss">utilities</a> as needed for different views.</p>
+          </div>
+        </div>
+        <div class="bg-scale-2 py-6 my-4">
+          <div class="page-max">
+            <div class="wrap">
+              <article class="c-card">
+                <div class="c-card__body">
+                  <header>
+                    <h3 class="c-card__title mb-2">
+                      <a href="demos/programs/red-hook-on-the-road">Commercial Driver</a>
+                    </h3>
+                  </header>
+                  <h4 class="c-card__subtitle">Red Hook on the Road</h4>
+                  <div class="c-card__summary">
+                    <p>
+                      <a href="demos/programs/red-hook-on-the-road">Learn more<span class="sr-only">: Home Energy Assistance Program</span>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="page-max layout-content">
+          <div class="wrap">
+            <div class="code-block mb-1">
+              <pre>&lt;article class=&quot;c-card&quot;&gt;
+  &lt;div class=&quot;c-card__body&quot;&gt;
+    &lt;header&gt;
+      &lt;h3 class=&quot;c-card__title mb-2&quot;&gt;
+        &lt;a href=&quot;demos/programs/red-hook-on-the-road&quot;&gt;Commercial Driver&lt;/a&gt;
+      &lt;/h3&gt;
+    &lt;/header&gt;
+    &lt;h4 class=&quot;c-card__subtitle&quot;&gt;Red Hook on the Road&lt;/h4&gt;
+    &lt;div class=&quot;c-card__summary&quot;&gt;
+      &lt;p&gt;
+        &lt;a href=&quot;demos/programs/red-hook-on-the-road&quot;&gt;Learn more&lt;span class=&quot;sr-only&quot;&gt;: Home Energy Assistance Program&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</pre>
             </div>
           </div>
         </div>

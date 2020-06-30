@@ -93,17 +93,20 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   $token-card-body: map-get($combination, 'card-body');
 
   .color-card,
-  .c-accordion {
+  .c-accordion,
+  .c-card {
     box-shadow: map-get($shadows, 'up');
   }
 
   .color-card__header,
-  .c-accordion, .c-accordion__header {
+  .c-accordion, .c-accordion__header,
+  .c-card, .c-card__header {
     background-color: map-get($colors, $token-card-header);
   }
 
   .color-card__body,
-  .c-accordion__body {
+  .c-accordion__body,
+  .c-card__body {
     background-color: map-get($colors, $token-card-body);
   }
 }

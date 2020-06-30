@@ -1,0 +1,22 @@
+/ Layout
+= extend('/slm/layouts/default')
+
+/ Component
+- title = '{{ Pattern }}'
+
+/ Partials
+= partial('/slm/partials/styles.slm')
+= partial('/slm/partials/head.mixin.slm')
+= partial('/slm/partials/content-header.mixin.slm')
+= partial('/slm/section/section.mixin.slm')
+
+/ Content blocks
+= content('head')
+  = mixin('head', title)
+
+= content('header')
+  = mixin('header', title)
+
+= content('content')
+  = mixin('content-header', title)
+  = mixin('section', '{{ type }}/{{ pattern }}/{{ pattern }}', {title: false})

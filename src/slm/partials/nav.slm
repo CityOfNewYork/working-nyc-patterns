@@ -1,86 +1,94 @@
-nav class='${class_nav}'
-  / span class='${class_nav_heading} ${class_nav_divider}' Guides
-  / a class='${class_nav_item}' xhref='index' Home
-  / a class='${class_nav_item}' xhref='about' About
-  / a class='${class_nav_item}' xhref='installation' Installation
-  / a class='${class_nav_item}' xhref='developer-tools' Developer Tools
-  / a class='${class_nav_item} ${class_nav_divider}' xhref='prototyping' Prototyping
+- this.nav = {class: {}}
+- this.nav.class.main = 'tablet:flex-1 mb-1 px-1 tablet:px-2'
+- this.nav.class.heading = 'h3 text-small mb-1 block'
+- this.nav.class.item = 'block p-1 no-underline align-middle'
+- this.nav.class.divider = 'tablet:pb-2 tablet:mb-1 p-1'
 
-  / span class='${class_nav_heading} ${class_nav_divider}' Collections
-  / a class='${class_nav_item} ${class_nav_divider}' xhref='covid-response' COVID Response
+nav class='${this.nav.class.main}'
+  / span class='${this.nav.class.heading} ${this.nav.class.divider}' Guides
+  / a class='${this.nav.class.item}' xhref='index' Home
+  / a class='${this.nav.class.item}' xhref='about' About
+  / a class='${this.nav.class.item}' xhref='installation' Installation
+  / a class='${this.nav.class.item}' xhref='developer-tools' Developer Tools
+  / a class='${this.nav.class.item} ${this.nav.class.divider}' xhref='prototyping' Prototyping
 
-  span class='${class_nav_heading} ${class_nav_divider}' Links
-  a class='${class_nav_item}' xhref='${this.package.cdn.npm}' NPM Package
-  a class='${class_nav_item}' xhref='${this.package.cdn.source}' GitHub Repository
+  / span class='${this.nav.class.heading} ${this.nav.class.divider}' Collections
+  / a class='${this.nav.class.item} ${this.nav.class.divider}' xhref='covid-response' COVID Response
 
-nav class='${class_nav} desktop:ps-4'
-  span class='${class_nav_heading} ${class_nav_divider}' Elements
-  / a class='${class_nav_item}' xhref='badge' Badge
-  a class='${class_nav_item}' xhref='buttons' Buttons
-  a class='${class_nav_item}' xhref='checkboxes' Checkboxes
-  a class='${class_nav_item}' xhref='code' Code
-  a class='${class_nav_item}' xhref='divider' Divider
-  a class='${class_nav_item}' xhref='forms' Forms
-  a class='${class_nav_item}' xhref='icons' Icons
-  a class='${class_nav_item}' xhref='inputs' Inputs
-  a class='${class_nav_item}' xhref='labels' Labels
-  a class='${class_nav_item}' xhref='layouts' Layouts
-  a class='${class_nav_item}' xhref='links' Links
-  / a class='${class_nav_item}' xhref='lists' Lists
-  a class='${class_nav_item}' xhref='nav' Nav
-  a class='${class_nav_item}' xhref='options' Options
-  / a class='${class_nav_item}' xhref='radios' Radios
-  / a class='${class_nav_item}' xhref='tables' Tables
-  / a class='${class_nav_item}' xhref='tooltips' Tooltips
-  / a class='${class_nav_item}' xhref='toggles' Toggles
-  / a class='${class_nav_item}' xhref='selects' Selects
+  span class='${this.nav.class.heading} ${this.nav.class.divider}' Links
+  a class='${this.nav.class.item}' xhref='${this.package.cdn.npm}' NPM Package
+  a class='${this.nav.class.item}' xhref='${this.package.cdn.source}' GitHub Repository
 
-nav class='${class_nav} desktop:ps-4'
-  span class='${class_nav_heading} ${class_nav_divider}' Components
-  a class='${class_nav_item}' xhref='accordion' Accordion
-  / a class='${class_nav_item}' xhref='alert-box' Alert Box
-  / a class='${class_nav_item}' xhref='card' Card
-  / a class='${class_nav_item}' xhref='disclaimer' Disclaimer
-  / a class='${class_nav_item}' xhref='filter' Filter
-  a class='${class_nav_item}' xhref='header' Header
-  / a class='${class_nav_item}' xhref='nearby-stops' Nearby Stops
-  / a class='${class_nav_item}' xhref='question' Question
-  / a class='${class_nav_item}' xhref='share-form' Share Form
-  / a class='${class_nav_item}' xhref='share-links' Share Links
-  / a class='${class_nav_item}' xhref='side-nav' Side Nav
-  a class='${class_nav_item}' xhref='question' Utility
-  a class='${class_nav_item}' xhref='web-share' Web Share
+nav class='${this.nav.class.main} desktop:ps-4'
+  span class='${this.nav.class.heading} ${this.nav.class.divider}' Elements
+  / a class='${this.nav.class.item}' xhref='badge' Badge
+  a class='${this.nav.class.item}' xhref='buttons' Buttons
+  a class='${this.nav.class.item}' xhref='checkboxes' Checkboxes
+  a class='${this.nav.class.item}' xhref='code' Code
+  a class='${this.nav.class.item}' xhref='divider' Divider
+  a class='${this.nav.class.item}' xhref='forms' Forms
+  a class='${this.nav.class.item}' xhref='icons' Icons
+  a class='${this.nav.class.item}' xhref='inputs' Inputs
+  a class='${this.nav.class.item}' xhref='labels' Labels
+  a class='${this.nav.class.item}' xhref='layouts' Layouts
+  a class='${this.nav.class.item}' xhref='links' Links
+  / a class='${this.nav.class.item}' xhref='lists' Lists
+  a class='${this.nav.class.item}' xhref='nav' Nav
+  a class='${this.nav.class.item}' xhref='options' Options
+  / a class='${this.nav.class.item}' xhref='radios' Radios
+  / a class='${this.nav.class.item}' xhref='tables' Tables
+  / a class='${this.nav.class.item}' xhref='tooltips' Tooltips
+  / a class='${this.nav.class.item}' xhref='toggles' Toggles
+  / a class='${this.nav.class.item}' xhref='selects' Selects
 
-nav class='${class_nav} desktop:ps-4'
-  span class='${class_nav_heading} ${class_nav_divider}' Objects
-  / a class='${class_nav_item}' xhref='alert-banner' Alert Banner
-  / a class='${class_nav_item}' xhref='announcements' Announcements
-  a class='${class_nav_item}' xhref='banner' Banner
-  / a class='${class_nav_item}' xhref='card-list' Card Lists
-  / a class='${class_nav_item}' xhref='come-back-later' Come Back Later
-  / a class='${class_nav_item}' xhref='content' Content
-  / a class='${class_nav_item}' xhref='emails' Emails
-  a class='${class_nav_item}' href='footer'
+nav class='${this.nav.class.main} desktop:ps-4'
+  span class='${this.nav.class.heading} ${this.nav.class.divider}' Components
+  a class='${this.nav.class.item}' xhref='accordion' Accordion
+  / a class='${this.nav.class.item}' xhref='alert-box' Alert Box
+  a class='${this.nav.class.item}' href='card'
+    mark class='badge' View
+    | &nbsp;Card
+  / a class='${this.nav.class.item}' xhref='disclaimer' Disclaimer
+  / a class='${this.nav.class.item}' xhref='filter' Filter
+  a class='${this.nav.class.item}' xhref='header' Header
+  / a class='${this.nav.class.item}' xhref='nearby-stops' Nearby Stops
+  / a class='${this.nav.class.item}' xhref='question' Question
+  / a class='${this.nav.class.item}' xhref='share-form' Share Form
+  / a class='${this.nav.class.item}' xhref='share-links' Share Links
+  / a class='${this.nav.class.item}' xhref='side-nav' Side Nav
+  a class='${this.nav.class.item}' xhref='question' Utility
+  a class='${this.nav.class.item}' xhref='web-share' Web Share
+
+nav class='${this.nav.class.main} desktop:ps-4'
+  span class='${this.nav.class.heading} ${this.nav.class.divider}' Objects
+  / a class='${this.nav.class.item}' xhref='alert-banner' Alert Banner
+  / a class='${this.nav.class.item}' xhref='announcements' Announcements
+  a class='${this.nav.class.item}' xhref='banner' Banner
+  / a class='${this.nav.class.item}' xhref='card-list' Card Lists
+  / a class='${this.nav.class.item}' xhref='come-back-later' Come Back Later
+  / a class='${this.nav.class.item}' xhref='content' Content
+  / a class='${this.nav.class.item}' xhref='emails' Emails
+  a class='${this.nav.class.item}' href='footer'
     mark class='badge' View
     | &nbsp;Footer
 
-  / a class='${class_nav_item}' xhref='formstack' Formstack
-  a class='${class_nav_item}' xhref='mobile-nav' Mobile Nav
-  a class='${class_nav_item}' xhref='navigation' Navigation
-  a class='${class_nav_item}' xhref='newsletter' Newsletter
-  a class='${class_nav_item}' xhref='search-box' Search Box
-  a class='${class_nav_item}' xhref='text-controller' Text Controller
+  / a class='${this.nav.class.item}' xhref='formstack' Formstack
+  a class='${this.nav.class.item}' xhref='mobile-nav' Mobile Nav
+  a class='${this.nav.class.item}' xhref='navigation' Navigation
+  a class='${this.nav.class.item}' xhref='newsletter' Newsletter
+  a class='${this.nav.class.item}' xhref='search-box' Search Box
+  a class='${this.nav.class.item}' xhref='text-controller' Text Controller
 
-nav class='${class_nav} desktop:ps-4'
-  span class='${class_nav_heading} ${class_nav_divider}' Utilities
-  a class='${class_nav_item}' xhref='animate' Animate
-  / a class='${class_nav_item}' xhref='clearfix' Clearfix
-  a class='${class_nav_item}' xhref='color' Color
-  / a class='${class_nav_item}' xhref='language' Language
-  a class='${class_nav_item}' xhref='margin' Margin
-  / a class='${class_nav_item}' xhref='media' Media
-  a class='${class_nav_item}' xhref='padding' Padding
-  a class='${class_nav_item}' xhref='tailwindcss' tailwindcss
-  a class='${class_nav_item}' xhref='text' Text
-  a class='${class_nav_item}' xhref='toggle' Toggle
-  a class='${class_nav_item}' xhref='typography' Typography
+nav class='${this.nav.class.main} desktop:ps-4'
+  span class='${this.nav.class.heading} ${this.nav.class.divider}' Utilities
+  a class='${this.nav.class.item}' xhref='animate' Animate
+  / a class='${this.nav.class.item}' xhref='clearfix' Clearfix
+  a class='${this.nav.class.item}' xhref='color' Color
+  / a class='${this.nav.class.item}' xhref='language' Language
+  a class='${this.nav.class.item}' xhref='margin' Margin
+  / a class='${this.nav.class.item}' xhref='media' Media
+  a class='${this.nav.class.item}' xhref='padding' Padding
+  a class='${this.nav.class.item}' xhref='tailwindcss' tailwindcss
+  a class='${this.nav.class.item}' xhref='text' Text
+  a class='${this.nav.class.item}' xhref='toggle' Toggle
+  a class='${this.nav.class.item}' xhref='typography' Typography

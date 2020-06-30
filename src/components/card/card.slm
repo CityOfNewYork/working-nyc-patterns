@@ -1,0 +1,30 @@
+article class='c-card'
+  header class='c-card__header'
+    h3 class='c-card__title'
+      mark class='badge' New
+
+      a href='demos/programs/red-hook-on-the-road'
+        | Commercial Driver
+
+  div class='c-card__body'
+    h4 class='c-card__subtitle' Red Hook on the Road
+
+    div class='c-card__summary'
+      p Through this program students prepare to work as commercial drivers.
+
+      p
+        a href='demos/programs/red-hook-on-the-road'
+          | Learn more
+
+          span class='sr-only'
+            |: Home Energy Assistance Program
+
+      p class='text-end'
+        a class='btn btn-secondary btn-next w-full tablet:w-auto' href='demos/programs/red-hook-on-the-road#next-steps'
+          svg class='icon-wnyc-ui' aria-hidden='true'
+            use xlink:href='#icon-wnyc-ui-arrow-left'
+
+          span How to Apply
+
+          svg class='icon-wnyc-ui' aria-hidden='true'
+            use xlink:href='#icon-wnyc-ui-arrow-right'

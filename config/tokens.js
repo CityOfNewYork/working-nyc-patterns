@@ -248,7 +248,7 @@ module.exports = {
       'shadow-up': '0 3px 12px 2px rgba(0, 0, 0, 0.25)',
 
       'code': {
-        'text': 'blue',
+        'text': 'green-l-3',
         'background': 'scale-0',
         'border': 'transparent'
       }
@@ -269,8 +269,8 @@ module.exports = {
     'site-min-width': '320px',
     'navigation-logo': '128px',
     'navigation-height-mobile': '80px', // size is actually determined by padding, etc. this is a reference for other components
-    'footer-height-mobile-sm': '427px',
-    'footer-height-mobile': '581px',
+    'footer-height-mobile-sm': '513px',
+    'footer-height-mobile': '654px',
     'footer-height-tablet': '448px',
     'side-bar-width': '18.5rem',
     'side-bar-width-small': '12.5rem',
