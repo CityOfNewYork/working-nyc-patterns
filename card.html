@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CMontserrat:400,400i,700" media="all" rel="stylesheet" />
   <link href="styles/site-default.css" rel="stylesheet" />
   <link href="styles/site-color-default.css" rel="stylesheet" />
-  <title>WorkingNYC Patterns</title>
+  <title>Card | WorkingNYC Patterns</title>
 </head>
 
 <body class="color">
@@ -106,83 +106,166 @@
   </aside>
   <main class="py-4" id="main-content" role="main">
     <article class="py-4 clearfix">
-      <h3 class="text-center">Pre-release v0.0.1-15</h3>
-      <section class="c-accordion m-auto mb-4" style="max-width: 800px">
-        <header class="c-accordion__header">
-          <p class="flex items-center">
-            <svg aria-hidden="true" class="icon-wnyc-ui icon-3 me-1">
-              <use xlink:href="#icon-wnyc-ui-package"></use>
-            </svg>
-            <strong>Package</strong>
-          </p>
+      <header class="page-max layout-content">
+        <div class="wrap">
+          <h1>Card</h1>
+        </div>
+      </header>
+      <section class="pb-4 mb-4">
+        <header class="page-max layout-content pb-4">
+          <div class="wrap">
+            <p>Source: <code>
+                <a href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-15/src/components/card">src/components/card/card</a>
+              </code>
+            </p>
+          </div>
         </header>
-        <div class="c-accordion__body active">
-          <div class="c-accordion__padding text-center">
-            <input class="font-code w-full bg-transparent border text-inherit mb-3" data-copy-target="npm-install" id="npm-install" name="npm-install" type="text" value="npm install @nycopportunity/working-patterns@v0.0.1-15" />
-            <nav class="nav-block">
-              <button aria-pressed="false" class="btn btn-primary" data-copy="npm-install" data-js="copy">Copy to Clipboard</button>
-              <a class="btn btn-secondary" href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-15" target="_blank">
-                <svg aria-hidden="true" class="icon-wnyc-ui">
-                  <use xlink:href="#icon-wnyc-ui-github"></use>
-                </svg>
-                <span>GitHub</span>
-              </a>
-              <a class="btn btn-tertiary" href="https://www.npmjs.com/package/@nycopportunity/working-patterns" target="_blank">
-                <svg aria-hidden="true" class="icon-wnyc-ui">
-                  <use xlink:href="#icon-wnyc-ui-package"></use>
-                </svg>
-                <span>npm.org</span>
-              </a>
-            </nav>
+        <div class="page-max layout-content">
+          <div class="wrap">
+            <p>Card Components are thumbnails of content and may include the following <a href="#simple-card">optional</a> elements:</p>
+            <!-- 1. Program icon. Corresponds to program category. [See the full set of icons here](./icons#program-card-icons). -->
+            <ol>
+              <li>Program label or <a href="/badge">badge</a>
+              </li>
+              <li>Plain language headline</li>
+              <li>Program name</li>
+              <li>Plain language description</li>
+              <li>Link to learn more about the program guide</li>
+              <li>“Apply Now” call-to-action <a href="/buttons">button</a>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="bg-scale-2 py-6 my-4">
+          <div class="page-max">
+            <div class="wrap">
+              <article class="c-card">
+                <header class="c-card__header">
+                  <h3 class="c-card__title">
+                    <mark class="badge">New</mark>
+                    <a href="demos/programs/red-hook-on-the-road">Commercial Driver</a>
+                  </h3>
+                </header>
+                <div class="c-card__body">
+                  <h4 class="c-card__subtitle">Red Hook on the Road</h4>
+                  <div class="c-card__summary">
+                    <p>Through this program students prepare to work as commercial drivers.</p>
+                    <p>
+                      <a href="demos/programs/red-hook-on-the-road">Learn more<span class="sr-only">: Home Energy Assistance Program</span>
+                      </a>
+                    </p>
+                    <p class="text-end">
+                      <a class="btn btn-secondary btn-next w-full tablet:w-auto" href="demos/programs/red-hook-on-the-road#next-steps">
+                        <svg aria-hidden="true" class="icon-wnyc-ui">
+                          <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+                        </svg>
+                        <span>How to Apply</span>
+                        <svg aria-hidden="true" class="icon-wnyc-ui">
+                          <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="page-max layout-content">
+          <div class="wrap">
+            <div class="code-block mb-1">
+              <pre>&lt;article class=&quot;c-card&quot;&gt;
+  &lt;header class=&quot;c-card__header&quot;&gt;
+    &lt;h3 class=&quot;c-card__title&quot;&gt;
+      &lt;mark class=&quot;badge&quot;&gt;New&lt;/mark&gt;
+      &lt;a href=&quot;demos/programs/red-hook-on-the-road&quot;&gt;Commercial Driver&lt;/a&gt;
+    &lt;/h3&gt;
+  &lt;/header&gt;
+  &lt;div class=&quot;c-card__body&quot;&gt;
+    &lt;h4 class=&quot;c-card__subtitle&quot;&gt;Red Hook on the Road&lt;/h4&gt;
+    &lt;div class=&quot;c-card__summary&quot;&gt;
+      &lt;p&gt;Through this program students prepare to work as commercial drivers.&lt;/p&gt;
+      &lt;p&gt;
+        &lt;a href=&quot;demos/programs/red-hook-on-the-road&quot;&gt;Learn more&lt;span class=&quot;sr-only&quot;&gt;: Home Energy Assistance Program&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/p&gt;
+      &lt;p class=&quot;text-end&quot;&gt;
+        &lt;a class=&quot;btn btn-secondary btn-next w-full tablet:w-auto&quot; href=&quot;demos/programs/red-hook-on-the-road#next-steps&quot;&gt;
+          &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-wnyc-ui&quot;&gt;
+            &lt;use xlink:href=&quot;#icon-wnyc-ui-arrow-left&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+          &lt;span&gt;How to Apply&lt;/span&gt;
+          &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-wnyc-ui&quot;&gt;
+            &lt;use xlink:href=&quot;#icon-wnyc-ui-arrow-right&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+        &lt;/a&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</pre>
+            </div>
           </div>
         </div>
       </section>
-      <section class="c-accordion m-auto mb-4" style="max-width: 800px">
-        <header class="c-accordion__header">
-          <p class="flex items-center">
-            <svg aria-hidden="true" class="icon-wnyc-ui icon-3 me-1">
-              <use xlink:href="#icon-wnyc-ui-figma"></use>
-            </svg>
-            <strong>Figma</strong>
-          </p>
+      <section class="pb-4 mb-4" id="simple-card">
+        <header class="page-max layout-content pb-4">
+          <div class="wrap">
+            <h2>
+              <a href="#simple-card">Simple Card</a>
+            </h2>
+            <p>Source: <code>
+                <a href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-15/src/components/card">src/components/card/card-simple</a>
+              </code>
+            </p>
+          </div>
         </header>
-        <div class="c-accordion__body active">
-          <iframe allowfullscreen="true" class="border-0 block w-full" height="450" src="https://www.figma.com/embed?embed_host=nyco-wnyc-patterns&amp;url=https://www.figma.com/file/CH7ZOCW55SgsDnsTj3UrTi/Patterns"></iframe>
-        </div>
-      </section>
-      <section class="c-accordion m-auto mb-4" style="max-width: 800px">
-        <header class="c-accordion__header">
-          <p class="flex items-center">
-            <svg aria-hidden="true" class="icon-wnyc-ui icon-3 me-1">
-              <use xlink:href="#icon-wnyc-ui-navigation"></use>
-            </svg>
-            <strong>Demos</strong>
-          </p>
-        </header>
-        <div class="c-accordion__body active">
-          <div class="c-accordion__padding text-center">
-            <nav class="nav-block">
-              <a href="demos/homepage">Homepage (in-progress)</a>
-              <a href="demos/programs/index">Programs (in-progress)</a>
-              <a href="demos/programs/red-hook-on-the-road">Programs Single (Red Hook on the Road)</a>
-            </nav>
+        <div class="page-max layout-content">
+          <div class="wrap">
+            <p>Elements can be added, removed, or modified with <a href="tailwindcss">utilities</a> as needed for different views.</p>
           </div>
         </div>
-      </section>
-      <section class="c-accordion m-auto mb-4" style="max-width: 800px">
-        <header class="c-accordion__header">
-          <p class="flex items-center">
-            <svg aria-hidden="true" class="icon-wnyc-ui icon-3 me-1">
-              <use xlink:href="#icon-wnyc-ui-hard-drive"></use>
-            </svg>
-            <strong>Files</strong>
-          </p>
-        </header>
-        <div class="c-accordion__body active">
-          <div class="c-accordion__padding text-center">
-            <nav class="nav-block">
-              <a href="https://drive.google.com/drive/folders/11Oj1weBV8qAe6Y61Fo5YAVpCCjliDqtk">Drive</a>
-            </nav>
+        <div class="bg-scale-2 py-6 my-4">
+          <div class="page-max">
+            <div class="wrap">
+              <article class="c-card">
+                <div class="c-card__body">
+                  <header>
+                    <h3 class="c-card__title mb-2">
+                      <a href="demos/programs/red-hook-on-the-road">Commercial Driver</a>
+                    </h3>
+                  </header>
+                  <h4 class="c-card__subtitle">Red Hook on the Road</h4>
+                  <div class="c-card__summary">
+                    <p>
+                      <a href="demos/programs/red-hook-on-the-road">Learn more<span class="sr-only">: Home Energy Assistance Program</span>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="page-max layout-content">
+          <div class="wrap">
+            <div class="code-block mb-1">
+              <pre>&lt;article class=&quot;c-card&quot;&gt;
+  &lt;div class=&quot;c-card__body&quot;&gt;
+    &lt;header&gt;
+      &lt;h3 class=&quot;c-card__title mb-2&quot;&gt;
+        &lt;a href=&quot;demos/programs/red-hook-on-the-road&quot;&gt;Commercial Driver&lt;/a&gt;
+      &lt;/h3&gt;
+    &lt;/header&gt;
+    &lt;h4 class=&quot;c-card__subtitle&quot;&gt;Red Hook on the Road&lt;/h4&gt;
+    &lt;div class=&quot;c-card__summary&quot;&gt;
+      &lt;p&gt;
+        &lt;a href=&quot;demos/programs/red-hook-on-the-road&quot;&gt;Learn more&lt;span class=&quot;sr-only&quot;&gt;: Home Energy Assistance Program&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</pre>
+            </div>
           </div>
         </div>
       </section>
