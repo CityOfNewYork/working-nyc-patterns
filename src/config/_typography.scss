@@ -32,6 +32,18 @@ $line-height: map-get(tokens.$tokens, 'line-height');
   line-height: map-get($line-height, $key);
 }
 
+@mixin selector-body-elements() {
+  p, ul, ol, li {
+    @content;
+  }
+}
+
+@mixin selector-lists() {
+  ul, ol {
+    @content;
+  }
+}
+
 @mixin font-smooth() {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

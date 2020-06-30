@@ -37,3 +37,25 @@
     @include typography.set('h5');
   }
 }
+
+.c-card__summary {
+  @include typography.selector-body-elements() {
+    @include media.screen-and-min-width('tablet') {
+      @include typography.set('small');
+    }
+
+    margin-bottom: typography.$margin-bottom / 2;
+  }
+
+  > :last-child {
+    margin-bottom: typography.$margin-bottom;
+  }
+
+  // ul, ol {
+  //   margin-bottom: typography.$margin-bottom * 2;
+  // }
+}
+
+.c-card__cta {
+
+}

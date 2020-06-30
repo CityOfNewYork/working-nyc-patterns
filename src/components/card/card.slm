@@ -7,24 +7,30 @@ article class='c-card'
         | Commercial Driver
 
   div class='c-card__body'
-    h4 class='c-card__subtitle' Red Hook on the Road
+    h4 class='c-card__subtitle text-alt' Red Hook on the Road
 
     div class='c-card__summary'
-      p Through this program students prepare to work as commercial drivers.
+      p Job Training, job certification
+      p Commercial driver, transportation
+      p Unemployed New Yorkers
+      p 1-4 weeks
 
-      p
-        a href='demos/programs/red-hook-on-the-road'
+      / p
+      /   a href='demos/programs/red-hook-on-the-road'
+      /     | Learn more
+
+      /     span class='sr-only'
+      /       |: Home Energy Assistance Program
+
+    div class='c-card__cta'
+      a class='btn btn-secondary btn-next w-full tablet:w-auto' href='demos/programs/red-hook-on-the-road'
+        svg class='icon-wnyc-ui' aria-hidden='true'
+          use xlink:href='#icon-wnyc-ui-arrow-left'
+
+        span
           | Learn more
 
-          span class='sr-only'
-            |: Home Energy Assistance Program
+          span class='sr-only' about Red Hook on the Road
 
-      p class='text-end'
-        a class='btn btn-secondary btn-next w-full tablet:w-auto' href='demos/programs/red-hook-on-the-road#next-steps'
-          svg class='icon-wnyc-ui' aria-hidden='true'
-            use xlink:href='#icon-wnyc-ui-arrow-left'
-
-          span How to Apply
-
-          svg class='icon-wnyc-ui' aria-hidden='true'
-            use xlink:href='#icon-wnyc-ui-arrow-right'
+        svg class='icon-wnyc-ui' aria-hidden='true'
+          use xlink:href='#icon-wnyc-ui-arrow-right'

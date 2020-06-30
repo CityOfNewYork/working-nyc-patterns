@@ -7,10 +7,9 @@ article class='c-card'
 
     h4 class='c-card__subtitle' Red Hook on the Road
 
-    div class='c-card__summary'
-      p
-        a href='demos/programs/red-hook-on-the-road'
-          | Learn more
+    div class='c-card__cta'
+      a href='demos/programs/red-hook-on-the-road' class='btn btn-link'
+        | Learn more
 
-          span class='sr-only'
-            |: Home Energy Assistance Program
+        span class='sr-only'
+          | about Red Hook on the Road

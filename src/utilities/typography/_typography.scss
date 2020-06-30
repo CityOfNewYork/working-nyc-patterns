@@ -120,12 +120,12 @@ p, li {
   @include typography.set('p');
 }
 
-p, ul, ol, li {
+@include typography.selector-body-elements() {
   margin-top: 0;
   margin-bottom: typography.$margin-bottom;
 }
 
-ul, ol {
+@include typography.selector-lists() {
   margin-bottom: typography.$margin-bottom * 2;
 }
 
