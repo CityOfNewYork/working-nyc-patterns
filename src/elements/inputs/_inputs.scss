@@ -78,6 +78,7 @@ input[type='number'] {
 .input-search {
   display: flex;
   align-items: center;
+  position: relative;
 
   input {
     text-overflow: ellipsis;
@@ -89,7 +90,7 @@ input[type='number'] {
 }
 
 .input-search__submit {
-  #{direction.$end}: grid.$grid * 5;
+  #{direction.$end}: grid.$grid * 3;
   padding: 0 !important;
   position: absolute;
 

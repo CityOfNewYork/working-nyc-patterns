@@ -1,6 +1,6 @@
 - this.navigation = (this.navigation) ? this.navigation : [];
 
-= mixin('section', 'path', 'config = {title: false}');
+= mixin('section', 'path', 'config = {title: false, source: true}');
   - id = (this.config.title && this.config.title !== '') ? this.config.title.toLowerCase().split(' ').join('-') : false;
   - grid = (this.config.grid);
 
@@ -10,36 +10,44 @@
 
   - let source = this.path.split('/')
   - source.splice(source.length - 1, 1)
-  - source = `${this.package.cdn.source}/releases/tag/v${this.tokens.version}/src` + source.join('/');
+  - source = `${this.package.cdn.source}/tree/v${this.tokens.version}/src` + source.join('/');
 
   section id=id class='pb-4 mb-4'
     / Render the Section header
     header class='page-max layout-content pb-4'
       div class='wrap'
         - if this.config.title
-          h2
+          h4
             a href='#${id}' = this.config.title;
 
         p
           = 'Source: ';
           code
-            a href='${source}'
+            a href='${source}' target='_blank'
               = 'src' + this.path
 
     / Render the component's text specs on the page
-    div class='page-max layout-content'
+    div class='page-max layout-content pb-6'
       div class='wrap'
         == this.include(this.path + '.md');
 
     / Render the component on the page
-    div class='bg-scale-2 py-6 my-4'
-      div class='page-max'
+    div class='page-max layout-content pb-4'
+      h4#example class='wrap'
+        a href='#example' Demonstration
+
+    div class='bg-scale-2 py-6 mb-6'
+      div class='page-max flex justify-center py-6'
         div class='wrap'
-          = partial(this.path + '.slm');
+          == this.include(this.path + '.slm');
 
     / Render the componet markup in the code block
+    div class='page-max layout-content pb-4'
+      h4#markup class='wrap'
+        a href='#markup' Markup
+
     div class='page-max layout-content'
       div class='wrap'
         div class='code-block mb-1'
-          pre
+          pre tabindex='0'
             = this.include(this.path);

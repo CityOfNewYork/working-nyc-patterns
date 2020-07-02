@@ -1,0 +1,49 @@
+/ Header
+
+header class='o-header'
+  / div class='o-header__icon'
+  /   a href='#'
+  /     svg class='o-header__svg' aria-hidden='true'
+  /       use xlink:href='#category-wnyc-construction'
+
+  div
+    h1 class='o-header__title'
+      | Commercial Driver <br>
+      | Red Hook on the Road
+
+    h2 class='o-header__subtitle text-alt'
+      | Brooklyn Workforce Innovations and NYC Small Business Services
+
+    nav class='o-header__breadcrumbs'
+      a Home
+
+      svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
+        use xlink:href='#icon-wnyc-ui-chevron-right'
+
+      a Programs
+
+      svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
+        use xlink:href='#icon-wnyc-ui-chevron-right'
+
+      a Commercial Driver - Red Hook on the Road
+
+    p class='small'
+      a class='btn btn-link btn-small btn-tertiary' href='#disability-accommodation'
+        svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+          use xlink:href='#icon-wnyc-ui-user-check'
+
+        span Accommodates Disabilities
+
+    p class='small'
+      a class='btn btn-link btn-small btn-tertiary' href='#language-access'
+        svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+          use xlink:href='#icon-wnyc-ui-translate'
+
+        span Accommodates Multiple Languages
+
+    p class='small'
+      span class='flex items-center'
+        svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+          use xlink:href='#icon-wnyc-ui-info'
+
+        | Last updated 2 days ago

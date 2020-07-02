@@ -1,0 +1,15 @@
+// Variables
+
+// Dependencies
+// @use 'config/tokens' as *;
+
+// Declarations
+@mixin base {
+  html, body {
+    overflow: visible !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+}

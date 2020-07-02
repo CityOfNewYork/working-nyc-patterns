@@ -1,8 +1,7 @@
+- this.title = '{{ Pattern }}'
+
 / Layout
 = extend('/slm/layouts/default')
-
-/ Component
-- title = '{{ Pattern }}'
 
 / Partials
 = partial('/slm/partials/styles.slm')
@@ -12,11 +11,11 @@
 
 / Content blocks
 = content('head')
-  = mixin('head', title)
+  = mixin('head')
 
 = content('header')
-  = mixin('header', title)
+  = mixin('header')
 
 = content('content')
-  = mixin('content-header', title)
-  = mixin('section', '{{ type }}/{{ pattern }}/{{ pattern }}', {title: false})
+  = mixin('content-header')
+  = mixin('section', '/{{ type }}/{{ pattern }}/{{ pattern }}', {title: false})

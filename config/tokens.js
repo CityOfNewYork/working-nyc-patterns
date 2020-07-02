@@ -106,18 +106,19 @@ module.exports = {
     'h4': 'normal',
     'h5': 'normal',
     'h6': 'normal',
-    'p': '1.5',
+    'p': '1.6',
     'small': 'normal',
     'button': 'normal',
     'option': 'normal',
-    'code': '1.8'
+    'code': '1.9'
   },
   'typography': {
     'desktop': '22px',
     'tablet': '20px',
     'mobile': '18px',
     'sm-mobile': '16px',
-    'margin-bottom': '1rem'
+    'margin-bottom': '1rem',
+    'list-indent': '1.5rem'
   },
   'links': {
     'font-weight': 'bold',
@@ -224,6 +225,25 @@ module.exports = {
         'graphic-checkbox-checked': 'scale-0'
       },
 
+      'statuses': {
+        'primary': {
+          'text': 'scale-2',
+          'background': 'blue-l-1',
+        },
+        'secondary': {
+          'text': 'scale-2',
+          'background': 'green-l-3',
+        },
+        'tertiary': {
+          'text': 'scale-2',
+          'background': 'yellow-l-2',
+        },
+        'alt': {
+          'text': 'scale-1',
+          'background': 'blue-l-3'
+        }
+      },
+
       'button': {
         'primary': {
           'text': 'blue-l-1',
@@ -248,8 +268,16 @@ module.exports = {
       'shadow-up': '0 3px 12px 2px rgba(0, 0, 0, 0.25)',
 
       'code': {
-        'text': 'green-l-3',
-        'background': 'scale-0',
+        'text': 'blue-l-2',
+        'text-base': 'blue-l-2',
+        'text-keyword': 'blue',
+        'text-javascript': 'blue-l-2',
+        'text-css': 'blue-l-2',
+        'text-comment': 'blue-l-3',
+        'text-string': 'green-l-3',
+        'text-symbol': 'yellow-l-2',
+        'text-code': 'green-l-3',
+        'background': 'scale-3',
         'border': 'transparent'
       }
     }
@@ -264,7 +292,7 @@ module.exports = {
   'dimensions': {
     'spacing-base': 3, // × grid
     'mobile-menu-width': '80vw',
-    'content-width': '1024px',
+    'content-width': '896px',
     'site-max-width': '1440px',
     'site-min-width': '320px',
     'navigation-logo': '128px',
@@ -284,7 +312,7 @@ module.exports = {
     '40': 40,
     '50': 50,
     'footer': 0,
-    'search-box': 1000,
+    'search': 1000,
     'navigation': 1010,
     'auto': 'auto',
   },

@@ -3,11 +3,11 @@
 import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
 
 /**
- * The SearchBox module
+ * The Search module
  *
  * @class
  */
-class SearchBox {
+class Search {
   /**
    * @constructor
    *
@@ -15,10 +15,10 @@ class SearchBox {
    */
   constructor() {
     this._toggle = new Toggle({
-      selector: SearchBox.selector,
+      selector: Search.selector,
       after: (toggle) => {
-        let el = document.querySelector(SearchBox.selector);
-        let input = document.querySelector(SearchBox.selectors.input);
+        let el = document.querySelector(Search.selector);
+        let input = document.querySelector(Search.selectors.input);
 
         if (el.className.includes('active') && input) {
           input.focus();
@@ -34,10 +34,10 @@ class SearchBox {
  * The dom selector for the module
  * @type {String}
  */
-SearchBox.selector = '[data-js*="search-box"]';
+Search.selector = '[data-js*="search"]';
 
-SearchBox.selectors = {
-  input: '[data-js*="search-box__input"]'
+Search.selectors = {
+  input: '[data-js*="search__input"]'
 };
 
-export default SearchBox;
+export default Search;

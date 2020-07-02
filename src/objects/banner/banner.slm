@@ -1,33 +1,12 @@
-/
 / Banner
-/
 
-header class='o-banner color-dark-background bg-blue-d3'
-  div class='o-banner__inner'
+header class='o-banner layout-map__map layout__column bg-scale-2 flex items-center '
+  div class='o-banner__inner my-4'
+    h2 class='h3 m-0'
+      span class='font-normal' The Official Resource of
 
-    h1 class='o-banner__title'
-      | Find help in NYC with <a href="https://access.nyc.gov/programs/?program_cat=food">food</a>, <a href="https://access.nyc.gov/programs/?program_cat=cash-expenses">money</a>, <a href="https://access.nyc.gov/programs/?program_cat=housing">housing</a>, <a href="https://access.nyc.gov/programs/?program_cat=work">work</a> and more on ACCESS NYC.
+      a href='/' class='text-white uppercase no-underline'
+        span class='sr-only' Working N Y C
 
-    hr class='divider border-blue'
-
-    div class='tablet:layout-columns-gutter mb-3'
-      div class='o-banner__tout'
-        h3 class='o-banner__tout-title' What am I eligible for?
-
-        div class='o-banner__tout-body flex-auto'
-          p class='p1' There are over 30 programs you or your family may be eligible for regardless of immigration status and even if you’re already receiving benefits or have a job.
-
-        div class='o-banner__tout-cta'
-          a class='btn btn-tertiary' href='https://access.nyc.gov/eligibility'
-            svg class='icon-wnyc-ui icon-4 icon-wnyc-ui-user-check'
-              use xlink:href='#icon-wnyc-ui-user-check'
-            | Am I eligible?
-
-      div class='o-banner__tout'
-        h2 class='o-banner__tout-title h3' Apply now for benefits.
-
-        div class='o-banner__tout-body flex-auto'
-          p Apply directly for SNAP, Cash Assistance and Medicaid renewal. Log into your HRA account.
-
-        div class='o-banner__tout-cta'
-          a class='btn btn-secondary btn-next' href='https://a069-access.nyc.gov/ACCESSNYC/application.do' Go to ACCESS HRA
+        svg class='icon-logo-standard-tagline fill-white text-blue-l-2' aria-hidden='true'
+          use xlink:href='#logo-wnyc-standard'

@@ -120,7 +120,7 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   $combination-modal: map-get($combination, 'modal');
 
   .color-modal,
-  .o-search-box, .o-mobile-nav {
+  .o-search, .o-mobile-menu {
     @include base($combination-modal);
     @include hyperlinks($combination-modal);
 
@@ -242,70 +242,79 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   $code: map-get($combination, 'code');
 
   $token-text: map-get($code, 'text');
+  $token-text-base: map-get($code, 'text-base');
+  $token-text-keyword: map-get($code, 'text-keyword');
+  $token-text-string: map-get($code, 'text-string');
+  $token-text-comment: map-get($code, 'text-comment');
+  $token-text-javascript: map-get($code, 'text-javascript');
+  $token-text-css: map-get($code, 'text-css');
+  $token-text-symbol: map-get($code, 'text-symbol');
+  $token-text-code: map-get($code, 'text-code');
   $token-background: map-get($code, 'background');
   $token-border: map-get($code, 'border');
 
-  code, .code, .code-block {
+  code, .code, .code-block, pre, .hljs {
     color: map-get($colors, $token-text);
     background-color: map-get($colors, $token-background);
     border-color: map-get($colors, $token-border);
   }
 
-  pre, .hljs {
-    color: map-get($colors, $token-text);
-    background-color: map-get($colors, $token-background);
-    border-color: transparent;
+  p code, li code, td code {
+    color: map-get($colors, $token-text-code);
   }
+
+  // pre, .hljs {
+    // color: map-get($colors, $token-text-base);
+    // background-color: map-get($colors, $token-background);
+    // border-color: transparent;
+  // }
 
   /**
    * Highlight.js Overrides
    */
 
-  /*.code-block .hljs,*/
-  // .hljs-subst {
-  //   color: $color-grey-mid;
-  // }
+  .css {
+    color: map-get($colors, $token-text-css);
+  }
 
-  // .hljs-tag {
-  //   color: $color-pink-light;
-  // }
+  .javascript {
+    color: map-get($colors, $token-text-javascript);
+  }
 
-  // .hljs-name, .hljs-attr {
-  //   font-weight: normal;
-  //   color: $color-pink;
-  // }
+  .hljs-attr, .hljs-name {
+    color: map-get($colors, $token-text);
+  }
 
-  // .css {
-  //   color: $color-yellow-access;
-  // }
+  .hljs-comment {
+    color: map-get($colors, $token-text-comment);
+  }
 
-  // .javascript {
-  //   color: $color-blue-bright;
-  // }
+  .hljs-keyword, .hljs-attribute, .hljs-selector-tag,
+  .hljs-meta-keyword, .hljs-doctag, .hljs-name {
+    color: map-get($colors, $token-text-keyword);
+  }
 
-  // .hljs-keyword {
-  //   color: $color-purple;
-  // }
+  .hljs-type, .hljs-string, .hljs-number, .hljs-selector-id,
+  .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+    color: map-get($colors, $token-text-string);
+  }
 
-  // .hljs-comment {
-  //   color: $color-grey-mid;
-  //   display: inline-block;
-  //   padding-top: dimensions.$spacing-base;
-  //   padding-bottom: $grid;
-  // }
+  .hljs-regexp, .hljs-symbol, .hljs-variable, .hljs-template-variable,
+  .hljs-link, .hljs-selector-attr, .hljs-selector-pseudo {
+    color: map-get($colors, $token-text-symbol);
+  }
+}
 
-  // pre > code:first-of-type > .hljs-comment {
-  //   padding-top: 0;
-  // }
+@mixin statuses($combination) {
+  @each $type, $combo in map-get($combination, 'statuses') {
+    $token-text: map-get($combo, 'text');
+    $token-background: map-get($combo, 'background');
 
-  // .hljs-type, .hljs-string, .hljs-number, .hljs-selector-id,
-  // .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
-  //   color: $color-purple;
-  // }
-
-  // .hljs-built_in {
-  //   color: $color-grey-dark;
-  // }
+    .color-status-#{$type}, .status-#{$type} {
+      color: map-get($colors, $token-text);
+      background-color: map-get($colors, $token-background);
+    }
+  }
 }
 
 /**
@@ -340,5 +349,6 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   @include button($combination);
   @include option($combination);
   @include code($combination);
+  @include statuses($combination);
   // @include ...
 }

@@ -34,32 +34,26 @@ body {
 
 h1, .h1 {
   @include typography.set('h1');
-  margin-bottom: typography.$margin-bottom;
 }
 
 h2, .h2 {
   @include typography.set('h2');
-  margin-bottom: typography.$margin-bottom;
 }
 
 h3, .h3 {
   @include typography.set('h3');
-  margin-bottom: typography.$margin-bottom;
 }
 
 h4, .h4 {
   @include typography.set('h4');
-  margin-bottom: typography.$margin-bottom;
 }
 
 h5, .h5 {
   @include typography.set('h5');
-  margin-bottom: typography.$margin-bottom;
 }
 
 h6, .h6 {
   @include typography.set('h6');
-  margin-bottom: typography.$margin-bottom;
 }
 
 h1, .h1,
@@ -68,7 +62,8 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  margin-top: 0;
+  margin-top: typography.get('margin-bottom') * 2;
+  margin-bottom: typography.get('margin-bottom');
 
   a {
     font-weight: inherit;
@@ -84,7 +79,7 @@ blockquote, .blockquote {
   @include typography.set('blockquote');
   margin-left: 0;
   margin-right: 0;
-  margin-bottom: typography.$margin-bottom;
+  margin-bottom: typography.get('margin-bottom');
 
   p {
     font-family: inherit;
@@ -122,11 +117,12 @@ p, li {
 
 @include typography.selector-body-elements() {
   margin-top: 0;
-  margin-bottom: typography.$margin-bottom;
+  margin-bottom: typography.get('margin-bottom');
 }
 
 @include typography.selector-lists() {
-  margin-bottom: typography.$margin-bottom * 2;
+  padding-#{direction.$start}: typography.get('list-indent');
+  margin-bottom: typography.get('margin-bottom') * 2;
 }
 
 // .font-primary {

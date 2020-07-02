@@ -1,7 +1,18 @@
 / Navigation
 
-nav role='navigation' class='o-navigation bg-scale-2'
-  a href='/' class='o-navigation__logo o-navigation__menu-item text-white uppercase text-small no-underline'
+/ Defaults
+- this.navigation = {}
+- this.navigation.id = Math.random().toString(16).substring(2)
+
+/ Inherit overrides
+- if (typeof navigation !== 'undefined')
+  - this.navigation = Object.assign(navigation, this.navigation);
+
+/! { @role        Use role='navigation' in production layouts. Identifies the nav as a major landmark }
+/! { @aria-label  Ensures a unique landmark }
+/! { @class       Add "o-navigation-fixed" in production layouts }
+nav role='navigation' aria-label='Primary Navigation' class='o-navigation bg-scale-2 ${this.navigation.class}'
+  a href='/' class='o-navigation__logo o-navigation__menu-item'
     span class='sr-only' Working N Y C
 
     svg class='hidden tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2' aria-hidden='true'
@@ -10,25 +21,27 @@ nav role='navigation' class='o-navigation bg-scale-2'
     svg class='tablet:hidden icon-logo-stacked-menu-item fill-white text-blue-l-2' aria-hidden='true'
       use xlink:href='#logo-wnyc-stacked'
 
-  a class='hidden desktop:inline-block' href='/demos/programs/index' Programs
+  /! { @class  Hide menu items for mobile using utilities }
+  a class='hidden desktop:inline-flex' href='/demos/programs/index' Programs
 
-  a class='hidden desktop:inline-block' href='#' Events
+  a class='hidden desktop:inline-flex' href='#' Events
 
-  a class='hidden desktop:inline-block' href='#' Trainings
+  a class='hidden desktop:inline-flex' href='#' Trainings
 
-  button class='o-navigation__menu-item btn-link' data-js='search-box' aria-controls='aria-c-search-box' aria-expanded='false'
+  /! { @class  The nav supports button elements using "btn-link" }
+  button class='o-navigation__menu-item btn-link' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
     svg class='o-navigation__menu-icon icon-wnyc-ui'
       use xlink:href='#icon-wnyc-ui-search'
 
     span class='o-navigation__menu-label' Search
 
-  button class='o-navigation__menu-item btn-link desktop:m-0' data-js='search-box' aria-controls='aria-c-search-box' aria-expanded='false'
+  button class='o-navigation__menu-item btn-link desktop:m-0' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
     svg class='o-navigation__menu-icon icon-wnyc-ui'
       use xlink:href='#icon-wnyc-ui-translate'
 
     span class='o-navigation__menu-label' Translate
 
-  button class='o-navigation__menu-item btn-link desktop:hidden' data-js='mobile-nav' aria-controls='aria-c-mobile-nav' aria-expanded='false'
+  button class='o-navigation__menu-item btn-link desktop:hidden' data-js='mobile-menu' aria-controls='aria-c-mobile-menu' aria-expanded='false'
     svg class='o-navigation__menu-icon icon-wnyc-ui'
       use xlink:href='#icon-wnyc-ui-menu'
 

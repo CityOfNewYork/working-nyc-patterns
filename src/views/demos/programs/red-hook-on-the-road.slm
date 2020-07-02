@@ -16,58 +16,7 @@
 
         div class='layout-content'
           div class='page-max'
-            header class='c-header'
-              / div class='c-header__icon'
-              /   a href='#'
-              /     svg class='c-header__svg' aria-hidden='true'
-              /       use xlink:href='#category-wnyc-construction'
-
-              div
-                h1 class='c-header__title'
-                  | Commercial Driver <br>
-                  | Red Hook on the Road
-
-                h2 class='c-header__subtitle text-alt'
-                  | <a href='#ae'>Brooklyn Workforce Innovations</a> and <a href='#er'>NYC Small Business Services</a>
-
-                nav class='c-header__breadcrumbs'
-                  a Home
-
-                  svg class='c-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
-                    use xlink:href='#icon-wnyc-ui-chevron-right'
-
-                  a Programs
-
-                  svg class='c-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
-                    use xlink:href='#icon-wnyc-ui-chevron-right'
-
-                  a Job Training
-
-                  svg class='c-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
-                    use xlink:href='#icon-wnyc-ui-chevron-right'
-
-                  a Commercial Driver - Red Hook on the Road
-
-                p class='small'
-                  a class='btn btn-link btn-small btn-tertiary' href='#disability-accommodation'
-                    svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
-                      use xlink:href='#icon-wnyc-ui-user-check'
-
-                    span Accommodates Disabilities
-
-                p class='small'
-                  a class='btn btn-link btn-small btn-tertiary' href='#language-access'
-                    svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
-                      use xlink:href='#icon-wnyc-ui-translate'
-
-                    span Accommodates Multiple Languages
-
-                p class='small'
-                  span class='flex items-center'
-                    svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
-                      use xlink:href='#icon-wnyc-ui-info'
-
-                    | Last updated 2 days ago
+            = partial('/objects/header/header')
 
         section class='bg-scale-2 layout-content'
           div class='py-4 page-max wrap'

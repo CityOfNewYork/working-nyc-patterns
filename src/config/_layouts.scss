@@ -337,7 +337,7 @@ $layouts: map-get(tokens.$tokens, 'layouts');
     > *:first-child,
     > .layout__column:first-child {
       @include auto();
-      max-width: dimensions.get('content-width') + (dimensions.$spacing-base * 2)
+      max-width: dimensions.get('content-width')
     }
   }
 }

@@ -1,21 +1,32 @@
-/
 / Accordion
-/
 
-article class='c-accordion'
-  header class='c-accordion__header color-dark-background'
-    p#aria-lb-what-you-need-to-include class='c-accordion__heading'
-      span Free tax prep for New Yorkers
-      em class='block font-normal' NYC Free Tax Prep
-    button data-js='accordion' aria-controls='aria-c-what-you-need-to-include' aria-expanded='true' class="c-accordion__toggle print:hidden active"
-      span class='c-accordion__toggle-active' hide this list
-      span class='c-accordion__toggle-inactive' show this list
+/ Defaults
+- this.accordion = {}
+- this.accordion.id = Math.random().toString(16).substring(2)
+- this.accordion.active = true
 
-  div#aria-c-what-you-need-to-include role='region' class='c-accordion__body print:active hidden:overflow animated active' aria-labelledby='aria-lb-what-you-need-to-include' aria-hidden='false'
+/ Inherit overrides
+- if (typeof accordion !== 'undefined')
+  - this.accordion = Object.assign(accordion, this.accordion);
+
+article class='c-accordion mb-1'
+  header class='c-accordion__header'
+    button class='c-accordion__toggle w-full text-start print:hidden ${this.accordion.active ? 'active' : ''}' data-js='accordion' aria-controls='aria-c-${this.accordion.id}' aria-expanded='${this.accordion.active.toString()}'
+      span class='c-accordion__heading mt-0' id='aria-lb-${this.accordion.id}'
+        span = this.accordion.title
+
+      span class='c-accordion__toggle-active'
+        svg class='icon-wnyc-ui' aria-hidden='true'
+          use xlink:href='#icon-wnyc-ui-chevron-down'
+
+        span class='sr-only' hide this list
+
+      span class='c-accordion__toggle-inactive'
+        svg class='icon-wnyc-ui' aria-hidden='true'
+          use xlink:href='#icon-wnyc-ui-chevron-up'
+
+        span class='sr-only' show this list
+
+  div id='aria-c-${this.accordion.id}' role='region' class='c-accordion__body bg-scale-3 print:active hidden:overflow animated ${this.accordion.active ? 'active' : 'hidden'}' aria-labelledby='aria-lb-${this.accordion.id}' aria-hidden='${this.accordion.active ? 'false' : 'true'}'
     div class='c-accordion__padding'
-      p class='text-blue' NYC Department of Consumer Affairs
-      p If you earned $64,000 or less last tax year, the City can help you file your taxes for free. You can file online or, if you make under $54,000, you can file in person.
-      h4 Apply in person
-      p There are more than 200 NYC Free Tax Prep sites in all five boroughs that can help you file for free.
-      p class='print:hidden'
-        a class='btn btn-secondary btn-next btn-small' href='#' Learn More
+      = this.accordion.body

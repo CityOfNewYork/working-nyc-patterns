@@ -5,22 +5,26 @@ html lang='en' dir='ltr'
   body class='color'
     a class='sr-only' href='#main-content' Skip to main content
 
-    = partial('../partials/header.slm');
+    = partial('/slm/partials/header.slm');
 
-    aside#main-menu role='navigation' aria-labelledby='main-menu-control' aria-hidden='true' class='color-modal text-small hidden hidden:overflowFadeInUp animated relative' style='top: -1px'
+    aside#main-menu aria-labelledby='main-menu-control' aria-hidden='true' class='color-modal text-small hidden hidden:overflowFadeInUp animated'
       div class='page-max py-4 animated'
         div class='tablet:flex'
-          = partial('../partials/nav.slm');
+          - tabindex = true;
+          = partial('/slm/partials/nav.slm');
 
         div class='text-center'
-          button class='btn-link' aria-controls='main-menu' aria-expanded='false' data-js='toggle' Close Menu
+          button tabindex='-1' class='btn-link' aria-controls='main-menu' aria-expanded='false' data-js='toggle' data-pa11y='disable'
+            / pa11y has trouble calculating the color contrast of this element so it is disabled
+            | Close Menu
 
     main#main-content role='main' class='py-4'
       article class='py-4 clearfix'
         = content('content');
         / = partial('../section/nav.slm');
 
-    = partial('../partials/footer.slm');
+    - tabindex = false;
+    = partial('/slm/partials/footer.slm');
 
     script src='scripts/polyfills.js'
     script src='scripts/main.js'

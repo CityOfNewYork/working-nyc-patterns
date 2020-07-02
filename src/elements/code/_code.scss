@@ -14,9 +14,12 @@ code, pre, .hljs {
 
 .code,
 .code-block {
-  @include typography.set('code');
   border: 1px solid;
   border-radius: 3px;
+}
+
+code, pre {
+  @include typography.set('code');
 }
 
 .code {
@@ -31,10 +34,9 @@ code, pre, .hljs {
 p code, li code, td code {
   font-size: 80%;
   font-family: inherit;
-  letter-spacing: 0.01em;
 
   border-radius: 3px;
-  padding: 0.2em 0.4em;
+  padding: 0.1em 0.4em 0.3em;
   margin: 0;
   display: inline;
   white-space: nowrap;
@@ -62,9 +64,9 @@ pre, .hljs {
 .code-block {
   display: inline-block;
   display: block;
-  max-width: 100%;
-  overflow: hidden;
-  overflow-x: auto;
+  // max-width: 100%;
+  // overflow: hidden;
+  // overflow-x: auto;
   margin-bottom: dimensions.$spacing-base;
 
   pre, .hljs {

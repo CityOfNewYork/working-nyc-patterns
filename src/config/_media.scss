@@ -66,3 +66,12 @@ $screens: map-get($tokens, 'screens');
     }
   }
 }
+
+/**
+ * Mixin for print media
+ */
+@mixin print() {
+  @media print {
+    @content;
+  }
+}

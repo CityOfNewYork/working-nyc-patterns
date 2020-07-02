@@ -3,9 +3,8 @@
  */
 
 // Dependencies
-// @use 'config/tokens' as *;
-// @use 'config/color';
 @use 'config/dimensions';
+@use 'config/print';
 @use 'config/media';
 
 // Declarations
@@ -71,39 +70,6 @@ figure, figcaption {
   margin-bottom: 0;
 }
 
-.p-base {
-  // @include media.screen-and-max-width('tablet') {
-  //   padding-bottom: dimensions.get('navigation-height-mobile') + dimensions.get('footer-height-mobile');
-  // }
-  padding-bottom: dimensions.get('navigation-height-mobile') + dimensions.get('footer-height-mobile-sm');
-
-  @media screen and (min-width: media.get('mobile-small')) {
-    padding-bottom: dimensions.get('navigation-height-mobile') + dimensions.get('footer-height-mobile');
-  }
-
-  @include media.screen-and-min-width('tablet') {
-    padding-bottom: dimensions.get('navigation-height-mobile') + dimensions.get('footer-height-tablet');
-  }
-
-  @include media.screen-and-min-width('tablet') {
-    padding-bottom: 0;
-  }
-}
-
-@mixin base-print {
-  html, body {
-    overflow: visible !important;
-  }
-
-  * {
-    -webkit-print-color-adjust: exact;
-  }
-}
-
-.print-view {
-  @include base-print
-}
-
-@media print {
-  @include base-print
+@include media.print() {
+  @include print.base();
 }

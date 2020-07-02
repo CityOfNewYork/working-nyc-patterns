@@ -2,14 +2,14 @@
 
 import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
 
-// import SearchBox from 'src/objects/search-box/search-box';
+// import Search from 'src/objects/search/search';
 
 /**
  * The Mobile Nav module
  *
  * @class
  */
-class MobileNav {
+class MobileMenu {
   /**
    * @constructor
    *
@@ -17,10 +17,7 @@ class MobileNav {
    */
   constructor() {
     this._toggle = new Toggle({
-      selector: MobileNav.selector,
-      before: () => {
-
-      }
+      selector: MobileMenu.selector
     });
 
     return this;
@@ -31,6 +28,6 @@ class MobileNav {
  * The dom selector for the module
  * @type {String}
  */
-MobileNav.selector = '[data-js*="mobile-nav"]';
+MobileMenu.selector = '[data-js*="mobile-menu"]';
 
-export default MobileNav;
+export default MobileMenu;

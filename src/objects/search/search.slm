@@ -1,0 +1,27 @@
+/ search
+
+/ Defaults
+- this.search = {}
+- this.search.id = Math.random().toString(16).substring(2)
+
+/ Inherit overrides
+- if (typeof search !== 'undefined')
+  - this.search = Object.assign(search, this.search);
+
+/! { @id     Identifies Search for toggling }
+/! { @class  Add "o-search-fixed" in production layouts }
+div#aria-c-search class='o-search ${this.search.class}' aria-hidden='true'
+  div class='o-search__close'
+    /! { @tabindex       '-1' ensures focusable elements are not visible when Search is hidden }
+    /! { @aria-controls  Targets the Search ID for toggling }
+    button tabindex='-1' class='btn-link' data-js='toggle' aria-controls='aria-c-search' aria-expanded='false'
+      svg class='icon-wnyc-ui'
+        use xlink:href='#icon-wnyc-ui-x'
+
+      span Close
+
+  form tabindex='-1' class='o-search__form'
+    label tabindex='-1' class='label' for='search-field'
+      | Search for programs and occupations
+
+    = partial('/elements/inputs/inputs-search.slm');

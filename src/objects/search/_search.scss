@@ -6,13 +6,63 @@
 @use 'config/color';
 @use 'config/direction';
 @use 'config/dimensions';
+@use 'config/layouts';
 @use 'config/media';
 @use 'config/typography';
 @use 'config/animate';
 
 // Declarations
-.o-search-box {
-  padding: dimensions.$spacing-base;
+.o-search {
+  @include layouts.wrap();
+  padding-top: dimensions.$spacing-base;
+  padding-bottom: dimensions.$spacing-base;
+}
+
+.o-search__close {
+  @include typography.set('small');
+  text-align: direction.$end;
+}
+
+.o-search__form {
+  padding-top: dimensions.$spacing-base;
+}
+
+// .o-search__suggestions-header {
+//   margin-bottom: dimensions.$spacing-base;
+
+//   @include media.screen-and-min-width('tablet') {
+//     display: flex;
+//     align-items: flex-end;
+//     justify-content: space-between;
+//   }
+// }
+
+// .o-search__headings {
+//   margin-bottom: 0;
+// }
+
+// .o-search__suggestions-body {
+//   padding-bottom: dimensions.$spacing-base;
+
+//   @include media.screen-and-min-width('tablet') {
+//     align-items: flex-start;
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
+// }
+
+// .o-search__suggestions-item {
+//   padding-#{direction.$end}: dimensions.$spacing-base;
+//   margin-bottom: dimensions.$spacing-base;
+
+//   @include media.screen-and-min-width('tablet') {
+//     width: 33.33%;
+//   }
+// }
+
+// Animation
+
+.o-search-fixed {
   left: 0;
   right: 0;
   width: 100%;
@@ -31,57 +81,13 @@
   }
 }
 
-.o-search-box__close {
-  @include typography.set('small');
-  text-align: direction.$end;
-}
-
-.o-search-box__form {
-  padding-top: dimensions.$spacing-base;
-}
-
-// .o-search-box__suggestions-header {
-//   margin-bottom: dimensions.$spacing-base;
-
-//   @include media.screen-and-min-width('tablet') {
-//     display: flex;
-//     align-items: flex-end;
-//     justify-content: space-between;
-//   }
-// }
-
-// .o-search-box__headings {
-//   margin-bottom: 0;
-// }
-
-// .o-search-box__suggestions-body {
-//   padding-bottom: dimensions.$spacing-base;
-
-//   @include media.screen-and-min-width('tablet') {
-//     align-items: flex-start;
-//     display: flex;
-//     flex-wrap: wrap;
-//   }
-// }
-
-// .o-search-box__suggestions-item {
-//   padding-#{direction.$end}: dimensions.$spacing-base;
-//   margin-bottom: dimensions.$spacing-base;
-
-//   @include media.screen-and-min-width('tablet') {
-//     width: 33.33%;
-//   }
-// }
-
-// Animation
-
-.o-search-box {
+.o-search-fixed {
   bottom: 100vh;
   transition-property: transform;
   @include animate.ease();
 }
 
-.o-search-box.hidden {
+.o-search-fixed.hidden {
   display: initial !important;
   box-shadow: none !important;
 
@@ -93,7 +99,7 @@
   }
 }
 
-.o-search-box.active {
+.o-search-fixed.active {
   transform: translateY(0);
 
   @include media.screen-and-min-width('tablet') {

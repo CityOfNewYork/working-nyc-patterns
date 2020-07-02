@@ -18,19 +18,25 @@ html lang='en'
     - else
       title ${this.title}
 
-  body class='color bg-scale-2 p-base'
+  body class='color bg-scale-2 p-body'
     div class='relative z-10 shadow-up tablet:shadow-none'
-      = partial('/objects/navigation/navigation.slm');
-      = partial('/objects/mobile-nav/mobile-nav.slm');
-      = partial('/objects/search-box/search-box.slm');
+      - navigation = {class: 'o-navigation-fixed'}
+      - mobileMenu = {class: 'o-mobile-menu-fixed hidden'}
+      - search = {class: 'o-search-fixed hidden'}
+      - footer = {class: 'o-footer-fixed', role: 'contentinfo'}
 
-      = content('content');
+      = partial('/objects/navigation/navigation.slm')
+      = partial('/objects/mobile-menu/mobile-menu.slm')
+      = partial('/objects/search/search.slm')
 
-    - this.footer.class = 'o-footer-fixed';
+      = content('content')
 
-    = partial('/objects/footer/footer.slm');
+    = partial('/objects/footer/footer.slm')
 
-    - this.footer.class = '';
+    - navigation = {}
+    - mobileMenu = {}
+    - search = {}
+    - footer = {}
 
     script src='${this.baseUrl}/scripts/polyfills.js'
     script src='${this.baseUrl}/scripts/main.js'
@@ -41,8 +47,8 @@ html lang='en'
       patterns.accordion();
       patterns.copy();
       patterns.icons('${this.baseUrl}/svg/icons.svg');
-      patterns.mobileNav();
-      patterns.searchBox();
+      patterns.mobileMenu();
+      patterns.search();
       patterns.toggle();
       patterns.webShare();
 

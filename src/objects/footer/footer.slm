@@ -3,12 +3,23 @@
 - let date = new Date();
 - let year = date.getFullYear();
 
-footer class='o-footer bg-scale-1 ${this.footer.class}'
+/ Defaults
+- this.footer = {}
+- this.footer.role = false
+
+/ Inherit overrides
+- if (typeof footer !== 'undefined')
+  - this.footer = Object.assign(footer, this.footer);
+
+/! { @role        Use role="contentinfo" in production layouts. Identifies the footer as a major landmark }
+/! { @aria-label  Ensures a unique landmark }
+/! { @class       Add "o-footer-fixed" in production layouts }
+footer role=this.footer.role aria-label='Primary Footer' class='o-footer bg-scale-1 ${this.footer.class}'
   div class='page-max'
     hr class='divider'
 
     div class='o-footer__wrap'
-      nav class='o-footer__nav o-footer__nav-a'
+      nav aria-label='Footer Primary Navigation' class='o-footer__nav o-footer__nav-a'
         a href='/' class='uppercase text-small no-underline'
           span class='sr-only' Working N Y C
 
@@ -21,7 +32,7 @@ footer class='o-footer bg-scale-1 ${this.footer.class}'
 
         a href='#' Trainings
 
-      nav class='o-footer__nav o-footer__nav-b'
+      nav aria-label='Footer Secondary Navigation' class='o-footer__nav o-footer__nav-b'
         a href='http://nyc.gov/workforcedevelopment' target='_blank' rel='nofollow noopener' class='no-underline'
           span NYC Workforce Development
 
@@ -34,7 +45,7 @@ footer class='o-footer bg-scale-1 ${this.footer.class}'
       div class='o-footer__break'
         / Needed to break the columns
 
-      nav class='o-footer__nav o-footer__nav-c border-none mb-0 pb-0'
+      nav aria-label='Footer Tertiary Navigation' class='o-footer__nav o-footer__nav-c border-none mb-0 pb-0'
         a href='http://nyc.gov' target='_blank' rel='nofollow noopener' class='font-secondary font-normal text-inherit no-underline flex items-center pb-1'
           svg class='icon-logo-nyc-copyright fill-white me-1' aria-hidden='true'
             use xlink:href='#logo-nyc'

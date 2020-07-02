@@ -1,0 +1,31 @@
+/ Mobile Menu
+
+/ Defaults
+- this['mobile-menu'] = {}
+- this['mobile-menu'].id = Math.random().toString(16).substring(2)
+
+/ Inherit overrides
+- if (typeof mobileMenu !== 'undefined')
+  - this['mobile-menu'] = Object.assign(mobileMenu, this['mobile-menu']);
+
+/! { @id     Identifies the Mobile Menu for toggling }
+/! { @class  Add "o-mobile-menu-fixed" in production layouts }
+aside#aria-c-mobile-menu class='o-mobile-menu ${this['mobile-menu'].class}' aria-hidden='true'
+  div class='o-mobile-menu__close'
+    /! { @tabindex       '-1' ensures focusable elements are not visible when the Mobile Menu is hidden }
+    /! { @aria-controls  Targets the Mobile Menu ID for toggling }
+    button tabindex='-1' class='btn-link' data-js='toggle' aria-controls='aria-c-mobile-menu' aria-expanded='false'
+      svg class='icon-wnyc-ui'
+        use xlink:href='#icon-wnyc-ui-x'
+
+      span Close
+
+  nav class='o-mobile-menu__nav'
+    a tabindex='-1' href='/demos/programs/index' Programs
+
+    a tabindex='-1' href='#' Events
+
+    a tabindex='-1' href='#' Trainings
+
+    button tabindex='-1' class='btn-link w-full' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
+      span Search

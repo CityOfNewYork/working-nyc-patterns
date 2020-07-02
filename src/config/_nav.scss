@@ -23,7 +23,6 @@
 
   a, button {
     display: inline-flex;
-    border-bottom: none;
     margin-#{direction.$end}: 1em;
 
     &:first-child {

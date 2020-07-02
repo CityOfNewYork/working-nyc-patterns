@@ -25,15 +25,11 @@
   justify-content: space-between;
   flex: 1;
 
-  box-shadow: var(--shadow-up);
-  position: fixed;
   width: 100%;
-  bottom: 0;
 
   @include media.screen-and-max-width('tablet') {
     padding-left: 0;
     padding-right: 0;
-    z-index: map-get(z.$indexes, 'navigation');
   }
 
   @include media.screen-and-min-width('tablet') {
@@ -41,6 +37,19 @@
     padding-top: $grid * 2;
     padding-bottom: $grid * 2;
     justify-content: flex-end;
+  }
+}
+
+.o-navigation-fixed {
+  box-shadow: var(--shadow-up);
+  position: fixed;
+  bottom: 0;
+
+  @include media.screen-and-max-width('tablet') {
+    z-index: map-get(z.$indexes, 'navigation');
+  }
+
+  @include media.screen-and-min-width('tablet') {
     position: sticky;
     top: 0;
     box-shadow: none;
@@ -55,10 +64,13 @@
   background-color: var(--color-scale-1);
   min-width: dimensions.get('navigation-logo');
   margin-#{direction.$end}: $grid;
+  align-items: center;
+  text-decoration: none;
 
   @include media.screen-and-min-width('tablet') {
     background-color: transparent;
     margin-#{direction.$end}: auto !important;
+    padding-#{direction.$end}: $grid * 4;
   }
 }
 

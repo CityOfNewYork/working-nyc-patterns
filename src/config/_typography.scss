@@ -6,13 +6,23 @@
 @use 'config/language';
 
 $typography: map-get(tokens.$tokens, 'typography');
-$margin-bottom: map-get($typography, 'margin-bottom');
 
 $font: map-get(tokens.$tokens, 'font');
 $font-family: map-get(tokens.$tokens, 'font-family');
 $font-size: map-get(tokens.$tokens, 'font-size');
 $font-weight: map-get(tokens.$tokens, 'font-weight');
 $line-height: map-get(tokens.$tokens, 'line-height');
+
+/**
+ * Get a token value from the $typography set
+ *
+ * @param   {String}  $token  [$token description]
+ *
+ * @return  {Mixed}           The token value
+ */
+ @function get($token) {
+  @return map-get($typography, $token);
+}
 
 @mixin font-family($key: 'body') {
   $font-family-key: '#{map-get($font, $key)}-#{language.$language}';

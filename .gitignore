@@ -37,16 +37,16 @@ npm-debug.log
 !/dist/styles
 
 !/src/objects/banner
+!/src/objects/header
 !/src/objects/footer
-!/src/objects/mobile-nav
+!/src/objects/mobile-menu
 !/src/objects/navigation
 !/src/objects/newsletter
-!/src/objects/search-box
+!/src/objects/search
 !/src/objects/text-controller
 
 !/src/components/accordion
 !/src/components/card
-!/src/components/header
 !/src/components/utility
 !/src/components/web-share
 

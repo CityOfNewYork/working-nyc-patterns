@@ -48,9 +48,12 @@ module.exports = {
       }
     }
   },
-  footer: {
-    class: ''
-  },
+  // navigation: {
+  //   class: ''
+  // },
+  // footer: {
+  //   class: ''
+  // },
   newsletter: {
     action: 'https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&id=aa67394696',
     boroughs: [
@@ -86,6 +89,7 @@ module.exports = {
       }
     ]
   },
+  // accordion: {},
   segments: [
     {
       name: 'Find Work',

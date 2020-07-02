@@ -4,13 +4,29 @@
     meta http-equiv='X-UA-Compatible' content='IE=edge'
     meta name='viewport' content='width=device-width, initial-scale=1'
 
-    link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CMontserrat:400,400i,700' media='all'
-    link rel='stylesheet' href='styles/site-default.css'
-    link rel='stylesheet' href='styles/site-color-default.css'
-
     title
       - if (this.title != 'WorkingNYC Patterns')
         = this.title;
         = ' | WorkingNYC Patterns';
       - else
         = this.title;
+
+    link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css'
+    link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CMontserrat:400,400i,700' media='all'
+    link rel='stylesheet' href='styles/site-default.css'
+    link rel='stylesheet' href='styles/site-color-default.css'
+
+    script src='//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js'
+
+    javascript:
+      document.addEventListener('DOMContentLoaded', function(event) {
+        hljs.configure({
+          languages: ['html', 'javascript', 'css', 'sass']
+        });
+
+        document.querySelectorAll('pre')
+          .forEach(function(pre) {
+            pre.setAttribute('tabindex', '0');
+            hljs.highlightBlock(pre);
+          });
+      });

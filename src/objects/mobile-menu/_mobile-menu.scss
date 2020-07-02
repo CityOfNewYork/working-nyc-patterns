@@ -7,15 +7,39 @@
 @use 'config/color';
 @use 'config/direction';
 @use 'config/dimensions';
+@use 'config/layouts';
 @use 'config/media';
 @use 'config/nav';
 @use 'config/typography';
 
 // Declarations
-.o-mobile-nav {
-  padding: dimensions.$spacing-base;
+.o-mobile-menu {
+  @include layouts.wrap();
+  padding-top: dimensions.$spacing-base;
+  padding-bottom: dimensions.$spacing-base;
 
   display: block;
+  width: dimensions.get('mobile-menu-width');
+}
+
+.o-mobile-menu__close {
+  @include typography.set('small');
+
+  text-align: direction.$end;
+}
+
+.o-mobile-menu__nav {
+  @include nav.block();
+
+  a, button {
+    text-align: direction.$start;
+    justify-content: flex-start;
+  }
+}
+
+// Animation
+
+.o-mobile-menu-fixed {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -27,26 +51,7 @@
   }
 }
 
-.o-mobile-nav__close {
-  @include typography.set('small');
-
-  text-align: direction.$end;
-}
-
-.o-mobile-nav__nav {
-  @include nav.block();
-
-  a, button {
-    text-align: direction.$start;
-    justify-content: flex-start;
-  }
-}
-
-// Animation
-
-.o-mobile-nav {
-  width: dimensions.get('mobile-menu-width');
-
+.o-mobile-menu-fixed {
   @if direction.$direction == 'rtl' {
     left: -(dimensions.get('mobile-menu-width'));
   } @else {
@@ -56,7 +61,7 @@
   @include animate.ease();
 }
 
-.o-mobile-nav.hidden {
+.o-mobile-menu-fixed.hidden {
   box-shadow: none !important;
   display: initial !important;
 
@@ -64,7 +69,7 @@
   @include animate.linear();
 }
 
-.o-mobile-nav.active {
+.o-mobile-menu-fixed.active {
   @if direction.$direction == 'rtl' {
     transform: translateX(100%)
   } @else {

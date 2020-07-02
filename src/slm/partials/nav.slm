@@ -1,94 +1,130 @@
 - this.nav = {class: {}}
+- this.nav.id = Math.random().toString(16).substring(2)
 - this.nav.class.main = 'tablet:flex-1 mb-1 px-1 tablet:px-2'
-- this.nav.class.heading = 'h3 text-small mb-1 block'
+- this.nav.class.heading = 'h3 text-small p-1 block'
 - this.nav.class.item = 'block p-1 no-underline align-middle'
-- this.nav.class.divider = 'tablet:pb-2 tablet:mb-1 p-1'
+- this.nav.class.divider = 'border-b border-scale-3 mb-1 mt-1'
+- this.nav.tabindex = (typeof tabindex === 'undefined') ? false : tabindex;
 
-nav class='${this.nav.class.main}'
+nav role='navigation' aria-labelledby='navigation-main-${this.nav.id}' class='${this.nav.class.main}'
+  span id='navigation-main-${this.nav.id}' class='${this.nav.class.heading} ${this.nav.class.divider}' Main
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='index'
+    | Home
+
   / span class='${this.nav.class.heading} ${this.nav.class.divider}' Guides
-  / a class='${this.nav.class.item}' xhref='index' Home
-  / a class='${this.nav.class.item}' xhref='about' About
-  / a class='${this.nav.class.item}' xhref='installation' Installation
-  / a class='${this.nav.class.item}' xhref='developer-tools' Developer Tools
-  / a class='${this.nav.class.item} ${this.nav.class.divider}' xhref='prototyping' Prototyping
+
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='about' About
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='installation' Installation
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='developer-tools' Developer Tools
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item} ${this.nav.class.divider}' xhref='prototyping' Prototyping
 
   / span class='${this.nav.class.heading} ${this.nav.class.divider}' Collections
-  / a class='${this.nav.class.item} ${this.nav.class.divider}' xhref='covid-response' COVID Response
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item} ${this.nav.class.divider}' xhref='covid-response' COVID Response
 
-  span class='${this.nav.class.heading} ${this.nav.class.divider}' Links
-  a class='${this.nav.class.item}' xhref='${this.package.cdn.npm}' NPM Package
-  a class='${this.nav.class.item}' xhref='${this.package.cdn.source}' GitHub Repository
+  span class='${this.nav.class.heading} ${this.nav.class.divider}'
+    | Links
 
-nav class='${this.nav.class.main} desktop:ps-4'
-  span class='${this.nav.class.heading} ${this.nav.class.divider}' Elements
-  / a class='${this.nav.class.item}' xhref='badge' Badge
-  a class='${this.nav.class.item}' xhref='buttons' Buttons
-  a class='${this.nav.class.item}' xhref='checkboxes' Checkboxes
-  a class='${this.nav.class.item}' xhref='code' Code
-  a class='${this.nav.class.item}' xhref='divider' Divider
-  a class='${this.nav.class.item}' xhref='forms' Forms
-  a class='${this.nav.class.item}' xhref='icons' Icons
-  a class='${this.nav.class.item}' xhref='inputs' Inputs
-  a class='${this.nav.class.item}' xhref='labels' Labels
-  a class='${this.nav.class.item}' xhref='layouts' Layouts
-  a class='${this.nav.class.item}' xhref='links' Links
-  / a class='${this.nav.class.item}' xhref='lists' Lists
-  a class='${this.nav.class.item}' xhref='nav' Nav
-  a class='${this.nav.class.item}' xhref='options' Options
-  / a class='${this.nav.class.item}' xhref='radios' Radios
-  / a class='${this.nav.class.item}' xhref='tables' Tables
-  / a class='${this.nav.class.item}' xhref='tooltips' Tooltips
-  / a class='${this.nav.class.item}' xhref='toggles' Toggles
-  / a class='${this.nav.class.item}' xhref='selects' Selects
+  a data-toggle-tabindex='10' tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='${this.package.cdn.npm}' NPM Package
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='${this.package.cdn.source}' GitHub Repository
 
-nav class='${this.nav.class.main} desktop:ps-4'
-  span class='${this.nav.class.heading} ${this.nav.class.divider}' Components
-  a class='${this.nav.class.item}' xhref='accordion' Accordion
-  / a class='${this.nav.class.item}' xhref='alert-box' Alert Box
-  a class='${this.nav.class.item}' href='card'
-    mark class='badge' View
+nav role='navigation'  aria-labelledby='aria-lb-elements-${this.nav.id}' class='${this.nav.class.main} desktop:ps-4'
+  span id='aria-lb-elements-${this.nav.id}' class='${this.nav.class.heading} ${this.nav.class.divider}' Elements
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='badge' Badge
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='buttons' Buttons
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='checkboxes' Checkboxes
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='code' Code
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='divider' Divider
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='forms' Forms
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='icons' Icons
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='inputs' Inputs
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='labels' Labels
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='layouts' Layouts
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='links' Links
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='lists' Lists
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='nav' Nav
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='options' Options
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='radios' Radios
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='tables' Tables
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='tooltips' Tooltips
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='toggles' Toggles
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='selects' Selects
+
+nav role='navigation' aria-labelledby='aria-lb-components-${this.nav.id}' class='${this.nav.class.main} desktop:ps-4'
+  span id='aria-lb-components-${this.nav.id}' class='${this.nav.class.heading} ${this.nav.class.divider}'
+    | Components
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='accordion'
+    mark class='badge status-secondary' View
+    | &nbsp;Accordion
+
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='alert-box' Alert Box
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='card'
+    mark class='badge status-secondary' View
     | &nbsp;Card
-  / a class='${this.nav.class.item}' xhref='disclaimer' Disclaimer
-  / a class='${this.nav.class.item}' xhref='filter' Filter
-  a class='${this.nav.class.item}' xhref='header' Header
-  / a class='${this.nav.class.item}' xhref='nearby-stops' Nearby Stops
-  / a class='${this.nav.class.item}' xhref='question' Question
-  / a class='${this.nav.class.item}' xhref='share-form' Share Form
-  / a class='${this.nav.class.item}' xhref='share-links' Share Links
-  / a class='${this.nav.class.item}' xhref='side-nav' Side Nav
-  a class='${this.nav.class.item}' xhref='question' Utility
-  a class='${this.nav.class.item}' xhref='web-share' Web Share
 
-nav class='${this.nav.class.main} desktop:ps-4'
-  span class='${this.nav.class.heading} ${this.nav.class.divider}' Objects
-  / a class='${this.nav.class.item}' xhref='alert-banner' Alert Banner
-  / a class='${this.nav.class.item}' xhref='announcements' Announcements
-  a class='${this.nav.class.item}' xhref='banner' Banner
-  / a class='${this.nav.class.item}' xhref='card-list' Card Lists
-  / a class='${this.nav.class.item}' xhref='come-back-later' Come Back Later
-  / a class='${this.nav.class.item}' xhref='content' Content
-  / a class='${this.nav.class.item}' xhref='emails' Emails
-  a class='${this.nav.class.item}' href='footer'
-    mark class='badge' View
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='disclaimer' Disclaimer
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='filter' Filter
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='nearby-stops' Nearby Stops
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='question' Question
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='share-form' Share Form
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='share-links' Share Links
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='side-nav' Side Nav
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='utility'
+    mark class='badge status-secondary' View
+    | &nbsp;Utility
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='web-share'
+    mark class='badge status-secondary' View
+    | &nbsp;Web Share
+
+nav role='navigation' aria-labelledby='aria-lb-objects-${this.nav.id}' class='${this.nav.class.main} desktop:ps-4'
+  span id='aria-lb-objects-${this.nav.id}' class='${this.nav.class.heading} ${this.nav.class.divider}' Objects
+
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='alert-banner' Alert Banner
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='announcements' Announcements
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='banner'
+    mark class='badge status-secondary' View
+    | &nbsp;Banner
+
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='card-list' Card Lists
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='come-back-later' Come Back Later
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='content' Content
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='header'
+    mark class='badge status-secondary' View
+    | &nbsp;Header
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='footer'
+    mark class='badge status-secondary' View
     | &nbsp;Footer
 
-  / a class='${this.nav.class.item}' xhref='formstack' Formstack
-  a class='${this.nav.class.item}' xhref='mobile-nav' Mobile Nav
-  a class='${this.nav.class.item}' xhref='navigation' Navigation
-  a class='${this.nav.class.item}' xhref='newsletter' Newsletter
-  a class='${this.nav.class.item}' xhref='search-box' Search Box
-  a class='${this.nav.class.item}' xhref='text-controller' Text Controller
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='mobile-menu'
+    mark class='badge status-secondary' View
+    | &nbsp;Mobile Menu
 
-nav class='${this.nav.class.main} desktop:ps-4'
-  span class='${this.nav.class.heading} ${this.nav.class.divider}' Utilities
-  a class='${this.nav.class.item}' xhref='animate' Animate
-  / a class='${this.nav.class.item}' xhref='clearfix' Clearfix
-  a class='${this.nav.class.item}' xhref='color' Color
-  / a class='${this.nav.class.item}' xhref='language' Language
-  a class='${this.nav.class.item}' xhref='margin' Margin
-  / a class='${this.nav.class.item}' xhref='media' Media
-  a class='${this.nav.class.item}' xhref='padding' Padding
-  a class='${this.nav.class.item}' xhref='tailwindcss' tailwindcss
-  a class='${this.nav.class.item}' xhref='text' Text
-  a class='${this.nav.class.item}' xhref='toggle' Toggle
-  a class='${this.nav.class.item}' xhref='typography' Typography
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='navigation'
+    mark class='badge status-secondary' View
+    | &nbsp;Navigation
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='newsletter' Newsletter
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='search'
+    mark class='badge status-secondary' View
+    | &nbsp;Search
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='text-controller' Text Controller
+
+nav role='navigation' aria-labelledby='aria-lb-utilities-${this.nav.id}' class='${this.nav.class.main} desktop:ps-4'
+  span id='aria-lb-utilities-${this.nav.id}' class='${this.nav.class.heading} ${this.nav.class.divider}' Utilities
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='animate' Animate
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='clearfix' Clearfix
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='color' Color
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='language' Language
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='margin' Margin
+  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='media' Media
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='padding' Padding
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='tailwindcss' tailwindcss
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='text' Text
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='toggle' Toggle
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='typography' Typography

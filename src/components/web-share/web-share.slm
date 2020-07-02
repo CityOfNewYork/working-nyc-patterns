@@ -1,32 +1,38 @@
 / Web-share
 
-- data = {"title": "ACCESS NYC", "text": "Find help with food, money, housing, and more on ACCESS NYC", "url": "https://access.nyc.gov"};
+- data = {title: 'The share title', text: 'What users should say about this.', url: 'https://cityofnewyork.github.io/nyco-wnyc-patterns'};
 
-nav class='c-web-share'
-  button data-js='web-share' aria-controls='web-share-fallback' aria-expanded='false' class='btn btn-small btn-primary' data-web-share='${JSON.stringify(data)}'
+nav class='c-web-share' aria-label='Web Share'
+  /! The Web Share Button
+  button data-js='web-share' aria-controls='web-share-fallback' aria-expanded='false' class='btn btn-link' data-web-share='${JSON.stringify(data)}'
     svg class='c-web-share__icon icon-wnyc-ui'
       use xlink:href='#icon-wnyc-ui-share-2'
-    | Share
 
+    span Share
+
+  /! Web Share Fallback
   div id='web-share-fallback' role='region' aria-hidden='true' class='c-web-share__fallback color-info-status hidden:fadeInUp animated hidden'
     div class='c-web-share__fallback-body'
-      label for='web-share-url' class='c-web-share__label' Share this URL
+      label tabindex='-1' for='web-share-url' class='c-web-share__label'
+        | Share this URL
 
-      input id='web-share-url' name='web-share-url' data-copy-target='web-share-url' class='c-web-share__input' type='text' value='${data.url}'
-
-      button data-js='copy' data-copy='web-share-url' class='c-web-share__item c-web-share__copy btn btn-small btn-primary' aria-pressed='false'
+      /! Copy to Clipboard
+      input tabindex='-1' id='web-share-url' name='web-share-url' data-copy-target='web-share-url' class='c-web-share__input' type='text' value='${data.url}'
+      button tabindex='-1' data-js='copy' data-copy='web-share-url' class='c-web-share__item c-web-share__copy btn btn-small btn-primary' aria-pressed='false'
         svg class='c-web-share__icon icon icon-wnyc-ui'
           use xlink:href='#icon-wnyc-ui-copy'
         svg class='c-web-share__icon icon-pressed icon-wnyc-ui me-1'
           use xlink:href='#icon-wnyc-ui-check'
         | Copy URL
 
-      a href='https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary'
+      /! Facebook Sharer
+      a tabindex='-1' href='https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary'
         svg class='c-web-share__icon icon-wnyc-ui'
           use xlink:href='#icon-wnyc-ui-facebook'
         | Facebook
 
-      a href='https://twitter.com/intent/tweet?text=${encodeURIComponent(data.text + ' ' + data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary'
+      /! Twitter Tweet
+      a tabindex='-1' href='https://twitter.com/intent/tweet?text=${encodeURIComponent(data.text + ' ' + data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary'
         svg class='c-web-share__icon icon-wnyc-ui'
           use xlink:href='#icon-wnyc-ui-twitter'
         | Twitter

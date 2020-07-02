@@ -1,7 +1,7 @@
 / Input Search
 
 div class='input-search'
-  input name='s' value='' placeholder='Search' data-js='search-box__input' id='search-field' type='text'
+  input name='s' value='' placeholder='Search' data-js='search__input' id='search-field' type='text'
 
   button class='btn-link input-search__submit' type='submit'
     svg class='icon-wnyc-ui icon-4'

@@ -8,16 +8,7 @@
 
 = content('content');
   div class='page-max layout-map flex-row-reverse desktop:layout-columns desktop:flex-row'
-    header class='o-banner layout-map__map layout__column bg-scale-2 flex items-center '
-      div class='o-banner__inner my-4'
-        h2 class='h3 m-0'
-          span class='font-normal' The Official Resource of
-
-          a href='/' class='text-white uppercase no-underline'
-            span class='sr-only' Working N Y C
-
-            svg class='icon-logo-standard-tagline fill-white text-blue-l-2' aria-hidden='true'
-              use xlink:href='#logo-wnyc-standard'
+    = partial('/objects/banner/banner')
 
     main class='bg-scale-1 layout-map__sidebar layout__column p-2 desktop:p-3'
       - for (let i in this.segments)

@@ -26,6 +26,7 @@ $radius-tag: map-get($buttons, 'radius-tag');
   border: none;
   padding: 0;
   overflow: visible;
+  cursor: pointer;
 }
 
 @mixin normal() {

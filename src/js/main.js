@@ -17,8 +17,8 @@ import Accordion from '../components/accordion/accordion';
 // import ... from '../components/...';
 
 // Objects
-import MobileNav from '../objects/mobile-nav/mobile-nav';
-import SearchBox from '../objects/search-box/search-box';
+import MobileMenu from '../objects/mobile-menu/mobile-menu';
+import Search from '../objects/search/search';
 // import ... from '../objects/...';
 /** import modules here as they are written. */
 
@@ -165,19 +165,19 @@ class main {
   /**
    * An API for the Mobile Nav
    *
-   * @return  {Object}  instance of MobileNav
+   * @return  {Object}  instance of MobileMenu
    */
-  mobileNav() {
-    return new MobileNav();
+  mobileMenu() {
+    return new MobileMenu();
   }
 
   /**
    * An API for the Search Box
    *
-   * @return  {Object}  instance of SearchBox
+   * @return  {Object}  instance of Search
    */
-  searchBox() {
-    return new SearchBox();
+  search() {
+    return new Search();
   }
 
   /**
@@ -188,7 +188,9 @@ class main {
   webShare() {
     return new WebShare({
       fallback: () => {
-        console.dir('Web Share Fallback');
+        new Toggle({
+          selector: WebShare.selector
+        });
       }
     });
   }
