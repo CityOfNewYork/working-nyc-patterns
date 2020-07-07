@@ -11,6 +11,9 @@ const tailwind = require('./tailwind');
  */
 
 module.exports = {
+  /**
+   * Configuration
+   */
   src: 'src',
   views: 'views',
   dist: 'dist',
@@ -28,6 +31,9 @@ module.exports = {
     inline: [],
     indent_inner_html: false,
   },
+  /**
+   * Package Variables
+   */
   package: package,
   tokens: tokens,
   tailwind: tailwind,
@@ -48,12 +54,9 @@ module.exports = {
       }
     }
   },
-  // navigation: {
-  //   class: ''
-  // },
-  // footer: {
-  //   class: ''
-  // },
+  /**
+   * Pattern Variables
+   */
   newsletter: {
     action: 'https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&id=aa67394696',
     boroughs: [
@@ -89,7 +92,107 @@ module.exports = {
       }
     ]
   },
-  // accordion: {},
+  programs: [
+    {
+      status: 'New',
+      title: 'Commercial driver training',
+      subtitle: 'Red Hook on the Road',
+      url: 'demos/programs/red-hook-on-the-road',
+      taxonomies: [
+        {
+          name: 'Services',
+          categories: ['Job training', 'Job certification']
+        },
+        {
+          name: 'Sector',
+          categories: ['Transportation']
+        },
+        {
+          name: 'Population',
+          categories: ['Unemployed New Yorkers', 'Adults']
+        },
+        {
+          name: 'Duration',
+          categories: ['4 weeks']
+        },
+        {
+          name: 'Schedule',
+          categories: ['Night classes']
+        }
+      ],
+      recruiting: true,
+      accessible: true,
+      multilingual: true,
+      summary: 'Through this program students prepare to work as commercial drivers.',
+      cta: true
+    },
+    {
+      status: 'New',
+      title: 'Commercial driver training',
+      subtitle: 'Red Hook on the Road',
+      url: 'demos/programs/red-hook-on-the-road',
+      taxonomies: [
+        {
+          name: 'Services',
+          categories: ['Job training', 'Job certification']
+        },
+        {
+          name: 'Sector',
+          categories: ['Transportation']
+        },
+        {
+          name: 'Population',
+          categories: ['Unemployed New Yorkers', 'Adults']
+        },
+        {
+          name: 'Duration',
+          categories: ['4 weeks']
+        },
+        {
+          name: 'Schedule',
+          categories: ['Night classes']
+        }
+      ],
+      recruiting: true,
+      accessible: true,
+      multilingual: true,
+      summary: 'Through this program students prepare to work as commercial drivers.',
+      cta: true
+    },
+    {
+      status: 'New',
+      title: 'Commercial Driver',
+      subtitle: 'Red Hook on the Road',
+      url: 'demos/programs/red-hook-on-the-road',
+      recruiting: true,
+      accessible: true,
+      multilingual: true,
+      summary: 'Through this program students prepare to work as commercial drivers.',
+      cta: true
+    },
+    {
+      status: 'New',
+      title: 'Commercial Driver',
+      subtitle: 'Red Hook on the Road',
+      url: 'demos/programs/red-hook-on-the-road',
+      recruiting: true,
+      accessible: true,
+      multilingual: true,
+      summary: 'Through this program students prepare to work as commercial drivers.',
+      cta: true
+    },
+    {
+      status: 'New',
+      title: 'Commercial Driver',
+      subtitle: 'Red Hook on the Road',
+      url: 'demos/programs/red-hook-on-the-road',
+      recruiting: true,
+      accessible: true,
+      multilingual: true,
+      summary: 'Through this program students prepare to work as commercial drivers.',
+      cta: true
+    }
+  ],
   segments: [
     {
       name: 'Find Work',
@@ -219,5 +322,9 @@ module.exports = {
         {name: 'Multiple'}
       ]
     }
-  ]
+  ],
+  /**
+   * Functions
+   */
+  createId: () => Math.random().toString(16).substring(2)
 };

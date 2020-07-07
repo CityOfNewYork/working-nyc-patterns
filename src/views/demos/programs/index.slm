@@ -9,22 +9,68 @@
 = content('content');
   div class='bg-scale-2'
     main id='content' class='bg-scale-1'
-      div class='layout-content sticky top-0 bg-scale-1 z-10'
-        div class='page-max'
-          | Utility
+      div
+        div class='layout-content sticky top-0 bg-scale-1 z-10'
+          div class='page-max'
+            nav class='c-utility'
+              a href='${this.baseUrl}/demos/programs/index' class='btn-link me-auto'
+                svg class='icon-wnyc-ui' aria-hidden='true'
+                  use xlink:href='#icon-wnyc-ui-chevron-left'
 
-      header class='layout-content'
-        div class='c-header page-max wrap'
-          | Header
+                span Home
 
-      section class='bg-scale-2 layout-content'
-        div class='py-4 page-max wrap'
-          | Body Section
+              button class='btn btn-small btn-primary' data-js='toggle' aria-controls='aria-c-filter'
+                svg class='icon-wnyc-ui' aria-hidden='true'
+                  use xlink:href='#icon-wnyc-ui-sliders'
 
-      section#contact class='bg-scale-1 layout-content'
-        nav class='py-2 page-max wrap tablet:layout-three-columns-gutter'
+                span Filter
 
+              button class='btn btn-small btn-primary' data-js='toggle' aria-controls='aria-c-saved'
+                svg class='icon-wnyc-ui' aria-hidden='true'
+                  use xlink:href='#icon-wnyc-ui-bookmark'
 
+                span Saved
+
+          div#aria-c-filter class='page-max hidden' aria-hidden='true'
+            div class='wrap py-2'
+              ul
+                li Option
+                li Option
+                li Option
+
+          div#aria-c-saved class='page-max hidden' aria-hidden='true'
+            div class='wrap py-2'
+              ul
+                li Saved
+                li Saved
+                li Saved
+
+        div class='layout-content'
+          div class='page-max'
+            header class='o-header'
+              div
+                h1 class='o-header__title'
+                  | Programs
+
+                nav class='o-header__breadcrumbs'
+                  a Home
+
+                  svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
+                    use xlink:href='#icon-wnyc-ui-chevron-right'
+
+                  a Programs
+
+        section class='page-max layout-content'
+          div class='py-2 wrap'
+            - for (let i in this.programs)
+              - card = this.programs[0]
+              - card.class = (i < this.programs.length - 1) ? 'mb-4' : ''
+
+              == this.include('/components/card/card.slm')
+
+      div class='bg-scale-1 page-max layout-content'
+        div class='py-2 wrap'
+          button class='btn btn-tertiary w-full' Show More
 
 = content('script');
   / javascript:

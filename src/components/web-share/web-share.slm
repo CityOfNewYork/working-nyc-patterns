@@ -2,37 +2,53 @@
 
 - data = {title: 'The share title', text: 'What users should say about this.', url: 'https://cityofnewyork.github.io/nyco-wnyc-patterns'};
 
+/! { @aria-label  Identifies the Web Share Navigation as a unique landmark }
 nav class='c-web-share' aria-label='Web Share'
-  /! The Web Share Button
-  button data-js='web-share' aria-controls='web-share-fallback' aria-expanded='false' class='btn btn-link' data-web-share='${JSON.stringify(data)}'
+  /! { @data-js         "web-share" initalizes the Web Share Component. Falls back to using the Toggle Utility to display the sharing menu }
+  /! { @data-web-share  Data attribute for holding data sent to the navigator.share() method. Note, in the Markup quotes are escaped as "&quot;" however, they must be regular quotes; "". Inspect the source of the Demostration to see the real example }
+  /! { @aria-controls   Targets the Web Share fallback }
+  /! { @aria-expanded   Indicates if the Web Share fallback is open or not }
+  button data-js='web-share' data-web-share='${JSON.stringify(data)}' aria-controls='aria-c-web-share-fallback' aria-expanded='false' class='btn btn-link'
     svg class='c-web-share__icon icon-wnyc-ui'
       use xlink:href='#icon-wnyc-ui-share-2'
 
     span Share
 
-  /! Web Share Fallback
-  div id='web-share-fallback' role='region' aria-hidden='true' class='c-web-share__fallback color-info-status hidden:fadeInUp animated hidden'
+  /! { Web Share Fallback }
+  /! { @id    Toggle target of the web share button. Must match the "aria-controls" attribute of the toggling button }
+  /! { @role  Indicates an area of significance }
+  div id='aria-c-web-share-fallback' role='region' aria-hidden='true' class='c-web-share__fallback hidden:fadeInUp animated hidden'
     div class='c-web-share__fallback-body'
       label tabindex='-1' for='web-share-url' class='c-web-share__label'
         | Share this URL
 
-      /! Copy to Clipboard
+      /! { Copy-to-clipboard Content }
+      /! { @data-copy-target  Identifies the input as the target of the copy button }
       input tabindex='-1' id='web-share-url' name='web-share-url' data-copy-target='web-share-url' class='c-web-share__input' type='text' value='${data.url}'
-      button tabindex='-1' data-js='copy' data-copy='web-share-url' class='c-web-share__item c-web-share__copy btn btn-small btn-primary' aria-pressed='false'
+
+      /! { Copy-to-clipboard Button }
+      /! { @data-js       Initializes the copy-to-clipboard utility }
+      /! { @data-copy     Identifies the target of the content to copy }
+      /! { @aria-pressed  Will signify a pressed state to screen readers }
+      button tabindex='-1' data-js='copy' data-copy='web-share-url' aria-pressed='false' class='c-web-share__item c-web-share__copy btn btn-small btn-primary'
         svg class='c-web-share__icon icon icon-wnyc-ui'
           use xlink:href='#icon-wnyc-ui-copy'
+
         svg class='c-web-share__icon icon-pressed icon-wnyc-ui me-1'
           use xlink:href='#icon-wnyc-ui-check'
+
         | Copy URL
 
-      /! Facebook Sharer
+      /! { Facebook Sharer }
       a tabindex='-1' href='https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary'
         svg class='c-web-share__icon icon-wnyc-ui'
           use xlink:href='#icon-wnyc-ui-facebook'
+
         | Facebook
 
-      /! Twitter Tweet
+      /! { Twitter Tweet }
       a tabindex='-1' href='https://twitter.com/intent/tweet?text=${encodeURIComponent(data.text + ' ' + data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary'
         svg class='c-web-share__icon icon-wnyc-ui'
           use xlink:href='#icon-wnyc-ui-twitter'
+
         | Twitter

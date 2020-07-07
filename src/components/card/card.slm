@@ -1,19 +1,51 @@
-article class='c-card'
+/ Card
+
+/ Defaults
+- this.card = {}
+- this.card.id = this.createId()
+
+/ Inherit overrides
+- if (typeof card !== 'undefined')
+  - this.card = Object.assign(card, this.card);
+
+article class='c-card ${this.card.class}'
   header class='c-card__header'
     h3 class='c-card__title'
-      mark class='badge status-alt align-text-bottom' New
+      - if this.card.status
+        mark class='badge status-alt align-text-bottom' = this.card.status
 
-      a href='demos/programs/red-hook-on-the-road'
-        | Commercial Driver
+      a href='${this.card.url}'
+        = this.card.title
 
   div class='c-card__body'
-    h4 class='c-card__subtitle text-alt' Red Hook on the Road
+    h4 class='c-card__subtitle text-alt' = this.card.subtitle
+
+    - if this.card.recruiting
+      p class='small'
+        span class='flex items-center'
+          svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+            use xlink:href='#icon-wnyc-ui-user-check'
+
+          | Actively Recruiting
+
+    - if this.card.accessible
+      p class='small'
+        a class='btn btn-link btn-small btn-secondary font-secondary' href='#disability-accommodation'
+          svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+            use xlink:href='#icon-wnyc-ui-user-check'
+
+          span Accommodates Disabilities
+
+    - if this.card.multilingual
+      p class='small'
+        a class='btn btn-link btn-small btn-secondary font-secondary' href='#language-access'
+          svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+            use xlink:href='#icon-wnyc-ui-translate'
+
+          span Accommodates Multiple Languages
 
     div class='c-card__summary'
-      p Job Training, job certification
-      p Commercial driver, transportation
-      p Unemployed New Yorkers
-      p 1-4 weeks
+      p Through this program students prepare to work as commercial drivers.
 
       / p
       /   a href='demos/programs/red-hook-on-the-road'
