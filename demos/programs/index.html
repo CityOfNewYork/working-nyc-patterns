@@ -30,12 +30,10 @@
       <a class="hidden desktop:inline-flex" href="#">Events</a>
       <a class="hidden desktop:inline-flex" href="#">Trainings</a>
       <!--{ @class  The nav supports button elements using "btn-link" }-->
-      <button aria-controls="aria-c-search" aria-expanded="false" class="o-navigation__menu-item btn-link" data-js="search">
-        <svg class="o-navigation__menu-icon icon-wnyc-ui">
-          <use xlink:href="#icon-wnyc-ui-search"></use>
-        </svg>
-        <span class="o-navigation__menu-label">Search</span>
-      </button>
+      <!--button class='o-navigation__menu-item btn-link' data-js='search' aria-controls='aria-c-search' aria-expanded='false'-->
+      <!--  svg class='o-navigation__menu-icon icon-wnyc-ui'-->
+      <!--    use xlink:href='#icon-wnyc-ui-search'-->
+      <!--  span class='o-navigation__menu-label' Search-->
       <button aria-controls="aria-c-search" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:m-0" data-js="search">
         <svg class="o-navigation__menu-icon icon-wnyc-ui">
           <use xlink:href="#icon-wnyc-ui-translate"></use>
@@ -415,9 +413,8 @@
   <!--{ @role        Use role="contentinfo" in production layouts. Identifies the footer as a major landmark }-->
   <!--{ @aria-label  Ensures a unique landmark }-->
   <!--{ @class       Add "o-footer-fixed" in production layouts }-->
-  <footer aria-label="Primary Footer" class="o-footer bg-scale-1 o-footer-fixed">
+  <footer aria-label="Primary Footer" class="o-footer bg-scale-2 o-footer-fixed">
     <div class="page-max">
-      <hr class="divider" />
       <div class="o-footer__wrap">
         <nav aria-label="Footer Primary Navigation" class="o-footer__nav o-footer__nav-a">
           <a class="uppercase text-small no-underline" href="/">
