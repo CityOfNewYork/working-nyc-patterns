@@ -1,0 +1,192 @@
+/**
+ * Tables
+ */
+
+// Dependencies
+@use 'config/grid' as *;
+@use 'config/dimensions';
+@use 'config/direction';
+@use 'config/media';
+@use 'config/typography';
+
+// Declarations
+@mixin table($alignment: direction.$start) {
+  @include typography.set('tables');
+  text-align: $alignment;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: dimensions.$spacing-base;
+
+  thead {
+    tr {
+      background-color: none;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(odd) {
+        background-color: var(--color-scale-3)
+      }
+    }
+  }
+
+  th {
+    font-weight: bold;
+    vertical-align: top;
+  }
+
+  th, td {
+    padding: 0.8rem 1rem
+  }
+}
+
+@mixin table-headers-first-column {
+  border-collapse: separate;
+  border-spacing: 0;
+
+  th, td {
+    border-bottom: 2px solid;
+    border-#{direction.$end}: 2px solid;
+    border-color: var(--color-scale-3);
+  }
+
+  td:last-of-type {
+    border-#{direction.$end}: none
+  }
+
+  tbody tr:last-of-type th,
+  tbody tr:last-of-type td {
+    border-bottom: none
+  }
+
+  thead th {
+    vertical-align: bottom;
+    background-color: var(--color-scale-1);
+    border-bottom-color: var(--color-scale-3);
+  }
+
+  tbody {
+    tr:nth-child(even) th {
+      background-color: var(--color-scale-1);
+      border-#{direction.$end}-color: var(--color-scale-3);
+    }
+
+    tr:nth-child(odd) th {
+      background-color: var(--color-scale-3)
+    }
+  }
+
+  // Top Left Corner
+  thead > tr:first-of-type > th:first-of-type {
+    vertical-align: middle;
+    border-#{direction.$end}-color: var(--color-scale-3)
+  }
+}
+
+@mixin table-headers-sticky {
+  thead th,
+  tbody th {
+    position: sticky
+  }
+
+  thead th {
+    top: 0;
+    z-index: 1;
+  }
+
+  tbody th,
+  thead > tr:first-of-type > th:first-of-type {
+    #{direction.$start}: 0
+  }
+
+  // Top Left Corner
+  thead > tr:first-of-type > th:first-of-type {
+    top: 0;
+    #{direction.$start}: 0;
+    z-index: 2;
+  }
+}
+
+/**
+ * Default Tables
+ */
+
+table {
+  @include table
+}
+
+@mixin tables($variant: '') {
+  .#{$variant}table {
+    @include table
+  }
+
+  .#{$variant}table-numeric {
+    @include table(direction.$end)
+  }
+
+  .#{$variant}table-headers-first-column {
+    @include table-headers-first-column
+  }
+
+  .#{$variant}table-headers-sticky {
+    @include table-headers-sticky;
+    @include table-headers-first-column
+  }
+
+  .#{$variant}table-headers-start th {
+    text-align: direction.$start
+  }
+
+  .#{$variant}table-headers-center th {
+    text-align: center
+  }
+
+  .#{$variant}table-headers-end th {
+    text-align: direction.$end
+  }
+
+  .#{$variant}table-headers-top th {
+    vertical-align: top
+  }
+
+  .#{$variant}table-headers-middle th {
+    vertical-align: middle
+  }
+
+  .#{$variant}table-headers-bottom th {
+    vertical-align: bottom
+  }
+
+  .#{$variant}table-body-start td {
+    text-align: direction.$start
+  }
+
+  .#{$variant}table-body-center td {
+    text-align: center
+  }
+
+  .#{$variant}table-body-end td {
+    text-align: direction.$end
+  }
+
+  .#{$variant}table-body-top td {
+    vertical-align: top
+  }
+
+  .#{$variant}table-body-middle td {
+    vertical-align: middle
+  }
+
+  .#{$variant}table-body-bottom td {
+    vertical-align: bottom
+  }
+
+  .#{$variant}border-spacing-0 {
+    border-spacing: 0;
+  }
+}
+
+@include media.screens-and-min-width() using ($variant) {
+  @include tables($variant);
+}
