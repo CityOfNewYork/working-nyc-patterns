@@ -317,9 +317,9 @@ module.exports = {
     'site-min-width': '320px',
     'navigation-logo': '128px',
     'navigation-height-mobile': '80px', // size is actually determined by padding, etc. this is a reference for other components
-    'footer-height-mobile-sm': '513px',
-    'footer-height-mobile': '654px',
-    'footer-height-tablet': '448px',
+    'footer-height-mobile-sm': '440px',
+    'footer-height-mobile': '581px',
+    'footer-height-tablet': '427px',
     'side-bar-width': '18.5rem',
     'side-bar-width-small': '12.5rem',
     'topbar-height': '80px'

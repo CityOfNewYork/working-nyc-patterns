@@ -91,7 +91,7 @@
 
               p Fill out the Interest Form to apply. Deadline: June 10
 
-      section#contact class='bg-scale-1 layout-content'
+      section#contact class='bg-scale-1 layout-content tablet:pt-6'
         nav class='py-2 page-max wrap tablet:layout-three-columns-gutter'
           a href='#' class='btn btn-secondary btn-next mb-1 w-full'
             svg class='icon-wnyc-ui' aria-hidden='true'
@@ -120,7 +120,7 @@
             svg class='icon-wnyc-ui' aria-hidden='true'
               use xlink:href='#icon-wnyc-ui-arrow-right'
 
-      section class='bg-scale-1 layout-content'
+      section class='bg-scale-1 layout-content tablet:pb-6'
         div class='page-max'
           div class='text-center text-alt mb-1' —
 

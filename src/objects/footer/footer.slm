@@ -14,10 +14,9 @@
 /! { @role        Use role="contentinfo" in production layouts. Identifies the footer as a major landmark }
 /! { @aria-label  Ensures a unique landmark }
 /! { @class       Add "o-footer-fixed" in production layouts }
-footer role=this.footer.role aria-label='Primary Footer' class='o-footer bg-scale-1 ${this.footer.class}'
+footer role=this.footer.role aria-label='Primary Footer' class='o-footer bg-scale-2 ${this.footer.class}'
   div class='page-max'
-    hr class='divider'
-
+    / hr class='divider'
     div class='o-footer__wrap'
       nav aria-label='Footer Primary Navigation' class='o-footer__nav o-footer__nav-a'
         a href='/' class='uppercase text-small no-underline'
