@@ -28,14 +28,21 @@ header class='o-header'
       a Commercial Driver - Red Hook on the Road
 
     p class='small'
-      a class='btn btn-link btn-small btn-tertiary' href='#disability-accommodation'
+      span class='flex items-center'
+        svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+          use xlink:href='#icon-wnyc-ui-user-check'
+
+        | Actively Recruiting
+
+    p class='small'
+      a class='btn btn-link btn-small btn-secondary font-secondary' href='#disability-accommodation'
         svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
           use xlink:href='#icon-wnyc-ui-user-check'
 
         span Accommodates Disabilities
 
     p class='small'
-      a class='btn btn-link btn-small btn-tertiary' href='#language-access'
+      a class='btn btn-link btn-small btn-secondary font-secondary' href='#language-access'
         svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
           use xlink:href='#icon-wnyc-ui-translate'
 
