@@ -2,7 +2,7 @@
 
 / Defaults
 - this['mobile-menu'] = {}
-- this['mobile-menu'].id = Math.random().toString(16).substring(2)
+- this['mobile-menu'].id = this.createId()
 
 / Inherit overrides
 - if (typeof mobileMenu !== 'undefined')
@@ -21,11 +21,11 @@ aside#aria-c-mobile-menu class='o-mobile-menu ${this['mobile-menu'].class}' aria
       span Close
 
   nav class='o-mobile-menu__nav'
-    a tabindex='-1' href='/demos/programs/index' Programs
+    a tabindex='-1' href='${this.baseUrl}/demos/programs/index' Programs
 
     a tabindex='-1' href='#' Events
 
     a tabindex='-1' href='#' Trainings
 
-    button tabindex='-1' class='btn-link w-full' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
-      span Search
+    / button tabindex='-1' class='btn-link w-full' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
+    /   span Search

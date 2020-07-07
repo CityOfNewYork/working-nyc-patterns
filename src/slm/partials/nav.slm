@@ -1,5 +1,5 @@
 - this.nav = {class: {}}
-- this.nav.id = Math.random().toString(16).substring(2)
+- this.nav.id = this.createId()
 - this.nav.class.main = 'tablet:flex-1 mb-1 px-1 tablet:px-2'
 - this.nav.class.heading = 'h3 text-small p-1 block'
 - this.nav.class.item = 'block p-1 no-underline align-middle'

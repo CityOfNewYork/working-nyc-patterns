@@ -2,7 +2,7 @@
 
 / Defaults
 - this.navigation = {}
-- this.navigation.id = Math.random().toString(16).substring(2)
+- this.navigation.id = this.createId()
 
 / Inherit overrides
 - if (typeof navigation !== 'undefined')

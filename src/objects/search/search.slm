@@ -2,7 +2,7 @@
 
 / Defaults
 - this.search = {}
-- this.search.id = Math.random().toString(16).substring(2)
+- this.search.id = this.createId()
 
 / Inherit overrides
 - if (typeof search !== 'undefined')
