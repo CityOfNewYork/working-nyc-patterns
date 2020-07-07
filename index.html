@@ -5,10 +5,22 @@
   <meta charset="utf-8" />
   <meta content="IE=edge" http-equiv="X-UA-Compatible" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CMontserrat:400,400i,700" media="all" rel="stylesheet" />
+  <title>WorkingNYC Patterns</title>
+  <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
   <link href="styles/site-default.css" rel="stylesheet" />
   <link href="styles/site-color-default.css" rel="stylesheet" />
-  <title>WorkingNYC Patterns</title>
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function(event) {
+      hljs.configure({
+        languages: ['html', 'javascript', 'css', 'sass']
+      });
+      document.querySelectorAll('pre').forEach(function(pre) {
+        pre.setAttribute('tabindex', '0');
+        hljs.highlightBlock(pre);
+      });
+    });
+  </script>
 </head>
 
 <body class="color">
@@ -27,12 +39,10 @@
         </h1>
       </div>
       <div class="flex items-center">
-        <h2 class="text-small m-0 text-blue-dark tablet:hidden">Patterns</h2>
-        <h2 aria-hidden="true" class="h4 m-0 text-blue-dark hidden tablet:inline-block">Patterns</h2>
-        <nav class="text-small flex">
-          <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden tablet:inline-block" href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-16">0.0.1-16</a>
-          <a aria-hidden="true" class="ms-1 tablet:ms-2 tablet:hidden" href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-16">0.0.1-16</a>
-          <button aria-controls="main-menu" aria-expanded="false" class="btn btn-link ms-1 tablet:ms-2" data-js="toggle" id="main-menu-control">
+        <h2 class="text-body font-normal m-0">Patterns</h2>
+        <nav aria-label="navigation-menu" class="nav-inline text-small flex items-center ms-2" role="navigation">
+          <a class="rounded-lg border no-underline px-1" href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-17">0.0.1-17</a>
+          <button aria-controls="main-menu" aria-expanded="false" class="btn btn-link" data-js="toggle" id="main-menu-control">
             <svg aria-hidden="true" class="icon-wnyc-ui">
               <use xlink:href="#icon-wnyc-ui-menu"></use>
             </svg>
@@ -42,71 +52,93 @@
       </div>
     </div>
   </header>
-  <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-modal text-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="navigation" style="top: -1px">
+  <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-modal text-small hidden hidden:overflowFadeInUp animated" id="main-menu">
     <div class="page-max py-4 animated">
       <div class="tablet:flex">
-        <nav class="tablet:flex-1 mb-1 px-1 tablet:px-2">
-          <span class="h3 text-small mb-1 block tablet:pb-2 tablet:mb-1 p-1">Links</span>
-          <a class="block p-1 no-underline align-middle" xhref="https://www.npmjs.com/package/@nycopportunity/working-patterns">NPM Package</a>
-          <a class="block p-1 no-underline align-middle" xhref="https://github.com/cityofnewyork/nyco-wnyc-patterns">GitHub Repository</a>
+        <nav aria-labelledby="navigation-main-3129755744269" class="tablet:flex-1 mb-1 px-1 tablet:px-2" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="navigation-main-3129755744269">Main</span>
+          <a class="block p-1 no-underline align-middle" href="index" tabindex="-1">Home</a>
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1">Links</span>
+          <a class="block p-1 no-underline align-middle" data-toggle-tabindex="10" tabindex="-1" xhref="https://www.npmjs.com/package/@nycopportunity/working-patterns">NPM Package</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="https://github.com/cityofnewyork/nyco-wnyc-patterns">GitHub Repository</a>
         </nav>
-        <nav class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4">
-          <span class="h3 text-small mb-1 block tablet:pb-2 tablet:mb-1 p-1">Elements</span>
-          <a class="block p-1 no-underline align-middle" xhref="buttons">Buttons</a>
-          <a class="block p-1 no-underline align-middle" xhref="checkboxes">Checkboxes</a>
-          <a class="block p-1 no-underline align-middle" xhref="code">Code</a>
-          <a class="block p-1 no-underline align-middle" xhref="divider">Divider</a>
-          <a class="block p-1 no-underline align-middle" xhref="forms">Forms</a>
-          <a class="block p-1 no-underline align-middle" xhref="icons">Icons</a>
-          <a class="block p-1 no-underline align-middle" xhref="inputs">Inputs</a>
-          <a class="block p-1 no-underline align-middle" xhref="labels">Labels</a>
-          <a class="block p-1 no-underline align-middle" xhref="layouts">Layouts</a>
-          <a class="block p-1 no-underline align-middle" xhref="links">Links</a>
-          <a class="block p-1 no-underline align-middle" xhref="nav">Nav</a>
-          <a class="block p-1 no-underline align-middle" xhref="options">Options</a>
+        <nav aria-labelledby="aria-lb-elements-3129755744269" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-elements-3129755744269">Elements</span>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="badge">Badge</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="buttons">Buttons</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="checkboxes">Checkboxes</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="code">Code</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="divider">Divider</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="forms">Forms</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="icons">Icons</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="inputs">Inputs</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="labels">Labels</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="layouts">Layouts</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="links">Links</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="nav">Nav</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="options">Options</a>
         </nav>
-        <nav class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4">
-          <span class="h3 text-small mb-1 block tablet:pb-2 tablet:mb-1 p-1">Components</span>
-          <a class="block p-1 no-underline align-middle" xhref="accordion">Accordion</a>
-          <a class="block p-1 no-underline align-middle" href="card">
-            <mark class="badge">View</mark>&nbsp;Card
+        <nav aria-labelledby="aria-lb-components-3129755744269" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-components-3129755744269">Components</span>
+          <a class="block p-1 no-underline align-middle" href="accordion" tabindex="-1">
+            <mark class="badge status-secondary">View</mark>&nbsp;Accordion
           </a>
-          <a class="block p-1 no-underline align-middle" xhref="header">Header</a>
-          <a class="block p-1 no-underline align-middle" xhref="question">Utility</a>
-          <a class="block p-1 no-underline align-middle" xhref="web-share">Web Share</a>
-        </nav>
-        <nav class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4">
-          <span class="h3 text-small mb-1 block tablet:pb-2 tablet:mb-1 p-1">Objects</span>
-          <a class="block p-1 no-underline align-middle" xhref="banner">Banner</a>
-          <a class="block p-1 no-underline align-middle" href="footer">
-            <mark class="badge">View</mark>&nbsp;Footer
+          <a class="block p-1 no-underline align-middle" href="card" tabindex="-1">
+            <mark class="badge status-secondary">View</mark>&nbsp;Card
           </a>
-          <a class="block p-1 no-underline align-middle" xhref="mobile-nav">Mobile Nav</a>
-          <a class="block p-1 no-underline align-middle" xhref="navigation">Navigation</a>
-          <a class="block p-1 no-underline align-middle" xhref="newsletter">Newsletter</a>
-          <a class="block p-1 no-underline align-middle" xhref="search-box">Search Box</a>
-          <a class="block p-1 no-underline align-middle" xhref="text-controller">Text Controller</a>
+          <a class="block p-1 no-underline align-middle" href="utility" tabindex="-1">
+            <mark class="badge status-secondary">View</mark>&nbsp;Utility
+          </a>
+          <a class="block p-1 no-underline align-middle" href="web-share" tabindex="-1">
+            <mark class="badge status-secondary">View</mark>&nbsp;Web Share
+          </a>
         </nav>
-        <nav class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4">
-          <span class="h3 text-small mb-1 block tablet:pb-2 tablet:mb-1 p-1">Utilities</span>
-          <a class="block p-1 no-underline align-middle" xhref="animate">Animate</a>
-          <a class="block p-1 no-underline align-middle" xhref="color">Color</a>
-          <a class="block p-1 no-underline align-middle" xhref="margin">Margin</a>
-          <a class="block p-1 no-underline align-middle" xhref="padding">Padding</a>
-          <a class="block p-1 no-underline align-middle" xhref="tailwindcss">tailwindcss</a>
-          <a class="block p-1 no-underline align-middle" xhref="text">Text</a>
-          <a class="block p-1 no-underline align-middle" xhref="toggle">Toggle</a>
-          <a class="block p-1 no-underline align-middle" xhref="typography">Typography</a>
+        <nav aria-labelledby="aria-lb-objects-3129755744269" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-objects-3129755744269">Objects</span>
+          <a class="block p-1 no-underline align-middle" href="banner" tabindex="-1">
+            <mark class="badge status-secondary">View</mark>&nbsp;Banner
+          </a>
+          <a class="block p-1 no-underline align-middle" href="header" tabindex="-1">
+            <mark class="badge status-secondary">View</mark>&nbsp;Header
+          </a>
+          <a class="block p-1 no-underline align-middle" href="footer" tabindex="-1">
+            <mark class="badge status-secondary">View</mark>&nbsp;Footer
+          </a>
+          <a class="block p-1 no-underline align-middle" href="mobile-menu" tabindex="-1">
+            <mark class="badge status-secondary">View</mark>&nbsp;Mobile Menu
+          </a>
+          <a class="block p-1 no-underline align-middle" href="navigation" tabindex="-1">
+            <mark class="badge status-secondary">View</mark>&nbsp;Navigation
+          </a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="newsletter">Newsletter</a>
+          <a class="block p-1 no-underline align-middle" href="search" tabindex="-1">
+            <mark class="badge status-secondary">View</mark>&nbsp;Search
+          </a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="text-controller">Text Controller</a>
+        </nav>
+        <nav aria-labelledby="aria-lb-utilities-3129755744269" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-utilities-3129755744269">Utilities</span>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="animate">Animate</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="color">Color</a>
+          <a class="block p-1 no-underline align-middle" href="fonts" tabindex="-1">
+            <mark class="badge status-secondary">View</mark>&nbsp;Fonts
+          </a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="margin">Margin</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="padding">Padding</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="tailwindcss">tailwindcss</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="text">Text</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="toggle">Toggle</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="typography">Typography</a>
         </nav>
       </div>
       <div class="text-center">
-        <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
+        <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle" data-pa11y="disable" tabindex="-1">Close Menu</button>
       </div>
     </div>
   </aside>
   <main class="py-4" id="main-content" role="main">
     <article class="py-4 clearfix">
-      <h3 class="text-center">Pre-release v0.0.1-16</h3>
+      <h3 class="text-center">Pre-release v0.0.1-17</h3>
       <section class="c-accordion m-auto mb-4" style="max-width: 800px">
         <header class="c-accordion__header">
           <p class="flex items-center">
@@ -118,10 +150,10 @@
         </header>
         <div class="c-accordion__body active">
           <div class="c-accordion__padding text-center">
-            <input class="font-code w-full bg-transparent border text-inherit mb-3" data-copy-target="npm-install" id="npm-install" name="npm-install" type="text" value="npm install @nycopportunity/working-patterns@v0.0.1-16" />
+            <input class="font-code w-full bg-transparent border text-inherit mb-3" data-copy-target="npm-install" id="npm-install" name="npm-install" type="text" value="npm install @nycopportunity/working-patterns@v0.0.1-17" />
             <nav class="nav-block">
               <button aria-pressed="false" class="btn btn-primary" data-copy="npm-install" data-js="copy">Copy to Clipboard</button>
-              <a class="btn btn-secondary" href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-16" target="_blank">
+              <a class="btn btn-secondary" href="https://github.com/cityofnewyork/nyco-wnyc-patterns/releases/tag/v0.0.1-17" target="_blank">
                 <svg aria-hidden="true" class="icon-wnyc-ui">
                   <use xlink:href="#icon-wnyc-ui-github"></use>
                 </svg>
@@ -189,31 +221,37 @@
     </article>
   </main>
   <footer class="text-small py-4 z-20 relative" role="contentinfo">
-    <div class="page-max wrap">
-      <div class="mb-4">
-        <p class="mb-1">Maintained by&nbsp;<a href="http://nyc.gov/opportunity">The Mayor's Office for Economic Opportunity</a>
-        </p>
-        <p>We are committed to sharing open source software that we use in our products. Feel free to ask questions and share feedback. Follow @nycopportunity on&nbsp;</p>
-        <div class="mb-3">
-          <nav class="nav-inline">
-            <a href="https://github.com/nycopportunity">GitHub</a>
-            <a href="https://twitter.com/nycopportunity">Twitter</a>
-            <a href="https://www.facebook.com/nycopportunity">Facebook</a>
-            <a href="https://www.instagram.com/nycopportunity">Instagram</a>
-          </nav>
+    <div class="layout-content page-max">
+      <div class="wrap mb-4">
+        <hr class="divider" />
+        <div class="py-4">
+          <p class="mb-1">Maintained by&nbsp;<a href="http://nyc.gov/opportunity">The Mayor's Office for Economic Opportunity</a>
+          </p>
+          <p>We are committed to sharing open source software that we use in our products. Feel free to ask questions and share feedback. Follow @nycopportunity on&nbsp;</p>
+          <div class="mb-3">
+            <nav class="nav-inline">
+              <a href="https://github.com/nycopportunity">GitHub</a>
+              <a href="https://twitter.com/nycopportunity">Twitter</a>
+              <a href="https://www.facebook.com/nycopportunity">Facebook</a>
+              <a href="https://www.instagram.com/nycopportunity">Instagram</a>
+            </nav>
+          </div>
+          <small>© City of New York, 2020 All Rights Reserved. NYC is a trademark and service mark of the City of New York.</small>
         </div>
-        <small>© City of New York, 2020 All Rights Reserved. NYC is a trademark and service mark of the City of New York.</small>
       </div>
     </div>
-    <div class="page-max">
+    <div class="page-max pt-2">
       <div class="tablet:flex">
-        <nav class="tablet:flex-1 mb-1 px-1 tablet:px-2">
-          <span class="h3 text-small mb-1 block tablet:pb-2 tablet:mb-1 p-1">Links</span>
-          <a class="block p-1 no-underline align-middle" xhref="https://www.npmjs.com/package/@nycopportunity/working-patterns">NPM Package</a>
+        <nav aria-labelledby="navigation-main-ad84e42a75324" class="tablet:flex-1 mb-1 px-1 tablet:px-2" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="navigation-main-ad84e42a75324">Main</span>
+          <a class="block p-1 no-underline align-middle" href="index">Home</a>
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1">Links</span>
+          <a class="block p-1 no-underline align-middle" data-toggle-tabindex="10" xhref="https://www.npmjs.com/package/@nycopportunity/working-patterns">NPM Package</a>
           <a class="block p-1 no-underline align-middle" xhref="https://github.com/cityofnewyork/nyco-wnyc-patterns">GitHub Repository</a>
         </nav>
-        <nav class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4">
-          <span class="h3 text-small mb-1 block tablet:pb-2 tablet:mb-1 p-1">Elements</span>
+        <nav aria-labelledby="aria-lb-elements-ad84e42a75324" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-elements-ad84e42a75324">Elements</span>
+          <a class="block p-1 no-underline align-middle" xhref="badge">Badge</a>
           <a class="block p-1 no-underline align-middle" xhref="buttons">Buttons</a>
           <a class="block p-1 no-underline align-middle" xhref="checkboxes">Checkboxes</a>
           <a class="block p-1 no-underline align-middle" xhref="code">Code</a>
@@ -227,32 +265,51 @@
           <a class="block p-1 no-underline align-middle" xhref="nav">Nav</a>
           <a class="block p-1 no-underline align-middle" xhref="options">Options</a>
         </nav>
-        <nav class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4">
-          <span class="h3 text-small mb-1 block tablet:pb-2 tablet:mb-1 p-1">Components</span>
-          <a class="block p-1 no-underline align-middle" xhref="accordion">Accordion</a>
+        <nav aria-labelledby="aria-lb-components-ad84e42a75324" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-components-ad84e42a75324">Components</span>
+          <a class="block p-1 no-underline align-middle" href="accordion">
+            <mark class="badge status-secondary">View</mark>&nbsp;Accordion
+          </a>
           <a class="block p-1 no-underline align-middle" href="card">
-            <mark class="badge">View</mark>&nbsp;Card
+            <mark class="badge status-secondary">View</mark>&nbsp;Card
           </a>
-          <a class="block p-1 no-underline align-middle" xhref="header">Header</a>
-          <a class="block p-1 no-underline align-middle" xhref="question">Utility</a>
-          <a class="block p-1 no-underline align-middle" xhref="web-share">Web Share</a>
+          <a class="block p-1 no-underline align-middle" href="utility">
+            <mark class="badge status-secondary">View</mark>&nbsp;Utility
+          </a>
+          <a class="block p-1 no-underline align-middle" href="web-share">
+            <mark class="badge status-secondary">View</mark>&nbsp;Web Share
+          </a>
         </nav>
-        <nav class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4">
-          <span class="h3 text-small mb-1 block tablet:pb-2 tablet:mb-1 p-1">Objects</span>
-          <a class="block p-1 no-underline align-middle" xhref="banner">Banner</a>
-          <a class="block p-1 no-underline align-middle" href="footer">
-            <mark class="badge">View</mark>&nbsp;Footer
+        <nav aria-labelledby="aria-lb-objects-ad84e42a75324" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-objects-ad84e42a75324">Objects</span>
+          <a class="block p-1 no-underline align-middle" href="banner">
+            <mark class="badge status-secondary">View</mark>&nbsp;Banner
           </a>
-          <a class="block p-1 no-underline align-middle" xhref="mobile-nav">Mobile Nav</a>
-          <a class="block p-1 no-underline align-middle" xhref="navigation">Navigation</a>
+          <a class="block p-1 no-underline align-middle" href="header">
+            <mark class="badge status-secondary">View</mark>&nbsp;Header
+          </a>
+          <a class="block p-1 no-underline align-middle" href="footer">
+            <mark class="badge status-secondary">View</mark>&nbsp;Footer
+          </a>
+          <a class="block p-1 no-underline align-middle" href="mobile-menu">
+            <mark class="badge status-secondary">View</mark>&nbsp;Mobile Menu
+          </a>
+          <a class="block p-1 no-underline align-middle" href="navigation">
+            <mark class="badge status-secondary">View</mark>&nbsp;Navigation
+          </a>
           <a class="block p-1 no-underline align-middle" xhref="newsletter">Newsletter</a>
-          <a class="block p-1 no-underline align-middle" xhref="search-box">Search Box</a>
+          <a class="block p-1 no-underline align-middle" href="search">
+            <mark class="badge status-secondary">View</mark>&nbsp;Search
+          </a>
           <a class="block p-1 no-underline align-middle" xhref="text-controller">Text Controller</a>
         </nav>
-        <nav class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4">
-          <span class="h3 text-small mb-1 block tablet:pb-2 tablet:mb-1 p-1">Utilities</span>
+        <nav aria-labelledby="aria-lb-utilities-ad84e42a75324" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-utilities-ad84e42a75324">Utilities</span>
           <a class="block p-1 no-underline align-middle" xhref="animate">Animate</a>
           <a class="block p-1 no-underline align-middle" xhref="color">Color</a>
+          <a class="block p-1 no-underline align-middle" href="fonts">
+            <mark class="badge status-secondary">View</mark>&nbsp;Fonts
+          </a>
           <a class="block p-1 no-underline align-middle" xhref="margin">Margin</a>
           <a class="block p-1 no-underline align-middle" xhref="padding">Padding</a>
           <a class="block p-1 no-underline align-middle" xhref="tailwindcss">tailwindcss</a>
@@ -271,6 +328,7 @@
     patterns.toggle();
     patterns.copy();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>
