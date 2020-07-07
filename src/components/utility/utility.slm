@@ -1,23 +1,23 @@
 / Utility
 
 nav class='c-utility'
-  a class='btn-link me-auto'
-    svg class='icon-2 icon-wnyc-ui' aria-hidden='true'
+  a href='${this.baseUrl}/demos/programs/index' class='btn-link me-auto'
+    svg class='icon-wnyc-ui' aria-hidden='true'
       use xlink:href='#icon-wnyc-ui-chevron-left'
 
-    span Back
+    span Programs
 
-  a href='#contact' class='ms-3 btn btn-small btn-tertiary'
+  a href='#contact' class='ms-3 btn btn-link'
     | Contact
 
-  a class='btn-link'
-    svg class='icon-2 icon-wnyc-ui' aria-hidden='true'
+  a class='btn btn-small btn-primary'
+    svg class='icon-wnyc-ui' aria-hidden='true'
       use xlink:href='#icon-wnyc-ui-bookmark'
 
     span Save
 
-  a href='#' class='btn-link' data-js='web-share' data-web-share='{"title":"Page Title","text":"Description to of the shared content.","url":"https://url/to/share"}'
-    svg class='icon-2 icon-wnyc-ui' aria-hidden='true'
+  a href='#' class='btn btn-small btn-primary' data-js='web-share' data-web-share='{"title":"Page Title","text":"Description to of the shared content.","url":"https://url/to/share"}'
+    svg class='icon-wnyc-ui' aria-hidden='true'
       use xlink:href='#icon-wnyc-ui-share-2'
 
     span Share
