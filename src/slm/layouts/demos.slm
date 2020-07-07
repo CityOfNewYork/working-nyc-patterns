@@ -7,9 +7,6 @@ html lang='en'
 
     / link rel='icon' type='image/x-icon' href='../images/favicon.ico'
 
-    - if this.tokens.hasOwnProperty('google-fonts')
-      link rel='stylesheet' href='${this.tokens['google-fonts'].replace(/"/g, '')}' media='all'
-
     link rel='stylesheet' href='${this.baseUrl}/styles/site-default.css'
     link rel='stylesheet' href='${this.baseUrl}/styles/site-color-default.css'
 

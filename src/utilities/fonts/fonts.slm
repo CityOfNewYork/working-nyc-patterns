@@ -1,0 +1,5 @@
+/ Fonts
+
+div
+  p class='font-primary' Primary Font (Montserrat)
+  p class='font-secondary' Secondary Font (Lato)

@@ -64,10 +64,12 @@ npm-debug.log
 !/src/elements/links
 !/src/elements/nav
 !/src/elements/options
+!/src/elements/tables
 
 !/src/utilities/animate
 !/src/utilities/clearfix
 !/src/utilities/color
+!/src/utilities/fonts
 !/src/utilities/margin
 !/src/utilities/padding
 !/src/utilities/tailwindcss

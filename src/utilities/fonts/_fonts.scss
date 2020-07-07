@@ -1,0 +1,9 @@
+/**
+ * Fonts
+ */
+
+// Dependencies
+@use 'config/fonts';
+
+// Declarations
+@include fonts.import-google-fonts();

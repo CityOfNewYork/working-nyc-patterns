@@ -26,6 +26,7 @@ module.exports = {
     fontFamily: tokens['font-family'],
     fontSize: tokens['font-size'],
     fontWeight: tokens['font-weight'],
+    fontStyle: tokens['font-style'],
     height: {
       'auto': 'auto',
       'full': '100%',
@@ -73,6 +74,7 @@ module.exports = {
     float: [],
     fontFamily: [],
     fontWeight: [],
+    fontStyle: [],
     height: [],
     lineHeight: [],
     listStylePosition: [],

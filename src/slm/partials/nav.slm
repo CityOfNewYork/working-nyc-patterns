@@ -120,6 +120,10 @@ nav role='navigation' aria-labelledby='aria-lb-utilities-${this.nav.id}' class='
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='animate' Animate
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='clearfix' Clearfix
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='color' Color
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='fonts'
+    mark class='badge status-secondary' View
+    | &nbsp;Fonts
+
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='language' Language
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='margin' Margin
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='media' Media

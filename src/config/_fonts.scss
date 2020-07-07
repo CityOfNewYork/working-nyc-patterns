@@ -1,0 +1,7 @@
+// Dependencies
+@use 'config/tokens' as *;
+
+// Declarations
+@mixin import-google-fonts() {
+  @import url(map-get($tokens, 'google-fonts'));
+}

@@ -11,6 +11,7 @@ $font: map-get(tokens.$tokens, 'font');
 $font-family: map-get(tokens.$tokens, 'font-family');
 $font-size: map-get(tokens.$tokens, 'font-size');
 $font-weight: map-get(tokens.$tokens, 'font-weight');
+$font-style: map-get(tokens.$tokens, 'font-style');
 $line-height: map-get(tokens.$tokens, 'line-height');
 
 /**
@@ -20,7 +21,7 @@ $line-height: map-get(tokens.$tokens, 'line-height');
  *
  * @return  {Mixed}           The token value
  */
- @function get($token) {
+@function get($token) {
   @return map-get($typography, $token);
 }
 
@@ -39,6 +40,7 @@ $line-height: map-get(tokens.$tokens, 'line-height');
 
   font-size: map-get($font-size, $key);
   font-weight: map-get($font-weight, $key);
+  font-style: map-get($font-style, $key);
   line-height: map-get($line-height, $key);
 }
 

@@ -1,16 +1,17 @@
 - this.navigation = (this.navigation) ? this.navigation : [];
 
 = mixin('section', 'path', 'config = {title: false, source: true}');
-  - id = (this.config.title && this.config.title !== '') ? this.config.title.toLowerCase().split(' ').join('-') : false;
-  - grid = (this.config.grid);
+  - id = (this.config.title && this.config.title !== '') ? this.config.title : this.title
+  - id = id.toLowerCase().split(' ').join('-')
+  - grid = (this.config.grid)
 
   - if (this.config.title)
-    - let navitem = {'title': this.config.title, 'id': id};
-    - this.navigation.push(navitem);
+    - let navitem = {'title': this.config.title, 'id': id}
+    - this.navigation.push(navitem)
 
   - let source = this.path.split('/')
   - source.splice(source.length - 1, 1)
-  - source = `${this.package.cdn.source}/tree/v${this.tokens.version}/src` + source.join('/');
+  - source = `${this.package.cdn.source}/tree/v${this.tokens.version}/src` + source.join('/')
 
   section id=id class='pb-4 mb-4'
     / Render the Section header
@@ -33,7 +34,7 @@
 
     / Render the component on the page
     div class='page-max layout-content pb-4'
-      h4#example class='wrap'
+      h4 id='${id}-example' class='wrap'
         a href='#${id}-example' Demonstration
 
     div class='bg-scale-2 py-6 mb-6'
@@ -43,7 +44,7 @@
 
     / Render the componet markup in the code block
     div class='page-max layout-content pb-4'
-      h4#markup class='wrap'
+      h4 id='${id}-markup' class='wrap'
         a href='#${id}-markup' Markup
 
     div class='page-max layout-content'
