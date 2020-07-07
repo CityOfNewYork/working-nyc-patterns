@@ -10,59 +10,49 @@
 
 article class='c-card ${this.card.class}'
   header class='c-card__header'
-    h3 class='c-card__title'
-      - if this.card.status
-        mark class='badge status-alt align-text-bottom' = this.card.status
+    - if this.card.type
+      h4 class='c-card__type h5 m-0 text-alt font-normal mb-1'
+        == this.card.type
 
-      a href='${this.card.url}'
-        = this.card.title
+    h3 class='c-card__title mt-0 mb-2'
+      - if this.card.title
+        a href='${this.card.url}'
+          == this.card.title
+
+    - if this.card.status
+      p class='c-card__status flex items-center'
+        == this.card.status
 
   div class='c-card__body'
-    h4 class='c-card__subtitle text-alt' = this.card.subtitle
+    - if this.card.subtitle
+      h4 class='c-card__subtitle text-alt mb-1'
+        == this.card.subtitle
 
-    - if this.card.recruiting
-      p class='small'
-        span class='flex items-center'
-          svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
-            use xlink:href='#icon-wnyc-ui-user-check'
+    - if this.card.summary
+      div class='c-card__summary'
+        == this.card.summary
 
-          | Actively Recruiting
+    - if this.card.features
+      ul class='c-card__features'
+        - for (let i in this.card.features)
+          - feature = this.card.features[i]
 
-    - if this.card.accessible
-      p class='small'
-        a class='btn btn-link btn-small btn-secondary font-secondary' href='#disability-accommodation'
-          svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
-            use xlink:href='#icon-wnyc-ui-user-check'
+          li class='flex items-center'
+            svg class='icon-wnyc-ui me-1' aria-hidden='true'
+              use xlink:href='#${feature.icon}'
 
-          span Accommodates Disabilities
+            == feature.text
 
-    - if this.card.multilingual
-      p class='small'
-        a class='btn btn-link btn-small btn-secondary font-secondary' href='#language-access'
-          svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
-            use xlink:href='#icon-wnyc-ui-translate'
-
-          span Accommodates Multiple Languages
-
-    div class='c-card__summary'
-      p Through this program students prepare to work as commercial drivers.
-
-      / p
-      /   a href='demos/programs/red-hook-on-the-road'
-      /     | Learn more
-
-      /     span class='sr-only'
-      /       |: Home Energy Assistance Program
-
-    div class='c-card__cta'
-      a class='btn btn-secondary btn-next w-full tablet:w-auto' href='demos/programs/red-hook-on-the-road'
+    - if this.card.cta
+      a href='${this.card.url}' class='c-card__cta btn btn-secondary btn-next'
         svg class='icon-wnyc-ui' aria-hidden='true'
           use xlink:href='#icon-wnyc-ui-arrow-left'
 
         span
-          | Learn more
-
-          span class='sr-only' about Red Hook on the Road
+          | ${this.card.cta}&nbsp;
+          span class='sr-only'
+            | about&nbsp;
+            == this.card.title
 
         svg class='icon-wnyc-ui' aria-hidden='true'
           use xlink:href='#icon-wnyc-ui-arrow-right'

@@ -3,5 +3,5 @@
 @use 'config/grid' as *;
 
 // Declarations
-$padding: 2px $grid 2px;
+$padding: 0 $grid;
 $radius: $grid;

@@ -60,13 +60,13 @@
 
                   a Programs
 
-        section class='page-max layout-content'
-          div class='py-2 wrap'
+        section class='page-max'
+          div class='py-2 wrap layout-gutter tablet:layout-two-columns-gutter desktop:layout-three-columns-gutter'
             - for (let i in this.programs)
-              - card = this.programs[0]
-              - card.class = (i < this.programs.length - 1) ? 'mb-4' : ''
-
+              - card = this.programs[i]
               == this.include('/components/card/card.slm')
+
+            article aria-hidden='true' &nbsp;
 
       div class='bg-scale-1 page-max layout-content'
         div class='py-2 wrap'

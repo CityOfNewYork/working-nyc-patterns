@@ -94,103 +94,42 @@ module.exports = {
   },
   programs: [
     {
-      status: 'New',
-      title: 'Commercial driver training',
-      subtitle: 'Red Hook on the Road',
+      type: `<span data-program="sector">Transportation</span>`,
+      title: '<span data-program="plain-language-name">Commercial driver training</span>',
+      subtitle: '<span data-program="title">Red Hook on the Road<span>',
       url: 'demos/programs/red-hook-on-the-road',
-      taxonomies: [
+      status: `
+        <mark class="badge status-alt me-2" data-program="recruiting">Actively Recruiting</mark>
+        <span class="flex me-2" data-program="accessible">
+          <svg aria-hidden="true" class="icon">
+            <use xlink:href="#icon-wnyc-accessible"></use>
+          </svg>
+          <span class="sr-only">Accommodates Disabilities</span>
+        </span>
+        <span class="flex me-2" data-program="multilingual">
+          <svg aria-hidden="true" class="icon-wnyc-ui">
+            <use xlink:href="#icon-wnyc-ui-translate"></use>
+          </svg>
+          <span class="sr-only">Accommodates Multiple Languages</span>
+        </span>
+      `,
+      summary: `<p><span data-program="summary">Through this program students prepare to
+        work as commercial drivers.</span> For <b class="text-alt" data-program="taxonomy.population">
+        Unemployed New Yorkers</b> and <b class="text-alt" data-program="taxonomy.population">
+        Adults</b>.</p>`,
+      features: [
         {
-          name: 'Services',
-          categories: ['Job training', 'Job certification']
+          icon: 'icon-wnyc-ui-calendar',
+          text: `<span data-program="taxonomy.duration">4 weeks</span>,&nbsp;
+            <span data-program="taxonomy.schedule">Night classes</span>`
         },
         {
-          name: 'Sector',
-          categories: ['Transportation']
-        },
-        {
-          name: 'Population',
-          categories: ['Unemployed New Yorkers', 'Adults']
-        },
-        {
-          name: 'Duration',
-          categories: ['4 weeks']
-        },
-        {
-          name: 'Schedule',
-          categories: ['Night classes']
+          icon: 'icon-wnyc-ui-award',
+          text: `<span data-program="taxonomy.services">Job training</span>,&nbsp;
+            <span data-program="taxonomy.services">Job certification</span>`
         }
       ],
-      recruiting: true,
-      accessible: true,
-      multilingual: true,
-      summary: 'Through this program students prepare to work as commercial drivers.',
-      cta: true
-    },
-    {
-      status: 'New',
-      title: 'Commercial driver training',
-      subtitle: 'Red Hook on the Road',
-      url: 'demos/programs/red-hook-on-the-road',
-      taxonomies: [
-        {
-          name: 'Services',
-          categories: ['Job training', 'Job certification']
-        },
-        {
-          name: 'Sector',
-          categories: ['Transportation']
-        },
-        {
-          name: 'Population',
-          categories: ['Unemployed New Yorkers', 'Adults']
-        },
-        {
-          name: 'Duration',
-          categories: ['4 weeks']
-        },
-        {
-          name: 'Schedule',
-          categories: ['Night classes']
-        }
-      ],
-      recruiting: true,
-      accessible: true,
-      multilingual: true,
-      summary: 'Through this program students prepare to work as commercial drivers.',
-      cta: true
-    },
-    {
-      status: 'New',
-      title: 'Commercial Driver',
-      subtitle: 'Red Hook on the Road',
-      url: 'demos/programs/red-hook-on-the-road',
-      recruiting: true,
-      accessible: true,
-      multilingual: true,
-      summary: 'Through this program students prepare to work as commercial drivers.',
-      cta: true
-    },
-    {
-      status: 'New',
-      title: 'Commercial Driver',
-      subtitle: 'Red Hook on the Road',
-      url: 'demos/programs/red-hook-on-the-road',
-      recruiting: true,
-      accessible: true,
-      multilingual: true,
-      summary: 'Through this program students prepare to work as commercial drivers.',
-      cta: true
-    },
-    {
-      status: 'New',
-      title: 'Commercial Driver',
-      subtitle: 'Red Hook on the Road',
-      url: 'demos/programs/red-hook-on-the-road',
-      recruiting: true,
-      accessible: true,
-      multilingual: true,
-      summary: 'Through this program students prepare to work as commercial drivers.',
-      cta: true
+      cta: 'Learn more'
     }
   ],
   segments: [

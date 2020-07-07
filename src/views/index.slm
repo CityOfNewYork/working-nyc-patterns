@@ -12,7 +12,6 @@
   = mixin('head')
 
 = content('content')
-  / div class='text-center'
   h3 class='text-center' Pre-release v${this.package.version}
 
   section class='c-accordion m-auto mb-4' style='max-width: 800px'

@@ -3,7 +3,7 @@
 
 / Content blocks
 = content('head');
-  - this.title = 'Programs'
+  - this.title = 'Red Hook on the Road'
   = mixin('head');
 
 = content('content');

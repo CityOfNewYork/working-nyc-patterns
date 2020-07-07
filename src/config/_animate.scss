@@ -24,7 +24,7 @@ $timing-function: map-get($animate, 'timing-function');
 }
 
 @mixin transition() {
-  transition-property: opacity, background, color, border, box-shadow, transform, stroke, stroke-dashoffset, fill;
+  transition-property: background, color, border, box-shadow, transform, stroke, stroke-dashoffset, fill;
   transition-duration: 0.25s;
   backface-visibility: hidden;
 }
