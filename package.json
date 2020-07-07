@@ -45,7 +45,7 @@
     "production": "cross-env NODE_ENV=production cross-env PORT=7000 concurrently \"pttrn default -w -np\" \"pttrn serve -w\" -p \"none\"",
     "default": "pttrn default -np -nl",
     "predeploy": "cross-env NODE_ENV=production pttrn default -np -nl",
-    "version": "npm run default && git add .",
+    "version": "npm run predeploy && git add .",
     "prepublishOnly": "git push && git push --tags",
     "publish": "cross-env NODE_ENV=production pttrn publish",
     "pttrn": "node_modules/.bin/pttrn"
