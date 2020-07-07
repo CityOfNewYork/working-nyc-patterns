@@ -29,11 +29,11 @@ nav role='navigation' aria-label='Primary Navigation' class='o-navigation bg-sca
   a class='hidden desktop:inline-flex' href='#' Trainings
 
   /! { @class  The nav supports button elements using "btn-link" }
-  button class='o-navigation__menu-item btn-link' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
-    svg class='o-navigation__menu-icon icon-wnyc-ui'
-      use xlink:href='#icon-wnyc-ui-search'
+  /! button class='o-navigation__menu-item btn-link' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
+  /!   svg class='o-navigation__menu-icon icon-wnyc-ui'
+  /!     use xlink:href='#icon-wnyc-ui-search'
 
-    span class='o-navigation__menu-label' Search
+  /!   span class='o-navigation__menu-label' Search
 
   button class='o-navigation__menu-item btn-link desktop:m-0' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
     svg class='o-navigation__menu-icon icon-wnyc-ui'
