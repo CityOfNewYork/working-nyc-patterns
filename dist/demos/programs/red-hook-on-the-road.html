@@ -5,7 +5,6 @@
   <meta charset="utf-8" />
   <meta content="IE=edge" http-equiv="X-UA-Compatible" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CMontserrat:400,400i,700" media="all" rel="stylesheet" />
   <link href="/styles/site-default.css" rel="stylesheet" />
   <link href="/styles/site-color-default.css" rel="stylesheet" />
   <title>Programs | WorkingNYC</title>
@@ -67,9 +66,6 @@
         <a href="/demos/programs/index" tabindex="-1">Programs</a>
         <a href="#" tabindex="-1">Events</a>
         <a href="#" tabindex="-1">Trainings</a>
-        <button aria-controls="aria-c-search" aria-expanded="false" class="btn-link w-full" data-js="search" tabindex="-1">
-          <span>Search</span>
-        </button>
       </nav>
     </aside>
     <!--{ @id     Identifies Search for toggling }-->
@@ -103,21 +99,21 @@
           <div class="layout-content sticky top-0 bg-scale-1 z-10">
             <div class="page-max">
               <nav class="c-utility">
-                <a class="btn-link me-auto">
-                  <svg aria-hidden="true" class="icon-2 icon-wnyc-ui">
+                <a class="btn-link me-auto" href="/demos/programs/index">
+                  <svg aria-hidden="true" class="icon-wnyc-ui">
                     <use xlink:href="#icon-wnyc-ui-chevron-left"></use>
                   </svg>
-                  <span>Back</span>
+                  <span>Programs</span>
                 </a>
-                <a class="ms-3 btn btn-small btn-tertiary" href="#contact">Contact</a>
-                <a class="btn-link">
-                  <svg aria-hidden="true" class="icon-2 icon-wnyc-ui">
+                <a class="ms-3 btn btn-link" href="#contact">Contact</a>
+                <a class="btn btn-small btn-primary">
+                  <svg aria-hidden="true" class="icon-wnyc-ui">
                     <use xlink:href="#icon-wnyc-ui-bookmark"></use>
                   </svg>
                   <span>Save</span>
                 </a>
-                <a class="btn-link" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;Page Title&quot;,&quot;text&quot;:&quot;Description to of the shared content.&quot;,&quot;url&quot;:&quot;https://url/to/share&quot;}" href="#">
-                  <svg aria-hidden="true" class="icon-2 icon-wnyc-ui">
+                <a class="btn btn-small btn-primary" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;Page Title&quot;,&quot;text&quot;:&quot;Description to of the shared content.&quot;,&quot;url&quot;:&quot;https://url/to/share&quot;}" href="#">
+                  <svg aria-hidden="true" class="icon-wnyc-ui">
                     <use xlink:href="#icon-wnyc-ui-share-2"></use>
                   </svg>
                   <span>Share</span>
@@ -144,7 +140,14 @@
                     <a>Commercial Driver - Red Hook on the Road</a>
                   </nav>
                   <p class="small">
-                    <a class="btn btn-link btn-small btn-tertiary" href="#disability-accommodation">
+                    <span class="flex items-center">
+                      <svg aria-hidden="true" class="icon-wnyc-ui me-1 icon-2">
+                        <use xlink:href="#icon-wnyc-ui-user-check"></use>
+                      </svg>Actively Recruiting
+                    </span>
+                  </p>
+                  <p class="small">
+                    <a class="btn btn-link btn-small btn-secondary font-secondary" href="#disability-accommodation">
                       <svg aria-hidden="true" class="icon-wnyc-ui me-1 icon-2">
                         <use xlink:href="#icon-wnyc-ui-user-check"></use>
                       </svg>
@@ -152,7 +155,7 @@
                     </a>
                   </p>
                   <p class="small">
-                    <a class="btn btn-link btn-small btn-tertiary" href="#language-access">
+                    <a class="btn btn-link btn-small btn-secondary font-secondary" href="#language-access">
                       <svg aria-hidden="true" class="icon-wnyc-ui me-1 icon-2">
                         <use xlink:href="#icon-wnyc-ui-translate"></use>
                       </svg>
