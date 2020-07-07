@@ -34,7 +34,7 @@
     / Render the component on the page
     div class='page-max layout-content pb-4'
       h4#example class='wrap'
-        a href='#example' Demonstration
+        a href='#${id}-example' Demonstration
 
     div class='bg-scale-2 py-6 mb-6'
       div class='page-max flex justify-center py-6'
@@ -44,7 +44,7 @@
     / Render the componet markup in the code block
     div class='page-max layout-content pb-4'
       h4#markup class='wrap'
-        a href='#markup' Markup
+        a href='#${id}-markup' Markup
 
     div class='page-max layout-content'
       div class='wrap'
