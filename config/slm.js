@@ -94,39 +94,249 @@ module.exports = {
   },
   programs: [
     {
-      type: `<span data-program="sector">Transportation</span>`,
       title: '<span data-program="plain-language-name">Commercial driver training</span>',
       subtitle: '<span data-program="title">Red Hook on the Road<span>',
       url: 'demos/programs/red-hook-on-the-road',
       status: `
-        <mark class="badge status-alt me-2" data-program="recruiting">Actively Recruiting</mark>
+        <mark class="badge status-alt me-2" data-program="recruiting">
+          Actively Recruiting
+        </mark>
+
         <span class="flex me-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>
           </svg>
+
           <span class="sr-only">Accommodates Disabilities</span>
         </span>
+
         <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
             <use xlink:href="#icon-wnyc-ui-translate"></use>
           </svg>
+
           <span class="sr-only">Accommodates Multiple Languages</span>
         </span>
       `,
-      summary: `<p><span data-program="summary">Through this program students prepare to
-        work as commercial drivers.</span> For <b class="text-alt" data-program="taxonomy.population">
-        Unemployed New Yorkers</b> and <b class="text-alt" data-program="taxonomy.population">
+      summary: `
+        <p><span data-program="summary">Through this program students prepare
+        to work as commercial drivers.</span> For
+        <b class="text-alt" data-program="taxonomy.population">Unemployed New
+        Yorkers</b> and <b class="text-alt" data-program="taxonomy.population">
         Adults</b>.</p>`,
       features: [
         {
-          icon: 'icon-wnyc-ui-calendar',
-          text: `<span data-program="taxonomy.duration">4 weeks</span>,&nbsp;
-            <span data-program="taxonomy.schedule">Night classes</span>`
+          icon: 'icon-wnyc-ui-award',
+          text: `<span>
+            <span data-program="taxonomy.services">Job training</span>,&nbsp;
+            <span data-program="taxonomy.services">job certification</span>
+            </span>`
         },
         {
+          icon: 'icon-wnyc-ui-info',
+          text: '<span data-program="taxonomy.sector">Transportation</span>'
+        },
+        {
+          icon: 'icon-wnyc-ui-calendar',
+          text: `<span>
+            <span data-program="taxonomy.duration">4 weeks</span>,&nbsp;
+            <span data-program="taxonomy.schedule">night class</span>&nbsp;schedule
+            </span>`
+        }
+      ],
+      cta: 'Learn more'
+    },
+    {
+      title: '<span data-program="plain-language-name">HSE and job prep for youth</span>',
+      subtitle: '<span data-program="title">Advance & Earn<span>',
+      url: 'demos/programs/advance-and-earn',
+      status: `
+        <mark class="badge status-alt me-2" data-program="recruiting">
+          Actively Recruiting
+        </mark>
+
+        <span class="flex me-2" data-program="accessible">
+          <svg aria-hidden="true" class="icon text-alt">
+            <use xlink:href="#icon-wnyc-accessible"></use>
+          </svg>
+
+          <span class="sr-only">Accommodates Disabilities</span>
+        </span>
+
+        <span class="flex me-2" data-program="multilingual">
+          <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
+            <use xlink:href="#icon-wnyc-ui-translate"></use>
+          </svg>
+
+          <span class="sr-only">Accommodates Multiple Languages</span>
+        </span>
+      `,
+      summary: `
+        <p><span data-program="summary">Create a plan to achieve career and
+        educational goals.</span> For
+        <b class="text-alt" data-program="taxonomy.population">Unemployed New
+        Yorkers</b> and <b class="text-alt" data-program="taxonomy.population">
+        Youth (16–24)</b>.</p>`,
+      features: [
+        {
           icon: 'icon-wnyc-ui-award',
-          text: `<span data-program="taxonomy.services">Job training</span>,&nbsp;
-            <span data-program="taxonomy.services">Job certification</span>`
+          text: `<span>
+            <span data-program="taxonomy.services">Academic help</span>,&nbsp;
+            <span data-program="taxonomy.services">paid work</span>,&nbsp;
+            <span data-program="taxonomy.services">skill building</span>
+            </span>`
+        },
+        {
+          icon: 'icon-wnyc-ui-calendar',
+          text: `<span>
+            <span data-program="taxonomy.duration">6 months</span>,&nbsp;
+            <span data-program="taxonomy.schedule">full time</span>&nbsp;schedule
+            </span>`
+        }
+      ],
+      cta: 'Learn more'
+    },
+    {
+      title: '<span data-program="plain-language-name">Web development training</span>',
+      subtitle: '<span data-program="title">Web Development Fellowship at Fullstack Academy<span>',
+      url: 'demos/programs/web-development-fellowship-at-fullstack-academy',
+      status: `
+        <mark class="badge status-alt me-2" data-program="recruiting">
+          Actively Recruiting
+        </mark>
+
+        <span class="flex me-2" data-program="accessible">
+          <svg aria-hidden="true" class="icon text-alt">
+            <use xlink:href="#icon-wnyc-accessible"></use>
+          </svg>
+
+          <span class="sr-only">Accommodates Disabilities</span>
+        </span>
+
+        <span class="flex me-2" data-program="multilingual">
+          <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
+            <use xlink:href="#icon-wnyc-ui-translate"></use>
+          </svg>
+
+          <span class="sr-only">Accommodates Multiple Languages</span>
+        </span>
+      `,
+      summary: `<p><span data-program="summary">This program takes students
+        from amateur to professional in 24 weeks.</span> For
+        <b class="text-alt" data-program="taxonomy.population">Unemployed New
+        Yorkers</b>, <b class="text-alt" data-program="taxonomy.population">
+        Adults</b>, and <b class="text-alt" data-program="taxonomy.population">
+        Low-income</b>.</p>`,
+      features: [
+        {
+          icon: 'icon-wnyc-ui-award',
+          text: `<span>
+            <span data-program="taxonomy.services">Job training</span>,&nbsp;
+            <span data-program="taxonomy.services">job prep</span>
+            </span>`
+        },
+        {
+          icon: 'icon-wnyc-ui-info',
+          text: '<span data-program="taxonomy.sector">Technology</span>'
+        },
+        {
+          icon: 'icon-wnyc-ui-calendar',
+          text: `<span>
+            <span data-program="taxonomy.duration">6 months</span>,&nbsp;
+            <span data-program="taxonomy.schedule">full time</span>&nbsp;schedule
+            </span>`
+        }
+      ],
+      cta: 'Learn more'
+    },
+    {
+      type: '<span data-program="sector">Health care</span>',
+      title: '<span data-program="plain-language-name">Home health aide training</span>',
+      subtitle: '<span data-program="title">SBS Home Health Aide Training<span>',
+      url: 'demos/programs/web-development-fellowship-at-fullstack-academy',
+      status: `
+        <span class="flex me-2" data-program="accessible">
+          <svg aria-hidden="true" class="icon text-alt">
+            <use xlink:href="#icon-wnyc-accessible"></use>
+          </svg>
+
+          <span class="sr-only">Accommodates Disabilities</span>
+        </span>
+
+        <span class="flex me-2" data-program="multilingual">
+          <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
+            <use xlink:href="#icon-wnyc-ui-translate"></use>
+          </svg>
+
+          <span class="sr-only">Accommodates Multiple Languages</span>
+        </span>
+      `,
+      summary: `<p><span data-program="summary">Prepare for a job in the
+        healthcare field.</span> For
+        <b class="text-alt" data-program="taxonomy.population">Adults</b>.</p>`,
+      features: [
+        {
+          icon: 'icon-wnyc-ui-award',
+          text: `<span>
+            <span data-program="taxonomy.services">Job training</span>,&nbsp;
+            <span data-program="taxonomy.services">job certification</span>
+            </span>`
+        },
+        {
+          icon: 'icon-wnyc-ui-info',
+          text: '<span data-program="taxonomy.sector">Health care</span>'
+        },
+        {
+          icon: 'icon-wnyc-ui-calendar',
+          text: `<span>
+            <span data-program="taxonomy.duration">100 hours</span>,&nbsp;
+            <span data-program="taxonomy.schedule">flexible</span>&nbsp;schedule
+            <span>`
+        }
+      ],
+      cta: 'Learn more'
+    },
+    {
+      type: '<span data-program="sector">Health care</span>',
+      title: '<span data-program="plain-language-name">Math and reading for HSE Prep</span>',
+      subtitle: '<span data-program="title">NYC DOE Basic Education Classes<span>',
+      url: 'demos/programs/web-development-fellowship-at-fullstack-academy',
+      status: `
+        <span class="flex me-2" data-program="accessible">
+          <svg aria-hidden="true" class="icon text-alt">
+            <use xlink:href="#icon-wnyc-accessible"></use>
+          </svg>
+
+          <span class="sr-only">Accommodates Disabilities</span>
+        </span>
+
+        <span class="flex me-2" data-program="multilingual">
+          <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
+            <use xlink:href="#icon-wnyc-ui-translate"></use>
+          </svg>
+
+          <span class="sr-only">Accommodates Multiple Languages</span>
+        </span>
+      `,
+      summary: `<p><span data-program="summary">Prepare for a job in the
+        healthcare field.</span> For
+        <b class="text-alt" data-program="taxonomy.population">Adults</b> and
+        <b class="text-alt" data-program="taxonomy.population">Immigrant New
+        Yorkers</b>.</p>`,
+      features: [
+        {
+          icon: 'icon-wnyc-ui-award',
+          text: `<span>
+            <span data-program="taxonomy.services">Adult education</span>,&nbsp;
+            <span data-program="taxonomy.services">HSE prep</span>
+            </span>`
+        },
+        {
+          icon: 'icon-wnyc-ui-calendar',
+          text: `<span>
+            <span data-program="taxonomy.duration">3 months</span>,&nbsp;
+            <span data-program="taxonomy.schedule">varied</span>&nbsp;schedule
+            </span>`
         }
       ],
       cta: 'Learn more'

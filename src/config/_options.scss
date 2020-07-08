@@ -7,26 +7,21 @@
 @use 'config/typography';
 
 $options: map-get($tokens, 'options');
-$inner-size: map-get($options, 'inner-size');
-$radius: map-get($options, 'radius');
-$border-width: map-get($options, 'border-width');
-$border-style: map-get($options, 'border-style');
 
-$stroke-width: map-get($options, 'stroke-width');
-$stroke-line: map-get($options, 'stroke-line');
+@function get($token) {
+  @return map-get($options, $token);
+}
 
 // Declarations
 @mixin base() {
   @include typography.set('option');
-  line-height: $inner-size;
+  line-height: get('inner-size');
 
   display: flex;
-  padding-#{direction.$start}: ($grid * 2) - $border-width;
-  padding-top: ($grid * 2) - $border-width;
-  padding-bottom: ($grid * 2) - $border-width;
-  border: $border-width $border-style;
+  padding: ($grid * 2) - get('border-width');
+  border: get('border-width') get('border-style');
   border-color: transparent;
-  border-radius: $border-width;
+  border-radius: get('border-width');
 
   cursor: pointer;
 }
@@ -35,12 +30,12 @@ $stroke-line: map-get($options, 'stroke-line');
   fill: transparent;
   stroke: transparent;
 
-  stroke-width: $stroke-width;
-  stroke-linecap: $stroke-line;
-  stroke-linejoin: $stroke-line;
+  stroke-width: get('stroke-width');
+  stroke-linecap: get('stroke-line');
+  stroke-linejoin: get('stroke-line');
 
-  width: $inner-size;
-  height: $inner-size;
+  width: get('inner-size');
+  height: get('inner-size');
   margin-#{direction.$end}: $grid;
 }
 

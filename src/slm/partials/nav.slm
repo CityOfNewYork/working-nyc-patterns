@@ -33,7 +33,6 @@ nav role='navigation'  aria-labelledby='aria-lb-elements-${this.nav.id}' class='
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='badge' Badge
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='buttons' Buttons
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='checkboxes' Checkboxes
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='code' Code
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='divider' Divider
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='forms' Forms
@@ -44,9 +43,15 @@ nav role='navigation'  aria-labelledby='aria-lb-elements-${this.nav.id}' class='
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='links' Links
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='lists' Lists
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='nav' Nav
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='options' Options
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='radios' Radios
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='tables' Tables
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='options'
+    mark class='badge status-secondary' View
+    | &nbsp;Options
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='tables'
+    mark class='badge status-secondary' View
+    | &nbsp;Tables
+
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='tooltips' Tooltips
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='toggles' Toggles
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='selects' Selects

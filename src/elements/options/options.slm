@@ -1,0 +1,18 @@
+/ Options
+
+- this.option = {}
+- this.option.id = this.createId()
+- this.option.type = 'checkbox'
+- this.option.value = 'checkbox'
+- this.option.name = 'checkbox'
+- this.option.label = 'Checkbox'
+
+label class='option' for='${this.option.id}'
+  input type='${this.option.type}' id='${this.option.id}' value='${this.option.value}' name='${this.option.name}'
+
+  span class='option__base'
+    svg class='option__graphic' aria-hidden='true'
+      use xlink:href='#option-wnyc-check'
+
+    span class='option__label'
+      = this.option.label;

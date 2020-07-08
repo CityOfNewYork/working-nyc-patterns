@@ -285,7 +285,7 @@ module.exports = {
         }
       },
 
-      'shadow-up': '0 3px 12px 2px rgba(0, 0, 0, 0.25)',
+      'shadow-up': '0 3px 12px 2px rgba(0, 0, 0, 0.15)',
 
       'code': {
         'text': 'blue-l-2',

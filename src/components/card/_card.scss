@@ -12,7 +12,9 @@
 
 // Declarations
 .c-card {
-  position: relative
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .c-card__body,
@@ -29,6 +31,12 @@
 
 .c-card__subtitle {
   @include typography.set('h5')
+}
+
+.c-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .c-card__summary {
@@ -64,6 +72,9 @@
   opacity: 0;
 
   @include media.screen-and-min-width('tablet') {
+    height: auto;
+    margin-top: auto;
+
     opacity: 1;
     position: static;
     width: auto

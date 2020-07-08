@@ -31,15 +31,15 @@
 
                 span Saved
 
-          div#aria-c-filter class='page-max hidden' aria-hidden='true'
-            div class='wrap py-2'
+          div#aria-c-filter class='layout-content hidden' aria-hidden='true'
+            div class='page-max wrap py-2'
               ul
                 li Option
                 li Option
                 li Option
 
-          div#aria-c-saved class='page-max hidden' aria-hidden='true'
-            div class='wrap py-2'
+          div#aria-c-saved class='layout-content hidden' aria-hidden='true'
+            div class='page-max wrap py-2'
               ul
                 li Saved
                 li Saved

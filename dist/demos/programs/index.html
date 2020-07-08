@@ -5,8 +5,8 @@
   <meta charset="utf-8" />
   <meta content="IE=edge" http-equiv="X-UA-Compatible" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <link href="https://cityofnewyork.github.io/nyco-wnyc-patterns/styles/site-default.css" rel="stylesheet" />
-  <link href="https://cityofnewyork.github.io/nyco-wnyc-patterns/styles/site-color-default.css" rel="stylesheet" />
+  <link href="/styles/site-default.css" rel="stylesheet" />
+  <link href="/styles/site-color-default.css" rel="stylesheet" />
   <title>Programs | WorkingNYC</title>
 </head>
 
@@ -61,7 +61,7 @@
         </button>
       </div>
       <nav class="o-mobile-menu__nav">
-        <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index" tabindex="-1">Programs</a>
+        <a href="/demos/programs/index" tabindex="-1">Programs</a>
         <a href="#" tabindex="-1">Events</a>
         <a href="#" tabindex="-1">Trainings</a>
       </nav>
@@ -97,7 +97,7 @@
           <div class="layout-content sticky top-0 bg-scale-1 z-10">
             <div class="page-max">
               <nav class="c-utility">
-                <a class="btn-link me-auto" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index">
+                <a class="btn-link me-auto" href="/demos/programs/index">
                   <svg aria-hidden="true" class="icon-wnyc-ui">
                     <use xlink:href="#icon-wnyc-ui-chevron-left"></use>
                   </svg>
@@ -117,8 +117,8 @@
                 </button>
               </nav>
             </div>
-            <div aria-hidden="true" class="page-max hidden" id="aria-c-filter">
-              <div class="wrap py-2">
+            <div aria-hidden="true" class="layout-content hidden" id="aria-c-filter">
+              <div class="page-max wrap py-2">
                 <ul>
                   <li>Option</li>
                   <li>Option</li>
@@ -126,8 +126,8 @@
                 </ul>
               </div>
             </div>
-            <div aria-hidden="true" class="page-max hidden" id="aria-c-saved">
-              <div class="wrap py-2">
+            <div aria-hidden="true" class="layout-content hidden" id="aria-c-saved">
+              <div class="page-max wrap py-2">
                 <ul>
                   <li>Saved</li>
                   <li>Saved</li>
@@ -156,16 +156,13 @@
             <div class="py-2 wrap layout-gutter tablet:layout-two-columns-gutter desktop:layout-three-columns-gutter">
               <article class="c-card ">
                 <header class="c-card__header">
-                  <h4 class="c-card__type h5 m-0 text-alt font-normal mb-1">
-                    <span data-program="sector">Transportation</span>
-                  </h4>
                   <h3 class="c-card__title mt-0 mb-2">
                     <a href="demos/programs/red-hook-on-the-road">
                       <span data-program="plain-language-name">Commercial driver training</span>
                     </a>
                   </h3>
                   <p class="c-card__status flex items-center">
-                    <mark class="badge status-alt me-2" data-program="recruiting">Actively Recruiting</mark>
+                    <mark class="badge status-alt me-2" data-program="recruiting"> Actively Recruiting </mark>
                     <span class="flex me-2" data-program="accessible">
                       <svg aria-hidden="true" class="icon text-alt">
                         <use xlink:href="#icon-wnyc-accessible"></use>
@@ -186,21 +183,31 @@
                   </h4>
                   <div class="c-card__summary">
                     <p>
-                      <span data-program="summary">Through this program students prepare to work as commercial drivers.</span> For <b class="text-alt" data-program="taxonomy.population"> Unemployed New Yorkers</b> and <b class="text-alt" data-program="taxonomy.population"> Adults</b>.
+                      <span data-program="summary">Through this program students prepare to work as commercial drivers.</span> For <b class="text-alt" data-program="taxonomy.population">Unemployed New Yorkers</b> and <b class="text-alt" data-program="taxonomy.population"> Adults</b>.
                     </p>
                   </div>
                   <ul class="c-card__features">
                     <li class="flex items-center">
                       <svg aria-hidden="true" class="icon-wnyc-ui me-1">
-                        <use xlink:href="#icon-wnyc-ui-calendar"></use>
+                        <use xlink:href="#icon-wnyc-ui-award"></use>
                       </svg>
-                      <span data-program="taxonomy.duration">4 weeks</span>,&nbsp; <span data-program="taxonomy.schedule">Night classes</span>
+                      <span>
+                        <span data-program="taxonomy.services">Job training</span>,&nbsp; <span data-program="taxonomy.services">job certification</span>
+                      </span>
                     </li>
                     <li class="flex items-center">
                       <svg aria-hidden="true" class="icon-wnyc-ui me-1">
-                        <use xlink:href="#icon-wnyc-ui-award"></use>
+                        <use xlink:href="#icon-wnyc-ui-info"></use>
                       </svg>
-                      <span data-program="taxonomy.services">Job training</span>,&nbsp; <span data-program="taxonomy.services">Job certification</span>
+                      <span data-program="taxonomy.sector">Transportation</span>
+                    </li>
+                    <li class="flex items-center">
+                      <svg aria-hidden="true" class="icon-wnyc-ui me-1">
+                        <use xlink:href="#icon-wnyc-ui-calendar"></use>
+                      </svg>
+                      <span>
+                        <span data-program="taxonomy.duration">4 weeks</span>,&nbsp; <span data-program="taxonomy.schedule">night class</span>&nbsp;schedule
+                      </span>
                     </li>
                   </ul>
                   <a class="c-card__cta btn btn-secondary btn-next" href="demos/programs/red-hook-on-the-road">
@@ -208,6 +215,267 @@
                       <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
                     </svg>
                     <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Commercial driver training</span>
+                      </span>
+                    </span>
+                    <svg aria-hidden="true" class="icon-wnyc-ui">
+                      <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+              <article class="c-card ">
+                <header class="c-card__header">
+                  <h3 class="c-card__title mt-0 mb-2">
+                    <a href="demos/programs/advance-and-earn">
+                      <span data-program="plain-language-name">HSE and job prep for youth</span>
+                    </a>
+                  </h3>
+                  <p class="c-card__status flex items-center">
+                    <mark class="badge status-alt me-2" data-program="recruiting"> Actively Recruiting </mark>
+                    <span class="flex me-2" data-program="accessible">
+                      <svg aria-hidden="true" class="icon text-alt">
+                        <use xlink:href="#icon-wnyc-accessible"></use>
+                      </svg>
+                      <span class="sr-only">Accommodates Disabilities</span>
+                    </span>
+                    <span class="flex me-2" data-program="multilingual">
+                      <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
+                        <use xlink:href="#icon-wnyc-ui-translate"></use>
+                      </svg>
+                      <span class="sr-only">Accommodates Multiple Languages</span>
+                    </span>
+                  </p>
+                </header>
+                <div class="c-card__body">
+                  <h4 class="c-card__subtitle text-alt mb-1">
+                    <span data-program="title">Advance & Earn<span>
+                  </h4>
+                  <div class="c-card__summary">
+                    <p>
+                      <span data-program="summary">Create a plan to achieve career and educational goals.</span> For <b class="text-alt" data-program="taxonomy.population">Unemployed New Yorkers</b> and <b class="text-alt" data-program="taxonomy.population"> Youth (16–24)</b>.
+                    </p>
+                  </div>
+                  <ul class="c-card__features">
+                    <li class="flex items-center">
+                      <svg aria-hidden="true" class="icon-wnyc-ui me-1">
+                        <use xlink:href="#icon-wnyc-ui-award"></use>
+                      </svg>
+                      <span>
+                        <span data-program="taxonomy.services">Academic help</span>,&nbsp; <span data-program="taxonomy.services">paid work</span>,&nbsp; <span data-program="taxonomy.services">skill building</span>
+                      </span>
+                    </li>
+                    <li class="flex items-center">
+                      <svg aria-hidden="true" class="icon-wnyc-ui me-1">
+                        <use xlink:href="#icon-wnyc-ui-calendar"></use>
+                      </svg>
+                      <span>
+                        <span data-program="taxonomy.duration">6 months</span>,&nbsp; <span data-program="taxonomy.schedule">full time</span>&nbsp;schedule
+                      </span>
+                    </li>
+                  </ul>
+                  <a class="c-card__cta btn btn-secondary btn-next" href="demos/programs/advance-and-earn">
+                    <svg aria-hidden="true" class="icon-wnyc-ui">
+                      <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+                    </svg>
+                    <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">HSE and job prep for youth</span>
+                      </span>
+                    </span>
+                    <svg aria-hidden="true" class="icon-wnyc-ui">
+                      <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+              <article class="c-card ">
+                <header class="c-card__header">
+                  <h3 class="c-card__title mt-0 mb-2">
+                    <a href="demos/programs/web-development-fellowship-at-fullstack-academy">
+                      <span data-program="plain-language-name">Web development training</span>
+                    </a>
+                  </h3>
+                  <p class="c-card__status flex items-center">
+                    <mark class="badge status-alt me-2" data-program="recruiting"> Actively Recruiting </mark>
+                    <span class="flex me-2" data-program="accessible">
+                      <svg aria-hidden="true" class="icon text-alt">
+                        <use xlink:href="#icon-wnyc-accessible"></use>
+                      </svg>
+                      <span class="sr-only">Accommodates Disabilities</span>
+                    </span>
+                    <span class="flex me-2" data-program="multilingual">
+                      <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
+                        <use xlink:href="#icon-wnyc-ui-translate"></use>
+                      </svg>
+                      <span class="sr-only">Accommodates Multiple Languages</span>
+                    </span>
+                  </p>
+                </header>
+                <div class="c-card__body">
+                  <h4 class="c-card__subtitle text-alt mb-1">
+                    <span data-program="title">Web Development Fellowship at Fullstack Academy<span>
+                  </h4>
+                  <div class="c-card__summary">
+                    <p>
+                      <span data-program="summary">This program takes students from amateur to professional in 24 weeks.</span> For <b class="text-alt" data-program="taxonomy.population">Unemployed New Yorkers</b>, <b class="text-alt" data-program="taxonomy.population"> Adults</b>, and <b class="text-alt" data-program="taxonomy.population"> Low-income</b>.
+                    </p>
+                  </div>
+                  <ul class="c-card__features">
+                    <li class="flex items-center">
+                      <svg aria-hidden="true" class="icon-wnyc-ui me-1">
+                        <use xlink:href="#icon-wnyc-ui-award"></use>
+                      </svg>
+                      <span>
+                        <span data-program="taxonomy.services">Job training</span>,&nbsp; <span data-program="taxonomy.services">job prep</span>
+                      </span>
+                    </li>
+                    <li class="flex items-center">
+                      <svg aria-hidden="true" class="icon-wnyc-ui me-1">
+                        <use xlink:href="#icon-wnyc-ui-info"></use>
+                      </svg>
+                      <span data-program="taxonomy.sector">Technology</span>
+                    </li>
+                    <li class="flex items-center">
+                      <svg aria-hidden="true" class="icon-wnyc-ui me-1">
+                        <use xlink:href="#icon-wnyc-ui-calendar"></use>
+                      </svg>
+                      <span>
+                        <span data-program="taxonomy.duration">6 months</span>,&nbsp; <span data-program="taxonomy.schedule">full time</span>&nbsp;schedule
+                      </span>
+                    </li>
+                  </ul>
+                  <a class="c-card__cta btn btn-secondary btn-next" href="demos/programs/web-development-fellowship-at-fullstack-academy">
+                    <svg aria-hidden="true" class="icon-wnyc-ui">
+                      <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+                    </svg>
+                    <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Web development training</span>
+                      </span>
+                    </span>
+                    <svg aria-hidden="true" class="icon-wnyc-ui">
+                      <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+              <article class="c-card ">
+                <header class="c-card__header">
+                  <h3 class="c-card__title mt-0 mb-2">
+                    <a href="demos/programs/web-development-fellowship-at-fullstack-academy">
+                      <span data-program="plain-language-name">Home health aide training</span>
+                    </a>
+                  </h3>
+                  <p class="c-card__status flex items-center">
+                    <span class="flex me-2" data-program="accessible">
+                      <svg aria-hidden="true" class="icon text-alt">
+                        <use xlink:href="#icon-wnyc-accessible"></use>
+                      </svg>
+                      <span class="sr-only">Accommodates Disabilities</span>
+                    </span>
+                    <span class="flex me-2" data-program="multilingual">
+                      <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
+                        <use xlink:href="#icon-wnyc-ui-translate"></use>
+                      </svg>
+                      <span class="sr-only">Accommodates Multiple Languages</span>
+                    </span>
+                  </p>
+                </header>
+                <div class="c-card__body">
+                  <h4 class="c-card__subtitle text-alt mb-1">
+                    <span data-program="title">SBS Home Health Aide Training<span>
+                  </h4>
+                  <div class="c-card__summary">
+                    <p>
+                      <span data-program="summary">Prepare for a job in the healthcare field.</span> For <b class="text-alt" data-program="taxonomy.population">Adults</b>.
+                    </p>
+                  </div>
+                  <ul class="c-card__features">
+                    <li class="flex items-center">
+                      <svg aria-hidden="true" class="icon-wnyc-ui me-1">
+                        <use xlink:href="#icon-wnyc-ui-award"></use>
+                      </svg>
+                      <span>
+                        <span data-program="taxonomy.services">Job training</span>,&nbsp; <span data-program="taxonomy.services">job certification</span>
+                      </span>
+                    </li>
+                    <li class="flex items-center">
+                      <svg aria-hidden="true" class="icon-wnyc-ui me-1">
+                        <use xlink:href="#icon-wnyc-ui-info"></use>
+                      </svg>
+                      <span data-program="taxonomy.sector">Health care</span>
+                    </li>
+                    <li class="flex items-center">
+                      <svg aria-hidden="true" class="icon-wnyc-ui me-1">
+                        <use xlink:href="#icon-wnyc-ui-calendar"></use>
+                      </svg>
+                      <span>
+                        <span data-program="taxonomy.duration">100 hours</span>,&nbsp; <span data-program="taxonomy.schedule">flexible</span>&nbsp;schedule <span>
+                    </li>
+                  </ul>
+                  <a class="c-card__cta btn btn-secondary btn-next" href="demos/programs/web-development-fellowship-at-fullstack-academy">
+                    <svg aria-hidden="true" class="icon-wnyc-ui">
+                      <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+                    </svg>
+                    <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Home health aide training</span>
+                      </span>
+                    </span>
+                    <svg aria-hidden="true" class="icon-wnyc-ui">
+                      <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+              <article class="c-card ">
+                <header class="c-card__header">
+                  <h3 class="c-card__title mt-0 mb-2">
+                    <a href="demos/programs/web-development-fellowship-at-fullstack-academy">
+                      <span data-program="plain-language-name">Math and reading for HSE Prep</span>
+                    </a>
+                  </h3>
+                  <p class="c-card__status flex items-center">
+                    <span class="flex me-2" data-program="accessible">
+                      <svg aria-hidden="true" class="icon text-alt">
+                        <use xlink:href="#icon-wnyc-accessible"></use>
+                      </svg>
+                      <span class="sr-only">Accommodates Disabilities</span>
+                    </span>
+                    <span class="flex me-2" data-program="multilingual">
+                      <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
+                        <use xlink:href="#icon-wnyc-ui-translate"></use>
+                      </svg>
+                      <span class="sr-only">Accommodates Multiple Languages</span>
+                    </span>
+                  </p>
+                </header>
+                <div class="c-card__body">
+                  <h4 class="c-card__subtitle text-alt mb-1">
+                    <span data-program="title">NYC DOE Basic Education Classes<span>
+                  </h4>
+                  <div class="c-card__summary">
+                    <p>
+                      <span data-program="summary">Prepare for a job in the healthcare field.</span> For <b class="text-alt" data-program="taxonomy.population">Adults</b> and <b class="text-alt" data-program="taxonomy.population">Immigrant New Yorkers</b>.
+                    </p>
+                  </div>
+                  <ul class="c-card__features">
+                    <li class="flex items-center">
+                      <svg aria-hidden="true" class="icon-wnyc-ui me-1">
+                        <use xlink:href="#icon-wnyc-ui-award"></use>
+                      </svg>
+                      <span>
+                        <span data-program="taxonomy.services">Adult education</span>,&nbsp; <span data-program="taxonomy.services">HSE prep</span>
+                      </span>
+                    </li>
+                    <li class="flex items-center">
+                      <svg aria-hidden="true" class="icon-wnyc-ui me-1">
+                        <use xlink:href="#icon-wnyc-ui-calendar"></use>
+                      </svg>
+                      <span>
+                        <span data-program="taxonomy.duration">3 months</span>,&nbsp; <span data-program="taxonomy.schedule">varied</span>&nbsp;schedule
+                      </span>
+                    </li>
+                  </ul>
+                  <a class="c-card__cta btn btn-secondary btn-next" href="demos/programs/web-development-fellowship-at-fullstack-academy">
+                    <svg aria-hidden="true" class="icon-wnyc-ui">
+                      <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+                    </svg>
+                    <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Math and reading for HSE Prep</span>
                       </span>
                     </span>
                     <svg aria-hidden="true" class="icon-wnyc-ui">
@@ -271,18 +539,19 @@
       </div>
     </div>
   </footer>
-  <script src="https://cityofnewyork.github.io/nyco-wnyc-patterns/scripts/polyfills.js"></script>
-  <script src="https://cityofnewyork.github.io/nyco-wnyc-patterns/scripts/main.js"></script>
+  <script src="/scripts/polyfills.js"></script>
+  <script src="/scripts/main.js"></script>
   <script type="text/javascript">
     var patterns = new WorkingNyc();
     patterns.accordion();
     patterns.copy();
-    patterns.icons('https://cityofnewyork.github.io/nyco-wnyc-patterns/svg/icons.svg');
+    patterns.icons('/svg/icons.svg');
     patterns.mobileMenu();
     patterns.search();
     patterns.toggle();
     patterns.webShare();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>

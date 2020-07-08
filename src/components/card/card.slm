@@ -10,10 +10,6 @@
 
 article class='c-card ${this.card.class}'
   header class='c-card__header'
-    - if this.card.type
-      h4 class='c-card__type h5 m-0 text-alt font-normal mb-1'
-        == this.card.type
-
     h3 class='c-card__title mt-0 mb-2'
       - if this.card.title
         a href='${this.card.url}'
