@@ -7,7 +7,7 @@
 
 / Inherit overrides
 - if (typeof accordion !== 'undefined')
-  - this.accordion = Object.assign(accordion, this.accordion);
+  - this.accordion = Object.assign(this.accordion, accordion);
 
 article class='c-accordion mb-1'
   header class='c-accordion__header'

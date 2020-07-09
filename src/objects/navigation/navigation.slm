@@ -6,7 +6,7 @@
 
 / Inherit overrides
 - if (typeof navigation !== 'undefined')
-  - this.navigation = Object.assign(navigation, this.navigation);
+  - this.navigation = Object.assign(this.navigation, navigation);
 
 /! { @role        Use role='navigation' in production layouts. Identifies the nav as a major landmark }
 /! { @aria-label  Ensures a unique landmark }

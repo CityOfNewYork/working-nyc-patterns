@@ -6,7 +6,7 @@
 
 / Inherit overrides
 - if (typeof mobileMenu !== 'undefined')
-  - this['mobile-menu'] = Object.assign(mobileMenu, this['mobile-menu']);
+  - this['mobile-menu'] = Object.assign(this['mobile-menu'], mobileMenu);
 
 /! { @id     Identifies the Mobile Menu for toggling }
 /! { @class  Add "o-mobile-menu-fixed" in production layouts }

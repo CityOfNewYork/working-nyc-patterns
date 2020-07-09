@@ -6,7 +6,7 @@
 
 / Inherit overrides
 - if (typeof search !== 'undefined')
-  - this.search = Object.assign(search, this.search);
+  - this.search = Object.assign(this.search, search);
 
 /! { @id     Identifies Search for toggling }
 /! { @class  Add "o-search-fixed" in production layouts }

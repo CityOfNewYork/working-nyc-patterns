@@ -6,13 +6,13 @@
 
 / Inherit overrides
 - if (typeof card !== 'undefined')
-  - this.card = Object.assign(card, this.card);
+  - this.card = Object.assign(this.card, card);
 
 article class='c-card ${this.card.class}'
   header class='c-card__header'
     h3 class='c-card__title mt-0 mb-2'
       - if this.card.title
-        a href='${this.card.url}'
+        a href='${this.baseUrl}${this.card.url}'
           == this.card.title
 
     - if this.card.status
@@ -40,7 +40,7 @@ article class='c-card ${this.card.class}'
             == feature.text
 
     - if this.card.cta
-      a href='${this.card.url}' class='c-card__cta btn btn-secondary btn-next'
+      a href='${this.baseUrl}${this.card.url}' class='c-card__cta btn btn-secondary btn-next'
         svg class='icon-wnyc-ui' aria-hidden='true'
           use xlink:href='#icon-wnyc-ui-arrow-left'
 

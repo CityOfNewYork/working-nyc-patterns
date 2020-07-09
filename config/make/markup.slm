@@ -6,6 +6,6 @@
 
 / Inherit overrides
 - if (typeof {{ pattern }} !== 'undefined')
-  - this['{{ pattern }}'] = Object.assign({{ pattern }}, this['{{ pattern }}']);
+  - this['{{ pattern }}'] = Object.assign(this['{{ pattern }}'], {{ pattern }});
 
 div class='{{ prefix }}{{ pattern }}'
