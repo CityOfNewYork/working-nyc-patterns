@@ -2,13 +2,14 @@
 
 class {{ Pattern }} {
   /**
+   * @constructor
+   *
    * @param  {Object}  settings  This could be some configuration
    *                             options. for the pattern module.
    * @param  {Object}  data      This could be a set of data needed
    *                             for the pattern module to render.
 
    * @return {Object}            The instantiated pattern
-   * @constructor
    */
   constructor(settings = {}, data = {}) {
     this.data = data;
@@ -23,7 +24,7 @@ class {{ Pattern }} {
   }
 }
 
-/**  */
+/** @type  String  Main DOM selector */
 {{ Pattern }}.selector = '[data-js*=\"{{ pattern }}\"]';
 
 export default {{ Pattern }};
