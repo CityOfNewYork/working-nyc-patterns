@@ -10,42 +10,49 @@
   div class='bg-scale-2'
     main id='content' class='bg-scale-1'
       div
-        div class='layout-content sticky top-0 bg-scale-1 z-10 overflow-hidden'
-          nav class='c-utility'
-            a href='${this.baseUrl}/demos/programs/index' class='btn-link me-auto'
+        div class='c-dropdown layout-content sticky top-0 bg-scale-1 z-10'
+          nav class='c-utility' aria-label='utility'
+            a href='${this.baseUrl}/demos/index' class='btn-link me-auto'
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-chevron-left'
 
               span Home
 
-            button class='btn btn-small btn-primary' data-js='toggle' aria-controls='aria-c-filter'
+            button class='btn btn-small btn-primary' data-js='dropdown' aria-controls='aria-c-filter' aria-expanded='false'
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-sliders'
 
               span Filter
 
-            button class='btn btn-small btn-primary' data-js='toggle' aria-controls='aria-c-saved'
+            button class='btn btn-small btn-primary' data-js='toggle' aria-controls='aria-c-saved' aria-expanded='false'
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-bookmark'
 
               span Saved
 
           div#aria-c-filter class='layout-content hidden' aria-hidden='true'
-            div class='py-2'
-              form tabindex='-1'
+            div class='wrap py-2'
+              form class='layout-rows-gutter' tabindex='-1'
                 - for (let i in this.filters)
                   - filter = this.filters[i]
-                  fieldset class='mb-4' tabindex='-1'
-                    legend class='wrap h4 text-alt' tabindex='-1' = `— ${filter.legend}`
+                  fieldset tabindex='-1'
+                    legend class='h4 block w-full m-0 py-2 text-alt sticky top-0 bg-scale-1' tabindex='-1'
+                      svg class='icon icon-2 ms-2 me-1' aria-hidden='true'
+                        use xlink:href='#icon-wnyc-dash'
 
-                    div class=''
-                      div class='wrap layout-rows tablet:layout-two-columns'
-                        - for (let x in filter.options)
-                          div class='tablet:pe-1 pb-1'
-                            - option = this.filters[i].options[x]
-                            - option.tabindex = '-1'
-                            - option.class = 'w-full'
-                            == this.include('/elements/options/options')
+                      = filter.legend
+
+                    div class='layout-rows tablet:layout-two-columns'
+                      - for (let x in filter.options)
+                        div class='tablet:pe-1 pb-1'
+                          - option = this.filters[i].options[x]
+                          - option.tabindex = '-1'
+                          - option.class = 'w-full'
+                          == this.include('/elements/options/options')
+
+                div class='sticky bottom-0 p-2 text-center bg-scale-1'
+                  button class='btn btn-primary btn-tertiary' data-js='dropdown' aria-controls='aria-c-filter' tabindex='-1'
+                    | See {{ # }} programs
 
           div#aria-c-saved class='layout-content hidden' aria-hidden='true'
             div class='page-max wrap py-2'
@@ -61,12 +68,12 @@
                 | Programs
 
               nav class='o-header__breadcrumbs'
-                a Home
+                a href='${this.baseUrl}/demos/index' Home
 
                 svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
                   use xlink:href='#icon-wnyc-ui-chevron-right'
 
-                a Programs
+                b Programs
 
         section class='page-max'
           div class='py-2 wrap layout-rows-gutter tablet:layout-two-columns-gutter desktop:layout-three-columns-gutter'
