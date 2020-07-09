@@ -14,6 +14,7 @@ import WebShare from '@nycopportunity/patterns-framework/src/utilities/web-share
 
 // Components
 import Accordion from '../components/accordion/accordion';
+import Dropdown from '../components/dropdown/dropdown';
 // import ... from '../components/...';
 
 // Objects
@@ -29,8 +30,10 @@ import Search from '../objects/search/search';
 class main {
   /**
    * An API for the Icons Utility
+   *
    * @param   {String}  path  The path of the icon file
-   * @return  {Object}        instance of Icons
+   *
+   * @return  {Object}        Instance of Icons
    */
   icons(path = 'svg/icons.svg') {
     return new Icons(path);
@@ -38,7 +41,9 @@ class main {
 
   /**
    * An API for the Toggle Utility
+   *
    * @param   {Object}  settings  Settings for the Toggle Class
+   *
    * @return  {Object}            Instance of toggle
    */
   toggle(settings = false) {
@@ -46,6 +51,7 @@ class main {
   }
 
   /**
+   * API for validating a form.
    *
    * @param  {string}    selector
    * @param  {function}  submit
@@ -62,10 +68,20 @@ class main {
 
   /**
    * An API for the Accordion Component
-   * @return {Object} instance of Accordion
+   *
+   * @return  {Object}  Instance of Accordion
    */
   accordion() {
     return new Accordion();
+  }
+
+  /**
+   * An API for the Dropdown Component
+   *
+   * @return  {Object}  Instance of Dropdown
+   */
+  dropdown() {
+    return new Dropdown();
   }
 
   /**
@@ -101,7 +117,7 @@ class main {
 
   // /**
   //  * An API for the Filter Component
-  //  * @return {Object} instance of Filter
+  //  * @return {Object} Instance of Filter
   //  */
   // filter() {
   //   return new Filter();
@@ -109,7 +125,7 @@ class main {
 
   // /**
   //  * An API for the Nearby Stops Component
-  //  * @return {Object} instance of NearbyStops
+  //  * @return {Object} Instance of NearbyStops
   //  */
   // nearbyStops() {
   //   return new NearbyStops();
@@ -117,7 +133,7 @@ class main {
 
   // /**
   //  * An API for the Newsletter Object
-  //  * @return {Object} instance of Newsletter
+  //  * @return {Object} Instance of Newsletter
   //  */
   // newsletter(element = document.querySelector(Newsletter.selector)) {
   //   return (element) ? new Newsletter(element) : null;
@@ -165,7 +181,7 @@ class main {
   /**
    * An API for the Mobile Nav
    *
-   * @return  {Object}  instance of MobileMenu
+   * @return  {Object}  Instance of MobileMenu
    */
   mobileMenu() {
     return new MobileMenu();
@@ -174,7 +190,7 @@ class main {
   /**
    * An API for the Search Box
    *
-   * @return  {Object}  instance of Search
+   * @return  {Object}  Instance of Search
    */
   search() {
     return new Search();
@@ -183,7 +199,7 @@ class main {
   /**
    * An API for Web Share
    *
-   * @return  {Object}  instance of WebShare
+   * @return  {Object}  Instance of WebShare
    */
   webShare() {
     return new WebShare({
