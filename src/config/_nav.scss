@@ -66,7 +66,7 @@
     padding-top: ($grid * 2);
     padding-bottom: ($grid * 2);
 
-    @include media.screen-and-max-width('mobile-small') {
+    @include media.screen-and-max-width('small') {
       padding-top: $grid;
       padding-bottom: $grid;
     }

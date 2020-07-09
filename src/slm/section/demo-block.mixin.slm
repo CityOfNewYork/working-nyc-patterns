@@ -1,5 +1,5 @@
 = mixin('demo-block', 'markup', 'grid = false');
-  div class='layout-gutter pt-4'
+  div class='layout-rows-gutter pt-4'
     - if (this.grid === 'false')
       = partial('../' + this.markup);
 
@@ -10,7 +10,7 @@
             = this.include(this.markup.replace('.slm', ''));
 
     - if (typeof this.grid === 'object')
-      div class='layout-gutter mobile:layout-two-columns-gutter tablet:layout-three-columns-gutter'
+      div class='layout-rows-gutter mobile:layout-two-columns-gutter tablet:layout-three-columns-gutter'
         - let keys = Object.keys(this.grid);
         - let even = (keys.length % 2 == 0);
 

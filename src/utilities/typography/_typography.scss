@@ -15,7 +15,7 @@ html {
     direction: rtl;
   }
 
-  @media screen and (min-width: media.get('mobile-small')) {
+  @media screen and (min-width: media.get('small')) {
     font-size: map-get(typography.$typography, 'mobile');
   }
 

@@ -28,7 +28,7 @@ nav role='navigation' aria-labelledby='navigation-main-${this.nav.id}' class='${
   a data-toggle-tabindex='10' tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='${this.package.cdn.npm}' NPM Package
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='${this.package.cdn.source}' GitHub Repository
 
-nav role='navigation'  aria-labelledby='aria-lb-elements-${this.nav.id}' class='${this.nav.class.main} desktop:ps-4'
+nav role='navigation' aria-labelledby='aria-lb-elements-${this.nav.id}' class='${this.nav.class.main} desktop:ps-4'
   span id='aria-lb-elements-${this.nav.id}' class='${this.nav.class.heading} ${this.nav.class.divider}' Elements
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='badge' Badge

@@ -25,16 +25,14 @@
   @include layouts.page-min($variant);
   @include layouts.page-max($variant);
   @include layouts.page-min-max($variant);
-  @include layouts.columns($variant);
-  @include layouts.rows($variant);
-  @include layouts.gutter($variant);
-  @include layouts.columns-gutter($variant);
   @include layouts.four-columns($variant);
   @include layouts.four-columns-gutter($variant);
   @include layouts.three-columns($variant);
   @include layouts.three-columns-gutter($variant);
   @include layouts.two-columns($variant);
   @include layouts.two-columns-gutter($variant);
+  @include layouts.rows($variant);
+  @include layouts.rows-gutter($variant);
   @include layouts.sidebar($variant);
   @include layouts.sidebar-small($variant);
   @include layouts.sidebar-gutter($variant);

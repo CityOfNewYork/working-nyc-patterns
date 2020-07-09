@@ -26,7 +26,7 @@ $screens: map-get($tokens, 'screens');
   $value: get($token);
 
   @if $sub == true {
-    $value: get($token) - 1px;
+    $value: get($token) - get('max-width-offset');
   }
 
   @media screen and (max-width: $value) {

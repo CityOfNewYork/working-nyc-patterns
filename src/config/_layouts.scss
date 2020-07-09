@@ -46,36 +46,17 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   }
 }
 
-@mixin columns($variant) {
-  .#{$variant}layout-columns {
-    display: flex;
-    flex-wrap: wrap;
-
-    > *,
-    > .layout__column {
-      width: 50%;
-      max-width: 50%
-    }
-  }
-}
-
 @mixin rows($variant) {
   .#{$variant}layout-rows {
-    display: flex;
-    flex-wrap: wrap;
-
     > *,
     > .layout__column {
-      height: 50%;
       width: 100%;
-      max-width: 100%;
-      flex-basis: 100%
     }
   }
 }
 
-@mixin gutter($variant) {
-  .#{$variant}layout-gutter {
+@mixin rows-gutter($variant) {
+  .#{$variant}layout-rows-gutter {
     > *,
     > .layout__column {
       width: 100%;
@@ -84,29 +65,6 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 
     > *:last-child,
     > .layout__column:last-child {
-      margin-bottom: 0
-    }
-  }
-}
-
-@mixin columns-gutter($variant) {
-  .#{$variant}layout-columns-gutter {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    > *,
-    > .layout__column {
-      margin-bottom: dimensions.$spacing-base;
-      width: calc(50% - #{dimensions.$spacing-base});
-      max-width: calc(50% - #{dimensions.$spacing-base});
-      flex-basis: calc(50% - #{dimensions.$spacing-base})
-    }
-
-    > *:nth-last-child(1),
-    > *:nth-last-child(2),
-    > .layout__column:nth-last-child(1),
-    > .layout__column:nth-last-child(2) {
       margin-bottom: 0
     }
   }

@@ -18,4 +18,6 @@
 
 = content('content')
   = mixin('content-header')
+
+  - option = {}
   = mixin('section', '/elements/options/options', {title: false})

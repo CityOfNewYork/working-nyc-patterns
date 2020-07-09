@@ -302,11 +302,14 @@ module.exports = {
       }
     }
   },
+  // Based on minimum width for devices
   'screens': {
-    'desktop': '960px',
+    'desktop': '1112px',
     'tablet': '768px',
     'mobile': '480px',
-    'mobile-small': '400px'
+    'small': '400px',
+    // There is a max width mixin but its is discouraged over min width
+    'max-width-offset': '0.02px'
   },
   'grid': '8px',
   'dimensions': {
@@ -402,10 +405,11 @@ module.exports = {
     'stroke-line': 'round'
   },
   'layouts': {
-    'layout-columns': true,
+    'page-min': true,
+    'page-max': true,
+    'page-min-max': true,
     'layout-rows': true,
-    'layout-gutter': true,
-    'layout-columns-gutter': true,
+    'layout-rows-gutter': true,
     'layout-four-columns': true,
     'layout-four-columns-gutter': true,
     'layout-three-columns': true,
