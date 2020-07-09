@@ -96,7 +96,7 @@ module.exports = {
     {
       title: '<span data-program="plain-language-name">Commercial driver training</span>',
       subtitle: '<span data-program="title">Red Hook on the Road<span>',
-      url: 'demos/programs/red-hook-on-the-road',
+      url: '/demos/programs/red-hook-on-the-road',
       status: `
         <mark class="badge status-alt me-2" data-program="recruiting">
           Actively Recruiting
@@ -149,7 +149,7 @@ module.exports = {
     {
       title: '<span data-program="plain-language-name">HSE and job prep for youth</span>',
       subtitle: '<span data-program="title">Advance & Earn<span>',
-      url: 'demos/programs/advance-and-earn',
+      url: '/demos/programs/advance-and-earn',
       status: `
         <mark class="badge status-alt me-2" data-program="recruiting">
           Actively Recruiting
@@ -199,7 +199,7 @@ module.exports = {
     {
       title: '<span data-program="plain-language-name">Web development training</span>',
       subtitle: '<span data-program="title">Web Development Fellowship at Fullstack Academy<span>',
-      url: 'demos/programs/web-development-fellowship-at-fullstack-academy',
+      url: '/demos/programs/web-development-fellowship-at-fullstack-academy',
       status: `
         <mark class="badge status-alt me-2" data-program="recruiting">
           Actively Recruiting
@@ -253,7 +253,7 @@ module.exports = {
       type: '<span data-program="sector">Health care</span>',
       title: '<span data-program="plain-language-name">Home health aide training</span>',
       subtitle: '<span data-program="title">SBS Home Health Aide Training<span>',
-      url: 'demos/programs/web-development-fellowship-at-fullstack-academy',
+      url: '/demos/programs/web-development-fellowship-at-fullstack-academy',
       status: `
         <span class="flex me-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
@@ -300,7 +300,7 @@ module.exports = {
       type: '<span data-program="sector">Health care</span>',
       title: '<span data-program="plain-language-name">Math and reading for HSE Prep</span>',
       subtitle: '<span data-program="title">NYC DOE Basic Education Classes<span>',
-      url: 'demos/programs/web-development-fellowship-at-fullstack-academy',
+      url: '/demos/programs/web-development-fellowship-at-fullstack-academy',
       status: `
         <span class="flex me-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
@@ -340,6 +340,74 @@ module.exports = {
         }
       ],
       cta: 'Learn more'
+    }
+  ],
+  filters: [
+    {
+      legend: 'Services',
+      options: [
+        {label: 'Job training'},
+        {label: 'Job certification'},
+        {label: 'Job prep'},
+        {label: 'Paid work'},
+        {label: 'Job placement'},
+        {label: 'Skill building'},
+        {label: 'HSE prep'},
+        {label: 'English language learning'},
+      ]
+    },
+    {
+      legend: 'Sectors',
+      options: [
+        {label: 'Transportation'},
+        {label: 'Health care'},
+        {label: 'Construction'},
+        {label: 'Restaurant'},
+        {label: 'Human resources'},
+        {label: 'Marketing'},
+        {label: 'Media'},
+        {label: 'Security'},
+        {label: 'Technology'},
+        {label: 'Arts'},
+        {label: 'Salon services'},
+        {label: 'IT infrastructure'},
+        {label: 'Manufacturing'}
+      ]
+    },
+    {
+      legend: 'Population',
+      options: [
+        {label: 'Adults (18+)'},
+        {label: 'Youth (16–24)'},
+        {label: 'Immigrant New Yorkers'},
+        {label: 'Unemployed New Yorkers'},
+        {label: 'Low-income New Yorkers'},
+        {label: 'Seniors (55+)'},
+        {label: 'NYCHA residents'},
+        {label: 'People with disabilities'},
+        {label: 'Veterans'}
+      ]
+    },
+    {
+      legend: 'Schedule',
+      options: [
+        {label: 'Full-time'},
+        {label: 'Night classes'},
+        {label: 'Weekends'},
+        {label: 'Flexible'},
+        {label: 'Varies'}
+      ]
+    },
+    {
+      legend: 'Location',
+      options: [
+        {label: 'Brooklyn'},
+        {label: 'Bronx'},
+        {label: 'Manhattan'},
+        {label: 'Queens'},
+        {label: 'Staten Island'},
+        {label: 'Virtual'}
+      ]
     }
   ],
   segments: [
@@ -475,5 +543,6 @@ module.exports = {
   /**
    * Functions
    */
-  createId: () => Math.random().toString(16).substring(2)
+  createId: () => Math.random().toString(16).substring(2),
+  createSlug: (s) => s.toLowerCase().replace(/\s+/g, '-').replace(/-+/g, '-')
 };

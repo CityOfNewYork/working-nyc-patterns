@@ -11,15 +11,13 @@
     main id='content' class='bg-scale-1'
       div
         div class='layout-content sticky top-0 bg-scale-1 z-10'
-          div class='page-max'
-            = partial('/components/utility/utility.slm');
+          = partial('/components/utility/utility.slm');
 
         div class='layout-content'
-          div class='page-max'
-            = partial('/objects/header/header')
+          = partial('/objects/header/header')
 
         section class='bg-scale-2 layout-content'
-          div class='py-4 page-max wrap'
+          div class='py-4 wrap'
             div#more-information class='pt-utility-anchor'
               blockquote class='text-alt'
                 span class='blockquote__mark' aria-hidden='true' —
@@ -92,39 +90,40 @@
               p Fill out the Interest Form to apply. Deadline: June 10
 
       section#contact class='bg-scale-1 layout-content tablet:pt-6'
-        nav class='py-2 page-max wrap tablet:layout-three-columns-gutter'
-          a href='#' class='btn btn-secondary btn-next mb-1 w-full'
-            svg class='icon-wnyc-ui' aria-hidden='true'
-              use xlink:href='#icon-wnyc-ui-arrow-left'
+        div class='wrap'
+          nav class='py-2 tablet:layout-three-columns-gutter'
+            a href='#' class='btn btn-secondary btn-next mb-1 w-full'
+              svg class='icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-arrow-left'
 
-            | Learn More
+              | Learn More
 
-            svg class='icon-wnyc-ui' aria-hidden='true'
-              use xlink:href='#icon-wnyc-ui-arrow-right'
+              svg class='icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-arrow-right'
 
-          a href='#' class='btn btn-secondary btn-next mb-1 w-full'
-            svg class='icon-wnyc-ui' aria-hidden='true'
-              use xlink:href='#icon-wnyc-ui-arrow-left'
+            a href='#' class='btn btn-secondary btn-next mb-1 w-full'
+              svg class='icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-arrow-left'
 
-            | Apply Online
+              | Apply Online
 
-            svg class='icon-wnyc-ui' aria-hidden='true'
-              use xlink:href='#icon-wnyc-ui-arrow-right'
+              svg class='icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-arrow-right'
 
-          a href='#' class='btn btn-secondary btn-next mb-1 w-full'
-            svg class='icon-wnyc-ui' aria-hidden='true'
-              use xlink:href='#icon-wnyc-ui-arrow-left'
+            a href='#' class='btn btn-secondary btn-next mb-1 w-full'
+              svg class='icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-arrow-left'
 
-            | Call
+              | Call
 
-            svg class='icon-wnyc-ui' aria-hidden='true'
-              use xlink:href='#icon-wnyc-ui-arrow-right'
+              svg class='icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-arrow-right'
 
       section class='bg-scale-1 layout-content tablet:pb-6'
-        div class='page-max'
+        div class='wrap'
           div class='text-center text-alt mb-1' —
 
-          nav class='py-2 wrap'
+          nav class='py-2'
             a href='#' class='btn btn-primary btn-next w-full'
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-arrow-left'

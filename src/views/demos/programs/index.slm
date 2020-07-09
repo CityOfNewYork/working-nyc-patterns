@@ -10,33 +10,42 @@
   div class='bg-scale-2'
     main id='content' class='bg-scale-1'
       div
-        div class='layout-content sticky top-0 bg-scale-1 z-10'
-          div class='page-max'
-            nav class='c-utility'
-              a href='${this.baseUrl}/demos/programs/index' class='btn-link me-auto'
-                svg class='icon-wnyc-ui' aria-hidden='true'
-                  use xlink:href='#icon-wnyc-ui-chevron-left'
+        div class='layout-content sticky top-0 bg-scale-1 z-10 overflow-hidden'
+          nav class='c-utility'
+            a href='${this.baseUrl}/demos/programs/index' class='btn-link me-auto'
+              svg class='icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-chevron-left'
 
-                span Home
+              span Home
 
-              button class='btn btn-small btn-primary' data-js='toggle' aria-controls='aria-c-filter'
-                svg class='icon-wnyc-ui' aria-hidden='true'
-                  use xlink:href='#icon-wnyc-ui-sliders'
+            button class='btn btn-small btn-primary' data-js='toggle' aria-controls='aria-c-filter'
+              svg class='icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-sliders'
 
-                span Filter
+              span Filter
 
-              button class='btn btn-small btn-primary' data-js='toggle' aria-controls='aria-c-saved'
-                svg class='icon-wnyc-ui' aria-hidden='true'
-                  use xlink:href='#icon-wnyc-ui-bookmark'
+            button class='btn btn-small btn-primary' data-js='toggle' aria-controls='aria-c-saved'
+              svg class='icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-bookmark'
 
-                span Saved
+              span Saved
 
           div#aria-c-filter class='layout-content hidden' aria-hidden='true'
-            div class='page-max wrap py-2'
-              ul
-                li Option
-                li Option
-                li Option
+            div class='py-2'
+              form tabindex='-1'
+                - for (let i in this.filters)
+                  - filter = this.filters[i]
+                  fieldset class='mb-4' tabindex='-1'
+                    legend class='wrap h4 text-alt' tabindex='-1' = `— ${filter.legend}`
+
+                    div class=''
+                      div class='wrap layout-rows tablet:layout-two-columns'
+                        - for (let x in filter.options)
+                          div class='tablet:pe-1 pb-1'
+                            - option = this.filters[i].options[x]
+                            - option.tabindex = '-1'
+                            - option.class = 'w-full'
+                            == this.include('/elements/options/options')
 
           div#aria-c-saved class='layout-content hidden' aria-hidden='true'
             div class='page-max wrap py-2'
@@ -46,22 +55,21 @@
                 li Saved
 
         div class='layout-content'
-          div class='page-max'
-            header class='o-header'
-              div
-                h1 class='o-header__title'
-                  | Programs
+          header class='o-header'
+            div
+              h1 class='o-header__title'
+                | Programs
 
-                nav class='o-header__breadcrumbs'
-                  a Home
+              nav class='o-header__breadcrumbs'
+                a Home
 
-                  svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
-                    use xlink:href='#icon-wnyc-ui-chevron-right'
+                svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
+                  use xlink:href='#icon-wnyc-ui-chevron-right'
 
-                  a Programs
+                a Programs
 
         section class='page-max'
-          div class='py-2 wrap layout-gutter tablet:layout-two-columns-gutter desktop:layout-three-columns-gutter'
+          div class='py-2 wrap layout-rows-gutter tablet:layout-two-columns-gutter desktop:layout-three-columns-gutter'
             - for (let i in this.programs)
               - card = this.programs[i]
               == this.include('/components/card/card.slm')
