@@ -1,6 +1,6 @@
 / Utility
 
-nav class='c-utility'
+nav class='c-utility' aria-label='utility'
   a href='${this.baseUrl}/demos/programs/index' class='btn-link me-auto'
     svg class='icon-wnyc-ui' aria-hidden='true'
       use xlink:href='#icon-wnyc-ui-chevron-left'

@@ -18,8 +18,8 @@ html lang='en'
   body class='color bg-scale-2 p-body'
     div class='relative z-10 shadow-up tablet:shadow-none'
       - navigation = {class: 'o-navigation-fixed'}
-      - mobileMenu = {class: 'o-mobile-menu-fixed hidden'}
-      - search = {class: 'o-search-fixed hidden'}
+      - mobileMenu = {class: 'o-mobile-menu-fixed hidden', tabindex: '-1', ariaHidden: 'true'}
+      - search = {class: 'o-search-fixed hidden', tabindex: '-1', ariaHidden: 'true'}
       - footer = {class: 'o-footer-fixed', role: 'contentinfo'}
 
       = partial('/objects/navigation/navigation.slm')
@@ -42,6 +42,7 @@ html lang='en'
       var patterns = new WorkingNyc();
 
       patterns.accordion();
+      patterns.dropdown();
       patterns.copy();
       patterns.icons('${this.baseUrl}/svg/icons.svg');
       patterns.mobileMenu();

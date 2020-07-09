@@ -3,25 +3,31 @@
 / Defaults
 - this.search = {}
 - this.search.id = this.createId()
+- this.search.ariaHidden = false
+- this.search.tabindex = false
 
 / Inherit overrides
 - if (typeof search !== 'undefined')
   - this.search = Object.assign(this.search, search);
 
-/! { @id     Identifies Search for toggling }
-/! { @class  Add "o-search-fixed" in production layouts }
-div#aria-c-search class='o-search ${this.search.class}' aria-hidden='true'
+/! { @id           Identifies Search for toggling }
+/! { @class        Add "o-search-fixed" in production layouts }
+/! { @aria-hidden  Add aria-hidden="true" in production layouts }
+div#aria-c-search class='o-search ${this.search.class}' aria-hidden=this.search.ariaHidden
   div class='o-search__close'
-    /! { @tabindex       '-1' ensures focusable elements are not visible when Search is hidden }
+    /! { @tabindex       Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
     /! { @aria-controls  Targets the Search ID for toggling }
-    button tabindex='-1' class='btn-link' data-js='toggle' aria-controls='aria-c-search' aria-expanded='false'
+    /! { @aria-expanded  Indicates the toggled state of the target }
+    button tabindex=this.search.tabindex class='btn-link' data-js='toggle' aria-controls='aria-c-search' aria-expanded='${this.search.ariaHidden ? 'false' : 'true' }'
       svg class='icon-wnyc-ui'
         use xlink:href='#icon-wnyc-ui-x'
 
       span Close
 
-  form tabindex='-1' class='o-search__form'
-    label tabindex='-1' class='label' for='search-field'
+  form tabindex=this.search.tabindex class='o-search__form'
+    label tabindex=this.search.tabindex class='label' for='search-field'
       | Search for programs and occupations
 
+    - inputSearch = {}
+    - inputSearch.tabindex = this.search.tabindex
     = partial('/elements/inputs/inputs-search.slm');

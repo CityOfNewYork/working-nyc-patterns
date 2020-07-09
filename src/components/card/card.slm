@@ -10,7 +10,7 @@
 
 article class='c-card ${this.card.class}'
   header class='c-card__header'
-    h3 class='c-card__title mt-0 mb-2'
+    h2 class='c-card__title mt-0 mb-2'
       - if this.card.title
         a href='${this.baseUrl}${this.card.url}'
           == this.card.title
@@ -21,7 +21,7 @@ article class='c-card ${this.card.class}'
 
   div class='c-card__body'
     - if this.card.subtitle
-      h4 class='c-card__subtitle text-alt mb-1'
+      h3 class='c-card__subtitle text-alt mb-1'
         == this.card.subtitle
 
     - if this.card.summary

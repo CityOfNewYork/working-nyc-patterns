@@ -1,8 +1,17 @@
 / Input Search
 
-div class='input-search'
-  input name='s' value='' placeholder='Search' data-js='search__input' id='search-field' type='text'
+- this.inputSearch = {}
+- this.inputSearch.tabindex = false
 
-  button class='btn-link input-search__submit' type='submit'
+/ Inherit overrides
+- if (typeof inputSearch !== 'undefined')
+  - this.inputSearch = Object.assign(this.inputSearch, inputSearch);
+
+div class='input-search'
+  /! { @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
+  input name='s' value='' placeholder='Search' data-js='search__input' id='search-field' type='text' tabindex=this.inputSearch.tabindex
+
+  /! { @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
+  button class='btn-link input-search__submit' type='submit' tabindex=this.inputSearch.tabindex
     svg class='icon-wnyc-ui icon-4'
       use xlink:href='#icon-wnyc-ui-search'
