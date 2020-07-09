@@ -870,6 +870,27 @@ var WorkingNyc = (function () {
 
   Accordion.selector = '[data-js*="accordion"]';
 
+  var Dropdown = function Dropdown() {
+    this.toggle = new Toggle({
+      selector: Dropdown.selector,
+      after: function () {
+        var body = document.querySelector('body');
+        window.scroll(0, 0);
+        body.classList.toggle(Dropdown.classes.OVERFLOW);
+      }
+    });
+    return this;
+  };
+  /** @type  String  Main DOM selector */
+
+
+  Dropdown.selector = '[data-js*=\"dropdown\"]';
+  /** @type  Object  Various classes used by the script */
+
+  Dropdown.classes = {
+    OVERFLOW: 'overflow-hidden'
+  };
+
   /**
    * The Mobile Nav module
    *
@@ -937,7 +958,9 @@ var WorkingNyc = (function () {
   };
   /**
    * An API for the Toggle Utility
+   *
    * @param {Object}settingsSettings for the Toggle Class
+   *
    * @return{Object}          Instance of toggle
    */
 
@@ -948,6 +971,7 @@ var WorkingNyc = (function () {
     return settings ? new Toggle(settings) : new Toggle();
   };
   /**
+   * API for validating a form.
    *
    * @param{string}  selector
    * @param{function}submit
@@ -962,12 +986,23 @@ var WorkingNyc = (function () {
   };
   /**
    * An API for the Accordion Component
-   * @return {Object} instance of Accordion
+   *
+   * @return{Object}Instance of Accordion
    */
 
 
   main.prototype.accordion = function accordion () {
     return new Accordion();
+  };
+  /**
+   * An API for the Dropdown Component
+   *
+   * @return{Object}Instance of Dropdown
+   */
+
+
+  main.prototype.dropdown = function dropdown () {
+    return new Dropdown();
   };
   /**
    * An API for the Copy Utility
@@ -1001,21 +1036,21 @@ var WorkingNyc = (function () {
   // }
   // /**
   //* An API for the Filter Component
-  //* @return {Object} instance of Filter
+  //* @return {Object} Instance of Filter
   //*/
   // filter() {
   // return new Filter();
   // }
   // /**
   //* An API for the Nearby Stops Component
-  //* @return {Object} instance of NearbyStops
+  //* @return {Object} Instance of NearbyStops
   //*/
   // nearbyStops() {
   // return new NearbyStops();
   // }
   // /**
   //* An API for the Newsletter Object
-  //* @return {Object} instance of Newsletter
+  //* @return {Object} Instance of Newsletter
   //*/
   // newsletter(element = document.querySelector(Newsletter.selector)) {
   // return (element) ? new Newsletter(element) : null;
@@ -1058,7 +1093,7 @@ var WorkingNyc = (function () {
   /**
    * An API for the Mobile Nav
    *
-   * @return{Object}instance of MobileMenu
+   * @return{Object}Instance of MobileMenu
    */
 
 
@@ -1068,7 +1103,7 @@ var WorkingNyc = (function () {
   /**
    * An API for the Search Box
    *
-   * @return{Object}instance of Search
+   * @return{Object}Instance of Search
    */
 
 
@@ -1078,7 +1113,7 @@ var WorkingNyc = (function () {
   /**
    * An API for Web Share
    *
-   * @return{Object}instance of WebShare
+   * @return{Object}Instance of WebShare
    */
 
 

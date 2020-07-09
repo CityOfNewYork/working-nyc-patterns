@@ -51,8 +51,9 @@
     <!--{ @class  Add "o-mobile-menu-fixed" in production layouts }-->
     <aside aria-hidden="true" class="o-mobile-menu o-mobile-menu-fixed hidden" id="aria-c-mobile-menu">
       <div class="o-mobile-menu__close">
-        <!--{ @tabindex       '-1' ensures focusable elements are not visible when the Mobile Menu is hidden }-->
+        <!--{ @tabindex       Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
         <!--{ @aria-controls  Targets the Mobile Menu ID for toggling }-->
+        <!--{ @aria-expanded  Indicates the toggled state of the target }-->
         <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="btn-link" data-js="toggle" tabindex="-1">
           <svg class="icon-wnyc-ui">
             <use xlink:href="#icon-wnyc-ui-x"></use>
@@ -60,18 +61,22 @@
           <span>Close</span>
         </button>
       </div>
-      <nav class="o-mobile-menu__nav">
+      <!--{ @aria-label  Ensures landmarks are unique }-->
+      <nav aria-label="mobile menu" class="o-mobile-menu__nav">
+        <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
         <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index" tabindex="-1">Programs</a>
         <a href="#" tabindex="-1">Events</a>
         <a href="#" tabindex="-1">Trainings</a>
       </nav>
     </aside>
-    <!--{ @id     Identifies Search for toggling }-->
-    <!--{ @class  Add "o-search-fixed" in production layouts }-->
+    <!--{ @id           Identifies Search for toggling }-->
+    <!--{ @class        Add "o-search-fixed" in production layouts }-->
+    <!--{ @aria-hidden  Add aria-hidden="true" in production layouts }-->
     <div aria-hidden="true" class="o-search o-search-fixed hidden" id="aria-c-search">
       <div class="o-search__close">
-        <!--{ @tabindex       '-1' ensures focusable elements are not visible when Search is hidden }-->
+        <!--{ @tabindex       Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
         <!--{ @aria-controls  Targets the Search ID for toggling }-->
+        <!--{ @aria-expanded  Indicates the toggled state of the target }-->
         <button aria-controls="aria-c-search" aria-expanded="false" class="btn-link" data-js="toggle" tabindex="-1">
           <svg class="icon-wnyc-ui">
             <use xlink:href="#icon-wnyc-ui-x"></use>
@@ -82,8 +87,10 @@
       <form class="o-search__form" tabindex="-1">
         <label class="label" for="search-field" tabindex="-1">Search for programs and occupations</label>
         <div class="input-search">
-          <input data-js="search__input" id="search-field" name="s" placeholder="Search" type="text" value="" />
-          <button class="btn-link input-search__submit" type="submit">
+          <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+          <input data-js="search__input" id="search-field" name="s" placeholder="Search" tabindex="-1" type="text" value="" />
+          <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+          <button class="btn-link input-search__submit" tabindex="-1" type="submit">
             <svg class="icon-wnyc-ui icon-4">
               <use xlink:href="#icon-wnyc-ui-search"></use>
             </svg>
@@ -95,84 +102,80 @@
       <main class="bg-scale-1" id="content">
         <div>
           <div class="layout-content sticky top-0 bg-scale-1 z-10">
-            <div class="page-max">
-              <nav class="c-utility">
-                <a class="btn-link me-auto" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index">
-                  <svg aria-hidden="true" class="icon-wnyc-ui">
-                    <use xlink:href="#icon-wnyc-ui-chevron-left"></use>
-                  </svg>
-                  <span>Programs</span>
-                </a>
-                <a class="ms-3 btn btn-link" href="#contact">Contact</a>
-                <a class="btn btn-small btn-primary">
-                  <svg aria-hidden="true" class="icon-wnyc-ui">
-                    <use xlink:href="#icon-wnyc-ui-bookmark"></use>
-                  </svg>
-                  <span>Save</span>
-                </a>
-                <a class="btn btn-small btn-primary" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;Page Title&quot;,&quot;text&quot;:&quot;Description to of the shared content.&quot;,&quot;url&quot;:&quot;https://url/to/share&quot;}" href="#">
-                  <svg aria-hidden="true" class="icon-wnyc-ui">
-                    <use xlink:href="#icon-wnyc-ui-share-2"></use>
-                  </svg>
-                  <span>Share</span>
-                </a>
-              </nav>
-            </div>
+            <nav aria-label="utility" class="c-utility">
+              <a class="btn-link me-auto" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index">
+                <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <use xlink:href="#icon-wnyc-ui-chevron-left"></use>
+                </svg>
+                <span>Programs</span>
+              </a>
+              <a class="ms-3 btn btn-link" href="#contact">Contact</a>
+              <a class="btn btn-small btn-primary">
+                <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <use xlink:href="#icon-wnyc-ui-bookmark"></use>
+                </svg>
+                <span>Save</span>
+              </a>
+              <a class="btn btn-small btn-primary" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;Page Title&quot;,&quot;text&quot;:&quot;Description to of the shared content.&quot;,&quot;url&quot;:&quot;https://url/to/share&quot;}" href="#">
+                <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <use xlink:href="#icon-wnyc-ui-share-2"></use>
+                </svg>
+                <span>Share</span>
+              </a>
+            </nav>
           </div>
           <div class="layout-content">
-            <div class="page-max">
-              <header class="o-header">
-                <div>
-                  <h1 class="o-header__title">Commercial driver training
-                    <br>Red Hook on the Road</h1>
-                  <h2 class="o-header__subtitle text-alt">Brooklyn Workforce Innovations and NYC Small Business Services</h2>
-                  <nav class="o-header__breadcrumbs">
-                    <a>Home</a>
-                    <svg aria-hidden="true" class="o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4">
-                      <use xlink:href="#icon-wnyc-ui-chevron-right"></use>
+            <header class="o-header">
+              <div>
+                <h1 class="o-header__title">Commercial driver training&nbsp;<div>Red Hook on the Road</div>
+                </h1>
+                <h2 class="o-header__subtitle text-alt">Brooklyn Workforce Innovations and NYC Small Business Services</h2>
+                <nav class="o-header__breadcrumbs">
+                  <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/index">Home</a>
+                  <svg aria-hidden="true" class="o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4">
+                    <use xlink:href="#icon-wnyc-ui-chevron-right"></use>
+                  </svg>
+                  <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index">Programs</a>
+                  <svg aria-hidden="true" class="o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4">
+                    <use xlink:href="#icon-wnyc-ui-chevron-right"></use>
+                  </svg>
+                  <b>Commercial driver training - Red Hook on the Road</b>
+                </nav>
+                <p class="small">
+                  <span class="flex items-center">
+                    <svg aria-hidden="true" class="icon-wnyc-ui me-1 icon-2">
+                      <use xlink:href="#icon-wnyc-ui-user-check"></use>
+                    </svg>Actively Recruiting
+                  </span>
+                </p>
+                <p class="small">
+                  <a class="btn btn-link btn-small btn-secondary font-secondary" href="#disability-accommodation">
+                    <svg aria-hidden="true" class="icon icon-2 me-1">
+                      <use xlink:href="#icon-wnyc-accessible"></use>
                     </svg>
-                    <a>Programs</a>
-                    <svg aria-hidden="true" class="o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4">
-                      <use xlink:href="#icon-wnyc-ui-chevron-right"></use>
+                    <span>Accommodates Disabilities</span>
+                  </a>
+                </p>
+                <p class="small">
+                  <a class="btn btn-link btn-small btn-secondary font-secondary" href="#language-access">
+                    <svg aria-hidden="true" class="icon-wnyc-ui me-1 icon-2">
+                      <use xlink:href="#icon-wnyc-ui-translate"></use>
                     </svg>
-                    <a>Commercial Driver - Red Hook on the Road</a>
-                  </nav>
-                  <p class="small">
-                    <span class="flex items-center">
-                      <svg aria-hidden="true" class="icon-wnyc-ui me-1 icon-2">
-                        <use xlink:href="#icon-wnyc-ui-user-check"></use>
-                      </svg>Actively Recruiting
-                    </span>
-                  </p>
-                  <p class="small">
-                    <a class="btn btn-link btn-small btn-secondary font-secondary" href="#disability-accommodation">
-                      <svg aria-hidden="true" class="icon icon-2 me-1">
-                        <use xlink:href="#icon-wnyc-accessible"></use>
-                      </svg>
-                      <span>Accommodates Disabilities</span>
-                    </a>
-                  </p>
-                  <p class="small">
-                    <a class="btn btn-link btn-small btn-secondary font-secondary" href="#language-access">
-                      <svg aria-hidden="true" class="icon-wnyc-ui me-1 icon-2">
-                        <use xlink:href="#icon-wnyc-ui-translate"></use>
-                      </svg>
-                      <span>Accommodates Multiple Languages</span>
-                    </a>
-                  </p>
-                  <p class="small">
-                    <span class="flex items-center">
-                      <svg aria-hidden="true" class="icon-wnyc-ui me-1 icon-2">
-                        <use xlink:href="#icon-wnyc-ui-info"></use>
-                      </svg>Last updated 2 days ago
-                    </span>
-                  </p>
-                </div>
-              </header>
-            </div>
+                    <span>Accommodates Multiple Languages</span>
+                  </a>
+                </p>
+                <p class="small">
+                  <span class="flex items-center">
+                    <svg aria-hidden="true" class="icon-wnyc-ui me-1 icon-2">
+                      <use xlink:href="#icon-wnyc-ui-info"></use>
+                    </svg>Last updated 2 days ago
+                  </span>
+                </p>
+              </div>
+            </header>
           </div>
           <section class="bg-scale-2 layout-content">
-            <div class="py-4 page-max wrap">
+            <div class="py-4 wrap">
               <div class="pt-utility-anchor" id="more-information">
                 <blockquote class="text-alt">
                   <span aria-hidden="true" class="blockquote__mark">—</span>
@@ -247,34 +250,36 @@
           </section>
         </div>
         <section class="bg-scale-1 layout-content tablet:pt-6" id="contact">
-          <nav class="py-2 page-max wrap tablet:layout-three-columns-gutter">
-            <a class="btn btn-secondary btn-next mb-1 w-full" href="#">
-              <svg aria-hidden="true" class="icon-wnyc-ui">
-                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
-              </svg>Learn More<svg aria-hidden="true" class="icon-wnyc-ui">
-                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
-              </svg>
-            </a>
-            <a class="btn btn-secondary btn-next mb-1 w-full" href="#">
-              <svg aria-hidden="true" class="icon-wnyc-ui">
-                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
-              </svg>Apply Online<svg aria-hidden="true" class="icon-wnyc-ui">
-                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
-              </svg>
-            </a>
-            <a class="btn btn-secondary btn-next mb-1 w-full" href="#">
-              <svg aria-hidden="true" class="icon-wnyc-ui">
-                <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
-              </svg>Call<svg aria-hidden="true" class="icon-wnyc-ui">
-                <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
-              </svg>
-            </a>
-          </nav>
+          <div class="wrap">
+            <nav class="py-2 tablet:layout-three-columns-gutter">
+              <a class="btn btn-secondary btn-next mb-1 w-full" href="#">
+                <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+                </svg>Learn More<svg aria-hidden="true" class="icon-wnyc-ui">
+                  <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+                </svg>
+              </a>
+              <a class="btn btn-secondary btn-next mb-1 w-full" href="#">
+                <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+                </svg>Apply Online<svg aria-hidden="true" class="icon-wnyc-ui">
+                  <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+                </svg>
+              </a>
+              <a class="btn btn-secondary btn-next mb-1 w-full" href="#">
+                <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+                </svg>Call<svg aria-hidden="true" class="icon-wnyc-ui">
+                  <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+                </svg>
+              </a>
+            </nav>
+          </div>
         </section>
         <section class="bg-scale-1 layout-content tablet:pb-6">
-          <div class="page-max">
+          <div class="wrap">
             <div class="text-center text-alt mb-1">—</div>
-            <nav class="py-2 wrap">
+            <nav class="py-2">
               <a class="btn btn-primary btn-next w-full" href="#">
                 <svg aria-hidden="true" class="icon-wnyc-ui">
                   <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
@@ -291,7 +296,7 @@
   <!--{ @role        Use role="contentinfo" in production layouts. Identifies the footer as a major landmark }-->
   <!--{ @aria-label  Ensures a unique landmark }-->
   <!--{ @class       Add "o-footer-fixed" in production layouts }-->
-  <footer aria-label="Primary Footer" class="o-footer bg-scale-2 o-footer-fixed">
+  <footer aria-label="Primary Footer" class="o-footer bg-scale-2 o-footer-fixed" role="contentinfo">
     <div class="page-max">
       <div class="o-footer__wrap">
         <nav aria-label="Footer Primary Navigation" class="o-footer__nav o-footer__nav-a">
@@ -336,6 +341,7 @@
   <script type="text/javascript">
     var patterns = new WorkingNyc();
     patterns.accordion();
+    patterns.dropdown();
     patterns.copy();
     patterns.icons('https://cityofnewyork.github.io/nyco-wnyc-patterns/svg/icons.svg');
     patterns.mobileMenu();
