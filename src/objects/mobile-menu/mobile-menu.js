@@ -13,21 +13,35 @@ class MobileMenu {
   /**
    * @constructor
    *
-   * @return {object} The class
+   * @return  {object}  The class
    */
   constructor() {
-    this._toggle = new Toggle({
-      selector: MobileMenu.selector
+    this.selector = MobileMenu.selector;
+
+    this.selectors = MobileMenu.selectors;
+
+    this.toggle = new Toggle({
+      selector: this.selector,
+      after: (toggle) => {
+        if (toggle.target.classList.contains(Toggle.activeClass)) {
+          toggle.target.querySelector(this.selectors.CLOSE).focus();
+        } else {
+          document.querySelector(this.selectors.OPEN).focus();
+        }
+      }
     });
 
     return this;
   }
 }
 
-/**
- * The dom selector for the module
- * @type {String}
- */
+/** @type  {String}  The dom selector for the module */
 MobileMenu.selector = '[data-js*="mobile-menu"]';
+
+/** @type  {Object}  Additional selectors used by the script */
+MobileMenu.selectors = {
+  CLOSE: '[data-js-mobile-menu*="close"]',
+  OPEN: '[data-js-mobile-menu*="open"]'
+};
 
 export default MobileMenu;

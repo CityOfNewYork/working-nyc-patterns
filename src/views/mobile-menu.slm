@@ -8,6 +8,7 @@
 = partial('/slm/partials/head.mixin.slm')
 = partial('/slm/partials/content-header.mixin.slm')
 = partial('/slm/section/section.mixin.slm')
+= partial('/slm/section/section-text.mixin.slm')
 
 / Content blocks
 = content('head')
@@ -19,3 +20,4 @@
 = content('content')
   = mixin('content-header')
   = mixin('section', '/objects/mobile-menu/mobile-menu')
+  = mixin('section-text', '/objects/mobile-menu/readme', {title: 'Usage'})

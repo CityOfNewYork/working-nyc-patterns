@@ -14,14 +14,17 @@
 /! { @class  Add "o-mobile-menu-fixed" in production layouts }
 aside#aria-c-mobile-menu class='o-mobile-menu ${this.mobileMenu.class}' aria-hidden=this.mobileMenu.ariaHidden
   div class='o-mobile-menu__close'
-    /! { @tabindex       Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
-    /! { @aria-controls  Targets the Mobile Menu ID for toggling }
-    /! { @aria-expanded  Indicates the toggled state of the target }
-    button tabindex=this.mobileMenu.tabindex class='btn-link' data-js='toggle' aria-controls='aria-c-mobile-menu' aria-expanded='${this.mobileMenu.ariaHidden ? 'false' : 'true' }'
-      svg class='icon-wnyc-ui'
+    /! { @data-js              "mobile-menu" Adds the toggling utility to close the menu }
+    /! { @data-js-mobile-menu  "close" indicates that this is the primary closing button for the menu. Focus will shift from the open button to the close button when the menu is opened. }
+    /! { @aria-controls        Targets the Mobile Menu ID for toggling }
+    /! { @aria-expanded        Indicates the toggled state of the target }
+    /! { @tabindex             Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
+    button tabindex=this.mobileMenu.tabindex class='btn-link' data-js='mobile-menu' data-js-mobile-menu='close' aria-controls='aria-c-mobile-menu' aria-expanded='${this.mobileMenu.ariaHidden ? 'false' : 'true' }'
+      svg class='icon-wnyc-ui' aria-hidden='true'
         use xlink:href='#icon-wnyc-ui-x'
 
       span Close
+      span class='sr-only' = ' and return to site'
 
   /! { @aria-label  Ensures landmarks are unique }
   nav class='o-mobile-menu__nav' aria-label='mobile menu'

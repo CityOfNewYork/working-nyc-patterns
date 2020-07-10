@@ -35,13 +35,13 @@ nav role='navigation' aria-label='Primary Navigation' class='o-navigation bg-sca
 
   /!   span class='o-navigation__menu-label' Search
 
-  button class='o-navigation__menu-item btn-link desktop:m-0' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
+  button class='o-navigation__menu-item btn-link desktop:m-0' data-js='translate' aria-controls='aria-c-search' aria-expanded='false'
     svg class='o-navigation__menu-icon icon-wnyc-ui'
       use xlink:href='#icon-wnyc-ui-translate'
 
     span class='o-navigation__menu-label' Translate
 
-  button class='o-navigation__menu-item btn-link desktop:hidden' data-js='mobile-menu' aria-controls='aria-c-mobile-menu' aria-expanded='false'
+  button class='o-navigation__menu-item btn-link desktop:hidden' data-js='mobile-menu' data-js-mobile-menu='open' aria-controls='aria-c-mobile-menu' aria-expanded='false'
     svg class='o-navigation__menu-icon icon-wnyc-ui'
       use xlink:href='#icon-wnyc-ui-menu'
 
