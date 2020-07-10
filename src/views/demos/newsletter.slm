@@ -1,0 +1,49 @@
+- this.title = 'Newsletter'
+- this.description = ''
+- this.url = this.baseUrl + '/demos/newsletter'
+
+/ Layout
+= extend('/slm/layouts/demos');
+
+/ Content blocks
+= content('head');
+  = mixin('head');
+
+= content('content');
+  div class='bg-scale-2'
+    main id='content' class='bg-scale-1'
+      div
+        div class='layout-content sticky top-0 bg-scale-1 z-10'
+          nav class='c-utility' aria-label='utility'
+            a href='${this.baseUrl}/demos/index' class='btn-link me-auto'
+              svg class='icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-chevron-left'
+
+              span Home
+
+            a href='#' class='btn btn-small btn-primary' data-js='web-share' data-web-share='{"title": "${this.title}", "text": "${this.description}", "url": "${this.url}"}'
+              svg class='icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-share-2'
+
+              span Share
+
+        div class='layout-content'
+          header class='o-header'
+            div
+              h1 class='o-header__title'
+                | Newsletter
+
+              nav class='o-header__breadcrumbs'
+                a href='${this.baseUrl}/demos/index' Home
+
+                svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
+                  use xlink:href='#icon-wnyc-ui-chevron-right'
+
+                b Newsletter
+
+        section class='bg-scale-2 layout-content'
+          div class='py-4 wrap'
+            = partial('/objects/newsletter/newsletter.slm')
+
+= content('script');
+  / javascript:

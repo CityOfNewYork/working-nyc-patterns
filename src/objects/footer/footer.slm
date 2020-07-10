@@ -16,7 +16,6 @@
 /! { @class       Add "o-footer-fixed" in production layouts }
 footer role=this.footer.role aria-label='Primary Footer' class='o-footer bg-scale-2 ${this.footer.class}'
   div class='page-max'
-    / hr class='divider'
     div class='o-footer__wrap'
       nav aria-label='Footer Primary Navigation' class='o-footer__nav o-footer__nav-a'
         a href='/' class='uppercase text-small no-underline'
@@ -41,10 +40,15 @@ footer role=this.footer.role aria-label='Primary Footer' class='o-footer bg-scal
           svg class='icon-logo-nyco-menu-item' aria-hidden='true'
             use xlink:href='#logo-nyco-secondary'
 
+      /! { @o-footer__break  This empty tag is needed to break the columns }
       div class='o-footer__break'
-        / Needed to break the columns
 
       nav aria-label='Footer Tertiary Navigation' class='o-footer__nav o-footer__nav-c border-none mb-0 pb-0'
+        form action='${this.baseUrl}/demos/newsletter'
+          - question = {label: 'Sign up for our newsletter', description: 'Enter your email below.', type: 'email', name: 'email', required: 'true', class: 'c-question-single', button: 'Submit'}
+
+          = partial('/components/question/question')
+
         a href='http://nyc.gov' target='_blank' rel='nofollow noopener' class='font-secondary font-normal text-inherit no-underline flex items-center pb-1'
           svg class='icon-logo-nyc-copyright fill-white me-1' aria-hidden='true'
             use xlink:href='#logo-nyc'
@@ -58,5 +62,3 @@ footer role=this.footer.role aria-label='Primary Footer' class='o-footer bg-scal
 
         a href='https://www1.nyc.gov/home/terms-of-use.page' target='_blank' rel='nofollow noopener'
           | Terms of Use
-
-      / = partial('/objects/newsletter/newsletter.slm');
