@@ -1,2 +1,0 @@
-- if (this.key)
-  div class='bg-${this.key}'
