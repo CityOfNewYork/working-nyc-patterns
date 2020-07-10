@@ -1,0 +1,32 @@
+/**
+ * Body
+ */
+
+// Dependencies
+@use 'config/dimensions';
+@use 'config/media';
+@use 'config/print';
+
+// Declarations
+.p-body {
+  padding-bottom: dimensions.get('navigation-height-mobile') +
+    dimensions.get('footer-height-small');
+
+  @media screen and (min-width: media.get('small')) {
+    padding-bottom: dimensions.get('navigation-height-mobile') +
+      dimensions.get('footer-height-mobile');
+  }
+
+  @include media.screen-and-min-width('tablet') {
+    padding-bottom: dimensions.get('navigation-height-mobile') +
+      dimensions.get('footer-height-tablet');
+  }
+
+  @include media.screen-and-min-width('tablet') {
+    padding-bottom: 0;
+  }
+}
+
+.print {
+  @include print.base();
+}

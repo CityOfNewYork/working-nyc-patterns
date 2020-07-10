@@ -321,7 +321,7 @@ module.exports = {
     'navigation-logo': '128px',
     'navigation-height': '54px',
     'navigation-height-mobile': '80px', // size is actually determined by padding, etc. this is a reference for other components
-    'footer-height-mobile-sm': '440px',
+    'footer-height-small': '440px',
     'footer-height-mobile': '581px',
     'footer-height-tablet': '427px',
     'side-bar-width': '18.5rem',
