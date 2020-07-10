@@ -34,13 +34,13 @@
       <!--  svg class='o-navigation__menu-icon icon-wnyc-ui'-->
       <!--    use xlink:href='#icon-wnyc-ui-search'-->
       <!--  span class='o-navigation__menu-label' Search-->
-      <button aria-controls="aria-c-search" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:m-0" data-js="search">
+      <button aria-controls="aria-c-search" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:m-0" data-js="translate">
         <svg class="o-navigation__menu-icon icon-wnyc-ui">
           <use xlink:href="#icon-wnyc-ui-translate"></use>
         </svg>
         <span class="o-navigation__menu-label">Translate</span>
       </button>
-      <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:hidden" data-js="mobile-menu">
+      <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:hidden" data-js="mobile-menu" data-js-mobile-menu="open">
         <svg class="o-navigation__menu-icon icon-wnyc-ui">
           <use xlink:href="#icon-wnyc-ui-menu"></use>
         </svg>
@@ -51,14 +51,17 @@
     <!--{ @class  Add "o-mobile-menu-fixed" in production layouts }-->
     <aside aria-hidden="true" class="o-mobile-menu o-mobile-menu-fixed hidden" id="aria-c-mobile-menu">
       <div class="o-mobile-menu__close">
-        <!--{ @tabindex       Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-        <!--{ @aria-controls  Targets the Mobile Menu ID for toggling }-->
-        <!--{ @aria-expanded  Indicates the toggled state of the target }-->
-        <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="btn-link" data-js="toggle" tabindex="-1">
-          <svg class="icon-wnyc-ui">
+        <!--{ @data-js              "mobile-menu" Adds the toggling utility to close the menu }-->
+        <!--{ @data-js-mobile-menu  "close" indicates that this is the primary closing button for the menu. Focus will shift from the open button to the close button when the menu is opened. }-->
+        <!--{ @aria-controls        Targets the Mobile Menu ID for toggling }-->
+        <!--{ @aria-expanded        Indicates the toggled state of the target }-->
+        <!--{ @tabindex             Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+        <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="btn-link" data-js="mobile-menu" data-js-mobile-menu="close" tabindex="-1">
+          <svg aria-hidden="true" class="icon-wnyc-ui">
             <use xlink:href="#icon-wnyc-ui-x"></use>
           </svg>
           <span>Close</span>
+          <span class="sr-only"> and return to site</span>
         </button>
       </div>
       <!--{ @aria-label  Ensures landmarks are unique }-->

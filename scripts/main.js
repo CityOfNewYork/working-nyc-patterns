@@ -898,18 +898,32 @@ var WorkingNyc = (function () {
    */
 
   var MobileMenu = function MobileMenu() {
-    this._toggle = new Toggle({
-      selector: MobileMenu.selector
+    var this$1 = this;
+
+    this.selector = MobileMenu.selector;
+    this.selectors = MobileMenu.selectors;
+    this.toggle = new Toggle({
+      selector: this.selector,
+      after: function (toggle) {
+        if (toggle.target.classList.contains(Toggle.activeClass)) {
+          toggle.target.querySelector(this$1.selectors.CLOSE).focus();
+        } else {
+          document.querySelector(this$1.selectors.OPEN).focus();
+        }
+      }
     });
     return this;
   };
-  /**
-   * The dom selector for the module
-   * @type {String}
-   */
+  /** @type  {String}  The dom selector for the module */
 
 
   MobileMenu.selector = '[data-js*="mobile-menu"]';
+  /** @type  {Object}  Additional selectors used by the script */
+
+  MobileMenu.selectors = {
+    CLOSE: '[data-js-mobile-menu*="close"]',
+    OPEN: '[data-js-mobile-menu*="open"]'
+  };
 
   /**
    * The Search module
