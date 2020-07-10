@@ -16,7 +16,7 @@
     <!--{ @aria-label  Ensures a unique landmark }-->
     <!--{ @class       Add "o-navigation-fixed" in production layouts }-->
     <nav aria-label="Primary Navigation" class="o-navigation bg-scale-2 o-navigation-fixed" role="navigation">
-      <a class="o-navigation__logo o-navigation__menu-item" href="/">
+      <a class="o-navigation__logo o-navigation__menu-item" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos">
         <span class="sr-only">Working N Y C</span>
         <svg aria-hidden="true" class="hidden tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2">
           <use xlink:href="#logo-wnyc-standard"></use>
@@ -26,9 +26,9 @@
         </svg>
       </a>
       <!--{ @class  Hide menu items for mobile using utilities }-->
-      <a class="hidden desktop:inline-flex" href="/demos/programs/index">Programs</a>
-      <a class="hidden desktop:inline-flex" href="#">Events</a>
-      <a class="hidden desktop:inline-flex" href="#">Trainings</a>
+      <a class="hidden desktop:inline-flex" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index">Programs</a>
+      <a class="hidden desktop:inline-flex" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/events">Events</a>
+      <a class="hidden desktop:inline-flex" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/trainings">Trainings</a>
       <!--{ @class  The nav supports button elements using "btn-link" }-->
       <!--button class='o-navigation__menu-item btn-link' data-js='search' aria-controls='aria-c-search' aria-expanded='false'-->
       <!--  svg class='o-navigation__menu-icon icon-wnyc-ui'-->
@@ -318,8 +318,27 @@
             </svg>
           </a>
         </nav>
+        <!--{ @o-footer__break  This empty tag is needed to break the columns }-->
         <div class="o-footer__break"></div>
         <nav aria-label="Footer Tertiary Navigation" class="o-footer__nav o-footer__nav-c border-none mb-0 pb-0">
+          <form action="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter">
+            <div class="c-question c-question-single">
+              <!--{ @for  Should match the id of the element }-->
+              <label class="c-question__label" for="885d48bfd8f1a">Sign up for our newsletter</label>
+              <p>Enter your email below.</p>
+              <div class="c-question__container">
+                <div class="input">
+                  <!--{ @required  required="true" specifies wether the input is required by a form }-->
+                  <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
+                  <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+                  <input class="c-question-single" id="885d48bfd8f1a" name="email" required="true" type="email" />
+                </div>
+                <div class="c-question__button">
+                  <button class="btn btn-primary btn-small" type="submit">Submit</button>
+                </div>
+              </div>
+            </div>
+          </form>
           <a class="font-secondary font-normal text-inherit no-underline flex items-center pb-1" href="http://nyc.gov" rel="nofollow noopener" target="_blank">
             <svg aria-hidden="true" class="icon-logo-nyc-copyright fill-white me-1">
               <use xlink:href="#logo-nyc"></use>
