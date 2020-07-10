@@ -76,14 +76,14 @@
                 b Programs
 
         section class='page-max'
-          div class='py-2 wrap layout-rows-gutter tablet:layout-two-columns-gutter desktop:layout-three-columns-gutter'
+          div class='wrap layout-rows-gutter tablet:layout-two-columns-gutter desktop:layout-three-columns-gutter'
             - for (let i in this.programs)
               - card = this.programs[i]
               == this.include('/components/card/card.slm')
 
             article aria-hidden='true' &nbsp;
 
-      div class='bg-scale-1 page-max layout-content'
+      div class='bg-scale-1 page-max layout-content py-6'
         div class='py-2 wrap'
           button class='btn btn-tertiary w-full' Show More
 
