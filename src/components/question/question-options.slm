@@ -1,0 +1,23 @@
+/ Question
+
+/ Defaults
+- this.question = {}
+- this.question.label = 'Will you please select an option from the list below?'
+- this.question.options = [{label: 'Option 1'}, {label: 'Option 2'}, {label: 'Option 3'}, {label: 'Option 4'}]
+
+/ Inherit overrides
+- if (typeof question !== 'undefined')
+  - this.question = Object.assign(this.question, question);
+
+/! { @fieldset  Checkbox and radio input groups should be grouped in fieldset tags }
+fieldset class='c-question'
+  /! { @legend  Checkboxes and radio input groups should be labeled by legend tags }
+  legend class='c-question__label'
+    = this.question.label
+
+  - if (this.question.description)
+    p = this.question.description
+
+  div class='c-question__container'
+    - input = this.question;
+    = partial(`/elements/inputs/inputs-options.slm`);

@@ -1,9 +1,12 @@
+- this.title = 'Programs'
+- this.description = ''
+- this.url = `${this.baseUrl}/demos/programs`
+
 / Layout
 = extend('/slm/layouts/demos');
 
 / Content blocks
 = content('head');
-  - this.title = 'Programs'
   = mixin('head');
 
 = content('content');

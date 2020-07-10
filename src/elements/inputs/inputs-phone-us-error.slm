@@ -1,6 +1,0 @@
-/
-/ Input Phone Error
-/
-
-div class='error input-phone-us'
-  input type='text' aria-invalid='true'

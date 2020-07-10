@@ -1,0 +1,40 @@
+/ Question
+
+/ Defaults
+- this.question = {}
+- this.question.id = this.createId()
+- this.question.type = 'text'
+- this.question.label = 'Will you please fill out this required question?'
+- this.question.tabindex = false
+- this.question.required = 'true'
+- this.question.submit = false
+
+/ Inherit overrides
+- if (typeof question !== 'undefined')
+  - this.question = Object.assign(this.question, question);
+  - this.question.value = (question.value) ? question.value : this.createSlug(this.question.label)
+  - this.question.name = (question.name) ? question.name : this.createSlug(this.question.label)
+  - this.question.id = (question.id) ? question.id : this.question.id
+
+div class='c-question ${this.question.class}'
+  /! { @for  Should match the id of the element }
+  label class='c-question__label' for='${this.question.id}'
+    = this.question.label
+
+  - if (this.question.description)
+    p = this.question.description
+
+  div class='c-question__container'
+    - input = this.question;
+    - type = (['text', 'email'].includes(this.question.type)) ? '' : `-${this.question.type}`;
+    = partial(`/elements/inputs/inputs${type}.slm`);
+
+    - if this.question.button
+      div class='c-question__button'
+        button class='btn btn-primary btn-small' type='submit' = this.question.button
+
+        / div aria-hidden='true' class='c-question__spinner' data-js='spinner'
+          / svg class='spinner' version='1.1' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
+            / circle class='spinner__path' cx='12' cy='12' fill='currentColor' r='10'
+
+        / div class='c-question__success' data-js='success' Success

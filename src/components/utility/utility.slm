@@ -16,7 +16,7 @@ nav class='c-utility' aria-label='utility'
 
     span Save
 
-  a href='#' class='btn btn-small btn-primary' data-js='web-share' data-web-share='{"title":"Page Title","text":"Description to of the shared content.","url":"https://url/to/share"}'
+  a href='#' class='btn btn-small btn-primary' data-js='web-share' data-web-share='{"title":"${this.title}","text":"${this.description}","url":"${this.url}"}'
     svg class='icon-wnyc-ui' aria-hidden='true'
       use xlink:href='#icon-wnyc-ui-share-2'
 

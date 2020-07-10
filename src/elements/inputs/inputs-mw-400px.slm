@@ -1,6 +1,0 @@
-/
-/ Inputs 400px
-/
-
-div class='tablet:input-w-400px'
-  input type='text'

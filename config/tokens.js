@@ -63,6 +63,7 @@ module.exports = {
     'button': 'secondary',
     'tables': 'secondary',
     'option': 'secondary',
+    'question': 'secondary',
     'code': 'code',
   },
   'font-weight': {
@@ -81,6 +82,7 @@ module.exports = {
     'normal': 'normal',
     'bold': 'bold',
     'option': 'bold',
+    'question': 'normal',
     'code': 'normal'
   },
   'font-style': {
@@ -96,6 +98,7 @@ module.exports = {
     'small': 'normal',
     'button': 'normal',
     'tables': 'normal',
+    'question': 'normal',
     'normal': 'normal',
     'italic': 'italic'
   },
@@ -113,6 +116,7 @@ module.exports = {
     'button': '1rem',
     'tables': '0.8rem',
     'option': 'inherit',
+    'question': 'inherit',
     'code': '0.72rem'
   },
   'line-height': {
@@ -130,6 +134,7 @@ module.exports = {
     'button': 'normal',
     'tables': 'normal',
     'option': 'normal',
+    'question': 'normal',
     'code': '1.9'
   },
   'typography': {
@@ -222,8 +227,10 @@ module.exports = {
         'smoothing': false
       },
 
-      'input-text': 'default-1',
-      'input-background': 'white',
+      'input': {
+        'text': 'scale-1',
+        'background': 'white'
+      },
 
       'option': {
         'text': 'blue',

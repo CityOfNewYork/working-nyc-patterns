@@ -63,9 +63,10 @@
     div class='c-accordion__body active'
       div class='c-accordion__padding text-center'
         nav class='nav-block'
-          a href='demos/homepage' Homepage (in-progress)
-          a href='demos/programs/index' Programs (in-progress)
-          a href='demos/programs/red-hook-on-the-road' Programs Single (Red Hook on the Road)
+          a href='${this.baseUrl}/demos/index' Homepage
+          a href='${this.baseUrl}/demos/programs/index' Programs
+          a href='${this.baseUrl}/demos/programs/red-hook-on-the-road' Programs Single (Red Hook on the Road)
+          a href='${this.baseUrl}/demos/newsletter' Newsletter
 
   section class='c-accordion m-auto mb-4' style='max-width: 800px'
     header class='c-accordion__header'

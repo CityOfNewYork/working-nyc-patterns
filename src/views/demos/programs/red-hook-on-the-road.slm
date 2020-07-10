@@ -1,9 +1,12 @@
+- this.title = 'Red Hook on the Road'
+- this.description = ''
+- this.url = `${this.baseUrl}/demos/programs/red-hook-on-the-road`
+
 / Layout
 = extend('/slm/layouts/demos');
 
 / Content blocks
 = content('head');
-  - this.title = 'Red Hook on the Road'
   = mixin('head');
 
 = content('content');

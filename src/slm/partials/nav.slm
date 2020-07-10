@@ -37,7 +37,10 @@ nav role='navigation' aria-labelledby='aria-lb-elements-${this.nav.id}' class='$
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='divider' Divider
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='forms' Forms
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='icons' Icons
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='inputs' Inputs
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='inputs'
+    mark class='badge status-secondary' View
+    | &nbsp;Inputs
+
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='labels' Labels
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='layouts' Layouts
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='links' Links
@@ -72,7 +75,10 @@ nav role='navigation' aria-labelledby='aria-lb-components-${this.nav.id}' class=
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='disclaimer' Disclaimer
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='filter' Filter
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='nearby-stops' Nearby Stops
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='question' Question
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='question'
+    mark class='badge status-secondary' View
+    | &nbsp;Question
+
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='share-form' Share Form
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='share-links' Share Links
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='side-nav' Side Nav
@@ -112,7 +118,10 @@ nav role='navigation' aria-labelledby='aria-lb-objects-${this.nav.id}' class='${
     mark class='badge status-secondary' View
     | &nbsp;Navigation
 
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='newsletter' Newsletter
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='newsletter'
+    mark class='badge status-secondary' View
+    | &nbsp;Newsletter
+
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='search'
     mark class='badge status-secondary' View
     | &nbsp;Search

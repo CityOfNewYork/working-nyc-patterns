@@ -25,14 +25,18 @@ $line-height: map-get(tokens.$tokens, 'line-height');
   @return map-get($typography, $token);
 }
 
-@mixin font-family($key: 'body') {
+@function get-font-family($key: 'body') {
   $font-family-key: '#{map-get($font, $key)}-#{language.$language}';
 
   @if language.$language == '' {
     $font-family-key: '#{map-get($font, $key)}';
   }
 
-  font-family: map-get($font-family, $font-family-key);
+  @return map-get($font-family, $font-family-key);
+}
+
+@mixin font-family($token: 'body') {
+  font-family: get-font-family($token);
 }
 
 @mixin set($key: 'body') {
@@ -45,7 +49,7 @@ $line-height: map-get(tokens.$tokens, 'line-height');
 }
 
 @mixin selector-body-elements() {
-  p, ul, ol, li {
+  p, ul, ol, li, th, td {
     @content;
   }
 }

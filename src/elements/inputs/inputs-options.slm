@@ -1,0 +1,12 @@
+/ Options
+
+/ Defaults
+- this.input = {}
+
+/ Inherit overrides
+- if (typeof input !== 'undefined')
+  - this.input = Object.assign(this.input, input);
+
+- for (let i in this.input.options)
+  - option = this.input.options[i];
+  = partial('/elements/options/options.slm');

@@ -1,0 +1,39 @@
+- this.title = 'Question'
+
+/ Layout
+= extend('/slm/layouts/default')
+
+/ Partials
+= partial('/slm/partials/styles.slm')
+= partial('/slm/partials/head.mixin.slm')
+= partial('/slm/partials/content-header.mixin.slm')
+= partial('/slm/section/section.mixin.slm')
+= partial('/slm/section/section-text.mixin.slm')
+
+/ Content blocks
+= content('head')
+  = mixin('head')
+
+= content('header')
+  = mixin('header')
+
+= content('content')
+  = mixin('content-header')
+
+  form id='question-demo'
+    - question = {description: 'Answer to the best of your ability.'}
+    = mixin('section', '/components/question/question')
+
+    - question = {description: 'Feel free to select more than one option.'}
+    = mixin('section', '/components/question/question-options', {title: 'Multiple Choice Questions'})
+
+  = mixin('section-text', '/components/question/readme', {title: 'Validation'})
+
+= content('script');
+  javascript:
+    patterns.valid('#question-demo', function(event) {
+      event.preventDefault();
+
+      return false;
+    });
+

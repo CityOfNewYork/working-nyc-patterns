@@ -134,9 +134,16 @@ $modes: map-get(tokens.$tokens, 'color-modes');
  *
  * @param  $combination  The combination set to use
  */
-@mixin input() {
-  // 'input-text': 'scale-default-1', // and border
-  // 'input-background': 'white',
+@mixin input($combination) {
+  $input: map-get($combination, 'input');
+  $token-text: map-get($input, 'text');
+  $token-background: map-get($input, 'background');
+
+  input, textarea, select,
+  .c-question-single .c-question__container {
+    color: map-get($colors, $token-text);
+    background: map-get($colors, $token-background);
+  }
 }
 
 /**
@@ -348,6 +355,7 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   @include card($combination);
   @include modal($combination);
   @include button($combination);
+  @include input($combination);
   @include option($combination);
   @include code($combination);
   @include statuses($combination);

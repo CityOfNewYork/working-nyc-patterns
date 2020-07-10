@@ -1,6 +1,25 @@
-/
 / Input
-/
 
-div
-  input type='text' id=input__id name=input__name
+/ Defaults
+- this.input = {}
+- this.input.id = this.createId()
+- this.input.type = 'text'
+- this.input.tabindex = false
+- this.input.required = false
+- this.input.pattern = false
+
+/ Inherit overrides
+- if (typeof input !== 'undefined')
+  - this.input = Object.assign(this.input, input);
+  - this.input.type = (input.type) ? input.type : this.input.type
+  - this.input.value = (input.value) ? input.value : this.createSlug(this.input.label)
+  - this.input.name = (input.name) ? input.name : this.createSlug(this.input.label)
+  - this.input.id = (input.id) ? input.id : this.input.id
+  - this.input.required = (input.required) ? input.required : this.input.required
+  - this.input.pattern = (input.pattern) ? input.pattern : this.input.pattern
+
+div class='input'
+  /! { @required  required="true" specifies wether the input is required by a form }
+  /! { @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }
+  /! { @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
+  input type='${this.input.type}' class='${this.input.class}' id='${this.input.id}' name='${this.input.name}' required=this.input.required tabindex=this.input.tabindex

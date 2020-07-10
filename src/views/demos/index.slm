@@ -1,9 +1,12 @@
+- this.title = 'WorkingNYC'
+- this.description = ''
+- this.url = `${this.baseUrl}/demos/index`
+
 / Layout
 = extend('/slm/layouts/demos');
 
 / Content blocks
 = content('head');
-  - this.title = 'WorkingNYC'
   = mixin('head');
 
 = content('content');

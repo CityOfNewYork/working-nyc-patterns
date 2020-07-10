@@ -3,45 +3,51 @@
 //
 
 // Dependencies
+@use 'config/grid' as *;
 @use 'config/dimensions';
 @use 'config/direction';
-@use 'config/color';
+@use 'config/typography';
 
 // Declarations
-@mixin question() {
+@mixin base() {
+  @include typography.set('question');
   margin-bottom: dimensions.$spacing-base;
+
+  @include typography.selector-body-elements() {
+    @include typography.set('question');
+  }
 }
 
-@mixin question-label() {
+@mixin label() {
+  font-weight: bold;
   display: inline-block;
-  font-size: $font-size-base;
-  font-weight: $font-weight-bold;
   vertical-align: top;
-  margin-bottom: (dimensions.$spacing-base / 3);
+  margin-bottom: $grid;
 }
 
-@mixin question-error() {
+@mixin error() {
   position: relative;
 
   &::before {
+    content: '';
     position: absolute;
-    top: .5 * -dimensions.$spacing-base;
-    bottom: -dimensions.$spacing-base;
-    @if $direction == 'rtl' {
+    top: -($grid * 2);
+    bottom: -(dimensions.$spacing-base);
+
+    @if direction.$direction == 'rtl' {
       right: -19px;
     } @else {
       left: -19px;
     }
-    border-left: 3px solid $color-red;
-    content: '';
+
+    border-left: 3px solid;
     display: block;
     width: 0;
   }
 }
 
-@mixin question-error-message() {
-  color: $color-red;
-  font-size: $font-size-small;
-  margin-bottom: (.5 * dimensions.$spacing-base);
+@mixin error-message() {
+  @include typography.set('small');
+  margin-bottom: $grid * 2;
   width: 100%;
 }

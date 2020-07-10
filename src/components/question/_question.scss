@@ -1,0 +1,127 @@
+/**
+ * Question
+ */
+
+// Dependencies
+@use 'config/grid' as *;
+@use 'config/direction';
+@use 'config/dimensions';
+@use 'config/question';
+@use 'config/typography';
+
+// Declarations
+.c-question {
+  @include question.base;
+}
+
+.c-question__container {
+  margin-top: $grid;
+
+  &.error {
+    @include question.error;
+  }
+
+  .error-message {
+    @include question.error-message;
+  }
+}
+
+.c-question__label {
+  @include question.label;
+}
+
+.c-question__info {
+  @include typography.set('small');
+
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.c-question-single {
+  .c-question__container {
+    display: flex;
+    align-items: center;
+    align-items: stretch;
+    padding-#{direction.$end}: $grid;
+
+    // .error & {
+    //   border-color: $color-red
+    // }
+
+    // .success & {
+    //   border-color: $color-green-mid
+    // }
+
+    .input {
+      flex-grow: 1;
+      width: 100%;
+      min-width: 0px;
+
+      input {
+        width: 100%;
+        text-overflow: ellipsis;
+        padding-#{direction.$end}: 0;
+        min-width: 0;
+      }
+    }
+  }
+}
+
+.c-question__button {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+
+  [class*='btn-'] {
+    width: 100%;
+  }
+
+  .processing & {
+    button {
+      opacity: 0;
+      pointer-events: none
+    }
+  }
+
+  .success & {
+    button {
+      display: none
+    }
+
+    &::after {
+      display: none
+    }
+  }
+}
+
+.c-question__success {
+  @include typography.set('small');
+  font-weight: bold;
+  display: none;
+
+  .success & {
+    display: block;
+    padding: (0.75 * dimensions.$spacing-base);
+  }
+}
+
+.c-question__spinner {
+  width: 1rem;
+  height: 1rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  // position: absolute;
+  // left: 50%;
+  // margin-left: -16px;
+  // top: 50%;
+  // margin-top: -16px;
+
+  pointer-events: none;
+
+  .processing & {
+    display: flex
+  }
+}
