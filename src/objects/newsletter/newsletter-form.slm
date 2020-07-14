@@ -10,6 +10,9 @@ div data-js='newsletter-form'
     - question = {label: 'Your email address.', type: 'email', name: 'EMAIL', required: 'true'}
     = partial('/components/question/question.slm');
 
+    - question = {label: 'What is your zip code?', type: 'text', name: 'ZIPCODE', required: 'true'}
+    = partial('/components/question/question.slm');
+
     - question = {label: 'Which borough(s) would you like to recieve updates for?', options: this.newsletter.boroughs}
     = partial('/components/question/question-options.slm');
 
