@@ -70,6 +70,7 @@
         <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index" tabindex="-1">Programs</a>
         <a href="#" tabindex="-1">Events</a>
         <a href="#" tabindex="-1">Trainings</a>
+        <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter" tabindex="-1">Newsletter</a>
       </nav>
     </aside>
     <!--{ @id           Identifies Search for toggling }-->
@@ -321,24 +322,6 @@
         <!--{ @o-footer__break  This empty tag is needed to break the columns }-->
         <div class="o-footer__break"></div>
         <nav aria-label="Footer Tertiary Navigation" class="o-footer__nav o-footer__nav-c border-none mb-0 pb-0">
-          <form action="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter">
-            <div class="c-question c-question-single">
-              <!--{ @for  Should match the id of the element }-->
-              <label class="c-question__label" for="62e39af7d4adf">Sign up for our newsletter</label>
-              <p>Enter your email below.</p>
-              <div class="c-question__container">
-                <div class="input">
-                  <!--{ @required  required="true" specifies wether the input is required by a form }-->
-                  <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
-                  <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                  <input class="c-question-single" id="62e39af7d4adf" name="email" required="true" type="email" />
-                </div>
-                <div class="c-question__button">
-                  <button class="btn btn-primary btn-small" type="submit">Submit</button>
-                </div>
-              </div>
-            </div>
-          </form>
           <a class="font-secondary font-normal text-inherit no-underline flex items-center pb-1" href="http://nyc.gov" rel="nofollow noopener" target="_blank">
             <svg aria-hidden="true" class="icon-logo-nyc-copyright fill-white me-1">
               <use xlink:href="#logo-nyc"></use>
@@ -364,6 +347,8 @@
     patterns.search();
     patterns.toggle();
     patterns.webShare();
+    patterns.newsletter('https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter');
+    patterns.newsletterForm();
   </script>
 </body>
 

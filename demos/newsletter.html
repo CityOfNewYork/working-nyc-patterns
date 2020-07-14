@@ -70,6 +70,7 @@
         <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index" tabindex="-1">Programs</a>
         <a href="#" tabindex="-1">Events</a>
         <a href="#" tabindex="-1">Trainings</a>
+        <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter" tabindex="-1">Newsletter</a>
       </nav>
     </aside>
     <!--{ @id           Identifies Search for toggling }-->
@@ -134,110 +135,127 @@
               </div>
             </header>
           </div>
-          <section class="bg-scale-2 layout-content">
-            <div class="py-4 wrap">
-              <div class="color-card mb-4" data-js="newsletter">
-                <div class="color-card__header p-3">Get Updates</div>
-                <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                <form action="https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;id=aa67394696" class="color-card__body p-3" id="mc-embedded-subscribe-form" method="post" novalidate="true" target="_blank">
-                  <div class="c-question ">
-                    <!--{ @for  Should match the id of the element }-->
-                    <label class="c-question__label" for="c91003e00417f">Receive benefits news and reminders about upcoming open enrollment periods.</label>
-                    <div class="c-question__container">
-                      <div class="input">
-                        <!--{ @required  required="true" specifies wether the input is required by a form }-->
-                        <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
-                        <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="c91003e00417f" name="EMAIL" required="true" type="email" />
+          <section class="layout-content">
+            <div class="wrap">
+              <div class="pb-6">
+                <div data-js="newsletter-form">
+                  <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+                  <form action="https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;id=aa67394696" id="mc-embedded-subscribe-form" method="post" target="_blank">
+                    <!--{ @data-js  This selector is recommended for JavaScript enhanced alerts but not necessary }-->
+                    <article aria-hidden="true" class="c-alert-box color-status-tertiary mb-5 hidden" data-js="alert-warning">
+                      <div class="c-alert-box__graphic">
+                        <svg aria-hidden="true" class="icon-wnyc-ui">
+                          <use xlink:href="#icon-wnyc-ui-info"></use>
+                        </svg>
+                      </div>
+                      <!--{ @aria-live  Setting aria-live="polite" dynamically is recommended for new content that appears based on user interaction }-->
+                      <div class="c-alert-box__body">
+                        <!--{ @data-js-alert  This selector is recommended for JavaScript enhanced alerts but not necessary }-->
+                        <p data-js-alert='text'></p>
+                      </div>
+                    </article>
+                    <!--{ @data-js  This selector is recommended for JavaScript enhanced alerts but not necessary }-->
+                    <article aria-hidden="true" class="c-alert-box color-status-secondary mb-5 hidden" data-js="alert-success">
+                      <div class="c-alert-box__graphic">
+                        <svg aria-hidden="true" class="icon-wnyc-ui">
+                          <use xlink:href="#icon-wnyc-ui-info"></use>
+                        </svg>
+                      </div>
+                      <!--{ @aria-live  Setting aria-live="polite" dynamically is recommended for new content that appears based on user interaction }-->
+                      <div class="c-alert-box__body">
+                        <!--{ @data-js-alert  This selector is recommended for JavaScript enhanced alerts but not necessary }-->
+                        <p data-js-alert='text'></p>
+                      </div>
+                    </article>
+                    <div class="c-question ">
+                      <!--{ @for  Should match the id of the input }-->
+                      <label class="c-question__label" for="12b5f1de097b5">Your email address.</label>
+                      <div class="c-question__container">
+                        <div class="c-question__input">
+                          <div class="input">
+                            <!--{ @required  required="true" specifies wether the input is required by a form }-->
+                            <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
+                            <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+                            <input id="12b5f1de097b5" name="EMAIL" required="true" type="email" />
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <!--{ @fieldset  Checkbox and radio input groups should be grouped in fieldset tags }-->
-                  <fieldset class="c-question">
-                    <!--{ @legend  Checkboxes and radio input groups should be labeled by legend tags }-->
-                    <legend class="c-question__label">Which borough(s) would you like to recieve updates for?</legend>
-                    <div class="c-question__container">
-                      <!--{ @for       Should match the id of the input }-->
-                      <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option " for="mce-group[4369]-4369-0">
+                    <!--{ @fieldset  Checkbox and radio input groups should be grouped in fieldset tags }-->
+                    <fieldset class="c-question">
+                      <!--{ @legend  Checkboxes and radio input groups should be labeled by legend tags }-->
+                      <legend class="c-question__label">Which borough(s) would you like to recieve updates for?</legend>
+                      <div class="c-question__container layout-rows tablet:layout-two-columns-gutter">
+                        <!--{ @for       Should match the id of the input }-->
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="mce-group[4369]-4369-0" name="group[4369][1]" type="checkbox" value="1" />
-                        <span class="option__base">
-                          <svg aria-hidden="true" class="option__graphic">
-                            <use xlink:href="#option-wnyc-checkbox"></use>
-                          </svg>
-                          <span class="option__label">Bronx</span>
-                        </span>
-                      </label>
-                      <!--{ @for       Should match the id of the input }-->
-                      <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option " for="mce-group[4369]-4369-4">
+                        <label class="option " for="mce-group[4369]-4369-0">
+                          <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+                          <input id="mce-group[4369]-4369-0" name="group[4369][1]" type="checkbox" value="1" />
+                          <span class="option__base">
+                            <svg aria-hidden="true" class="option__graphic">
+                              <use xlink:href="#option-wnyc-checkbox"></use>
+                            </svg>
+                            <span class="option__label">Bronx</span>
+                          </span>
+                        </label>
+                        <!--{ @for       Should match the id of the input }-->
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="mce-group[4369]-4369-4" name="group[4369][16]" type="checkbox" value="16" />
-                        <span class="option__base">
-                          <svg aria-hidden="true" class="option__graphic">
-                            <use xlink:href="#option-wnyc-checkbox"></use>
-                          </svg>
-                          <span class="option__label">Staten Island</span>
-                        </span>
-                      </label>
-                      <!--{ @for       Should match the id of the input }-->
-                      <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option " for="mce-group[4369]-4369-3">
+                        <label class="option " for="mce-group[4369]-4369-4">
+                          <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+                          <input id="mce-group[4369]-4369-4" name="group[4369][16]" type="checkbox" value="16" />
+                          <span class="option__base">
+                            <svg aria-hidden="true" class="option__graphic">
+                              <use xlink:href="#option-wnyc-checkbox"></use>
+                            </svg>
+                            <span class="option__label">Staten Island</span>
+                          </span>
+                        </label>
+                        <!--{ @for       Should match the id of the input }-->
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="mce-group[4369]-4369-3" name="group[4369][8]" type="checkbox" value="8" />
-                        <span class="option__base">
-                          <svg aria-hidden="true" class="option__graphic">
-                            <use xlink:href="#option-wnyc-checkbox"></use>
-                          </svg>
-                          <span class="option__label">Queens</span>
-                        </span>
-                      </label>
-                      <!--{ @for       Should match the id of the input }-->
-                      <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option " for="mce-group[4369]-4369-1">
+                        <label class="option " for="mce-group[4369]-4369-3">
+                          <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+                          <input id="mce-group[4369]-4369-3" name="group[4369][8]" type="checkbox" value="8" />
+                          <span class="option__base">
+                            <svg aria-hidden="true" class="option__graphic">
+                              <use xlink:href="#option-wnyc-checkbox"></use>
+                            </svg>
+                            <span class="option__label">Queens</span>
+                          </span>
+                        </label>
+                        <!--{ @for       Should match the id of the input }-->
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="mce-group[4369]-4369-1" name="group[4369][2]" type="checkbox" value="2" />
-                        <span class="option__base">
-                          <svg aria-hidden="true" class="option__graphic">
-                            <use xlink:href="#option-wnyc-checkbox"></use>
-                          </svg>
-                          <span class="option__label">Brooklyn</span>
-                        </span>
-                      </label>
-                      <!--{ @for       Should match the id of the input }-->
-                      <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option " for="mce-group[4369]-4369-2">
+                        <label class="option " for="mce-group[4369]-4369-1">
+                          <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+                          <input id="mce-group[4369]-4369-1" name="group[4369][2]" type="checkbox" value="2" />
+                          <span class="option__base">
+                            <svg aria-hidden="true" class="option__graphic">
+                              <use xlink:href="#option-wnyc-checkbox"></use>
+                            </svg>
+                            <span class="option__label">Brooklyn</span>
+                          </span>
+                        </label>
+                        <!--{ @for       Should match the id of the input }-->
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="mce-group[4369]-4369-2" name="group[4369][4]" type="checkbox" value="4" />
-                        <span class="option__base">
-                          <svg aria-hidden="true" class="option__graphic">
-                            <use xlink:href="#option-wnyc-checkbox"></use>
-                          </svg>
-                          <span class="option__label">Manhattan</span>
-                        </span>
-                      </label>
+                        <label class="option " for="mce-group[4369]-4369-2">
+                          <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+                          <input id="mce-group[4369]-4369-2" name="group[4369][4]" type="checkbox" value="4" />
+                          <span class="option__base">
+                            <svg aria-hidden="true" class="option__graphic">
+                              <use xlink:href="#option-wnyc-checkbox"></use>
+                            </svg>
+                            <span class="option__label">Manhattan</span>
+                          </span>
+                        </label>
+                      </div>
+                    </fieldset>
+                    <!--{ This is a hidden input to help prevent spam }-->
+                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                      <input name="b_d04b7b607bddbd338b416fa89_98ff3f3900" tabindex="-1" type="text" value="" />
                     </div>
-                  </fieldset>
-                  <!--{ This is a hidden input to help prevent spam }-->
-                  <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                    <input name="b_d04b7b607bddbd338b416fa89_98ff3f3900" tabindex="-1" type="text" value="" />
-                  </div>
-                  <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                  <button class="btn-primary" type="submit">Sign Up</button>
-                  <article aria-hidden="true" class="c-alert-box bg-status-warning mt-3 text-small hidden" data-js-newsletter="alert-box-warning">
-                    <div class="c-alert-box__icon">
-                      <div class="c-alert-box__svg bg-icon-warning"></div>
-                    </div>
-                    <div class="c-alert-box__body" data-js-newsletter="alert-box__text"></div>
-                  </article>
-                  <article aria-hidden="true" class="c-alert-box bg-status-success mt-3 text-small hidden" data-js-newsletter="alert-box-success">
-                    <div class="c-alert-box__icon">
-                      <div class="c-alert-box__svg bg-icon-success"></div>
-                    </div>
-                    <div class="c-alert-box__body" data-js-newsletter="alert-box__text"></div>
-                  </article>
-                </form>
+                    <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+                    <button class="btn-primary" type="submit">Submit</button>
+                  </form>
+                </div>
               </div>
             </div>
           </section>
@@ -276,24 +294,6 @@
         <!--{ @o-footer__break  This empty tag is needed to break the columns }-->
         <div class="o-footer__break"></div>
         <nav aria-label="Footer Tertiary Navigation" class="o-footer__nav o-footer__nav-c border-none mb-0 pb-0">
-          <form action="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter">
-            <div class="c-question c-question-single">
-              <!--{ @for  Should match the id of the element }-->
-              <label class="c-question__label" for="d5ad1265d738f">Sign up for our newsletter</label>
-              <p>Enter your email below.</p>
-              <div class="c-question__container">
-                <div class="input">
-                  <!--{ @required  required="true" specifies wether the input is required by a form }-->
-                  <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
-                  <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                  <input class="c-question-single" id="d5ad1265d738f" name="email" required="true" type="email" />
-                </div>
-                <div class="c-question__button">
-                  <button class="btn btn-primary btn-small" type="submit">Submit</button>
-                </div>
-              </div>
-            </div>
-          </form>
           <a class="font-secondary font-normal text-inherit no-underline flex items-center pb-1" href="http://nyc.gov" rel="nofollow noopener" target="_blank">
             <svg aria-hidden="true" class="icon-logo-nyc-copyright fill-white me-1">
               <use xlink:href="#logo-nyc"></use>
@@ -319,6 +319,8 @@
     patterns.search();
     patterns.toggle();
     patterns.webShare();
+    patterns.newsletter('https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter');
+    patterns.newsletterForm();
   </script>
 </body>
 

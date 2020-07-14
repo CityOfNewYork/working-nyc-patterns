@@ -610,6 +610,358 @@ var WorkingNyc = (function () {
     'ERROR_LABEL': 'aria-describedby'
   };
 
+  var e=/^(?:submit|button|image|reset|file)$/i,t=/^(?:input|select|textarea|keygen)/i,n=/(\[[^\[\]]*\])/g;function a(e,t,a){if(t.match(n)){ !function e(t,n,a){if(0===n.length){ return a; }var r=n.shift(),i=r.match(/^\[(.+?)\]$/);if("[]"===r){ return t=t||[],Array.isArray(t)?t.push(e(null,n,a)):(t._values=t._values||[],t._values.push(e(null,n,a))),t; }if(i){var l=i[1],u=+l;isNaN(u)?(t=t||{})[l]=e(t[l],n,a):(t=t||[])[u]=e(t[u],n,a);}else { t[r]=e(t[r],n,a); }return t}(e,function(e){var t=[],a=new RegExp(n),r=/^([^\[\]]*)/.exec(e);for(r[1]&&t.push(r[1]);null!==(r=a.exec(e));){ t.push(r[1]); }return t}(t),a); }else {var r=e[t];r?(Array.isArray(r)||(e[t]=[r]),e[t].push(a)):e[t]=a;}return e}function r(e,t,n){return n=(n=String(n)).replace(/(\r)?\n/g,"\r\n"),n=(n=encodeURIComponent(n)).replace(/%20/g,"+"),e+(e?"&":"")+encodeURIComponent(t)+"="+n}function serialize(n,i){"object"!=typeof i?i={hash:!!i}:void 0===i.hash&&(i.hash=!0);for(var l=i.hash?{}:"",u=i.serializer||(i.hash?a:r),s=n&&n.elements?n.elements:[],c=Object.create(null),o=0;o<s.length;++o){var h=s[o];if((i.disabled||!h.disabled)&&h.name&&t.test(h.nodeName)&&!e.test(h.type)){var p=h.name,f=h.value;if("checkbox"!==h.type&&"radio"!==h.type||h.checked||(f=void 0),i.empty){if("checkbox"!==h.type||h.checked||(f=!1),"radio"===h.type&&(c[h.name]||h.checked?h.checked&&(c[h.name]=!0):c[h.name]=!1),null==f&&"radio"==h.type){ continue }}else if(!f){ continue; }if("select-multiple"!==h.type){ l=u(l,p,f); }else {f=[];for(var v=h.options,m=!1,d=0;d<v.length;++d){var y=v[d];y.selected&&(y.value||i.empty&&!y.value)&&(m=!0,l=i.hash&&"[]"!==p.slice(p.length-2)?u(l,p+"[]",y.value):u(l,p,y.value));}!m&&i.empty&&(l=u(l,p,""));}}}if(i.empty){ for(var p in c){ c[p]||(l=u(l,p,"")); } }return l}
+
+  /**
+   * @class  The Newsletter module
+   */
+  var Newsletter = function Newsletter(element) {
+    var this$1 = this;
+
+    this._el = element;
+
+    this.keys = Newsletter.keys;
+
+    this.endpoints = Newsletter.endpoints;
+
+    this.selectors = Newsletter.selectors;
+
+    this.selector = Newsletter.selector;
+
+    this.stringKeys = Newsletter.stringKeys;
+
+    this.strings = Newsletter.strings;
+
+    this.templates = Newsletter.templates;
+
+    this.classes = Newsletter.classes;
+
+    this.callback = [
+      Newsletter.callback,
+      Math.random().toString().replace('0.', '')
+    ].join('');
+
+    // This sets the script callback function to a global function that
+    // can be accessed by the the requested script.
+    window[this.callback] = function (data) {
+      this$1._callback(data);
+    };
+
+    this.form = new Forms(this._el.querySelector('form'));
+
+    this.form.strings = this.strings;
+
+    this.form.submit = function (event) {
+      event.preventDefault();
+
+      this$1._submit(event)
+        .then(this$1._onload)
+        .catch(this$1._onerror);
+    };
+
+    this.form.watch();
+
+    return this;
+  };
+
+  /**
+   * The form submission method. Requests a script with a callback function
+   * to be executed on our page. The callback function will be passed the
+   * response as a JSON object (function parameter).
+   *
+   * @param {Event}  eventThe form submission event
+   *
+   * @return{Promise}       A promise containing the new script call
+   */
+  Newsletter.prototype._submit = function _submit (event) {
+    event.preventDefault();
+
+    // Serialize the data
+    this._data = serialize(event.target, {hash: true});
+
+    // Switch the action to post-json. This creates an endpoint for mailchimp
+    // that acts as a script that can be loaded onto our page.
+    var action = event.target.action.replace(
+      ((this.endpoints.MAIN) + "?"), ((this.endpoints.MAIN_JSON) + "?")
+    );
+
+    // Add our params to the action
+    action = action + serialize(event.target, {serializer: function () {
+        var params = [], len = arguments.length;
+        while ( len-- ) params[ len ] = arguments[ len ];
+
+      var prev = (typeof params[0] === 'string') ? params[0] : '';
+
+      return (prev + "&" + (params[1]) + "=" + (params[2]));
+    }});
+
+    // Append the callback reference. Mailchimp will wrap the JSON response in
+    // our callback method. Once we load the script the callback will execute.
+    action = action + "&c=window." + (this.callback);
+
+    // Create a promise that appends the script response of the post-json method
+    return new Promise(function (resolve, reject) {
+      var script = document.createElement('script');
+
+      document.body.appendChild(script);
+      script.onload = resolve;
+      script.onerror = reject;
+      script.async = true;
+      script.src = encodeURI(action);
+    });
+  };
+
+  /**
+   * The script onload resolution
+   *
+   * @param {Event}eventThe script on load event
+   *
+   * @return{Class}       The Newsletter class
+   */
+  Newsletter.prototype._onload = function _onload (event) {
+    event.path[0].remove();
+
+    return this;
+  };
+
+  /**
+   * The script on error resolution
+   *
+   * @param {Object}errorThe script on error load event
+   *
+   * @return{Class}        The Newsletter class
+   */
+  Newsletter.prototype._onerror = function _onerror (error) {
+
+    return this;
+  };
+
+  /**
+   * The callback function for the MailChimp Script call
+   *
+   * @param {Object}dataThe success/error message from MailChimp
+   *
+   * @return{Class}      The Newsletter class
+   */
+  Newsletter.prototype._callback = function _callback (data) {
+    if (this[("_" + (data[this._key('MC_RESULT')]))]) {
+      this[("_" + (data[this._key('MC_RESULT')]))](data.msg);
+    }
+
+    return this;
+  };
+
+  /**
+   * Submission error handler
+   *
+   * @param {string}msgThe error message
+   *
+   * @return{Class}      The Newsletter class
+   */
+  Newsletter.prototype._error = function _error (msg) {
+    this._elementsReset();
+    this._messaging('WARNING', msg);
+
+    return this;
+  };
+
+  /**
+   * Submission success handler
+   *
+   * @param {string}msgThe success message
+   *
+   * @return{Class}      The Newsletter class
+   */
+  Newsletter.prototype._success = function _success (msg) {
+    this._elementsReset();
+    this._messaging('SUCCESS', msg);
+
+    return this;
+  };
+
+  /**
+   * Present the response message to the user
+   *
+   * @param {String}typeThe message type
+   * @param {String}msg The message
+   *
+   * @return{Class}       Newsletter
+   */
+  Newsletter.prototype._messaging = function _messaging (type, msg) {
+      var this$1 = this;
+      if ( msg === void 0 ) msg = 'no message';
+
+    var strings = Object.keys(this.stringKeys);
+    var handled = false;
+
+    var alertBox = this._el.querySelector(this.selectors[type]);
+
+    var alertBoxMsg = alertBox.querySelector(
+      this.selectors.ALERT_TEXT
+    );
+
+    // Get the localized string, these should be written to the DOM already.
+    // The utility contains a global method for retrieving them.
+    var stringKeys = strings.filter(function (s) { return msg.includes(this$1.stringKeys[s]); });
+    msg = (stringKeys.length) ? this.strings[stringKeys[0]] : msg;
+    handled = (stringKeys.length) ? true : false;
+
+    // Replace string templates with values from either our form data or
+    // the Newsletter strings object.
+    for (var x = 0; x < this.templates.length; x++) {
+      var template = this.templates[x];
+      var key = template.replace('{{ ', '').replace(' }}', '');
+      var value = this._data[key] || this.strings[key];
+      var reg = new RegExp(template, 'gi');
+
+      msg = msg.replace(reg, (value) ? value : '');
+    }
+
+    if (handled) {
+      alertBoxMsg.innerHTML = msg;
+    } else if (type === 'ERROR') {
+      alertBoxMsg.innerHTML = this.strings.ERR_PLEASE_TRY_LATER;
+    }
+
+    if (alertBox) { this._elementShow(alertBox, alertBoxMsg); }
+
+    return this;
+  };
+
+  /**
+   * The main toggling method
+   *
+   * @return{Class}Newsletter
+   */
+  Newsletter.prototype._elementsReset = function _elementsReset () {
+      var this$1 = this;
+
+    var targets = this._el.querySelectorAll(this.selectors.ALERTS);
+
+    var loop = function ( i ) {
+        if (!targets[i].classList.contains(this$1.classes.HIDDEN)) {
+        targets[i].classList.add(this$1.classes.HIDDEN);
+
+        this$1.classes.ANIMATE.split(' ').forEach(function (item) { return targets[i].classList.remove(item); }
+        );
+
+        // Screen Readers
+        targets[i].setAttribute('aria-hidden', 'true');
+        targets[i].querySelector(this$1.selectors.ALERT_TEXT)
+          .setAttribute('aria-live', 'off');
+      }
+      };
+
+      for (var i = 0; i < targets.length; i++)
+      loop( i );
+
+    return this;
+  };
+
+  /**
+   * The main toggling method
+   *
+   * @param {object}target Message container
+   * @param {object}contentContent that changes dynamically that should
+   *                           be announced to screen readers.
+   *
+   * @return{Class}          Newsletter
+   */
+  Newsletter.prototype._elementShow = function _elementShow (target, content) {
+    target.classList.toggle(this.classes.HIDDEN);
+
+    this.classes.ANIMATE.split(' ').forEach(function (item) { return target.classList.toggle(item); }
+    );
+
+    // Screen Readers
+    target.setAttribute('aria-hidden', 'true');
+
+    if (content) {
+      content.setAttribute('aria-live', 'polite');
+    }
+
+    return this;
+  };
+
+  /**
+   * A proxy function for retrieving the proper key
+   *
+   * @param {string}keyThe reference for the stored keys.
+   *
+   * @return{string}     The desired key.
+   */
+  Newsletter.prototype._key = function _key (key) {
+    return this.keys[key];
+  };
+
+  /** @type  {Object}  API data keys */
+  Newsletter.keys = {
+    MC_RESULT: 'result',
+    MC_MSG: 'msg'
+  };
+
+  /** @type  {Object}  API endpoints */
+  Newsletter.endpoints = {
+    MAIN: '/post',
+    MAIN_JSON: '/post-json'
+  };
+
+  /** @type  {String}  The Mailchimp callback reference. */
+  Newsletter.callback = 'NewsletterCallback';
+
+  /** @type  {Object}  DOM selectors for the instance's concerns */
+  Newsletter.selectors = {
+    ELEMENT: '[data-js="newsletter"]',
+    ALERTS: '[data-js*="alert"]',
+    WARNING: '[data-js="alert-warning"]',
+    SUCCESS: '[data-js="alert-success"]',
+    ALERT_TEXT: '[data-js-alert="text"]'
+  };
+
+  /** @type  {String}  The main DOM selector for the instance */
+  Newsletter.selector = Newsletter.selectors.ELEMENT;
+
+  /** @type  {Object}  String references for the instance */
+  Newsletter.stringKeys = {
+    SUCCESS_CONFIRM_EMAIL: 'Almost finished...',
+    ERR_PLEASE_ENTER_VALUE: 'Please enter a value',
+    ERR_TOO_MANY_RECENT: 'too many',
+    ERR_ALREADY_SUBSCRIBED: 'is already subscribed',
+    ERR_INVALID_EMAIL: 'looks fake or invalid'
+  };
+
+  /** @type  {Object}  Available strings */
+  Newsletter.strings = {
+    VALID_REQUIRED: 'This field is required.',
+    VALID_EMAIL_REQUIRED: 'Email is required.',
+    VALID_EMAIL_INVALID: 'Please enter a valid email.',
+    VALID_CHECKBOX_BOROUGH: 'Please select a borough.',
+    ERR_PLEASE_TRY_LATER: 'There was an error with your submission. ' +
+                          'Please try again later.',
+    SUCCESS_CONFIRM_EMAIL: 'Almost finished... We need to confirm your email ' +
+                           'address. To complete the subscription process, ' +
+                           'please click the link in the email we just sent you.',
+    ERR_PLEASE_ENTER_VALUE: 'Please enter a value',
+    ERR_TOO_MANY_RECENT: 'Recipient "{{ EMAIL }}" has too ' +
+                         'many recent signup requests',
+    ERR_ALREADY_SUBSCRIBED: '{{ EMAIL }} is already subscribed ' +
+                            'to list {{ LIST_NAME }}.',
+    ERR_INVALID_EMAIL: 'This email address looks fake or invalid. ' +
+                       'Please enter a real email address.',
+    LIST_NAME: 'Newsletter'
+  };
+
+  /** @type  {Array}  Placeholders that will be replaced in message strings */
+  Newsletter.templates = [
+    '{{ EMAIL }}',
+    '{{ LIST_NAME }}'
+  ];
+
+  Newsletter.classes = {
+    ANIMATE: 'animated fadeInUp',
+    HIDDEN: 'hidden'
+  };
+
   /**
    * Tracking bus for Google analytics and Webtrends.
    */
@@ -993,10 +1345,16 @@ var WorkingNyc = (function () {
 
 
   main.prototype.valid = function valid (selector, submit) {
-    this.form = new Forms(document.querySelector(selector));
-    this.form.submit = submit;
-    this.form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
-    this.form.watch();
+      if ( submit === void 0 ) submit = false;
+
+    if (document.querySelector(selector)) {
+      var form = new Forms(document.querySelector(selector));
+      form.submit = submit ? submit : function (event) {
+        event.target.submit();
+      };
+      form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+      form.watch();
+    }
   };
   /**
    * An API for the Accordion Component
@@ -1062,14 +1420,66 @@ var WorkingNyc = (function () {
   // nearbyStops() {
   // return new NearbyStops();
   // }
-  // /**
-  //* An API for the Newsletter Object
-  //* @return {Object} Instance of Newsletter
-  //*/
-  // newsletter(element = document.querySelector(Newsletter.selector)) {
-  // return (element) ? new Newsletter(element) : null;
-  // }
-  // /**
+
+  /**
+   * An API for the Newsletter Object
+   *
+   * @return{Object}Instance of Newsletter
+   */
+
+
+  main.prototype.newsletter = function newsletter (endpoint) {
+      if ( endpoint === void 0 ) endpoint = '';
+
+    var element = document.querySelector(Newsletter.selector);
+
+    if (element) {
+      var newsletter = new Newsletter(element);
+      newsletter.form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+
+      window[newsletter.callback] = function (data) {
+        data.response = true;
+        data.email = element.querySelector('input[name="EMAIL"]').value;
+        window.location = endpoint + "?" + Object.keys(data).map(function (k) { return (k + "=" + (encodeURI(data[k]))); }).join('&');
+      };
+
+      return newsletter;
+    }
+  };
+  /**
+   * An API for the Newsletter Object
+   *
+   * @return{Object}Instance of Newsletter
+   */
+
+
+  main.prototype.newsletterForm = function newsletterForm (element) {
+      if ( element === void 0 ) element = document.querySelector('[data-js="newsletter-form"]');
+
+    var params = new URLSearchParams(window.location.search);
+    var response = params.get('response');
+    var newsletter = null;
+
+    if (element) {
+      newsletter = new Newsletter(element);
+      newsletter.form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+    }
+
+    if (response && newsletter) {
+      var email = params.get('email');
+      var input = element.querySelector('input[name="EMAIL"]');
+      input.value = email;
+      newsletter._data = {
+        'result': params.get('result'),
+        'msg': params.get('msg'),
+        'EMAIL': email
+      };
+
+      newsletter._callback(newsletter._data);
+    }
+
+    return newsletter;
+  }; // /**
   //* An API for the AlertBanner Component
   //*
   //* @return{Object}Instance of AlertBanner
