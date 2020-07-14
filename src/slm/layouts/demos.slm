@@ -50,6 +50,9 @@ html lang='en'
       patterns.toggle();
       patterns.webShare();
 
+      patterns.newsletter('${this.baseUrl}/demos/newsletter');
+      patterns.newsletterForm();
+
     = content('script');
 
     / The reload script. This should not be compile during production builds

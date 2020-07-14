@@ -1,0 +1,50 @@
+/**
+ * Alert
+ */
+
+// Dependencies
+@use 'config/grid' as *;
+@use 'config/dimensions';
+@use 'config/direction';
+@use 'config/media';
+
+// Declarations
+.c-alert {
+  background: var(--color-scale-2);
+
+  align-items: stretch;
+  display: flex;
+
+  margin-bottom: dimensions.$spacing-base;
+}
+
+.c-alert__graphic {
+  border-#{direction.$start}: (dimensions.$spacing-base * 0.33) solid var(--color-scale-4);
+  padding: (dimensions.$spacing-base * 0.66);
+  padding-#{direction.$end}: 0;
+  margin-#{direction.$end}: ($grid * 2);
+  display: flex;
+  align-items: center;
+}
+
+[class*="color-status-"] > .c-alert__graphic {
+  border-color: transparent;
+}
+
+.c-alert__graphic > [class*='icon-'] {
+  width: dimensions.$spacing-base;
+  height: dimensions.$spacing-base;
+  display: block;
+  max-width: inherit;
+}
+
+.c-alert__body {
+  flex: 1 1 auto;
+  padding-top: dimensions.$spacing-base;
+  padding-bottom: dimensions.$spacing-base;
+  padding-#{direction.$end}: dimensions.$spacing-base;
+
+  // p:last-child {
+  //   margin-bottom: 0
+  // }
+}

@@ -1,0 +1,25 @@
+- this.title = 'Alert'
+
+/ Layout
+= extend('/slm/layouts/default')
+
+/ Partials
+= partial('/slm/partials/styles.slm')
+= partial('/slm/partials/head.mixin.slm')
+= partial('/slm/partials/content-header.mixin.slm')
+= partial('/slm/section/section.mixin.slm')
+
+/ Content blocks
+= content('head')
+  = mixin('head')
+
+= content('header')
+  = mixin('header')
+
+= content('content')
+  = mixin('content-header')
+
+  - alert = {body: '<p data-js-alert=\'text\'>An alert message.</p>'}
+  = mixin('section', '/components/alert/alert')
+  = mixin('section', '/components/alert/alert-success', {title: 'Success Alert'})
+  = mixin('section', '/components/alert/alert-warning', {title: 'Warning Alert'})

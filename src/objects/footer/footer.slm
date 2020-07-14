@@ -44,11 +44,6 @@ footer role=this.footer.role aria-label='Primary Footer' class='o-footer bg-scal
       div class='o-footer__break'
 
       nav aria-label='Footer Tertiary Navigation' class='o-footer__nav o-footer__nav-c border-none mb-0 pb-0'
-        form action='${this.baseUrl}/demos/newsletter'
-          - question = {label: 'Sign up for our newsletter', description: 'Enter your email below.', type: 'email', name: 'email', required: 'true', class: 'c-question-single', button: 'Submit'}
-
-          = partial('/components/question/question')
-
         a href='http://nyc.gov' target='_blank' rel='nofollow noopener' class='font-secondary font-normal text-inherit no-underline flex items-center pb-1'
           svg class='icon-logo-nyc-copyright fill-white me-1' aria-hidden='true'
             use xlink:href='#logo-nyc'

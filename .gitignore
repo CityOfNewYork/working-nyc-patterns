@@ -46,6 +46,7 @@ npm-debug.log
 !/src/objects/text-controller
 
 !/src/components/accordion
+!/src/components/alert
 !/src/components/card
 !/src/components/dropdown
 !/src/components/question

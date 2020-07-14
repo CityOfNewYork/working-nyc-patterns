@@ -41,7 +41,20 @@
 // manage dependencies (recommended). Dependency examples include Bootstrap,
 // Material Components Web, etc.
 
+// @use 'node_modules/...';
+
+/**
+ * Main
+ */
+
 @use 'elements';
 @use 'components';
 @use 'objects';
+
+/**
+ * Base elements that need to be included after other patterns to take effect
+ */
+
+@use 'elements/base/first-last';
+
 @use 'utilities';

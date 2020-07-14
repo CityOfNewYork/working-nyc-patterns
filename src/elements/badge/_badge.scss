@@ -9,13 +9,20 @@
 
 // Declarations
 .badge {
-  font-size: 90%;
-  line-height: inherit;
+  font-size: badge.$font-size;
+  font-weight: badge.$font-weight;
+  line-height: badge.$line-height;
+  text-transform: badge.$text-transform;
 
   border-radius: badge.$radius;
   display: inline-block;
-  font-weight: bold;
 
   padding: badge.$padding;
-  text-transform: capitalize;
 }
+
+.badge-small {
+  line-height: badge.$line-height-sm;
+  padding: badge.$padding-sm;
+}
+
+

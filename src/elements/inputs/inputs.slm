@@ -7,6 +7,7 @@
 - this.input.tabindex = false
 - this.input.required = false
 - this.input.pattern = false
+- this.input.placeholder = false
 
 / Inherit overrides
 - if (typeof input !== 'undefined')
@@ -22,4 +23,4 @@ div class='input'
   /! { @required  required="true" specifies wether the input is required by a form }
   /! { @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }
   /! { @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
-  input type='${this.input.type}' class='${this.input.class}' id='${this.input.id}' name='${this.input.name}' required=this.input.required tabindex=this.input.tabindex
+  input type='${this.input.type}' class='${this.input.class}' id='${this.input.id}' name='${this.input.name}' required=this.input.required tabindex=this.input.tabindex placeholder=this.input.placeholder

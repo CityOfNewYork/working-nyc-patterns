@@ -136,5 +136,7 @@
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-arrow-right'
 
+      = partial('/objects/newsletter/newsletter')
+
 = content('script');
   / javascript:

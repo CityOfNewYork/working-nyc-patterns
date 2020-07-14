@@ -1,0 +1,2 @@
+- alert = {icon: 'alert-triangle', type: 'warning', class: 'color-status-tertiary', body: '<p data-js-alert=\'text\'>A warning message.</p>'}
+= partial('/components/alert/alert')

@@ -18,6 +18,6 @@ fieldset class='c-question'
   - if (this.question.description)
     p = this.question.description
 
-  div class='c-question__container'
+  div class='c-question__container layout-rows tablet:layout-two-columns-gutter'
     - input = this.question;
     = partial(`/elements/inputs/inputs-options.slm`);

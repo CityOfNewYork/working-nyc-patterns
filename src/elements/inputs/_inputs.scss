@@ -12,10 +12,6 @@
 // Declarations
 input, textarea {
   @include inputs.inputs;
-
-  @include media.screen-and-min-width('tablet') {
-    width: auto;
-  }
 }
 
 input[type='number'] {

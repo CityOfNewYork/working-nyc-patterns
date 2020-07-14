@@ -37,7 +37,7 @@
       h4 id='${id}-example' class='wrap'
         a href='#${id}-example' Demonstration
 
-    div class='bg-scale-2 py-6 mb-6'
+    div class='bg-scale-0 py-6 mb-6'
       div class='page-max flex justify-center py-6'
         div class='wrap'
           == this.include(this.path + '.slm');

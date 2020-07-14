@@ -5,6 +5,7 @@ import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/togg
 import Copy from '@nycopportunity/patterns-framework/src/utilities/copy/copy';
 import Icons from '@nycopportunity/patterns-framework/src/utilities/icons/icons';
 import Forms from '@nycopportunity/patterns-framework/src/utilities/forms/forms';
+import Newsletter from '@nycopportunity/patterns-framework/src/utilities/newsletter/newsletter';
 // import Tooltips from '@nycopportunity/patterns-framework/src/utilities/tooltips/tooltips';
 import Track from '@nycopportunity/patterns-framework/src/utilities/track/track';
 import WebShare from '@nycopportunity/patterns-framework/src/utilities/web-share/web-share';
@@ -56,14 +57,18 @@ class main {
    * @param  {string}    selector
    * @param  {function}  submit
    */
-  valid(selector, submit) {
-    this.form = new Forms(document.querySelector(selector));
+  valid(selector, submit = false) {
+    if (document.querySelector(selector)) {
+      let form = new Forms(document.querySelector(selector));
 
-    this.form.submit = submit;
+      form.submit = (submit) ? submit : (event) => {
+        event.target.submit();
+      };
 
-    this.form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+      form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
 
-    this.form.watch();
+      form.watch();
+    }
   }
 
   /**
@@ -131,13 +136,64 @@ class main {
   //   return new NearbyStops();
   // }
 
-  // /**
-  //  * An API for the Newsletter Object
-  //  * @return {Object} Instance of Newsletter
-  //  */
-  // newsletter(element = document.querySelector(Newsletter.selector)) {
-  //   return (element) ? new Newsletter(element) : null;
-  // }
+  /**
+   * An API for the Newsletter Object
+   *
+   * @return  {Object}  Instance of Newsletter
+   */
+  newsletter(endpoint = '') {
+    let element = document.querySelector(Newsletter.selector);
+
+    if (element) {
+      let newsletter = new Newsletter(element);
+
+      newsletter.form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+
+      window[newsletter.callback] = data => {
+        data.response = true;
+
+        data.email = element.querySelector('input[name="EMAIL"]').value;
+
+        window.location = `${endpoint}?` + Object.keys(data)
+          .map(k => `${k}=${encodeURI(data[k])}`).join('&');
+      };
+
+      return newsletter;
+    }
+  }
+
+  /**
+   * An API for the Newsletter Object
+   *
+   * @return  {Object}  Instance of Newsletter
+   */
+  newsletterForm(element = document.querySelector('[data-js="newsletter-form"]')) {
+    let params = new URLSearchParams(window.location.search);
+    let response = params.get('response');
+    let newsletter = null;
+
+    if (element) {
+      newsletter = new Newsletter(element);
+      newsletter.form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+    }
+
+    if (response && newsletter) {
+      let email = params.get('email');
+      let input = element.querySelector('input[name="EMAIL"]');
+
+      input.value = email;
+
+      newsletter._data = {
+        'result': params.get('result'),
+        'msg': params.get('msg'),
+        'EMAIL': email
+      };
+
+      newsletter._callback(newsletter._data);
+    }
+
+    return newsletter;
+  }
 
   // /**
   //  * An API for the AlertBanner Component

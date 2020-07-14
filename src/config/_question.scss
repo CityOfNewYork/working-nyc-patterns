@@ -11,7 +11,7 @@
 // Declarations
 @mixin base() {
   @include typography.set('question');
-  margin-bottom: dimensions.$spacing-base;
+  margin-bottom: $grid * 5;
 
   @include typography.selector-body-elements() {
     @include typography.set('question');
@@ -35,12 +35,12 @@
     bottom: -(dimensions.$spacing-base);
 
     @if direction.$direction == 'rtl' {
-      right: -19px;
+      right: -14px;
     } @else {
-      left: -19px;
+      left: -14px;
     }
 
-    border-left: 3px solid;
+    border-left: 4px solid;
     display: block;
     width: 0;
   }

@@ -140,7 +140,7 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   $token-background: map-get($input, 'background');
 
   input, textarea, select,
-  .c-question-single .c-question__container {
+  .c-question-single .c-question__input {
     color: map-get($colors, $token-text);
     background: map-get($colors, $token-background);
   }

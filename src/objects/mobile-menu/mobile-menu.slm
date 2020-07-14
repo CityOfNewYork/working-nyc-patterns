@@ -35,5 +35,7 @@ aside#aria-c-mobile-menu class='o-mobile-menu ${this.mobileMenu.class}' aria-hid
 
     a tabindex=this.mobileMenu.tabindex href='#' Trainings
 
+    a tabindex=this.mobileMenu.tabindex href='${this.baseUrl}/demos/newsletter' Newsletter
+
     / button tabindex=this.mobileMenu.tabindex class='btn-link w-full' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
     /   span Search

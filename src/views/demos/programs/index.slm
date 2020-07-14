@@ -25,7 +25,8 @@
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-sliders'
 
-              span Filter
+              span class='me-1' Filters
+              span class='badge badge-small color-status-secondary' 99
 
             button class='btn btn-small btn-primary' data-js='toggle' aria-controls='aria-c-saved' aria-expanded='false'
               svg class='icon-wnyc-ui' aria-hidden='true'
@@ -34,24 +35,20 @@
               span Saved
 
           div#aria-c-filter class='layout-content hidden' aria-hidden='true'
-            div class='wrap py-2'
+            div class='wrap'
               form class='layout-rows-gutter' tabindex='-1'
                 - for (let i in this.filters)
                   - filter = this.filters[i]
                   fieldset tabindex='-1'
-                    legend class='h4 block w-full m-0 py-2 text-alt sticky top-0 bg-scale-1' tabindex='-1'
-                      svg class='icon icon-2 ms-2 me-1' aria-hidden='true'
-                        use xlink:href='#icon-wnyc-dash'
-
+                    legend class='h4 block w-full m-0 py-2 ps-2 text-alt sticky top-0 bg-scale-1' tabindex='-1'
                       = filter.legend
 
-                    div class='layout-rows tablet:layout-two-columns'
+                    div class='layout-rows tablet:layout-two-columns-gutter'
                       - for (let x in filter.options)
-                        div class='tablet:pe-1 pb-1'
-                          - option = this.filters[i].options[x]
-                          - option.tabindex = '-1'
-                          - option.class = 'w-full'
-                          == this.include('/elements/options/options')
+                        - option = this.filters[i].options[x]
+                        - option.tabindex = '-1'
+                        - option.class = 'w-full'
+                        == this.include('/elements/options/options')
 
                 div class='sticky bottom-0 p-2 text-center bg-scale-1'
                   button class='btn btn-primary btn-tertiary' data-js='dropdown' aria-controls='aria-c-filter' tabindex='-1'
@@ -82,13 +79,15 @@
           div class='wrap layout-rows-gutter tablet:layout-two-columns-gutter desktop:layout-three-columns-gutter'
             - for (let i in this.programs)
               - card = this.programs[i]
-              == this.include('/components/card/card.slm')
+              = partial('/components/card/card')
 
             article aria-hidden='true' &nbsp;
 
-      div class='bg-scale-1 page-max layout-content py-6'
-        div class='py-2 wrap'
-          button class='btn btn-tertiary w-full' Show More
+          div class='layout-content py-6'
+            div class='py-2 wrap'
+              button class='btn btn-tertiary w-full' Show More
 
-= content('script');
+      = partial('/objects/newsletter/newsletter')
+
+= content('script')
   / javascript:

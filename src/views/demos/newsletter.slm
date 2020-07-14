@@ -41,9 +41,10 @@
 
                 b Newsletter
 
-        section class='bg-scale-2 layout-content'
-          div class='py-4 wrap'
-            = partial('/objects/newsletter/newsletter.slm')
+        section class='layout-content'
+          div class='wrap'
+            div class='pb-6'
+              = partial('/objects/newsletter/newsletter-form')
 
 = content('script');
   / javascript:

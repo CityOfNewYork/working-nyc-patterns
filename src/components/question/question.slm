@@ -17,7 +17,7 @@
   - this.question.id = (question.id) ? question.id : this.question.id
 
 div class='c-question ${this.question.class}'
-  /! { @for  Should match the id of the element }
+  /! { @for  Should match the id of the input }
   label class='c-question__label' for='${this.question.id}'
     = this.question.label
 
@@ -25,16 +25,17 @@ div class='c-question ${this.question.class}'
     p = this.question.description
 
   div class='c-question__container'
-    - input = this.question;
-    - type = (['text', 'email'].includes(this.question.type)) ? '' : `-${this.question.type}`;
-    = partial(`/elements/inputs/inputs${type}.slm`);
+    div class='c-question__input'
+      - input = this.question;
+      - type = (['text', 'email'].includes(this.question.type)) ? '' : `-${this.question.type}`;
+      = partial(`/elements/inputs/inputs${type}.slm`);
 
-    - if this.question.button
-      div class='c-question__button'
-        button class='btn btn-primary btn-small' type='submit' = this.question.button
+      - if this.question.button
+        div class='c-question__button'
+          button class='btn btn-primary btn-small' type='submit' = this.question.button
 
-        / div aria-hidden='true' class='c-question__spinner' data-js='spinner'
-          / svg class='spinner' version='1.1' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
-            / circle class='spinner__path' cx='12' cy='12' fill='currentColor' r='10'
+          / div aria-hidden='true' class='c-question__spinner' data-js='spinner'
+            / svg class='spinner' version='1.1' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
+              / circle class='spinner__path' cx='12' cy='12' fill='currentColor' r='10'
 
-        / div class='c-question__success' data-js='success' Success
+          / div class='c-question__success' data-js='success' Success
