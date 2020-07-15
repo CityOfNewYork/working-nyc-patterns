@@ -16,7 +16,7 @@
     <!--{ @aria-label  Ensures a unique landmark }-->
     <!--{ @class       Add "o-navigation-fixed" in production layouts }-->
     <nav aria-label="Primary Navigation" class="o-navigation bg-scale-2 o-navigation-fixed" role="navigation">
-      <a class="o-navigation__logo o-navigation__menu-item" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos">
+      <a class="o-navigation__logo o-navigation__menu-item" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/index">
         <span class="sr-only">Working N Y C</span>
         <svg aria-hidden="true" class="hidden tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2">
           <use xlink:href="#logo-wnyc-standard"></use>
@@ -34,12 +34,6 @@
       <!--  svg class='o-navigation__menu-icon icon-wnyc-ui'-->
       <!--    use xlink:href='#icon-wnyc-ui-search'-->
       <!--  span class='o-navigation__menu-label' Search-->
-      <button aria-controls="aria-c-search" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:m-0" data-js="translate">
-        <svg class="o-navigation__menu-icon icon-wnyc-ui">
-          <use xlink:href="#icon-wnyc-ui-translate"></use>
-        </svg>
-        <span class="o-navigation__menu-label">Translate</span>
-      </button>
       <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:hidden" data-js="mobile-menu" data-js-mobile-menu="open">
         <svg class="o-navigation__menu-icon icon-wnyc-ui">
           <use xlink:href="#icon-wnyc-ui-menu"></use>
@@ -57,7 +51,8 @@
         <!--{ @aria-expanded        Indicates the toggled state of the target }-->
         <!--{ @tabindex             Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
         <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="btn-link" data-js="mobile-menu" data-js-mobile-menu="close" tabindex="-1">
-          <svg aria-hidden="true" class="icon-wnyc-ui">
+          <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+          <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
             <use xlink:href="#icon-wnyc-ui-x"></use>
           </svg>
           <span>Close</span>
@@ -113,31 +108,34 @@
                 </svg>
                 <span>Home</span>
               </a>
-              <button aria-controls="aria-c-filter" aria-expanded="false" class="btn btn-small btn-primary" data-js="dropdown">
+              <button aria-controls="aria-c-filter" aria-expanded="false" class="btn btn-small btn-secondary" data-js="dropdown" data-js-dropdown="open">
                 <svg aria-hidden="true" class="icon-wnyc-ui">
                   <use xlink:href="#icon-wnyc-ui-sliders"></use>
                 </svg>
                 <span class="me-1">Filters</span>
                 <span class="badge badge-small color-status-secondary">99</span>
               </button>
-              <button aria-controls="aria-c-saved" aria-expanded="false" class="btn btn-small btn-primary" data-js="toggle">
-                <svg aria-hidden="true" class="icon-wnyc-ui">
-                  <use xlink:href="#icon-wnyc-ui-bookmark"></use>
-                </svg>
-                <span>Saved</span>
-              </button>
             </nav>
             <div aria-hidden="true" class="layout-content hidden" id="aria-c-filter">
               <div class="wrap">
+                <div class="text-end relative z-20">
+                  <button aria-controls="aria-c-filter" aria-expanded="false" class="btn btn-primary btn-small" data-js="dropdown" data-js-dropdown="close" tabindex="-1">
+                    <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
+                      <use xlink:href="#icon-wnyc-ui-x"></use>
+                    </svg>
+                    <span>Close</span>
+                    <span class="sr-only">and return to site</span>
+                  </button>
+                </div>
                 <form class="layout-rows-gutter" tabindex="-1">
                   <fieldset tabindex="-1">
-                    <legend class="h4 block w-full m-0 py-2 ps-2 text-alt sticky top-0 bg-scale-1" tabindex="-1">Services</legend>
+                    <legend class="h4 block w-full m-0 py-2 ps-2 text-alt sticky top-0 z-10 bg-scale-1" tabindex="-1">Services</legend>
                     <div class="layout-rows tablet:layout-two-columns-gutter">
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="d1169b85ba03a" tabindex="-1">
+                      <label class="option w-full" for="a0f82466e1ff7" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="d1169b85ba03a" name="job-training" tabindex="-1" type="checkbox" value="job-training" />
+                        <input id="a0f82466e1ff7" name="job-training" tabindex="-1" type="checkbox" value="job-training" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -147,9 +145,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="bdc29c7a02588" tabindex="-1">
+                      <label class="option w-full" for="cc0db9cd21868" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="bdc29c7a02588" name="job-certification" tabindex="-1" type="checkbox" value="job-certification" />
+                        <input id="cc0db9cd21868" name="job-certification" tabindex="-1" type="checkbox" value="job-certification" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -159,9 +157,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="e523e113efa15" tabindex="-1">
+                      <label class="option w-full" for="3f1418a7c3668" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="e523e113efa15" name="job-prep" tabindex="-1" type="checkbox" value="job-prep" />
+                        <input id="3f1418a7c3668" name="job-prep" tabindex="-1" type="checkbox" value="job-prep" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -171,9 +169,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="adf959ea30119" tabindex="-1">
+                      <label class="option w-full" for="35aa118d6792c" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="adf959ea30119" name="paid-work" tabindex="-1" type="checkbox" value="paid-work" />
+                        <input id="35aa118d6792c" name="paid-work" tabindex="-1" type="checkbox" value="paid-work" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -183,9 +181,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="45f8401a45b94" tabindex="-1">
+                      <label class="option w-full" for="27b92a5a0e4c4" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="45f8401a45b94" name="job-placement" tabindex="-1" type="checkbox" value="job-placement" />
+                        <input id="27b92a5a0e4c4" name="job-placement" tabindex="-1" type="checkbox" value="job-placement" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -195,9 +193,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="191949e23048" tabindex="-1">
+                      <label class="option w-full" for="9cd64d1d8aff9" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="191949e23048" name="skill-building" tabindex="-1" type="checkbox" value="skill-building" />
+                        <input id="9cd64d1d8aff9" name="skill-building" tabindex="-1" type="checkbox" value="skill-building" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -207,9 +205,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="828d15bcd8646" tabindex="-1">
+                      <label class="option w-full" for="1081df57ddcb" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="828d15bcd8646" name="hse-prep" tabindex="-1" type="checkbox" value="hse-prep" />
+                        <input id="1081df57ddcb" name="hse-prep" tabindex="-1" type="checkbox" value="hse-prep" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -219,9 +217,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="8af48822c1332" tabindex="-1">
+                      <label class="option w-full" for="dd786ca25f718" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="8af48822c1332" name="english-language-learning" tabindex="-1" type="checkbox" value="english-language-learning" />
+                        <input id="dd786ca25f718" name="english-language-learning" tabindex="-1" type="checkbox" value="english-language-learning" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -232,13 +230,13 @@
                     </div>
                   </fieldset>
                   <fieldset tabindex="-1">
-                    <legend class="h4 block w-full m-0 py-2 ps-2 text-alt sticky top-0 bg-scale-1" tabindex="-1">Sectors</legend>
+                    <legend class="h4 block w-full m-0 py-2 ps-2 text-alt sticky top-0 z-10 bg-scale-1" tabindex="-1">Sectors</legend>
                     <div class="layout-rows tablet:layout-two-columns-gutter">
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="950a033ae7357" tabindex="-1">
+                      <label class="option w-full" for="fd990a60c1beb" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="950a033ae7357" name="transportation" tabindex="-1" type="checkbox" value="transportation" />
+                        <input id="fd990a60c1beb" name="transportation" tabindex="-1" type="checkbox" value="transportation" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -248,9 +246,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="9f99f700cee78" tabindex="-1">
+                      <label class="option w-full" for="a4af13089ccb" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="9f99f700cee78" name="health-care" tabindex="-1" type="checkbox" value="health-care" />
+                        <input id="a4af13089ccb" name="health-care" tabindex="-1" type="checkbox" value="health-care" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -260,9 +258,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="ea57f3c188052" tabindex="-1">
+                      <label class="option w-full" for="a4961bfb405c4" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="ea57f3c188052" name="construction" tabindex="-1" type="checkbox" value="construction" />
+                        <input id="a4961bfb405c4" name="construction" tabindex="-1" type="checkbox" value="construction" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -272,9 +270,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="75993600ae103" tabindex="-1">
+                      <label class="option w-full" for="c1647182baf28" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="75993600ae103" name="restaurant" tabindex="-1" type="checkbox" value="restaurant" />
+                        <input id="c1647182baf28" name="restaurant" tabindex="-1" type="checkbox" value="restaurant" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -284,9 +282,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="c600e8b39cc51" tabindex="-1">
+                      <label class="option w-full" for="8696adc6c9eae" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="c600e8b39cc51" name="human-resources" tabindex="-1" type="checkbox" value="human-resources" />
+                        <input id="8696adc6c9eae" name="human-resources" tabindex="-1" type="checkbox" value="human-resources" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -296,9 +294,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="1bcc2350ab483" tabindex="-1">
+                      <label class="option w-full" for="d9a5813caefd4" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="1bcc2350ab483" name="marketing" tabindex="-1" type="checkbox" value="marketing" />
+                        <input id="d9a5813caefd4" name="marketing" tabindex="-1" type="checkbox" value="marketing" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -308,9 +306,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="50ec671a41843" tabindex="-1">
+                      <label class="option w-full" for="bce56dc7acdd2" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="50ec671a41843" name="media" tabindex="-1" type="checkbox" value="media" />
+                        <input id="bce56dc7acdd2" name="media" tabindex="-1" type="checkbox" value="media" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -320,9 +318,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="02547892e832b" tabindex="-1">
+                      <label class="option w-full" for="108a7eeb95413" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="02547892e832b" name="security" tabindex="-1" type="checkbox" value="security" />
+                        <input id="108a7eeb95413" name="security" tabindex="-1" type="checkbox" value="security" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -332,9 +330,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="9792578a54c2b" tabindex="-1">
+                      <label class="option w-full" for="3cca43214a0c7" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="9792578a54c2b" name="technology" tabindex="-1" type="checkbox" value="technology" />
+                        <input id="3cca43214a0c7" name="technology" tabindex="-1" type="checkbox" value="technology" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -344,9 +342,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="ce3a20b7f88ad" tabindex="-1">
+                      <label class="option w-full" for="03343c5ee82f7" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="ce3a20b7f88ad" name="arts" tabindex="-1" type="checkbox" value="arts" />
+                        <input id="03343c5ee82f7" name="arts" tabindex="-1" type="checkbox" value="arts" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -356,9 +354,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="e5c54d78da2d4" tabindex="-1">
+                      <label class="option w-full" for="73231699baec3" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="e5c54d78da2d4" name="salon-services" tabindex="-1" type="checkbox" value="salon-services" />
+                        <input id="73231699baec3" name="salon-services" tabindex="-1" type="checkbox" value="salon-services" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -368,9 +366,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="20d880164ff03" tabindex="-1">
+                      <label class="option w-full" for="a29225a50a6ee" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="20d880164ff03" name="it-infrastructure" tabindex="-1" type="checkbox" value="it-infrastructure" />
+                        <input id="a29225a50a6ee" name="it-infrastructure" tabindex="-1" type="checkbox" value="it-infrastructure" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -380,9 +378,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="6078eb4aca894" tabindex="-1">
+                      <label class="option w-full" for="4cfeed3a9f6de" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="6078eb4aca894" name="manufacturing" tabindex="-1" type="checkbox" value="manufacturing" />
+                        <input id="4cfeed3a9f6de" name="manufacturing" tabindex="-1" type="checkbox" value="manufacturing" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -393,13 +391,13 @@
                     </div>
                   </fieldset>
                   <fieldset tabindex="-1">
-                    <legend class="h4 block w-full m-0 py-2 ps-2 text-alt sticky top-0 bg-scale-1" tabindex="-1">Population</legend>
+                    <legend class="h4 block w-full m-0 py-2 ps-2 text-alt sticky top-0 z-10 bg-scale-1" tabindex="-1">Population</legend>
                     <div class="layout-rows tablet:layout-two-columns-gutter">
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="b705efef4b49f" tabindex="-1">
+                      <label class="option w-full" for="7f8c8d23c0653" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="b705efef4b49f" name="adults-18" tabindex="-1" type="checkbox" value="adults-18" />
+                        <input id="7f8c8d23c0653" name="adults-18" tabindex="-1" type="checkbox" value="adults-18" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -409,9 +407,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="40b3ff2f9d203" tabindex="-1">
+                      <label class="option w-full" for="f9194394d6745" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="40b3ff2f9d203" name="youth-1624" tabindex="-1" type="checkbox" value="youth-1624" />
+                        <input id="f9194394d6745" name="youth-1624" tabindex="-1" type="checkbox" value="youth-1624" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -421,9 +419,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="8805a2ff6793e" tabindex="-1">
+                      <label class="option w-full" for="75f65de6c7a04" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="8805a2ff6793e" name="immigrant-new-yorkers" tabindex="-1" type="checkbox" value="immigrant-new-yorkers" />
+                        <input id="75f65de6c7a04" name="immigrant-new-yorkers" tabindex="-1" type="checkbox" value="immigrant-new-yorkers" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -433,9 +431,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="f9b37e620a8f9" tabindex="-1">
+                      <label class="option w-full" for="41e93f9a0ccf" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="f9b37e620a8f9" name="unemployed-new-yorkers" tabindex="-1" type="checkbox" value="unemployed-new-yorkers" />
+                        <input id="41e93f9a0ccf" name="unemployed-new-yorkers" tabindex="-1" type="checkbox" value="unemployed-new-yorkers" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -445,9 +443,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="ba72db97887fd" tabindex="-1">
+                      <label class="option w-full" for="4e55f0f495112" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="ba72db97887fd" name="lowincome-new-yorkers" tabindex="-1" type="checkbox" value="lowincome-new-yorkers" />
+                        <input id="4e55f0f495112" name="lowincome-new-yorkers" tabindex="-1" type="checkbox" value="lowincome-new-yorkers" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -457,9 +455,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="8ed7699a2ddb4" tabindex="-1">
+                      <label class="option w-full" for="b6f5f1729273a" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="8ed7699a2ddb4" name="seniors-55" tabindex="-1" type="checkbox" value="seniors-55" />
+                        <input id="b6f5f1729273a" name="seniors-55" tabindex="-1" type="checkbox" value="seniors-55" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -469,9 +467,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="2ce848309bc09" tabindex="-1">
+                      <label class="option w-full" for="c1e60c728ce31" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="2ce848309bc09" name="nycha-residents" tabindex="-1" type="checkbox" value="nycha-residents" />
+                        <input id="c1e60c728ce31" name="nycha-residents" tabindex="-1" type="checkbox" value="nycha-residents" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -481,9 +479,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="4e711bd89cd6c" tabindex="-1">
+                      <label class="option w-full" for="f009a10e34cf6" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="4e711bd89cd6c" name="people-with-disabilities" tabindex="-1" type="checkbox" value="people-with-disabilities" />
+                        <input id="f009a10e34cf6" name="people-with-disabilities" tabindex="-1" type="checkbox" value="people-with-disabilities" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -493,9 +491,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="f4bf672c4c0b3" tabindex="-1">
+                      <label class="option w-full" for="09f33a70391f8" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="f4bf672c4c0b3" name="veterans" tabindex="-1" type="checkbox" value="veterans" />
+                        <input id="09f33a70391f8" name="veterans" tabindex="-1" type="checkbox" value="veterans" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -506,13 +504,13 @@
                     </div>
                   </fieldset>
                   <fieldset tabindex="-1">
-                    <legend class="h4 block w-full m-0 py-2 ps-2 text-alt sticky top-0 bg-scale-1" tabindex="-1">Schedule</legend>
+                    <legend class="h4 block w-full m-0 py-2 ps-2 text-alt sticky top-0 z-10 bg-scale-1" tabindex="-1">Schedule</legend>
                     <div class="layout-rows tablet:layout-two-columns-gutter">
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="bc60080d5c534" tabindex="-1">
+                      <label class="option w-full" for="865748ff5b5ef" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="bc60080d5c534" name="fulltime" tabindex="-1" type="checkbox" value="fulltime" />
+                        <input id="865748ff5b5ef" name="fulltime" tabindex="-1" type="checkbox" value="fulltime" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -522,9 +520,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="510bfe33a96aa" tabindex="-1">
+                      <label class="option w-full" for="7f02a3e14d2d3" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="510bfe33a96aa" name="night-classes" tabindex="-1" type="checkbox" value="night-classes" />
+                        <input id="7f02a3e14d2d3" name="night-classes" tabindex="-1" type="checkbox" value="night-classes" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -534,9 +532,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="d7c044755789d" tabindex="-1">
+                      <label class="option w-full" for="8092d0f38e8eb" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="d7c044755789d" name="weekends" tabindex="-1" type="checkbox" value="weekends" />
+                        <input id="8092d0f38e8eb" name="weekends" tabindex="-1" type="checkbox" value="weekends" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -546,9 +544,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="48bac59ce2791" tabindex="-1">
+                      <label class="option w-full" for="336cf999f9eac" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="48bac59ce2791" name="flexible" tabindex="-1" type="checkbox" value="flexible" />
+                        <input id="336cf999f9eac" name="flexible" tabindex="-1" type="checkbox" value="flexible" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -558,9 +556,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="0a5ebf2a48e2d" tabindex="-1">
+                      <label class="option w-full" for="49ecbbf42596d" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="0a5ebf2a48e2d" name="varies" tabindex="-1" type="checkbox" value="varies" />
+                        <input id="49ecbbf42596d" name="varies" tabindex="-1" type="checkbox" value="varies" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -571,13 +569,13 @@
                     </div>
                   </fieldset>
                   <fieldset tabindex="-1">
-                    <legend class="h4 block w-full m-0 py-2 ps-2 text-alt sticky top-0 bg-scale-1" tabindex="-1">Location</legend>
+                    <legend class="h4 block w-full m-0 py-2 ps-2 text-alt sticky top-0 z-10 bg-scale-1" tabindex="-1">Location</legend>
                     <div class="layout-rows tablet:layout-two-columns-gutter">
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="62003041c8d7" tabindex="-1">
+                      <label class="option w-full" for="ae4359a9864d2" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="62003041c8d7" name="brooklyn" tabindex="-1" type="checkbox" value="brooklyn" />
+                        <input id="ae4359a9864d2" name="brooklyn" tabindex="-1" type="checkbox" value="brooklyn" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -587,9 +585,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="3c6870a86d97e" tabindex="-1">
+                      <label class="option w-full" for="6f663f11935d6" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="3c6870a86d97e" name="bronx" tabindex="-1" type="checkbox" value="bronx" />
+                        <input id="6f663f11935d6" name="bronx" tabindex="-1" type="checkbox" value="bronx" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -599,9 +597,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="d548751640358" tabindex="-1">
+                      <label class="option w-full" for="125005a6ea072" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="d548751640358" name="manhattan" tabindex="-1" type="checkbox" value="manhattan" />
+                        <input id="125005a6ea072" name="manhattan" tabindex="-1" type="checkbox" value="manhattan" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -611,9 +609,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="c57de858bb328" tabindex="-1">
+                      <label class="option w-full" for="bd2063802ccf5" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="c57de858bb328" name="queens" tabindex="-1" type="checkbox" value="queens" />
+                        <input id="bd2063802ccf5" name="queens" tabindex="-1" type="checkbox" value="queens" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -623,9 +621,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="494af2b2fecfa" tabindex="-1">
+                      <label class="option w-full" for="62cbf59b77885" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="494af2b2fecfa" name="staten-island" tabindex="-1" type="checkbox" value="staten-island" />
+                        <input id="62cbf59b77885" name="staten-island" tabindex="-1" type="checkbox" value="staten-island" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -635,9 +633,9 @@
                       </label>
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <label class="option w-full" for="ebd404cfc6b05" tabindex="-1">
+                      <label class="option w-full" for="7eef194209c16" tabindex="-1">
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="ebd404cfc6b05" name="virtual" tabindex="-1" type="checkbox" value="virtual" />
+                        <input id="7eef194209c16" name="virtual" tabindex="-1" type="checkbox" value="virtual" />
                         <span class="option__base">
                           <svg aria-hidden="true" class="option__graphic">
                             <use xlink:href="#option-wnyc-checkbox"></use>
@@ -647,19 +645,10 @@
                       </label>
                     </div>
                   </fieldset>
-                  <div class="sticky bottom-0 p-2 text-center bg-scale-1">
-                    <button aria-controls="aria-c-filter" class="btn btn-primary btn-tertiary" data-js="dropdown" tabindex="-1">See {{ # }} programs</button>
+                  <div class="py-2 sticky bottom-0 z-10 text-center bg-scale-1">
+                    <button aria-controls="aria-c-filter" class="btn btn-secondary w-full" data-js="dropdown" tabindex="-1">Close and see 99 programs</button>
                   </div>
                 </form>
-              </div>
-            </div>
-            <div aria-hidden="true" class="layout-content hidden" id="aria-c-saved">
-              <div class="page-max wrap py-2">
-                <ul>
-                  <li>Saved</li>
-                  <li>Saved</li>
-                  <li>Saved</li>
-                </ul>
               </div>
             </div>
           </div>
@@ -1009,11 +998,73 @@
                   </a>
                 </div>
               </article>
-              <article aria-hidden="true">&nbsp;</article>
+              <article class="c-card ">
+                <header class="c-card__header">
+                  <h2 class="c-card__title mt-0 mb-2">
+                    <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/web-development-fellowship-at-fullstack-academy">
+                      <span data-program="plain-language-name">Math and reading for HSE Prep</span>
+                    </a>
+                  </h2>
+                  <p class="c-card__status flex items-center">
+                    <span class="flex me-2" data-program="accessible">
+                      <svg aria-hidden="true" class="icon text-alt">
+                        <use xlink:href="#icon-wnyc-accessible"></use>
+                      </svg>
+                      <span class="sr-only">Accommodates Disabilities</span>
+                    </span>
+                    <span class="flex me-2" data-program="multilingual">
+                      <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
+                        <use xlink:href="#icon-wnyc-ui-translate"></use>
+                      </svg>
+                      <span class="sr-only">Accommodates Multiple Languages</span>
+                    </span>
+                  </p>
+                </header>
+                <div class="c-card__body">
+                  <h3 class="c-card__subtitle text-alt mb-1">
+                    <span data-program="title">NYC DOE Basic Education Classes<span>
+                  </h3>
+                  <div class="c-card__summary">
+                    <p>
+                      <span data-program="summary">Prepare for a job in the healthcare field.</span> For <b class="text-alt" data-program="taxonomy.population">Adults</b> and <b class="text-alt" data-program="taxonomy.population">Immigrant New Yorkers</b>.
+                    </p>
+                  </div>
+                  <ul class="c-card__features">
+                    <li class="flex items-center">
+                      <svg aria-hidden="true" class="icon-wnyc-ui me-1">
+                        <use xlink:href="#icon-wnyc-ui-award"></use>
+                      </svg>
+                      <span>
+                        <span data-program="taxonomy.services">Adult education</span>,&nbsp; <span data-program="taxonomy.services">HSE prep</span>
+                      </span>
+                    </li>
+                    <li class="flex items-center">
+                      <svg aria-hidden="true" class="icon-wnyc-ui me-1">
+                        <use xlink:href="#icon-wnyc-ui-calendar"></use>
+                      </svg>
+                      <span>
+                        <span data-program="taxonomy.duration">3 months</span>,&nbsp; <span data-program="taxonomy.schedule">varied</span>&nbsp;schedule
+                      </span>
+                    </li>
+                  </ul>
+                  <a class="c-card__cta btn btn-secondary btn-next" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/web-development-fellowship-at-fullstack-academy">
+                    <svg aria-hidden="true" class="icon-wnyc-ui">
+                      <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
+                    </svg>
+                    <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Math and reading for HSE Prep</span>
+                      </span>
+                    </span>
+                    <svg aria-hidden="true" class="icon-wnyc-ui">
+                      <use xlink:href="#icon-wnyc-ui-arrow-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </article>
             </div>
             <div class="layout-content py-6">
-              <div class="py-2 wrap">
-                <button class="btn btn-tertiary w-full">Show More</button>
+              <div class="wrap">
+                <button class="btn btn-secondary w-full mb-2">Show More</button>
+                <button aria-controls="aria-c-filter" aria-expanded="false" class="btn btn-secondary w-full" data-js="dropdown">Filter Programs</button>
               </div>
             </div>
           </section>
@@ -1024,14 +1075,14 @@
             <form action="https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;id=aa67394696" id="mc-embedded-subscribe-form" method="post" target="_blank">
               <div class="c-question c-question-single">
                 <!--{ @for  Should match the id of the input }-->
-                <label class="c-question__label" for="401293d17a744">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
+                <label class="c-question__label" for="fccf0068a6bb8">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
                 <div class="c-question__container">
                   <div class="c-question__input">
                     <div class="input">
                       <!--{ @required  required="true" specifies wether the input is required by a form }-->
                       <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input class="c-question-single" id="401293d17a744" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
+                      <input class="c-question-single" id="fccf0068a6bb8" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
                     </div>
                     <div class="c-question__button">
                       <button class="btn btn-primary btn-small" type="submit">Submit</button>

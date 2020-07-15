@@ -16,7 +16,7 @@
     <!--{ @aria-label  Ensures a unique landmark }-->
     <!--{ @class       Add "o-navigation-fixed" in production layouts }-->
     <nav aria-label="Primary Navigation" class="o-navigation bg-scale-2 o-navigation-fixed" role="navigation">
-      <a class="o-navigation__logo o-navigation__menu-item" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos">
+      <a class="o-navigation__logo o-navigation__menu-item" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/index">
         <span class="sr-only">Working N Y C</span>
         <svg aria-hidden="true" class="hidden tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2">
           <use xlink:href="#logo-wnyc-standard"></use>
@@ -34,12 +34,6 @@
       <!--  svg class='o-navigation__menu-icon icon-wnyc-ui'-->
       <!--    use xlink:href='#icon-wnyc-ui-search'-->
       <!--  span class='o-navigation__menu-label' Search-->
-      <button aria-controls="aria-c-search" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:m-0" data-js="translate">
-        <svg class="o-navigation__menu-icon icon-wnyc-ui">
-          <use xlink:href="#icon-wnyc-ui-translate"></use>
-        </svg>
-        <span class="o-navigation__menu-label">Translate</span>
-      </button>
       <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:hidden" data-js="mobile-menu" data-js-mobile-menu="open">
         <svg class="o-navigation__menu-icon icon-wnyc-ui">
           <use xlink:href="#icon-wnyc-ui-menu"></use>
@@ -57,7 +51,8 @@
         <!--{ @aria-expanded        Indicates the toggled state of the target }-->
         <!--{ @tabindex             Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
         <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="btn-link" data-js="mobile-menu" data-js-mobile-menu="close" tabindex="-1">
-          <svg aria-hidden="true" class="icon-wnyc-ui">
+          <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+          <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
             <use xlink:href="#icon-wnyc-ui-x"></use>
           </svg>
           <span>Close</span>
@@ -169,28 +164,28 @@
                     </article>
                     <div class="c-question ">
                       <!--{ @for  Should match the id of the input }-->
-                      <label class="c-question__label" for="6bc4197116e94">Your email address.</label>
+                      <label class="c-question__label" for="bb9dfc4e4292a">Your email address.</label>
                       <div class="c-question__container">
                         <div class="c-question__input">
                           <div class="input">
                             <!--{ @required  required="true" specifies wether the input is required by a form }-->
                             <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                             <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                            <input id="6bc4197116e94" name="EMAIL" required="true" type="email" />
+                            <input id="bb9dfc4e4292a" name="EMAIL" required="true" type="email" />
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="c-question ">
                       <!--{ @for  Should match the id of the input }-->
-                      <label class="c-question__label" for="de523f8776c04">What is your zip code?</label>
+                      <label class="c-question__label" for="069f1168bc966">What is your zip code?</label>
                       <div class="c-question__container">
                         <div class="c-question__input">
                           <div class="input">
                             <!--{ @required  required="true" specifies wether the input is required by a form }-->
                             <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                             <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                            <input id="de523f8776c04" name="ZIPCODE" required="true" type="text" />
+                            <input id="069f1168bc966" name="ZIPCODE" required="true" type="text" />
                           </div>
                         </div>
                       </div>

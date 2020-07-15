@@ -2,260 +2,6 @@ var WorkingNyc = (function () {
   'use strict';
 
   /**
-   * The Simple Toggle class. This will toggle the class 'active' and 'hidden'
-   * on target elements, determined by a click event on a selected link or
-   * element. This will also toggle the aria-hidden attribute for targeted
-   * elements to support screen readers. Target settings and other functionality
-   * can be controlled through data attributes.
-   *
-   * This uses the .matches() method which will require a polyfill for IE
-   * https://polyfill.io/v2/docs/features/#Element_prototype_matches
-   *
-   * @class
-   */
-  var Toggle = function Toggle(s) {
-    var this$1 = this;
-
-    // Create an object to store existing toggle listeners (if it doesn't exist)
-    if (!window.hasOwnProperty('ACCESS_TOGGLES'))
-      { window.ACCESS_TOGGLES = []; }
-
-    s = (!s) ? {} : s;
-
-    this.settings = {
-      selector: (s.selector) ? s.selector : Toggle.selector,
-      namespace: (s.namespace) ? s.namespace : Toggle.namespace,
-      inactiveClass: (s.inactiveClass) ? s.inactiveClass : Toggle.inactiveClass,
-      activeClass: (s.activeClass) ? s.activeClass : Toggle.activeClass,
-      before: (s.before) ? s.before : false,
-      after: (s.after) ? s.after : false
-    };
-
-    // Store the element for potential use in callbacks
-    this.element = (s.element) ? s.element : false;
-
-    if (this.element)
-      { this.element.addEventListener('click', function (event) {
-        this$1.toggle(event);
-      }); }
-    else
-      // If there isn't an existing instantiated toggle, add the event listener.
-      if (!window.ACCESS_TOGGLES.hasOwnProperty(this.settings.selector))
-        { document.querySelector('body').addEventListener('click', function (event) {
-          if (!event.target.matches(this$1.settings.selector))
-            { return; }
-
-          // Store the event for potential use in callbacks
-          this$1.event = event;
-
-          this$1.toggle(event);
-        }); }
-
-    // Record that a toggle using this selector has been instantiated. This
-    // prevents double toggling.
-    window.ACCESS_TOGGLES[this.settings.selector] = true;
-
-    return this;
-  };
-
-  /**
-   * Logs constants to the debugger
-   *
-   * @param{Object}eventThe main click event
-   *
-   * @return {Object}       The class
-   */
-  Toggle.prototype.toggle = function toggle (event) {
-      var this$1 = this;
-
-    var el = event.target;
-    var target = false;
-    var focusable = [];
-
-    event.preventDefault();
-
-    /** Anchor Links */
-    target = (el.hasAttribute('href')) ?
-      document.querySelector(el.getAttribute('href')) : target;
-
-    /** Toggle Controls */
-    target = (el.hasAttribute('aria-controls')) ?
-      document.querySelector(("#" + (el.getAttribute('aria-controls')))) : target;
-
-    /** Focusable Children */
-    focusable = (target) ?
-      target.querySelectorAll(Toggle.elFocusable.join(', ')) : focusable;
-
-    /** Main Functionality */
-    if (!target) { return this; }
-    this.elementToggle(el, target, focusable);
-
-    /** Undo */
-    if (el.dataset[((this.settings.namespace) + "Undo")]) {
-      var undo = document.querySelector(
-        el.dataset[((this.settings.namespace) + "Undo")]
-      );
-
-      undo.addEventListener('click', function (event) {
-        event.preventDefault();
-        this$1.elementToggle(el, target);
-        undo.removeEventListener('click');
-      });
-    }
-
-    return this;
-  };
-
-  /**
-   * The main toggling method
-   *
-   * @param{Object}  el       The current element to toggle active
-   * @param{Object}  target   The target element to toggle active/hidden
-   * @param{NodeList}focusableAny focusable children in the target
-   *
-   * @return {Object}        The class
-   */
-  Toggle.prototype.elementToggle = function elementToggle (el, target, focusable) {
-      var this$1 = this;
-      if ( focusable === void 0 ) focusable = [];
-
-    var i = 0;
-    var attr = '';
-    var value = '';
-
-    // Get other toggles that might control the same element
-    var others = document.querySelectorAll(
-      ("[aria-controls=\"" + (el.getAttribute('aria-controls')) + "\"]"));
-
-    // Store elements for potential use in callbacks
-    this.element = el;
-    this.target = target;
-    this.others = others;
-    this.focusable = focusable;
-
-    /**
-     * Toggling before hook
-     */
-    if (this.settings.before) { this.settings.before(this); }
-
-    /**
-     * Toggle Element and Target classes
-     */
-    if (this.settings.activeClass) {
-      el.classList.toggle(this.settings.activeClass);
-      target.classList.toggle(this.settings.activeClass);
-
-      // If there are other toggles that control the same element
-      if (others) { others.forEach(function (other) {
-        if (other !== el) { other.classList.toggle(this$1.settings.activeClass); }
-      }); }
-    }
-
-    if (this.settings.inactiveClass)
-      { target.classList.toggle(this.settings.inactiveClass); }
-
-    /**
-     * Target Element Aria Attributes
-     */
-    for (i = 0; i < Toggle.targetAriaRoles.length; i++) {
-      attr = Toggle.targetAriaRoles[i];
-      value = target.getAttribute(attr);
-
-      if (value != '' && value)
-        { target.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
-    }
-
-    /**
-     * Hide the Toggle Target's focusable children from focus.
-     * If an element has the data-attribute 'data-toggle-tabindex', use that
-     * as the default tab index of the element.
-     */
-    focusable.forEach(function (el) {
-      var tabindex = el.getAttribute('tabindex');
-
-      if (tabindex === '-1') {
-        var dataDefault = el.getAttribute(("data-" + (Toggle.namespace) + "-tabindex"));
-
-        if (dataDefault) {
-          el.setAttribute('tabindex', dataDefault);
-        } else {
-          el.removeAttribute('tabindex');
-        }
-      } else {
-        el.setAttribute('tabindex', '-1');
-      }
-    });
-
-    /**
-     * Jump to Target Element (if Toggle Element is an anchor link).
-     */
-    if (el.hasAttribute('href')) {
-      // Reset the history state, this will clear out
-      // the hash when the jump item is toggled closed.
-      history.pushState('', '',
-        window.location.pathname + window.location.search);
-
-      // Target element toggle.
-      if (target.classList.contains(this.settings.activeClass)) {
-        window.location.hash = el.getAttribute('href');
-
-        target.setAttribute('tabindex', '-1');
-        target.focus({preventScroll: true});
-      } else
-        { target.removeAttribute('tabindex'); }
-    }
-
-    /**
-     * Toggle Element (including multi toggles) Aria Attributes
-     */
-    for (i = 0; i < Toggle.elAriaRoles.length; i++) {
-      attr = Toggle.elAriaRoles[i];
-      value = el.getAttribute(attr);
-
-      if (value != '' && value)
-        { el.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
-
-      // If there are other toggles that control the same element
-      if (others) { others.forEach(function (other) {
-        if (other !== el && other.getAttribute(attr))
-          { other.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
-      }); }
-    }
-
-    /**
-     * Toggling complete hook.
-     */
-    if (this.settings.after) { this.settings.after(this); }
-
-    return this;
-  };
-
-  /** @type {String} The main selector to add the toggling function to */
-  Toggle.selector = '[data-js*="toggle"]';
-
-  /** @type  {String}  The namespace for our data attribute settings */
-  Toggle.namespace = 'toggle';
-
-  /** @type  {String}  The hide class */
-  Toggle.inactiveClass = 'hidden';
-
-  /** @type  {String}  The active class */
-  Toggle.activeClass = 'active';
-
-  /** @type  {Array}  Aria roles to toggle true/false on the toggling element */
-  Toggle.elAriaRoles = ['aria-pressed', 'aria-expanded'];
-
-  /** @type  {Array}  Aria roles to toggle true/false on the target element */
-  Toggle.targetAriaRoles = ['aria-hidden'];
-
-  /** @type  {Array}  Focusable elements to hide within the hidden target element */
-  Toggle.elFocusable = [
-    'a', 'button', 'input', 'select', 'textarea', 'object', 'embed', 'form',
-    'fieldset', 'legend', 'label', 'area', 'audio', 'video', 'iframe', 'svg',
-    'details', 'table', '[tabindex]', '[contenteditable]', '[usemap]'
-  ];
-
-  /**
    * Copy to Clipboard Helper
    */
   var Copy = function Copy() {
@@ -347,34 +93,6 @@ var WorkingNyc = (function () {
 
   /** Timeout for the "Copied!" notification */
   Copy.notifyTimeout = 1500;
-
-  /**
-   * The Icon module
-   * @class
-   */
-  var Icons = function Icons(path) {
-    path = (path) ? path : Icons.path;
-
-    fetch(path)
-      .then(function (response) {
-        if (response.ok)
-          { return response.text(); }
-      })
-      .catch(function (error) {
-      })
-      .then(function (data) {
-        var sprite = document.createElement('div');
-        sprite.innerHTML = data;
-        sprite.setAttribute('aria-hidden', true);
-        sprite.setAttribute('style', 'display: none;');
-        document.body.appendChild(sprite);
-      });
-
-    return this;
-  };
-
-  /** @type {String} The path of the icon file */
-  Icons.path = 'svg/icons.svg';
 
   /**
    * Utilities for Form components
@@ -609,6 +327,34 @@ var WorkingNyc = (function () {
     'ERROR_INPUT': ['aria-invalid', 'true'],
     'ERROR_LABEL': 'aria-describedby'
   };
+
+  /**
+   * The Icon module
+   * @class
+   */
+  var Icons = function Icons(path) {
+    path = (path) ? path : Icons.path;
+
+    fetch(path)
+      .then(function (response) {
+        if (response.ok)
+          { return response.text(); }
+      })
+      .catch(function (error) {
+      })
+      .then(function (data) {
+        var sprite = document.createElement('div');
+        sprite.innerHTML = data;
+        sprite.setAttribute('aria-hidden', true);
+        sprite.setAttribute('style', 'display: none;');
+        document.body.appendChild(sprite);
+      });
+
+    return this;
+  };
+
+  /** @type {String} The path of the icon file */
+  Icons.path = 'svg/icons.svg';
 
   var e=/^(?:submit|button|image|reset|file)$/i,t=/^(?:input|select|textarea|keygen)/i,n=/(\[[^\[\]]*\])/g;function a(e,t,a){if(t.match(n)){ !function e(t,n,a){if(0===n.length){ return a; }var r=n.shift(),i=r.match(/^\[(.+?)\]$/);if("[]"===r){ return t=t||[],Array.isArray(t)?t.push(e(null,n,a)):(t._values=t._values||[],t._values.push(e(null,n,a))),t; }if(i){var l=i[1],u=+l;isNaN(u)?(t=t||{})[l]=e(t[l],n,a):(t=t||[])[u]=e(t[u],n,a);}else { t[r]=e(t[r],n,a); }return t}(e,function(e){var t=[],a=new RegExp(n),r=/^([^\[\]]*)/.exec(e);for(r[1]&&t.push(r[1]);null!==(r=a.exec(e));){ t.push(r[1]); }return t}(t),a); }else {var r=e[t];r?(Array.isArray(r)||(e[t]=[r]),e[t].push(a)):e[t]=a;}return e}function r(e,t,n){return n=(n=String(n)).replace(/(\r)?\n/g,"\r\n"),n=(n=encodeURIComponent(n)).replace(/%20/g,"+"),e+(e?"&":"")+encodeURIComponent(t)+"="+n}function serialize(n,i){"object"!=typeof i?i={hash:!!i}:void 0===i.hash&&(i.hash=!0);for(var l=i.hash?{}:"",u=i.serializer||(i.hash?a:r),s=n&&n.elements?n.elements:[],c=Object.create(null),o=0;o<s.length;++o){var h=s[o];if((i.disabled||!h.disabled)&&h.name&&t.test(h.nodeName)&&!e.test(h.type)){var p=h.name,f=h.value;if("checkbox"!==h.type&&"radio"!==h.type||h.checked||(f=void 0),i.empty){if("checkbox"!==h.type||h.checked||(f=!1),"radio"===h.type&&(c[h.name]||h.checked?h.checked&&(c[h.name]=!0):c[h.name]=!1),null==f&&"radio"==h.type){ continue }}else if(!f){ continue; }if("select-multiple"!==h.type){ l=u(l,p,f); }else {f=[];for(var v=h.options,m=!1,d=0;d<v.length;++d){var y=v[d];y.selected&&(y.value||i.empty&&!y.value)&&(m=!0,l=i.hash&&"[]"!==p.slice(p.length-2)?u(l,p+"[]",y.value):u(l,p,y.value));}!m&&i.empty&&(l=u(l,p,""));}}}if(i.empty){ for(var p in c){ c[p]||(l=u(l,p,"")); } }return l}
 
@@ -963,6 +709,260 @@ var WorkingNyc = (function () {
   };
 
   /**
+   * The Simple Toggle class. This will toggle the class 'active' and 'hidden'
+   * on target elements, determined by a click event on a selected link or
+   * element. This will also toggle the aria-hidden attribute for targeted
+   * elements to support screen readers. Target settings and other functionality
+   * can be controlled through data attributes.
+   *
+   * This uses the .matches() method which will require a polyfill for IE
+   * https://polyfill.io/v2/docs/features/#Element_prototype_matches
+   *
+   * @class
+   */
+  var Toggle = function Toggle(s) {
+    var this$1 = this;
+
+    // Create an object to store existing toggle listeners (if it doesn't exist)
+    if (!window.hasOwnProperty('ACCESS_TOGGLES'))
+      { window.ACCESS_TOGGLES = []; }
+
+    s = (!s) ? {} : s;
+
+    this.settings = {
+      selector: (s.selector) ? s.selector : Toggle.selector,
+      namespace: (s.namespace) ? s.namespace : Toggle.namespace,
+      inactiveClass: (s.inactiveClass) ? s.inactiveClass : Toggle.inactiveClass,
+      activeClass: (s.activeClass) ? s.activeClass : Toggle.activeClass,
+      before: (s.before) ? s.before : false,
+      after: (s.after) ? s.after : false
+    };
+
+    // Store the element for potential use in callbacks
+    this.element = (s.element) ? s.element : false;
+
+    if (this.element)
+      { this.element.addEventListener('click', function (event) {
+        this$1.toggle(event);
+      }); }
+    else
+      // If there isn't an existing instantiated toggle, add the event listener.
+      if (!window.ACCESS_TOGGLES.hasOwnProperty(this.settings.selector))
+        { document.querySelector('body').addEventListener('click', function (event) {
+          if (!event.target.matches(this$1.settings.selector))
+            { return; }
+
+          // Store the event for potential use in callbacks
+          this$1.event = event;
+
+          this$1.toggle(event);
+        }); }
+
+    // Record that a toggle using this selector has been instantiated. This
+    // prevents double toggling.
+    window.ACCESS_TOGGLES[this.settings.selector] = true;
+
+    return this;
+  };
+
+  /**
+   * Logs constants to the debugger
+   *
+   * @param{Object}eventThe main click event
+   *
+   * @return {Object}       The class
+   */
+  Toggle.prototype.toggle = function toggle (event) {
+      var this$1 = this;
+
+    var el = event.target;
+    var target = false;
+    var focusable = [];
+
+    event.preventDefault();
+
+    /** Anchor Links */
+    target = (el.hasAttribute('href')) ?
+      document.querySelector(el.getAttribute('href')) : target;
+
+    /** Toggle Controls */
+    target = (el.hasAttribute('aria-controls')) ?
+      document.querySelector(("#" + (el.getAttribute('aria-controls')))) : target;
+
+    /** Focusable Children */
+    focusable = (target) ?
+      target.querySelectorAll(Toggle.elFocusable.join(', ')) : focusable;
+
+    /** Main Functionality */
+    if (!target) { return this; }
+    this.elementToggle(el, target, focusable);
+
+    /** Undo */
+    if (el.dataset[((this.settings.namespace) + "Undo")]) {
+      var undo = document.querySelector(
+        el.dataset[((this.settings.namespace) + "Undo")]
+      );
+
+      undo.addEventListener('click', function (event) {
+        event.preventDefault();
+        this$1.elementToggle(el, target);
+        undo.removeEventListener('click');
+      });
+    }
+
+    return this;
+  };
+
+  /**
+   * The main toggling method
+   *
+   * @param{Object}  el       The current element to toggle active
+   * @param{Object}  target   The target element to toggle active/hidden
+   * @param{NodeList}focusableAny focusable children in the target
+   *
+   * @return {Object}        The class
+   */
+  Toggle.prototype.elementToggle = function elementToggle (el, target, focusable) {
+      var this$1 = this;
+      if ( focusable === void 0 ) focusable = [];
+
+    var i = 0;
+    var attr = '';
+    var value = '';
+
+    // Get other toggles that might control the same element
+    var others = document.querySelectorAll(
+      ("[aria-controls=\"" + (el.getAttribute('aria-controls')) + "\"]"));
+
+    // Store elements for potential use in callbacks
+    this.element = el;
+    this.target = target;
+    this.others = others;
+    this.focusable = focusable;
+
+    /**
+     * Toggling before hook
+     */
+    if (this.settings.before) { this.settings.before(this); }
+
+    /**
+     * Toggle Element and Target classes
+     */
+    if (this.settings.activeClass) {
+      el.classList.toggle(this.settings.activeClass);
+      target.classList.toggle(this.settings.activeClass);
+
+      // If there are other toggles that control the same element
+      if (others) { others.forEach(function (other) {
+        if (other !== el) { other.classList.toggle(this$1.settings.activeClass); }
+      }); }
+    }
+
+    if (this.settings.inactiveClass)
+      { target.classList.toggle(this.settings.inactiveClass); }
+
+    /**
+     * Target Element Aria Attributes
+     */
+    for (i = 0; i < Toggle.targetAriaRoles.length; i++) {
+      attr = Toggle.targetAriaRoles[i];
+      value = target.getAttribute(attr);
+
+      if (value != '' && value)
+        { target.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
+    }
+
+    /**
+     * Hide the Toggle Target's focusable children from focus.
+     * If an element has the data-attribute 'data-toggle-tabindex', use that
+     * as the default tab index of the element.
+     */
+    focusable.forEach(function (el) {
+      var tabindex = el.getAttribute('tabindex');
+
+      if (tabindex === '-1') {
+        var dataDefault = el.getAttribute(("data-" + (Toggle.namespace) + "-tabindex"));
+
+        if (dataDefault) {
+          el.setAttribute('tabindex', dataDefault);
+        } else {
+          el.removeAttribute('tabindex');
+        }
+      } else {
+        el.setAttribute('tabindex', '-1');
+      }
+    });
+
+    /**
+     * Jump to Target Element (if Toggle Element is an anchor link).
+     */
+    if (el.hasAttribute('href')) {
+      // Reset the history state, this will clear out
+      // the hash when the jump item is toggled closed.
+      history.pushState('', '',
+        window.location.pathname + window.location.search);
+
+      // Target element toggle.
+      if (target.classList.contains(this.settings.activeClass)) {
+        window.location.hash = el.getAttribute('href');
+
+        target.setAttribute('tabindex', '-1');
+        target.focus({preventScroll: true});
+      } else
+        { target.removeAttribute('tabindex'); }
+    }
+
+    /**
+     * Toggle Element (including multi toggles) Aria Attributes
+     */
+    for (i = 0; i < Toggle.elAriaRoles.length; i++) {
+      attr = Toggle.elAriaRoles[i];
+      value = el.getAttribute(attr);
+
+      if (value != '' && value)
+        { el.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
+
+      // If there are other toggles that control the same element
+      if (others) { others.forEach(function (other) {
+        if (other !== el && other.getAttribute(attr))
+          { other.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
+      }); }
+    }
+
+    /**
+     * Toggling complete hook.
+     */
+    if (this.settings.after) { this.settings.after(this); }
+
+    return this;
+  };
+
+  /** @type {String} The main selector to add the toggling function to */
+  Toggle.selector = '[data-js*="toggle"]';
+
+  /** @type  {String}  The namespace for our data attribute settings */
+  Toggle.namespace = 'toggle';
+
+  /** @type  {String}  The hide class */
+  Toggle.inactiveClass = 'hidden';
+
+  /** @type  {String}  The active class */
+  Toggle.activeClass = 'active';
+
+  /** @type  {Array}  Aria roles to toggle true/false on the toggling element */
+  Toggle.elAriaRoles = ['aria-pressed', 'aria-expanded'];
+
+  /** @type  {Array}  Aria roles to toggle true/false on the target element */
+  Toggle.targetAriaRoles = ['aria-hidden'];
+
+  /** @type  {Array}  Focusable elements to hide within the hidden target element */
+  Toggle.elFocusable = [
+    'a', 'button', 'input', 'select', 'textarea', 'object', 'embed', 'form',
+    'fieldset', 'legend', 'label', 'area', 'audio', 'video', 'iframe', 'svg',
+    'details', 'table', '[tabindex]', '[contenteditable]', '[usemap]'
+  ];
+
+  /**
    * Tracking bus for Google analytics and Webtrends.
    */
   var Track = function Track(s) {
@@ -1204,6 +1204,33 @@ var WorkingNyc = (function () {
   };
 
   /**
+   * @class  Set the the css variable '--100vh' to the size of the Window's inner height.
+   */
+  var WindowVh = function WindowVh(s) {
+    var this$1 = this;
+    if ( s === void 0 ) s = {};
+
+    this.property = (s.property) ? s.property : WindowVh.property;
+
+    window.addEventListener('load', function () {this$1.set();});
+
+    window.addEventListener('resize', function () {this$1.set();});
+
+    return this;
+  };
+
+  /**
+   * Sets the css variable property
+   */
+  WindowVh.prototype.set = function set () {
+    document.documentElement.style
+      .setProperty(this.property, ((window.innerHeight) + "px"));
+  };
+
+  /** @param  {String}  property  The css variable string to set */
+  WindowVh.property = '--100vh';
+
+  /**
    * The Accordion module
    * @class
    */
@@ -1223,21 +1250,42 @@ var WorkingNyc = (function () {
   Accordion.selector = '[data-js*="accordion"]';
 
   var Dropdown = function Dropdown() {
+    var this$1 = this;
+
+    this.selector = Dropdown.selector;
+    this.selectors = Dropdown.selectors;
+    this.classes = Dropdown.classes;
     this.toggle = new Toggle({
-      selector: Dropdown.selector,
-      after: function () {
-        var body = document.querySelector('body');
-        window.scroll(0, 0);
-        body.classList.toggle(Dropdown.classes.OVERFLOW);
+      selector: this.selector,
+      after: function (toggle) {
+        var body = document.querySelector('body'); // Scroll to the top of the page
+
+        window.scroll(0, 0); // Prevent scrolling on the body
+
+        body.classList.toggle(this$1.classes.OVERFLOW); // Focus on the close or open button
+
+        if (toggle.target.classList.contains(Toggle.activeClass)) {
+          var close = document.querySelector(this$1.selectors.CLOSE);
+          if (close) { close.focus(); }
+        } else {
+          var open = document.querySelector(this$1.selectors.OPEN);
+          if (open) { open.focus(); }
+        }
       }
     });
     return this;
   };
-  /** @type  String  Main DOM selector */
+  /** @type  {String}  Main DOM selector */
 
 
   Dropdown.selector = '[data-js*=\"dropdown\"]';
-  /** @type  Object  Various classes used by the script */
+  /** @type  {Object}  Additional selectors used by the script */
+
+  Dropdown.selectors = {
+    CLOSE: '[data-js-dropdown*="close"]',
+    OPEN: '[data-js-dropdown*="open"]'
+  };
+  /** @type  {Object}  Various classes used by the script */
 
   Dropdown.classes = {
     OVERFLOW: 'overflow-hidden'
@@ -1311,11 +1359,20 @@ var WorkingNyc = (function () {
   /** import modules here as they are written. */
 
   /**
-   * The Main module
-   * @class
+   * @class  Main pattern module
    */
 
-  var main = function main () {};
+  var main = function main() {
+    new WindowVh();
+  };
+  /**
+   * An API for the Icons Utility
+   *
+   * @param {String}pathThe path of the icon file
+   *
+   * @return{Object}      Instance of Icons
+   */
+
 
   main.prototype.icons = function icons (path) {
       if ( path === void 0 ) path = 'svg/icons.svg';
@@ -1327,7 +1384,7 @@ var WorkingNyc = (function () {
    *
    * @param {Object}settingsSettings for the Toggle Class
    *
-   * @return{Object}          Instance of toggle
+   * @return{Object}          Instance of Toggle
    */
 
 
@@ -1395,32 +1452,7 @@ var WorkingNyc = (function () {
 
   main.prototype.track = function track () {
     return new Track();
-  }; // /**
-  //* An API for the Tooltips element
-  //* @param{Object} settings Settings for the Tooltips Class
-  //* @return {nodelist}        Tooltip elements
-  //*/
-  // tooltips(elements = document.querySelectorAll(Tooltips.selector)) {
-  // elements.forEach(element => {
-  //   new Tooltips(element);
-  // });
-  // return (elements.length) ? elements : null;
-  // }
-  // /**
-  //* An API for the Filter Component
-  //* @return {Object} Instance of Filter
-  //*/
-  // filter() {
-  // return new Filter();
-  // }
-  // /**
-  //* An API for the Nearby Stops Component
-  //* @return {Object} Instance of NearbyStops
-  //*/
-  // nearbyStops() {
-  // return new NearbyStops();
-  // }
-
+  };
   /**
    * An API for the Newsletter Object
    *
@@ -1480,32 +1512,6 @@ var WorkingNyc = (function () {
 
     return newsletter;
   }; // /**
-  //* An API for the AlertBanner Component
-  //*
-  //* @return{Object}Instance of AlertBanner
-  //*/
-  // alertBanner(element = document.querySelector(AlertBanner.selector)) {
-  // return (element) ? new AlertBanner(element) : null;
-  // }
-  // /**
-  //* An API for the ShareForm Component
-  //*
-  //* @return{Object}Instance of ShareForm
-  //*/
-  // shareForm(elements = document.querySelectorAll(ShareForm.selector)) {
-  // elements.forEach(element => {
-  //   new ShareForm(element);
-  // });
-  // return (elements.length) ? elements : null;
-  // }
-  // /**
-  //* An API for the Disclaimer Component
-  //* @return{Object}Instance of Disclaimer
-  //*/
-  // disclaimer() {
-  // return new Disclaimer();
-  // }
-  // /**
   //* An API for the TextController Object
   //*
   //* @return{Object}Instance of TextController
@@ -1525,7 +1531,7 @@ var WorkingNyc = (function () {
     return new MobileMenu();
   };
   /**
-   * An API for the Search Box
+   * An API for the Search
    *
    * @return{Object}Instance of Search
    */

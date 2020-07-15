@@ -16,7 +16,7 @@
     <!--{ @aria-label  Ensures a unique landmark }-->
     <!--{ @class       Add "o-navigation-fixed" in production layouts }-->
     <nav aria-label="Primary Navigation" class="o-navigation bg-scale-2 o-navigation-fixed" role="navigation">
-      <a class="o-navigation__logo o-navigation__menu-item" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos">
+      <a class="o-navigation__logo o-navigation__menu-item" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/index">
         <span class="sr-only">Working N Y C</span>
         <svg aria-hidden="true" class="hidden tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2">
           <use xlink:href="#logo-wnyc-standard"></use>
@@ -34,12 +34,6 @@
       <!--  svg class='o-navigation__menu-icon icon-wnyc-ui'-->
       <!--    use xlink:href='#icon-wnyc-ui-search'-->
       <!--  span class='o-navigation__menu-label' Search-->
-      <button aria-controls="aria-c-search" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:m-0" data-js="translate">
-        <svg class="o-navigation__menu-icon icon-wnyc-ui">
-          <use xlink:href="#icon-wnyc-ui-translate"></use>
-        </svg>
-        <span class="o-navigation__menu-label">Translate</span>
-      </button>
       <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:hidden" data-js="mobile-menu" data-js-mobile-menu="open">
         <svg class="o-navigation__menu-icon icon-wnyc-ui">
           <use xlink:href="#icon-wnyc-ui-menu"></use>
@@ -57,7 +51,8 @@
         <!--{ @aria-expanded        Indicates the toggled state of the target }-->
         <!--{ @tabindex             Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
         <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="btn-link" data-js="mobile-menu" data-js-mobile-menu="close" tabindex="-1">
-          <svg aria-hidden="true" class="icon-wnyc-ui">
+          <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+          <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
             <use xlink:href="#icon-wnyc-ui-x"></use>
           </svg>
           <span>Close</span>
@@ -114,12 +109,6 @@
                 <span>Programs</span>
               </a>
               <a class="ms-3 btn btn-link" href="#contact">Contact</a>
-              <a class="btn btn-small btn-primary">
-                <svg aria-hidden="true" class="icon-wnyc-ui">
-                  <use xlink:href="#icon-wnyc-ui-bookmark"></use>
-                </svg>
-                <span>Save</span>
-              </a>
               <a class="btn btn-small btn-primary" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;Red Hook on the Road" ,"text":"","url":"https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/red-hook-on-the-road"}" href="#">
                 <svg aria-hidden="true" class="icon-wnyc-ui">
                   <use xlink:href="#icon-wnyc-ui-share-2"></use>
@@ -255,7 +244,7 @@
         </div>
         <section class="bg-scale-1 layout-content tablet:pt-6" id="contact">
           <div class="wrap">
-            <nav class="py-2 tablet:layout-three-columns-gutter">
+            <nav class="tablet:layout-three-columns-gutter">
               <a class="btn btn-secondary btn-next mb-1 w-full" href="#">
                 <svg aria-hidden="true" class="icon-wnyc-ui">
                   <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
@@ -283,7 +272,7 @@
         <section class="bg-scale-1 layout-content tablet:pb-6">
           <div class="wrap">
             <div class="text-center text-alt mb-1">—</div>
-            <nav class="py-2">
+            <nav>
               <a class="btn btn-primary btn-next w-full" href="#">
                 <svg aria-hidden="true" class="icon-wnyc-ui">
                   <use xlink:href="#icon-wnyc-ui-arrow-left"></use>
@@ -300,14 +289,14 @@
             <form action="https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;id=aa67394696" id="mc-embedded-subscribe-form" method="post" target="_blank">
               <div class="c-question c-question-single">
                 <!--{ @for  Should match the id of the input }-->
-                <label class="c-question__label" for="be8fb837ebb9b">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
+                <label class="c-question__label" for="704df0b91b966">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
                 <div class="c-question__container">
                   <div class="c-question__input">
                     <div class="input">
                       <!--{ @required  required="true" specifies wether the input is required by a form }-->
                       <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input class="c-question-single" id="be8fb837ebb9b" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
+                      <input class="c-question-single" id="704df0b91b966" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
                     </div>
                     <div class="c-question__button">
                       <button class="btn btn-primary btn-small" type="submit">Submit</button>
