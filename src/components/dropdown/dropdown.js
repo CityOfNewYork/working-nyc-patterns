@@ -14,13 +14,31 @@ class Dropdown {
    * @return {Object}            The instantiated pattern
    */
   constructor() {
+    this.selector = Dropdown.selector;
+
+    this.selectors = Dropdown.selectors;
+
+    this.classes = Dropdown.classes;
+
     this.toggle = new Toggle({
-      selector: Dropdown.selector,
-      after: () => {
+      selector: this.selector,
+      after: (toggle) => {
         let body = document.querySelector('body');
 
+        // Scroll to the top of the page
         window.scroll(0, 0);
-        body.classList.toggle(Dropdown.classes.OVERFLOW);
+
+        // Prevent scrolling on the body
+        body.classList.toggle(this.classes.OVERFLOW);
+
+        // Focus on the close or open button
+        if (toggle.target.classList.contains(Toggle.activeClass)) {
+          let close = document.querySelector(this.selectors.CLOSE);
+          if (close) close.focus();
+        } else {
+          let open = document.querySelector(this.selectors.OPEN);
+          if (open) open.focus();
+        }
       }
     });
 
@@ -28,10 +46,16 @@ class Dropdown {
   }
 }
 
-/** @type  String  Main DOM selector */
+/** @type  {String}  Main DOM selector */
 Dropdown.selector = '[data-js*=\"dropdown\"]';
 
-/** @type  Object  Various classes used by the script */
+/** @type  {Object}  Additional selectors used by the script */
+Dropdown.selectors = {
+  CLOSE: '[data-js-dropdown*="close"]',
+  OPEN: '[data-js-dropdown*="open"]'
+};
+
+/** @type  {Object}  Various classes used by the script */
 Dropdown.classes = {
   OVERFLOW: 'overflow-hidden'
 };

@@ -12,7 +12,7 @@
 /! { @aria-label  Ensures a unique landmark }
 /! { @class       Add "o-navigation-fixed" in production layouts }
 nav role='navigation' aria-label='Primary Navigation' class='o-navigation bg-scale-2 ${this.navigation.class}'
-  a href='${this.baseUrl}/demos' class='o-navigation__logo o-navigation__menu-item'
+  a href='${this.baseUrl}/demos/index' class='o-navigation__logo o-navigation__menu-item'
     span class='sr-only' Working N Y C
 
     svg class='hidden tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2' aria-hidden='true'
@@ -35,11 +35,17 @@ nav role='navigation' aria-label='Primary Navigation' class='o-navigation bg-sca
 
   /!   span class='o-navigation__menu-label' Search
 
-  button class='o-navigation__menu-item btn-link desktop:m-0' data-js='translate' aria-controls='aria-c-search' aria-expanded='false'
-    svg class='o-navigation__menu-icon icon-wnyc-ui'
-      use xlink:href='#icon-wnyc-ui-translate'
+  / button class='o-navigation__menu-item btn-link desktop:m-0' data-js='translate' aria-controls='aria-c-search' aria-expanded='false'
+  /   svg class='o-navigation__menu-icon icon-wnyc-ui'
+  /     use xlink:href='#icon-wnyc-ui-translate'
 
-    span class='o-navigation__menu-label' Translate
+  /   span class='o-navigation__menu-label' Translate
+
+  / button class='o-navigation__menu-item btn-link tablet:hidden' data-js='dropdown' aria-controls='aria-c-filter' aria-expanded='false'
+  /   svg class='o-navigation__menu-icon icon-wnyc-ui'
+  /     use xlink:href='#icon-wnyc-ui-sliders'
+
+  /   span class='o-navigation__menu-label' Filter
 
   button class='o-navigation__menu-item btn-link desktop:hidden' data-js='mobile-menu' data-js-mobile-menu='open' aria-controls='aria-c-mobile-menu' aria-expanded='false'
     svg class='o-navigation__menu-icon icon-wnyc-ui'

@@ -64,12 +64,12 @@ $radius-tag: map-get($buttons, 'radius-tag');
   }
 
   > [class*='icon']:first-child {
-    margin-#{direction.$start}: -($grid / 2);
+    // margin-#{direction.$start}: -($grid / 2);
     margin-#{direction.$end}: $grid;
   }
 
   > [class*='icon']:last-child {
-    margin-#{direction.$start}: $grid;
+    // margin-#{direction.$start}: $grid;
     margin-#{direction.$end}: -($grid / 2);
   }
 }
@@ -149,7 +149,7 @@ $radius-tag: map-get($buttons, 'radius-tag');
 @mixin small() {
   font-size: map-get(typography.$font-size, 'small');
 
-  padding: ($grid / 2) ($grid * 1.5);
+  padding: ($grid / 2) $grid;
 }
 
 @mixin link() {

@@ -94,7 +94,7 @@
 
       section#contact class='bg-scale-1 layout-content tablet:pt-6'
         div class='wrap'
-          nav class='py-2 tablet:layout-three-columns-gutter'
+          nav class='tablet:layout-three-columns-gutter'
             a href='#' class='btn btn-secondary btn-next mb-1 w-full'
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-arrow-left'
@@ -126,7 +126,7 @@
         div class='wrap'
           div class='text-center text-alt mb-1' —
 
-          nav class='py-2'
+          nav
             a href='#' class='btn btn-primary btn-next w-full'
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-arrow-left'

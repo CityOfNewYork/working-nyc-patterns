@@ -19,8 +19,9 @@ aside#aria-c-mobile-menu class='o-mobile-menu ${this.mobileMenu.class}' aria-hid
     /! { @aria-controls        Targets the Mobile Menu ID for toggling }
     /! { @aria-expanded        Indicates the toggled state of the target }
     /! { @tabindex             Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
-    button tabindex=this.mobileMenu.tabindex class='btn-link' data-js='mobile-menu' data-js-mobile-menu='close' aria-controls='aria-c-mobile-menu' aria-expanded='${this.mobileMenu.ariaHidden ? 'false' : 'true' }'
-      svg class='icon-wnyc-ui' aria-hidden='true'
+    button class='btn-link' data-js='mobile-menu' data-js-mobile-menu='close' aria-controls='aria-c-mobile-menu' aria-expanded='${this.mobileMenu.ariaHidden ? 'false' : 'true' }' tabindex=this.mobileMenu.tabindex
+      /! { @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
+      svg class='icon-wnyc-ui' aria-hidden='true' tabindex=this.mobileMenu.tabindex
         use xlink:href='#icon-wnyc-ui-x'
 
       span Close

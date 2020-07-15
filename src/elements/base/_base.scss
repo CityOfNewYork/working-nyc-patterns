@@ -8,6 +8,15 @@
 @use 'config/media';
 
 // Declarations
+
+:root {
+  /**
+   * Works with the Window Vh JavaScript Utility to set
+   * this property based on the window's inner height.
+   */
+  --100vh: 100vh;
+}
+
 html {
   box-sizing: border-box;
 }

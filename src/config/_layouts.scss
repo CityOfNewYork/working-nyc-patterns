@@ -63,10 +63,10 @@ $layouts: map-get(tokens.$tokens, 'layouts');
       margin-bottom: dimensions.$spacing-base
     }
 
-    > *:last-child,
-    > .layout__column:last-child {
-      margin-bottom: 0
-    }
+    // > *:last-child,
+    // > .layout__column:last-child {
+    //   margin-bottom: 0
+    // }
   }
 }
 

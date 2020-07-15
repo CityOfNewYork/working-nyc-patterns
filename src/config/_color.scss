@@ -298,11 +298,11 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   }
 
   .hljs-keyword, .hljs-attribute, .hljs-selector-tag,
-  .hljs-meta-keyword, .hljs-doctag, .hljs-name {
+  .hljs-meta-keyword, .hljs-doctag, .hljs-name, .hljs-built_in {
     color: map-get($colors, $token-text-keyword);
   }
 
-  .hljs-type, .hljs-string, .hljs-number, .hljs-selector-id,
+  .hljs-type, .hljs-string, .hljs-subst, .hljs-number, .hljs-selector-id,
   .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
     color: map-get($colors, $token-text-string);
   }

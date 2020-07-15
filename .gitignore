@@ -76,6 +76,7 @@ npm-debug.log
 !/src/utilities/fonts
 !/src/utilities/margin
 !/src/utilities/padding
+!/src/utilities/set-property
 !/src/utilities/tailwindcss
 !/src/utilities/text
 !/src/utilities/toggle

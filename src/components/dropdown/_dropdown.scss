@@ -13,10 +13,10 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
-    max-height: calc(100vh - #{dimensions.get('navigation-height-mobile')});
+    max-height: calc(var(--100vh) - #{dimensions.get('navigation-height-mobile')});
 
     @include media.screen-and-min-width('tablet') {
-      max-height:  calc(100vh - #{dimensions.get('navigation-height')});
+      max-height: calc(var(--100vh) - #{dimensions.get('navigation-height')});
     }
   }
 }

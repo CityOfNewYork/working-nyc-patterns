@@ -340,6 +340,51 @@ module.exports = {
         }
       ],
       cta: 'Learn more'
+    },
+    {
+      type: '<span data-program="sector">Health care</span>',
+      title: '<span data-program="plain-language-name">Math and reading for HSE Prep</span>',
+      subtitle: '<span data-program="title">NYC DOE Basic Education Classes<span>',
+      url: '/demos/programs/web-development-fellowship-at-fullstack-academy',
+      status: `
+        <span class="flex me-2" data-program="accessible">
+          <svg aria-hidden="true" class="icon text-alt">
+            <use xlink:href="#icon-wnyc-accessible"></use>
+          </svg>
+
+          <span class="sr-only">Accommodates Disabilities</span>
+        </span>
+
+        <span class="flex me-2" data-program="multilingual">
+          <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
+            <use xlink:href="#icon-wnyc-ui-translate"></use>
+          </svg>
+
+          <span class="sr-only">Accommodates Multiple Languages</span>
+        </span>
+      `,
+      summary: `<p><span data-program="summary">Prepare for a job in the
+        healthcare field.</span> For
+        <b class="text-alt" data-program="taxonomy.population">Adults</b> and
+        <b class="text-alt" data-program="taxonomy.population">Immigrant New
+        Yorkers</b>.</p>`,
+      features: [
+        {
+          icon: 'icon-wnyc-ui-award',
+          text: `<span>
+            <span data-program="taxonomy.services">Adult education</span>,&nbsp;
+            <span data-program="taxonomy.services">HSE prep</span>
+            </span>`
+        },
+        {
+          icon: 'icon-wnyc-ui-calendar',
+          text: `<span>
+            <span data-program="taxonomy.duration">3 months</span>,&nbsp;
+            <span data-program="taxonomy.schedule">varied</span>&nbsp;schedule
+            </span>`
+        }
+      ],
+      cta: 'Learn more'
     }
   ],
   filters: [

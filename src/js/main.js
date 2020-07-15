@@ -1,14 +1,14 @@
 'use strict';
 
 // Utilities
-import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
 import Copy from '@nycopportunity/patterns-framework/src/utilities/copy/copy';
-import Icons from '@nycopportunity/patterns-framework/src/utilities/icons/icons';
 import Forms from '@nycopportunity/patterns-framework/src/utilities/forms/forms';
+import Icons from '@nycopportunity/patterns-framework/src/utilities/icons/icons';
 import Newsletter from '@nycopportunity/patterns-framework/src/utilities/newsletter/newsletter';
-// import Tooltips from '@nycopportunity/patterns-framework/src/utilities/tooltips/tooltips';
+import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
 import Track from '@nycopportunity/patterns-framework/src/utilities/track/track';
 import WebShare from '@nycopportunity/patterns-framework/src/utilities/web-share/web-share';
+import WindowVh from '@nycopportunity/patterns-framework/src/utilities/window-vh/window-vh';
 
 // Elements
 // import ... from '../elements/...';
@@ -25,10 +25,16 @@ import Search from '../objects/search/search';
 /** import modules here as they are written. */
 
 /**
- * The Main module
- * @class
+ * @class  Main pattern module
  */
 class main {
+  /**
+   * @constructor  Modules to be executed on main pattern instantiation here
+   */
+  constructor() {
+    new WindowVh();
+  }
+
   /**
    * An API for the Icons Utility
    *
@@ -45,7 +51,7 @@ class main {
    *
    * @param   {Object}  settings  Settings for the Toggle Class
    *
-   * @return  {Object}            Instance of toggle
+   * @return  {Object}            Instance of Toggle
    */
   toggle(settings = false) {
     return (settings) ? new Toggle(settings) : new Toggle();
@@ -107,35 +113,6 @@ class main {
     return new Track();
   }
 
-  // /**
-  //  * An API for the Tooltips element
-  //  * @param  {Object}   settings Settings for the Tooltips Class
-  //  * @return {nodelist}          Tooltip elements
-  //  */
-  // tooltips(elements = document.querySelectorAll(Tooltips.selector)) {
-  //   elements.forEach(element => {
-  //     new Tooltips(element);
-  //   });
-
-  //   return (elements.length) ? elements : null;
-  // }
-
-  // /**
-  //  * An API for the Filter Component
-  //  * @return {Object} Instance of Filter
-  //  */
-  // filter() {
-  //   return new Filter();
-  // }
-
-  // /**
-  //  * An API for the Nearby Stops Component
-  //  * @return {Object} Instance of NearbyStops
-  //  */
-  // nearbyStops() {
-  //   return new NearbyStops();
-  // }
-
   /**
    * An API for the Newsletter Object
    *
@@ -196,36 +173,6 @@ class main {
   }
 
   // /**
-  //  * An API for the AlertBanner Component
-  //  *
-  //  * @return  {Object}  Instance of AlertBanner
-  //  */
-  // alertBanner(element = document.querySelector(AlertBanner.selector)) {
-  //   return (element) ? new AlertBanner(element) : null;
-  // }
-
-  // /**
-  //  * An API for the ShareForm Component
-  //  *
-  //  * @return  {Object}  Instance of ShareForm
-  //  */
-  // shareForm(elements = document.querySelectorAll(ShareForm.selector)) {
-  //   elements.forEach(element => {
-  //     new ShareForm(element);
-  //   });
-
-  //   return (elements.length) ? elements : null;
-  // }
-
-  // /**
-  //  * An API for the Disclaimer Component
-  //  * @return  {Object}  Instance of Disclaimer
-  //  */
-  // disclaimer() {
-  //   return new Disclaimer();
-  // }
-
-  // /**
   //  * An API for the TextController Object
   //  *
   //  * @return  {Object}  Instance of TextController
@@ -244,7 +191,7 @@ class main {
   }
 
   /**
-   * An API for the Search Box
+   * An API for the Search
    *
    * @return  {Object}  Instance of Search
    */
