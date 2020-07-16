@@ -173,12 +173,14 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   $token-graphic-checkbox: map-get($option, 'graphic-checkbox');
   $token-graphic-checkbox-checked: map-get($option, 'graphic-checkbox-checked');
 
-  .option > .option__base {
+  .option > .option__base,
+  .o-text-controller__languages a {
     color: map-get($colors, $token-text);
     background-color: map-get($colors, $token-background)
   }
 
-  .option:hover > .option__base {
+  .option:hover > .option__base,
+  .o-text-controller__languages a:hover {
     color: map-get($colors, $token-text-hover);
     border-color: map-get($colors, $token-border-hover);
     background-color: map-get($colors, $token-background-hover)

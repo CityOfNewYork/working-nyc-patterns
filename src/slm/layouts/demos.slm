@@ -20,11 +20,13 @@ html lang='en'
       - navigation = {class: 'o-navigation-fixed'}
       - mobileMenu = {class: 'o-mobile-menu-fixed hidden', tabindex: '-1', ariaHidden: 'true'}
       - search = {class: 'o-search-fixed hidden', tabindex: '-1', ariaHidden: 'true'}
+      - textController = {class: 'o-text-controller-fixed hidden', tabindex: '-1', ariaHidden: 'true'}
       - footer = {class: 'o-footer-fixed', role: 'contentinfo'}
 
       = partial('/objects/navigation/navigation.slm')
       = partial('/objects/mobile-menu/mobile-menu.slm')
-      = partial('/objects/search/search.slm')
+      / = partial('/objects/search/search.slm')
+      = partial('/objects/text-controller/text-controller.slm')
 
       = content('content')
 
@@ -33,6 +35,7 @@ html lang='en'
     - navigation = {}
     - mobileMenu = {}
     - search = {}
+    - textController = {}
     - footer = {}
 
     script src='${this.baseUrl}/scripts/polyfills.js'

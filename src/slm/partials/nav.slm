@@ -67,13 +67,17 @@ nav role='navigation' aria-labelledby='aria-lb-components-${this.nav.id}' class=
     mark class='badge badge-small status-secondary' View
     | &nbsp;Accordion
 
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='alert-box'
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='alert'
     mark class='badge badge-small status-secondary' View
     | &nbsp;Alert
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='card'
     mark class='badge badge-small status-secondary' View
     | &nbsp;Card
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='dropdown'
+    mark class='badge badge-small status-secondary' View
+    | &nbsp;Dropdown
 
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='disclaimer' Disclaimer
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='filter' Filter
@@ -129,7 +133,9 @@ nav role='navigation' aria-labelledby='aria-lb-objects-${this.nav.id}' class='${
     mark class='badge badge-small status-secondary' View
     | &nbsp;Search
 
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='text-controller' Text Controller
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='text-controller'
+    mark class='badge badge-small status-secondary' View
+    | &nbsp;Text Controller
 
 nav role='navigation' aria-labelledby='aria-lb-utilities-${this.nav.id}' class='${this.nav.class.main} desktop:ps-4'
   span id='aria-lb-utilities-${this.nav.id}' class='${this.nav.class.heading} ${this.nav.class.divider}' Utilities

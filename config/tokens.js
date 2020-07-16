@@ -393,6 +393,7 @@ module.exports = {
     '6': ['48px', '48px'],
     '7': ['56px', '56px'],
     '8': ['64px', '64px'],
+    'logo-google-translate': ['175px', '16px'],
     'logo-standard-menu-item': ['130px', '18px'],
     'logo-standard-tagline': ['320px', '30px'],
     'logo-stacked-menu-item': ['100px', '32px'],

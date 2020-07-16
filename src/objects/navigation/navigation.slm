@@ -35,11 +35,11 @@ nav role='navigation' aria-label='Primary Navigation' class='o-navigation bg-sca
 
   /!   span class='o-navigation__menu-label' Search
 
-  / button class='o-navigation__menu-item btn-link desktop:m-0' data-js='translate' aria-controls='aria-c-search' aria-expanded='false'
-  /   svg class='o-navigation__menu-icon icon-wnyc-ui'
-  /     use xlink:href='#icon-wnyc-ui-translate'
+  button class='o-navigation__menu-item btn-link desktop:m-0' data-js='dropdown' data-dropdown='open' data-dropdown-lock='true' aria-controls='aria-c-text-controller' aria-expanded='false'
+    svg class='o-navigation__menu-icon icon-wnyc-ui'
+      use xlink:href='#icon-wnyc-ui-translate'
 
-  /   span class='o-navigation__menu-label' Translate
+    span class='o-navigation__menu-label' Translate
 
   / button class='o-navigation__menu-item btn-link tablet:hidden' data-js='dropdown' aria-controls='aria-c-filter' aria-expanded='false'
   /   svg class='o-navigation__menu-icon icon-wnyc-ui'

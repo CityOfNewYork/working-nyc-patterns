@@ -22,23 +22,23 @@
 
 // Layouts that do not include Media queries
 @include media.screens-and-min-width() using ($variant) {
-  @include layouts.page-min($variant);
-  @include layouts.page-max($variant);
-  @include layouts.page-min-max($variant);
-  @include layouts.four-columns($variant);
-  @include layouts.four-columns-gutter($variant);
-  @include layouts.three-columns($variant);
-  @include layouts.three-columns-gutter($variant);
-  @include layouts.two-columns($variant);
-  @include layouts.two-columns-gutter($variant);
-  @include layouts.rows($variant);
-  @include layouts.rows-gutter($variant);
-  @include layouts.sidebar($variant);
-  @include layouts.sidebar-small($variant);
-  @include layouts.sidebar-gutter($variant);
-  @include layouts.sidebar-small-gutter($variant);
-  @include layouts.content($variant);
-  @include layouts.topbar($variant);
+  @include layouts.page-min-selector($variant);
+  @include layouts.page-max-selector($variant);
+  @include layouts.page-min-max-selector($variant);
+  @include layouts.four-columns-selector($variant);
+  @include layouts.four-columns-gutter-selector($variant);
+  @include layouts.three-columns-selector($variant);
+  @include layouts.three-columns-gutter-selector($variant);
+  @include layouts.two-columns-selector($variant);
+  @include layouts.two-columns-gutter-selector($variant);
+  @include layouts.rows-selector($variant);
+  @include layouts.rows-gutter-selector($variant);
+  @include layouts.sidebar-selector($variant);
+  @include layouts.sidebar-small-selector($variant);
+  @include layouts.sidebar-gutter-selector($variant);
+  @include layouts.sidebar-small-gutter-selector($variant);
+  @include layouts.content-selector($variant);
+  @include layouts.topbar-selector($variant);
 }
 
 .print {

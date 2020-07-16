@@ -4,23 +4,16 @@
 
 // Dependencies
 @use 'config/dimensions';
+@use 'config/dropdown';
 @use 'config/media';
 
 // Declarations
-@mixin dropdown($variant) {
-  .#{$variant}c-dropdown {
-    overflow: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-
-    max-height: calc(var(--100vh) - #{dimensions.get('navigation-height-mobile')});
-
-    @include media.screen-and-min-width('tablet') {
-      max-height: calc(var(--100vh) - #{dimensions.get('navigation-height')});
-    }
-  }
-}
-
 @include media.screens-and-min-width() using ($variant) {
-  @include dropdown($variant);
+  @include dropdown.selector($variant) {
+    @include dropdown.base();
+  }
+
+  @include dropdown.selector($variant, '-min') {
+    @include dropdown.min-height();
+  }
 }

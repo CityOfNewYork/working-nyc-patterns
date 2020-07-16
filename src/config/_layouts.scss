@@ -24,283 +24,347 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   margin-right: auto;
 }
 
-@mixin page-min-max($variant) {
+@mixin page-min-max() {
+  @include auto();
+  max-width: dimensions.get('site-max-width');
+  min-width: dimensions.get('site-min-width');
+}
+
+@mixin page-min-max-selector($variant: '') {
   .#{$variant}page-min-max {
-    @include auto();
-    max-width: dimensions.get('site-max-width');
-    min-width: dimensions.get('site-min-width');
+    @include page-min-max();
   }
 }
 
-@mixin page-min($variant) {
+@mixin page-min() {
+  @include auto();
+  min-width: dimensions.get('site-min-width');
+}
+
+@mixin page-min-selector($variant: '') {
   .#{$variant}page-min {
-    @include auto();
-    min-width: dimensions.get('site-min-width');
+    @include page-min();
   }
 }
 
-@mixin page-max($variant) {
+@mixin page-max() {
+  @include auto();
+  max-width: dimensions.get('site-max-width');
+}
+
+@mixin page-max-selector($variant: '') {
   .#{$variant}page-max {
-    @include auto();
-    max-width: dimensions.get('site-max-width');
+    @include page-max();
   }
 }
 
-@mixin rows($variant) {
+@mixin rows() {
+  > *,
+  > .layout__column {
+    width: 100%;
+  }
+}
+
+@mixin rows-selector($variant: '') {
   .#{$variant}layout-rows {
-    > *,
-    > .layout__column {
-      width: 100%;
-    }
+    @include rows();
   }
 }
 
-@mixin rows-gutter($variant) {
+@mixin rows-gutter() {
+  > *,
+  > .layout__column {
+    width: 100%;
+    margin-bottom: dimensions.$spacing-base
+  }
+
+  // > *:last-child,
+  // > .layout__column:last-child {
+  //   margin-bottom: 0
+  // }
+}
+
+@mixin rows-gutter-selector($variant: '') {
   .#{$variant}layout-rows-gutter {
-    > *,
-    > .layout__column {
-      width: 100%;
-      margin-bottom: dimensions.$spacing-base
-    }
-
-    // > *:last-child,
-    // > .layout__column:last-child {
-    //   margin-bottom: 0
-    // }
+    @include rows-gutter();
   }
 }
 
-@mixin four-columns($variant) {
+@mixin four-columns() {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  > *,
+  > .layout__column {
+    width: 25%;
+    max-width: 25%;
+    flex-basis: 25%
+  }
+
+  // > *,
+  // > .layout__column {
+  //   margin-bottom: dimensions.$spacing-base
+  // }
+}
+
+@mixin four-columns-selector($variant: '') {
   .#{$variant}layout-four-columns {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    > *,
-    > .layout__column {
-      width: 25%;
-      max-width: 25%;
-      flex-basis: 25%
-    }
-
-    > *,
-    > .layout__column {
-      margin-bottom: dimensions.$spacing-base
-    }
+    @include four-columns();
   }
 }
 
-@mixin four-columns-gutter($variant) {
+@mixin four-columns-gutter() {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  > *,
+  > .layout__column {
+    width: calc(25% - #{dimensions.$spacing-base / 3});
+    max-width: calc(25% - #{dimensions.$spacing-base / 3});
+    flex-basis: calc(25% - #{dimensions.$spacing-base / 3})
+  }
+
+  > *,
+  > .layout__column {
+    margin-bottom: dimensions.$spacing-base
+  }
+}
+
+@mixin four-columns-gutter-selector($variant: '') {
   .#{$variant}layout-four-columns-gutter {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    > *,
-    > .layout__column {
-      width: calc(25% - #{dimensions.$spacing-base / 3});
-      max-width: calc(25% - #{dimensions.$spacing-base / 3});
-      flex-basis: calc(25% - #{dimensions.$spacing-base / 3})
-    }
-
-    > *,
-    > .layout__column {
-      margin-bottom: dimensions.$spacing-base
-    }
+    @include four-columns-gutter();
   }
 }
 
-@mixin three-columns($variant) {
+@mixin three-columns() {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  > *,
+  > .layout__column {
+    width: 33.33%;
+    max-width: 33.33%;
+    flex-basis: 33.33%
+  }
+}
+
+@mixin three-columns-selector($variant: '') {
   .#{$variant}layout-three-columns {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    > *,
-    > .layout__column {
-      width: 33.33%;
-      max-width: 33.33%;
-      flex-basis: 33.33%
-    }
+    @include three-columns();
   }
 }
 
-@mixin three-columns-gutter($variant) {
+@mixin three-columns-gutter() {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  > *,
+  > .layout__column {
+    width: calc(33.33% - #{$grid * 2});
+    max-width: calc(33.33% - #{$grid * 2});
+    flex-basis: calc(33.33% - #{$grid * 2})
+  }
+
+  > *,
+  > .layout__column {
+    margin-bottom: dimensions.$spacing-base
+  }
+}
+
+@mixin three-columns-gutter-selector($variant: '') {
   .#{$variant}layout-three-columns-gutter {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    > *,
-    > .layout__column {
-      width: calc(33.33% - #{$grid * 2});
-      max-width: calc(33.33% - #{$grid * 2});
-      flex-basis: calc(33.33% - #{$grid * 2})
-    }
-
-    > *,
-    > .layout__column {
-      margin-bottom: dimensions.$spacing-base
-    }
+    @include three-columns-gutter();
   }
 }
 
-@mixin two-columns($variant) {
+@mixin two-columns() {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  > *,
+  > .layout__column,
+  &:after {
+    width: 50%;
+    max-width: 50%;
+    flex-basis: 50%
+  }
+
+  &:after {
+    content: '';
+    // margin-bottom: 0
+  }
+}
+
+@mixin two-columns-selector($variant: '') {
   .#{$variant}layout-two-columns {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    > *,
-    > .layout__column,
-    &:after {
-      width: 50%;
-      max-width: 50%;
-      flex-basis: 50%
-    }
-
-    &:after {
-      content: '';
-      margin-bottom: 0
-    }
+    @include two-columns();
   }
 }
 
-@mixin two-columns-gutter($variant) {
+@mixin two-columns-gutter() {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  > *,
+  > .layout__column,
+  &:after {
+    width: calc(50% - #{dimensions.$spacing-base / 2});
+    max-width: calc(50% - #{dimensions.$spacing-base / 2});
+    flex-basis: calc(50% - #{dimensions.$spacing-base / 2})
+  }
+
+  > *,
+  > .layout__column, {
+    margin-bottom: dimensions.$spacing-base
+  }
+
+  &:after {
+    content: '';
+    // margin-bottom: 0;
+  }
+}
+
+@mixin two-columns-gutter-selector($variant: '') {
   .#{$variant}layout-two-columns-gutter {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    > *,
-    > .layout__column,
-    &:after {
-      width: calc(50% - #{dimensions.$spacing-base / 2});
-      max-width: calc(50% - #{dimensions.$spacing-base / 2});
-      flex-basis: calc(50% - #{dimensions.$spacing-base / 2})
-    }
-
-    > *,
-    > .layout__column, {
-      margin-bottom: dimensions.$spacing-base
-    }
-
-    &:after {
-      content: '';
-      margin-bottom: 0;
-    }
+    @include two-columns-gutter();
   }
 }
 
-@mixin sidebar($variant) {
+@mixin sidebar() {
+  display: flex;
+  align-items: stretch;
+
+  > *:first-child,
+  > .layout__column:first-child {
+    width: dimensions.get('side-bar-width');
+    max-width: dimensions.get('side-bar-width');
+    flex-basis: dimensions.get('side-bar-width')
+  }
+
+  > *:first-child + *,
+  > .layout__column:first-child + .layout__column {
+    width: calc(100% - #{dimensions.get('side-bar-width')});
+    max-width: calc(100% - #{dimensions.get('side-bar-width')});
+    flex-basis: calc(100% - #{dimensions.get('side-bar-width')})
+  }
+}
+
+@mixin sidebar-selector($variant: '') {
   .#{$variant}layout-sidebar {
-    display: flex;
-    align-items: stretch;
-
-    > *:first-child,
-    > .layout__column:first-child {
-      width: dimensions.get('side-bar-width');
-      max-width: dimensions.get('side-bar-width');
-      flex-basis: dimensions.get('side-bar-width')
-    }
-
-    > *:first-child + *,
-    > .layout__column:first-child + .layout__column {
-      width: calc(100% - #{dimensions.get('side-bar-width')});
-      max-width: calc(100% - #{dimensions.get('side-bar-width')});
-      flex-basis: calc(100% - #{dimensions.get('side-bar-width')})
-    }
+    @include sidebar();
   }
 }
 
-@mixin sidebar-small($variant) {
+@mixin sidebar-small() {
+  display: flex;
+  align-items: stretch;
+
+  > *:first-child,
+  > .layout__column:first-child {
+    width: dimensions.get('side-bar-width-small');
+    max-width: dimensions.get('side-bar-width-small');
+    flex-basis: dimensions.get('side-bar-width-small')
+  }
+
+  > *:first-child + *,
+  > .layout__column:first-child + .layout__column {
+    width: calc(100% - #{dimensions.get('side-bar-width-small')});
+    max-width: calc(100% - #{dimensions.get('side-bar-width-small')});
+    flex-basis: calc(100% - #{dimensions.get('side-bar-width-small')})
+  }
+}
+
+@mixin sidebar-small-selector($variant: '') {
   .#{$variant}layout-sidebar-small {
-    display: flex;
-    align-items: stretch;
-
-    > *:first-child,
-    > .layout__column:first-child {
-      width: dimensions.get('side-bar-width-small');
-      max-width: dimensions.get('side-bar-width-small');
-      flex-basis: dimensions.get('side-bar-width-small')
-    }
-
-    > *:first-child + *,
-    > .layout__column:first-child + .layout__column {
-      width: calc(100% - #{dimensions.get('side-bar-width-small')});
-      max-width: calc(100% - #{dimensions.get('side-bar-width-small')});
-      flex-basis: calc(100% - #{dimensions.get('side-bar-width-small')})
-    }
+    @include sidebar-small();
   }
 }
 
-@mixin sidebar-gutter($variant) {
+@mixin sidebar-gutter() {
+  display: flex;
+  align-items: stretch;
+
+  // > *,
+  // > .layout__column {
+  //   margin-bottom: 0
+  // }
+
+  > *:first-child,
+  > .layout__column:first-child {
+    width: dimensions.get('side-bar-width');
+    max-width: dimensions.get('side-bar-width');
+    flex-basis: dimensions.get('side-bar-width');
+    margin-#{direction.$end}: dimensions.$spacing-base;
+  }
+
+  > *:first-child + *,
+  > .layout__column:first-child + .layout__column {
+    width: calc(100% - #{dimensions.get('side-bar-width')} - #{dimensions.$spacing-base});
+    max-width: calc(100% - #{dimensions.get('side-bar-width')} - #{dimensions.$spacing-base});
+    flex-basis: calc(100% - #{dimensions.get('side-bar-width')} - #{dimensions.$spacing-base})
+  }
+}
+
+@mixin sidebar-gutter-selector($variant: '') {
   .#{$variant}layout-sidebar-gutter {
-    display: flex;
-    align-items: stretch;
-
-    > *,
-    > .layout__column {
-      margin-bottom: 0
-    }
-
-    > *:first-child,
-    > .layout__column:first-child {
-      width: dimensions.get('side-bar-width');
-      max-width: dimensions.get('side-bar-width');
-      flex-basis: dimensions.get('side-bar-width');
-      margin-#{direction.$end}: dimensions.$spacing-base;
-    }
-
-    > *:first-child + *,
-    > .layout__column:first-child + .layout__column {
-      width: calc(100% - #{dimensions.get('side-bar-width')} - #{dimensions.$spacing-base});
-      max-width: calc(100% - #{dimensions.get('side-bar-width')} - #{dimensions.$spacing-base});
-      flex-basis: calc(100% - #{dimensions.get('side-bar-width')} - #{dimensions.$spacing-base})
-    }
+    @include sidebar-gutter();
   }
 }
 
-@mixin sidebar-small-gutter($variant) {
+@mixin sidebar-small-gutter() {
+  display: flex;
+  align-items: stretch;
+
+  // > *,
+  // > .layout__column {
+  //   margin-bottom: 0
+  // }
+
+  > *:first-child,
+  > .layout__column:first-child {
+    width: dimensions.get('side-bar-width-small');
+    max-width: dimensions.get('side-bar-width-small');
+    flex-basis: dimensions.get('side-bar-width-small');
+    margin-#{direction.$end}: dimensions.$spacing-base;
+  }
+
+  > *:first-child + *,
+  > .layout__column:first-child + .layout__column {
+    width: calc(100% - #{dimensions.get('side-bar-width-small')} - #{dimensions.$spacing-base});
+    max-width: calc(100% - #{dimensions.get('side-bar-width-small')} - #{dimensions.$spacing-base});
+    flex-basis: calc(100% - #{dimensions.get('side-bar-width-small')} - #{dimensions.$spacing-base})
+  }
+}
+
+@mixin sidebar-small-gutter-selector($variant: '') {
   .#{$variant}layout-sidebar-small-gutter {
-    display: flex;
-    align-items: stretch;
-
-    > *,
-    > .layout__column {
-      margin-bottom: 0
-    }
-
-    > *:first-child,
-    > .layout__column:first-child {
-      width: dimensions.get('side-bar-width-small');
-      max-width: dimensions.get('side-bar-width-small');
-      flex-basis: dimensions.get('side-bar-width-small');
-      margin-#{direction.$end}: dimensions.$spacing-base;
-    }
-
-    > *:first-child + *,
-    > .layout__column:first-child + .layout__column {
-      width: calc(100% - #{dimensions.get('side-bar-width-small')} - #{dimensions.$spacing-base});
-      max-width: calc(100% - #{dimensions.get('side-bar-width-small')} - #{dimensions.$spacing-base});
-      flex-basis: calc(100% - #{dimensions.get('side-bar-width-small')} - #{dimensions.$spacing-base})
-    }
+    @include sidebar-small-gutter();
   }
 }
 
-@mixin content($variant) {
+@mixin content() {
+  align-items: center;
+
+  > *:first-child,
+  > .layout__column:first-child {
+    @include auto();
+    max-width: dimensions.get('content-width')
+  }
+}
+
+@mixin content-selector($variant: '') {
   .#{$variant}layout-content {
-    align-items: center;
-
-    > *:first-child,
-    > .layout__column:first-child {
-      @include auto();
-      max-width: dimensions.get('content-width')
-    }
+    @include content();
   }
 }
 
-@mixin topbar($variant) {
+@mixin topbar-selector($variant: '') {
   .#{$variant}layout-topbar {
     > *:first-child {
       height: dimensions.get('topbar-height')

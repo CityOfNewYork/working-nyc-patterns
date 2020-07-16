@@ -1,154 +1,61 @@
 /**
- * Text-controller
+ * Text Controller
  */
 
 // Dependencies
-@use 'config/colors';
-@use 'config/fonts';
-@use 'config/direction';
-@use 'config/media';
 @use 'config/dimensions';
-@use 'config/accessibility';
+@use 'config/dropdown';
+@use 'config/layouts';
+@use 'config/media';
+@use 'config/nav';
+@use 'config/options';
+@use 'config/screen-readers';
 
 // Declarations
 .o-text-controller {
-  font-size: 18px; // px value freezes the font size for the controller
+  @include dropdown.base();
+  @include dropdown.min-height();
+}
 
-  .o-text-controller__title-full,
-  .o-text-controller__title-short {
-    vertical-align: middle;
+.o-text-controller__inner {
+  @include dropdown.inner();
+  @include layouts.content();
+
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+
+  > div {
+    width: 100%
   }
 }
 
-.o-text-controller__control {
-  font-weight: normal;
-  font-style: italic;
-  text-decoration: none;
-
-  &.active {
-    display: none;
-  }
-
-  > * {
-   pointer-events: none;
-  }
-}
-
-.o-text-controller__icon {
-  vertical-align: middle;
-  margin-#{direction.$end}: $grid;
-}
-
-.o-text-controller__icon-full,
-.o-text-controller__title-full {
-  display: none;
-
-  @media screen and (min-width: media.$screen-desktop) {
-    display: inline-block;
-  }
-}
-
-.o-text-controller__icon-short,
-.o-text-controller__title-short {
-  display: inline-block;
-
-  @media screen and (min-width: media.$screen-desktop) {
-    display: none;
-  }
-}
-
-.o-text-controller__options {
-  width: 100%;
-}
-
-.o-text-controller__languages .wpml-ls {
-  padding: 0;
-  border: none;
-
+.o-text-controller__languages {
   ul {
-    list-style-type: none;
-    display: inline;
+    @include layouts.rows();
     margin: 0;
     padding: 0;
-  }
-
-  li {
     list-style-type: none;
-    line-height: normal;
-    margin-bottom: dimensions.$spacing-base * 0.5;
-    display: inline-block;
-    padding: 0;
 
-    margin-#{direction.$end}: $grid * 2;
-    margin-bottom: dimensions.$spacing-base / 2;
-
-    &:first-of-type {
-      margin-#{direction.$start}: 0;
-    }
-
-    &:last-of-type {
-      margin-#{direction.$end}: 0;
+    @include media.screen-and-min-width('tablet') {
+      @include layouts.two-columns-gutter();
     }
   }
 
-  .text-start & li { // based on utilities/text/text
-    margin-#{direction.$end}: $grid * 2;
-    margin-#{direction.$start}: 0;
-  }
-
-  .text-end & li { // based on utilities/text/text
-    margin-#{direction.$end}: 0;
-    margin-#{direction.$start}: $grid * 2;
-  }
+  // li {
+  //   margin-bottom: 0;
+  // }
 
   a {
-    padding: 0;
-    line-height: 1;
-  }
-}
-
-.o-text-controller__sizer {
-  display: none;
-
-  @media screen and (min-width: media.$screen-desktop) {
-    color: $color-grey-mid;
-    display: flex;
+    @include options.base();
   }
 
-  .text-start & {
-    justify-content: flex-start
-  }
+  > div {
+    margin-bottom: dimensions.$spacing-base;
 
-  .text-end & {
-    justify-content: flex-end
-  }
-}
-
-.o-text-controller__sizer-text {
-  font-style: italic;
-  margin-#{direction.$end}: dimensions.$spacing-base / 3;
-}
-
-.o-text-controller__sizer-btn {
-  color: $color-blue;
-  margin-left: 0.15em;
-  margin-right: 0.15em;
-  font-size: inherit;
-
-  > * {
-    pointer-events: none
-  }
-
-  &:first-of-type {
-    margin-#{direction.$start}: 0
-  }
-
-  &:last-of-type {
-    margin-#{direction.$end}: 0
-  }
-
-  &:disabled {
-    color: $color-grey-light
+    @include media.screen-and-min-width('tablet') {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -159,5 +66,5 @@
 // Hides the current language translation in the language switcher
 .o-text-controller__languages .wpml-ls .wpml-ls-current-language,
 .o-text-controller__languages .wpml-ls .wpml-ls-display {
-  @include sr-only();
+  @include screen-readers.only();
 }

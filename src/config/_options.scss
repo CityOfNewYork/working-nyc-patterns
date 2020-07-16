@@ -16,6 +16,7 @@ $options: map-get($tokens, 'options');
 @mixin base() {
   @include typography.set('option');
   line-height: get('inner-size');
+  text-decoration: none;
 
   display: flex;
   padding: ($grid * 2) - get('border-width');

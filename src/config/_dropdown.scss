@@ -1,0 +1,41 @@
+// Dependencies
+@use 'config/dimensions';
+@use 'config/layouts';
+@use 'config/media';
+
+@mixin base() {
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @include max-height();
+}
+
+@mixin selector($variant: '', $type: '') {
+  .#{$variant}c-dropdown#{$type} {
+    @content;
+  }
+}
+
+@mixin max-height() {
+  max-height: calc(var(--100vh) - #{dimensions.get('navigation-height-mobile')});
+
+  @include media.screen-and-min-width('tablet') {
+    max-height: calc(var(--100vh) - #{dimensions.get('navigation-height')});
+  }
+}
+
+@mixin min-height() {
+  min-height: calc(var(--100vh) - #{dimensions.get('navigation-height-mobile')});
+
+  @include media.screen-and-min-width('tablet') {
+    min-height: calc(var(--100vh) - #{dimensions.get('navigation-height')});
+  }
+}
+
+@mixin inner() {
+  @include layouts.wrap();
+
+  padding-top: dimensions.$spacing-base;
+  padding-bottom: dimensions.$spacing-base;
+}

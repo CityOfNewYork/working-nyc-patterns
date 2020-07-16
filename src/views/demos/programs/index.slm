@@ -21,7 +21,7 @@
 
               span Home
 
-            button class='btn btn-small btn-secondary' data-js='dropdown' aria-controls='aria-c-filter' aria-expanded='false' data-js-dropdown='open'
+            button class='btn btn-small btn-secondary' data-js='dropdown' aria-controls='aria-c-filter' aria-expanded='false' data-dropdown='open' data-dropdown-lock='true'
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-sliders'
 
@@ -37,11 +37,12 @@
           div#aria-c-filter class='layout-content hidden' aria-hidden='true'
             div class='wrap'
               div class='text-end relative z-20'
-                button class='btn btn-primary btn-small' data-js='dropdown' aria-controls='aria-c-filter' aria-expanded='false' data-js-dropdown='close' tabindex='-1'
+                button class='btn btn-primary btn-small' data-js='dropdown' aria-controls='aria-c-filter' aria-expanded='false' data-dropdown='close' tabindex='-1'
                   svg class='icon-wnyc-ui' aria-hidden='true' tabindex='-1'
                     use xlink:href='#icon-wnyc-ui-x'
 
                   span Close
+
                   span class='sr-only' and return to site
 
               form class='layout-rows-gutter' tabindex='-1'
@@ -93,7 +94,7 @@
             div class='wrap'
               button class='btn btn-secondary w-full mb-2' Show More
 
-              button class='btn btn-secondary w-full' aria-controls='aria-c-filter' aria-expanded='false' data-js='dropdown' Filter Programs
+              button class='btn btn-secondary w-full' aria-controls='aria-c-filter' aria-expanded='false' data-js='dropdown' data-dropdown-lock='true' Filter Programs
 
       = partial('/objects/newsletter/newsletter')
 
