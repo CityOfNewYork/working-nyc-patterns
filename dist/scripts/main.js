@@ -1249,27 +1249,66 @@ var WorkingNyc = (function () {
 
   Accordion.selector = '[data-js*="accordion"]';
 
+  /**
+   * @class  Dropdown
+   *
+   * Usage
+   *
+   * Element Attributes. Either <a> or <button>
+   *
+   * @attr  data-js="dropdown"         Instantiates the toggling method
+   * @attr  aria-controls=""           Targets the id of the dropdown
+   * @attr  aria-expanded="false"      Declares target closed/open when toggled
+   * @attr  data-dropdown="open"       Designates the primary opening element of the dropdown
+   * @attr  data-dropdown="close"      Designates the primary closing element of the dropdown
+   * @attr  data-dropdown-lock="true"  Wether to lock screen scrolling when drodown is open
+   *
+   * Target Attributes. Any <element>
+   *
+   * @attr  id=""               Matches aria-controls attr of Element
+   * @attr  class="hidden"      Hidden class
+   * @attr  aria-hidden="true"  Declares target open/closed when toggled
+   */
+
   var Dropdown = function Dropdown() {
     var this$1 = this;
 
     this.selector = Dropdown.selector;
     this.selectors = Dropdown.selectors;
     this.classes = Dropdown.classes;
+    this.dataAttrs = Dropdown.dataAttrs;
     this.toggle = new Toggle({
       selector: this.selector,
       after: function (toggle) {
-        var body = document.querySelector('body'); // Scroll to the top of the page
+        var active = toggle.target.classList.contains(Toggle.activeClass); // Lock the body from scrolling if lock attribute is present
 
-        window.scroll(0, 0); // Prevent scrolling on the body
+        if (active && toggle.element.dataset[this$1.dataAttrs.LOCK] === 'true') {
+          // Scroll to the top of the page
+          window.scroll(0, 0); // Prevent scrolling on the body
 
-        body.classList.toggle(this$1.classes.OVERFLOW); // Focus on the close or open button
+          document.querySelector('body').classList.add(this$1.classes.OVERFLOW); // When the last focusable item in the list looses focus loop to the first
 
-        if (toggle.target.classList.contains(Toggle.activeClass)) {
-          var close = document.querySelector(this$1.selectors.CLOSE);
-          if (close) { close.focus(); }
+          toggle.focusable.item(toggle.focusable.length - 1).addEventListener('blur', function () {
+            toggle.focusable.item(0).focus();
+          });
         } else {
-          var open = document.querySelector(this$1.selectors.OPEN);
-          if (open) { open.focus(); }
+          // Remove if all other dropdown body locks are inactive
+          var locks = document.querySelectorAll([this$1.selector, this$1.selectors.locks, ("." + (Toggle.activeClass))].join(''));
+
+          if (locks.length === 0) {
+            document.querySelector('body').classList.remove(this$1.classes.OVERFLOW);
+          }
+        } // Focus on the close or open button if present
+
+
+        var id = "[aria-controls=\"" + (toggle.target.getAttribute('id')) + "\"]";
+        var close = document.querySelector(this$1.selectors.CLOSE + id);
+        var open = document.querySelector(this$1.selectors.OPEN + id);
+
+        if (active && close) {
+          close.focus();
+        } else if (open) {
+          open.focus();
         }
       }
     });
@@ -1282,8 +1321,14 @@ var WorkingNyc = (function () {
   /** @type  {Object}  Additional selectors used by the script */
 
   Dropdown.selectors = {
-    CLOSE: '[data-js-dropdown*="close"]',
-    OPEN: '[data-js-dropdown*="open"]'
+    CLOSE: '[data-dropdown*="close"]',
+    OPEN: '[data-dropdown*="open"]',
+    LOCKS: '[data-dropdown-lock="true"]'
+  };
+  /** @type  {Object}  Data attribute namespaces */
+
+  Dropdown.dataAttrs = {
+    LOCK: 'dropdownLock'
   };
   /** @type  {Object}  Various classes used by the script */
 

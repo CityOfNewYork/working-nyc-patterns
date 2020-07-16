@@ -34,6 +34,12 @@
       <!--  svg class='o-navigation__menu-icon icon-wnyc-ui'-->
       <!--    use xlink:href='#icon-wnyc-ui-search'-->
       <!--  span class='o-navigation__menu-label' Search-->
+      <button aria-controls="aria-c-text-controller" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:m-0" data-dropdown="open" data-dropdown-lock="true" data-js="dropdown">
+        <svg class="o-navigation__menu-icon icon-wnyc-ui">
+          <use xlink:href="#icon-wnyc-ui-translate"></use>
+        </svg>
+        <span class="o-navigation__menu-label">Translate</span>
+      </button>
       <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-navigation__menu-item btn-link desktop:hidden" data-js="mobile-menu" data-js-mobile-menu="open">
         <svg class="o-navigation__menu-icon icon-wnyc-ui">
           <use xlink:href="#icon-wnyc-ui-menu"></use>
@@ -68,34 +74,90 @@
         <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter" tabindex="-1">Newsletter</a>
       </nav>
     </aside>
-    <!--{ @id           Identifies Search for toggling }-->
-    <!--{ @class        Add "o-search-fixed" in production layouts }-->
-    <!--{ @aria-hidden  Add aria-hidden="true" in production layouts }-->
-    <div aria-hidden="true" class="o-search o-search-fixed hidden" id="aria-c-search">
-      <div class="o-search__close">
-        <!--{ @tabindex       Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-        <!--{ @aria-controls  Targets the Search ID for toggling }-->
-        <!--{ @aria-expanded  Indicates the toggled state of the target }-->
-        <button aria-controls="aria-c-search" aria-expanded="false" class="btn-link" data-js="toggle" tabindex="-1">
-          <svg class="icon-wnyc-ui">
-            <use xlink:href="#icon-wnyc-ui-x"></use>
-          </svg>
-          <span>Close</span>
-        </button>
-      </div>
-      <form class="o-search__form" tabindex="-1">
-        <label class="label" for="search-field" tabindex="-1">Search for programs and occupations</label>
-        <div class="input-search">
-          <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-          <input data-js="search__input" id="search-field" name="s" placeholder="Search" tabindex="-1" type="text" value="" />
-          <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-          <button class="btn-link input-search__submit" tabindex="-1" type="submit">
-            <svg class="icon-wnyc-ui icon-4">
-              <use xlink:href="#icon-wnyc-ui-search"></use>
-            </svg>
-          </button>
+    <div aria-hidden="true" class="o-text-controller bg-scale-1 o-text-controller-fixed hidden" data-js="text-controller" id="aria-c-text-controller">
+      <div class="o-text-controller__inner">
+        <div>
+          <div class="text-end">
+            <button aria-controls="aria-c-text-controller" aria-expanded="false" class="btn btn-primary btn-small" data-dropdown="close" data-js="dropdown" tabindex="-1">
+              <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
+                <use xlink:href="#icon-wnyc-ui-x"></use>
+              </svg>
+              <span>Close</span>
+              <span class="sr-only">and return to site</span>
+            </button>
+          </div>
+          <p class="h4 block w-full m-0 py-2 text-alt">Translate Text</p>
+          <div class="o-text-controller__options">
+            <div class="o-text-controller__languages">
+              <div>
+                <ul>
+                  <li>
+                    <a href="#" tabindex="-1">
+                      <span>English</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" tabindex="-1">
+                      <span>Español</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" tabindex="-1">
+                      <span>Русский</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" tabindex="-1">
+                      <span>한국어</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" tabindex="-1">
+                      <span>العربية</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" tabindex="-1">
+                      <span>Kreyol</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" tabindex="-1">
+                      <span>繁體中文</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" tabindex="-1">
+                      <span>Français</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" tabindex="-1">
+                      <span>polski</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" tabindex="-1">
+                      <span>اردو</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" tabindex="-1">
+                      <span>বাংলা</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <p>
+                <span class="sr-only">Powered by Google Translate</span>
+                <svg aria-hidden="true" class="icon-logo-google-translate" tabindex="-1">
+                  <use xlink:href="#logo-google-translate"></use>
+                </svg>
+              </p>
+            </div>
+          </div>
         </div>
-      </form>
+      </div>
     </div>
     <div class="page-max layout-map flex-row-reverse desktop:layout-columns desktop:flex-row">
       <header class="o-banner layout-map__map layout__column bg-scale-2 flex items-center ">
