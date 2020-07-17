@@ -2,8 +2,6 @@
 
 import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
 
-// import Search from 'src/objects/search/search';
-
 /**
  * The Mobile Nav module
  *
@@ -22,9 +20,16 @@ class MobileMenu {
 
     this.toggle = new Toggle({
       selector: this.selector,
-      after: (toggle) => {
+      after: toggle => {
+        // Shift focus from the open to the close button in the Mobile Menu when toggled
         if (toggle.target.classList.contains(Toggle.activeClass)) {
           toggle.target.querySelector(this.selectors.CLOSE).focus();
+
+          // When the last focusable item in the list looses focus loop to the first
+          toggle.focusable.item(toggle.focusable.length - 1)
+            .addEventListener('blur', () => {
+              toggle.focusable.item(0).focus();
+            });
         } else {
           document.querySelector(this.selectors.OPEN).focus();
         }
