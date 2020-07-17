@@ -129,12 +129,12 @@
     = partial('/objects/newsletter/newsletter')
 
 = content('head')
-  / link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/michalsnik/aos@v2.3.4/dist/aos.css'
-  / script src='https://cdn.jsdelivr.net/gh/michalsnik/aos@v2.3.4/dist/aos.js'
+  link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/michalsnik/aos@v2.3.4/dist/aos.css'
+  script src='https://cdn.jsdelivr.net/gh/michalsnik/aos@v2.3.4/dist/aos.js'
 
 = content('script')
-  / javascript:
-  /   AOS.init({
-  /     duration: 400,
-  /     easing: 'ease-out'
-  /   });
+  javascript:
+    AOS.init({
+      duration: 400,
+      easing: 'ease-out'
+    });
