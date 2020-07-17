@@ -7,6 +7,7 @@
 @use 'config/dimensions';
 @use 'config/direction';
 @use 'config/typography';
+@use 'config/media';
 
 // Declarations
 @mixin base() {
@@ -28,21 +29,23 @@
 @mixin error() {
   position: relative;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: -($grid * 2);
-    bottom: -(dimensions.$spacing-base);
+  @include media.screen-and-min-width('tablet') {
+    &::before {
+      content: '';
+      position: absolute;
+      top: -($grid * 2);
+      bottom: -(dimensions.$spacing-base);
 
-    @if direction.$direction == 'rtl' {
-      right: -14px;
-    } @else {
-      left: -14px;
+      @if direction.$direction == 'rtl' {
+        right: -14px;
+      } @else {
+        left: -14px;
+      }
+
+      border-left: 4px solid;
+      display: block;
+      width: 0;
     }
-
-    border-left: 4px solid;
-    display: block;
-    width: 0;
   }
 }
 

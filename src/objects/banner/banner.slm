@@ -3,7 +3,7 @@
 header class='o-banner layout-map__map layout__column bg-scale-2 flex items-center '
   div class='o-banner__inner my-4'
     h2 class='h3 m-0'
-      span class='font-normal' The Official Resource of
+      span class='' Welcome to
 
       a href='/' class='text-white uppercase no-underline'
         span class='sr-only' Working N Y C

@@ -10,47 +10,131 @@
   = mixin('head');
 
 = content('content');
-  div class='page-max layout-map flex-row-reverse desktop:layout-columns desktop:flex-row'
-    = partial('/objects/banner/banner')
+  / div class='page-max'
+    / = partial('/objects/banner/banner')
 
-    main class='bg-scale-1 layout-map__sidebar layout__column p-2 desktop:p-3'
-      - for (let i in this.segments)
-        - let segment = this.segments[i]
-        - let active = (i == 0);
+  header class='o-banner flex flex-col bg-scale-1 py-7 px-3 overflow-x-hidden'
+    h1 class='sr-only' Working N Y C
 
-        - segment.slug = segment.name.replace(/ /g, '-').toLowerCase();
+    svg class='icon-logo-homepage fill-white text-blue-l-2' aria-hidden='true'
+      use xlink:href='#logo-wnyc-standard'
 
-        article class='c-accordion mb-1'
-          header class='c-accordion__header'
-            button class='c-accordion__toggle w-full text-start print:hidden ${active ? 'active' : ''}' data-js='accordion' aria-controls='aria-c-${segment.slug}' aria-expanded='${active.toString()}'
-              span class='c-accordion__heading mt-0' id='aria-lb-${segment.slug}'
-                span = segment.name
+    h2 class='h4 font-bold text-alt mb-5' Find help with careers, skill-building, continuing education, and more.
 
-              span class='c-accordion__toggle-active'
-                svg class='icon-wnyc-ui' aria-hidden='true'
-                  use xlink:href='#icon-wnyc-ui-chevron-down'
+    div class='flex justify-between px-4 mb-5'
+      svg class='icon-6 text-blue-l-1' aria-hidden='true' data-aos='fade-left' data-aos-delay='300'
+        use xlink:href='#category-wnyc-technology'
 
-                span class='sr-only' hide this list
+      svg class='icon-6 text-red-l-1' aria-hidden='true' data-aos='fade-left' data-aos-delay='400'
+        use xlink:href='#category-wnyc-healthcare'
 
-              span class='c-accordion__toggle-inactive'
-                svg class='icon-wnyc-ui' aria-hidden='true'
-                  use xlink:href='#icon-wnyc-ui-chevron-up'
+      svg class='icon-6 text-yellow' aria-hidden='true' data-aos='fade-left' data-aos-delay='500'
+        use xlink:href='#category-wnyc-construction'
 
-                span class='sr-only' show this list
+      svg class='icon-6 text-green-l-2' aria-hidden='true' data-aos='fade-left' data-aos-delay='600'
+        use xlink:href='#category-wnyc-culinary'
 
-          div id='aria-c-${segment.slug}' role='region' class='c-accordion__body bg-scale-3 print:active hidden:overflow animated ${active ? 'active' : 'hidden'}' aria-labelledby='aria-lb-${segment.slug}' aria-hidden='${active ? 'false' : 'true'}'
-            div class='c-accordion__padding'
-              - for (let y in segment.segments)
-                - let subSegment = segment.segments[y]
+    nav class='mb-3'
+      a class='btn btn-primary w-full mb-1' href='#programs' data-aos='fade-up' data-aos-delay='300' Recruiting Programs
 
-                a href='#' class='btn btn-secondary btn-next w-full mb-1'
-                  svg class='icon-wnyc-ui' aria-hidden='true'
-                    use xlink:href='#icon-wnyc-ui-arrow-left'
+      a class='btn btn-secondary w-full mb-1' href='#events' data-aos='fade-up' data-aos-delay='400' Upcomming Events
 
-                  span = subSegment.name
+      a class='btn btn-tertiary w-full mb-1' href='#trainings' data-aos='fade-up' data-aos-delay='500' New Trainings
 
-                  svg class='icon-wnyc-ui' aria-hidden='true'
-                    use xlink:href='#icon-wnyc-ui-arrow-right'
+    p class='text-center mt-auto'
+      a href='#content' class='text-center'
+        | Browse
+        br
+        svg class='icon-wnyc-ui' aria-hidden='true'
+          use xlink:href='#icon-wnyc-ui-chevron-down'
 
-= content('script');
+
+  main id='content' class='bg-scale-1'
+    section#programs class='page-max py-6'
+      div data-aos='fade-up' data-aos-anchor-placement='center-bottom'
+        h2 class='wrap h4 font-normal text-alt mt-0' Recruiting Programs
+
+        div class='wrap-end scroll scroll-x scroll-x-snap-start scroll-peek'
+          div class='wrap-start'
+            = partial('/components/card/card')
+          div class='wrap-start' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+            = partial('/components/card/card')
+          div class='wrap-start'
+            = partial('/components/card/card')
+          div class='wrap-start'
+            = partial('/components/card/card')
+
+        div class='wrap py-2'
+          a href='${this.baseUrl}#' class='btn btn-secondary btn-next w-full'
+            svg class='icon-wnyc-ui' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-left'
+
+            span View all programs
+
+            svg class='icon-wnyc-ui' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-right'
+
+    section#events class='page-max py-6'
+      div data-aos='fade-up' data-aos-anchor-placement='center-bottom'
+        h2 class='wrap h4 font-normal text-alt mt-0' Upcomming Events
+
+        div class='wrap-end scroll scroll-x scroll-x-snap-start scroll-peek'
+          div class='wrap-start'
+            = partial('/components/card/card')
+          div class='wrap-start' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+            = partial('/components/card/card')
+          div class='wrap-start'
+            = partial('/components/card/card')
+          div class='wrap-start'
+            = partial('/components/card/card')
+
+        div class='wrap py-2'
+          a href='${this.baseUrl}#' class='btn btn-secondary btn-next w-full'
+            svg class='icon-wnyc-ui' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-left'
+
+            span View all events
+
+            svg class='icon-wnyc-ui' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-right'
+
+    section#trainings class='page-max py-6'
+      div data-aos='fade-up' data-aos-anchor-placement='center-bottom'
+        h2 class='wrap h4 font-normal text-alt mt-0' New Trainings
+
+        div class='wrap-end scroll scroll-x scroll-x-snap-start scroll-peek'
+          div class='wrap-start'
+            = partial('/components/card/card')
+          div class='wrap-start' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+            = partial('/components/card/card')
+          div class='wrap-start'
+            = partial('/components/card/card')
+          div class='wrap-start'
+            = partial('/components/card/card')
+
+        div class='wrap py-2'
+          a href='${this.baseUrl}#' class='btn btn-secondary btn-next w-full'
+            svg class='icon-wnyc-ui' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-left'
+
+            span View all trainings
+
+            svg class='icon-wnyc-ui' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-arrow-right'
+
+    section#trainings class='page-max py-6'
+      div data-aos='fade-up' data-aos-anchor-placement='center-bottom'
+        h2 class='wrap h4 font-normal text-alt mt-0' Questionaire
+
+    = partial('/objects/newsletter/newsletter')
+
+= content('head')
+  / link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/michalsnik/aos@v2.3.4/dist/aos.css'
+  / script src='https://cdn.jsdelivr.net/gh/michalsnik/aos@v2.3.4/dist/aos.js'
+
+= content('script')
   / javascript:
+  /   AOS.init({
+  /     duration: 400,
+  /     easing: 'ease-out'
+  /   });

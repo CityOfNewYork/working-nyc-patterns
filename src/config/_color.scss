@@ -95,7 +95,6 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   .color-card,
   .c-accordion,
   .c-card {
-    box-shadow: map-get($shadows, 'up');
     background-color: map-get($colors, $token-card-body);
   }
 

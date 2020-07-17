@@ -1,12 +1,12 @@
 / Dropdown
 
 / Defaults
-- this['dropdown'] = {}
-- this['dropdown'].id = this.createId()
+- this.dropdown = {}
+- this.dropdown.id = this.createId()
 
 / Inherit overrides
 - if (typeof dropdown !== 'undefined')
-  - this['dropdown'] = Object.assign(this['dropdown'], dropdown);
+  - this.dropdown = Object.assign(this.dropdown, dropdown);
 
 div class='c-dropdown bg-scale-1'
   div class='text-center p-3'

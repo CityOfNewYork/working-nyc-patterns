@@ -13,6 +13,14 @@
   @include layouts.wrap()
 }
 
+.wrap-start, .page-wrap-start {
+  @include layouts.wrap-start()
+}
+
+.wrap-end, .page-wrap-end {
+  @include layouts.wrap-end()
+}
+
 .wrap-auto, .page-wrap-auto {
   @include layouts.auto();
   @include layouts.wrap()

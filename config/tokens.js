@@ -196,6 +196,8 @@ module.exports = {
     'yellow-l-1': '#FAD457',
     'yellow-l-2': '#F6D772',
     'yellow-l-3': '#FDE9A6',
+    'red-l-1': '#F1647C',
+    'red-l-2': '#FC9CAC',
     'black': '#000000',
     'white': '#FFFFFF',
     'transparent': 'rgba(255, 255, 255, 0)',
@@ -371,7 +373,9 @@ module.exports = {
     '3': '24px',
     '4': '32px',
     '5': '40px',
-    '6': '48px'
+    '6': '48px',
+    '7': '56px',
+    '8': '64px'
   },
   'margin': {
     '0': '0',
@@ -381,6 +385,8 @@ module.exports = {
     '4': '32px',
     '5': '40px',
     '6': '48px',
+    '7': '56px',
+    '8': '64px',
     'auto': 'auto'
   },
   'icons-sizes': {
@@ -395,7 +401,7 @@ module.exports = {
     '8': ['64px', '64px'],
     'logo-google-translate': ['175px', '16px'],
     'logo-standard-menu-item': ['130px', '18px'],
-    'logo-standard-tagline': ['320px', '30px'],
+    'logo-homepage': ['186px', '18px'],
     'logo-stacked-menu-item': ['100px', '32px'],
     'logo-nyco-menu-item': ['150px', '17px'],
     'logo-nyc-copyright': ['41px', '15px']

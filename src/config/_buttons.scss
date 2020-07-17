@@ -69,8 +69,8 @@ $radius-tag: map-get($buttons, 'radius-tag');
   }
 
   > [class*='icon']:last-child {
-    // margin-#{direction.$start}: $grid;
-    margin-#{direction.$end}: -($grid / 2);
+    margin-#{direction.$start}: $grid;
+    // margin-#{direction.$end}: -($grid / 2);
   }
 }
 

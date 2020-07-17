@@ -34,18 +34,22 @@ body {
 
 h1, .h1 {
   @include typography.set('h1');
+  letter-spacing: 0.03em;
 }
 
 h2, .h2 {
   @include typography.set('h2');
+  letter-spacing: 0.03em;
 }
 
 h3, .h3 {
   @include typography.set('h3');
+  letter-spacing: 0.03em;
 }
 
 h4, .h4 {
   @include typography.set('h4');
+  letter-spacing: 0.03em;
 }
 
 h5, .h5 {

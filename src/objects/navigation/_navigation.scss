@@ -26,6 +26,7 @@
   flex: 1;
 
   width: 100%;
+  max-width: 100%;
 
   @include media.screen-and-max-width('tablet') {
     padding-left: 0;

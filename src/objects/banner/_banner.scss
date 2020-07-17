@@ -3,80 +3,86 @@
  */
 
 // Dependencies
-@use 'config/color';
+@use 'config/grid' as *;
 @use 'config/dimensions';
 @use 'config/direction';
+@use 'config/layouts';
 @use 'config/media';
 
 // Declarations
 .o-banner {
-  padding: dimensions.$spacing-base;
+  @include layouts.wrap();
+  padding-top: $grid * 4;
+  padding-bottom: $grid * 4;
+  display: block;
+  width: 100%;
+  min-height: 90vh;
 }
 
-.o-banner__inner {
-  margin: auto;
-}
+// .o-banner__inner {
+//   margin: auto;
+// }
 
-.o-banner__title {
-  margin-bottom: 0;
+// .o-banner__title {
+//   margin-bottom: 0;
 
-  a {
-    color: inherit;
-    position: relative;
-    text-decoration: none;
-    z-index: 1;
-    white-space: nowrap;
+//   a {
+//     color: inherit;
+//     position: relative;
+//     text-decoration: none;
+//     z-index: 1;
+//     white-space: nowrap;
 
-    &:after {
-      content: ' ';
-      position: absolute;
-      width: calc(100% + 4px);
-      left: -2px;
-      z-index: -1;
-      transition: opacity 0.15s, bottom 0.15s;
+//     &:after {
+//       content: ' ';
+//       position: absolute;
+//       width: calc(100% + 4px);
+//       left: -2px;
+//       z-index: -1;
+//       transition: opacity 0.15s, bottom 0.15s;
 
-      height: 10px;
-      bottom: 2px;
+//       height: 10px;
+//       bottom: 2px;
 
-      @include media.screen-and-min-width('tablet') {
-        height: 11px;
-        bottom: 4px;
-      }
+//       @include media.screen-and-min-width('tablet') {
+//         height: 11px;
+//         bottom: 4px;
+//       }
 
-      @include media.screen-and-min-width('desktop') {
-        height: 12px;
-        bottom: 4px;
-      }
-    }
+//       @include media.screen-and-min-width('desktop') {
+//         height: 12px;
+//         bottom: 4px;
+//       }
+//     }
 
-    &:hover {
-      &:after {
-        opacity: 0;
-        bottom: 2px;
-      }
-    }
-  }
-}
+//     &:hover {
+//       &:after {
+//         opacity: 0;
+//         bottom: 2px;
+//       }
+//     }
+//   }
+// }
 
-.o-banner__tout {
-  margin-bottom: dimensions.$spacing-base;
+// .o-banner__tout {
+//   margin-bottom: dimensions.$spacing-base;
 
-  @include media.screen-and-min-width('tablet') {
-    display: flex;
-    flex-direction: column;
-  }
-}
+//   @include media.screen-and-min-width('tablet') {
+//     display: flex;
+//     flex-direction: column;
+//   }
+// }
 
-.o-banner__tout-body {
-  @include media.screen-and-min-width('tablet') {
-    flex: 1 1 auto;
-  }
-}
+// .o-banner__tout-body {
+//   @include media.screen-and-min-width('tablet') {
+//     flex: 1 1 auto;
+//   }
+// }
 
-// Make the cta buttons the same height
-.o-banner__tout-cta {
-  .btn {
-    min-height: 60px;
-    line-height: 30px;
-  }
-}
+// // Make the cta buttons the same height
+// .o-banner__tout-cta {
+//   .btn {
+//     min-height: 60px;
+//     line-height: 30px;
+//   }
+// }
