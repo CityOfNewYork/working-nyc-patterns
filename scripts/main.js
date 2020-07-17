@@ -1350,8 +1350,13 @@ var WorkingNyc = (function () {
     this.toggle = new Toggle({
       selector: this.selector,
       after: function (toggle) {
+        // Shift focus from the open to the close button in the Mobile Menu when toggled
         if (toggle.target.classList.contains(Toggle.activeClass)) {
-          toggle.target.querySelector(this$1.selectors.CLOSE).focus();
+          toggle.target.querySelector(this$1.selectors.CLOSE).focus(); // When the last focusable item in the list looses focus loop to the first
+
+          toggle.focusable.item(toggle.focusable.length - 1).addEventListener('blur', function () {
+            toggle.focusable.item(0).focus();
+          });
         } else {
           document.querySelector(this$1.selectors.OPEN).focus();
         }
