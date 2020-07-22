@@ -24,9 +24,13 @@ nav role='navigation' aria-label='Primary Navigation' class='o-navigation bg-sca
   /! { @class  Hide menu items for mobile using utilities }
   a class='hidden desktop:inline-flex' href='${this.baseUrl}/demos/programs/index' Programs
 
-  a class='hidden desktop:inline-flex' href='${this.baseUrl}/demos/events' Events
+  a class='hidden desktop:inline-flex' href='#' Opportunities
 
-  a class='hidden desktop:inline-flex' href='${this.baseUrl}/demos/trainings' Trainings
+  a class='hidden desktop:inline-flex' href='${this.baseUrl}/demos/newsletter' Newsletter
+
+  / a class='hidden desktop:inline-flex' href='${this.baseUrl}/demos/events' Events
+
+  / a class='hidden desktop:inline-flex' href='${this.baseUrl}/demos/trainings' Trainings
 
   /! { @class  The nav supports button elements using "btn-link" }
   /! button class='o-navigation__menu-item btn-link' data-js='search' aria-controls='aria-c-search' aria-expanded='false'

@@ -13,7 +13,7 @@
 }
 
 @mixin element-reset() {
-  color: initial;
+  color: inherit;
   font-family: inherit;
   font-size: inherit;
   line-height: initial;

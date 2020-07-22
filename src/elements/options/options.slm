@@ -6,19 +6,20 @@
 - this.option.type = 'checkbox'
 - this.option.label = 'Checkbox'
 - this.option.tabindex = false
+- this.option.js = false
 
 / Inherit overrides
 - if (typeof option !== 'undefined')
   - this.option = Object.assign(this.option, option);
   - this.option.value = (option.hasOwnProperty('value')) ? option.value : this.createSlug(this.option.label)
-  - this.option.name = (option.hasOwnProperty('name')) ? option.name : this.createSlug(this.option.label)
   - this.option.id = (option.hasOwnProperty('id')) ? option.id : this.option.id
+  - this.option.name = (option.hasOwnProperty('name')) ? option.name : `option['${this.option.id}']`
 
 /! { @for       Should match the id of the input }
 /! { @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
 label class='option ${this.option.class}' tabindex=this.option.tabindex for='${this.option.id}'
   /! { @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
-  input tabindex=this.option.tabindex type='${this.option.type}' id='${this.option.id}' value='${this.option.value}' name='${this.option.name}'
+  input data-js=this.option.js tabindex=this.option.tabindex type='${this.option.type}' id='${this.option.id}' value='${this.option.value}' name='${this.option.name}'
 
   span class='option__base'
     svg class='option__graphic' aria-hidden='true'

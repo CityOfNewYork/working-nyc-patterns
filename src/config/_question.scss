@@ -10,9 +10,12 @@
 @use 'config/media';
 
 // Declarations
+$margin-bottom: $grid * 5;
+$margin-bottom-label: $grid;
+
 @mixin base() {
   @include typography.set('question');
-  margin-bottom: $grid * 5;
+  margin-bottom: $margin-bottom;
 
   @include typography.selector-body-elements() {
     @include typography.set('question');
@@ -23,7 +26,7 @@
   font-weight: bold;
   display: inline-block;
   vertical-align: top;
-  margin-bottom: $grid;
+  margin-bottom: $margin-bottom-label;
 }
 
 @mixin error() {

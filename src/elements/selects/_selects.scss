@@ -1,0 +1,23 @@
+/**
+ * Select
+ */
+
+// Dependencies
+// @use 'config/tokens' as *;
+@use 'config/grid' as *;
+@use 'config/selects';
+@use 'config/dimensions';
+// @use 'config/media';
+
+// Declarations
+.select {
+  position: relative;
+
+  select {
+    @include selects.base();
+  }
+}
+
+.select__graphic {
+  @include selects.graphic();
+}

@@ -1,0 +1,11 @@
+/ Scroll
+
+/ Defaults
+- this['scroll'] = {}
+- this['scroll'].id = this.createId()
+
+/ Inherit overrides
+- if (typeof scroll !== 'undefined')
+  - this['scroll'] = Object.assign(this['scroll'], scroll);
+
+div class='scroll'

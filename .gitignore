@@ -67,6 +67,7 @@ npm-debug.log
 !/src/elements/links
 !/src/elements/nav
 !/src/elements/options
+!/src/elements/selects
 !/src/elements/tables
 
 !/src/utilities/animate
@@ -77,6 +78,7 @@ npm-debug.log
 !/src/utilities/margin
 !/src/utilities/padding
 !/src/utilities/set-property
+!/src/utilities/scroll
 !/src/utilities/tailwindcss
 !/src/utilities/text
 !/src/utilities/toggle

@@ -11,7 +11,7 @@
 
 // Declarations
 input, textarea {
-  @include inputs.inputs;
+  @include inputs.base();
 }
 
 input[type='number'] {
@@ -29,13 +29,13 @@ input[type='number'] {
   position: relative;
 
   input {
-    @include inputs.input-icon();
+    @include inputs.icon();
     margin: 0;
     z-index: 3;
   }
 
   &::after {
-    @include inputs.input-currency-icon;
+    @include inputs.currency-icon;
     content: '$';
     text-align: left;
     position: absolute;

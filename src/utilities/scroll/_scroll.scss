@@ -1,0 +1,60 @@
+/**
+ * Scroll
+ */
+
+// Dependencies
+// @use 'config/tokens' as *;
+@use 'config/direction';
+@use 'config/media';
+
+// Declarations
+.scroll {
+  overflow: hidden;
+}
+
+.scroll-x {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+
+  > * {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+.scroll-peek {
+  > * {
+    min-width: 88%;
+    max-width: 88%;
+    flex-basis: 88%;
+  }
+}
+
+.scroll-x-snap-start {
+  scroll-snap-type: x mandatory;
+
+  > * {
+    scroll-snap-align: start;
+  }
+}
+
+.scroll-x-snap-end {
+  scroll-snap-type: x mandatory;
+
+  > * {
+    scroll-snap-align: end;
+  }
+}
+
+@include media.screens-and-min-width() using ($variant) {
+  .#{$variant}scroll-reset {
+    overflow: auto;
+
+    > * {
+      min-width: initial;
+      max-width: initial;
+      flex-basis: initial;
+    }
+  }
+}

@@ -10,7 +10,6 @@
 @use 'elements/base/base';
 @use 'elements/badge/badge';
 @use 'elements/buttons/buttons';
-// @use 'elements/checkboxes/checkboxes';
 @use 'elements/code/code';
 @use 'elements/divider/divider';
 @use 'elements/forms/forms';
@@ -23,8 +22,7 @@
 @use 'elements/nav/nav';
 @use 'elements/options/options';
 // @use 'elements/overlay/overlay';
-// @use 'elements/radios/radios';
-// @use 'elements/selects/selects';
+@use 'elements/selects/selects';
 // @use 'elements/spinner/spinner';
 @use 'elements/tables/tables';
 // @use 'elements/toggles/toggles';

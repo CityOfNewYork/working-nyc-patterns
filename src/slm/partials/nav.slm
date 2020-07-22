@@ -51,6 +51,10 @@ nav role='navigation' aria-labelledby='aria-lb-elements-${this.nav.id}' class='$
     mark class='badge badge-small status-secondary' View
     | &nbsp;Options
 
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='selects'
+    mark class='badge badge-small status-secondary' View
+    | &nbsp;Selects
+
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='tables'
     mark class='badge badge-small status-secondary' View
     | &nbsp;Tables

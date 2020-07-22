@@ -5,20 +5,22 @@
 - this.question.id = this.createId()
 - this.question.type = 'text'
 - this.question.label = 'Will you please fill out this required question?'
+- this.question.for = `question-${this.question.id}`
+- this.question.name = `question['${this.question.id}']`
+- this.question.required = false
+- this.question.pattern = false
 - this.question.tabindex = false
-- this.question.required = 'true'
+- this.question.ariaHidden = false
 - this.question.submit = false
 
 / Inherit overrides
 - if (typeof question !== 'undefined')
   - this.question = Object.assign(this.question, question);
   - this.question.value = (question.value) ? question.value : this.createSlug(this.question.label)
-  - this.question.name = (question.name) ? question.name : this.createSlug(this.question.label)
-  - this.question.id = (question.id) ? question.id : this.question.id
 
-div class='c-question ${this.question.class}'
+div id='${this.question.id}' class='c-question ${this.question.class}' aria-hidden=this.question.ariaHidden
   /! { @for  Should match the id of the input }
-  label class='c-question__label' for='${this.question.id}'
+  label class='c-question__label' for='${this.question.for}'
     = this.question.label
 
   - if (this.question.description)
@@ -26,7 +28,11 @@ div class='c-question ${this.question.class}'
 
   div class='c-question__container'
     div class='c-question__input'
-      - input = this.question;
+      - input = this.question
+      / - input.name = this.question.name
+      - input.id = this.question.for
+      - delete input.class
+      - delete input.ariaHidden
       - type = (['text', 'email'].includes(this.question.type)) ? '' : `-${this.question.type}`;
       = partial(`/elements/inputs/inputs${type}.slm`);
 

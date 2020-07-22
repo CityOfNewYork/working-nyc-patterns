@@ -31,7 +31,7 @@
 
 = content('script');
   javascript:
-    patterns.valid('#question-demo', function(event) {
+    patterns.validate('#question-demo', function(event) {
       event.preventDefault();
 
       return false;

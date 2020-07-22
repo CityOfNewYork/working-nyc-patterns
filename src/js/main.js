@@ -24,6 +24,8 @@ import Search from '../objects/search/search';
 // import ... from '../objects/...';
 /** import modules here as they are written. */
 
+import serialize from 'for-cerial';
+
 /**
  * @class  Main pattern module
  */
@@ -60,15 +62,39 @@ class main {
   /**
    * API for validating a form.
    *
-   * @param  {string}    selector
-   * @param  {function}  submit
+   * @param  {String}    selector  A custom selector for a form
+   * @param  {Function}  submit    A custom event handler for a form
    */
-  valid(selector, submit = false) {
+  validate(selector = '[data-js="validate"]', submit = false) {
     if (document.querySelector(selector)) {
       let form = new Forms(document.querySelector(selector));
 
       form.submit = (submit) ? submit : (event) => {
         event.target.submit();
+      };
+
+      form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+
+      form.watch();
+    }
+  }
+
+  /**
+   * Validates a form and builds a URL search query on the action based on data.
+   *
+   * @param  {String}  selector  A custom selector for a form
+   */
+  validateAndQuery(selector = '[data-js="validate-and-query"]') {
+    let element = document.querySelector(selector);
+
+    if (element) {
+      let form = new Forms(element);
+
+      form.submit = event => {
+        let data = serialize(event.target, {hash: true});
+
+        window.location = `${event.target.action}?` + Object.keys(data)
+          .map(k => `${k}=${encodeURI(data[k])}`).join('&');
       };
 
       form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';

@@ -32,9 +32,11 @@ aside#aria-c-mobile-menu class='o-mobile-menu ${this.mobileMenu.class}' aria-hid
     /! { @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
     a tabindex=this.mobileMenu.tabindex href='${this.baseUrl}/demos/programs/index' Programs
 
-    a tabindex=this.mobileMenu.tabindex href='#' Events
+    a tabindex=this.mobileMenu.tabindex href='#' Opportunities
 
-    a tabindex=this.mobileMenu.tabindex href='#' Trainings
+    / a tabindex=this.mobileMenu.tabindex href='#' Events
+
+    / a tabindex=this.mobileMenu.tabindex href='#' Trainings
 
     a tabindex=this.mobileMenu.tabindex href='${this.baseUrl}/demos/newsletter' Newsletter
 

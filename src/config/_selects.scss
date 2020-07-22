@@ -3,19 +3,23 @@
 @use 'config/direction';
 @use 'config/dimensions';
 
-// $select-background-image: url('#{$cdn}#{$path-to-svg}icon-ui-chevron-down.svg');
-
 // Declarations
 @mixin base() {
-  // background-color: $color-white;
-  // background-image: $select-background-image;
-  background-position: direction.$end .5rem center;
-  background-repeat: no-repeat;
-  background-size: dimensions.$spacing-base dimensions.$spacing-base;
-  padding: .75 * dimensions.$spacing-base;
-  padding-#{direction.$end}: 2.8rem;
+  text-overflow: ellipsis;
+  padding: $grid * 2;
+  padding-#{direction.$end}: $grid * 7;
 
   &::-ms-expand {
     display: none;
   }
+}
+
+@mixin graphic() {
+  position: absolute;
+  #{direction.$end}: $grid * 2;
+  top: 50%;
+  margin-top: -(dimensions.$spacing-base);
+  width: dimensions.$spacing-base;
+  height: dimensions.$spacing-base * 2;
+  pointer-events: none;
 }

@@ -1,0 +1,19 @@
+/ Next/Previous Button
+
+- this.button = {}
+- this.button.id = this.createId()
+- this.button.class = 'btn-secondary btn-next'
+- this.button.label = 'Next Button'
+
+/ Inherit overrides
+- if (typeof button !== 'undefined')
+  - this.button = Object.assign(this.button, button);
+
+button type='button' class='btn ${this.button.class}'
+  svg class='icon-wnyc-ui icon-3' aria-hidden='true'
+    use xlink:href='#icon-wnyc-ui-arrow-left'
+
+  span = this.button.label
+
+  svg class='icon-wnyc-ui icon-3' aria-hidden='true'
+    use xlink:href='#icon-wnyc-ui-arrow-right'

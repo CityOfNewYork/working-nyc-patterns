@@ -3,12 +3,20 @@
  */
 
 // Dependencies
-@use 'config/tokens';
 @use 'config/forms';
+@use 'config/question';
 
 // Declarations
 fieldset, legend {
   @include forms.fieldset-reset;
+}
+
+fieldset {
+  margin-bottom: question.$margin-bottom
+}
+
+legend {
+  margin-bottom: question.$margin-bottom-label
 }
 
 input, textarea, select, optgroup {

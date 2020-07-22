@@ -92,7 +92,7 @@
 
               p Fill out the Interest Form to apply. Deadline: June 10
 
-      section#contact class='bg-scale-1 layout-content tablet:pt-6'
+      section#contact class='bg-scale-1 layout-content py-2 tablet:py-4'
         div class='wrap'
           nav class='tablet:layout-three-columns-gutter'
             a href='#' class='btn btn-secondary btn-next mb-1 w-full'
@@ -122,8 +122,6 @@
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-arrow-right'
 
-      section class='bg-scale-1 layout-content tablet:pb-6'
-        div class='wrap'
           div class='text-center text-alt mb-1' —
 
           nav
@@ -135,6 +133,20 @@
 
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-arrow-right'
+
+      / section class='bg-scale-1 layout-content tablet:pb-6'
+      /   div class='wrap'
+      /     div class='text-center text-alt mb-1' —
+
+      /     nav
+      /       a href='#' class='btn btn-primary btn-next w-full'
+      /         svg class='icon-wnyc-ui' aria-hidden='true'
+      /           use xlink:href='#icon-wnyc-ui-arrow-left'
+
+      /         | More programs at Brooklyn Workforce Innovations
+
+      /         svg class='icon-wnyc-ui' aria-hidden='true'
+      /           use xlink:href='#icon-wnyc-ui-arrow-right'
 
       = partial('/objects/newsletter/newsletter')
 

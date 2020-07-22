@@ -1,5 +1,5 @@
 // Dependencies
-@use 'config/color';
+@use 'config/grid' as *;
 @use 'config/dimensions';
 @use 'config/media';
 
@@ -7,21 +7,15 @@
 $input-search-icon-height: 24px;
 $input-search-icon-width: 24px;
 
-@mixin inputs() {
-  // color: $color-grey-mid;
-  padding: (.75 * dimensions.$spacing-base);
-
-  &::placeholder {
-    // color: $color-grey-mid;
-  }
+@mixin base() {
+  padding: $grid * 2;
 }
 
-@mixin input-icon() {
+@mixin icon() {
   padding-left: 30px;
 }
 
-@mixin input-currency-icon() {
-  // color: $color-green-mid;
+@mixin currency-icon() {
   font-size: 22px;
   font-weight: bold;
 }

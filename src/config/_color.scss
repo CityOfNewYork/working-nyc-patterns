@@ -138,7 +138,7 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   $token-text: map-get($input, 'text');
   $token-background: map-get($input, 'background');
 
-  input, textarea, select,
+  .input, .textarea, .select,
   .c-question-single .c-question__input {
     color: map-get($colors, $token-text);
     background: map-get($colors, $token-background);
@@ -322,6 +322,10 @@ $modes: map-get(tokens.$tokens, 'color-modes');
     .color-status-#{$type}, .status-#{$type} {
       color: map-get($colors, $token-text);
       background-color: map-get($colors, $token-background);
+
+      a:not(.btn) {
+        color: inherit
+      }
     }
   }
 }

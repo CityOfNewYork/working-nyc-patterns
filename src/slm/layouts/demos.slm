@@ -58,6 +58,8 @@ html lang='en'
       patterns.newsletter('${this.baseUrl}/demos/newsletter');
       patterns.newsletterForm();
 
+      patterns.validateAndQuery();
+
     = content('script');
 
     / The reload script. This should not be compile during production builds

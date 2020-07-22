@@ -1,0 +1,28 @@
+/ Selects
+
+/ Defaults
+- this.select = {}
+- this.select.id = this.createId()
+- this.select.tabindex = false
+- this.select.required = 'true'
+- this.select.default = {label: 'Select an option', selected: true, value: ''}
+- this.select.js = false
+- this.select.ariaControls = false
+
+/ Inherit overrides
+- if (typeof select !== 'undefined')
+  - this.select = Object.assign(this.select, select);
+  - this.select.name = (select.name) ? select.name : `select['${this.select.id}']`
+
+div class='select ${this.select.class}'
+  select id='${this.select.id}' name='${this.select.name}' data-js=this.select.js aria-controls=this.select.ariaControls tabindex=this.select.tabindex required=this.select.required
+    option value='${this.select.default.value}' selected='${this.select.default.selected}'
+      = this.select.default.label
+
+    - for (let i in this.select.options)
+      - option = this.select.options[i];
+      - value = (option.value) ? option.value : this.createSlug(option.label)
+      option value='${value}' = option.label
+
+  svg class='select__graphic' aria-hidden='true'
+    use xlink:href='#select-wnyc-chevrons'

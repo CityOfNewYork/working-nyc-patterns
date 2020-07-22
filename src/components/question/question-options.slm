@@ -2,17 +2,22 @@
 
 / Defaults
 - this.question = {}
+- this.question.id = this.createId()
 - this.question.label = 'Will you please select an option from the list below?'
 - this.question.options = [{label: 'Option 1'}, {label: 'Option 2'}, {label: 'Option 3'}, {label: 'Option 4'}]
+- this.question.tabindex = false
+- this.question.required = 'true'
+- this.question.ariaHidden = false
 
 / Inherit overrides
 - if (typeof question !== 'undefined')
   - this.question = Object.assign(this.question, question);
+  - this.question.id = (question.id) ? question.id : this.question.id
 
 /! { @fieldset  Checkbox and radio input groups should be grouped in fieldset tags }
-fieldset class='c-question'
+fieldset id='${this.question.id}' class='c-question' aria-hidden=this.question.ariaHidden
   /! { @legend  Checkboxes and radio input groups should be labeled by legend tags }
-  legend class='c-question__label'
+  legend class='c-question__label' tabindex=this.question.tabindex
     = this.question.label
 
   - if (this.question.description)
@@ -20,4 +25,6 @@ fieldset class='c-question'
 
   div class='c-question__container layout-rows tablet:layout-two-columns-gutter'
     - input = this.question;
+    - input.class = false;
+    - input.ariaHidden = false;
     = partial(`/elements/inputs/inputs-options.slm`);
