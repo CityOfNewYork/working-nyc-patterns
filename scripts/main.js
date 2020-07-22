@@ -724,8 +724,8 @@ var WorkingNyc = (function () {
     var this$1 = this;
 
     // Create an object to store existing toggle listeners (if it doesn't exist)
-    if (!window.hasOwnProperty('ACCESS_TOGGLES'))
-      { window.ACCESS_TOGGLES = []; }
+    if (!window.hasOwnProperty(Toggle.callback))
+      { window[Toggle.callback] = []; }
 
     s = (!s) ? {} : s;
 
@@ -741,32 +741,114 @@ var WorkingNyc = (function () {
     // Store the element for potential use in callbacks
     this.element = (s.element) ? s.element : false;
 
-    if (this.element)
-      { this.element.addEventListener('click', function (event) {
+    if (this.element) {
+      this.element.addEventListener('click', function (event) {
         this$1.toggle(event);
-      }); }
-    else
+      });
+    } else {
       // If there isn't an existing instantiated toggle, add the event listener.
-      if (!window.ACCESS_TOGGLES.hasOwnProperty(this.settings.selector))
-        { document.querySelector('body').addEventListener('click', function (event) {
-          if (!event.target.matches(this$1.settings.selector))
-            { return; }
+      if (!window[Toggle.callback].hasOwnProperty(this.settings.selector)) {
+        var body = document.querySelector('body');
 
-          // Store the event for potential use in callbacks
-          this$1.event = event;
+        for (var i = 0; i < Toggle.events.length; i++) {
+          var tggleEvent = Toggle.events[i];
 
-          this$1.toggle(event);
-        }); }
+          body.addEventListener(tggleEvent, function (event) {
+            if (!event.target.matches(this$1.settings.selector))
+              { return; }
+
+            this$1.event = event;
+
+            var type = event.type.toUpperCase();
+
+            if (
+              this$1[event.type] &&
+              Toggle.elements[type] &&
+              Toggle.elements[type].includes(event.target.tagName)
+            ) { this$1[event.type](event); }
+          });
+        }
+      }
+    }
 
     // Record that a toggle using this selector has been instantiated. This
     // prevents double toggling.
-    window.ACCESS_TOGGLES[this.settings.selector] = true;
+    window[Toggle.callback][this.settings.selector] = true;
 
     return this;
   };
 
   /**
-   * Logs constants to the debugger
+   * Click event handler
+   *
+   * @param{Event}eventThe original click event
+   */
+  Toggle.prototype.click = function click (event) {
+    this.toggle(event);
+  };
+
+  /**
+   * Input/select/textarea change event handler. Checks to see if the
+   * event.target is valid then toggles accordingly.
+   *
+   * @param{Event}eventThe original input change event
+   */
+  Toggle.prototype.change = function change (event) {
+    var valid = event.target.checkValidity();
+
+    if (valid && !this.isActive(event.target)) {
+      this.toggle(event); // show
+    } else if (!valid && this.isActive(event.target)) {
+      this.toggle(event); // hide
+    }
+  };
+
+  /**
+   * Check to see if the toggle is active
+   *
+   * @param{Object}elThe toggle element (trigger)
+   */
+  Toggle.prototype.isActive = function isActive (el) {
+    var active = false;
+
+    if (this.settings.activeClass) {
+      active = el.classList.contains(this.settings.activeClass);
+    }
+
+    // if () {
+      // Toggle.elementAriaRoles
+      // Add catch to see if element aria roles are toggled
+    // }
+
+    // if () {
+      // Toggle.targetAriaRoles
+      // Add catch to see if target aria roles are toggled
+    // }
+
+    return active;
+  };
+
+  /**
+   * Get the target of the toggle element (trigger)
+   *
+   * @param{Object}elThe toggle element (trigger)
+   */
+  Toggle.prototype.getTarget = function getTarget (el) {
+    var target = false;
+
+    /** Anchor Links */
+    target = (el.hasAttribute('href')) ?
+      document.querySelector(el.getAttribute('href')) : target;
+
+    /** Toggle Controls */
+    target = (el.hasAttribute('aria-controls')) ?
+      document.querySelector(("#" + (el.getAttribute('aria-controls')))) : target;
+
+    return target;
+  };
+
+  /**
+   * The toggle event proxy for getting and setting the element/s and target
    *
    * @param{Object}eventThe main click event
    *
@@ -781,13 +863,7 @@ var WorkingNyc = (function () {
 
     event.preventDefault();
 
-    /** Anchor Links */
-    target = (el.hasAttribute('href')) ?
-      document.querySelector(el.getAttribute('href')) : target;
-
-    /** Toggle Controls */
-    target = (el.hasAttribute('aria-controls')) ?
-      document.querySelector(("#" + (el.getAttribute('aria-controls')))) : target;
+    target = this.getTarget(el);
 
     /** Focusable Children */
     focusable = (target) ?
@@ -814,7 +890,7 @@ var WorkingNyc = (function () {
   };
 
   /**
-   * The main toggling method
+   * The main toggling method for attributes
    *
    * @param{Object}  el       The current element to toggle active
    * @param{Object}  target   The target element to toggle active/hidden
@@ -908,8 +984,9 @@ var WorkingNyc = (function () {
 
         target.setAttribute('tabindex', '-1');
         target.focus({preventScroll: true});
-      } else
-        { target.removeAttribute('tabindex'); }
+      } else {
+        target.removeAttribute('tabindex');
+      }
     }
 
     /**
@@ -961,6 +1038,15 @@ var WorkingNyc = (function () {
     'fieldset', 'legend', 'label', 'area', 'audio', 'video', 'iframe', 'svg',
     'details', 'table', '[tabindex]', '[contenteditable]', '[usemap]'
   ];
+
+  Toggle.callback = ['TogglesCallback'];
+
+  Toggle.events = ['click', 'change'];
+
+  Toggle.elements = {
+    CLICK: ['A', 'BUTTON'],
+    CHANGE: ['SELECT', 'INPUT', 'TEXTAREA']
+  };
 
   /**
    * Tracking bus for Google analytics and Webtrends.
@@ -1406,8 +1492,6 @@ var WorkingNyc = (function () {
     input: '[data-js*="search__input"]'
   };
 
-  /** import modules here as they are written. */
-
   /**
    * @class  Main pattern module
    */
@@ -1446,12 +1530,13 @@ var WorkingNyc = (function () {
   /**
    * API for validating a form.
    *
-   * @param{string}  selector
-   * @param{function}submit
+   * @param{String}  selectorA custom selector for a form
+   * @param{Function}submit  A custom event handler for a form
    */
 
 
-  main.prototype.valid = function valid (selector, submit) {
+  main.prototype.validate = function validate (selector, submit) {
+      if ( selector === void 0 ) selector = '[data-js="validate"]';
       if ( submit === void 0 ) submit = false;
 
     if (document.querySelector(selector)) {
@@ -1459,6 +1544,32 @@ var WorkingNyc = (function () {
       form.submit = submit ? submit : function (event) {
         event.target.submit();
       };
+      form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+      form.watch();
+    }
+  };
+  /**
+   * Validates a form and builds a URL search query on the action based on data.
+   *
+   * @param{String}selectorA custom selector for a form
+   */
+
+
+  main.prototype.validateAndQuery = function validateAndQuery (selector) {
+      if ( selector === void 0 ) selector = '[data-js="validate-and-query"]';
+
+    var element = document.querySelector(selector);
+
+    if (element) {
+      var form = new Forms(element);
+
+      form.submit = function (event) {
+        var data = serialize(event.target, {
+          hash: true
+        });
+        window.location = (event.target.action) + "?" + Object.keys(data).map(function (k) { return (k + "=" + (encodeURI(data[k]))); }).join('&');
+      };
+
       form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
       form.watch();
     }

@@ -27,8 +27,8 @@
       </a>
       <!--{ @class  Hide menu items for mobile using utilities }-->
       <a class="hidden desktop:inline-flex" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index">Programs</a>
-      <a class="hidden desktop:inline-flex" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/events">Events</a>
-      <a class="hidden desktop:inline-flex" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/trainings">Trainings</a>
+      <a class="hidden desktop:inline-flex" href="#">Opportunities</a>
+      <a class="hidden desktop:inline-flex" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter">Newsletter</a>
       <!--{ @class  The nav supports button elements using "btn-link" }-->
       <!--button class='o-navigation__menu-item btn-link' data-js='search' aria-controls='aria-c-search' aria-expanded='false'-->
       <!--  svg class='o-navigation__menu-icon icon-wnyc-ui'-->
@@ -69,8 +69,7 @@
       <nav aria-label="mobile menu" class="o-mobile-menu__nav">
         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
         <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index" tabindex="-1">Programs</a>
-        <a href="#" tabindex="-1">Events</a>
-        <a href="#" tabindex="-1">Trainings</a>
+        <a href="#" tabindex="-1">Opportunities</a>
         <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter" tabindex="-1">Newsletter</a>
       </nav>
     </aside>
@@ -304,7 +303,7 @@
             </div>
           </section>
         </div>
-        <section class="bg-scale-1 layout-content tablet:pt-6" id="contact">
+        <section class="bg-scale-1 layout-content py-2 tablet:py-4" id="contact">
           <div class="wrap">
             <nav class="tablet:layout-three-columns-gutter">
               <a class="btn btn-secondary btn-next mb-1 w-full" href="#">
@@ -329,10 +328,6 @@
                 </svg>
               </a>
             </nav>
-          </div>
-        </section>
-        <section class="bg-scale-1 layout-content tablet:pb-6">
-          <div class="wrap">
             <div class="text-center text-alt mb-1">—</div>
             <nav>
               <a class="btn btn-primary btn-next w-full" href="#">
@@ -349,16 +344,16 @@
           <div class="pt-2 pb-3 wrap">
             <h2 class="h4 font-normal text-alt mt-0">Newsletter</h2>
             <form action="https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;id=aa67394696" id="mc-embedded-subscribe-form" method="post" target="_blank">
-              <div class="c-question c-question-single">
+              <div class="c-question c-question-single" id="1fbce2aa1e90d">
                 <!--{ @for  Should match the id of the input }-->
-                <label class="c-question__label" for="2a3df8bd2c97e">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
+                <label class="c-question__label" for="question-1fbce2aa1e90d">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
                 <div class="c-question__container">
                   <div class="c-question__input">
                     <div class="input">
                       <!--{ @required  required="true" specifies wether the input is required by a form }-->
                       <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input class="c-question-single" id="2a3df8bd2c97e" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
+                      <input id="question-1fbce2aa1e90d" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
                     </div>
                     <div class="c-question__button">
                       <button class="btn btn-primary btn-small" type="submit">Submit</button>
@@ -430,6 +425,7 @@
     patterns.webShare();
     patterns.newsletter('https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter');
     patterns.newsletterForm();
+    patterns.validateAndQuery();
   </script>
 </body>
 
