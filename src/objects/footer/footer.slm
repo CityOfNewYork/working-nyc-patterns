@@ -24,11 +24,15 @@ footer role=this.footer.role aria-label='Primary Footer' class='o-footer bg-scal
           svg class='icon-logo-standard-menu-item fill-white text-blue-l-2' aria-hidden='true'
             use xlink:href='#logo-wnyc-standard'
 
-        a href='#' Programs
+        a href='${this.baseUrl}/demos/programs/index' Programs
 
-        a href='#' Events
+        a href='#' Opportunities
 
-        a href='#' Trainings
+        a href='${this.baseUrl}/demos/newsletter' Newsletter
+
+        / a href='#' Events
+
+        / a href='#' Trainings
 
       nav aria-label='Footer Secondary Navigation' class='o-footer__nav o-footer__nav-b'
         a href='http://nyc.gov/workforcedevelopment' target='_blank' rel='nofollow noopener' class='no-underline'
