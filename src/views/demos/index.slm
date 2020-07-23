@@ -96,17 +96,20 @@
               p Job training programs get you ready for a new career. Here are some programs that are looking for New Yorkers to apply now.
 
           div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:layout-two-columns-gutter desktop:layout-four-columns-gutter wrap'
-            div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-              = partial('/components/card/card')
+            - collection = this.programs.filter(p => p.collection === 'training')
+            - for (let i in collection)
+              - card = collection[i]
+              - card.class = 'h-full'
 
-            div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-              = partial('/components/card/card')
+              div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+                = partial('/components/card/card')
 
-            div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-              = partial('/components/card/card')
-
-            div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-              = partial('/components/card/card')
+            / div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+            /   = partial('/components/card/card')
+            / div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+            /   = partial('/components/card/card')
+            / div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+            /   = partial('/components/card/card')
 
             div class='wrap relative tablet:hidden'
               - button = {label: 'View more programs', class: 'btn-secondary btn-next flex w-full h-full', href: `${this.baseUrl}/demos/programs/index`, type: 'next-previous'}
@@ -121,22 +124,27 @@
         div
           div class='layout-content'
             div class='wrap'
-              h2 class='h4 font-normal text-alt mt-0' Programs that accommodate accessibility
+              h2 class='h4 font-normal text-alt mt-0' Adult education programs
 
-              p Job training programs get you ready for a new career. Here are some programs that are looking for New Yorkers to apply now.
+              p These programs improve math and reading skills for high school equivalency (GED), help English learners prepare for work, and more.
 
           div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:layout-two-columns-gutter desktop:layout-four-columns-gutter wrap'
-            div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-              = partial('/components/card/card')
+            - collection = this.programs.filter(p => p.collection === 'adult-education')
+            - for (let i in collection)
+              - card = collection[i]
+              - card.class = 'h-full'
 
-            div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-              = partial('/components/card/card')
+              div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+                = partial('/components/card/card')
 
-            div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-              = partial('/components/card/card')
-
-            div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-              = partial('/components/card/card')
+            / div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+            /   = partial('/components/card/card')
+            / div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+            /   = partial('/components/card/card')
+            / div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+            /   = partial('/components/card/card')
+            / div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+            /   = partial('/components/card/card')
 
             div class='wrap relative tablet:hidden'
               - button = {label: 'View more programs', class: 'btn-secondary btn-next flex w-full h-full', href: `${this.baseUrl}/demos/programs/index`, type: 'next-previous'}

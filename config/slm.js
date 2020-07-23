@@ -94,6 +94,7 @@ module.exports = {
   },
   programs: [
     {
+      collection: 'training',
       title: '<span data-program="plain-language-name">Commercial driver training</span>',
       subtitle: '<span data-program="title">Red Hook on the Road<span>',
       url: '/demos/programs/red-hook-on-the-road',
@@ -147,9 +148,10 @@ module.exports = {
       cta: 'Learn more'
     },
     {
+      collection: 'adult-education',
       title: '<span data-program="plain-language-name">HSE and job prep for youth</span>',
       subtitle: '<span data-program="title">Advance & Earn<span>',
-      url: '/demos/programs/advance-and-earn',
+      url: '/demos/programs/red-hook-on-the-road',
       status: `
         <mark class="badge status-alt me-2" data-program="recruiting">
           Actively Recruiting
@@ -190,16 +192,17 @@ module.exports = {
           icon: 'icon-wnyc-ui-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">6 months</span>,&nbsp;
-            <span data-program="taxonomy.schedule">full time</span>&nbsp;schedule
+            <span data-program="taxonomy.schedule">full-time</span>&nbsp;schedule
             </span>`
         }
       ],
       cta: 'Learn more'
     },
     {
+      collection: 'training',
       title: '<span data-program="plain-language-name">Web development training</span>',
       subtitle: '<span data-program="title">Web Development Fellowship at Fullstack Academy<span>',
-      url: '/demos/programs/web-development-fellowship-at-fullstack-academy',
+      url: '/demos/programs/red-hook-on-the-road',
       status: `
         <mark class="badge status-alt me-2" data-program="recruiting">
           Actively Recruiting
@@ -250,10 +253,11 @@ module.exports = {
       cta: 'Learn more'
     },
     {
+      collection: 'training',
       type: '<span data-program="sector">Health care</span>',
       title: '<span data-program="plain-language-name">Home health aide training</span>',
       subtitle: '<span data-program="title">SBS Home Health Aide Training<span>',
-      url: '/demos/programs/web-development-fellowship-at-fullstack-academy',
+      url: '/demos/programs/red-hook-on-the-road',
       status: `
         <!-- <span class="flex me-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
@@ -297,10 +301,10 @@ module.exports = {
       cta: 'Learn more'
     },
     {
-      type: '<span data-program="sector">Health care</span>',
+      collection: 'adult-education',
       title: '<span data-program="plain-language-name">Math and reading for HSE Prep</span>',
       subtitle: '<span data-program="title">NYC DOE Basic Education Classes<span>',
-      url: '/demos/programs/web-development-fellowship-at-fullstack-academy',
+      url: '/demos/programs/red-hook-on-the-road',
       status: `
         <!-- <span class="flex me-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
@@ -318,8 +322,7 @@ module.exports = {
           <span class="sr-only">Accommodates Multiple Languages</span>
         </span>
       `,
-      summary: `<p><span data-program="summary">Prepare for a job in the
-        healthcare field.</span> For
+      summary: `<p>For
         <b class="text-alt" data-program="taxonomy.population">Adults</b> and
         <b class="text-alt" data-program="taxonomy.population">Immigrant New
         Yorkers</b>.</p>`,
@@ -342,10 +345,10 @@ module.exports = {
       cta: 'Learn more'
     },
     {
-      type: '<span data-program="sector">Health care</span>',
-      title: '<span data-program="plain-language-name">Math and reading for HSE Prep</span>',
-      subtitle: '<span data-program="title">NYC DOE Basic Education Classes<span>',
-      url: '/demos/programs/web-development-fellowship-at-fullstack-academy',
+      collection: 'adult-education',
+      title: '<span data-program="plain-language-name">Classes to improve English skills</span>',
+      subtitle: '<span data-program="title">English for Speakers of Other Languages<span>',
+      url: '/demos/programs/red-hook-on-the-road',
       status: `
         <!-- <span class="flex me-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
@@ -363,24 +366,116 @@ module.exports = {
           <span class="sr-only">Accommodates Multiple Languages</span>
         </span>
       `,
-      summary: `<p><span data-program="summary">Prepare for a job in the
-        healthcare field.</span> For
-        <b class="text-alt" data-program="taxonomy.population">Adults</b> and
-        <b class="text-alt" data-program="taxonomy.population">Immigrant New
-        Yorkers</b>.</p>`,
+      summary: `<p><span data-program="summary">English language learners in the
+        Flatbush/East Flatbush communities get help with language and math
+        skills.</span> For
+        <b class="text-alt" data-program="taxonomy.population">Immigrants</b> and
+        <b class="text-alt" data-program="taxonomy.population">Young Adults (16 - 24)</b>.</p>`,
       features: [
         {
           icon: 'icon-wnyc-ui-award',
           text: `<span>
-            <span data-program="taxonomy.services">Adult education</span>,&nbsp;
-            <span data-program="taxonomy.services">HSE prep</span>
+            <span data-program="taxonomy.services">Improving English skills</span>
             </span>`
         },
         {
           icon: 'icon-wnyc-ui-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">3 months</span>,&nbsp;
-            <span data-program="taxonomy.schedule">varied</span>&nbsp;schedule
+            <span data-program="taxonomy.schedule">daytime</span>, or&nbsp;
+            <span data-program="taxonomy.schedule">part-time</span>
+            </span>`
+        }
+      ],
+      cta: 'Learn more'
+    },
+    {
+      collection: 'adult-education',
+      title: '<span data-program="plain-language-name">Career-focused English learning</span>',
+      subtitle: '<span data-program="title">NYPL English for Work Classes<span>',
+      url: '/demos/programs/red-hook-on-the-road',
+      status: `
+        <!-- <span class="flex me-2" data-program="accessible">
+          <svg aria-hidden="true" class="icon text-alt">
+            <use xlink:href="#icon-wnyc-accessible"></use>
+          </svg>
+
+          <span class="sr-only">Accommodates Disabilities</span>
+        </span> -->
+
+        <span class="flex me-2" data-program="multilingual">
+          <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
+            <use xlink:href="#icon-wnyc-ui-translate"></use>
+          </svg>
+
+          <span class="sr-only">Accommodates Multiple Languages</span>
+        </span>
+      `,
+      summary: `<p><span data-program="summary">Intermediate and Advanced
+        speakers can improve English skills aimed at finding a new job or
+        career.</span> For
+        <b class="text-alt" data-program="taxonomy.population">Immigrants</b> and
+        <b class="text-alt" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
+      features: [
+        {
+          icon: 'icon-wnyc-ui-award',
+          text: `<span>
+            <span data-program="taxonomy.services">Improving English skills</span>,&nbsp;
+            <span data-program="taxonomy.services">help finding work</span>
+            </span>`
+        },
+        {
+          icon: 'icon-wnyc-ui-calendar',
+          text: `<span>
+            <span data-program="taxonomy.duration">Less than 3 months</span>,&nbsp;
+            <span data-program="taxonomy.schedule">evenings</span>,&nbsp;
+            <span data-program="taxonomy.schedule">weekends</span>, or&nbsp;
+            <span data-program="taxonomy.schedule">part-time</span>
+            </span>`
+        }
+      ],
+      cta: 'Learn more'
+    },
+    {
+      collection: 'training',
+      title: '<span data-program="plain-language-name">Bilingual commercial driver training</span>',
+      subtitle: '<span data-program="title">Sunset Park Bridge to Commercial Driving<span>',
+      url: '/demos/programs/red-hook-on-the-road',
+      status: `
+        <!-- <span class="flex me-2" data-program="accessible">
+          <svg aria-hidden="true" class="icon text-alt">
+            <use xlink:href="#icon-wnyc-accessible"></use>
+          </svg>
+
+          <span class="sr-only">Accommodates Disabilities</span>
+        </span> -->
+
+        <span class="flex me-2" data-program="multilingual">
+          <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
+            <use xlink:href="#icon-wnyc-ui-translate"></use>
+          </svg>
+
+          <span class="sr-only">Accommodates Multiple Languages</span>
+        </span>
+      `,
+      summary: `<p><span data-program="summary">This program includes classes to
+        improve English skills followed by training to become a commercial
+        driver.</span> For
+        <b class="text-alt" data-program="taxonomy.population">Immigrants</b> and
+        <b class="text-alt" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
+      features: [
+        {
+          icon: 'icon-wnyc-ui-award',
+          text: `<span>
+            <span data-program="taxonomy.services">Training for a new career</span>,&nbsp;
+            <span data-program="taxonomy.services">improving English skills</span>
+            </span>`
+        },
+        {
+          icon: 'icon-wnyc-ui-calendar',
+          text: `<span>
+            <span data-program="taxonomy.duration">Less than 3 months</span>,&nbsp;
+            <span data-program="taxonomy.schedule">full-time</span>
             </span>`
         }
       ],
