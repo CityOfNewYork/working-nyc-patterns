@@ -6,6 +6,7 @@
 @use 'config/grid' as *;
 @use 'config/direction';
 @use 'config/dimensions';
+@use 'config/inputs';
 @use 'config/question';
 @use 'config/typography';
 
@@ -44,6 +45,8 @@
     align-items: stretch;
     padding-#{direction.$end}: $grid;
 
+    border: inputs.get('border-width') inputs.get('border-style');
+
     // .error & {
     //   border-color: $color-red
     // }
@@ -62,6 +65,7 @@
         text-overflow: ellipsis;
         padding-#{direction.$end}: 0;
         min-width: 0;
+        border: none;
       }
     }
   }

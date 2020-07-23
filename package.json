@@ -53,7 +53,8 @@
   "devDependencies": {
     "@nycopportunity/patterns-framework": "^1.0.0-13",
     "cross-env": "^7.0.2",
-    "css-mqpacker": "^7.0.0"
+    "css-mqpacker": "^7.0.0",
+    "deepmerge": "^4.2.2"
   },
   "dependencies": {
     "for-cerial": "^1.0.0",

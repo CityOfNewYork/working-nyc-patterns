@@ -24,52 +24,52 @@ input[type='number'] {
   }
 }
 
-.input-currency-usd {
-  display: inline-block;
-  position: relative;
+// .input-currency-usd {
+//   display: inline-block;
+//   position: relative;
 
-  input {
-    @include inputs.icon();
-    margin: 0;
-    z-index: 3;
-  }
+//   input {
+//     @include inputs.icon();
+//     margin: 0;
+//     z-index: 3;
+//   }
 
-  &::after {
-    @include inputs.currency-icon;
-    content: '$';
-    text-align: left;
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    z-index: 2;
-    pointer-events: none;
-  }
-}
+//   &::after {
+//     @include inputs.currency-icon;
+//     content: '$';
+//     text-align: left;
+//     position: absolute;
+//     top: 50%;
+//     left: 10px;
+//     transform: translateY(-50%);
+//     z-index: 2;
+//     pointer-events: none;
+//   }
+// }
 
-.input-phone-us {
-  display: inline-block;
-  position: relative;
+// .input-phone-us {
+//   display: inline-block;
+//   position: relative;
 
-  input {
-    margin: 0;
-    padding-left: 42px;
-    z-index: 3;
-  }
+//   input {
+//     margin: 0;
+//     padding-left: 42px;
+//     z-index: 3;
+//   }
 
-  &::after {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    content: '+1';
-    font-size: 22px;
-    font-weight: bold;
-    text-align: left;
-    z-index: 2;
-    pointer-events: none;
-  }
-}
+//   &::after {
+//     position: absolute;
+//     top: 50%;
+//     left: 10px;
+//     transform: translateY(-50%);
+//     content: '+1';
+//     font-size: 22px;
+//     font-weight: bold;
+//     text-align: left;
+//     z-index: 2;
+//     pointer-events: none;
+//   }
+// }
 
 .input-search {
   display: flex;
@@ -80,7 +80,7 @@ input[type='number'] {
     text-overflow: ellipsis;
     display: block;
     padding: dimensions.$spacing-base;
-    padding-#{direction.$end}: (dimensions.$spacing-base * 1.5) + inputs.$input-search-icon-width;
+    // padding-#{direction.$end}: (dimensions.$spacing-base * 1.5) + inputs.$input-search-icon-width;
     width: 100%;
   }
 }
@@ -91,8 +91,8 @@ input[type='number'] {
   position: absolute;
 
   > [class*="icon"]:first-child {
-    width: inputs.$input-search-icon-width;
-    height: inputs.$input-search-icon-height;
+    // width: inputs.$input-search-icon-width;
+    // height: inputs.$input-search-icon-height;
     margin: 0;
   }
 }

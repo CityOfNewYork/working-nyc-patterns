@@ -3,7 +3,7 @@
 @use 'config/typography';
 
 // Variables
-$mode: '' !default;
+$scales: map-get(tokens.$tokens, 'scales');
 $colors: map-get(tokens.$tokens, 'colors');
 $shadows: map-get(tokens.$tokens, 'shadows');
 $modes: map-get(tokens.$tokens, 'color-modes');
@@ -137,11 +137,13 @@ $modes: map-get(tokens.$tokens, 'color-modes');
   $input: map-get($combination, 'input');
   $token-text: map-get($input, 'text');
   $token-background: map-get($input, 'background');
+  $token-border: map-get($input, 'border');
 
   .input, .textarea, .select,
   .c-question-single .c-question__input {
     color: map-get($colors, $token-text);
     background: map-get($colors, $token-background);
+    border-color: map-get($colors, $token-border);
   }
 }
 
@@ -337,13 +339,14 @@ $modes: map-get(tokens.$tokens, 'color-modes');
  */
 @mixin set-scale-vars($mode: 'default') {
   $combination: map-get($modes, $mode);
+  $scale: map-get($scales, $mode);
 
   // Set the shadow up token
   --shadow-up: #{map-get($combination, 'shadow-up')};
 
   // Set the color scale
-  @each $token, $color in map-get($colors, $mode) {
-    --color-scale-#{$token}: #{$color};
+  @each $level in $scale {
+    --color-scale-#{$level}: #{map-get($colors, '#{$mode}-#{$level}')};
   }
 }
 

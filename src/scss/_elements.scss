@@ -7,24 +7,23 @@
 // scaffolding like typography or grid systems. Uitilities will have their own
 // namespace prefixes based on their attributes.
 
-@use 'elements/base/base';
-@use 'elements/badge/badge';
-@use 'elements/buttons/buttons';
-@use 'elements/code/code';
-@use 'elements/divider/divider';
-@use 'elements/forms/forms';
-@use 'elements/icons/icons';
-@use 'elements/inputs/inputs';
-@use 'elements/labels/labels';
-@use 'elements/layouts/layouts';
-@use 'elements/links/links';
-// @use 'elements/lists/lists';
-@use 'elements/nav/nav';
-@use 'elements/options/options';
-// @use 'elements/overlay/overlay';
-@use 'elements/selects/selects';
-// @use 'elements/spinner/spinner';
-@use 'elements/tables/tables';
-// @use 'elements/toggles/toggles';
-// @use 'elements/tooltips/tooltips';
-// elements - end
+@forward 'elements/base/base';
+@forward 'elements/badge/badge';
+@forward 'elements/buttons/buttons';
+@forward 'elements/code/code';
+@forward 'elements/divider/divider';
+@forward 'elements/forms/forms';
+@forward 'elements/icons/icons';
+@forward 'elements/inputs/inputs';
+@forward 'elements/labels/labels';
+@forward 'elements/layouts/layouts';
+@forward 'elements/links/links';
+// @forward 'elements/lists/lists';
+@forward 'elements/nav/nav';
+@forward 'elements/options/options';
+// @forward 'elements/overlay/overlay';
+@forward 'elements/selects/selects';
+// @forward 'elements/spinner/spinner';
+@forward 'elements/tables/tables';
+// @forward 'elements/toggles/toggles';
+// @forward 'elements/tooltips/tooltips';

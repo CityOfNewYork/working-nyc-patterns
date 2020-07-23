@@ -29,7 +29,7 @@
 
 // If @font-face is used it needs to be imported before all other declarations.
 
-@use 'utilities/fonts/fonts';
+@forward 'utilities/fonts/fonts';
 
 /**
  * External Dependencies
@@ -47,14 +47,14 @@
  * Main
  */
 
-@use 'elements';
-@use 'components';
-@use 'objects';
+@forward 'elements';
+@forward 'components';
+@forward 'objects';
 
 /**
  * Base elements that need to be included after other patterns to take effect
  */
 
-@use 'elements/base/first-last';
+@forward 'elements/base/first-last';
 
-@use 'utilities';
+@forward 'utilities';

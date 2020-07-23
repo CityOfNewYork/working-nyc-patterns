@@ -1,13 +1,26 @@
 // Dependencies
+@use 'config/tokens' as *;
 @use 'config/grid' as *;
 @use 'config/direction';
 @use 'config/dimensions';
+@use 'config/typography';
 
 // Declarations
+$selects: map-get($tokens, 'selects');
+
+@function get($token) {
+  @return map-get($selects, $token);
+}
+
 @mixin base() {
+  @include typography.set('question');
+  line-height: get('inner-size');
   text-overflow: ellipsis;
-  padding: $grid * 2;
-  padding-#{direction.$end}: $grid * 7;
+  padding: ($grid * 2) - get('border-width');
+  padding-#{direction.$end}: ($grid * 7) - get('border-width');
+  border: get('border-width') get('border-style');
+  border-color: inherit;
+  border-radius: get('radius');
 
   &::-ms-expand {
     display: none;
@@ -15,11 +28,19 @@
 }
 
 @mixin graphic() {
+  fill: transparent;
+  stroke: transparent;
+  stroke-width: get('stroke-width');
+  stroke-linecap: get('stroke-line');
+  stroke-linejoin: get('stroke-line');
+
   position: absolute;
   #{direction.$end}: $grid * 2;
   top: 50%;
-  margin-top: -(dimensions.$spacing-base);
-  width: dimensions.$spacing-base;
-  height: dimensions.$spacing-base * 2;
+  margin-top: -(get('inner-size'));
+
+  width: get('inner-size');
+  height: get('inner-size') * 2;
+
   pointer-events: none;
 }

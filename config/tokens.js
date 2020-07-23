@@ -3,6 +3,220 @@
  */
 
 const package = require('../package.json');
+const merge = require('deepmerge');
+
+const colors = {
+  'text': 'white',
+  'text-alt': 'blue-l-3',
+  'text-primary': 'blue-l-1',
+  'text-secondary': 'green-l-3',
+  'text-tertiary': 'yellow-l-2',
+  'hyperlinks': 'blue-l-1',
+  'hyperlinks-hover': 'blue-l-3',
+  'hyperlinks-visited': 'blue-l-3',
+  'background': 'scale-1',
+  'smoothing': true,
+
+  'card-header': 'scale-2',
+  'card-body': 'scale-3',
+
+  'modal': {
+    'text': 'scale-1',
+    'text-alt': 'scale-2',
+    'background': 'blue-l-3',
+    'hyperlinks': 'scale-4',
+    'hyperlinks-hover': 'scale-3',
+    'hyperlinks-visited': 'scale-3',
+    'smoothing': false
+  },
+
+  'input': {
+    'text': 'scale-1',
+    'background': 'white',
+    'border': 'transparent'
+  },
+
+  'option': {
+    'text': 'blue',
+    'background': 'scale-2',
+    'border': 'transparent',
+
+    'text-hover ': 'blue-l-3',
+    'border-hover': 'blue-l-3',
+    'background-hover': 'scale-0',
+
+    'text-focus': 'blue-l-3',
+    'border-focus': 'blue-l-3',
+    'background-focus': 'scale-0',
+
+    'text-checked': 'blue-l-3',
+    'background-checked': 'scale-0',
+
+    'graphic-checkbox': 'tranparent',
+    'graphic-checkbox-checked': 'scale-0'
+  },
+
+  'statuses': {
+    'primary': {
+      'text': 'scale-2',
+      'background': 'blue-l-1',
+    },
+    'secondary': {
+      'text': 'scale-2',
+      'background': 'green-l-3',
+    },
+    'tertiary': {
+      'text': 'scale-2',
+      'background': 'yellow-l-2',
+    },
+    'alt': {
+      'text': 'scale-1',
+      'background': 'blue-l-3'
+    }
+  },
+
+  'button': {
+    'primary': {
+      'text': 'blue-l-1',
+      'text-hover': 'blue-l-2',
+      'background': 'scale-2',
+      'background-hover': 'scale-0'
+    },
+    'secondary': {
+      'text': 'green-l-3',
+      'text-hover': 'green-l-3',
+      'background': 'scale-2',
+      'background-hover': 'scale-0'
+    },
+    'tertiary': {
+      'text': 'yellow-l-2',
+      'text-hover': 'yellow-l-3',
+      'background': 'scale-2',
+      'background-hover': 'scale-0'
+    }
+  },
+
+  'shadow-up': '0 3px 12px 2px rgba(0, 0, 0, 0.15)',
+
+  'code': {
+    'text': 'blue-l-2',
+    'text-base': 'blue-l-2',
+    'text-keyword': 'blue',
+    'text-javascript': 'blue-l-2',
+    'text-css': 'blue-l-2',
+    'text-comment': 'blue-l-3',
+    'text-string': 'green-l-3',
+    'text-symbol': 'yellow-l-2',
+    'text-code': 'green-l-3',
+    'background': 'scale-3',
+    'border': 'transparent'
+  }
+};
+
+const light = merge(colors, {
+  'text': 'default-1',
+  'text-alt': 'default-4',
+  'text-primary': 'blue',
+  'text-secondary': 'green',
+  'text-tertiary': 'yellow-d-1',
+  'hyperlinks': 'blue',
+  'hyperlinks-hover': 'default-4',
+  'hyperlinks-visited': 'default-4',
+  'background': 'scale-1',
+  'smoothing': false,
+
+  'card-header': 'scale-2',
+  'card-body': 'scale-1',
+
+  'modal': {
+    'text': 'default-1',
+    'text-alt': 'scale-2',
+    'background': 'blue-l-3',
+    'hyperlinks': 'blue',
+    'hyperlinks-hover': 'default-1',
+    'hyperlinks-visited': 'default-1'
+  },
+
+  'input': {
+    'text': 'default-1',
+    'background': 'white',
+    'border': 'default-1'
+  },
+
+  'option': {
+    'text': 'blue',
+    'background': 'scale-2',
+    'border': 'transparent',
+
+    'text-hover ': 'blue-l-3',
+    'border-hover': 'blue-l-3',
+    'background-hover': 'scale-0',
+
+    'text-focus': 'blue-l-3',
+    'border-focus': 'blue-l-3',
+    'background-focus': 'scale-0',
+
+    'text-checked': 'blue-l-3',
+    'background-checked': 'scale-0',
+
+    'graphic-checkbox': 'tranparent',
+    'graphic-checkbox-checked': 'scale-0'
+  },
+
+  'statuses': {
+    'primary': {
+      'text': 'scale-2',
+      'background': 'blue-l-1',
+    },
+    'secondary': {
+      'text': 'scale-2',
+      'background': 'green-l-3',
+    },
+    'tertiary': {
+      'text': 'scale-2',
+      'background': 'yellow-l-2',
+    },
+    'alt': {
+      'text': 'scale-1',
+      'background': 'blue-l-3'
+    }
+  },
+
+  'button': {
+    'primary': {
+      'text': 'blue',
+      'text-hover': 'default-4',
+      'background': 'scale-2',
+      'background-hover': 'blue-l-3'
+    },
+    'secondary': {
+      'text': 'green',
+      'text-hover': 'green',
+      'background': 'scale-2',
+      'background-hover': 'blue-l-3'
+    },
+    'tertiary': {
+      'text': 'yellow-d-1',
+      'text-hover': 'yellow-d-2',
+      'background': 'scale-2',
+      'background-hover': 'blue-l-3'
+    }
+  },
+
+  'code': {
+    'text': 'blue-l-2',
+    'text-base': 'blue-l-2',
+    'text-keyword': 'blue',
+    'text-javascript': 'blue-l-2',
+    'text-css': 'blue-l-2',
+    'text-comment': 'blue-l-3',
+    'text-string': 'green-l-3',
+    'text-symbol': 'yellow-l-2',
+    'text-code': 'green-l-3',
+    'background': 'scale-3',
+    'border': 'transparent'
+  }
+});
 
 module.exports = {
   'output': '"./src/config/_tokens.scss"',
@@ -149,39 +363,38 @@ module.exports = {
     'font-weight': 'bold',
     'text-decoration': 'underline'
   },
+  'scales': {
+    'default': [0, 1, 2, 3, 4],
+    'dark':    [0, 1, 2, 3, 4],
+    'mid':     [0, 1, 2, 3, 4],
+    'light':   [0, 1, 2, 3, 4]
+  },
   'colors': {
     'scale-0': 'var(--color-scale-0)',
     'scale-1': 'var(--color-scale-1)',
     'scale-2': 'var(--color-scale-2)',
     'scale-3': 'var(--color-scale-3)',
     'scale-4': 'var(--color-scale-4)',
-    'default': {
-      '0': '#03142C',
-      '1': '#031837',
-      '2': '#071F42',
-      '3': '#0C264D',
-      '4': '#003C7A'
-    },
-    'dark': {
-      '0': '#171717',
-      '1': '#1C1C1C',
-      '2': '#252525',
-      '3': '#2D2D2D',
-      '4': '#3D3D3D'
-    },
-    'mid': {
-      '0': '#203A60',
-      '1': '#284777',
-      '2': '#2A4E83',
-      '3': '#31568C',
-      '4': '#336599'
-    },
-    'light': {
-      '1': '#FFFFFF',
-      '2': '#FCFCFC',
-      '3': '#F7F7F7',
-      '4': '#F0F0F0'
-    },
+    'default-0': '#03142C',
+    'default-1': '#031837',
+    'default-2': '#071F42',
+    'default-3': '#0C264D',
+    'default-4': '#003C7A',
+    'dark-0': '#171717',
+    'dark-1': '#1C1C1C',
+    'dark-2': '#252525',
+    'dark-3': '#2D2D2D',
+    'dark-4': '#3D3D3D',
+    'mid-0': '#203A60',
+    'mid-1': '#284777',
+    'mid-2': '#2A4E83',
+    'mid-3': '#31568C',
+    'mid-4': '#336599',
+    'light-0': '#FFFFFF',
+    'light-1': '#FFFFFF',
+    'light-2': '#FCFCFC',
+    'light-3': '#F7F7F7',
+    'light-4': '#F0F0F0',
     'blue': '#1E78BE',
     'blue-l-1': '#3194E0',
     'blue-l-2': '#68B7F4',
@@ -204,112 +417,8 @@ module.exports = {
     'inherit': 'inherit'
   },
   'color-modes': {
-    'default': {
-      'text': 'white',
-      'text-alt': 'blue-l-3',
-      'text-primary': 'blue-l-1',
-      'text-secondary': 'green-l-3',
-      'text-tertiary': 'yellow-l-2',
-      'hyperlinks': 'blue-l-1',
-      'hyperlinks-hover': 'blue-l-3',
-      'hyperlinks-visited': 'blue-l-3',
-      'background': 'scale-1',
-      'smoothing': true,
-
-      'card-header': 'scale-2',
-      'card-body': 'scale-3',
-
-      'modal': {
-        'text': 'scale-1',
-        'text-alt': 'scale-2',
-        'background': 'blue-l-3',
-        'hyperlinks': 'scale-4',
-        'hyperlinks-hover': 'scale-3',
-        'hyperlinks-visited': 'scale-3',
-        'smoothing': false
-      },
-
-      'input': {
-        'text': 'scale-1',
-        'background': 'white'
-      },
-
-      'option': {
-        'text': 'blue',
-        'background': 'scale-2',
-        'border': 'transparent',
-
-        'text-hover ': 'blue-l-3',
-        'border-hover': 'blue-l-3',
-        'background-hover': 'scale-0',
-
-        'text-focus': 'blue-l-3',
-        'border-focus': 'blue-l-3',
-        'background-focus': 'scale-0',
-
-        'text-checked': 'blue-l-3',
-        'background-checked': 'scale-0',
-
-        'graphic-checkbox': 'tranparent',
-        'graphic-checkbox-checked': 'scale-0'
-      },
-
-      'statuses': {
-        'primary': {
-          'text': 'scale-2',
-          'background': 'blue-l-1',
-        },
-        'secondary': {
-          'text': 'scale-2',
-          'background': 'green-l-3',
-        },
-        'tertiary': {
-          'text': 'scale-2',
-          'background': 'yellow-l-2',
-        },
-        'alt': {
-          'text': 'scale-1',
-          'background': 'blue-l-3'
-        }
-      },
-
-      'button': {
-        'primary': {
-          'text': 'blue-l-1',
-          'text-hover': 'blue-l-2',
-          'background': 'scale-2',
-          'background-hover': 'scale-0'
-        },
-        'secondary': {
-          'text': 'green-l-3',
-          'text-hover': 'green-l-3',
-          'background': 'scale-2',
-          'background-hover': 'scale-0'
-        },
-        'tertiary': {
-          'text': 'yellow-l-2',
-          'text-hover': 'yellow-l-3',
-          'background': 'scale-2',
-          'background-hover': 'scale-0'
-        }
-      },
-
-      'shadow-up': '0 3px 12px 2px rgba(0, 0, 0, 0.15)',
-
-      'code': {
-        'text': 'blue-l-2',
-        'text-base': 'blue-l-2',
-        'text-keyword': 'blue',
-        'text-javascript': 'blue-l-2',
-        'text-css': 'blue-l-2',
-        'text-comment': 'blue-l-3',
-        'text-string': 'green-l-3',
-        'text-symbol': 'yellow-l-2',
-        'text-code': 'green-l-3',
-        'background': 'scale-3',
-        'border': 'transparent'
-      }
-    }
+    'default': colors,
+    'light': light
   },
   // Based on minimum width for devices
   'screens': {
@@ -347,6 +456,7 @@ module.exports = {
     'footer': 0,
     'search': 1000,
     'navigation': 1010,
+    'mobile-menu': 1020,
     'auto': 'auto',
   },
   'animate': {
@@ -410,6 +520,22 @@ module.exports = {
     'inner-size': '1rem',
     'radius': '5px',
     'radius-tag': '50px'
+  },
+  'inputs': {
+    'inner-size': '1rem',
+    'radius': '0px',
+    'border-style': 'solid',
+    'border-width': '2px',
+    'search-icon': ['24px', '24px']
+  },
+  'selects': {
+    'inner-size': '1rem',
+    'radius': '5px',
+    'border-style': 'solid',
+    'border-width': '2px',
+    'border-width': '2px',
+    'stroke-width': '2px',
+    'stroke-line': 'round'
   },
   'options': {
     'inner-size': '1rem',

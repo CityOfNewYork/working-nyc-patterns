@@ -5,21 +5,13 @@
 // Dependencies
 @use 'config/color';
 
+$mode: 'default' !default;
+
 // Declarations
-@if color.$mode == '' {
-  :root {
-    @include color.set-scale-vars();
-  }
+:root {
+  @include color.set-scale-vars($mode);
+}
 
-  .color {
-    @include color.combination();
-  }
-} @else {
-  :root {
-    @include color.set-scale-vars($mode);
-  }
-
-  .color {
-    @include color.combination($mode);
-  }
+.color {
+  @include color.combination($mode);
 }

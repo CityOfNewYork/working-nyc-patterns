@@ -2,20 +2,18 @@
  * Utilities
  ************/
 
-@use 'utilities/tailwindcss/tailwindcss';
-@use 'utilities/animate/animate';
-@use 'utilities/body/body';
-@use 'utilities/clearfix/clearfix';
-// @use 'utilities/font/font';
-// @use 'utilities/language/language';
-@use 'utilities/margin/margin';
-// @use 'utilities/media/media-print';
-@use 'utilities/padding/padding';
-@use 'utilities/scroll/scroll';
-// @use 'utilities/statuses/statuses';
-@use 'utilities/text/text';
-@use 'utilities/toggle/toggle';
-@use 'utilities/typography/typography';
-
-@use '@nycopportunity/patterns-framework/src/utilities/spinner/spinner';
-// utilities - end
+@forward 'utilities/tailwindcss/tailwindcss';
+@forward 'utilities/animate/animate';
+@forward 'utilities/body/body';
+@forward 'utilities/clearfix/clearfix';
+// @forward 'utilities/font/font';
+// @forward 'utilities/language/language';
+@forward 'utilities/margin/margin';
+// @forward 'utilities/media/media-print';
+@forward 'utilities/padding/padding';
+@forward 'utilities/scroll/scroll';
+// @forward 'utilities/statuses/statuses';
+@forward 'utilities/text/text';
+@forward 'utilities/toggle/toggle';
+@forward 'utilities/typography/typography';
+@forward '@nycopportunity/patterns-framework/src/utilities/spinner/spinner';

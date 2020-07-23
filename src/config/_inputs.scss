@@ -1,14 +1,24 @@
 // Dependencies
+@use 'config/tokens' as *;
 @use 'config/grid' as *;
 @use 'config/dimensions';
 @use 'config/media';
+@use 'config/typography';
 
 // Declarations
-$input-search-icon-height: 24px;
-$input-search-icon-width: 24px;
+$inputs: map-get($tokens, 'inputs');
+
+@function get($token) {
+  @return map-get($inputs, $token);
+}
 
 @mixin base() {
-  padding: $grid * 2;
+  @include typography.set('question');
+  line-height: get('inner-size');
+  padding: ($grid * 2) - get('border-width');
+  border: get('border-width') get('border-style');
+  border-color: inherit;
+  border-radius: get('radius');
 }
 
 @mixin icon() {

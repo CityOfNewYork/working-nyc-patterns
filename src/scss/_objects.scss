@@ -8,13 +8,12 @@
 // application and some will require their own Objects. Object namespaces are
 // prefixed with 'o-'.
 
-// @use 'objects/alert-banner/alert-banner';
-@use 'objects/banner/banner';
-// @use 'objects/content/content';
-@use 'objects/header/header';
-@use 'objects/footer/footer';
-@use 'objects/mobile-menu/mobile-menu';
-@use 'objects/navigation/navigation';
-@use 'objects/search/search';
-@use 'objects/text-controller/text-controller';
-// objects - end
+// @forward 'objects/alert-banner/alert-banner';
+@forward 'objects/banner/banner';
+// @forward 'objects/content/content';
+@forward 'objects/header/header';
+@forward 'objects/footer/footer';
+@forward 'objects/mobile-menu/mobile-menu';
+@forward 'objects/navigation/navigation';
+@forward 'objects/search/search';
+@forward 'objects/text-controller/text-controller';
