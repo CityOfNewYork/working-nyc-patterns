@@ -86,108 +86,66 @@
             button class='btn btn-secondary btn-next w-full'
               | Find your program
 
-      / nav class='mb-3' data-aos='fade-up' data-aos-delay='300'
-      /   a class='btn btn-primary w-full mb-1' href='#programs' Programs
-      /   a class='btn btn-secondary w-full mb-1' href='#events' Events
-      /   a class='btn btn-tertiary w-full mb-1' href='#trainings' Trainings
-
-      / p class='text-center mt-auto'
-      /   a href='#content' class='text-center'
-      /     | Browse
-
-      /     svg class='icon-wnyc-ui block m-auto' aria-hidden='true'
-      /       use xlink:href='#icon-wnyc-ui-chevron-down'
-
     main id='content'
-      section#programs class='page-max py-4'
+      section#training-programs-recruiting-now class='page-max py-4'
         div
           div class='layout-content'
-            div class='wrap mb-3'
+            div class='wrap'
               h2 class='h4 font-normal text-alt mt-0' Training programs recruiting now
 
               p Job training programs get you ready for a new career. Here are some programs that are looking for New Yorkers to apply now.
 
-          div class='scroll scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:layout-three-columns-gutter wrap'
+          div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:layout-two-columns-gutter desktop:layout-four-columns-gutter wrap'
             div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
               = partial('/components/card/card')
+
             div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
               = partial('/components/card/card')
+
             div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
               = partial('/components/card/card')
+
             div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
               = partial('/components/card/card')
-            div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-              = partial('/components/card/card')
-            div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-              = partial('/components/card/card')
+
             div class='wrap relative tablet:hidden'
-              a class='btn btn-secondary btn-next flex w-full h-full' href='${this.baseUrl}/demos/programs/index'
-                  svg class='icon-wnyc-ui' aria-hidden='true'
-                    use xlink:href='#icon-wnyc-ui-arrow-left'
-
-                  span View all programs
-
-                  svg class='icon-wnyc-ui' aria-hidden='true'
-                    use xlink:href='#icon-wnyc-ui-arrow-right'
+              - button = {label: 'View more programs', class: 'btn-secondary btn-next flex w-full h-full', href: `${this.baseUrl}/demos/programs/index`, type: 'next-previous'}
+              = partial('/elements/buttons/buttons')
 
           div class='layout-content'
-            div class='wrap py-2 tablet:py-6'
-              a href='${this.baseUrl}/demos/programs/index' class='btn btn-secondary btn-next w-full'
-                svg class='icon-wnyc-ui' aria-hidden='true'
-                  use xlink:href='#icon-wnyc-ui-arrow-left'
+            div class='wrap tablet:py-6'
+              - button = {label: 'View more programs', class: 'btn-secondary btn-next flex w-full', href: `${this.baseUrl}/demos/programs/index`, type: 'next-previous'}
+              = partial('/elements/buttons/buttons')
 
-                span View all programs
+      section#programs class='page-max py-4'
+        div
+          div class='layout-content'
+            div class='wrap'
+              h2 class='h4 font-normal text-alt mt-0' Programs that accommodate accessibility
 
-                svg class='icon-wnyc-ui' aria-hidden='true'
-                  use xlink:href='#icon-wnyc-ui-arrow-right'
+              p Job training programs get you ready for a new career. Here are some programs that are looking for New Yorkers to apply now.
 
-      / section#events class='page-max py-4'
-      /   div data-aos='fade-up' data-aos-anchor-placement='center-bottom'
-      /     h2 class='wrap h4 font-normal text-alt mt-0' Events
+          div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:layout-two-columns-gutter desktop:layout-four-columns-gutter wrap'
+            div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+              = partial('/components/card/card')
 
-      /     div class='wrap-end scroll scroll-x scroll-x-snap-start scroll-peek'
-      /       div class='wrap-start'
-      /         = partial('/components/card/card')
-      /       div class='wrap-start' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-      /         = partial('/components/card/card')
-      /       div class='wrap-start'
-      /         = partial('/components/card/card')
-      /       div class='wrap-start'
-      /         = partial('/components/card/card')
+            div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+              = partial('/components/card/card')
 
-      /     div class='wrap py-2'
-      /       a href='${this.baseUrl}#' class='btn btn-secondary btn-next w-full'
-      /         svg class='icon-wnyc-ui' aria-hidden='true'
-      /           use xlink:href='#icon-wnyc-ui-arrow-left'
+            div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+              = partial('/components/card/card')
 
-      /         span View all events
+            div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+              = partial('/components/card/card')
 
-      /         svg class='icon-wnyc-ui' aria-hidden='true'
-      /           use xlink:href='#icon-wnyc-ui-arrow-right'
+            div class='wrap relative tablet:hidden'
+              - button = {label: 'View more programs', class: 'btn-secondary btn-next flex w-full h-full', href: `${this.baseUrl}/demos/programs/index`, type: 'next-previous'}
+              = partial('/elements/buttons/buttons')
 
-      / section#trainings class='page-max py-4'
-      /   div data-aos='fade-up' data-aos-anchor-placement='center-bottom'
-      /     h2 class='wrap h4 font-normal text-alt mt-0' Trainings
-
-      /     div class='wrap-end scroll scroll-x scroll-x-snap-start scroll-peek'
-      /       div class='wrap-start'
-      /         = partial('/components/card/card')
-      /       div class='wrap-start' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-      /         = partial('/components/card/card')
-      /       div class='wrap-start'
-      /         = partial('/components/card/card')
-      /       div class='wrap-start'
-      /         = partial('/components/card/card')
-
-      /     div class='wrap py-2'
-      /       a href='${this.baseUrl}#' class='btn btn-secondary btn-next w-full'
-      /         svg class='icon-wnyc-ui' aria-hidden='true'
-      /           use xlink:href='#icon-wnyc-ui-arrow-left'
-
-      /         span View all trainings
-
-      /         svg class='icon-wnyc-ui' aria-hidden='true'
-      /           use xlink:href='#icon-wnyc-ui-arrow-right'
+          div class='layout-content'
+            div class='wrap tablet:py-6'
+              - button = {label: 'View more programs', class: 'btn-secondary btn-next flex w-full', href: `${this.baseUrl}/demos/programs/index`, type: 'next-previous'}
+              = partial('/elements/buttons/buttons')
 
       = partial('/objects/newsletter/newsletter')
 
