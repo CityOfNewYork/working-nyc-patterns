@@ -85,6 +85,10 @@ blockquote, .blockquote {
   margin-right: 0;
   margin-bottom: typography.get('margin-bottom');
 
+  @include media.screen-and-min-width('tablet') {
+    margin-#{direction.$start}: -($grid * 9);
+  }
+
   p {
     font-family: inherit;
     font-size: inherit;

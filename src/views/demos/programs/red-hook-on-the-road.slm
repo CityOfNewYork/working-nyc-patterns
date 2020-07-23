@@ -17,6 +17,14 @@
           = partial('/components/utility/utility.slm');
 
         div class='layout-content'
+          - header = {}
+          - header.title = 'Commercial Driver Training <br>Red Hook on the Road'
+          - header.subtitle = 'Brooklyn Workforce Innovations and NYC Small Business Services'
+          - header.breadcrumb = 'Red Hook on the Road'
+          - header.recruitment = 'Currently Recruiting'
+          - header.certification = 'Job training, certification'
+          - header.info = 'Transportation'
+          - header.schedule = 'Four weeks,&nbsp;<span>full-time</span>'
           = partial('/objects/header/header')
 
         section class='bg-scale-2 layout-content'
@@ -24,48 +32,80 @@
             div#more-information class='pt-utility-anchor'
               blockquote class='text-alt'
                 span class='blockquote__mark' aria-hidden='true' —
-                p Through this program students prepare to work as commercial drivers.
+                p This four-week program prepares unemployed New Yorkers to work as commercial drivers.
 
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              p This program helps unemployed New Yorkers with Class D licenses start new commercial driving careers. Through four weeks of training, the program preps students to take the NYS Commercial Driver’s License (CDL) road test. It also helps grads find a job with a network of NYC employers.
+
+            div#services class='pt-utility-anchor'
+              h3 class='h5 text-alt '
+                a href='#services' class='text-inherit' Services
+
+              blockquote class='text-alt mt-0'
+                span class='blockquote__mark' aria-hidden='true' —
+                p Commercial Driver's License
+
+              p This program provides job training and job certification.
 
             div#eligibility class='pt-utility-anchor'
-              h3 class='h5 text-alt'
+              h3 class='h5 text-alt '
                 a href='#eligibility' class='text-inherit' Eligibility
 
-              p
-                a href='#' class='btn btn-link btn-secondary mb-1' Adults 18+
+              blockquote class='text-alt mt-0'
+                span class='blockquote__mark' aria-hidden='true' —
+                p For adults (18+), unemployed, low-income, and justice-involved New Yorkers.
 
-              p This program accepts New York City residents lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              p To be eligible for this training program, you should:
+
+              ul
+                li Live in NYC
+                li Be legally allowed to work in the US
+                li Be 21 years or older
+                li Must be low-income or unemployed and/or receive public assistance
+                li Be able to pass a drug test
+                li Have no DWIs or DUIs
+                li
+                  p Have had a valid NY State Driver’s License for at least two years, with no more than one of the following:
+                  ul
+                    li Four points or fewer
+                    li One suspension (must be cleared for at least two years)
+                    li One conviction showing on the driver record
+                li Be able to attend training Monday–Friday, 8am to 5pm
+
+              p New Yorkers with a criminal record are encouraged to apply.
 
             div#schedule class='pt-utility-anchor'
               h3 class='h5 text-alt'
                 a href='#schedule' class='text-inherit' Schedule
 
-              p 4 weeks, full time. July 1–July 26, 10am–5pm
+              blockquote class='text-alt mt-0'
+                span class='blockquote__mark' aria-hidden='true' —
+                p Four weeks, full time.
 
-            div#disability-accommodation class='pt-utility-anchor'
-              h3 class='h5 text-alt'
-                a href='#disability-accommodation' class='text-inherit' Disability Accommodation
+              p Training takes place Monday–Friday, 8am to 5pm, with one week in class and three weeks of behind-the-wheel learning. New sessions begin every month.
 
-              p The following accommodations are available:
+            / div#disability-accommodation class='pt-utility-anchor'
+            /   h3 class='h5 text-alt'
+            /     a href='#disability-accommodation' class='text-inherit' Disability Accommodation
 
-              ul
-                li Wheelchair Accessible
-                li Blind or Low Vision Accessible
-                li Audio Description for TV, Film
-                li Telephone Typewriter
-                li Assistive Listening (Telephone)
-                li Sign Language Interpretation
-                li Open Captioning
-                li Assistive Listening (Ear)
-                li Large Print
-                li Universal Information
-                li Hearing with T-Coil
-                li Closed Captioning
-                li Braille
-                li Communication Access Real-Time Translation
+            /   p The following accommodations are available:
 
-              p Attendees who need additional accommodation for disability such as a sign language translation should contact ____________ by calling <a>1 (800) 333-1122</a> or emailing <a>ada@email.gov</a>.
+            /   ul
+            /     li Wheelchair Accessible
+            /     li Blind or Low Vision Accessible
+            /     li Audio Description for TV, Film
+            /     li Telephone Typewriter
+            /     li Assistive Listening (Telephone)
+            /     li Sign Language Interpretation
+            /     li Open Captioning
+            /     li Assistive Listening (Ear)
+            /     li Large Print
+            /     li Universal Information
+            /     li Hearing with T-Coil
+            /     li Closed Captioning
+            /     li Braille
+            /     li Communication Access Real-Time Translation
+
+            /   p Attendees who need additional accommodation for disability such as a sign language translation should contact ____________ by calling <a>1 (800) 333-1122</a> or emailing <a>ada@email.gov</a>.
 
             div#language-access class='pt-utility-anchor'
               h3 class='h5 text-alt'
@@ -90,12 +130,19 @@
               h3 class='h5 text-alt'
                 a href='#next-steps' class='text-inherit' Next Steps
 
-              p Fill out the Interest Form to apply. Deadline: June 10
+              blockquote class='text-alt mt-0'
+                span class='blockquote__mark' aria-hidden='true' —
+                p To apply for the program
+
+              ol
+                li == 'Email a driving record ("<a href="https://dmv.ny.gov/dmv-records/get-my-own-driving-record-abstract" target="_blank">driving abstract</a>") that\'s less than 30 days old to Isteak Hossain at <a href="mailto:ihossain@bwiny.org" target="_blank">ihossain@bwiny.org</a>'
+                li == 'Complete the <a href="https://docs.google.com/forms/d/e/1FAIpQLSdiC88MgYh-dQf0c3uR_dzxVBSS-Kn9-wz29NGlkibCfg7hRA/viewform" target="_blank">Red Hook on the Road Intake Form</a>'
+                li After you submit the form, staff will reach out to invite you to an online information session to learn more.
 
       section#contact class='bg-scale-1 layout-content py-2 tablet:py-4'
         div class='wrap'
           nav class='tablet:layout-three-columns-gutter'
-            a href='#' class='btn btn-secondary btn-next mb-1 w-full'
+            a href='https://bwiny.org/red-hook-on-the-road/overview/' class='btn btn-secondary btn-next mb-1 w-full'
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-arrow-left'
 
@@ -104,20 +151,20 @@
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-arrow-right'
 
-            a href='#' class='btn btn-secondary btn-next mb-1 w-full'
-              svg class='icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#icon-wnyc-ui-arrow-left'
-
-              | Apply Online
-
-              svg class='icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#icon-wnyc-ui-arrow-right'
-
-            a href='#' class='btn btn-secondary btn-next mb-1 w-full'
+            a href='tel:7182372017' class='btn btn-secondary btn-next mb-1 w-full'
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-arrow-left'
 
               | Call
+
+              svg class='icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-arrow-right'
+
+            a href='mailto:ihossain@bwiny.org' class='btn btn-secondary btn-next mb-1 w-full'
+              svg class='icon-wnyc-ui' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-arrow-left'
+
+              | Email
 
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-arrow-right'
@@ -133,20 +180,6 @@
 
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-arrow-right'
-
-      / section class='bg-scale-1 layout-content tablet:pb-6'
-      /   div class='wrap'
-      /     div class='text-center text-alt mb-1' —
-
-      /     nav
-      /       a href='#' class='btn btn-primary btn-next w-full'
-      /         svg class='icon-wnyc-ui' aria-hidden='true'
-      /           use xlink:href='#icon-wnyc-ui-arrow-left'
-
-      /         | More programs at Brooklyn Workforce Innovations
-
-      /         svg class='icon-wnyc-ui' aria-hidden='true'
-      /           use xlink:href='#icon-wnyc-ui-arrow-right'
 
       = partial('/objects/newsletter/newsletter')
 

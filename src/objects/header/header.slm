@@ -1,14 +1,28 @@
 
 / Header
 
+/ Defaults
+- this.header = {}
+- this.header.id = this.createId()
+- this.header.title = 'Title'
+- this.header.subtitle = 'Subtitle'
+- this.header.breadcrumb = 'Title'
+- this.header.recruitment = 'Recruitment Info'
+- this.header.certification = 'Services, Certification'
+- this.header.info = 'Sector'
+- this.header.schedule = 'Duration, <span>schedule taxonomy</span>'
+- this.header.accessible = false
+- this.header.multilingual = false
+- this.header.timestamp = 'Last updated 2 days ago'
+
+/ Inherit overrides
+- if (typeof header !== 'undefined')
+  - this.header = Object.assign(this.header, header);
+
 header class='o-header'
   div
-    h1 class='o-header__title'
-      | Commercial driver training&nbsp;
-      div Red Hook on the Road
-
-    h2 class='o-header__subtitle text-alt'
-      | Brooklyn Workforce Innovations and NYC Small Business Services
+    h1 class='o-header__title' == this.header.title
+    h2 class='o-header__subtitle text-alt' = this.header.subtitle
 
     nav class='o-header__breadcrumbs'
       a href='${this.baseUrl}/demos/index' Home
@@ -21,32 +35,57 @@ header class='o-header'
       svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
         use xlink:href='#icon-wnyc-ui-chevron-right'
 
-      b Commercial driver training - Red Hook on the Road
+      b = this.header.breadcrumb
 
-    p class='small'
-      span class='flex items-center'
-        svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
-          use xlink:href='#icon-wnyc-ui-user-check'
+    - if this.header.recruitment
+      p
+        mark class='badge status-alt me-2'
+          = this.header.recruitment
 
-        | Actively Recruiting
+    - if this.header.certification
+      p class='small'
+        a class='btn btn-link btn-small btn-secondary font-secondary' href='#services'
+          svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+            use xlink:href='#icon-wnyc-ui-award'
 
-    p class='small'
-      a class='btn btn-link btn-small btn-secondary font-secondary' href='#disability-accommodation'
-        svg class='icon icon-2 me-1' aria-hidden='true'
-          use xlink:href='#icon-wnyc-accessible'
+          span == this.header.certification
 
-        span Accommodates Disabilities
+    - if this.header.schedule
+      p class='small'
+        a class='btn btn-link btn-small btn-secondary font-secondary' href='#schedule'
+          svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+            use xlink:href='#icon-wnyc-ui-calendar'
 
-    p class='small'
-      a class='btn btn-link btn-small btn-secondary font-secondary' href='#language-access'
-        svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
-          use xlink:href='#icon-wnyc-ui-translate'
+          span == this.header.schedule
 
-        span Accommodates Multiple Languages
+    - if this.header.accessible
+      p class='small'
+        a class='btn btn-link btn-small btn-secondary font-secondary' href='#disability-accommodation'
+          svg class='icon icon-2 me-1' aria-hidden='true'
+            use xlink:href='#icon-wnyc-accessible'
 
-    p class='small'
-      span class='flex items-center'
-        svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
-          use xlink:href='#icon-wnyc-ui-info'
+          span Accommodates Disabilities
 
-        | Last updated 2 days ago
+    - if this.header.multilingual
+      p class='small'
+        a class='btn btn-link btn-small btn-secondary font-secondary' href='#language-access'
+          svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+            use xlink:href='#icon-wnyc-ui-translate'
+
+          span Accommodates Multiple Languages
+
+    - if this.header.info
+      p class='small'
+        span class='flex items-center'
+          svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+            use xlink:href='#icon-wnyc-ui-info'
+
+          = this.header.info
+
+    - if this.header.timestamp
+      p class='small'
+        span class='flex items-center'
+          svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+            use xlink:href='#icon-wnyc-ui-alert-triangle'
+
+          = this.header.timestamp

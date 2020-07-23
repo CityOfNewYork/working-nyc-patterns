@@ -7,8 +7,8 @@ nav class='c-utility' aria-label='utility'
 
     span Programs
 
-  a href='#contact' class='ms-3 btn btn-link'
-    | Contact
+  a href='#next-steps' class='ms-3 btn btn-secondary btn-link'
+    | Apply
 
   / a class='btn btn-small btn-primary'
   /   svg class='icon-wnyc-ui' aria-hidden='true'

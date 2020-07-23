@@ -102,13 +102,13 @@ module.exports = {
           Actively Recruiting
         </mark>
 
-        <span class="flex me-2" data-program="accessible">
+        <!-- <span class="flex me-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
-        </span>
+        </span> -->
 
         <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
@@ -155,13 +155,13 @@ module.exports = {
           Actively Recruiting
         </mark>
 
-        <span class="flex me-2" data-program="accessible">
+        <!-- <span class="flex me-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
-        </span>
+        </span> -->
 
         <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
@@ -205,13 +205,13 @@ module.exports = {
           Actively Recruiting
         </mark>
 
-        <span class="flex me-2" data-program="accessible">
+        <!-- <span class="flex me-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
-        </span>
+        </span> -->
 
         <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
@@ -255,13 +255,13 @@ module.exports = {
       subtitle: '<span data-program="title">SBS Home Health Aide Training<span>',
       url: '/demos/programs/web-development-fellowship-at-fullstack-academy',
       status: `
-        <span class="flex me-2" data-program="accessible">
+        <!-- <span class="flex me-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
-        </span>
+        </span> -->
 
         <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
@@ -302,13 +302,13 @@ module.exports = {
       subtitle: '<span data-program="title">NYC DOE Basic Education Classes<span>',
       url: '/demos/programs/web-development-fellowship-at-fullstack-academy',
       status: `
-        <span class="flex me-2" data-program="accessible">
+        <!-- <span class="flex me-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
-        </span>
+        </span> -->
 
         <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
@@ -347,13 +347,13 @@ module.exports = {
       subtitle: '<span data-program="title">NYC DOE Basic Education Classes<span>',
       url: '/demos/programs/web-development-fellowship-at-fullstack-academy',
       status: `
-        <span class="flex me-2" data-program="accessible">
+        <!-- <span class="flex me-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
-        </span>
+        </span> -->
 
         <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
