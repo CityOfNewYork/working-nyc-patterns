@@ -5,8 +5,8 @@
   <meta charset="utf-8" />
   <meta content="IE=edge" http-equiv="X-UA-Compatible" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <link href="https://cityofnewyork.github.io/nyco-wnyc-patterns/styles/site-default.css" rel="stylesheet" />
-  <link href="https://cityofnewyork.github.io/nyco-wnyc-patterns/styles/site-color-default.css" rel="stylesheet" />
+  <link href="/styles/site-default.css" rel="stylesheet" />
+  <link href="/styles/site-color-default.css" rel="stylesheet" />
   <title>Newsletter | WorkingNYC</title>
 </head>
 
@@ -16,7 +16,7 @@
     <!--{ @aria-label  Ensures a unique landmark }-->
     <!--{ @class       Add "o-navigation-fixed" in production layouts }-->
     <nav aria-label="Primary Navigation" class="o-navigation bg-scale-2 o-navigation-fixed" role="navigation">
-      <a class="o-navigation__logo o-navigation__menu-item" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/index">
+      <a class="o-navigation__logo o-navigation__menu-item" href="/demos/index">
         <span class="sr-only">Working N Y C</span>
         <svg aria-hidden="true" class="hidden tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2">
           <use xlink:href="#logo-wnyc-standard"></use>
@@ -26,9 +26,9 @@
         </svg>
       </a>
       <!--{ @class  Hide menu items for mobile using utilities }-->
-      <a class="hidden desktop:inline-flex" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index">Programs</a>
+      <a class="hidden desktop:inline-flex" href="/demos/programs/index">Programs</a>
       <a class="hidden desktop:inline-flex" href="#">Opportunities</a>
-      <a class="hidden desktop:inline-flex" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter">Newsletter</a>
+      <a class="hidden desktop:inline-flex" href="/demos/newsletter">Newsletter</a>
       <!--{ @class  The nav supports button elements using "btn-link" }-->
       <!--button class='o-navigation__menu-item btn-link' data-js='search' aria-controls='aria-c-search' aria-expanded='false'-->
       <!--  svg class='o-navigation__menu-icon icon-wnyc-ui'-->
@@ -68,9 +68,9 @@
       <!--{ @aria-label  Ensures landmarks are unique }-->
       <nav aria-label="mobile menu" class="o-mobile-menu__nav">
         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-        <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index" tabindex="-1">Programs</a>
+        <a href="/demos/programs/index" tabindex="-1">Programs</a>
         <a href="#" tabindex="-1">Opportunities</a>
-        <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter" tabindex="-1">Newsletter</a>
+        <a href="/demos/newsletter" tabindex="-1">Newsletter</a>
       </nav>
     </aside>
     <div aria-hidden="true" class="o-text-controller bg-scale-1 o-text-controller-fixed hidden" data-js="text-controller" id="aria-c-text-controller">
@@ -163,13 +163,13 @@
         <div>
           <div class="layout-content sticky top-0 bg-scale-1 z-10">
             <nav aria-label="utility" class="c-utility">
-              <a class="btn-link me-auto" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/index">
+              <a class="btn-link me-auto" href="/demos/index">
                 <svg aria-hidden="true" class="icon-wnyc-ui">
                   <use xlink:href="#icon-wnyc-ui-chevron-left"></use>
                 </svg>
                 <span>Home</span>
               </a>
-              <a class="btn btn-small btn-primary" data-js="web-share" data-web-share="{&quot;title&quot;: &quot;Newsletter" , "text" : "" , "url" : "https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter" }" href="#">
+              <a class="btn btn-small btn-primary" data-js="web-share" data-web-share="{&quot;title&quot;: &quot;Newsletter" , "text" : "" , "url" : "/demos/newsletter" }" href="#">
                 <svg aria-hidden="true" class="icon-wnyc-ui">
                   <use xlink:href="#icon-wnyc-ui-share-2"></use>
                 </svg>
@@ -182,7 +182,7 @@
               <div>
                 <h1 class="o-header__title">Newsletter</h1>
                 <nav class="o-header__breadcrumbs">
-                  <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/index">Home</a>
+                  <a href="/demos/index">Home</a>
                   <svg aria-hidden="true" class="o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4">
                     <use xlink:href="#icon-wnyc-ui-chevron-right"></use>
                   </svg>
@@ -223,36 +223,36 @@
                         <p data-js-alert='text'></p>
                       </div>
                     </article>
-                    <div class="c-question " id="4bf0f974e9d77">
+                    <div class="c-question " id="32402fcc6635">
                       <!--{ @for  Should match the id of the input }-->
-                      <label class="c-question__label" for="question-4bf0f974e9d77">Your email address.</label>
+                      <label class="c-question__label" for="question-32402fcc6635">Your email address.</label>
                       <div class="c-question__container">
                         <div class="c-question__input">
                           <div class="input">
                             <!--{ @required  required="true" specifies wether the input is required by a form }-->
                             <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                             <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                            <input id="question-4bf0f974e9d77" name="EMAIL" required="true" type="email" />
+                            <input id="question-32402fcc6635" name="EMAIL" required="true" type="email" />
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="c-question " id="7fdab0a9f5317">
+                    <div class="c-question " id="b5e685cbd408b">
                       <!--{ @for  Should match the id of the input }-->
-                      <label class="c-question__label" for="question-7fdab0a9f5317">What is your zip code?</label>
+                      <label class="c-question__label" for="question-b5e685cbd408b">What is your zip code?</label>
                       <div class="c-question__container">
                         <div class="c-question__input">
                           <div class="input">
                             <!--{ @required  required="true" specifies wether the input is required by a form }-->
                             <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                             <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                            <input id="question-7fdab0a9f5317" name="ZIPCODE" required="true" type="text" />
+                            <input id="question-b5e685cbd408b" name="ZIPCODE" required="true" type="text" />
                           </div>
                         </div>
                       </div>
                     </div>
                     <!--{ @fieldset  Checkbox and radio input groups should be grouped in fieldset tags }-->
-                    <fieldset class="c-question" id="bd405aaa78661">
+                    <fieldset class="c-question" id="0004540a4cb36">
                       <!--{ @legend  Checkboxes and radio input groups should be labeled by legend tags }-->
                       <legend class="c-question__label">Which borough(s) would you like to recieve updates for?</legend>
                       <div class="c-question__container layout-rows tablet:layout-two-columns-gutter">
@@ -346,9 +346,9 @@
               <use xlink:href="#logo-wnyc-standard"></use>
             </svg>
           </a>
-          <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index">Programs</a>
+          <a href="/demos/programs/index">Programs</a>
           <a href="#">Opportunities</a>
-          <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter">Newsletter</a>
+          <a href="/demos/newsletter">Newsletter</a>
         </nav>
         <nav aria-label="Footer Secondary Navigation" class="o-footer__nav o-footer__nav-b">
           <a class="no-underline" href="http://nyc.gov/workforcedevelopment" rel="nofollow noopener" target="_blank">
@@ -377,22 +377,23 @@
       </div>
     </div>
   </footer>
-  <script src="https://cityofnewyork.github.io/nyco-wnyc-patterns/scripts/polyfills.js"></script>
-  <script src="https://cityofnewyork.github.io/nyco-wnyc-patterns/scripts/main.js"></script>
+  <script src="/scripts/polyfills.js"></script>
+  <script src="/scripts/main.js"></script>
   <script type="text/javascript">
     var patterns = new WorkingNyc();
     patterns.accordion();
     patterns.dropdown();
     patterns.copy();
-    patterns.icons('https://cityofnewyork.github.io/nyco-wnyc-patterns/svg/icons.svg');
+    patterns.icons('/svg/icons.svg');
     patterns.mobileMenu();
     patterns.search();
     patterns.toggle();
     patterns.webShare();
-    patterns.newsletter('https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter');
+    patterns.newsletter('/demos/newsletter');
     patterns.newsletterForm();
     patterns.validateAndQuery();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>
