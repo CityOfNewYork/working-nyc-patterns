@@ -88,7 +88,8 @@
           div class='wrap layout-rows-gutter tablet:layout-two-columns-gutter desktop:layout-three-columns-gutter'
             - for (let i in this.programs)
               - card = this.programs[i]
-              = partial('/components/card/card')
+              - if i < 6
+                = partial('/components/card/card')
 
           div class='layout-content py-6'
             div class='wrap'

@@ -52,19 +52,19 @@
             fieldset
               legend class='text-alt small' Question 1 of 4
 
-              - question = {label: 'How might you describe yourself from the list below?', options: populations, name: 'population', js: 'toggle', ariaControls: 'aria-c-schedules'}
+              - question = {label: 'Which of these options best describes you?', options: populations, name: 'population', js: 'toggle', ariaControls: 'aria-c-schedules'}
               = partial('/components/question/question-select')
 
             fieldset id='aria-c-schedules' class='hidden' aria-hidden='true'
               legend class='text-alt small' tabindex='-1' Question 2 of 4
 
-              - question = {label: 'What type of class schedule best suites your needs?', options: schedules, name: 'schedule', js: 'toggle', ariaControls: 'aria-c-services', tabindex: '-1'}
+              - question = {label: 'What kind of program fits your schedule best?', options: schedules, name: 'schedule', js: 'toggle', ariaControls: 'aria-c-services', tabindex: '-1'}
               = partial('/components/question/question-select')
 
             fieldset id='aria-c-services' class='hidden' aria-hidden='true'
               legend class='text-alt small' tabindex='-1' Question 3 of 4
 
-              - question = {label: 'How would you describe the ideal outcome from a career service?', options: services, name: 'service', js: 'toggle', ariaControls: 'aria-c-sectors', tabindex: '-1'}
+              - question = {label: 'What do you want to gain from job services?', options: services, name: 'service', js: 'toggle', ariaControls: 'aria-c-sectors', tabindex: '-1'}
               = partial('/components/question/question-select')
 
             fieldset id='aria-c-sectors' class='hidden' aria-hidden='true'
@@ -74,14 +74,14 @@
               = partial('/components/question/question-select')
 
             div id='aria-c-messaging' class='hidden' aria-hidden='true'
-              - alert = {icon: 'info', type: 'success', class: 'color-status-secondary mb-5', body: '<p data-alert="text">Got it! We found [some] programs matching your interest.</p>'}
+              - alert = {icon: 'info', type: 'success', class: 'color-status-secondary mb-5', body: '<p data-alert="text">Got it! We found some programs matching your interest.</p>'}
               = partial('/components/alert/alert')
 
-              - alert = {icon: 'info', type: 'warning', class: 'color-status-tertiary mb-5', body: `<p data-alert="text">Sorry, we can’t find programs matching your choices. <a href="${this.baseUrl}/demos/programs/index" tabindex="-1">See all the programs available now</a> or try changing your selections. You can also <a href="${this.baseUrl}/demos/newsletter" tabindex="-1">sign up for our newsletter</a> to get updates on the new programs we add.</p>`}
-              = partial('/components/alert/alert')
+              / - alert = {icon: 'info', type: 'warning', class: 'color-status-tertiary mb-5', body: `<p data-alert="text">Sorry, we can’t find programs matching your choices. <a href="${this.baseUrl}/demos/programs/index" tabindex="-1">See all the programs available now</a> or try changing your selections. You can also <a href="${this.baseUrl}/demos/newsletter" tabindex="-1">sign up for our newsletter</a> to get updates on the new programs we add.</p>`}
+              / = partial('/components/alert/alert')
 
-              - alert = {icon: 'info', type: 'warning', class: 'color-status-tertiary mb-5', body: `<p data-alert="text">Sorry, there was an error on our site. Please try again later.</p>`}
-              = partial('/components/alert/alert')
+              / - alert = {icon: 'info', type: 'warning', class: 'color-status-tertiary mb-5', body: `<p data-alert="text">Sorry, there was an error on our site. Please try again later.</p>`}
+              / = partial('/components/alert/alert')
 
             button class='btn btn-secondary btn-next w-full'
               | Find your program
