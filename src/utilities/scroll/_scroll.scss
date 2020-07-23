@@ -3,7 +3,6 @@
  */
 
 // Dependencies
-// @use 'config/tokens' as *;
 @use 'config/direction';
 @use 'config/media';
 
@@ -49,7 +48,7 @@
 
 @include media.screens-and-min-width() using ($variant) {
   .#{$variant}scroll-reset {
-    overflow: auto;
+    overflow: visible;
 
     > * {
       min-width: initial;
