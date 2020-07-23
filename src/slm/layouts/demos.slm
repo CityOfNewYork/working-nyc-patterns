@@ -9,6 +9,7 @@ html lang='en'
 
     link rel='stylesheet' href='${this.baseUrl}/styles/site-default.css'
     link rel='stylesheet' href='${this.baseUrl}/styles/site-color-default.css'
+    / link rel='stylesheet' href='${this.baseUrl}/styles/site-color-light.css'
 
     - if (this.title != 'WorkingNYC')
       title ${this.title} | WorkingNYC
