@@ -111,13 +111,13 @@ module.exports = {
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
 
-        <span class="flex me-2" data-program="multilingual">
+        <!-- <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
             <use xlink:href="#icon-wnyc-ui-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
-        </span>
+        </span> -->
       `,
       summary: `
         <p><span data-program="summary">Through this program students prepare
@@ -153,9 +153,9 @@ module.exports = {
       subtitle: '<span data-program="title">Advance & Earn<span>',
       url: '/demos/programs/red-hook-on-the-road',
       status: `
-        <mark class="badge status-alt me-2" data-program="recruiting">
+        <!-- <mark class="badge status-alt me-2" data-program="recruiting">
           Actively Recruiting
-        </mark>
+        </mark> -->
 
         <!-- <span class="flex me-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
@@ -165,13 +165,13 @@ module.exports = {
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
 
-        <span class="flex me-2" data-program="multilingual">
+        <!-- <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
             <use xlink:href="#icon-wnyc-ui-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
-        </span>
+        </span> -->
       `,
       summary: `
         <p><span data-program="summary">Create a plan to achieve career and
@@ -216,13 +216,13 @@ module.exports = {
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
 
-        <span class="flex me-2" data-program="multilingual">
+        <!-- <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
             <use xlink:href="#icon-wnyc-ui-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
-        </span>
+        </span> -->
       `,
       summary: `<p><span data-program="summary">This program takes students
         from amateur to professional in 24 weeks.</span> For
@@ -259,6 +259,10 @@ module.exports = {
       subtitle: '<span data-program="title">SBS Home Health Aide Training<span>',
       url: '/demos/programs/red-hook-on-the-road',
       status: `
+        <mark class="badge status-alt me-2" data-program="recruiting">
+          Actively Recruiting
+        </mark>
+
         <!-- <span class="flex me-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>
@@ -267,13 +271,13 @@ module.exports = {
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
 
-        <span class="flex me-2" data-program="multilingual">
+        <!-- <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
             <use xlink:href="#icon-wnyc-ui-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
-        </span>
+        </span> -->
       `,
       summary: `<p><span data-program="summary">Prepare for a job in the
         healthcare field.</span> For
@@ -314,13 +318,13 @@ module.exports = {
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
 
-        <span class="flex me-2" data-program="multilingual">
+        <!-- <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
             <use xlink:href="#icon-wnyc-ui-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
-        </span>
+        </span> -->
       `,
       summary: `<p>For
         <b class="text-alt" data-program="taxonomy.population">Adults</b> and
@@ -442,6 +446,10 @@ module.exports = {
       subtitle: '<span data-program="title">Sunset Park Bridge to Commercial Driving<span>',
       url: '/demos/programs/red-hook-on-the-road',
       status: `
+        <mark class="badge status-alt me-2" data-program="recruiting">
+          Actively Recruiting
+        </mark>
+
         <!-- <span class="flex me-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>

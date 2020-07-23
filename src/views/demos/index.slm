@@ -104,13 +104,6 @@
               div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
                 = partial('/components/card/card')
 
-            / div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-            /   = partial('/components/card/card')
-            / div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-            /   = partial('/components/card/card')
-            / div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-            /   = partial('/components/card/card')
-
             div class='wrap relative tablet:hidden'
               - button = {label: 'View more programs', class: 'btn-secondary btn-next flex w-full h-full', href: `${this.baseUrl}/demos/programs/index`, type: 'next-previous'}
               = partial('/elements/buttons/buttons')
@@ -136,15 +129,6 @@
 
               div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
                 = partial('/components/card/card')
-
-            / div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-            /   = partial('/components/card/card')
-            / div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-            /   = partial('/components/card/card')
-            / div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-            /   = partial('/components/card/card')
-            / div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
-            /   = partial('/components/card/card')
 
             div class='wrap relative tablet:hidden'
               - button = {label: 'View more programs', class: 'btn-secondary btn-next flex w-full h-full', href: `${this.baseUrl}/demos/programs/index`, type: 'next-previous'}
