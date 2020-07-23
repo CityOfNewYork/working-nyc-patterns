@@ -11,6 +11,7 @@
 @use 'config/media';
 @use 'config/nav';
 @use 'config/typography';
+@use 'config/z';
 
 // Declarations
 .o-mobile-menu {
@@ -44,7 +45,9 @@
   top: 0;
   bottom: 0;
 
-  z-index: 1000;
+  @include media.screen-and-max-width('desktop') {
+    z-index: map-get(z.$indexes, 'mobile-menu');
+  }
 
   @include media.screen-and-min-width('desktop') {
     display: none;

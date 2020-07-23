@@ -46,7 +46,7 @@
   position: fixed;
   bottom: 0;
 
-  @include media.screen-and-max-width('tablet') {
+  @include media.screen-and-max-width('desktop') {
     z-index: map-get(z.$indexes, 'navigation');
   }
 
