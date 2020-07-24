@@ -129,7 +129,7 @@ module.exports = {
         {
           icon: 'icon-wnyc-ui-award',
           text: `<span>
-            <span data-program="taxonomy.services">Job training</span>,&nbsp;
+            <span data-program="taxonomy.services">Training for a new career</span>,&nbsp;
             <span data-program="taxonomy.services">job certification</span>
             </span>`
         },
@@ -141,7 +141,7 @@ module.exports = {
           icon: 'icon-wnyc-ui-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">4 weeks</span>,&nbsp;
-            <span data-program="taxonomy.schedule">night class</span>&nbsp;schedule
+            <span data-program="taxonomy.schedule">evening</span>&nbsp;schedule
             </span>`
         }
       ],
@@ -281,7 +281,7 @@ module.exports = {
       `,
       summary: `<p><span data-program="summary">Prepare for a job in the
         healthcare field.</span> For
-        <b class="text-alt" data-program="taxonomy.population">Adults</b>.</p>`,
+        <b class="text-alt" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
       features: [
         {
           icon: 'icon-wnyc-ui-award',
@@ -373,8 +373,8 @@ module.exports = {
       summary: `<p><span data-program="summary">English language learners in the
         Flatbush/East Flatbush communities get help with language and math
         skills.</span> For
-        <b class="text-alt" data-program="taxonomy.population">Immigrants</b> and
-        <b class="text-alt" data-program="taxonomy.population">Young Adults (16 - 24)</b>.</p>`,
+        <b class="text-alt" data-program="taxonomy.population">Immigrant New Yorkers</b> and
+        <b class="text-alt" data-program="taxonomy.population">Young Adults (16–24)</b>.</p>`,
       features: [
         {
           icon: 'icon-wnyc-ui-award',
@@ -418,13 +418,13 @@ module.exports = {
       summary: `<p><span data-program="summary">Intermediate and Advanced
         speakers can improve English skills aimed at finding a new job or
         career.</span> For
-        <b class="text-alt" data-program="taxonomy.population">Immigrants</b> and
+        <b class="text-alt" data-program="taxonomy.population">Immigrant New Yorkers</b> and
         <b class="text-alt" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
       features: [
         {
           icon: 'icon-wnyc-ui-award',
           text: `<span>
-            <span data-program="taxonomy.services">Improving English skills</span>,&nbsp;
+            <span data-program="taxonomy.services">English language learning</span>,&nbsp;
             <span data-program="taxonomy.services">help finding work</span>
             </span>`
         },
@@ -432,8 +432,8 @@ module.exports = {
           icon: 'icon-wnyc-ui-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">Less than 3 months</span>,&nbsp;
-            <span data-program="taxonomy.schedule">evenings</span>,&nbsp;
-            <span data-program="taxonomy.schedule">weekends</span>, or&nbsp;
+            <span data-program="taxonomy.schedule">evening</span>,&nbsp;
+            <span data-program="taxonomy.schedule">weekend</span>, or&nbsp;
             <span data-program="taxonomy.schedule">part-time</span>
             </span>`
         }
@@ -469,14 +469,14 @@ module.exports = {
       summary: `<p><span data-program="summary">This program includes classes to
         improve English skills followed by training to become a commercial
         driver.</span> For
-        <b class="text-alt" data-program="taxonomy.population">Immigrants</b> and
+        <b class="text-alt" data-program="taxonomy.population">Immigrant New Yorkers</b> and
         <b class="text-alt" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
       features: [
         {
           icon: 'icon-wnyc-ui-award',
           text: `<span>
             <span data-program="taxonomy.services">Training for a new career</span>,&nbsp;
-            <span data-program="taxonomy.services">improving English skills</span>
+            <span data-program="taxonomy.services">English language learning</span>
             </span>`
         },
         {
@@ -490,203 +490,133 @@ module.exports = {
       cta: 'Learn more'
     }
   ],
-  filters: [
-    {
-      legend: 'Services',
-      options: [
-        {label: 'Job training'},
-        {label: 'Job certification'},
-        {label: 'Job prep'},
-        {label: 'Paid work'},
-        {label: 'Job placement'},
-        {label: 'Skill building'},
-        {label: 'HSE prep'},
-        {label: 'English language learning'},
-      ]
-    },
-    {
-      legend: 'Sectors',
-      options: [
-        {label: 'Transportation'},
-        {label: 'Health care'},
-        {label: 'Construction'},
-        {label: 'Restaurant'},
-        {label: 'Human resources'},
-        {label: 'Marketing'},
-        {label: 'Media'},
-        {label: 'Security'},
-        {label: 'Technology'},
-        {label: 'Arts'},
-        {label: 'Salon services'},
-        {label: 'IT infrastructure'},
-        {label: 'Manufacturing'}
-      ]
-    },
+  survey: [
     {
       legend: 'Population',
       options: [
-        {label: 'Adults (18+)'},
-        {label: 'Youth (16–24)'},
-        {label: 'Immigrant New Yorkers'},
-        {label: 'Unemployed New Yorkers'},
-        {label: 'Low-income New Yorkers'},
-        {label: 'Seniors (55+)'},
-        {label: 'NYCHA residents'},
-        {label: 'People with disabilities'},
-        {label: 'Veterans'}
+        {label: 'You’re between 16 and 24 years old'},
+        {label: 'You’re over 55 years old'},
+        {label: 'You’re an immigrant'},
+        {label: 'You live in NYCHA housing'},
+        {label: 'You have a disability '},
+        {label: 'You’ve been impacted by the justice system'},
+        {label: 'You get public assistance'},
+        {label: 'You’re unemployed or have a low income'},
+        {label: 'You’re an adult age 18+'},
+        {label: 'You’re not sure'}
+      ]
+    },
+    {
+      legend: 'Services',
+      options: [
+        {label: 'Skills for a new job or career'},     // Training for a new career
+        {label: 'Help applying for jobs'},             // Help applying for work
+        {label: 'An internship or short-term job'},    // Internship and short-term work
+        {label: 'Your high school equivalency (GED)'}, // High school equivalency (GED) prep
+        {label: 'Better English language skills'},     // English language learning
+        {label: 'I\'m not sure'}
       ]
     },
     {
       legend: 'Schedule',
       options: [
+        {label: 'Daytime'},
+        {label: 'Evening'},
+        {label: 'Weekend'},
+        {label: 'Part-time'},
         {label: 'Full-time'},
-        {label: 'Night classes'},
-        {label: 'Weekends'},
-        {label: 'Flexible'},
-        {label: 'Varies'}
+        {label: 'You need a flexible schedule'},
+        {label: 'You’re not sure'}
       ]
-    },
+    }
+  ],
+  filters: [
     {
-      legend: 'Location',
+      legend: 'Services',
       options: [
-        {label: 'Brooklyn'},
-        {label: 'Bronx'},
-        {label: 'Manhattan'},
-        {label: 'Queens'},
-        {label: 'Staten Island'},
-        {label: 'Virtual'}
+        {label: 'Training for a new career'},
+        {label: 'Help applying for work'},
+        {label: 'Internship and short-term work'},
+        {label: 'High school equivalency (GED) prep'},
+        {label: 'English language learning'}
+        // {label: 'Job training'},
+        // {label: 'Job certification'},
+        // {label: 'Job prep'},
+        // {label: 'Paid work'},
+        // {label: 'Job placement'},
+        // {label: 'Skill building'},
+        // {label: 'HSE prep'},
+        // {label: 'English language learning'}
       ]
-    }
-  ],
-  segments: [
+    },
+    // {
+    //   legend: 'Sectors',
+    //   options: [
+    //     {label: 'Transportation'},
+    //     {label: 'Health care'},
+    //     {label: 'Construction'},
+    //     {label: 'Restaurant'},
+    //     {label: 'Human resources'},
+    //     {label: 'Marketing'},
+    //     {label: 'Media'},
+    //     {label: 'Security'},
+    //     {label: 'Technology'},
+    //     {label: 'Arts'},
+    //     {label: 'Salon services'},
+    //     {label: 'IT infrastructure'},
+    //     {label: 'Manufacturing'}
+    //   ]
+    // },
     {
-      name: 'Find Work',
-      segments: [
-        {
-          name: 'Employment',
-          segments: [
-            {
-              name: 'Employment Services'
-            },
-            {
-              name: 'Coordination & Barrier Reduction'
-            }
-          ]
-        },
-        {
-          name: 'Internships',
-          segments: [
-            {
-              name: 'In School'
-            },
-            {
-              name: 'Out of School'
-            }
-          ]
-        }
+      legend: 'Population',
+      options: [
+        {label: 'Young adults (16–24)'},
+        {label: 'Adults (18+)'},
+        {label: 'Older adults (55+)'},
+        {label: 'Immigrant New Yorker'},
+        {label: 'NYCHA residents'},
+        {label: 'People with disabilities'},
+        {label: 'People with justice involvement'},
+        {label: 'Public assistance recipients'},
+        {label: 'Low-income New Yorker'},
+        // {label: 'Adults (18+)'},
+        // {label: 'Youth (16–24)'},
+        // {label: 'Immigrant New Yorkers'},
+        // {label: 'Unemployed New Yorkers'},
+        // {label: 'Low-income New Yorkers'},
+        // {label: 'Seniors (55+)'},
+        // {label: 'NYCHA residents'},
+        // {label: 'People with disabilities'},
+        // {label: 'Veterans'}
       ]
     },
     {
-      name: 'Get Skills'
-    },
-    {
-      name: 'Education',
-      segments: [
-        {
-          name: 'Adult (Basic & ESOL)'
-        },
-        {
-          name: 'College Support'
-        },
-        {
-          name: 'Bridge'
-        },
-        {
-          name: 'College and Career Prep'
-        }
+      legend: 'Schedule',
+      options: [
+        {label: 'Daytime'},
+        {label: 'Evening'},
+        {label: 'Weekend'},
+        {label: 'Part-time'},
+        {label: 'Full-time'},
+        {label: 'Flexible'}
+        // {label: 'Full-time'},
+        // {label: 'Night classes'},
+        // {label: 'Weekends'},
+        // {label: 'Flexible'},
+        // {label: 'Varies'}
       ]
     },
-    {
-      name: 'Careers',
-      segments: [
-        {
-          name: 'Sectors'
-        },
-        {
-          name: 'Occupations'
-        }
-      ]
-    }
-  ],
-  sectors: [
-    {
-      name: 'Technology',
-      occupations: [
-        {name: 'Entrepreneurship'},
-        {name: 'Software Development'},
-        {name: 'Computer Technician'},
-      ]
-    },
-    {
-      name: 'Culinary',
-      occupations: [
-        {name: 'Multiple'}
-      ]
-    },
-    {
-      name: 'Security',
-      occupations: [
-        {name: 'Security Guard'}
-      ]
-    },
-    {
-      name: 'Construction',
-      occupations: [
-        {name: 'Multiple'}
-      ]
-    },
-    {
-      name: 'Business',
-      occupations: [
-        {name: 'Multiple'}
-      ]
-    },
-    {
-      name: 'Healthcare',
-      occupations: [
-        {name: 'Multiple'}
-      ]
-    },
-    {
-      name: 'Driving',
-      occupations: [
-        {name: 'Multiple'}
-      ]
-    },
-    {
-      name: 'Theater',
-      occupations: [
-        {name: 'Multiple'}
-      ]
-    },
-    {
-      name: 'Media',
-      occupations: [
-        {name: 'Multiple'}
-      ]
-    },
-    {
-      name: 'Human Resources',
-      occupations: [
-        {name: 'Multiple'}
-      ]
-    },
-    {
-      name: 'Green Infrastructure',
-      occupations: [
-        {name: 'Multiple'}
-      ]
-    }
+    // {
+    //   legend: 'Location',
+    //   options: [
+    //     {label: 'Brooklyn'},
+    //     {label: 'Bronx'},
+    //     {label: 'Manhattan'},
+    //     {label: 'Queens'},
+    //     {label: 'Staten Island'},
+    //     {label: 'Virtual'}
+    //   ]
+    // }
   ],
   /**
    * Functions
