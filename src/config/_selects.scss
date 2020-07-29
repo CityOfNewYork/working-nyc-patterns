@@ -13,14 +13,14 @@ $selects: map-get($tokens, 'selects');
 }
 
 @mixin base() {
-  @include typography.set('question');
+  @include typography.set('option');
   line-height: get('inner-size');
   text-overflow: ellipsis;
   padding: ($grid * 2) - get('border-width');
   padding-#{direction.$end}: ($grid * 7) - get('border-width');
   border: get('border-width') get('border-style');
   border-color: inherit;
-  border-radius: get('radius');
+  background-color: transparent;
 
   &::-ms-expand {
     display: none;

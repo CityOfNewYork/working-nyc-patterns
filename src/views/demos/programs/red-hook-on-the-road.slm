@@ -3,28 +3,30 @@
 - this.url = `${this.baseUrl}/demos/programs/red-hook-on-the-road`
 
 / Layout
-= extend('/slm/layouts/demos');
+= extend('/slm/layouts/demos')
 
 / Content blocks
-= content('head');
-  = mixin('head');
+= content('head')
+  = mixin('head')
 
-= content('content');
+= content('content')
   div class='bg-scale-2'
     main id='content' class='bg-scale-1'
       div
         div class='layout-content sticky top-0 bg-scale-1 z-10'
-          = partial('/components/utility/utility.slm');
+          = partial('/components/utility/utility.slm')
 
         div class='layout-content'
           - header = {}
-          - header.title = 'Commercial Driver Training <br>Red Hook on the Road'
-          - header.subtitle = 'Brooklyn Workforce Innovations and NYC Small Business Services'
+          - header.title = 'Commercial Driver Training'
+          - header.subtitle = '<b>Red Hook on the Road</b> from Brooklyn Workforce Innovations and NYC Small Business Services'
           - header.breadcrumb = 'Red Hook on the Road'
-          - header.recruitment = 'Currently Recruiting'
+          - header.recruitment = 'Recruiting Now'
           - header.certification = 'Job training, certification'
-          - header.info = 'Transportation'
+          - header.eligibility = 'For adults (18+), unemployed, low-income, and justice-involved New Yorkers'
+          / - header.info = 'Transportation'
           - header.schedule = 'Four weeks,&nbsp;<span>full-time</span>'
+
           = partial('/objects/header/header')
 
         section class='bg-scale-2 layout-content'
@@ -37,8 +39,9 @@
               p This program helps unemployed New Yorkers with Class D licenses start new commercial driving careers. Through four weeks of training, the program preps students to take the NYS Commercial Driver’s License (CDL) road test. It also helps grads find a job with a network of NYC employers.
 
             div#services class='pt-utility-anchor'
-              h3 class='h5 text-alt '
-                a href='#services' class='text-inherit' Services
+              h3 class='h5 text-alt'
+                / a href='#services' class='text-inherit'
+                | Services
 
               blockquote class='text-alt mt-0'
                 span class='blockquote__mark' aria-hidden='true' —
@@ -75,7 +78,8 @@
 
             div#schedule class='pt-utility-anchor'
               h3 class='h5 text-alt'
-                a href='#schedule' class='text-inherit' Schedule
+                / a href='#schedule' class='text-inherit'
+                | Schedule
 
               blockquote class='text-alt mt-0'
                 span class='blockquote__mark' aria-hidden='true' —
@@ -85,7 +89,8 @@
 
             / div#disability-accommodation class='pt-utility-anchor'
             /   h3 class='h5 text-alt'
-            /     a href='#disability-accommodation' class='text-inherit' Disability Accommodation
+            /     / a href='#disability-accommodation' class='text-inherit'
+            /     | Disability Accommodation
 
             /   p The following accommodations are available:
 
@@ -109,7 +114,8 @@
 
             div#language-access class='pt-utility-anchor'
               h3 class='h5 text-alt'
-                a href='#language-access' class='text-inherit' Lanuguage Access
+                / a href='#language-access' class='text-inherit'
+                | Lanuguage Access
 
               p The program is available in the following languages:
 
@@ -128,7 +134,8 @@
 
             div#next-steps class='pt-utility-anchor'
               h3 class='h5 text-alt'
-                a href='#next-steps' class='text-inherit' Next Steps
+                / a href='#next-steps' class='text-inherit'
+                | Next Steps
 
               blockquote class='text-alt mt-0'
                 span class='blockquote__mark' aria-hidden='true' —
@@ -151,35 +158,23 @@
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-arrow-right'
 
-            a href='tel:7182372017' class='btn btn-secondary btn-next mb-1 w-full'
-              svg class='icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#icon-wnyc-ui-arrow-left'
+            a href='tel:7182372017' class='btn btn-secondary mb-1 w-full'
+              | Call (718) 237-2017
 
-              | Call
+            a href='mailto:ihossain@bwiny.org' class='btn btn-secondary mb-1 w-full'
+              | Email ihossain@bwiny.org
 
-              svg class='icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#icon-wnyc-ui-arrow-right'
+          / div class='text-center text-alt mb-1' —
 
-            a href='mailto:ihossain@bwiny.org' class='btn btn-secondary btn-next mb-1 w-full'
-              svg class='icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#icon-wnyc-ui-arrow-left'
+          / nav
+          /   a href='#' class='btn btn-primary btn-next w-full'
+          /     svg class='icon-wnyc-ui' aria-hidden='true'
+          /       use xlink:href='#icon-wnyc-ui-arrow-left'
 
-              | Email
+          /     | More programs at Brooklyn Workforce Innovations
 
-              svg class='icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#icon-wnyc-ui-arrow-right'
-
-          div class='text-center text-alt mb-1' —
-
-          nav
-            a href='#' class='btn btn-primary btn-next w-full'
-              svg class='icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#icon-wnyc-ui-arrow-left'
-
-              | More programs at Brooklyn Workforce Innovations
-
-              svg class='icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#icon-wnyc-ui-arrow-right'
+          /     svg class='icon-wnyc-ui' aria-hidden='true'
+          /       use xlink:href='#icon-wnyc-ui-arrow-right'
 
       = partial('/objects/newsletter/newsletter')
 

@@ -100,7 +100,7 @@ module.exports = {
       url: '/demos/programs/red-hook-on-the-road',
       status: `
         <mark class="badge status-alt me-2" data-program="recruiting">
-          Actively Recruiting
+          Recruiting Now
         </mark>
 
         <!-- <span class="flex me-2" data-program="accessible">
@@ -154,7 +154,7 @@ module.exports = {
       url: '/demos/programs/red-hook-on-the-road',
       status: `
         <!-- <mark class="badge status-alt me-2" data-program="recruiting">
-          Actively Recruiting
+          Recruiting Now
         </mark> -->
 
         <!-- <span class="flex me-2" data-program="accessible">
@@ -205,7 +205,7 @@ module.exports = {
       url: '/demos/programs/red-hook-on-the-road',
       status: `
         <mark class="badge status-alt me-2" data-program="recruiting">
-          Actively Recruiting
+          Recruiting Now
         </mark>
 
         <!-- <span class="flex me-2" data-program="accessible">
@@ -260,7 +260,7 @@ module.exports = {
       url: '/demos/programs/red-hook-on-the-road',
       status: `
         <mark class="badge status-alt me-2" data-program="recruiting">
-          Actively Recruiting
+          Recruiting Now
         </mark>
 
         <!-- <span class="flex me-2" data-program="accessible">
@@ -447,7 +447,7 @@ module.exports = {
       url: '/demos/programs/red-hook-on-the-road',
       status: `
         <mark class="badge status-alt me-2" data-program="recruiting">
-          Actively Recruiting
+          Recruiting Now
         </mark>
 
         <!-- <span class="flex me-2" data-program="accessible">

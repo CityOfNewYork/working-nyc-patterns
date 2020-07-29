@@ -12,6 +12,7 @@
 // Declarations
 .select {
   position: relative;
+  border-radius: selects.get('radius');
 
   select {
     @include selects.base();

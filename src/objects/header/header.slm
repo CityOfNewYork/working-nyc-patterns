@@ -10,6 +10,7 @@
 - this.header.recruitment = 'Recruitment Info'
 - this.header.certification = 'Services, Certification'
 - this.header.info = 'Sector'
+- this.header.eligibility = 'Eligibility'
 - this.header.schedule = 'Duration, <span>schedule taxonomy</span>'
 - this.header.accessible = false
 - this.header.multilingual = false
@@ -22,7 +23,7 @@
 header class='o-header'
   div
     h1 class='o-header__title' == this.header.title
-    h2 class='o-header__subtitle text-alt' = this.header.subtitle
+    h2 class='o-header__subtitle text-alt' == this.header.subtitle
 
     nav class='o-header__breadcrumbs'
       a href='${this.baseUrl}/demos/index' Home
@@ -49,6 +50,14 @@ header class='o-header'
             use xlink:href='#icon-wnyc-ui-award'
 
           span == this.header.certification
+
+    - if this.header.eligibility
+      p class='small'
+        a class='btn btn-link btn-small btn-secondary font-secondary' href='#eligibility'
+          svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
+            use xlink:href='#icon-wnyc-ui-users'
+
+          span == this.header.eligibility
 
     - if this.header.schedule
       p class='small'

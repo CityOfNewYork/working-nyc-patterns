@@ -24,18 +24,18 @@
 
           h2 class='h4 tablet:font-normal tablet:text-h3 font-bold text-alt mb-5' Find and connect to new careers, job skills, adult education, and more.
 
-          div class='flex justify-between px-4 mb-5'
-            svg class='icon-6 text-blue-l-1' aria-hidden='true' data-aos='fade-left' data-aos-delay='300'
-              use xlink:href='#category-wnyc-technology'
+          / div class='flex justify-between px-4 mb-5'
+          /   svg class='icon-6 text-blue-l-1' aria-hidden='true' data-aos='fade-left' data-aos-delay='300'
+          /     use xlink:href='#category-wnyc-technology'
 
-            svg class='icon-6 text-red-l-1' aria-hidden='true' data-aos='fade-left' data-aos-delay='400'
-              use xlink:href='#category-wnyc-healthcare'
+          /   svg class='icon-6 text-red-l-1' aria-hidden='true' data-aos='fade-left' data-aos-delay='400'
+          /     use xlink:href='#category-wnyc-healthcare'
 
-            svg class='icon-6 text-yellow' aria-hidden='true' data-aos='fade-left' data-aos-delay='500'
-              use xlink:href='#category-wnyc-construction'
+          /   svg class='icon-6 text-yellow' aria-hidden='true' data-aos='fade-left' data-aos-delay='500'
+          /     use xlink:href='#category-wnyc-construction'
 
-            svg class='icon-6 text-green-l-2' aria-hidden='true' data-aos='fade-left' data-aos-delay='600'
-              use xlink:href='#category-wnyc-culinary'
+          /   svg class='icon-6 text-green-l-2' aria-hidden='true' data-aos='fade-left' data-aos-delay='600'
+          /     use xlink:href='#category-wnyc-culinary'
 
       section#trainings class='tablet:pt-4' data-aos='fade-up' data-aos-anchor-placement='center-bottom'
         form class='c-card' data-js='validate-and-query' method='post' action='${this.baseUrl}/demos/programs/index'
@@ -71,11 +71,11 @@
               - alert = {icon: 'info', type: 'success', class: 'color-status-secondary mb-5', body: '<p data-alert="text">Got it! We found some programs matching your interest.</p>'}
               = partial('/components/alert/alert')
 
-              / - alert = {icon: 'info', type: 'warning', class: 'color-status-tertiary mb-5', body: `<p data-alert="text">Sorry, we can’t find programs matching your choices. <a href="${this.baseUrl}/demos/programs/index" tabindex="-1">See all the programs available now</a> or try changing your selections. You can also <a href="${this.baseUrl}/demos/newsletter" tabindex="-1">sign up for our newsletter</a> to get updates on the new programs we add.</p>`}
-              / = partial('/components/alert/alert')
+              - alert = {icon: 'info', type: 'warning', class: 'color-status-tertiary mb-5', body: `<p data-alert="text">Sorry, we can’t find programs matching your choices. <a href="${this.baseUrl}/demos/programs/index" tabindex="-1">See all the programs available now</a> or try changing your selections. You can also <a href="${this.baseUrl}/demos/newsletter" tabindex="-1">sign up for our newsletter</a> to get updates on the new programs we add.</p>`}
+              = partial('/components/alert/alert')
 
-              / - alert = {icon: 'info', type: 'warning', class: 'color-status-tertiary mb-5', body: `<p data-alert="text">Sorry, there was an error on our site. Please try again later.</p>`}
-              / = partial('/components/alert/alert')
+              - alert = {icon: 'info', type: 'warning', class: 'color-status-tertiary mb-5', body: `<p data-alert="text">Sorry, there was an error on our site. Please try again later.</p>`}
+              = partial('/components/alert/alert')
 
             button class='btn btn-secondary btn-next w-full'
               | Find your program now
