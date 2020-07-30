@@ -146,7 +146,7 @@
                 li == 'Complete the <a href="https://docs.google.com/forms/d/e/1FAIpQLSdiC88MgYh-dQf0c3uR_dzxVBSS-Kn9-wz29NGlkibCfg7hRA/viewform" target="_blank">Red Hook on the Road Intake Form</a>'
                 li After you submit the form, staff will reach out to invite you to an online information session to learn more.
 
-      section#contact class='bg-scale-1 layout-content py-2 tablet:py-4'
+      section#contact class='bg-scale-1 layout-content py-2 pb-1 tablet:py-4 tablet:pb-3'
         div class='wrap'
           nav class='tablet:layout-three-columns-gutter'
             a href='https://bwiny.org/red-hook-on-the-road/overview/' class='btn btn-secondary btn-next mb-1 w-full'

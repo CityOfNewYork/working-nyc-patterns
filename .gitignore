@@ -71,6 +71,7 @@ npm-debug.log
 !/src/elements/tables
 
 !/src/utilities/animate
+!/src/utilities/background
 !/src/utilities/body
 !/src/utilities/clearfix
 !/src/utilities/color

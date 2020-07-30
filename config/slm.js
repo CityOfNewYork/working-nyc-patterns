@@ -133,10 +133,10 @@ module.exports = {
             <span data-program="taxonomy.services">job certification</span>
             </span>`
         },
-        {
-          icon: 'icon-wnyc-ui-info',
-          text: '<span data-program="taxonomy.sector">Transportation</span>'
-        },
+        // {
+        //   icon: 'icon-wnyc-ui-info',
+        //   text: '<span data-program="taxonomy.sector">Transportation</span>'
+        // },
         {
           icon: 'icon-wnyc-ui-calendar',
           text: `<span>
@@ -238,10 +238,10 @@ module.exports = {
             <span data-program="taxonomy.services">job prep</span>
             </span>`
         },
-        {
-          icon: 'icon-wnyc-ui-info',
-          text: '<span data-program="taxonomy.sector">Technology</span>'
-        },
+        // {
+        //   icon: 'icon-wnyc-ui-info',
+        //   text: '<span data-program="taxonomy.sector">Technology</span>'
+        // },
         {
           icon: 'icon-wnyc-ui-calendar',
           text: `<span>
@@ -290,10 +290,10 @@ module.exports = {
             <span data-program="taxonomy.services">job certification</span>
             </span>`
         },
-        {
-          icon: 'icon-wnyc-ui-info',
-          text: '<span data-program="taxonomy.sector">Health care</span>'
-        },
+        // {
+        //   icon: 'icon-wnyc-ui-info',
+        //   text: '<span data-program="taxonomy.sector">Health care</span>'
+        // },
         {
           icon: 'icon-wnyc-ui-calendar',
           text: `<span>

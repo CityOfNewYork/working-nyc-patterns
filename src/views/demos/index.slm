@@ -10,13 +10,13 @@
   = mixin('head');
 
 = content('content');
-  div class='bg-scale-1'
-    header class='o-banner page-max bg-scale-1 py-7 px-2 tablet:px-8 tablet:flex tablet:layout-two-columns-gutter'
+  div class='bg-scale-1 bg-shape-wnyc-abc bg-fixed'
+    header class='o-banner page-max py-7 px-2 tablet:px-8 tablet:flex tablet:layout-two-columns-gutter'
       div class='pb-6 hidden tablet:flex'
       div class='pb-6 hidden tablet:flex'
 
       div
-        div class='tablet:pe-4 tablet:pt-2 tablet:sticky top-0'
+        div class='tablet:pe-4 tablet:pt-1 tablet:sticky top-0'
           h1 class='sr-only' Working N Y C
 
           svg class='icon-logo-homepage fill-white text-blue-l-2' aria-hidden='true'
@@ -24,24 +24,19 @@
 
           h2 class='h4 tablet:font-normal tablet:text-h3 font-bold text-alt mb-5' Find and connect to new careers, job skills, adult education, and more.
 
-          / div class='flex justify-between px-4 mb-5'
-          /   svg class='icon-6 text-blue-l-1' aria-hidden='true' data-aos='fade-left' data-aos-delay='300'
-          /     use xlink:href='#category-wnyc-technology'
+          p class='mb-5 text-center tablet:text-start'
+            a class='btn btn-link btn-secondary font-secondary' href='#answer-a-few-questions' Answer a few questions to get started
+            br class='tablet:hidden'
+            | or
+            br
+            a class='btn btn-link btn-secondary font-secondary block tablet:inline-flex' href='#content'
+              span Scroll to browse programs
+              br class='tablet:hidden'
+              svg class='icon-wnyc-ui m-0 mt-1' aria-hidden='true'
+                use xlink:href='#icon-wnyc-ui-chevron-down'
 
-          /   svg class='icon-6 text-red-l-1' aria-hidden='true' data-aos='fade-left' data-aos-delay='400'
-          /     use xlink:href='#category-wnyc-healthcare'
-
-          /   svg class='icon-6 text-yellow' aria-hidden='true' data-aos='fade-left' data-aos-delay='500'
-          /     use xlink:href='#category-wnyc-construction'
-
-          /   svg class='icon-6 text-green-l-2' aria-hidden='true' data-aos='fade-left' data-aos-delay='600'
-          /     use xlink:href='#category-wnyc-culinary'
-
-      section#trainings class='tablet:pt-4' data-aos='fade-up' data-aos-anchor-placement='center-bottom'
+      section#answer-a-few-questions class='tablet:pt-6' data-aos='fade-up' data-aos-anchor-placement='center-bottom'
         form class='c-card' data-js='validate-and-query' method='post' action='${this.baseUrl}/demos/programs/index'
-          div class='c-card__header'
-            h2 class='h4 font-normal text-alt m-0 tablet:text-h5 tablet:font-bold' Answer a few questions to get started
-
           div class='c-card__body'
             - populations = this.survey.find(f => f.legend === 'Population').options
             - schedules = this.survey.find(f => f.legend === 'Schedule').options
@@ -49,20 +44,20 @@
             / - sectors = this.filters.find(f => f.legend === 'Sectors').options
             / - locations = this.filters.find(f => f.legend === 'Location').options
 
-            fieldset
-              legend class='text-alt small' Question 1 of 3
+            fieldset class='mb-2'
+              legend class='text-alt small' Question 1
 
-              - question = {label: 'Which of these options best describes you?', options: populations, name: 'population', js: 'toggle', ariaControls: 'aria-c-schedules'}
+              - question = {label: 'Which of these options best describes you?', description: 'Select one. You can choose more later.', options: populations, name: 'population', js: 'toggle', ariaControls: 'aria-c-schedules'}
               = partial('/components/question/question-select')
 
-            fieldset id='aria-c-schedules' class='hidden' aria-hidden='true'
-              legend class='text-alt small' tabindex='-1' Question 2 of 3
+            fieldset id='aria-c-schedules' class='hidden mt-3' aria-hidden='true'
+              legend class='text-alt small' tabindex='-1' Question 2
 
               - question = {label: 'What kind of program fits your schedule best?', options: schedules, name: 'schedule', js: 'toggle', ariaControls: 'aria-c-services', tabindex: '-1'}
               = partial('/components/question/question-select')
 
             fieldset id='aria-c-services' class='hidden' aria-hidden='true'
-              legend class='text-alt small' tabindex='-1' Question 3 of 3
+              legend class='text-alt small' tabindex='-1' Question 3
 
               - question = {label: 'What do you want to gain from job services?', options: services, name: 'service', js: 'toggle', ariaControls: 'aria-c-messaging', tabindex: '-1'}
               = partial('/components/question/question-select')
@@ -77,7 +72,7 @@
               - alert = {icon: 'info', type: 'warning', class: 'color-status-tertiary mb-5', body: `<p data-alert="text">Sorry, there was an error on our site. Please try again later.</p>`}
               = partial('/components/alert/alert')
 
-            button class='btn btn-secondary btn-next w-full'
+            button class='btn btn-primary btn-next w-full'
               | Find your program now
 
     main id='content'
@@ -134,6 +129,16 @@
               = partial('/elements/buttons/buttons')
 
       = partial('/objects/newsletter/newsletter')
+
+  / div aria-hidden='true'
+  /   svg class='fill-white text-blue-l-2' width='218' height='183'
+  /     use xlink:href='#shape-wnyc-a'
+
+  /   svg class='fill-white text-blue-l-2' width='262' height='262'
+  /     use xlink:href='#shape-wnyc-b'
+
+  /   svg class='fill-white text-blue-l-2' width='129' height='129'
+  /     use xlink:href='#shape-wnyc-c'
 
 = content('head')
   link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/michalsnik/aos@v2.3.4/dist/aos.css'

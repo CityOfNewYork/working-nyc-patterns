@@ -123,7 +123,7 @@ module.exports = {
     // 'container',
     'accessibility',
     // 'appearance',
-    // 'backgroundAttachment',
+    'backgroundAttachment',
     'backgroundColor',
     // 'backgroundPosition',
     // 'backgroundRepeat',
