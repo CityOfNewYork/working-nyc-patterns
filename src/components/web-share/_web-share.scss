@@ -3,11 +3,11 @@
  */
 
 // Dependencies
+@use 'config/grid' as *;
 @use 'config/dimensions';
 @use 'config/direction';
-@use 'config/fonts';
+@use 'config/typography';
 @use 'config/media';
-@use 'config/tokens';
 
 // Declarations
 .c-web-share {
@@ -20,22 +20,21 @@
   margin-#{direction.$end}: $grid;
   margin-bottom: $grid;
 
-  @media screen and (min-width: media.$screen-tablet) {
+  @include media.screen-and-min-width('tablet') {
     margin-#{direction.$end}: $grid * 1.5;
     margin-bottom: $grid * 2;
   }
 }
 
 .c-web-share__fallback {
-  font-size: $font-size-small;
+  @include typography.set('small');
+
   position: absolute;
 
   margin-top: $grid;
   margin-bottom: $grid;
 
-  box-shadow: map-get(map-get($tokens, 'shadows'), 'up');
-
-  @media screen and (min-width: media.$screen-tablet) {
+  @include media.screen-and-min-width('tablet') {
     margin-top: $grid * 2;
     margin-bottom: $grid * 2;
   }
@@ -45,7 +44,7 @@
   padding: $grid * 2;
   padding-bottom: $grid;
 
-  @media screen and (min-width: media.$screen-tablet) {
+  @include media.screen-and-min-width('tablet') {
     padding: $grid * 3;
     padding-bottom: $grid;
   }
@@ -63,8 +62,11 @@
 
 .c-web-share__input {
   width: 100%;
-  padding: $grid;
   margin-bottom: $grid * 2;
+
+  input {
+    padding: $grid;
+  }
 }
 
 .c-web-share__icon {
