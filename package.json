@@ -47,7 +47,7 @@
     "predeploy": "cross-env NODE_ENV=production pttrn default -np -nl",
     "version": "npm run predeploy && git add .",
     "prepublishOnly": "git push && git push --tags",
-    "publish": "npm run gh-pages",
+    "publish": "npm run ghpages",
     "ghpages": "cross-env NODE_ENV=production pttrn publish",
     "pttrn": "node_modules/.bin/pttrn"
   },

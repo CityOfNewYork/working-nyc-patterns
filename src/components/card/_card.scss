@@ -28,11 +28,13 @@
 
 .c-card__title {
   @include typography.set('h4');
-  font-weight: bold;
+  font-weight: bold
 }
 
 .c-card__subtitle {
-  @include typography.set('h5')
+  @include typography.set('h5');
+  font-weight: lighter;
+  margin-top: 0
 }
 
 .c-card__body {

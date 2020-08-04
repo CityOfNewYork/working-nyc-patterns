@@ -19,7 +19,7 @@
         div class='layout-content'
           - header = {}
           - header.title = 'Commercial Driver Training'
-          - header.subtitle = '<b>Red Hook on the Road</b> from Brooklyn Workforce Innovations and NYC Small Business Services'
+          - header.subtitle = '<b>Red Hook on the Road</b> by Brooklyn Workforce Innovations and NYC Small Business Services'
           - header.breadcrumb = 'Red Hook on the Road'
           - header.recruitment = 'Recruiting Now'
           - header.certification = 'Job training, certification'

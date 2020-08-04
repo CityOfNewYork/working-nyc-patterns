@@ -96,7 +96,7 @@ module.exports = {
     {
       collection: 'training',
       title: '<span data-program="plain-language-name">Commercial driver training</span>',
-      subtitle: '<span data-program="title">Red Hook on the Road<span>',
+      subtitle: '<b data-program="title">Red Hook on the Road</b> by <span data-program="provider">Brooklyn Workforce Innovations</span>',
       url: '/demos/programs/red-hook-on-the-road',
       status: `
         <mark class="badge status-alt me-2" data-program="recruiting">

@@ -15,14 +15,14 @@ article class='c-card ${this.card.class}'
         a href='${this.baseUrl}${this.card.url}'
           == this.card.title
 
-    - if this.card.status
-      p class='c-card__status flex items-center'
-        == this.card.status
-
-  div class='c-card__body'
     - if this.card.subtitle
       h3 class='c-card__subtitle text-alt mb-1'
         == this.card.subtitle
+
+  div class='c-card__body'
+    - if this.card.status
+      p class='c-card__status flex items-center'
+        == this.card.status
 
     - if this.card.summary
       div class='c-card__summary'
