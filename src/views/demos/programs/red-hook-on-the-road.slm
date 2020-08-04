@@ -51,7 +51,8 @@
 
             div#eligibility class='pt-utility-anchor'
               h3 class='h5 text-alt '
-                a href='#eligibility' class='text-inherit' Eligibility
+                / a href='#eligibility' class='text-inherit'
+                | Who it's for
 
               blockquote class='text-alt mt-0'
                 span class='blockquote__mark' aria-hidden='true' —
@@ -115,7 +116,7 @@
             div#language-access class='pt-utility-anchor'
               h3 class='h5 text-alt'
                 / a href='#language-access' class='text-inherit'
-                | Lanuguage Access
+                | Language access
 
               p The program is available in the following languages:
 
@@ -153,7 +154,7 @@
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-arrow-left'
 
-              | Learn More
+              | Learn more
 
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#icon-wnyc-ui-arrow-right'

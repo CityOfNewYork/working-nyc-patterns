@@ -25,7 +25,7 @@
               / svg class='icon-wnyc-ui' aria-hidden='true'
                 / use xlink:href='#icon-wnyc-ui-sliders'
 
-              span class='me-1' Filter Programs
+              span class='me-1' Filter programs
               span class='badge badge-small color-status-secondary' 99
 
             / button class='btn btn-small btn-primary' data-js='toggle' aria-controls='aria-c-saved' aria-expanded='false'
@@ -93,9 +93,9 @@
 
           div class='layout-content py-6'
             div class='wrap'
-              button class='btn btn-secondary w-full mb-2' Show More
+              button class='btn btn-secondary w-full mb-2' Show more
 
-              button class='btn btn-secondary w-full' aria-controls='aria-c-filter' aria-expanded='false' data-js='dropdown' data-dropdown-lock='true' Filter Programs
+              button class='btn btn-secondary w-full' aria-controls='aria-c-filter' aria-expanded='false' data-js='dropdown' data-dropdown-lock='true' Filter programs
 
       = partial('/objects/newsletter/newsletter')
 

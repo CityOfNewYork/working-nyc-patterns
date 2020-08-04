@@ -77,7 +77,7 @@ $modes: map-get(tokens.$tokens, 'color-modes');
       color: map-get($colors, $token-hyperlinks-hover);
     }
 
-    &:visited:not([href^='#']) {
+    &:visited:not([href^='#']):not(.o-text-controller__languages a) {
       color: map-get($colors, $token-hyperlinks-visited);
     }
   }

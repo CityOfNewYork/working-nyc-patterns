@@ -29,47 +29,47 @@ div id='aria-c-text-controller' class='o-text-controller bg-scale-1 ${this.textC
           div
             ul
               li
-                a href='#' tabindex=this.textController.tabindex
+                a href='${this.baseUrl}/demos/index' tabindex=this.textController.tabindex
                   span English
 
               li
-                a href='#' tabindex=this.textController.tabindex
+                a href='${this.baseUrl}/demos/es' tabindex=this.textController.tabindex
                   span Español
 
               li
-                a href='#' tabindex=this.textController.tabindex
+                a href='${this.baseUrl}/demos/ru' tabindex=this.textController.tabindex
                   span Русский
 
               li
-                a href='#' tabindex=this.textController.tabindex
+                a href='${this.baseUrl}/demos/ko' tabindex=this.textController.tabindex
                   span 한국어
 
               li
-                a href='#' tabindex=this.textController.tabindex
+                a href='${this.baseUrl}/demos/ar' tabindex=this.textController.tabindex
                   span العربية
 
               li
-                a href='#' tabindex=this.textController.tabindex
+                a href='${this.baseUrl}/demos/ht' tabindex=this.textController.tabindex
                   span Kreyol
 
               li
-                a href='#' tabindex=this.textController.tabindex
+                a href='${this.baseUrl}/demos/zh-hant' tabindex=this.textController.tabindex
                   span 繁體中文
 
               li
-                a href='#' tabindex=this.textController.tabindex
+                a href='${this.baseUrl}/demos/fr' tabindex=this.textController.tabindex
                   span Français
 
               li
-                a href='#' tabindex=this.textController.tabindex
+                a href='${this.baseUrl}/demos/pl' tabindex=this.textController.tabindex
                   span polski
 
               li
-                a href='#' tabindex=this.textController.tabindex
+                a href='${this.baseUrl}/demos/ur' tabindex=this.textController.tabindex
                   span اردو
 
               li
-                a href='#' tabindex=this.textController.tabindex
+                a href='${this.baseUrl}/demos/bn' tabindex=this.textController.tabindex
                   span বাংলা
 
           p
