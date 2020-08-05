@@ -170,12 +170,60 @@
                 <span>Programs</span>
               </a>
               <a class="ms-3 btn btn-secondary btn-link" href="#next-steps">Next steps</a>
-              <a class="btn btn-small btn-primary" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;Red Hook on the Road" ,"text":"","url":"https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/red-hook-on-the-road"}" href="#">
-                <svg aria-hidden="true" class="icon-wnyc-ui">
-                  <use xlink:href="#icon-wnyc-ui-share-2"></use>
-                </svg>
-                <span>Share</span>
-              </a>
+              <div class="c-web-share">
+                <!--{ @data-js         "web-share" initalizes the Web Share Component. Falls back to using the Toggle Utility to display the sharing menu }-->
+                <!--{ @data-web-share  Data attribute for holding data sent to the navigator.share() method. Note, in the Markup quotes are escaped as "&quot;" however, they must be regular quotes; "". Inspect the source of the Demostration to see the real example }-->
+                <!--{ @aria-controls   Targets the Web Share fallback }-->
+                <!--{ @aria-expanded   Indicates if the Web Share fallback is open or not }-->
+                <button aria-controls="aria-c-web-share-fallback" aria-expanded="false" class="btn btn-small btn-primary m-0" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;The share title&quot;,&quot;text&quot;:&quot;What users should say about this.&quot;,&quot;url&quot;:&quot;https://cityofnewyork.github.io/nyco-wnyc-patterns&quot;}">
+                  <svg class="c-web-share__icon icon-wnyc-ui">
+                    <use xlink:href="#icon-wnyc-ui-share-2"></use>
+                  </svg>
+                  <span>Share</span>
+                </button>
+                <!--{ Web Share Fallback }-->
+                <!--{ @id    Toggle target of the web share button. Must match the "aria-controls" attribute of the toggling button }-->
+                <!--{ @role  Indicates an area of significance }-->
+                <div aria-hidden="true" class="c-web-share__fallback color-card hidden right-0" id="aria-c-web-share-fallback" role="region">
+                  <div class="c-web-share__fallback-body">
+                    <label class="c-web-share__label" for="web-share-url" tabindex="-1">Share this URL</label>
+                    <div class="c-web-share__input input">
+                      <!--{ Copy-to-clipboard Content }-->
+                      <!--{ @data-copy-target  Identifies the input as the target of the copy button }-->
+                      <input data-copy-target="web-share-url" id="web-share-url" name="web-share-url" tabindex="-1" type="text" value="https://cityofnewyork.github.io/nyco-wnyc-patterns" />
+                    </div>
+                    <div class="c-web-share__items">
+                      <!--{ Copy-to-clipboard Button }-->
+                      <!--{ @data-js       Initializes the copy-to-clipboard utility }-->
+                      <!--{ @data-copy     Identifies the target of the content to copy }-->
+                      <!--{ @aria-pressed  Will signify a pressed state to screen readers }-->
+                      <button aria-pressed="false" class="c-web-share__item c-web-share__copy btn btn-small btn-primary" data-copy="web-share-url" data-js="copy" tabindex="-1">
+                        <svg class="icon icon-wnyc-ui">
+                          <use xlink:href="#icon-wnyc-ui-copy"></use>
+                        </svg>
+                        <svg class="icon-pressed icon-wnyc-ui me-1">
+                          <use xlink:href="#icon-wnyc-ui-check"></use>
+                        </svg>
+                        <span>Copy URL</span>
+                      </button>
+                      <!--{ Facebook Sharer }-->
+                      <a class="c-web-share__item btn btn-small btn-primary" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcityofnewyork.github.io%2Fnyco-wnyc-patterns" tabindex="-1" target="_blank">
+                        <svg class="icon-wnyc-ui">
+                          <use xlink:href="#icon-wnyc-ui-facebook"></use>
+                        </svg>
+                        <span>Facebook</span>
+                      </a>
+                      <!--{ Twitter Tweet }-->
+                      <a class="c-web-share__item btn btn-small btn-primary" href="https://twitter.com/intent/tweet?text=What%20users%20should%20say%20about%20this.%20https%3A%2F%2Fcityofnewyork.github.io%2Fnyco-wnyc-patterns" tabindex="-1" target="_blank">
+                        <svg class="icon-wnyc-ui">
+                          <use xlink:href="#icon-wnyc-ui-twitter"></use>
+                        </svg>
+                        <span>Twitter</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </nav>
           </div>
           <div class="layout-content">
@@ -197,7 +245,7 @@
                   <b>Red Hook on the Road</b>
                 </nav>
                 <p>
-                  <mark class="badge status-alt me-2">Recruiting Now</mark>
+                  <mark class="badge status-alt me-2">Recruiting now</mark>
                 </p>
                 <p class="small">
                   <a class="btn btn-link btn-small btn-secondary font-secondary" href="#services">
@@ -345,16 +393,16 @@
           <div class="pt-2 pb-3 wrap">
             <h2 class="h4 font-normal text-alt mt-0">Newsletter</h2>
             <form action="https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;id=aa67394696" id="mc-embedded-subscribe-form" method="post" target="_blank">
-              <div class="c-question c-question-single" id="57fbd6ca19a67">
+              <div class="c-question c-question-single" id="d8a7e9715aac3">
                 <!--{ @for  Should match the id of the input }-->
-                <label class="c-question__label" for="question-57fbd6ca19a67">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
+                <label class="c-question__label" for="question-d8a7e9715aac3">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
                 <div class="c-question__container">
                   <div class="c-question__input">
                     <div class="input">
                       <!--{ @required  required="true" specifies wether the input is required by a form }-->
                       <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="question-57fbd6ca19a67" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
+                      <input id="question-d8a7e9715aac3" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
                     </div>
                     <div class="c-question__button">
                       <button class="btn btn-primary btn-small" type="submit">Submit</button>
