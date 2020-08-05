@@ -15,9 +15,9 @@ nav class='c-utility' aria-label='utility'
   /     use xlink:href='#icon-wnyc-ui-bookmark'
 
   /   span Save
+  = partial('/components/web-share/web-share.slm')
+  / a href='#' class='btn btn-small btn-primary' data-js='web-share' data-web-share='{"title":"${this.title}","text":"${this.description}","url":"${this.url}"}'
+  /   svg class='icon-wnyc-ui' aria-hidden='true'
+  /     use xlink:href='#icon-wnyc-ui-share-2'
 
-  a href='#' class='btn btn-small btn-primary' data-js='web-share' data-web-share='{"title":"${this.title}","text":"${this.description}","url":"${this.url}"}'
-    svg class='icon-wnyc-ui' aria-hidden='true'
-      use xlink:href='#icon-wnyc-ui-share-2'
-
-    span Share
+  /   span Share

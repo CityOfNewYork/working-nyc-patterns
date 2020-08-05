@@ -7,7 +7,7 @@
 - this.header.title = 'Title'
 - this.header.subtitle = 'Subtitle'
 - this.header.breadcrumb = 'Title'
-- this.header.recruitment = 'Recruitment Info'
+- this.header.recruitment = 'Recruitment info'
 - this.header.certification = 'Services, Certification'
 - this.header.info = 'Sector'
 - this.header.eligibility = 'Eligibility'

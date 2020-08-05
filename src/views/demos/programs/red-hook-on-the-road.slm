@@ -21,7 +21,7 @@
           - header.title = 'Commercial Driver Training'
           - header.subtitle = '<b>Red Hook on the Road</b> by Brooklyn Workforce Innovations and NYC Small Business Services'
           - header.breadcrumb = 'Red Hook on the Road'
-          - header.recruitment = 'Recruiting Now'
+          - header.recruitment = 'Recruiting now'
           - header.certification = 'Job training, certification'
           - header.eligibility = 'For adults (18+), unemployed, low-income, and justice-involved New Yorkers'
           / - header.info = 'Transportation'
