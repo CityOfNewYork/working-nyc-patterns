@@ -165,37 +165,37 @@
         <div class="pb-6 hidden tablet:flex"></div>
         <div class="pb-6 hidden tablet:flex"></div>
         <div>
-          <div class="tablet:pe-4 tablet:pt-1 tablet:sticky top-0">
+          <div class="tablet:pe-4 tablet:py-4 tablet:sticky desktop:py-8 top-0">
             <h1 class="sr-only">Working N Y C</h1>
             <svg aria-hidden="true" class="icon-logo-homepage fill-white text-blue-l-2">
               <use xlink:href="#logo-wnyc-standard"></use>
             </svg>
             <h2 class="h4 tablet:font-normal tablet:text-h3 font-bold text-alt mb-5">Find and connect to new careers, job skills, adult education, and more.</h2>
-            <p class="mb-5 text-center tablet:text-start">
-              <a class="btn btn-link btn-secondary font-secondary" href="#answer-a-few-questions">Answer a few questions to get started</a>
-              <br class="tablet:hidden" />or
-              <br />
-              <a class="btn btn-link btn-secondary font-secondary block tablet:inline-flex" href="#content">
-                <span>Scroll to browse programs</span>
-                <br class="tablet:hidden" />
-                <svg aria-hidden="true" class="icon-wnyc-ui m-0 mt-1">
-                  <use xlink:href="#icon-wnyc-ui-chevron-down"></use>
-                </svg>
-              </a>
-            </p>
           </div>
         </div>
-        <section class="tablet:pt-6" data-aos="fade-up" data-aos-anchor-placement="center-bottom" id="answer-a-few-questions">
+        <section data-aos="fade-up" data-aos-anchor-placement="center-bottom" id="answer-a-few-questions">
+          <p class="mb-5 text-center tablet:mb-3">
+            <a class="btn btn-link btn-secondary font-secondary" href="#answer-a-few-questions">Answer a few questions to get started</a>
+            <br class="tablet:hidden" />or
+            <br />
+            <a class="btn btn-link btn-secondary font-secondary block tablet:inline-flex" href="#content">
+              <span>Scroll to browse programs</span>
+              <br class="tablet:hidden" />
+              <svg aria-hidden="true" class="icon-wnyc-ui m-0 mt-1">
+                <use xlink:href="#icon-wnyc-ui-chevron-down"></use>
+              </svg>
+            </a>
+          </p>
           <form action="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index" class="c-card" data-js="validate-and-query" method="post">
             <div class="c-card__body">
               <fieldset class="mb-2">
                 <legend class="text-alt small">Question 1</legend>
-                <div class="c-question " id="0b65580479c27">
-                  <label class="c-question__label" for="question-0b65580479c27">Which of these options best describes you?</label>
+                <div class="c-question " id="1dbc276aee785">
+                  <label class="c-question__label" for="question-1dbc276aee785">Which of these options best describes you?</label>
                   <p>Select one. You can choose more later.</p>
                   <div class="c-question__container">
                     <div class="select ">
-                      <select aria-controls="aria-c-schedules" data-js="toggle" id="question-0b65580479c27" name="population">
+                      <select aria-controls="aria-c-schedules" data-js="toggle" id="question-1dbc276aee785" name="population">
                         <option selected="true" value="">Select an option</option>
                         <option value="youre-between-16-and-24-years-old">You’re between 16 and 24 years old</option>
                         <option value="youre-over-55-years-old">You’re over 55 years old</option>
@@ -217,11 +217,11 @@
               </fieldset>
               <fieldset aria-hidden="true" class="hidden mt-3" id="aria-c-schedules">
                 <legend class="text-alt small" tabindex="-1">Question 2</legend>
-                <div class="c-question " id="bb2b7b348724e">
-                  <label class="c-question__label" for="question-bb2b7b348724e" tabindex="-1">What kind of program fits your schedule best?</label>
+                <div class="c-question " id="afd29a2fb6dad">
+                  <label class="c-question__label" for="question-afd29a2fb6dad" tabindex="-1">What kind of program fits your schedule best?</label>
                   <div class="c-question__container">
                     <div class="select ">
-                      <select aria-controls="aria-c-services" data-js="toggle" id="question-bb2b7b348724e" name="schedule" tabindex="-1">
+                      <select aria-controls="aria-c-services" data-js="toggle" id="question-afd29a2fb6dad" name="schedule" tabindex="-1">
                         <option selected="true" value="">Select an option</option>
                         <option value="daytime">Daytime</option>
                         <option value="evening">Evening</option>
@@ -240,11 +240,11 @@
               </fieldset>
               <fieldset aria-hidden="true" class="hidden" id="aria-c-services">
                 <legend class="text-alt small" tabindex="-1">Question 3</legend>
-                <div class="c-question " id="8d89b7bbf880f">
-                  <label class="c-question__label" for="question-8d89b7bbf880f" tabindex="-1">What do you want to gain from job services?</label>
+                <div class="c-question " id="4a9dee2bdd94e">
+                  <label class="c-question__label" for="question-4a9dee2bdd94e" tabindex="-1">What do you want to gain from job services?</label>
                   <div class="c-question__container">
                     <div class="select ">
-                      <select aria-controls="aria-c-messaging" data-js="toggle" id="question-8d89b7bbf880f" name="service" tabindex="-1">
+                      <select aria-controls="aria-c-messaging" data-js="toggle" id="question-4a9dee2bdd94e" name="service" tabindex="-1">
                         <option selected="true" value="">Select an option</option>
                         <option value="skills-for-a-new-job-or-career">Skills for a new job or career</option>
                         <option value="help-applying-for-jobs">Help applying for jobs</option>
@@ -912,16 +912,16 @@
           <div class="pt-2 pb-3 wrap">
             <h2 class="h4 font-normal text-alt mt-0">Newsletter</h2>
             <form action="https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;id=aa67394696" id="mc-embedded-subscribe-form" method="post" target="_blank">
-              <div class="c-question c-question-single" id="8a99592e726fd">
+              <div class="c-question c-question-single" id="895034fb4d011">
                 <!--{ @for  Should match the id of the input }-->
-                <label class="c-question__label" for="question-8a99592e726fd">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
+                <label class="c-question__label" for="question-895034fb4d011">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
                 <div class="c-question__container">
                   <div class="c-question__input">
                     <div class="input">
                       <!--{ @required  required="true" specifies wether the input is required by a form }-->
                       <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="question-8a99592e726fd" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
+                      <input id="question-895034fb4d011" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
                     </div>
                     <div class="c-question__button">
                       <button class="btn btn-primary btn-small" type="submit">Submit</button>
