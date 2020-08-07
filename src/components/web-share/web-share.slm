@@ -20,8 +20,20 @@ div class='c-web-share'
   /! { @role  Indicates an area of significance }
   div id='aria-c-web-share-fallback' role='region' aria-hidden='true' class='c-web-share__fallback color-card hidden right-0'
     div class='c-web-share__fallback-body'
-      label tabindex='-1' for='web-share-url' class='c-web-share__label'
-        | Share this URL
+      div class='flex mb-1 items-center flex-row-reverse'
+        /! { @data-js        data-js="web-share" designates this element as a toggling element for the dropdown }
+        /! { @aria-controls  Targets the element that will be shown and hidden by the toggle }
+        /! { @aria-expanded  Indicates if the dropdown is open or not }
+        /! { @data-dropdown  data-dropdown="close" designates this element as the primary close toggle for the dropdown. It will be focused on when the dropdown is opened. Only one close toggle associated with this aria-controls value can exist on the page }
+        /! { @tabindex       Set the tabindex to '-1' on focusable elements if this area is hidden when the page is rendered }
+        button class='btn btn-primary btn-small m-0' data-js='web-share' aria-controls='aria-c-web-share-fallback' aria-expanded='false' tabindex='-1'
+          svg class='icon-wnyc-ui' aria-hidden='true' tabindex='-1'
+            use xlink:href='#icon-wnyc-ui-x'
+
+          span Close
+
+        label tabindex='-1' for='web-share-url' class='c-web-share__label flex-1'
+          | Share this URL
 
       div class='c-web-share__input input'
         /! { Copy-to-clipboard Content }

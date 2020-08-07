@@ -55,15 +55,15 @@
   <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-modal text-small hidden hidden:overflowFadeInUp animated" id="main-menu">
     <div class="page-max py-4 animated">
       <div class="tablet:flex">
-        <nav aria-labelledby="navigation-main-8727ff697041f" class="tablet:flex-1 mb-1 px-1 tablet:px-2" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="navigation-main-8727ff697041f">Main</span>
+        <nav aria-labelledby="navigation-main-3608ceee9a246" class="tablet:flex-1 mb-1 px-1 tablet:px-2" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="navigation-main-3608ceee9a246">Main</span>
           <a class="block p-1 no-underline align-middle" href="index" tabindex="-1">Home</a>
           <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1">Links</span>
           <a class="block p-1 no-underline align-middle" data-toggle-tabindex="10" tabindex="-1" xhref="https://www.npmjs.com/package/@nycopportunity/working-patterns">NPM Package</a>
           <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="https://github.com/cityofnewyork/nyco-wnyc-patterns">GitHub Repository</a>
         </nav>
-        <nav aria-labelledby="aria-lb-elements-8727ff697041f" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-elements-8727ff697041f">Elements</span>
+        <nav aria-labelledby="aria-lb-elements-3608ceee9a246" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-elements-3608ceee9a246">Elements</span>
           <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="badge">Badge</a>
           <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="buttons">Buttons</a>
           <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="code">Code</a>
@@ -87,8 +87,8 @@
             <mark class="badge badge-small status-secondary">View</mark>&nbsp;Tables
           </a>
         </nav>
-        <nav aria-labelledby="aria-lb-components-8727ff697041f" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-components-8727ff697041f">Components</span>
+        <nav aria-labelledby="aria-lb-components-3608ceee9a246" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-components-3608ceee9a246">Components</span>
           <a class="block p-1 no-underline align-middle" href="accordion" tabindex="-1">
             <mark class="badge badge-small status-secondary">View</mark>&nbsp;Accordion
           </a>
@@ -111,8 +111,8 @@
             <mark class="badge badge-small status-secondary">View</mark>&nbsp;Web Share
           </a>
         </nav>
-        <nav aria-labelledby="aria-lb-objects-8727ff697041f" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-objects-8727ff697041f">Objects</span>
+        <nav aria-labelledby="aria-lb-objects-3608ceee9a246" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-objects-3608ceee9a246">Objects</span>
           <a class="block p-1 no-underline align-middle" href="banner" tabindex="-1">
             <mark class="badge badge-small status-secondary">View</mark>&nbsp;Banner
           </a>
@@ -138,8 +138,8 @@
             <mark class="badge badge-small status-secondary">View</mark>&nbsp;Text Controller
           </a>
         </nav>
-        <nav aria-labelledby="aria-lb-utilities-8727ff697041f" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-utilities-8727ff697041f">Utilities</span>
+        <nav aria-labelledby="aria-lb-utilities-3608ceee9a246" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-utilities-3608ceee9a246">Utilities</span>
           <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="animate">Animate</a>
           <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="color">Color</a>
           <a class="block p-1 no-underline align-middle" href="fonts" tabindex="-1">
@@ -203,7 +203,20 @@
                 <!--{ @role  Indicates an area of significance }-->
                 <div aria-hidden="true" class="c-web-share__fallback color-card hidden right-0" id="aria-c-web-share-fallback" role="region">
                   <div class="c-web-share__fallback-body">
-                    <label class="c-web-share__label" for="web-share-url" tabindex="-1">Share this URL</label>
+                    <div class="flex mb-1 items-center flex-row-reverse">
+                      <!--{ @data-js        data-js="web-share" designates this element as a toggling element for the dropdown }-->
+                      <!--{ @aria-controls  Targets the element that will be shown and hidden by the toggle }-->
+                      <!--{ @aria-expanded  Indicates if the dropdown is open or not }-->
+                      <!--{ @data-dropdown  data-dropdown="close" designates this element as the primary close toggle for the dropdown. It will be focused on when the dropdown is opened. Only one close toggle associated with this aria-controls value can exist on the page }-->
+                      <!--{ @tabindex       Set the tabindex to '-1' on focusable elements if this area is hidden when the page is rendered }-->
+                      <button aria-controls="aria-c-web-share-fallback" aria-expanded="false" class="btn btn-primary btn-small m-0" data-js="web-share" tabindex="-1">
+                        <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
+                          <use xlink:href="#icon-wnyc-ui-x"></use>
+                        </svg>
+                        <span>Close</span>
+                      </button>
+                      <label class="c-web-share__label flex-1" for="web-share-url" tabindex="-1">Share this URL</label>
+                    </div>
                     <div class="c-web-share__input input">
                       <!--{ Copy-to-clipboard Content }-->
                       <!--{ @data-copy-target  Identifies the input as the target of the copy button }-->
@@ -268,7 +281,20 @@
   &lt;!--{ @role  Indicates an area of significance }--&gt;
   &lt;div aria-hidden=&quot;true&quot; class=&quot;c-web-share__fallback color-card hidden right-0&quot; id=&quot;aria-c-web-share-fallback&quot; role=&quot;region&quot;&gt;
     &lt;div class=&quot;c-web-share__fallback-body&quot;&gt;
-      &lt;label class=&quot;c-web-share__label&quot; for=&quot;web-share-url&quot; tabindex=&quot;-1&quot;&gt;Share this URL&lt;/label&gt;
+      &lt;div class=&quot;flex mb-1 items-center flex-row-reverse&quot;&gt;
+        &lt;!--{ @data-js        data-js=&quot;web-share&quot; designates this element as a toggling element for the dropdown }--&gt;
+        &lt;!--{ @aria-controls  Targets the element that will be shown and hidden by the toggle }--&gt;
+        &lt;!--{ @aria-expanded  Indicates if the dropdown is open or not }--&gt;
+        &lt;!--{ @data-dropdown  data-dropdown=&quot;close&quot; designates this element as the primary close toggle for the dropdown. It will be focused on when the dropdown is opened. Only one close toggle associated with this aria-controls value can exist on the page }--&gt;
+        &lt;!--{ @tabindex       Set the tabindex to '-1' on focusable elements if this area is hidden when the page is rendered }--&gt;
+        &lt;button aria-controls=&quot;aria-c-web-share-fallback&quot; aria-expanded=&quot;false&quot; class=&quot;btn btn-primary btn-small m-0&quot; data-js=&quot;web-share&quot; tabindex=&quot;-1&quot;&gt;
+          &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-wnyc-ui&quot; tabindex=&quot;-1&quot;&gt;
+            &lt;use xlink:href=&quot;#icon-wnyc-ui-x&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+          &lt;span&gt;Close&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;label class=&quot;c-web-share__label flex-1&quot; for=&quot;web-share-url&quot; tabindex=&quot;-1&quot;&gt;Share this URL&lt;/label&gt;
+      &lt;/div&gt;
       &lt;div class=&quot;c-web-share__input input&quot;&gt;
         &lt;!--{ Copy-to-clipboard Content }--&gt;
         &lt;!--{ @data-copy-target  Identifies the input as the target of the copy button }--&gt;
@@ -410,15 +436,15 @@ Describe any required polyfills. -->
     </div>
     <div class="page-max pt-2">
       <div class="tablet:flex">
-        <nav aria-labelledby="navigation-main-c765f25c2dbfb" class="tablet:flex-1 mb-1 px-1 tablet:px-2" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="navigation-main-c765f25c2dbfb">Main</span>
+        <nav aria-labelledby="navigation-main-95385be1116ce" class="tablet:flex-1 mb-1 px-1 tablet:px-2" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="navigation-main-95385be1116ce">Main</span>
           <a class="block p-1 no-underline align-middle" href="index">Home</a>
           <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1">Links</span>
           <a class="block p-1 no-underline align-middle" data-toggle-tabindex="10" xhref="https://www.npmjs.com/package/@nycopportunity/working-patterns">NPM Package</a>
           <a class="block p-1 no-underline align-middle" xhref="https://github.com/cityofnewyork/nyco-wnyc-patterns">GitHub Repository</a>
         </nav>
-        <nav aria-labelledby="aria-lb-elements-c765f25c2dbfb" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-elements-c765f25c2dbfb">Elements</span>
+        <nav aria-labelledby="aria-lb-elements-95385be1116ce" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-elements-95385be1116ce">Elements</span>
           <a class="block p-1 no-underline align-middle" xhref="badge">Badge</a>
           <a class="block p-1 no-underline align-middle" xhref="buttons">Buttons</a>
           <a class="block p-1 no-underline align-middle" xhref="code">Code</a>
@@ -442,8 +468,8 @@ Describe any required polyfills. -->
             <mark class="badge badge-small status-secondary">View</mark>&nbsp;Tables
           </a>
         </nav>
-        <nav aria-labelledby="aria-lb-components-c765f25c2dbfb" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-components-c765f25c2dbfb">Components</span>
+        <nav aria-labelledby="aria-lb-components-95385be1116ce" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-components-95385be1116ce">Components</span>
           <a class="block p-1 no-underline align-middle" href="accordion">
             <mark class="badge badge-small status-secondary">View</mark>&nbsp;Accordion
           </a>
@@ -466,8 +492,8 @@ Describe any required polyfills. -->
             <mark class="badge badge-small status-secondary">View</mark>&nbsp;Web Share
           </a>
         </nav>
-        <nav aria-labelledby="aria-lb-objects-c765f25c2dbfb" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-objects-c765f25c2dbfb">Objects</span>
+        <nav aria-labelledby="aria-lb-objects-95385be1116ce" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-objects-95385be1116ce">Objects</span>
           <a class="block p-1 no-underline align-middle" href="banner">
             <mark class="badge badge-small status-secondary">View</mark>&nbsp;Banner
           </a>
@@ -493,8 +519,8 @@ Describe any required polyfills. -->
             <mark class="badge badge-small status-secondary">View</mark>&nbsp;Text Controller
           </a>
         </nav>
-        <nav aria-labelledby="aria-lb-utilities-c765f25c2dbfb" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-utilities-c765f25c2dbfb">Utilities</span>
+        <nav aria-labelledby="aria-lb-utilities-95385be1116ce" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-utilities-95385be1116ce">Utilities</span>
           <a class="block p-1 no-underline align-middle" xhref="animate">Animate</a>
           <a class="block p-1 no-underline align-middle" xhref="color">Color</a>
           <a class="block p-1 no-underline align-middle" href="fonts">
@@ -521,6 +547,7 @@ Describe any required polyfills. -->
   <script type="text/javascript">
     patterns.webShare();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>
