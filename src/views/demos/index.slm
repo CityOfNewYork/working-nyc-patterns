@@ -16,7 +16,7 @@
       div class='pb-6 hidden tablet:flex'
 
       div
-        div class='tablet:pe-4 tablet:pt-1 tablet:sticky top-0'
+        div class='tablet:pe-4 tablet:py-4 tablet:sticky desktop:py-8 top-0'
           h1 class='sr-only' Working N Y C
 
           svg class='icon-logo-homepage fill-white text-blue-l-2' aria-hidden='true'
@@ -24,18 +24,18 @@
 
           h2 class='h4 tablet:font-normal tablet:text-h3 font-bold text-alt mb-5' Find and connect to new careers, job skills, adult education, and more.
 
-          p class='mb-5 text-center tablet:text-start'
-            a class='btn btn-link btn-secondary font-secondary' href='#answer-a-few-questions' Answer a few questions to get started
+      section#answer-a-few-questions class='' data-aos='fade-up' data-aos-anchor-placement='center-bottom'
+        p class='mb-5 text-center tablet:mb-3'
+          a class='btn btn-link btn-secondary font-secondary' href='#answer-a-few-questions' Answer a few questions to get started
+          br class='tablet:hidden'
+          | or
+          br
+          a class='btn btn-link btn-secondary font-secondary block tablet:inline-flex' href='#content'
+            span Scroll to browse programs
             br class='tablet:hidden'
-            | or
-            br
-            a class='btn btn-link btn-secondary font-secondary block tablet:inline-flex' href='#content'
-              span Scroll to browse programs
-              br class='tablet:hidden'
-              svg class='icon-wnyc-ui m-0 mt-1' aria-hidden='true'
-                use xlink:href='#icon-wnyc-ui-chevron-down'
+            svg class='icon-wnyc-ui m-0 mt-1' aria-hidden='true'
+              use xlink:href='#icon-wnyc-ui-chevron-down'
 
-      section#answer-a-few-questions class='tablet:pt-6' data-aos='fade-up' data-aos-anchor-placement='center-bottom'
         form class='c-card' data-js='validate-and-query' method='post' action='${this.baseUrl}/demos/programs/index'
           div class='c-card__body'
             - populations = this.survey.find(f => f.legend === 'Population').options
