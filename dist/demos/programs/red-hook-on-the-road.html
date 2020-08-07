@@ -393,16 +393,16 @@
           <div class="pt-2 pb-3 wrap">
             <h2 class="h4 font-normal text-alt mt-0">Newsletter</h2>
             <form action="https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;id=aa67394696" id="mc-embedded-subscribe-form" method="post" target="_blank">
-              <div class="c-question c-question-single" id="d8a7e9715aac3">
+              <div class="c-question c-question-single" id="42d07f21237c9">
                 <!--{ @for  Should match the id of the input }-->
-                <label class="c-question__label" for="question-d8a7e9715aac3">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
+                <label class="c-question__label" for="question-42d07f21237c9">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
                 <div class="c-question__container">
                   <div class="c-question__input">
                     <div class="input">
                       <!--{ @required  required="true" specifies wether the input is required by a form }-->
                       <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="question-d8a7e9715aac3" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
+                      <input id="question-42d07f21237c9" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
                     </div>
                     <div class="c-question__button">
                       <button class="btn btn-primary btn-small" type="submit">Submit</button>
@@ -423,7 +423,7 @@
     <div class="page-max">
       <div class="o-footer__wrap">
         <nav aria-label="Footer Primary Navigation" class="o-footer__nav o-footer__nav-a">
-          <a class="uppercase text-small no-underline" href="/">
+          <a class="uppercase text-small no-underline" href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/index">
             <span class="sr-only">Working N Y C</span>
             <svg aria-hidden="true" class="icon-logo-standard-menu-item fill-white text-blue-l-2">
               <use xlink:href="#logo-wnyc-standard"></use>
@@ -434,15 +434,14 @@
           <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter">Newsletter</a>
         </nav>
         <nav aria-label="Footer Secondary Navigation" class="o-footer__nav o-footer__nav-b">
-          <a class="no-underline" href="http://nyc.gov/workforcedevelopment" rel="nofollow noopener" target="_blank">
-            <span>NYC Workforce Development</span>
-          </a>
-          <a class="no-underline" href="http://nyc.gov/opportunity" rel="nofollow noopener" target="_blank">
-            <span class="sr-only">N Y C Opportunity</span>
-            <svg aria-hidden="true" class="icon-logo-nyco-menu-item">
-              <use xlink:href="#logo-nyco-secondary"></use>
+          <div class="py-2">
+            <svg aria-hidden="true" class="icon-logo-partnership-footer">
+              <use xlink:href="#logo-partnership-workdev-opportunity"></use>
             </svg>
-          </a>
+            <span class="sr-only">N Y C Office of Workforce Development and Office for Economic Opporunity</span>
+          </div>
+          <a href="http://nyc.gov/wkdev" rel="nofollow noopener" target="_blank">Workforce Development</a>
+          <a href="http://nyc.gov/opportunity" rel="nofollow noopener" target="_blank">Economic Opportunity</a>
         </nav>
         <!--{ @o-footer__break  This empty tag is needed to break the columns }-->
         <div class="o-footer__break"></div>
