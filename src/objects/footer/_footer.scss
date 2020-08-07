@@ -41,6 +41,12 @@
 .o-footer__nav {
   @include nav.block();
 
+  @include media.screen-and-max-width('tablet') {
+    .btn-link, a:not(.btn) {
+      padding-bottom: 0
+    }
+  }
+
   margin-bottom: $grid * 2;
   padding-bottom: $grid * 2;
   border-bottom: 1px solid var(--color-scale-3);
@@ -76,9 +82,9 @@
   }
 
   @include media.screen-and-min-width('tablet') {
-    flex-basis: 20%;
-    max-width: 20%;
-    width: 20%
+    flex-basis: 22%;
+    max-width: 22%;
+    width: 22%
   }
 }
 
@@ -92,92 +98,4 @@
   @include media.screen-and-min-width('tablet') {
     margin-#{direction.$start}: auto;
   }
-
-  // @include media.screen-and-min-width('tablet') {
-  //   flex-basis: 43%;
-  //   max-width: 43%;
-  //   width: 43%;
-  //   margin-#{direction.$start}: auto
-  // }
-
-  // @include media.screen-and-min-width('desktop') {
-  //   flex-basis: 40%;
-  //   max-width: 40%;
-  //   width: 40%;
-  //   margin-#{direction.$start}: auto
-  // }
 }
-
-// .o-footer__nav-list {
-//   list-style-type: none;
-
-//   list-style: none;
-//   padding: 0;
-//   margin: 0 0 dimensions.$spacing-base;
-
-//   ul {
-//     list-style: none;
-//     margin: 0 0 (2 * dimensions.$spacing-base);
-//     padding: 0;
-
-//     > li {
-//       margin-bottom: dimensions.$spacing-base;
-//     }
-//   }
-// }
-
-// .o-footer__copyright {
-//   margin: 0 dimensions.$spacing-base;
-// }
-
-// // Desktop
-// @include media.screen-and-min-width('desktop') {
-//   .o-footer__nav-list {
-//     display: flex;
-//   }
-
-//   .o-footer__column-first,
-//   .o-footer__column-middle {
-//     width: 30%;
-//   }
-
-//   .o-footer__column-last {
-//     width: 40%;
-//   }
-// }
-
-// // Tablet
-// @media screen and (min-width: media.get('tablet')) and (max-width: media.get('desktop')) {
-//   .o-footer__nav-list {
-//     flex-wrap: wrap;
-//     display: flex;
-//   }
-
-//   .o-footer__column-first {
-//     width: 40%;
-//   }
-
-//   .o-footer__column-middle {
-//     width: 60%;
-//   }
-
-//   .o-footer__column-last {
-//     width: 100%;
-//   }
-// }
-
-// .o-footer__copyright {
-//   align-items: stretch;
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: flex-start;
-//   color: $color-grey-dark;
-//   font-size: $font-size-xsmall;
-
-//   .icon-logo-nyc {
-//     width: 90px;
-//     height: 30px;
-//     float: direction.$start;
-//     margin-#{direction.$end}: .5 * dimensions.$spacing-base;
-//   }
-// }

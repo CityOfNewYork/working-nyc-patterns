@@ -7,6 +7,7 @@ $tokens:(
   languages-rtl: (ar, ur),
   font-family: (
     system: (-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif),
+    nyc: ("Helvetica Neue Pro", "Helvetica Neue", Helvetica, Arial, sans-serif),
     inherit: inherit,
     primary: ("Montserrat", sans-serif),
     primary-ar: (),
@@ -377,7 +378,7 @@ $tokens:(
     navigation-logo: 128px,
     navigation-height: 54px,
     navigation-height-mobile: 80px,
-    footer-height-small: 440px,
+    footer-height-small: 488px,
     footer-height-mobile: 581px,
     footer-height-tablet: 427px,
     side-bar-width: 18.5rem,
@@ -452,6 +453,7 @@ $tokens:(
     logo-homepage: (186px, 18px),
     logo-stacked-menu-item: (100px, 32px),
     logo-nyco-menu-item: (150px, 17px),
+    logo-partnership-footer: (206px, 80px),
     logo-nyc-copyright: (41px, 15px)
   ),
   buttons: (

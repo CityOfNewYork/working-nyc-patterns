@@ -18,7 +18,7 @@ footer role=this.footer.role aria-label='Primary Footer' class='o-footer bg-scal
   div class='page-max'
     div class='o-footer__wrap'
       nav aria-label='Footer Primary Navigation' class='o-footer__nav o-footer__nav-a'
-        a href='/' class='uppercase text-small no-underline'
+        a href='${this.baseUrl}/demos/index' class='uppercase text-small no-underline'
           span class='sr-only' Working N Y C
 
           svg class='icon-logo-standard-menu-item fill-white text-blue-l-2' aria-hidden='true'
@@ -30,19 +30,15 @@ footer role=this.footer.role aria-label='Primary Footer' class='o-footer bg-scal
 
         a href='${this.baseUrl}/demos/newsletter' Newsletter
 
-        / a href='#' Events
-
-        / a href='#' Trainings
-
       nav aria-label='Footer Secondary Navigation' class='o-footer__nav o-footer__nav-b'
-        a href='http://nyc.gov/workforcedevelopment' target='_blank' rel='nofollow noopener' class='no-underline'
-          span NYC Workforce Development
+        div class='py-2'
+          svg class='icon-logo-partnership-footer' aria-hidden='true'
+            use xlink:href='#logo-partnership-workdev-opportunity'
+          span class='sr-only' N Y C Office of Workforce Development and Office for Economic Opporunity
 
-        a href='http://nyc.gov/opportunity' target='_blank' rel='nofollow noopener' class='no-underline'
-          span class='sr-only' N Y C Opportunity
+        a href='http://nyc.gov/wkdev' target='_blank' rel='nofollow noopener' Workforce Development
 
-          svg class='icon-logo-nyco-menu-item' aria-hidden='true'
-            use xlink:href='#logo-nyco-secondary'
+        a href='http://nyc.gov/opportunity' target='_blank' rel='nofollow noopener' Economic Opportunity
 
       /! { @o-footer__break  This empty tag is needed to break the columns }
       div class='o-footer__break'

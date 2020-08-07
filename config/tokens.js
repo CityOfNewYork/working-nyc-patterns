@@ -247,6 +247,9 @@ module.exports = {
       '"Helvetica Neue"',
       'sans-serif'
     ],
+    'nyc': [
+      '"Helvetica Neue Pro"', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'
+    ],
     'inherit': 'inherit',
     'primary': [
       '"Montserrat"',
@@ -439,7 +442,7 @@ module.exports = {
     'navigation-logo': '128px',
     'navigation-height': '54px',
     'navigation-height-mobile': '80px', // size is actually determined by padding, etc. this is a reference for other components
-    'footer-height-small': '440px',
+    'footer-height-small': '488px',
     'footer-height-mobile': '581px',
     'footer-height-tablet': '427px',
     'side-bar-width': '18.5rem',
@@ -514,6 +517,7 @@ module.exports = {
     'logo-homepage': ['186px', '18px'],
     'logo-stacked-menu-item': ['100px', '32px'],
     'logo-nyco-menu-item': ['150px', '17px'],
+    'logo-partnership-footer': ['206px', '80px'],
     'logo-nyc-copyright': ['41px', '15px']
   },
   'buttons': {
