@@ -16,6 +16,8 @@ html lang='en'
     - else
       title ${this.title}
 
+    = partial('/slm/partials/favicon.slm')
+
     = content('head')
 
   body class='color bg-scale-2 p-body'
