@@ -3,15 +3,15 @@
 - this.url = `${this.baseUrl}/demos/index`
 
 / Layout
-= extend('/slm/layouts/demos');
+= extend('/slm/layouts/demos')
 
 / Content blocks
-= content('head');
-  = mixin('head');
+= content('head')
+  = mixin('head')
 
-= content('content');
+= content('content')
   div class='bg-scale-1 bg-shape-wnyc-abc bg-fixed'
-    header class='o-banner page-max py-7 px-2 tablet:px-8 tablet:flex tablet:layout-two-columns-gutter'
+    header class='o-banner page-max py-7 px-2 tablet:px-8 tablet:layout-two-columns-gutter'
       div class='pb-6 hidden tablet:flex'
       div class='pb-6 hidden tablet:flex'
 
