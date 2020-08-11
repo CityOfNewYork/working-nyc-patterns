@@ -9,6 +9,30 @@
 $layouts: map-get(tokens.$tokens, 'layouts');
 
 // Mixins
+
+@mixin auto() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// CSS Grid Mixins
+
+@mixin grid-base($justify: stretch) {
+  display: grid;
+  justify-content: $justify;
+}
+
+@mixin grid-gap($column: dimensions.$spacing-base, $row: dimensions.$spacing-base) {
+  gap: $column;
+  row-gap: $row;
+}
+
+@mixin grid-template-columns($repeat) {
+  grid-template-columns: repeat(#{$repeat}, minmax(0, 1fr));
+}
+
+// Wrap
+
 @mixin wrap() {
   padding-left: (dimensions.$spacing-base / 3) * 2;
   padding-right: (dimensions.$spacing-base / 3) * 2;
@@ -35,11 +59,7 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   }
 }
 
-
-@mixin auto() {
-  margin-left: auto;
-  margin-right: auto;
-}
+// Page Wrapper Mixins
 
 @mixin page-min-max() {
   @include auto();
@@ -75,6 +95,8 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   }
 }
 
+// Row Layouts
+
 @mixin rows() {
   > *,
   > .layout__column {
@@ -94,11 +116,6 @@ $layouts: map-get(tokens.$tokens, 'layouts');
     width: 100%;
     margin-bottom: dimensions.$spacing-base
   }
-
-  // > *:last-child,
-  // > .layout__column:last-child {
-  //   margin-bottom: 0
-  // }
 }
 
 @mixin rows-gutter-selector($variant: '') {
@@ -107,22 +124,11 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   }
 }
 
+// Column Layouts
+
 @mixin four-columns() {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  > *,
-  > .layout__column {
-    width: 25%;
-    max-width: 25%;
-    flex-basis: 25%
-  }
-
-  // > *,
-  // > .layout__column {
-  //   margin-bottom: dimensions.$spacing-base
-  // }
+  @include grid-base();
+  @include grid-template-columns(4);
 }
 
 @mixin four-columns-selector($variant: '') {
@@ -132,21 +138,8 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 }
 
 @mixin four-columns-gutter() {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  > *,
-  > .layout__column {
-    width: calc(25% - #{dimensions.$spacing-base / 3});
-    max-width: calc(25% - #{dimensions.$spacing-base / 3});
-    flex-basis: calc(25% - #{dimensions.$spacing-base / 3})
-  }
-
-  > *,
-  > .layout__column {
-    margin-bottom: dimensions.$spacing-base
-  }
+  @include four-columns();
+  @include grid-gap();
 }
 
 @mixin four-columns-gutter-selector($variant: '') {
@@ -156,16 +149,8 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 }
 
 @mixin three-columns() {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  > *,
-  > .layout__column {
-    width: 33.33%;
-    max-width: 33.33%;
-    flex-basis: 33.33%
-  }
+  @include grid-base();
+  @include grid-template-columns(3);
 }
 
 @mixin three-columns-selector($variant: '') {
@@ -175,21 +160,8 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 }
 
 @mixin three-columns-gutter() {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  > *,
-  > .layout__column {
-    width: calc(33.33% - #{$grid * 2});
-    max-width: calc(33.33% - #{$grid * 2});
-    flex-basis: calc(33.33% - #{$grid * 2})
-  }
-
-  > *,
-  > .layout__column {
-    margin-bottom: dimensions.$spacing-base
-  }
+  @include three-columns();
+  @include grid-gap();
 }
 
 @mixin three-columns-gutter-selector($variant: '') {
@@ -199,22 +171,8 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 }
 
 @mixin two-columns() {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  > *,
-  > .layout__column,
-  &:after {
-    width: 50%;
-    max-width: 50%;
-    flex-basis: 50%
-  }
-
-  &:after {
-    content: '';
-    // margin-bottom: 0
-  }
+  @include grid-base();
+  @include grid-template-columns(2);
 }
 
 @mixin two-columns-selector($variant: '') {
@@ -224,27 +182,8 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 }
 
 @mixin two-columns-gutter() {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  > *,
-  > .layout__column,
-  &:after {
-    width: calc(50% - #{dimensions.$spacing-base / 2});
-    max-width: calc(50% - #{dimensions.$spacing-base / 2});
-    flex-basis: calc(50% - #{dimensions.$spacing-base / 2})
-  }
-
-  > *,
-  > .layout__column, {
-    margin-bottom: dimensions.$spacing-base
-  }
-
-  &:after {
-    content: '';
-    // margin-bottom: 0;
-  }
+  @include two-columns();
+  @include grid-gap();
 }
 
 @mixin two-columns-gutter-selector($variant: '') {
@@ -252,6 +191,8 @@ $layouts: map-get(tokens.$tokens, 'layouts');
     @include two-columns-gutter();
   }
 }
+
+// Special Layouts
 
 @mixin sidebar() {
   display: flex;
