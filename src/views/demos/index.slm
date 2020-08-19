@@ -11,6 +11,10 @@
 
 = content('content')
   div class='bg-scale-1 bg-shape-wnyc-abc bg-fixed'
+    div class='page-max wrap pt-3'
+      - alert = {icon: 'info', type: 'info', class: 'color-status-primary mb-5', body: '<p data-js-alert=\'text\'>Your current browser, Internet Explorer, is no longer supported. While we will do our best to ensure that the content is still accessible we cannot guarantee that this site will perform properly. Please consider trying a <a href="#">different browser</a> or <a href="#">tell us why you can\'t change your browser</a>.</p>'}
+      = partial('/components/alert/alert')
+
     header class='o-banner page-max py-7 px-2 tablet:px-8 tablet:layout-two-columns-gutter'
       div class='pb-6 hidden tablet:flex'
       div class='pb-6 hidden tablet:flex'
