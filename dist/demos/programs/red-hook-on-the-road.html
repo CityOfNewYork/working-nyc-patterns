@@ -55,7 +55,15 @@
     <!--{ @id     Identifies the Mobile Menu for toggling }-->
     <!--{ @class  Add "o-mobile-menu-fixed" in production layouts }-->
     <aside aria-hidden="true" class="o-mobile-menu o-mobile-menu-fixed hidden" id="aria-c-mobile-menu">
-      <div class="o-mobile-menu__close">
+      <!--{ @aria-label  Ensures landmarks are unique }-->
+      <nav aria-label="mobile menu" class="o-mobile-menu__nav border-b pb-2">
+        <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+        <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/index" tabindex="-1">Home</a>
+        <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index" tabindex="-1">Programs</a>
+        <a href="#" tabindex="-1">Opportunities</a>
+        <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter" tabindex="-1">Newsletter</a>
+      </nav>
+      <div class="pt-3">
         <!--{ @data-js              "mobile-menu" Adds the toggling utility to close the menu }-->
         <!--{ @data-js-mobile-menu  "close" indicates that this is the primary closing button for the menu. Focus will shift from the open button to the close button when the menu is opened. }-->
         <!--{ @aria-controls        Targets the Mobile Menu ID for toggling }-->
@@ -63,20 +71,13 @@
         <!--{ @tabindex             Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
         <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="btn-link" data-js="mobile-menu" data-js-mobile-menu="close" tabindex="-1">
           <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-          <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
+          <svg aria-hidden="true" class="icon-wnyc-ui">
             <use xlink:href="#icon-wnyc-ui-x"></use>
           </svg>
           <span>Close</span>
           <span class="sr-only"> and return to site</span>
         </button>
       </div>
-      <!--{ @aria-label  Ensures landmarks are unique }-->
-      <nav aria-label="mobile menu" class="o-mobile-menu__nav">
-        <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-        <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index" tabindex="-1">Programs</a>
-        <a href="#" tabindex="-1">Opportunities</a>
-        <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter" tabindex="-1">Newsletter</a>
-      </nav>
     </aside>
     <div aria-hidden="true" class="o-text-controller bg-scale-1 o-text-controller-fixed hidden" data-js="text-controller" id="aria-c-text-controller">
       <div class="o-text-controller__inner">
@@ -411,16 +412,16 @@
           <div class="pt-2 pb-3 wrap">
             <h2 class="h4 font-normal text-alt mt-0">Newsletter</h2>
             <form action="https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;id=aa67394696" id="mc-embedded-subscribe-form" method="post" target="_blank">
-              <div class="c-question c-question-single" id="879e78b65b123">
+              <div class="c-question c-question-single" id="2c8da52f69393">
                 <!--{ @for  Should match the id of the input }-->
-                <label class="c-question__label" for="question-879e78b65b123">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
+                <label class="c-question__label" for="question-2c8da52f69393">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
                 <div class="c-question__container">
                   <div class="c-question__input">
                     <div class="input">
                       <!--{ @required  required="true" specifies wether the input is required by a form }-->
                       <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="question-879e78b65b123" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
+                      <input id="question-2c8da52f69393" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
                     </div>
                     <div class="c-question__button">
                       <button class="btn btn-primary btn-small" type="submit">Submit</button>
