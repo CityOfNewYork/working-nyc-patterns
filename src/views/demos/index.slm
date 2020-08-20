@@ -12,7 +12,7 @@
 = content('content')
   div class='bg-scale-1 bg-shape-wnyc-abc bg-fixed'
     div class='page-max wrap pt-3'
-      - alert = {icon: 'info', type: 'info', class: 'color-status-primary mb-5', body: '<p data-js-alert=\'text\'>Your current browser, Internet Explorer, is no longer supported. While we will do our best to ensure that the content is still accessible we cannot guarantee that this site will perform properly. Please consider trying a <a href="#">different browser</a> or <a href="#">tell us why you can\'t change your browser</a>.</p>'}
+      - alert = {icon: 'info', type: 'info', class: 'color-status-primary mb-5', body: '<p data-js-alert=\'text\'>Your current browser, Internet Explorer, is no longer supported. While we do our best to ensure that the content is still accessible we cannot guarantee that this site will perform properly. Please consider trying a <a href="#">different browser</a> or <a href="#">tell us why you can\'t change your browser</a>.</p>'}
       = partial('/components/alert/alert')
 
     header class='o-banner page-max py-7 px-2 tablet:px-8 tablet:layout-two-columns-gutter'
@@ -28,7 +28,7 @@
 
           h2 class='h4 tablet:font-normal tablet:text-h3 font-bold text-alt mb-5' Find and connect to new careers, job skills, adult education, and more.
 
-      section#answer-a-few-questions class='' data-aos='fade-up' data-aos-anchor-placement='center-bottom'
+      section#answer-a-few-questions class='' data-aos='fade-up' data-aos-anchor-placement='top-bottom'
         p class='mb-5 text-center tablet:mb-3'
           a class='btn btn-link btn-secondary font-secondary' href='#answer-a-few-questions' Answer a few questions to get started
           br class='tablet:hidden'
@@ -94,7 +94,7 @@
               - card = collection[i]
               - card.class = 'h-full'
 
-              div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+              div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
                 = partial('/components/card/card')
 
             div class='wrap relative tablet:hidden'
@@ -120,7 +120,7 @@
               - card = collection[i]
               - card.class = 'h-full'
 
-              div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='center-bottom' data-aos-delay='300'
+              div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
                 = partial('/components/card/card')
 
             div class='wrap relative tablet:hidden'
