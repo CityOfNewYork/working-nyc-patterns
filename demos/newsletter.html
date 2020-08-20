@@ -55,7 +55,15 @@
     <!--{ @id     Identifies the Mobile Menu for toggling }-->
     <!--{ @class  Add "o-mobile-menu-fixed" in production layouts }-->
     <aside aria-hidden="true" class="o-mobile-menu o-mobile-menu-fixed hidden" id="aria-c-mobile-menu">
-      <div class="o-mobile-menu__close">
+      <!--{ @aria-label  Ensures landmarks are unique }-->
+      <nav aria-label="mobile menu" class="o-mobile-menu__nav border-b pb-2">
+        <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+        <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/index" tabindex="-1">Home</a>
+        <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index" tabindex="-1">Programs</a>
+        <a href="#" tabindex="-1">Opportunities</a>
+        <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter" tabindex="-1">Newsletter</a>
+      </nav>
+      <div class="pt-3">
         <!--{ @data-js              "mobile-menu" Adds the toggling utility to close the menu }-->
         <!--{ @data-js-mobile-menu  "close" indicates that this is the primary closing button for the menu. Focus will shift from the open button to the close button when the menu is opened. }-->
         <!--{ @aria-controls        Targets the Mobile Menu ID for toggling }-->
@@ -63,20 +71,13 @@
         <!--{ @tabindex             Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
         <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="btn-link" data-js="mobile-menu" data-js-mobile-menu="close" tabindex="-1">
           <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-          <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
+          <svg aria-hidden="true" class="icon-wnyc-ui">
             <use xlink:href="#icon-wnyc-ui-x"></use>
           </svg>
           <span>Close</span>
           <span class="sr-only"> and return to site</span>
         </button>
       </div>
-      <!--{ @aria-label  Ensures landmarks are unique }-->
-      <nav aria-label="mobile menu" class="o-mobile-menu__nav">
-        <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-        <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/programs/index" tabindex="-1">Programs</a>
-        <a href="#" tabindex="-1">Opportunities</a>
-        <a href="https://cityofnewyork.github.io/nyco-wnyc-patterns/demos/newsletter" tabindex="-1">Newsletter</a>
-      </nav>
     </aside>
     <div aria-hidden="true" class="o-text-controller bg-scale-1 o-text-controller-fixed hidden" data-js="text-controller" id="aria-c-text-controller">
       <div class="o-text-controller__inner">
@@ -228,36 +229,36 @@
                         <p data-js-alert='text'></p>
                       </div>
                     </article>
-                    <div class="c-question " id="4d9be9b6a645d">
+                    <div class="c-question " id="85a40f879e264">
                       <!--{ @for  Should match the id of the input }-->
-                      <label class="c-question__label" for="question-4d9be9b6a645d">Your email address.</label>
+                      <label class="c-question__label" for="question-85a40f879e264">Your email address.</label>
                       <div class="c-question__container">
                         <div class="c-question__input">
                           <div class="input">
                             <!--{ @required  required="true" specifies wether the input is required by a form }-->
                             <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                             <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                            <input id="question-4d9be9b6a645d" name="EMAIL" required="true" type="email" />
+                            <input id="question-85a40f879e264" name="EMAIL" required="true" type="email" />
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="c-question " id="7e28450cd3f93">
+                    <div class="c-question " id="d6cba16c1617">
                       <!--{ @for  Should match the id of the input }-->
-                      <label class="c-question__label" for="question-7e28450cd3f93">What is your zip code?</label>
+                      <label class="c-question__label" for="question-d6cba16c1617">What is your zip code?</label>
                       <div class="c-question__container">
                         <div class="c-question__input">
                           <div class="input">
                             <!--{ @required  required="true" specifies wether the input is required by a form }-->
                             <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                             <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                            <input id="question-7e28450cd3f93" name="ZIPCODE" required="true" type="text" />
+                            <input id="question-d6cba16c1617" name="ZIPCODE" required="true" type="text" />
                           </div>
                         </div>
                       </div>
                     </div>
                     <!--{ @fieldset  Checkbox and radio input groups should be grouped in fieldset tags }-->
-                    <fieldset class="c-question" id="397542400e796">
+                    <fieldset class="c-question" id="9ee528cf9ff2">
                       <!--{ @legend  Checkboxes and radio input groups should be labeled by legend tags }-->
                       <legend class="c-question__label">Which borough(s) would you like to recieve updates for?</legend>
                       <div class="c-question__container layout-rows tablet:layout-two-columns-gutter">
