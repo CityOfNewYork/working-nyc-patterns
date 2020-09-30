@@ -9,7 +9,7 @@
 @use 'config/typography';
 
 html {
-  font-size: map-get(typography.$typography, 'sm-mobile');
+  font-size: map-get(typography.$typography, 'small');
 
   @if direction.$direction == 'rtl' {
     direction: rtl;

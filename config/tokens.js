@@ -355,10 +355,10 @@ module.exports = {
     'code': '1.9'
   },
   'typography': {
-    'desktop': '22px',
-    'tablet': '20px',
+    'small': '16px',
     'mobile': '18px',
-    'sm-mobile': '16px',
+    'tablet': '20px',
+    'desktop': '22px',
     'margin-bottom': '1rem',
     'list-indent': '1.5rem'
   },
