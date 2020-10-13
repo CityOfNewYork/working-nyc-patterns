@@ -23,3 +23,4 @@
   = mixin('section', '/components/alert/alert')
   = mixin('section', '/components/alert/alert-success', {title: 'Success Alert'})
   = mixin('section', '/components/alert/alert-warning', {title: 'Warning Alert'})
+  = mixin('section', '/components/alert/alert-help', {title: 'Help Alert'})
