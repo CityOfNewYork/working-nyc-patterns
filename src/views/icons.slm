@@ -1,0 +1,22 @@
+- this.title = 'Icons'
+
+/ Layout
+= extend('/slm/layouts/default')
+
+/ Partials
+= partial('/slm/partials/styles.slm')
+= partial('/slm/partials/head.mixin.slm')
+= partial('/slm/partials/content-header.mixin.slm')
+= partial('/slm/section/section.mixin.slm')
+
+/ Content blocks
+= content('head')
+  = mixin('head')
+
+= content('header')
+  = mixin('header')
+
+= content('content')
+  = mixin('content-header')
+
+  = mixin('section', '/elements/icons/icons-ui', {title: false, code: false}, this.tokens['icons-ui'])

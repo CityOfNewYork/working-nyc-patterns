@@ -1,6 +1,8 @@
+= partial('demo-block.mixin.slm');
+
 - this.navigation = (this.navigation) ? this.navigation : [];
 
-= mixin('section', 'path', 'config = {title: false, source: true}');
+= mixin('section', 'path', 'config = {title: false, source: true, markup: true, code: true}', 'grid = false');
   - id = (this.config.title && this.config.title !== '') ? this.config.title : this.title
   - id = id.toLowerCase().split(' ').join('-')
   - grid = (this.config.grid)
@@ -40,15 +42,21 @@
     div class='bg-scale-0 py-6 mb-6'
       div class='page-max flex justify-center py-6'
         div class='wrap'
-          == this.include(this.path + '.slm');
+          - if (this.grid != 'false')
+            = mixin('demo-block', this.path + '.slm', this.grid);
+          - else
+            == this.include(this.path + '.slm');
+          / = this.grid
 
     / Render the componet markup in the code block
-    div class='page-max layout-content pb-4'
-      h4 id='${id}-markup' class='wrap'
-        a href='#${id}-markup' Markup
+    - if (this.config.markup == 'true')
+      div class='page-max layout-content pb-4'
+        h4 id='${id}-markup' class='wrap'
+          a href='#${id}-markup' Markup
 
-    div class='page-max layout-content'
-      div class='wrap'
-        div class='code-block mb-1'
-          pre tabindex='0'
-            = this.include(this.path);
+    - if (this.config.code == 'true')
+      div class='page-max layout-content'
+        div class='wrap'
+          div class='code-block mb-1'
+            pre tabindex='0'
+              = this.include(this.path);

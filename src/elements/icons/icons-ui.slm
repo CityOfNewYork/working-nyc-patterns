@@ -1,10 +1,13 @@
 - if (typeof value !== 'undefined')
   - classname = 'icon-wnyc-ui icon-4 text-blue-dark'
+  - iconName = value.replace(/icon-wnyc-ui-|.svg/g,'')
 
   div class='text-small'
     h3 class='text-small capitalize mb-2'
-      a target='_blank' href='${this.package.cdn.url}@v${this.package.version}/dist/svg/${value}.svg'
-        | ${value.replace(/-/g," ")}
+      a target='_blank' href='${this.package.cdn.url}@v${this.package.version}/dist/svg/${value}'
+        | ${iconName.replace('-', ' ')}
+      span class='lowercase' 
+        = '(' + iconName + ')'
 
     div class='py-4 text-center px-2 flex items-center justify-center' style='min-height: 150px'
       == this.include('elements/icons/svg.slm', {svg: value, classname: classname});

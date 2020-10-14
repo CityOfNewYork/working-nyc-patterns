@@ -36,7 +36,9 @@ nav role='navigation' aria-labelledby='aria-lb-elements-${this.nav.id}' class='$
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='code' Code
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='divider' Divider
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='forms' Forms
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='icons' Icons
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='icons'
+    mark class='badge badge-small status-secondary' View
+    | &nbsp;Icons
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='inputs'
     mark class='badge badge-small status-secondary' View
     | &nbsp;Inputs
