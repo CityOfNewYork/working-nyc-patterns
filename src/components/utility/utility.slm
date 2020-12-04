@@ -3,7 +3,7 @@
 nav class='c-utility' aria-label='utility'
   a href='${this.baseUrl}/demos/programs/index' class='btn-link me-auto'
     svg class='icon-wnyc-ui' aria-hidden='true'
-      use xlink:href='#icon-wnyc-ui-chevron-left'
+      use xlink:href='#feather-chevron-left'
 
     span Programs
 
@@ -12,12 +12,16 @@ nav class='c-utility' aria-label='utility'
 
   / a class='btn btn-small btn-primary'
   /   svg class='icon-wnyc-ui' aria-hidden='true'
-  /     use xlink:href='#icon-wnyc-ui-bookmark'
+  /     use xlink:href='#feather-bookmark'
 
   /   span Save
+  - webShare = {}
+  - webShare.fallbackClass = 'right-0'
   = partial('/components/web-share/web-share.slm')
+  - webShare = {}
+
   / a href='#' class='btn btn-small btn-primary' data-js='web-share' data-web-share='{"title":"${this.title}","text":"${this.description}","url":"${this.url}"}'
   /   svg class='icon-wnyc-ui' aria-hidden='true'
-  /     use xlink:href='#icon-wnyc-ui-share-2'
+  /     use xlink:href='#feather-share-2'
 
   /   span Share

@@ -343,7 +343,7 @@ module.exports = {
     'h2': '1.3',
     'h3': '1.3',
     'blockquote': '1.3',
-    'h4': 'normal',
+    'h4': '1.1',
     'h5': 'normal',
     'h6': 'normal',
     'p': '1.6',
@@ -447,7 +447,8 @@ module.exports = {
     'footer-height-tablet': '427px',
     'side-bar-width': '18.5rem',
     'side-bar-width-small': '12.5rem',
-    'topbar-height': '80px'
+    'topbar-height': '80px',
+    'webshare-fallback': '432px'
   },
   'z': {
     '0': 0,
