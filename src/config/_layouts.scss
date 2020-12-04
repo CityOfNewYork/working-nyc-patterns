@@ -33,6 +33,17 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   grid-template-columns: repeat(#{$repeat}, minmax(0, 1fr));
 }
 
+@mixin grid($count: 2, $gutter: false) {
+  @include grid-base();
+  @include grid-template-columns($count);
+
+  @if $gutter {
+    $gaps: (dimensions.$spacing-base * $gutter, dimensions.$spacing-base * $gutter);
+
+    @include grid-gap($gaps);
+  }
+}
+
 // Wrap
 
 @mixin wrap() {
@@ -100,53 +111,35 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 // Row Layouts
 
 @mixin rows() {
-  > *,
-  > .layout__column {
-    width: 100%;
-  }
+  @include grid(1);
 }
 
 @mixin rows-selector($variant: '') {
-  .#{$variant}layout-rows {
-    @include rows();
+  .#{$variant}layout-rows,
+  .#{$variant}layout-col {
+    @include grid(1);
   }
 }
 
 @mixin rows-gutter() {
-  > *,
-  > .layout__column {
-    width: 100%;
-    // margin-bottom: dimensions.$spacing-base
-  }
+  @include grid(1, 1);
 }
 
 @mixin rows-gutter-selector($variant: '') {
-  .#{$variant}layout-rows-gutter {
+  .#{$variant}layout-rows-gutter,
+  .#{$variant}layout-col-1-gap-1 {
     @include rows-gutter();
-  }
-}
-
-// Column Layouts
-
-@mixin columns($count: 2, $gutter: false) {
-  @include grid-base();
-  @include grid-template-columns($count);
-
-  @if $gutter {
-    $gaps: (dimensions.$spacing-base * $gutter, dimensions.$spacing-base * $gutter);
-
-    @include grid-gap($gaps);
   }
 }
 
 // 4
 
 @mixin four-columns() {
-  @include columns(4);
+  @include grid(4);
 }
 
 @mixin four-columns-gutter($gutter: 1) {
-  @include columns(4, $gutter);
+  @include grid(4, $gutter);
 }
 
 @mixin four-columns-selector($variant: '') {
@@ -173,11 +166,11 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 // 3
 
 @mixin three-columns() {
-  @include columns(3);
+  @include grid(3);
 }
 
 @mixin three-columns-gutter($gutter: 1) {
-  @include columns(3, $gutter);
+  @include grid(3, $gutter);
 }
 
 @mixin three-columns-selector($variant: '') {
@@ -204,11 +197,11 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 // 2
 
 @mixin two-columns() {
-  @include columns(2);
+  @include grid(2);
 }
 
 @mixin two-columns-gutter($gutter: 1) {
-  @include columns(2, $gutter);
+  @include grid(2, $gutter);
 }
 
 @mixin two-columns-selector($variant: '') {
