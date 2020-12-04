@@ -45,7 +45,7 @@
 
                   span class='sr-only' and return to site
 
-              form class='layout-rows-gutter' tabindex='-1'
+              form class='layout-rows' tabindex='-1'
                 - for (let i in this.filters)
                   - filter = this.filters[i]
                   fieldset tabindex='-1'

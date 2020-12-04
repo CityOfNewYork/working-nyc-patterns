@@ -32,19 +32,20 @@
 
 .o-text-controller__languages {
   ul {
-    @include layouts.rows();
-    margin: 0;
-    padding: 0;
+    @include layouts.rows-gutter();
     list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
 
     @include media.screen-and-min-width('tablet') {
       @include layouts.two-columns-gutter();
     }
   }
 
-  // li {
-  //   margin-bottom: 0;
-  // }
+  li {
+    margin-bottom: 0;
+  }
 
   a {
     @include options.base();
