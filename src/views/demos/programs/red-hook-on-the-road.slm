@@ -152,12 +152,12 @@
           nav class='tablet:layout-three-columns-gutter'
             a href='https://bwiny.org/red-hook-on-the-road/overview/' class='btn btn-secondary btn-next mb-1 w-full'
               svg class='icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#icon-wnyc-ui-arrow-left'
+                use xlink:href='#feather-arrow-left'
 
               | Learn more
 
               svg class='icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#icon-wnyc-ui-arrow-right'
+                use xlink:href='#feather-arrow-right'
 
             a href='tel:7182372017' class='btn btn-secondary mb-1 w-full'
               | Call (718) 237-2017
@@ -170,12 +170,12 @@
           / nav
           /   a href='#' class='btn btn-primary btn-next w-full'
           /     svg class='icon-wnyc-ui' aria-hidden='true'
-          /       use xlink:href='#icon-wnyc-ui-arrow-left'
+          /       use xlink:href='#feather-arrow-left'
 
           /     | More programs at Brooklyn Workforce Innovations
 
           /     svg class='icon-wnyc-ui' aria-hidden='true'
-          /       use xlink:href='#icon-wnyc-ui-arrow-right'
+          /       use xlink:href='#feather-arrow-right'
 
       = partial('/objects/newsletter/newsletter')
 

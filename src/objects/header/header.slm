@@ -29,12 +29,12 @@ header class='o-header'
       a href='${this.baseUrl}/demos/index' Home
 
       svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
-        use xlink:href='#icon-wnyc-ui-chevron-right'
+        use xlink:href='#feather-chevron-right'
 
       a href='${this.baseUrl}/demos/programs/index' Programs
 
       svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
-        use xlink:href='#icon-wnyc-ui-chevron-right'
+        use xlink:href='#feather-chevron-right'
 
       b = this.header.breadcrumb
 
@@ -47,7 +47,7 @@ header class='o-header'
       p class='small'
         a class='btn btn-link btn-small btn-secondary font-secondary' href='#services'
           svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
-            use xlink:href='#icon-wnyc-ui-award'
+            use xlink:href='#feather-award'
 
           span == this.header.certification
 
@@ -55,7 +55,7 @@ header class='o-header'
       p class='small'
         a class='btn btn-link btn-small btn-secondary font-secondary' href='#eligibility'
           svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
-            use xlink:href='#icon-wnyc-ui-users'
+            use xlink:href='#feather-users'
 
           span == this.header.eligibility
 
@@ -63,7 +63,7 @@ header class='o-header'
       p class='small'
         a class='btn btn-link btn-small btn-secondary font-secondary' href='#schedule'
           svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
-            use xlink:href='#icon-wnyc-ui-calendar'
+            use xlink:href='#feather-calendar'
 
           span == this.header.schedule
 
@@ -79,7 +79,7 @@ header class='o-header'
       p class='small'
         a class='btn btn-link btn-small btn-secondary font-secondary' href='#language-access'
           svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
-            use xlink:href='#icon-wnyc-ui-translate'
+            use xlink:href='#icon-wnyc-translate'
 
           span Accommodates Multiple Languages
 
@@ -87,7 +87,7 @@ header class='o-header'
       p class='small'
         span class='flex items-center'
           svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
-            use xlink:href='#icon-wnyc-ui-info'
+            use xlink:href='#feather-info'
 
           = this.header.info
 
@@ -95,6 +95,6 @@ header class='o-header'
       p class='small'
         span class='flex items-center'
           svg class='icon-wnyc-ui me-1 icon-2' aria-hidden='true'
-            use xlink:href='#icon-wnyc-ui-alert-triangle'
+            use xlink:href='#feather-alert-triangle'
 
           = this.header.timestamp

@@ -16,7 +16,7 @@ div id='aria-c-text-controller' class='o-text-controller bg-scale-1 ${this.textC
       div class='text-end'
         button class='btn btn-primary btn-small' data-js='dropdown' aria-controls='aria-c-text-controller' aria-expanded='false' data-dropdown='close' tabindex=this.textController.tabindex
           svg class='icon-wnyc-ui' aria-hidden='true' tabindex=this.textController.tabindex
-            use xlink:href='#icon-wnyc-ui-x'
+            use xlink:href='#feather-x'
 
           span Close
 
@@ -83,10 +83,10 @@ div id='aria-c-text-controller' class='o-text-controller bg-scale-1 ${this.textC
 
         /   button class='o-text-controller__sizer-btn btn-text' data-js='text-larger'
         /     svg class='icon icon-wnyc-ui icon-3 mr-0'
-        /       use xlink:href='#icon-wnyc-ui-plus-circle'
+        /       use xlink:href='#feather-plus-circle'
         /     div class='sr-only' Larger
 
         /   button class='o-text-controller__sizer-btn btn-text' data-js='text-smaller'
         /     svg class='icon icon-wnyc-ui icon-3 mr-0'
-        /       use xlink:href='#icon-wnyc-ui-minus-circle'
+        /       use xlink:href='#feather-minus-circle'
         /     div class='sr-only' Smaller

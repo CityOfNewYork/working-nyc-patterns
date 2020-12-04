@@ -33,6 +33,7 @@ html lang='en' dir='ltr'
       var patterns = new WorkingNyc();
 
       patterns.icons();
+      patterns.icons('${this.baseUrl}/svg/feather.svg');
       patterns.toggle();
       patterns.copy();
 

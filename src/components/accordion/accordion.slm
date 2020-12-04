@@ -17,13 +17,13 @@ article class='c-accordion mb-1'
 
       span class='c-accordion__toggle-active'
         svg class='icon-wnyc-ui' aria-hidden='true'
-          use xlink:href='#icon-wnyc-ui-chevron-down'
+          use xlink:href='#feather-chevron-down'
 
         span class='sr-only' hide this list
 
       span class='c-accordion__toggle-inactive'
         svg class='icon-wnyc-ui' aria-hidden='true'
-          use xlink:href='#icon-wnyc-ui-chevron-up'
+          use xlink:href='#feather-chevron-up'
 
         span class='sr-only' show this list
 

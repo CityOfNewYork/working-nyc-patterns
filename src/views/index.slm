@@ -18,7 +18,7 @@
     header class='c-accordion__header'
       p class='flex items-center'
         svg class='icon-wnyc-ui icon-3 me-1' aria-hidden='true'
-          use xlink:href='#icon-wnyc-ui-package'
+          use xlink:href='#feather-package'
 
         strong Package
 
@@ -31,13 +31,13 @@
 
           a href='${this.package.cdn.source}/releases/tag/v${this.tokens.version}' target='_blank' class='btn btn-secondary'
             svg class='icon-wnyc-ui' aria-hidden='true'
-              use xlink:href='#icon-wnyc-ui-github'
+              use xlink:href='#feather-github'
 
             span GitHub
 
           a href='${this.package.cdn.npm}' target='_blank' class='btn btn-tertiary'
             svg class='icon-wnyc-ui' aria-hidden='true'
-              use xlink:href='#icon-wnyc-ui-package'
+              use xlink:href='#feather-package'
 
             span npm.org
 
@@ -45,7 +45,7 @@
     header class='c-accordion__header'
       p class='flex items-center'
         svg class='icon-wnyc-ui icon-3 me-1' aria-hidden='true'
-          use xlink:href='#icon-wnyc-ui-figma'
+          use xlink:href='#feather-figma'
 
         strong Figma
 
@@ -56,7 +56,7 @@
     header class='c-accordion__header'
       p class='flex items-center'
         svg class='icon-wnyc-ui icon-3 me-1' aria-hidden='true'
-          use xlink:href='#icon-wnyc-ui-navigation'
+          use xlink:href='#feather-navigation'
 
         strong Demos
 
@@ -72,7 +72,7 @@
     header class='c-accordion__header'
       p class='flex items-center'
         svg class='icon-wnyc-ui icon-3 me-1' aria-hidden='true'
-          use xlink:href='#icon-wnyc-ui-hard-drive'
+          use xlink:href='#feather-hard-drive'
 
         strong Files
 

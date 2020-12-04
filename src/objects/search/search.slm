@@ -20,7 +20,7 @@ div#aria-c-search class='o-search ${this.search.class}' aria-hidden=this.search.
     /! { @aria-expanded  Indicates the toggled state of the target }
     button tabindex=this.search.tabindex class='btn-link' data-js='toggle' aria-controls='aria-c-search' aria-expanded='${this.search.ariaHidden ? 'false' : 'true' }'
       svg class='icon-wnyc-ui'
-        use xlink:href='#icon-wnyc-ui-x'
+        use xlink:href='#feather-x'
 
       span Close
 

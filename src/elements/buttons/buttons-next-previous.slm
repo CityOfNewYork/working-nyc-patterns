@@ -1,9 +1,9 @@
 / Next/Previous Button
 
 svg class='icon-wnyc-ui' aria-hidden='true'
-  use xlink:href='#icon-wnyc-ui-arrow-left'
+  use xlink:href='#feather-arrow-left'
 
 span = this.button.label
 
 svg class='icon-wnyc-ui' aria-hidden='true'
-  use xlink:href='#icon-wnyc-ui-arrow-right'
+  use xlink:href='#feather-arrow-right'

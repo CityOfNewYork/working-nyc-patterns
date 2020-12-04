@@ -53,6 +53,7 @@ html lang='en'
       patterns.dropdown();
       patterns.copy();
       patterns.icons('${this.baseUrl}/svg/icons.svg');
+      patterns.icons('${this.baseUrl}/svg/feather.svg');
       patterns.mobileMenu();
       patterns.search();
       patterns.toggle();

@@ -17,20 +17,20 @@
           nav class='c-utility' aria-label='utility'
             a href='${this.baseUrl}/demos/index' class='btn-link me-auto'
               svg class='icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#icon-wnyc-ui-chevron-left'
+                use xlink:href='#feather-chevron-left'
 
               span Home
 
             button class='btn btn-small btn-secondary' data-js='dropdown' aria-controls='aria-c-filter' aria-expanded='false' data-dropdown='open' data-dropdown-lock='true'
               / svg class='icon-wnyc-ui' aria-hidden='true'
-                / use xlink:href='#icon-wnyc-ui-sliders'
+                / use xlink:href='#feather-sliders'
 
               span class='me-1' Filter programs
               span class='badge badge-small color-status-secondary' 99
 
             / button class='btn btn-small btn-primary' data-js='toggle' aria-controls='aria-c-saved' aria-expanded='false'
             /   svg class='icon-wnyc-ui' aria-hidden='true'
-            /     use xlink:href='#icon-wnyc-ui-bookmark'
+            /     use xlink:href='#feather-bookmark'
 
             /   span Saved
 
@@ -39,7 +39,7 @@
               div class='text-end relative z-20'
                 button class='btn btn-primary btn-small' data-js='dropdown' aria-controls='aria-c-filter' aria-expanded='false' data-dropdown='close' tabindex='-1'
                   svg class='icon-wnyc-ui' aria-hidden='true' tabindex='-1'
-                    use xlink:href='#icon-wnyc-ui-x'
+                    use xlink:href='#feather-x'
 
                   span Close
 
@@ -80,7 +80,7 @@
                 a href='${this.baseUrl}/demos/index' Home
 
                 svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
-                  use xlink:href='#icon-wnyc-ui-chevron-right'
+                  use xlink:href='#feather-chevron-right'
 
                 b Programs
 

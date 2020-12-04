@@ -40,7 +40,7 @@ aside#aria-c-mobile-menu class='o-mobile-menu ${this.mobileMenu.class}' aria-hid
     button class='btn-link' data-js='mobile-menu' data-js-mobile-menu='close' aria-controls='aria-c-mobile-menu' aria-expanded='${this.mobileMenu.ariaHidden ? 'false' : 'true' }' tabindex=this.mobileMenu.tabindex
       /! { @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
       svg aria-hidden='true' class='icon-wnyc-ui'
-        use xlink:href='#icon-wnyc-ui-x'
+        use xlink:href='#feather-x'
 
       span Close
       span class='sr-only' = ' and return to site'

@@ -20,6 +20,6 @@ header role='banner' class='bg-scale-2'
 
         button#main-menu-control class='btn btn-link' aria-controls='main-menu' aria-expanded='false' data-js='toggle'
           svg class='icon-wnyc-ui' aria-hidden='true'
-            use xlink:href='#icon-wnyc-ui-menu'
+            use xlink:href='#feather-menu'
 
           span Menu

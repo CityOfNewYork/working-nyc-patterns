@@ -14,4 +14,4 @@ div class='input-search'
   /! { @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
   button class='btn-link input-search__submit' type='submit' tabindex=this.inputSearch.tabindex
     svg class='icon-wnyc-ui icon-4'
-      use xlink:href='#icon-wnyc-ui-search'
+      use xlink:href='#feather-search'
