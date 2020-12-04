@@ -35,10 +35,13 @@
   @include layouts.page-min-max-selector($variant);
   @include layouts.four-columns-selector($variant);
   @include layouts.four-columns-gutter-selector($variant);
+  @include layouts.four-columns-gutter-2-selector($variant);
   @include layouts.three-columns-selector($variant);
   @include layouts.three-columns-gutter-selector($variant);
+  @include layouts.three-columns-gutter-2-selector($variant);
   @include layouts.two-columns-selector($variant);
   @include layouts.two-columns-gutter-selector($variant);
+  @include layouts.two-columns-gutter-2-selector($variant);
   @include layouts.rows-selector($variant);
   @include layouts.rows-gutter-selector($variant);
   @include layouts.sidebar-selector($variant);

@@ -1,4 +1,6 @@
 // Dependencies
+@use 'sass:list';
+
 @use 'config/grid' as *;
 @use 'config/tokens';
 @use 'config/dimensions';
@@ -22,9 +24,9 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   justify-content: $justify;
 }
 
-@mixin grid-gap($column: dimensions.$spacing-base, $row: dimensions.$spacing-base) {
-  gap: $column;
-  row-gap: $row;
+@mixin grid-gap($gaps: (dimensions.$spacing-base, dimensions.$spacing-base)) {
+  row-gap: list.nth($gaps, 1); // x
+  gap: list.nth($gaps, 2); // y
 }
 
 @mixin grid-template-columns($repeat) {
@@ -114,7 +116,7 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   > *,
   > .layout__column {
     width: 100%;
-    margin-bottom: dimensions.$spacing-base
+    // margin-bottom: dimensions.$spacing-base
   }
 }
 
@@ -126,69 +128,107 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 
 // Column Layouts
 
-@mixin four-columns() {
+@mixin columns($count: 2, $gutter: false) {
   @include grid-base();
-  @include grid-template-columns(4);
+  @include grid-template-columns($count);
+
+  @if $gutter {
+    $gaps: (dimensions.$spacing-base * $gutter, dimensions.$spacing-base * $gutter);
+
+    @include grid-gap($gaps);
+  }
+}
+
+// 4
+
+@mixin four-columns() {
+  @include columns(4);
+}
+
+@mixin four-columns-gutter($gutter: 1) {
+  @include columns(4, $gutter);
 }
 
 @mixin four-columns-selector($variant: '') {
-  .#{$variant}layout-four-columns {
+  .#{$variant}layout-four-columns,
+  .#{$variant}layout-col-4 {
     @include four-columns();
   }
 }
 
-@mixin four-columns-gutter() {
-  @include four-columns();
-  @include grid-gap();
-}
-
 @mixin four-columns-gutter-selector($variant: '') {
-  .#{$variant}layout-four-columns-gutter {
+  .#{$variant}layout-four-columns-gutter,
+  .#{$variant}layout-col-4-gap {
     @include four-columns-gutter();
   }
 }
 
+@mixin four-columns-gutter-2-selector($variant: '') {
+  .#{$variant}layout-four-columns-gutter,
+  .#{$variant}layout-col-4-gap-2 {
+    @include four-columns-gutter(2);
+  }
+}
+
+// 3
+
 @mixin three-columns() {
-  @include grid-base();
-  @include grid-template-columns(3);
+  @include columns(3);
+}
+
+@mixin three-columns-gutter($gutter: 1) {
+  @include columns(3, $gutter);
 }
 
 @mixin three-columns-selector($variant: '') {
-  .#{$variant}layout-three-columns {
+  .#{$variant}layout-three-columns,
+  .#{$variant}layout-col-3 {
     @include three-columns();
   }
 }
 
-@mixin three-columns-gutter() {
-  @include three-columns();
-  @include grid-gap();
-}
-
 @mixin three-columns-gutter-selector($variant: '') {
-  .#{$variant}layout-three-columns-gutter {
+  .#{$variant}layout-three-columns-gutter,
+  .#{$variant}layout-col-3-gap {
     @include three-columns-gutter();
   }
 }
 
+@mixin three-columns-gutter-2-selector($variant: '') {
+  .#{$variant}layout-three-columns-gutter-2,
+  .#{$variant}layout-col-3-gap-2 {
+    @include three-columns-gutter(2);
+  }
+}
+
+// 2
+
 @mixin two-columns() {
-  @include grid-base();
-  @include grid-template-columns(2);
+  @include columns(2);
+}
+
+@mixin two-columns-gutter($gutter: 1) {
+  @include columns(2, $gutter);
 }
 
 @mixin two-columns-selector($variant: '') {
-  .#{$variant}layout-two-columns {
+  .#{$variant}layout-two-columns,
+  .#{$variant}layout-col-2 {
     @include two-columns();
   }
 }
 
-@mixin two-columns-gutter() {
-  @include two-columns();
-  @include grid-gap();
+@mixin two-columns-gutter-selector($variant: '') {
+  .#{$variant}layout-two-columns-gutter,
+  .#{$variant}layout-col-2-gap {
+    @include two-columns-gutter();
+  }
 }
 
-@mixin two-columns-gutter-selector($variant: '') {
-  .#{$variant}layout-two-columns-gutter {
-    @include two-columns-gutter();
+@mixin two-columns-gutter-2-selector($variant: '') {
+  .#{$variant}layout-two-columns-gutter-2,
+  .#{$variant}layout-col-2-gap-2 {
+    @include two-columns-gutter(2);
   }
 }
 
@@ -248,11 +288,6 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   display: flex;
   align-items: stretch;
 
-  // > *,
-  // > .layout__column {
-  //   margin-bottom: 0
-  // }
-
   > *:first-child,
   > .layout__column:first-child {
     width: dimensions.get('side-bar-width');
@@ -278,11 +313,6 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 @mixin sidebar-small-gutter() {
   display: flex;
   align-items: stretch;
-
-  // > *,
-  // > .layout__column {
-  //   margin-bottom: 0
-  // }
 
   > *:first-child,
   > .layout__column:first-child {
