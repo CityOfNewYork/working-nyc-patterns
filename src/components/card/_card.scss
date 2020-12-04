@@ -19,16 +19,41 @@
   box-shadow: var(--shadow-up);
 }
 
-.c-card__body,
+.c-card__header,
+.c-card__body {
+  padding: ($grid * 3);
+
+  @include media.screen-and-min-width('tablet') {
+    padding: ($grid * 4);
+  }
+}
+
 .c-card__header {
-  @include layouts.wrap();
-  padding-top: ($grid * 2);
   padding-bottom: ($grid * 2);
+
+  @include media.screen-and-min-width('tablet') {
+    padding-bottom: ($grid * 3);
+  }
+}
+
+.c-card__body {
+  padding-top: $grid;
+
+  @include media.screen-and-min-width('tablet') {
+    padding-top: ($grid * 3);
+  }
 }
 
 .c-card__title {
   @include typography.set('h4');
-  font-weight: bold
+  font-weight: bold;
+
+  margin-top: 0;
+  margin-bottom: $grid;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .c-card__subtitle {
@@ -41,6 +66,14 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+
+  > *:nth-last-child(2) {
+    margin-bottom: 0;
+
+    @include media.screen-and-min-width('desktop') {
+      margin-bottom: typography.get('margin-bottom');
+    }
+  }
 }
 
 .c-card__summary {
@@ -49,12 +82,8 @@
 
 .c-card__features {
   padding: 0;
-  margin-bottom: 0;
   list-style-type: none;
-
-  @include media.screen-and-min-width('desktop') {
-    margin-bottom: typography.get('margin-bottom')
-  }
+  margin-bottom: typography.get('margin-bottom');
 
   @include typography.selector-body-elements() {
     @include media.screen-and-min-width('mobile') {
@@ -64,6 +93,12 @@
 
   li {
     margin-bottom: $grid;
+  }
+}
+
+.c-card__web-share {
+  @include media.screen-and-min-width('desktop') {
+    margin-bottom: typography.get('margin-bottom')
   }
 }
 
@@ -82,5 +117,27 @@
     opacity: 1;
     position: static;
     width: auto
+  }
+}
+
+.c-card-transparent {
+  background-color: transparent !important;
+  box-shadow: none;
+
+  .c-card__title {
+    @include typography.font-family('h6');
+  }
+
+  .c-card__header {
+    background-color: transparent !important;
+    border-bottom: 1px solid var(--color-scale-4);
+  }
+
+  .c-card__header,
+  .c-card__body {
+    padding-left: 0px;
+    padding-right: 0px;
+    // margin-left: -8px;
+    // margin-right: -8px;
   }
 }

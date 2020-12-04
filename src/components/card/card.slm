@@ -10,13 +10,13 @@
 
 article class='c-card ${this.card.class}'
   header class='c-card__header'
-    h2 class='c-card__title mt-0 mb-2'
+    h2 class='c-card__title'
       - if this.card.title
         a href='${this.baseUrl}${this.card.url}'
           == this.card.title
 
     - if this.card.subtitle
-      h3 class='c-card__subtitle text-alt mb-1'
+      h3 class='c-card__subtitle text-alt'
         == this.card.subtitle
 
   div class='c-card__body'
@@ -39,10 +39,20 @@ article class='c-card ${this.card.class}'
 
             == feature.text
 
+    - if this.card.webShare
+      - webShare = {}
+      - webShare.data = {title: this.card.title, text: this.card.summary, url: `${this.baseUrl}${this.card.url}`};
+      - webShare.class = 'c-card__web-share z-10'
+      - webShare.fallbackClass
+
+      = partial('/components/web-share/web-share.slm')
+
+      - webShare = {}
+
     - if this.card.cta
       a href='${this.baseUrl}${this.card.url}' class='c-card__cta btn btn-secondary btn-next'
         svg class='icon-wnyc-ui' aria-hidden='true'
-          use xlink:href='#icon-wnyc-ui-arrow-left'
+          use xlink:href='#feather-arrow-left'
 
         span
           | ${this.card.cta}&nbsp;
@@ -51,4 +61,7 @@ article class='c-card ${this.card.class}'
             == this.card.title
 
         svg class='icon-wnyc-ui' aria-hidden='true'
-          use xlink:href='#icon-wnyc-ui-arrow-right'
+          use xlink:href='#feather-arrow-right'
+    - else
+      /! { @span  This empty span tag currently assists the stylesheed in removing margin on the last visible element in the card. }
+      span
