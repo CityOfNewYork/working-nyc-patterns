@@ -31,6 +31,7 @@ module.exports = {
     inline: [],
     indent_inner_html: false,
   },
+
   /**
    * Package Variables
    */
@@ -54,8 +55,11 @@ module.exports = {
       }
     }
   },
+
   /**
-   * Pattern Variables
+   * Newsletter Data
+   *
+   * @type {Array}
    */
   newsletter: {
     action: 'https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&id=aa67394696',
@@ -92,6 +96,12 @@ module.exports = {
       }
     ]
   },
+
+  /**
+   * Sample Programs
+   *
+   * @type {Array}
+   */
   programs: [
     {
       collection: 'training',
@@ -100,7 +110,7 @@ module.exports = {
       url: '/demos/programs/red-hook-on-the-road',
       status: `
         <mark class="badge status-alt me-2" data-program="recruiting">
-          Recruiting now
+          Actively recruiting
         </mark>
 
         <!-- <span class="flex me-2" data-program="accessible">
@@ -113,7 +123,7 @@ module.exports = {
 
         <!-- <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-ui-translate"></use>
+            <use xlink:href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
@@ -127,18 +137,18 @@ module.exports = {
         Adults</b>.</p>`,
       features: [
         {
-          icon: 'icon-wnyc-ui-award',
+          icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">Training for a new career</span>,&nbsp;
             <span data-program="taxonomy.services">job certification</span>
             </span>`
         },
         // {
-        //   icon: 'icon-wnyc-ui-info',
+        //   icon: 'feather-info',
         //   text: '<span data-program="taxonomy.sector">Transportation</span>'
         // },
         {
-          icon: 'icon-wnyc-ui-calendar',
+          icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">4 weeks</span>,&nbsp;
             <span data-program="taxonomy.schedule">evening</span>&nbsp;schedule
@@ -152,27 +162,27 @@ module.exports = {
       title: '<span data-program="plain-language-name">HSE and job prep for youth</span>',
       subtitle: '<span data-program="title">Advance & Earn<span>',
       url: '/demos/programs/red-hook-on-the-road',
-      status: `
-        <!-- <mark class="badge status-alt me-2" data-program="recruiting">
-          Recruiting now
-        </mark> -->
+      // status: `
+      //   <!-- <mark class="badge status-alt me-2" data-program="recruiting">
+      //     Actively recruiting
+      //   </mark> -->
 
-        <!-- <span class="flex me-2" data-program="accessible">
-          <svg aria-hidden="true" class="icon text-alt">
-            <use xlink:href="#icon-wnyc-accessible"></use>
-          </svg>
+      //   <!-- <span class="flex me-2" data-program="accessible">
+      //     <svg aria-hidden="true" class="icon text-alt">
+      //       <use xlink:href="#icon-wnyc-accessible"></use>
+      //     </svg>
 
-          <span class="sr-only">Accommodates Disabilities</span>
-        </span> -->
+      //     <span class="sr-only">Accommodates Disabilities</span>
+      //   </span> -->
 
-        <!-- <span class="flex me-2" data-program="multilingual">
-          <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-ui-translate"></use>
-          </svg>
+      //   <!-- <span class="flex me-2" data-program="multilingual">
+      //     <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
+      //       <use xlink:href="#icon-wnyc-translate"></use>
+      //     </svg>
 
-          <span class="sr-only">Accommodates Multiple Languages</span>
-        </span> -->
-      `,
+      //     <span class="sr-only">Accommodates Multiple Languages</span>
+      //   </span> -->
+      // `,
       summary: `
         <p><span data-program="summary">Create a plan to achieve career and
         educational goals.</span> For
@@ -181,7 +191,7 @@ module.exports = {
         Youth (16–24)</b>.</p>`,
       features: [
         {
-          icon: 'icon-wnyc-ui-award',
+          icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">Academic help</span>,&nbsp;
             <span data-program="taxonomy.services">paid work</span>,&nbsp;
@@ -189,7 +199,7 @@ module.exports = {
             </span>`
         },
         {
-          icon: 'icon-wnyc-ui-calendar',
+          icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">6 months</span>,&nbsp;
             <span data-program="taxonomy.schedule">full-time</span>&nbsp;schedule
@@ -205,7 +215,7 @@ module.exports = {
       url: '/demos/programs/red-hook-on-the-road',
       status: `
         <mark class="badge status-alt me-2" data-program="recruiting">
-          Recruiting now
+          Actively recruiting
         </mark>
 
         <!-- <span class="flex me-2" data-program="accessible">
@@ -218,7 +228,7 @@ module.exports = {
 
         <!-- <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-ui-translate"></use>
+            <use xlink:href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
@@ -232,18 +242,18 @@ module.exports = {
         Low-income</b>.</p>`,
       features: [
         {
-          icon: 'icon-wnyc-ui-award',
+          icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">Job training</span>,&nbsp;
             <span data-program="taxonomy.services">job prep</span>
             </span>`
         },
         // {
-        //   icon: 'icon-wnyc-ui-info',
+        //   icon: 'feather-info',
         //   text: '<span data-program="taxonomy.sector">Technology</span>'
         // },
         {
-          icon: 'icon-wnyc-ui-calendar',
+          icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">6 months</span>,&nbsp;
             <span data-program="taxonomy.schedule">full time</span>&nbsp;schedule
@@ -260,7 +270,7 @@ module.exports = {
       url: '/demos/programs/red-hook-on-the-road',
       status: `
         <mark class="badge status-alt me-2" data-program="recruiting">
-          Recruiting now
+          Actively recruiting
         </mark>
 
         <!-- <span class="flex me-2" data-program="accessible">
@@ -273,7 +283,7 @@ module.exports = {
 
         <!-- <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-ui-translate"></use>
+            <use xlink:href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
@@ -284,18 +294,18 @@ module.exports = {
         <b class="text-alt" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
       features: [
         {
-          icon: 'icon-wnyc-ui-award',
+          icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">Job training</span>,&nbsp;
             <span data-program="taxonomy.services">job certification</span>
             </span>`
         },
         // {
-        //   icon: 'icon-wnyc-ui-info',
+        //   icon: 'feather-info',
         //   text: '<span data-program="taxonomy.sector">Health care</span>'
         // },
         {
-          icon: 'icon-wnyc-ui-calendar',
+          icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">100 hours</span>,&nbsp;
             <span data-program="taxonomy.schedule">flexible</span>&nbsp;schedule
@@ -309,37 +319,37 @@ module.exports = {
       title: '<span data-program="plain-language-name">Math and reading for HSE Prep</span>',
       subtitle: '<span data-program="title">NYC DOE Basic Education Classes<span>',
       url: '/demos/programs/red-hook-on-the-road',
-      status: `
-        <!-- <span class="flex me-2" data-program="accessible">
-          <svg aria-hidden="true" class="icon text-alt">
-            <use xlink:href="#icon-wnyc-accessible"></use>
-          </svg>
+      // status: `
+      //   <!-- <span class="flex me-2" data-program="accessible">
+      //     <svg aria-hidden="true" class="icon text-alt">
+      //       <use xlink:href="#icon-wnyc-accessible"></use>
+      //     </svg>
 
-          <span class="sr-only">Accommodates Disabilities</span>
-        </span> -->
+      //     <span class="sr-only">Accommodates Disabilities</span>
+      //   </span> -->
 
-        <!-- <span class="flex me-2" data-program="multilingual">
-          <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-ui-translate"></use>
-          </svg>
+      //   <!-- <span class="flex me-2" data-program="multilingual">
+      //     <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
+      //       <use xlink:href="#icon-wnyc-translate"></use>
+      //     </svg>
 
-          <span class="sr-only">Accommodates Multiple Languages</span>
-        </span> -->
-      `,
+      //     <span class="sr-only">Accommodates Multiple Languages</span>
+      //   </span> -->
+      // `,
       summary: `<p>For
         <b class="text-alt" data-program="taxonomy.population">Adults</b> and
         <b class="text-alt" data-program="taxonomy.population">Immigrant New
         Yorkers</b>.</p>`,
       features: [
         {
-          icon: 'icon-wnyc-ui-award',
+          icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">Adult education</span>,&nbsp;
             <span data-program="taxonomy.services">HSE prep</span>
             </span>`
         },
         {
-          icon: 'icon-wnyc-ui-calendar',
+          icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">3 months</span>,&nbsp;
             <span data-program="taxonomy.schedule">varied</span>&nbsp;schedule
@@ -364,7 +374,7 @@ module.exports = {
 
         <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-ui-translate"></use>
+            <use xlink:href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
@@ -377,13 +387,13 @@ module.exports = {
         <b class="text-alt" data-program="taxonomy.population">Young Adults (16–24)</b>.</p>`,
       features: [
         {
-          icon: 'icon-wnyc-ui-award',
+          icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">Improving English skills</span>
             </span>`
         },
         {
-          icon: 'icon-wnyc-ui-calendar',
+          icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">3 months</span>,&nbsp;
             <span data-program="taxonomy.schedule">daytime</span>, or&nbsp;
@@ -409,7 +419,7 @@ module.exports = {
 
         <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-ui-translate"></use>
+            <use xlink:href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
@@ -422,14 +432,14 @@ module.exports = {
         <b class="text-alt" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
       features: [
         {
-          icon: 'icon-wnyc-ui-award',
+          icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">English language learning</span>,&nbsp;
             <span data-program="taxonomy.services">help finding work</span>
             </span>`
         },
         {
-          icon: 'icon-wnyc-ui-calendar',
+          icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">Less than 3 months</span>,&nbsp;
             <span data-program="taxonomy.schedule">evening</span>,&nbsp;
@@ -447,7 +457,7 @@ module.exports = {
       url: '/demos/programs/red-hook-on-the-road',
       status: `
         <mark class="badge status-alt me-2" data-program="recruiting">
-          Recruiting now
+          Actively recruiting
         </mark>
 
         <!-- <span class="flex me-2" data-program="accessible">
@@ -460,7 +470,7 @@ module.exports = {
 
         <span class="flex me-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-ui-translate"></use>
+            <use xlink:href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
@@ -473,14 +483,14 @@ module.exports = {
         <b class="text-alt" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
       features: [
         {
-          icon: 'icon-wnyc-ui-award',
+          icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">Training for a new career</span>,&nbsp;
             <span data-program="taxonomy.services">English language learning</span>
             </span>`
         },
         {
-          icon: 'icon-wnyc-ui-calendar',
+          icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">Less than 3 months</span>,&nbsp;
             <span data-program="taxonomy.schedule">full-time</span>
@@ -490,6 +500,12 @@ module.exports = {
       cta: 'Learn more'
     }
   ],
+
+  /**
+   * Survey Questions
+   *
+   * @type {Array}
+   */
   survey: [
     {
       legend: 'Population',
@@ -530,6 +546,12 @@ module.exports = {
       ]
     }
   ],
+
+  /**
+   * Program Filters
+   *
+   * @type {Array}
+   */
   filters: [
     {
       legend: 'Services',
@@ -618,6 +640,83 @@ module.exports = {
     //   ]
     // }
   ],
+
+  /**
+   * Announcements Content
+   *
+   * @type {Array}
+   */
+  announcements: [
+    {
+      title: `
+        <mark class="badge status-alt">New</mark> Money for heat and utility expenses
+        <svg aria-hidden="true" class="icon-wnyc-ui">
+          <use xlink:href="#feather-external-link"></use>
+        </svg>
+      `,
+      url: '/demos/news/#',
+      summary: `<p>The HEAP Program is open from November 2, 2020 to March 15, 2021.</p>`,
+      features: [
+        {
+          icon: 'feather-calendar',
+          text: '<span>Posted Tuesday, November 24th, 10:39am</span>'
+        }
+      ],
+      webShare: true
+    },
+    {
+      title: `
+        Get no-cost or low-cost healthcare
+        <svg aria-hidden="true" class="icon-wnyc-ui">
+          <use xlink:href="#feather-external-link"></use>
+        </svg>
+      `,
+      url: '/demos/news/#',
+      summary: '<p>Available to those who don\'t qualify for government-sponsored health insurance.</p>',
+      features: [
+        {
+          icon: 'feather-calendar',
+          text: '<span>Posted Tuesday, November 24th, 10:39am</span>'
+        }
+      ],
+      webShare: true
+    },
+    {
+      title: `
+        Help Avoiding Eviction
+        <svg aria-hidden="true" class="icon-wnyc-ui">
+          <use xlink:href="#feather-external-link"></use>
+        </svg>
+      `,
+      url: '/demos/news/#',
+      summary: '<p>Available regardless of immigration status.</p>',
+      features: [
+        {
+          icon: 'feather-calendar',
+          text: '<span>Posted Tuesday, November 24th, 10:39am</span>'
+        }
+      ],
+      webShare: true
+    },
+    {
+      title: `
+        Low-cost and free health insurance
+        <svg aria-hidden="true" class="icon-wnyc-ui">
+          <use xlink:href="#feather-external-link"></use>
+        </svg>
+      `,
+      url: '/demos/news/#',
+      summary: '<p>Open enrollment through the New York State of Health is from November 1, 2020 to January 31, 2021.</p>',
+      features: [
+        {
+          icon: 'feather-calendar',
+          text: '<span>Posted Tuesday, November 24th, 10:39am</span>'
+        }
+      ],
+      webShare: true
+    }
+  ],
+
   /**
    * Functions
    */

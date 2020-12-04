@@ -28,7 +28,7 @@
 
           h2 class='h4 tablet:font-normal tablet:text-h3 font-bold text-alt mb-5' Find and connect to new careers, job skills, adult education, and more.
 
-      section#answer-a-few-questions class='' data-aos='fade-up' data-aos-anchor-placement='top-bottom'
+      section#answer-a-few-questions data-aos='fade-up' data-aos-anchor-placement='top-bottom'
         p class='mb-5 text-center tablet:mb-3'
           a class='btn btn-link btn-secondary font-secondary' href='#answer-a-few-questions' Answer a few questions to get started
           br class='tablet:hidden'
@@ -38,10 +38,10 @@
             span Scroll to browse programs
             br class='tablet:hidden'
             svg class='icon-wnyc-ui m-0 mt-1' aria-hidden='true'
-              use xlink:href='#icon-wnyc-ui-chevron-down'
+              use xlink:href='#feather-chevron-down'
 
         form class='c-card' data-js='validate-and-query' method='post' action='${this.baseUrl}/demos/programs/index'
-          div class='c-card__body'
+          div class='p-3 desktop:p-4'
             - populations = this.survey.find(f => f.legend === 'Population').options
             - schedules = this.survey.find(f => f.legend === 'Schedule').options
             - services = this.survey.find(f => f.legend === 'Services').options
@@ -83,18 +83,18 @@
       section#training-programs-recruiting-now class='page-max py-4'
         div
           div class='layout-content'
-            div class='wrap'
+            div class='wrap pb-2'
               h2 class='h4 font-normal text-alt mt-0' Training programs Recruiting now
 
               p Job training programs get you ready for a new career. Here are some programs that are looking for New Yorkers to apply now.
 
-          div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:layout-two-columns-gutter desktop:layout-four-columns-gutter wrap'
+          div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:layout-two-columns-gutter desktop:px-8 wrap'
             - collection = this.programs.filter(p => p.collection === 'training')
             - for (let i in collection)
               - card = collection[i]
               - card.class = 'h-full'
 
-              div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
+              div class='wrap-start tablet:p-0 transform-none' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
                 = partial('/components/card/card')
 
             div class='wrap relative tablet:hidden'
@@ -109,18 +109,18 @@
       section#programs class='page-max py-4'
         div
           div class='layout-content'
-            div class='wrap'
+            div class='wrap pb-2'
               h2 class='h4 font-normal text-alt mt-0' Adult education programs
 
               p These programs improve math and reading skills for high school equivalency (GED), help English learners prepare for work, and more.
 
-          div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:layout-two-columns-gutter desktop:layout-four-columns-gutter wrap'
+          div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:layout-two-columns-gutter desktop:px-8 wrap'
             - collection = this.programs.filter(p => p.collection === 'adult-education')
             - for (let i in collection)
               - card = collection[i]
               - card.class = 'h-full'
 
-              div class='wrap-start tablet:p-0' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
+              div class='wrap-start tablet:p-0 transform-none' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
                 = partial('/components/card/card')
 
             div class='wrap relative tablet:hidden'
@@ -131,6 +131,20 @@
             div class='wrap tablet:py-6'
               - button = {label: 'View more programs', class: 'btn-secondary btn-next flex w-full', href: `${this.baseUrl}/demos/programs/index`, type: 'next-previous'}
               = partial('/elements/buttons/buttons')
+
+      section#announcements class='page-max py-4'
+        div
+          div class='layout-content'
+            div class='wrap pb-2'
+              h2 class='h4 font-normal text-alt mt-0' Announcements
+
+              div class='tablet:layout-col-2-gap-2'
+                - for (let i in this.announcements)
+                  - card = this.announcements[i]
+                  - card.class = 'c-card-transparent h-full'
+
+                  div class='transform-none' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
+                    = partial('/components/card/card')
 
       = partial('/objects/newsletter/newsletter')
 
