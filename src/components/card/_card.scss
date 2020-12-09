@@ -26,6 +26,10 @@
   @include media.screen-and-min-width('tablet') {
     padding: ($grid * 4);
   }
+
+  @include media.screen-and-min-width('desktop') {
+    padding: ($grid * 5);
+  }
 }
 
 .c-card__header {
@@ -34,6 +38,10 @@
   @include media.screen-and-min-width('tablet') {
     padding-bottom: ($grid * 3);
   }
+
+  @include media.screen-and-min-width('desktop') {
+    padding-bottom: ($grid * 4);
+  }
 }
 
 .c-card__body {
@@ -41,6 +49,10 @@
 
   @include media.screen-and-min-width('tablet') {
     padding-top: ($grid * 3);
+  }
+
+  @include media.screen-and-min-width('desktop') {
+    padding-top: ($grid * 4);
   }
 }
 
