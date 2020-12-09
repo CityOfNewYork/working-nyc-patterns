@@ -2,18 +2,13 @@
  * Dependencies
  */
 
-const resolve = require('@rollup/plugin-node-resolve'); // Locate modules using the Node resolution algorithm, for using third party modules in node_modules.
-const babel = require('rollup-plugin-babel');           // Transpile source code.
-const buble = require('@rollup/plugin-buble');          // Convert ES2015 with buble.
-const replace = require('@rollup/plugin-replace');      // Replace content while bundling.
-const commonjs = require('@rollup/plugin-commonjs');    // Include CommonJS packages in Rollup bundles.
+const nodeResolve = require('@rollup/plugin-node-resolve'); // Locate modules using the Node resolution algorithm, for using third party modules in node_modules
+const commonjs = require('@rollup/plugin-commonjs');        // Include CommonJS packages in Rollup bundles
+const replace = require('@rollup/plugin-replace');          // Replace content while bundling
 
 /**
- * Config
- */
-
-/**
- * General configuration for Rollup
+ * General ES module configuration
+ *
  * @type {Object}
  */
 let rollup = {
@@ -23,58 +18,32 @@ let rollup = {
 };
 
 /**
- * Plugin configuration
+ * Plugin configuration. Refer to the package for details on the available options.
+ *
+ * @source https://github.com/rollup/plugins
+ *
  * @type {Object}
  */
-const plugins = {
-  babel: babel({
-    exclude: 'node_modules/**'
-  }),
-  resolve: resolve({
+const plugins = [
+  nodeResolve.nodeResolve({
     browser: true,
-    customResolveOptions: {
-      moduleDirectory: 'node_modules'
-    }
+    moduleDirectories: [
+      'node_modules'
+    ]
   }),
-  replace: replace({
+  commonjs(),
+  replace({
     'process.env.NODE_ENV': `'${process.env.NODE_ENV}'`,
     'SCREEN_DESKTOP': 960,
     'SCREEN_TABLET': 768,
     'SCREEN_MOBILE': 480,
     'SCREEM_SM_MOBILE': 400
-  }),
-  common: commonjs(),
-  buble: buble({
-    transforms: {
-      forOf: false
-    }
   })
-};
-
-/**
- * Distribution plugin settings. Order matters here.
- * @type {Array}
- */
-
-/** These are plugins used for the global patterns script */
-rollup.local = [
-  plugins.resolve,
-  plugins.common,
-  plugins.babel,
-  plugins.buble,
-  plugins.replace
-];
-
-rollup.dist = [
-  plugins.resolve,
-  plugins.common,
-  plugins.babel,
-  plugins.buble,
-  plugins.replace
 ];
 
 /**
- * Our list of modules we are exporting
+ * ES Module Exports
+ *
  * @type {Array}
  */
 module.exports = [
@@ -84,12 +53,11 @@ module.exports = [
     output: [{
       name: 'WorkingNyc',
       file: `./dist/scripts/main.js`,
-      sourcemap: (process.env.NODE_ENV === 'production')
-        ? false : rollup.sourcemap,
+      sourcemap: (process.env.NODE_ENV === 'production') ? false : rollup.sourcemap,
       format: rollup.format,
       strict: rollup.strict
     }],
-    plugins: rollup.local,
+    plugins: plugins,
     devModule: true
   },
   {
@@ -102,7 +70,7 @@ module.exports = [
       format: rollup.format,
       strict: rollup.strict
     }],
-    plugins: rollup.local,
+    plugins: plugins,
     devModule: true
   }
 ];

@@ -1,6 +1,6 @@
 'use strict';
 
-import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
+import Toggle from '@nycopportunity/pttrn-scripts/src/toggle/toggle';
 
 /**
  * The Mobile Nav module

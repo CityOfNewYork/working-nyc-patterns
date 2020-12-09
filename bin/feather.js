@@ -20,7 +20,7 @@ const config = require(`${process.env.PWD}/config/feather`);
  * @pttrn Dependencies
  */
 
-const pttrn = `${process.env.PWD}/node_modules/@nycopportunity/patterns-framework`;
+const pttrn = `${process.env.PWD}/node_modules/@nycopportunity/pttrn`;
 const alerts = require(`${pttrn}/config/alerts`);
 const cnsl = require(`${pttrn}/bin/util/console`);
 
@@ -55,8 +55,7 @@ const write = async (file, data) => {
 
     let written = fs.writeFileSync(file, data);
 
-    cnsl.describe(`${alerts.success} Feather sprite written to
-      ${alerts.str.path(file)}`);
+    cnsl.describe(`${alerts.success} Feather sprite written to ${alerts.str.path(file)}`);
 
     return written;
   } catch (err) {
@@ -140,4 +139,11 @@ const run = async () => {
   process.exit(); // One-off commands must exit
 };
 
-run(); // Run the main method
+/**
+ * Export our methods
+ *
+ * @type {Object}
+ */
+module.exports = {
+  run: run
+};

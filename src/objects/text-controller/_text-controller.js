@@ -2,7 +2,7 @@
 'use strict';
 
 import Cookies from 'js-cookie/dist/js.cookie.mjs';
-import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
+import Toggle from '@nycopportunity/pttrn-scripts/src/toggle/toggle';
 
 /**
  * This controls the text sizer module at the top of page. A text-size-X class

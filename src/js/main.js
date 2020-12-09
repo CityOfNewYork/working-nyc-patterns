@@ -1,14 +1,14 @@
 'use strict';
 
 // Utilities
-import Copy from '@nycopportunity/patterns-framework/src/utilities/copy/copy';
-import Forms from '@nycopportunity/patterns-framework/src/utilities/forms/forms';
-import Icons from '@nycopportunity/patterns-framework/src/utilities/icons/icons';
-import Newsletter from '@nycopportunity/patterns-framework/src/utilities/newsletter/newsletter';
-import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
-import Track from '@nycopportunity/patterns-framework/src/utilities/track/track';
-import WebShare from '@nycopportunity/patterns-framework/src/utilities/web-share/web-share';
-import WindowVh from '@nycopportunity/patterns-framework/src/utilities/window-vh/window-vh';
+import Copy from '@nycopportunity/pttrn-scripts/src/copy/copy';
+import Forms from '@nycopportunity/pttrn-scripts/src/forms/forms';
+import Icons from '@nycopportunity/pttrn-scripts/src/icons/icons';
+import Newsletter from '@nycopportunity/pttrn-scripts/src/newsletter/newsletter';
+import Toggle from '@nycopportunity/pttrn-scripts/src/toggle/toggle';
+import Track from '@nycopportunity/pttrn-scripts/src/track/track';
+import WebShare from '@nycopportunity/pttrn-scripts/src/web-share/web-share';
+import WindowVh from '@nycopportunity/pttrn-scripts/src/window-vh/window-vh';
 
 // Elements
 // import ... from '../elements/...';

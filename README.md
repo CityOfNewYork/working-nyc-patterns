@@ -1,4 +1,4 @@
-# Working NYC Patterns
+# WorkingNYC Patterns
 
 To install, run:
 

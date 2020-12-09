@@ -84,8 +84,8 @@
 
                 b Programs
 
-        section class='page-max'
-          div class='wrap layout-rows-gutter tablet:layout-two-columns-gutter desktop:layout-three-columns-gutter'
+        section class='page-max desktop:px-6'
+          div class='wrap desktop:px-6 layout-rows-gutter tablet:layout-col-2-gap desktop:layout-col-2-gap-2'
             - for (let i in this.programs)
               - card = this.programs[i]
               - if i < 6
