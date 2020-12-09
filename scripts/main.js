@@ -4,81 +4,86 @@ var WorkingNyc = (function () {
   /**
    * Copy to Clipboard Helper
    */
-  var Copy = function Copy() {
-    var this$1 = this;
+  class Copy {
+    /**
+     * Add event listeners
+     *
+     * @constructor
+     */
+    constructor() {
+      // Set attributes
+      this.selector = Copy.selector;
 
-    // Set attributes
-    this.selector = Copy.selector;
+      this.aria = Copy.aria;
 
-    this.aria = Copy.aria;
+      this.notifyTimeout = Copy.notifyTimeout;
 
-    this.notifyTimeout = Copy.notifyTimeout;
+      // Select the entire text when it's focused on
+      document.querySelectorAll(Copy.selectors.TARGETS).forEach(item => {
+        item.addEventListener('focus', () => this.select(item));
+        item.addEventListener('click', () => this.select(item));
+      });
 
-    // Select the entire text when it's focused on
-    document.querySelectorAll(Copy.selectors.TARGETS).forEach(function (item) {
-      item.addEventListener('focus', function () { return this$1.select(item); });
-      item.addEventListener('click', function () { return this$1.select(item); });
-    });
+      // The main click event for the class
+      document.querySelector('body').addEventListener('click', event => {
+        if (!event.target.matches(this.selector))
+          return;
 
-    // The main click event for the class
-    document.querySelector('body').addEventListener('click', function (event) {
-      if (!event.target.matches(this$1.selector))
-        { return; }
+        this.element = event.target;
 
-      this$1.element = event.target;
+        this.element.setAttribute(this.aria, false);
 
-      this$1.element.setAttribute(this$1.aria, false);
+        this.target = this.element.dataset.copy;
 
-      this$1.target = this$1.element.dataset.copy;
+        if (this.copy(this.target)) {
+          this.element.setAttribute(this.aria, true);
 
-      if (this$1.copy(this$1.target)) {
-        this$1.element.setAttribute(this$1.aria, true);
+          clearTimeout(this.element['timeout']);
 
-        clearTimeout(this$1.element['timeout']);
+          this.element['timeout'] = setTimeout(() => {
+            this.element.setAttribute(this.aria, false);
+          }, this.notifyTimeout);
+        }
+      });
 
-        this$1.element['timeout'] = setTimeout(function () {
-          this$1.element.setAttribute(this$1.aria, false);
-        }, this$1.notifyTimeout);
-      }
-    });
+      return this;
+    }
 
-    return this;
-  };
+    /**
+     * The click event handler
+     *
+     * @param   {String}  target  Content of target data attribute
+     *
+     * @return  {Boolean}         Wether copy was successful or not
+     */
+    copy(target) {
+      let selector = Copy.selectors.TARGETS.replace(']', `="${target}"]`);
 
-  /**
-   * The click event handler
-   *
-   * @param {String}targetContent of target data attribute
-   *
-   * @return{Boolean}       Wether copy was successful or not
-   */
-  Copy.prototype.copy = function copy (target) {
-    var selector = Copy.selectors.TARGETS.replace(']', ("=\"" + target + "\"]"));
+      let input = document.querySelector(selector);
 
-    var input = document.querySelector(selector);
+      this.select(input);
 
-    this.select(input);
+      if (navigator.clipboard && navigator.clipboard.writeText)
+        navigator.clipboard.writeText(input.value);
+      else if (document.execCommand)
+        document.execCommand('copy');
+      else
+        return false;
 
-    if (navigator.clipboard && navigator.clipboard.writeText)
-      { navigator.clipboard.writeText(input.value); }
-    else if (document.execCommand)
-      { document.execCommand('copy'); }
-    else
-      { return false; }
+      return true;
+    }
 
-    return true;
-  };
+    /**
+     * Handler for the text selection method
+     *
+     * @param   {Object}  input  The input with content to select
+     */
+    select(input) {
+      input.select();
 
-  /**
-   * Handler for the text selection method
-   *
-   * @param {Object}inputThe input with content to select
-   */
-  Copy.prototype.select = function select (input) {
-    input.select();
-
-    input.setSelectionRange(0, 99999);
-  };
+      input.setSelectionRange(0, 99999);
+    }
+  }
 
   /** The main element selector */
   Copy.selector = '[data-js*="copy"]';
@@ -98,198 +103,197 @@ var WorkingNyc = (function () {
    * Utilities for Form components
    * @class
    */
-  var Forms = function Forms(form) {
-    if ( form === void 0 ) form = false;
+  class Forms {
+    /**
+     * The Form constructor
+     * @param  {Object} form The form DOM element
+     */
+    constructor(form = false) {
+      this.FORM = form;
 
-    this.FORM = form;
+      this.strings = Forms.strings;
 
-    this.strings = Forms.strings;
+      this.submit = Forms.submit;
 
-    this.submit = Forms.submit;
+      this.classes = Forms.classes;
 
-    this.classes = Forms.classes;
+      this.markup = Forms.markup;
 
-    this.markup = Forms.markup;
+      this.selectors = Forms.selectors;
 
-    this.selectors = Forms.selectors;
+      this.attrs = Forms.attrs;
 
-    this.attrs = Forms.attrs;
+      this.FORM.setAttribute('novalidate', true);
 
-    this.FORM.setAttribute('novalidate', true);
-
-    return this;
-  };
-
-  /**
-   * Map toggled checkbox values to an input.
-   * @param{Object} event The parent click event.
-   * @return {Element}    The target element.
-   */
-  Forms.prototype.joinValues = function joinValues (event) {
-    if (!event.target.matches('input[type="checkbox"]'))
-      { return; }
-
-    if (!event.target.closest('[data-js-join-values]'))
-      { return; }
-
-    var el = event.target.closest('[data-js-join-values]');
-    var target = document.querySelector(el.dataset.jsJoinValues);
-
-    target.value = Array.from(
-        el.querySelectorAll('input[type="checkbox"]')
-      )
-      .filter(function (e) { return (e.value && e.checked); })
-      .map(function (e) { return e.value; })
-      .join(', ');
-
-    return target;
-  };
-
-  /**
-   * A simple form validation class that uses native form validation. It will
-   * add appropriate form feedback for each input that is invalid and native
-   * localized browser messaging.
-   *
-   * See https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation
-   * See https://caniuse.com/#feat=form-validation for support
-   *
-   * @param{Event}       event The form submission event
-   * @return {Class/Boolean}     The form class or false if invalid
-   */
-  Forms.prototype.valid = function valid (event) {
-    var validity = event.target.checkValidity();
-    var elements = event.target.querySelectorAll(this.selectors.REQUIRED);
-
-    for (var i = 0; i < elements.length; i++) {
-      // Remove old messaging if it exists
-      var el = elements[i];
-
-      this.reset(el);
-
-      // If this input valid, skip messaging
-      if (el.validity.valid) { continue; }
-
-      this.highlight(el);
+      return this;
     }
 
-    return (validity) ? this : validity;
-  };
+    /**
+     * Map toggled checkbox values to an input.
+     * @param  {Object} event The parent click event.
+     * @return {Element}      The target element.
+     */
+    joinValues(event) {
+      if (!event.target.matches('input[type="checkbox"]'))
+        return;
 
-  /**
-   * Adds focus and blur events to inputs with required attributes
-   * @param {object}formPassing a form is possible, otherwise it will use
-   *                        the form passed to the constructor.
-   * @return{class}       The form class
-   */
-  Forms.prototype.watch = function watch (form) {
-      var this$1 = this;
-      if ( form === void 0 ) form = false;
+      if (!event.target.closest('[data-js-join-values]'))
+        return;
 
-    this.FORM = (form) ? form : this.FORM;
+      let el = event.target.closest('[data-js-join-values]');
+      let target = document.querySelector(el.dataset.jsJoinValues);
 
-    var elements = this.FORM.querySelectorAll(this.selectors.REQUIRED);
+      target.value = Array.from(
+          el.querySelectorAll('input[type="checkbox"]')
+        )
+        .filter((e) => (e.value && e.checked))
+        .map((e) => e.value)
+        .join(', ');
 
-    /** Watch Individual Inputs */
-    var loop = function ( i ) {
+      return target;
+    }
+
+    /**
+     * A simple form validation class that uses native form validation. It will
+     * add appropriate form feedback for each input that is invalid and native
+     * localized browser messaging.
+     *
+     * See https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation
+     * See https://caniuse.com/#feat=form-validation for support
+     *
+     * @param  {Event}         event The form submission event
+     * @return {Class/Boolean}       The form class or false if invalid
+     */
+    valid(event) {
+      let validity = event.target.checkValidity();
+      let elements = event.target.querySelectorAll(this.selectors.REQUIRED);
+
+      for (let i = 0; i < elements.length; i++) {
+        // Remove old messaging if it exists
+        let el = elements[i];
+
+        this.reset(el);
+
+        // If this input valid, skip messaging
+        if (el.validity.valid) continue;
+
+        this.highlight(el);
+      }
+
+      return (validity) ? this : validity;
+    }
+
+    /**
+     * Adds focus and blur events to inputs with required attributes
+     * @param   {object}  form  Passing a form is possible, otherwise it will use
+     *                          the form passed to the constructor.
+     * @return  {class}         The form class
+     */
+    watch(form = false) {
+      this.FORM = (form) ? form : this.FORM;
+
+      let elements = this.FORM.querySelectorAll(this.selectors.REQUIRED);
+
+      /** Watch Individual Inputs */
+      for (let i = 0; i < elements.length; i++) {
+        // Remove old messaging if it exists
+        let el = elements[i];
+
+        el.addEventListener('focus', () => {
+          this.reset(el);
+        });
+
+        el.addEventListener('blur', () => {
+          if (!el.validity.valid)
+            this.highlight(el);
+        });
+      }
+
+      /** Submit Event */
+      this.FORM.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        if (this.valid(event) === false)
+          return false;
+
+        this.submit(event);
+      });
+
+      return this;
+    }
+
+    /**
+     * Removes the validity message and classes from the message.
+     * @param   {object}  el  The input element
+     * @return  {class}       The form class
+     */
+    reset(el) {
+      let container = (this.selectors.ERROR_MESSAGE_PARENT)
+        ? el.closest(this.selectors.ERROR_MESSAGE_PARENT) : el.parentNode;
+
+      let message = container.querySelector('.' + this.classes.ERROR_MESSAGE);
+
       // Remove old messaging if it exists
-      var el = elements[i];
+      container.classList.remove(this.classes.ERROR_CONTAINER);
+      if (message) message.remove();
 
-      el.addEventListener('focus', function () {
-        this$1.reset(el);
-      });
+      // Remove error class from the form
+      container.closest('form').classList.remove(this.classes.ERROR_CONTAINER);
 
-      el.addEventListener('blur', function () {
-        if (!el.validity.valid)
-          { this$1.highlight(el); }
-      });
-    };
+      // Remove dynamic attributes from the input
+      el.removeAttribute(this.attrs.ERROR_INPUT[0]);
+      el.removeAttribute(this.attrs.ERROR_LABEL);
 
-      for (var i = 0; i < elements.length; i++) loop( i );
+      return this;
+    }
 
-    /** Submit Event */
-    this.FORM.addEventListener('submit', function (event) {
-      event.preventDefault();
+    /**
+     * Displays a validity message to the user. It will first use any localized
+     * string passed to the class for required fields missing input. If the
+     * input is filled in but doesn't match the required pattern, it will use
+     * a localized string set for the specific input type. If one isn't provided
+     * it will use the default browser provided message.
+     * @param   {object}  el  The invalid input element
+     * @return  {class}       The form class
+     */
+    highlight(el) {
+      let container = (this.selectors.ERROR_MESSAGE_PARENT)
+        ? el.closest(this.selectors.ERROR_MESSAGE_PARENT) : el.parentNode;
 
-      if (this$1.valid(event) === false)
-        { return false; }
+      // Create the new error message.
+      let message = document.createElement(this.markup.ERROR_MESSAGE);
+      let id = `${el.getAttribute('id')}-${this.classes.ERROR_MESSAGE}`;
 
-      this$1.submit(event);
-    });
+      // Get the error message from localized strings (if set).
+      if (el.validity.valueMissing && this.strings.VALID_REQUIRED)
+        message.innerHTML = this.strings.VALID_REQUIRED;
+      else if (!el.validity.valid &&
+        this.strings[`VALID_${el.type.toUpperCase()}_INVALID`]) {
+        let stringKey = `VALID_${el.type.toUpperCase()}_INVALID`;
+        message.innerHTML = this.strings[stringKey];
+      } else
+        message.innerHTML = el.validationMessage;
 
-    return this;
-  };
+      // Set aria attributes and css classes to the message
+      message.setAttribute('id', id);
+      message.setAttribute(this.attrs.ERROR_MESSAGE[0],
+        this.attrs.ERROR_MESSAGE[1]);
+      message.classList.add(this.classes.ERROR_MESSAGE);
 
-  /**
-   * Removes the validity message and classes from the message.
-   * @param {object}elThe input element
-   * @return{class}     The form class
-   */
-  Forms.prototype.reset = function reset (el) {
-    var container = (this.selectors.ERROR_MESSAGE_PARENT)
-      ? el.closest(this.selectors.ERROR_MESSAGE_PARENT) : el.parentNode;
+      // Add the error class and error message to the dom.
+      container.classList.add(this.classes.ERROR_CONTAINER);
+      container.insertBefore(message, container.childNodes[0]);
 
-    var message = container.querySelector('.' + this.classes.ERROR_MESSAGE);
+      // Add the error class to the form
+      container.closest('form').classList.add(this.classes.ERROR_CONTAINER);
 
-    // Remove old messaging if it exists
-    container.classList.remove(this.classes.ERROR_CONTAINER);
-    if (message) { message.remove(); }
+      // Add dynamic attributes to the input
+      el.setAttribute(this.attrs.ERROR_INPUT[0], this.attrs.ERROR_INPUT[1]);
+      el.setAttribute(this.attrs.ERROR_LABEL, id);
 
-    // Remove error class from the form
-    container.closest('form').classList.remove(this.classes.ERROR_CONTAINER);
-
-    // Remove dynamic attributes from the input
-    el.removeAttribute(this.attrs.ERROR_INPUT[0]);
-    el.removeAttribute(this.attrs.ERROR_LABEL);
-
-    return this;
-  };
-
-  /**
-   * Displays a validity message to the user. It will first use any localized
-   * string passed to the class for required fields missing input. If the
-   * input is filled in but doesn't match the required pattern, it will use
-   * a localized string set for the specific input type. If one isn't provided
-   * it will use the default browser provided message.
-   * @param {object}elThe invalid input element
-   * @return{class}     The form class
-   */
-  Forms.prototype.highlight = function highlight (el) {
-    var container = (this.selectors.ERROR_MESSAGE_PARENT)
-      ? el.closest(this.selectors.ERROR_MESSAGE_PARENT) : el.parentNode;
-
-    // Create the new error message.
-    var message = document.createElement(this.markup.ERROR_MESSAGE);
-    var id = (el.getAttribute('id')) + "-" + (this.classes.ERROR_MESSAGE);
-
-    // Get the error message from localized strings (if set).
-    if (el.validity.valueMissing && this.strings.VALID_REQUIRED)
-      { message.innerHTML = this.strings.VALID_REQUIRED; }
-    else if (!el.validity.valid &&
-      this.strings[("VALID_" + (el.type.toUpperCase()) + "_INVALID")]) {
-      var stringKey = "VALID_" + (el.type.toUpperCase()) + "_INVALID";
-      message.innerHTML = this.strings[stringKey];
-    } else
-      { message.innerHTML = el.validationMessage; }
-
-    // Set aria attributes and css classes to the message
-    message.setAttribute('id', id);
-    message.setAttribute(this.attrs.ERROR_MESSAGE[0],
-      this.attrs.ERROR_MESSAGE[1]);
-    message.classList.add(this.classes.ERROR_MESSAGE);
-
-    // Add the error class and error message to the dom.
-    container.classList.add(this.classes.ERROR_CONTAINER);
-    container.insertBefore(message, container.childNodes[0]);
-
-    // Add the error class to the form
-    container.closest('form').classList.add(this.classes.ERROR_CONTAINER);
-
-    // Add dynamic attributes to the input
-    el.setAttribute(this.attrs.ERROR_INPUT[0], this.attrs.ERROR_INPUT[1]);
-    el.setAttribute(this.attrs.ERROR_LABEL, id);
-
-    return this;
-  };
+      return this;
+    }
+  }
 
   /**
    * A dictionairy of strings in the format.
@@ -332,313 +336,317 @@ var WorkingNyc = (function () {
    * The Icon module
    * @class
    */
-  var Icons = function Icons(path) {
-    path = (path) ? path : Icons.path;
+  class Icons {
+    /**
+     * @constructor
+     * @param  {String} path The path of the icon file
+     * @return {object} The class
+     */
+    constructor(path) {
+      path = (path) ? path : Icons.path;
 
-    fetch(path)
-      .then(function (response) {
-        if (response.ok)
-          { return response.text(); }
-      })
-      .catch(function (error) {
-      })
-      .then(function (data) {
-        var sprite = document.createElement('div');
-        sprite.innerHTML = data;
-        sprite.setAttribute('aria-hidden', true);
-        sprite.setAttribute('style', 'display: none;');
-        document.body.appendChild(sprite);
-      });
+      fetch(path)
+        .then((response) => {
+          if (response.ok)
+            return response.text();
+        })
+        .catch((error) => {
+        })
+        .then((data) => {
+          const sprite = document.createElement('div');
+          sprite.innerHTML = data;
+          sprite.setAttribute('aria-hidden', true);
+          sprite.setAttribute('style', 'display: none;');
+          document.body.appendChild(sprite);
+        });
 
-    return this;
-  };
+      return this;
+    }
+  }
 
   /** @type {String} The path of the icon file */
   Icons.path = 'svg/icons.svg';
 
-  var e=/^(?:submit|button|image|reset|file)$/i,t=/^(?:input|select|textarea|keygen)/i,n=/(\[[^\[\]]*\])/g;function a(e,t,a){if(t.match(n)){ !function e(t,n,a){if(0===n.length){ return a; }var r=n.shift(),i=r.match(/^\[(.+?)\]$/);if("[]"===r){ return t=t||[],Array.isArray(t)?t.push(e(null,n,a)):(t._values=t._values||[],t._values.push(e(null,n,a))),t; }if(i){var l=i[1],u=+l;isNaN(u)?(t=t||{})[l]=e(t[l],n,a):(t=t||[])[u]=e(t[u],n,a);}else { t[r]=e(t[r],n,a); }return t}(e,function(e){var t=[],a=new RegExp(n),r=/^([^\[\]]*)/.exec(e);for(r[1]&&t.push(r[1]);null!==(r=a.exec(e));){ t.push(r[1]); }return t}(t),a); }else {var r=e[t];r?(Array.isArray(r)||(e[t]=[r]),e[t].push(a)):e[t]=a;}return e}function r(e,t,n){return n=(n=String(n)).replace(/(\r)?\n/g,"\r\n"),n=(n=encodeURIComponent(n)).replace(/%20/g,"+"),e+(e?"&":"")+encodeURIComponent(t)+"="+n}function serialize(n,i){"object"!=typeof i?i={hash:!!i}:void 0===i.hash&&(i.hash=!0);for(var l=i.hash?{}:"",u=i.serializer||(i.hash?a:r),s=n&&n.elements?n.elements:[],c=Object.create(null),o=0;o<s.length;++o){var h=s[o];if((i.disabled||!h.disabled)&&h.name&&t.test(h.nodeName)&&!e.test(h.type)){var p=h.name,f=h.value;if("checkbox"!==h.type&&"radio"!==h.type||h.checked||(f=void 0),i.empty){if("checkbox"!==h.type||h.checked||(f=!1),"radio"===h.type&&(c[h.name]||h.checked?h.checked&&(c[h.name]=!0):c[h.name]=!1),null==f&&"radio"==h.type){ continue }}else if(!f){ continue; }if("select-multiple"!==h.type){ l=u(l,p,f); }else {f=[];for(var v=h.options,m=!1,d=0;d<v.length;++d){var y=v[d];y.selected&&(y.value||i.empty&&!y.value)&&(m=!0,l=i.hash&&"[]"!==p.slice(p.length-2)?u(l,p+"[]",y.value):u(l,p,y.value));}!m&&i.empty&&(l=u(l,p,""));}}}if(i.empty){ for(var p in c){ c[p]||(l=u(l,p,"")); } }return l}
+  var e=/^(?:submit|button|image|reset|file)$/i,t=/^(?:input|select|textarea|keygen)/i,n=/(\[[^\[\]]*\])/g;function a(e,t,a){if(t.match(n))!function e(t,n,a){if(0===n.length)return a;var r=n.shift(),i=r.match(/^\[(.+?)\]$/);if("[]"===r)return t=t||[],Array.isArray(t)?t.push(e(null,n,a)):(t._values=t._values||[],t._values.push(e(null,n,a))),t;if(i){var l=i[1],u=+l;isNaN(u)?(t=t||{})[l]=e(t[l],n,a):(t=t||[])[u]=e(t[u],n,a);}else t[r]=e(t[r],n,a);return t}(e,function(e){var t=[],a=new RegExp(n),r=/^([^\[\]]*)/.exec(e);for(r[1]&&t.push(r[1]);null!==(r=a.exec(e));)t.push(r[1]);return t}(t),a);else {var r=e[t];r?(Array.isArray(r)||(e[t]=[r]),e[t].push(a)):e[t]=a;}return e}function r(e,t,n){return n=(n=String(n)).replace(/(\r)?\n/g,"\r\n"),n=(n=encodeURIComponent(n)).replace(/%20/g,"+"),e+(e?"&":"")+encodeURIComponent(t)+"="+n}function serialize(n,i){"object"!=typeof i?i={hash:!!i}:void 0===i.hash&&(i.hash=!0);for(var l=i.hash?{}:"",u=i.serializer||(i.hash?a:r),s=n&&n.elements?n.elements:[],c=Object.create(null),o=0;o<s.length;++o){var h=s[o];if((i.disabled||!h.disabled)&&h.name&&t.test(h.nodeName)&&!e.test(h.type)){var p=h.name,f=h.value;if("checkbox"!==h.type&&"radio"!==h.type||h.checked||(f=void 0),i.empty){if("checkbox"!==h.type||h.checked||(f=!1),"radio"===h.type&&(c[h.name]||h.checked?h.checked&&(c[h.name]=!0):c[h.name]=!1),null==f&&"radio"==h.type)continue}else if(!f)continue;if("select-multiple"!==h.type)l=u(l,p,f);else {f=[];for(var v=h.options,m=!1,d=0;d<v.length;++d){var y=v[d];y.selected&&(y.value||i.empty&&!y.value)&&(m=!0,l=i.hash&&"[]"!==p.slice(p.length-2)?u(l,p+"[]",y.value):u(l,p,y.value));}!m&&i.empty&&(l=u(l,p,""));}}}if(i.empty)for(var p in c)c[p]||(l=u(l,p,""));return l}
 
   /**
    * @class  The Newsletter module
    */
-  var Newsletter = function Newsletter(element) {
-    var this$1 = this;
+  class Newsletter {
+    /**
+     * @constructor
+     *
+     * @param   {Object}  element  The Newsletter DOM Object
+     *
+     * @return  {Class}            The instantiated Newsletter object
+     */
+    constructor(element) {
+      this._el = element;
 
-    this._el = element;
+      this.keys = Newsletter.keys;
 
-    this.keys = Newsletter.keys;
+      this.endpoints = Newsletter.endpoints;
 
-    this.endpoints = Newsletter.endpoints;
+      this.selectors = Newsletter.selectors;
 
-    this.selectors = Newsletter.selectors;
+      this.selector = Newsletter.selector;
 
-    this.selector = Newsletter.selector;
+      this.stringKeys = Newsletter.stringKeys;
 
-    this.stringKeys = Newsletter.stringKeys;
+      this.strings = Newsletter.strings;
 
-    this.strings = Newsletter.strings;
+      this.templates = Newsletter.templates;
 
-    this.templates = Newsletter.templates;
+      this.classes = Newsletter.classes;
 
-    this.classes = Newsletter.classes;
+      this.callback = [
+        Newsletter.callback,
+        Math.random().toString().replace('0.', '')
+      ].join('');
 
-    this.callback = [
-      Newsletter.callback,
-      Math.random().toString().replace('0.', '')
-    ].join('');
-
-    // This sets the script callback function to a global function that
-    // can be accessed by the the requested script.
-    window[this.callback] = function (data) {
-      this$1._callback(data);
-    };
-
-    this.form = new Forms(this._el.querySelector('form'));
-
-    this.form.strings = this.strings;
-
-    this.form.submit = function (event) {
-      event.preventDefault();
-
-      this$1._submit(event)
-        .then(this$1._onload)
-        .catch(this$1._onerror);
-    };
-
-    this.form.watch();
-
-    return this;
-  };
-
-  /**
-   * The form submission method. Requests a script with a callback function
-   * to be executed on our page. The callback function will be passed the
-   * response as a JSON object (function parameter).
-   *
-   * @param {Event}  eventThe form submission event
-   *
-   * @return{Promise}       A promise containing the new script call
-   */
-  Newsletter.prototype._submit = function _submit (event) {
-    event.preventDefault();
-
-    // Serialize the data
-    this._data = serialize(event.target, {hash: true});
-
-    // Switch the action to post-json. This creates an endpoint for mailchimp
-    // that acts as a script that can be loaded onto our page.
-    var action = event.target.action.replace(
-      ((this.endpoints.MAIN) + "?"), ((this.endpoints.MAIN_JSON) + "?")
-    );
-
-    // Add our params to the action
-    action = action + serialize(event.target, {serializer: function () {
-        var params = [], len = arguments.length;
-        while ( len-- ) params[ len ] = arguments[ len ];
-
-      var prev = (typeof params[0] === 'string') ? params[0] : '';
-
-      return (prev + "&" + (params[1]) + "=" + (params[2]));
-    }});
-
-    // Append the callback reference. Mailchimp will wrap the JSON response in
-    // our callback method. Once we load the script the callback will execute.
-    action = action + "&c=window." + (this.callback);
-
-    // Create a promise that appends the script response of the post-json method
-    return new Promise(function (resolve, reject) {
-      var script = document.createElement('script');
-
-      document.body.appendChild(script);
-      script.onload = resolve;
-      script.onerror = reject;
-      script.async = true;
-      script.src = encodeURI(action);
-    });
-  };
-
-  /**
-   * The script onload resolution
-   *
-   * @param {Event}eventThe script on load event
-   *
-   * @return{Class}       The Newsletter class
-   */
-  Newsletter.prototype._onload = function _onload (event) {
-    event.path[0].remove();
-
-    return this;
-  };
-
-  /**
-   * The script on error resolution
-   *
-   * @param {Object}errorThe script on error load event
-   *
-   * @return{Class}        The Newsletter class
-   */
-  Newsletter.prototype._onerror = function _onerror (error) {
-
-    return this;
-  };
-
-  /**
-   * The callback function for the MailChimp Script call
-   *
-   * @param {Object}dataThe success/error message from MailChimp
-   *
-   * @return{Class}      The Newsletter class
-   */
-  Newsletter.prototype._callback = function _callback (data) {
-    if (this[("_" + (data[this._key('MC_RESULT')]))]) {
-      this[("_" + (data[this._key('MC_RESULT')]))](data.msg);
-    }
-
-    return this;
-  };
-
-  /**
-   * Submission error handler
-   *
-   * @param {string}msgThe error message
-   *
-   * @return{Class}      The Newsletter class
-   */
-  Newsletter.prototype._error = function _error (msg) {
-    this._elementsReset();
-    this._messaging('WARNING', msg);
-
-    return this;
-  };
-
-  /**
-   * Submission success handler
-   *
-   * @param {string}msgThe success message
-   *
-   * @return{Class}      The Newsletter class
-   */
-  Newsletter.prototype._success = function _success (msg) {
-    this._elementsReset();
-    this._messaging('SUCCESS', msg);
-
-    return this;
-  };
-
-  /**
-   * Present the response message to the user
-   *
-   * @param {String}typeThe message type
-   * @param {String}msg The message
-   *
-   * @return{Class}       Newsletter
-   */
-  Newsletter.prototype._messaging = function _messaging (type, msg) {
-      var this$1 = this;
-      if ( msg === void 0 ) msg = 'no message';
-
-    var strings = Object.keys(this.stringKeys);
-    var handled = false;
-
-    var alertBox = this._el.querySelector(this.selectors[type]);
-
-    var alertBoxMsg = alertBox.querySelector(
-      this.selectors.ALERT_TEXT
-    );
-
-    // Get the localized string, these should be written to the DOM already.
-    // The utility contains a global method for retrieving them.
-    var stringKeys = strings.filter(function (s) { return msg.includes(this$1.stringKeys[s]); });
-    msg = (stringKeys.length) ? this.strings[stringKeys[0]] : msg;
-    handled = (stringKeys.length) ? true : false;
-
-    // Replace string templates with values from either our form data or
-    // the Newsletter strings object.
-    for (var x = 0; x < this.templates.length; x++) {
-      var template = this.templates[x];
-      var key = template.replace('{{ ', '').replace(' }}', '');
-      var value = this._data[key] || this.strings[key];
-      var reg = new RegExp(template, 'gi');
-
-      msg = msg.replace(reg, (value) ? value : '');
-    }
-
-    if (handled) {
-      alertBoxMsg.innerHTML = msg;
-    } else if (type === 'ERROR') {
-      alertBoxMsg.innerHTML = this.strings.ERR_PLEASE_TRY_LATER;
-    }
-
-    if (alertBox) { this._elementShow(alertBox, alertBoxMsg); }
-
-    return this;
-  };
-
-  /**
-   * The main toggling method
-   *
-   * @return{Class}Newsletter
-   */
-  Newsletter.prototype._elementsReset = function _elementsReset () {
-      var this$1 = this;
-
-    var targets = this._el.querySelectorAll(this.selectors.ALERTS);
-
-    var loop = function ( i ) {
-        if (!targets[i].classList.contains(this$1.classes.HIDDEN)) {
-        targets[i].classList.add(this$1.classes.HIDDEN);
-
-        this$1.classes.ANIMATE.split(' ').forEach(function (item) { return targets[i].classList.remove(item); }
-        );
-
-        // Screen Readers
-        targets[i].setAttribute('aria-hidden', 'true');
-        targets[i].querySelector(this$1.selectors.ALERT_TEXT)
-          .setAttribute('aria-live', 'off');
-      }
+      // This sets the script callback function to a global function that
+      // can be accessed by the the requested script.
+      window[this.callback] = (data) => {
+        this._callback(data);
       };
 
-      for (var i = 0; i < targets.length; i++)
-      loop( i );
+      this.form = new Forms(this._el.querySelector('form'));
 
-    return this;
-  };
+      this.form.strings = this.strings;
 
-  /**
-   * The main toggling method
-   *
-   * @param {object}target Message container
-   * @param {object}contentContent that changes dynamically that should
-   *                           be announced to screen readers.
-   *
-   * @return{Class}          Newsletter
-   */
-  Newsletter.prototype._elementShow = function _elementShow (target, content) {
-    target.classList.toggle(this.classes.HIDDEN);
+      this.form.submit = (event) => {
+        event.preventDefault();
 
-    this.classes.ANIMATE.split(' ').forEach(function (item) { return target.classList.toggle(item); }
-    );
+        this._submit(event)
+          .then(this._onload)
+          .catch(this._onerror);
+      };
 
-    // Screen Readers
-    target.setAttribute('aria-hidden', 'true');
+      this.form.watch();
 
-    if (content) {
-      content.setAttribute('aria-live', 'polite');
+      return this;
     }
 
-    return this;
-  };
+    /**
+     * The form submission method. Requests a script with a callback function
+     * to be executed on our page. The callback function will be passed the
+     * response as a JSON object (function parameter).
+     *
+     * @param   {Event}    event  The form submission event
+     *
+     * @return  {Promise}         A promise containing the new script call
+     */
+    _submit(event) {
+      event.preventDefault();
 
-  /**
-   * A proxy function for retrieving the proper key
-   *
-   * @param {string}keyThe reference for the stored keys.
-   *
-   * @return{string}     The desired key.
-   */
-  Newsletter.prototype._key = function _key (key) {
-    return this.keys[key];
-  };
+      // Serialize the data
+      this._data = serialize(event.target, {hash: true});
+
+      // Switch the action to post-json. This creates an endpoint for mailchimp
+      // that acts as a script that can be loaded onto our page.
+      let action = event.target.action.replace(
+        `${this.endpoints.MAIN}?`, `${this.endpoints.MAIN_JSON}?`
+      );
+
+      // Add our params to the action
+      action = action + serialize(event.target, {serializer: (...params) => {
+        let prev = (typeof params[0] === 'string') ? params[0] : '';
+
+        return `${prev}&${params[1]}=${params[2]}`;
+      }});
+
+      // Append the callback reference. Mailchimp will wrap the JSON response in
+      // our callback method. Once we load the script the callback will execute.
+      action = `${action}&c=window.${this.callback}`;
+
+      // Create a promise that appends the script response of the post-json method
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+
+        document.body.appendChild(script);
+        script.onload = resolve;
+        script.onerror = reject;
+        script.async = true;
+        script.src = encodeURI(action);
+      });
+    }
+
+    /**
+     * The script onload resolution
+     *
+     * @param   {Event}  event  The script on load event
+     *
+     * @return  {Class}         The Newsletter class
+     */
+    _onload(event) {
+      event.path[0].remove();
+
+      return this;
+    }
+
+    /**
+     * The script on error resolution
+     *
+     * @param   {Object}  error  The script on error load event
+     *
+     * @return  {Class}          The Newsletter class
+     */
+    _onerror(error) {
+
+      return this;
+    }
+
+    /**
+     * The callback function for the MailChimp Script call
+     *
+     * @param   {Object}  data  The success/error message from MailChimp
+     *
+     * @return  {Class}        The Newsletter class
+     */
+    _callback(data) {
+      if (this[`_${data[this._key('MC_RESULT')]}`]) {
+        this[`_${data[this._key('MC_RESULT')]}`](data.msg);
+      }
+
+      return this;
+    }
+
+    /**
+     * Submission error handler
+     *
+     * @param   {string}  msg  The error message
+     *
+     * @return  {Class}        The Newsletter class
+     */
+    _error(msg) {
+      this._elementsReset();
+      this._messaging('WARNING', msg);
+
+      return this;
+    }
+
+    /**
+     * Submission success handler
+     *
+     * @param   {string}  msg  The success message
+     *
+     * @return  {Class}        The Newsletter class
+     */
+    _success(msg) {
+      this._elementsReset();
+      this._messaging('SUCCESS', msg);
+
+      return this;
+    }
+
+    /**
+     * Present the response message to the user
+     *
+     * @param   {String}  type  The message type
+     * @param   {String}  msg   The message
+     *
+     * @return  {Class}         Newsletter
+     */
+    _messaging(type, msg = 'no message') {
+      let strings = Object.keys(this.stringKeys);
+      let handled = false;
+
+      let alertBox = this._el.querySelector(this.selectors[type]);
+
+      let alertBoxMsg = alertBox.querySelector(
+        this.selectors.ALERT_TEXT
+      );
+
+      // Get the localized string, these should be written to the DOM already.
+      // The utility contains a global method for retrieving them.
+      let stringKeys = strings.filter(s => msg.includes(this.stringKeys[s]));
+      msg = (stringKeys.length) ? this.strings[stringKeys[0]] : msg;
+      handled = (stringKeys.length) ? true : false;
+
+      // Replace string templates with values from either our form data or
+      // the Newsletter strings object.
+      for (let x = 0; x < this.templates.length; x++) {
+        let template = this.templates[x];
+        let key = template.replace('{{ ', '').replace(' }}', '');
+        let value = this._data[key] || this.strings[key];
+        let reg = new RegExp(template, 'gi');
+
+        msg = msg.replace(reg, (value) ? value : '');
+      }
+
+      if (handled) {
+        alertBoxMsg.innerHTML = msg;
+      } else if (type === 'ERROR') {
+        alertBoxMsg.innerHTML = this.strings.ERR_PLEASE_TRY_LATER;
+      }
+
+      if (alertBox) this._elementShow(alertBox, alertBoxMsg);
+
+      return this;
+    }
+
+    /**
+     * The main toggling method
+     *
+     * @return  {Class}  Newsletter
+     */
+    _elementsReset() {
+      let targets = this._el.querySelectorAll(this.selectors.ALERTS);
+
+      for (let i = 0; i < targets.length; i++)
+        if (!targets[i].classList.contains(this.classes.HIDDEN)) {
+          targets[i].classList.add(this.classes.HIDDEN);
+
+          this.classes.ANIMATE.split(' ').forEach((item) =>
+            targets[i].classList.remove(item)
+          );
+
+          // Screen Readers
+          targets[i].setAttribute('aria-hidden', 'true');
+          targets[i].querySelector(this.selectors.ALERT_TEXT)
+            .setAttribute('aria-live', 'off');
+        }
+
+      return this;
+    }
+
+    /**
+     * The main toggling method
+     *
+     * @param   {object}  target   Message container
+     * @param   {object}  content  Content that changes dynamically that should
+     *                             be announced to screen readers.
+     *
+     * @return  {Class}            Newsletter
+     */
+    _elementShow(target, content) {
+      target.classList.toggle(this.classes.HIDDEN);
+
+      this.classes.ANIMATE.split(' ').forEach((item) =>
+        target.classList.toggle(item)
+      );
+
+      // Screen Readers
+      target.setAttribute('aria-hidden', 'true');
+
+      if (content) {
+        content.setAttribute('aria-live', 'polite');
+      }
+
+      return this;
+    }
+
+    /**
+     * A proxy function for retrieving the proper key
+     *
+     * @param   {string}  key  The reference for the stored keys.
+     *
+     * @return  {string}       The desired key.
+     */
+    _key(key) {
+      return this.keys[key];
+    }
+  }
 
   /** @type  {Object}  API data keys */
   Newsletter.keys = {
@@ -720,367 +728,369 @@ var WorkingNyc = (function () {
    *
    * @class
    */
-  var Toggle = function Toggle(s) {
-    var this$1 = this;
+  class Toggle {
+    /**
+     * @constructor
+     *
+     * @param  {Object}  s  Settings for this Toggle instance
+     *
+     * @return {Object}     The class
+     */
+    constructor(s) {
+      // Create an object to store existing toggle listeners (if it doesn't exist)
+      if (!window.hasOwnProperty(Toggle.callback))
+        window[Toggle.callback] = [];
 
-    // Create an object to store existing toggle listeners (if it doesn't exist)
-    if (!window.hasOwnProperty(Toggle.callback))
-      { window[Toggle.callback] = []; }
+      s = (!s) ? {} : s;
 
-    s = (!s) ? {} : s;
+      this.settings = {
+        selector: (s.selector) ? s.selector : Toggle.selector,
+        namespace: (s.namespace) ? s.namespace : Toggle.namespace,
+        inactiveClass: (s.inactiveClass) ? s.inactiveClass : Toggle.inactiveClass,
+        activeClass: (s.activeClass) ? s.activeClass : Toggle.activeClass,
+        before: (s.before) ? s.before : false,
+        after: (s.after) ? s.after : false,
+        valid: (s.valid) ? s.valid : false,
+        focusable: (s.hasOwnProperty('focusable')) ? s.focusable : true,
+        jump: (s.hasOwnProperty('jump')) ? s.jump : true
+      };
 
-    this.settings = {
-      selector: (s.selector) ? s.selector : Toggle.selector,
-      namespace: (s.namespace) ? s.namespace : Toggle.namespace,
-      inactiveClass: (s.inactiveClass) ? s.inactiveClass : Toggle.inactiveClass,
-      activeClass: (s.activeClass) ? s.activeClass : Toggle.activeClass,
-      before: (s.before) ? s.before : false,
-      after: (s.after) ? s.after : false,
-      valid: (s.valid) ? s.valid : false,
-      focusable: (s.hasOwnProperty('focusable')) ? s.focusable : true,
-      jump: (s.hasOwnProperty('jump')) ? s.jump : true
-    };
+      // Store the element for potential use in callbacks
+      this.element = (s.element) ? s.element : false;
 
-    // Store the element for potential use in callbacks
-    this.element = (s.element) ? s.element : false;
-
-    if (this.element) {
-      this.element.addEventListener('click', function (event) {
-        this$1.toggle(event);
-      });
-    } else {
-      // If there isn't an existing instantiated toggle, add the event listener.
-      if (!window[Toggle.callback].hasOwnProperty(this.settings.selector)) {
-        var body = document.querySelector('body');
-
-        for (var i = 0; i < Toggle.events.length; i++) {
-          var tggleEvent = Toggle.events[i];
-
-          body.addEventListener(tggleEvent, function (event) {
-            if (!event.target.matches(this$1.settings.selector))
-              { return; }
-
-            this$1.event = event;
-
-            var type = event.type.toUpperCase();
-
-            if (
-              this$1[event.type] &&
-              Toggle.elements[type] &&
-              Toggle.elements[type].includes(event.target.tagName)
-            ) { this$1[event.type](event); }
-          });
-        }
-      }
-    }
-
-    // Record that a toggle using this selector has been instantiated.
-    // This prevents double toggling.
-    window[Toggle.callback][this.settings.selector] = true;
-
-    return this;
-  };
-
-  /**
-   * Click event handler
-   *
-   * @param{Event}eventThe original click event
-   */
-  Toggle.prototype.click = function click (event) {
-    this.toggle(event);
-  };
-
-  /**
-   * Input/select/textarea change event handler. Checks to see if the
-   * event.target is valid then toggles accordingly.
-   *
-   * @param{Event}eventThe original input change event
-   */
-  Toggle.prototype.change = function change (event) {
-    var valid = event.target.checkValidity();
-
-    if (valid && !this.isActive(event.target)) {
-      this.toggle(event); // show
-    } else if (!valid && this.isActive(event.target)) {
-      this.toggle(event); // hide
-    }
-  };
-
-  /**
-   * Check to see if the toggle is active
-   *
-   * @param{Object}elementThe toggle element (trigger)
-   */
-  Toggle.prototype.isActive = function isActive (element) {
-    var active = false;
-
-    if (this.settings.activeClass) {
-      active = element.classList.contains(this.settings.activeClass);
-    }
-
-    // if () {
-      // Toggle.elementAriaRoles
-      // TODO: Add catch to see if element aria roles are toggled
-    // }
-
-    // if () {
-      // Toggle.targetAriaRoles
-      // TODO: Add catch to see if target aria roles are toggled
-    // }
-
-    return active;
-  };
-
-  /**
-   * Get the target of the toggle element (trigger)
-   *
-   * @param{Object}elThe toggle element (trigger)
-   */
-  Toggle.prototype.getTarget = function getTarget (element) {
-    var target = false;
-
-    /** Anchor Links */
-    target = (element.hasAttribute('href')) ?
-      document.querySelector(element.getAttribute('href')) : target;
-
-    /** Toggle Controls */
-    target = (element.hasAttribute('aria-controls')) ?
-      document.querySelector(("#" + (element.getAttribute('aria-controls')))) : target;
-
-    return target;
-  };
-
-  /**
-   * The toggle event proxy for getting and setting the element/s and target
-   *
-   * @param{Object}eventThe main click event
-   *
-   * @return {Object}       The Toggle instance
-   */
-  Toggle.prototype.toggle = function toggle (event) {
-      var this$1 = this;
-
-    var element = event.target;
-    var target = false;
-    var focusable = [];
-
-    event.preventDefault();
-
-    target = this.getTarget(element);
-
-    /** Focusable Children */
-    focusable = (target) ?
-      target.querySelectorAll(Toggle.elFocusable.join(', ')) : focusable;
-
-    /** Main Functionality */
-    if (!target) { return this; }
-    this.elementToggle(element, target, focusable);
-
-    /** Undo */
-    if (element.dataset[((this.settings.namespace) + "Undo")]) {
-      var undo = document.querySelector(
-        element.dataset[((this.settings.namespace) + "Undo")]
-      );
-
-      undo.addEventListener('click', function (event) {
-        event.preventDefault();
-        this$1.elementToggle(element, target);
-        undo.removeEventListener('click');
-      });
-    }
-
-    return this;
-  };
-
-  /**
-   * Get other toggles that might control the same element
-   *
-   * @param {Object}  elementThe toggling element
-   *
-   * @return{NodeList}         List of other toggling elements
-   *                             that control the target
-   */
-  Toggle.prototype.getOthers = function getOthers (element) {
-    var selector = false;
-
-    if (element.hasAttribute('href')) {
-      selector = "[href=\"" + (element.getAttribute('href')) + "\"]";
-    } else if (element.hasAttribute('aria-controls')) {
-      selector = "[aria-controls=\"" + (element.getAttribute('aria-controls')) + "\"]";
-    }
-
-    return (selector) ? document.querySelectorAll(selector) : [];
-  };
-
-  /**
-   * Hide the Toggle Target's focusable children from focus.
-   * If an element has the data-attribute `data-toggle-tabindex`
-   * it will use that as the default tab index of the element.
-   *
-   * @param {NodeList}elementsList of focusable elements
-   *
-   * @return{Object}            The Toggle Instance
-   */
-  Toggle.prototype.toggleFocusable = function toggleFocusable (elements) {
-    elements.forEach(function (element) {
-      var tabindex = element.getAttribute('tabindex');
-
-      if (tabindex === '-1') {
-        var dataDefault = element
-          .getAttribute(("data-" + (Toggle.namespace) + "-tabindex"));
-
-        if (dataDefault) {
-          element.setAttribute('tabindex', dataDefault);
-        } else {
-          element.removeAttribute('tabindex');
-        }
+      if (this.element) {
+        this.element.addEventListener('click', (event) => {
+          this.toggle(event);
+        });
       } else {
-        element.setAttribute('tabindex', '-1');
+        // If there isn't an existing instantiated toggle, add the event listener.
+        if (!window[Toggle.callback].hasOwnProperty(this.settings.selector)) {
+          let body = document.querySelector('body');
+
+          for (let i = 0; i < Toggle.events.length; i++) {
+            let tggleEvent = Toggle.events[i];
+
+            body.addEventListener(tggleEvent, event => {
+              if (!event.target.matches(this.settings.selector))
+                return;
+
+              this.event = event;
+
+              let type = event.type.toUpperCase();
+
+              if (
+                this[event.type] &&
+                Toggle.elements[type] &&
+                Toggle.elements[type].includes(event.target.tagName)
+              ) this[event.type](event);
+            });
+          }
+        }
       }
-    });
 
-    return this;
-  };
+      // Record that a toggle using this selector has been instantiated.
+      // This prevents double toggling.
+      window[Toggle.callback][this.settings.selector] = true;
 
-  /**
-   * Jumps to Element visibly and shifts focus
-   * to the element by setting the tabindex
-   *
-   * @param {Object}elementThe Toggling Element
-   * @param {Object}target The Target Element
-   *
-   * @return{Object}         The Toggle instance
-   */
-  Toggle.prototype.jumpTo = function jumpTo (element, target) {
-    // Reset the history state. This will clear out
-    // the hash when the target is toggled closed
-    history.pushState('', '',
-      window.location.pathname + window.location.search);
-
-    // Focus if active
-    if (target.classList.contains(this.settings.activeClass)) {
-      window.location.hash = element.getAttribute('href');
-
-      target.setAttribute('tabindex', '0');
-      target.focus({preventScroll: true});
-    } else {
-      target.removeAttribute('tabindex');
+      return this;
     }
 
-    return this;
-  };
-
-  /**
-   * The main toggling method for attributes
-   *
-   * @param{Object}  element  The Toggle element
-   * @param{Object}  target   The Target element to toggle active/hidden
-   * @param{NodeList}focusableAny focusable children in the target
-   *
-   * @return {Object}             The Toggle instance
-   */
-  Toggle.prototype.elementToggle = function elementToggle (element, target, focusable) {
-      var this$1 = this;
-      if ( focusable === void 0 ) focusable = [];
-
-    var i = 0;
-    var attr = '';
-    var value = '';
+    /**
+     * Click event handler
+     *
+     * @param  {Event}  event  The original click event
+     */
+    click(event) {
+      this.toggle(event);
+    }
 
     /**
-     * Store elements for potential use in callbacks
+     * Input/select/textarea change event handler. Checks to see if the
+     * event.target is valid then toggles accordingly.
+     *
+     * @param  {Event}  event  The original input change event
      */
+    change(event) {
+      let valid = event.target.checkValidity();
 
-    this.element = element;
-    this.target = target;
-    this.others = this.getOthers(element);
-    this.focusable = focusable;
+      if (valid && !this.isActive(event.target)) {
+        this.toggle(event); // show
+      } else if (!valid && this.isActive(event.target)) {
+        this.toggle(event); // hide
+      }
+    }
 
     /**
-     * Validity method property that will cancel the toggle if it returns false
+     * Check to see if the toggle is active
+     *
+     * @param  {Object}  element  The toggle element (trigger)
      */
+    isActive(element) {
+      let active = false;
 
-    if (this.settings.valid && !this.settings.valid(this))
-      { return this; }
+      if (this.settings.activeClass) {
+        active = element.classList.contains(this.settings.activeClass);
+      }
+
+      // if () {
+        // Toggle.elementAriaRoles
+        // TODO: Add catch to see if element aria roles are toggled
+      // }
+
+      // if () {
+        // Toggle.targetAriaRoles
+        // TODO: Add catch to see if target aria roles are toggled
+      // }
+
+      return active;
+    }
 
     /**
-     * Toggling before hook
+     * Get the target of the toggle element (trigger)
+     *
+     * @param  {Object}  el  The toggle element (trigger)
      */
+    getTarget(element) {
+      let target = false;
 
-    if (this.settings.before)
-      { this.settings.before(this); }
+      /** Anchor Links */
+      target = (element.hasAttribute('href')) ?
+        document.querySelector(element.getAttribute('href')) : target;
+
+      /** Toggle Controls */
+      target = (element.hasAttribute('aria-controls')) ?
+        document.querySelector(`#${element.getAttribute('aria-controls')}`) : target;
+
+      return target;
+    }
 
     /**
-     * Toggle Element and Target classes
+     * The toggle event proxy for getting and setting the element/s and target
+     *
+     * @param  {Object}  event  The main click event
+     *
+     * @return {Object}         The Toggle instance
      */
+    toggle(event) {
+      let element = event.target;
+      let target = false;
+      let focusable = [];
 
-    if (this.settings.activeClass) {
-      this.element.classList.toggle(this.settings.activeClass);
-      this.target.classList.toggle(this.settings.activeClass);
+      event.preventDefault();
 
-      // If there are other toggles that control the same element
-      this.others.forEach(function (other) {
-        if (other !== this$1.element)
-          { other.classList.toggle(this$1.settings.activeClass); }
+      target = this.getTarget(element);
+
+      /** Focusable Children */
+      focusable = (target) ?
+        target.querySelectorAll(Toggle.elFocusable.join(', ')) : focusable;
+
+      /** Main Functionality */
+      if (!target) return this;
+      this.elementToggle(element, target, focusable);
+
+      /** Undo */
+      if (element.dataset[`${this.settings.namespace}Undo`]) {
+        const undo = document.querySelector(
+          element.dataset[`${this.settings.namespace}Undo`]
+        );
+
+        undo.addEventListener('click', (event) => {
+          event.preventDefault();
+          this.elementToggle(element, target);
+          undo.removeEventListener('click');
+        });
+      }
+
+      return this;
+    }
+
+    /**
+     * Get other toggles that might control the same element
+     *
+     * @param   {Object}    element  The toggling element
+     *
+     * @return  {NodeList}           List of other toggling elements
+     *                               that control the target
+     */
+    getOthers(element) {
+      let selector = false;
+
+      if (element.hasAttribute('href')) {
+        selector = `[href="${element.getAttribute('href')}"]`;
+      } else if (element.hasAttribute('aria-controls')) {
+        selector = `[aria-controls="${element.getAttribute('aria-controls')}"]`;
+      }
+
+      return (selector) ? document.querySelectorAll(selector) : [];
+    }
+
+    /**
+     * Hide the Toggle Target's focusable children from focus.
+     * If an element has the data-attribute `data-toggle-tabindex`
+     * it will use that as the default tab index of the element.
+     *
+     * @param   {NodeList}  elements  List of focusable elements
+     *
+     * @return  {Object}              The Toggle Instance
+     */
+    toggleFocusable(elements) {
+      elements.forEach(element => {
+        let tabindex = element.getAttribute('tabindex');
+
+        if (tabindex === '-1') {
+          let dataDefault = element
+            .getAttribute(`data-${Toggle.namespace}-tabindex`);
+
+          if (dataDefault) {
+            element.setAttribute('tabindex', dataDefault);
+          } else {
+            element.removeAttribute('tabindex');
+          }
+        } else {
+          element.setAttribute('tabindex', '-1');
+        }
       });
-    }
 
-    if (this.settings.inactiveClass)
-      { target.classList.toggle(this.settings.inactiveClass); }
-
-    /**
-     * Target Element Aria Attributes
-     */
-
-    for (i = 0; i < Toggle.targetAriaRoles.length; i++) {
-      attr = Toggle.targetAriaRoles[i];
-      value = this.target.getAttribute(attr);
-
-      if (value != '' && value)
-        { this.target.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
+      return this;
     }
 
     /**
-     * Toggle the target's focusable children tabindex
+     * Jumps to Element visibly and shifts focus
+     * to the element by setting the tabindex
+     *
+     * @param   {Object}  element  The Toggling Element
+     * @param   {Object}  target   The Target Element
+     *
+     * @return  {Object}           The Toggle instance
      */
+    jumpTo(element, target) {
+      // Reset the history state. This will clear out
+      // the hash when the target is toggled closed
+      history.pushState('', '',
+        window.location.pathname + window.location.search);
 
-    if (this.settings.focusable)
-      { this.toggleFocusable(this.focusable); }
+      // Focus if active
+      if (target.classList.contains(this.settings.activeClass)) {
+        window.location.hash = element.getAttribute('href');
 
-    /**
-     * Jump to Target Element if Toggle Element is an anchor link
-     */
+        target.setAttribute('tabindex', '0');
+        target.focus({preventScroll: true});
+      } else {
+        target.removeAttribute('tabindex');
+      }
 
-    if (this.settings.jump && this.element.hasAttribute('href'))
-      { this.jumpTo(this.element, this.target); }
-
-    /**
-     * Toggle Element (including multi toggles) Aria Attributes
-     */
-
-    for (i = 0; i < Toggle.elAriaRoles.length; i++) {
-      attr = Toggle.elAriaRoles[i];
-      value = this.element.getAttribute(attr);
-
-      if (value != '' && value)
-        { this.element.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
-
-      // If there are other toggles that control the same element
-      this.others.forEach(function (other) {
-        if (other !== this$1.element && other.getAttribute(attr))
-          { other.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
-      });
+      return this;
     }
 
     /**
-     * Toggling complete hook
+     * The main toggling method for attributes
+     *
+     * @param  {Object}    element    The Toggle element
+     * @param  {Object}    target     The Target element to toggle active/hidden
+     * @param  {NodeList}  focusable  Any focusable children in the target
+     *
+     * @return {Object}               The Toggle instance
      */
+    elementToggle(element, target, focusable = []) {
+      let i = 0;
+      let attr = '';
+      let value = '';
 
-    if (this.settings.after)
-      { this.settings.after(this); }
+      /**
+       * Store elements for potential use in callbacks
+       */
 
-    return this;
-  };
+      this.element = element;
+      this.target = target;
+      this.others = this.getOthers(element);
+      this.focusable = focusable;
+
+      /**
+       * Validity method property that will cancel the toggle if it returns false
+       */
+
+      if (this.settings.valid && !this.settings.valid(this))
+        return this;
+
+      /**
+       * Toggling before hook
+       */
+
+      if (this.settings.before)
+        this.settings.before(this);
+
+      /**
+       * Toggle Element and Target classes
+       */
+
+      if (this.settings.activeClass) {
+        this.element.classList.toggle(this.settings.activeClass);
+        this.target.classList.toggle(this.settings.activeClass);
+
+        // If there are other toggles that control the same element
+        this.others.forEach(other => {
+          if (other !== this.element)
+            other.classList.toggle(this.settings.activeClass);
+        });
+      }
+
+      if (this.settings.inactiveClass)
+        target.classList.toggle(this.settings.inactiveClass);
+
+      /**
+       * Target Element Aria Attributes
+       */
+
+      for (i = 0; i < Toggle.targetAriaRoles.length; i++) {
+        attr = Toggle.targetAriaRoles[i];
+        value = this.target.getAttribute(attr);
+
+        if (value != '' && value)
+          this.target.setAttribute(attr, (value === 'true') ? 'false' : 'true');
+      }
+
+      /**
+       * Toggle the target's focusable children tabindex
+       */
+
+      if (this.settings.focusable)
+        this.toggleFocusable(this.focusable);
+
+      /**
+       * Jump to Target Element if Toggle Element is an anchor link
+       */
+
+      if (this.settings.jump && this.element.hasAttribute('href'))
+        this.jumpTo(this.element, this.target);
+
+      /**
+       * Toggle Element (including multi toggles) Aria Attributes
+       */
+
+      for (i = 0; i < Toggle.elAriaRoles.length; i++) {
+        attr = Toggle.elAriaRoles[i];
+        value = this.element.getAttribute(attr);
+
+        if (value != '' && value)
+          this.element.setAttribute(attr, (value === 'true') ? 'false' : 'true');
+
+        // If there are other toggles that control the same element
+        this.others.forEach((other) => {
+          if (other !== this.element && other.getAttribute(attr))
+            other.setAttribute(attr, (value === 'true') ? 'false' : 'true');
+        });
+      }
+
+      /**
+       * Toggling complete hook
+       */
+
+      if (this.settings.after)
+        this.settings.after(this);
+
+      return this;
+    }
+  }
 
   /** @type  {String}  The main selector to add the toggling function to */
   Toggle.selector = '[data-js*="toggle"]';
@@ -1122,165 +1132,169 @@ var WorkingNyc = (function () {
   /**
    * Tracking bus for Google analytics and Webtrends.
    */
-  var Track = function Track(s) {
-    var this$1 = this;
+  class Track {
+    constructor(s) {
+      const body = document.querySelector('body');
 
-    var body = document.querySelector('body');
+      s = (!s) ? {} : s;
 
-    s = (!s) ? {} : s;
+      this._settings = {
+        selector: (s.selector) ? s.selector : Track.selector,
+      };
 
-    this._settings = {
-      selector: (s.selector) ? s.selector : Track.selector,
-    };
+      this.desinations = Track.destinations;
 
-    this.desinations = Track.destinations;
+      body.addEventListener('click', (event) => {
+        if (!event.target.matches(this._settings.selector))
+          return;
 
-    body.addEventListener('click', function (event) {
-      if (!event.target.matches(this$1._settings.selector))
-        { return; }
+        let key = event.target.dataset.trackKey;
+        let data = JSON.parse(event.target.dataset.trackData);
 
-      var key = event.target.dataset.trackKey;
-      var data = JSON.parse(event.target.dataset.trackData);
-
-      this$1.track(key, data);
-    });
-
-    return this;
-  };
-
-  /**
-   * Tracking function wrapper
-   *
-   * @param{String}    key The key or event of the data
-   * @param{Collection}dataThe data to track
-   *
-   * @return {Object}          The final data object
-   */
-  Track.prototype.track = function track (key, data) {
-    // Set the path name based on the location
-    var d = data.map(function (el) {
-        if (el.hasOwnProperty(Track.key))
-          { el[Track.key] = (window.location.pathname) + "/" + (el[Track.key]); }
-        return el;
+        this.track(key, data);
       });
 
-    var wt = this.webtrends(key, d);
-    var ga = this.gtag(key, d);
-    /* eslint-enable no-console */
+      return this;
+    }
 
-    return d;
-  };
-  /**
-   * Data bus for tracking views in Webtrends and Google Analytics
-   *
-   * @param{String}    app The name of the Single Page Application to track
-   * @param{String}    key The key or event of the data
-   * @param{Collection}dataThe data to track
-   */
-  Track.prototype.view = function view (app, key, data) {
-    var wt = this.webtrends(key, data);
-    var ga = this.gtagView(app, key);
-    /* eslint-enable no-console */
-  };
-  /**
-   * Push Events to Webtrends
-   *
-   * @param{String}    key The key or event of the data
-   * @param{Collection}dataThe data to track
-   */
-  Track.prototype.webtrends = function webtrends (key, data) {
-    if (
-      typeof Webtrends === 'undefined' ||
-      typeof data === 'undefined' ||
-      !this.desinations.includes('webtrends')
-    )
-      { return false; }
+    /**
+     * Tracking function wrapper
+     *
+     * @param  {String}      key   The key or event of the data
+     * @param  {Collection}  data  The data to track
+     *
+     * @return {Object}            The final data object
+     */
+    track(key, data) {
+      // Set the path name based on the location
+      const d = data.map(el => {
+          if (el.hasOwnProperty(Track.key))
+            el[Track.key] = `${window.location.pathname}/${el[Track.key]}`;
+          return el;
+        });
 
-    var event = [{
-      'WT.ti': key
-    }];
+      let wt = this.webtrends(key, d);
+      let ga = this.gtag(key, d);
+      /* eslint-enable no-console */
 
-    if (data[0] && data[0].hasOwnProperty(Track.key))
-      { event.push({
-        'DCS.dcsuri': data[0][Track.key]
-      }); }
-    else
-      { Object.assign(event, data); }
-
-    // Format data for Webtrends
-    var wtd = {argsa: event.flatMap(function (e) {
-      return Object.keys(e).flatMap(function (k) { return [k, e[k]]; });
-    })};
-
-    // If 'action' is used as the key (for gtag.js), switch it to Webtrends
-    var action = data.argsa.indexOf('action');
-
-    if (action) { data.argsa[action] = 'DCS.dcsuri'; }
-
-    // Webtrends doesn't send the page view for MultiTrack, add path to url
-    var dcsuri = data.argsa.indexOf('DCS.dcsuri');
-
-    if (dcsuri)
-      { data.argsa[dcsuri + 1] = window.location.pathname + data.argsa[dcsuri + 1]; }
-
-    /* eslint-disable no-undef */
-    if (typeof Webtrends !== 'undefined')
-      { Webtrends.multiTrack(wtd); }
-    /* eslint-disable no-undef */
-
-    return ['Webtrends', wtd];
-  };
-  /**
-   * Push Click Events to Google Analytics
-   *
-   * @param{String}    key The key or event of the data
-   * @param{Collection}dataThe data to track
-   */
-  Track.prototype.gtag = function gtag$1 (key, data) {
-    if (
-      typeof gtag === 'undefined' ||
-      typeof data === 'undefined' ||
-      !this.desinations.includes('gtag')
-    )
-      { return false; }
-
-    var uri = data.find(function (element) { return element.hasOwnProperty(Track.key); });
-
-    var event = {
-      'event_category': key
+      return d;
     };
 
-    /* eslint-disable no-undef */
-    gtag(Track.key, uri[Track.key], event);
-    /* eslint-enable no-undef */
-
-    return ['gtag', Track.key, uri[Track.key], event];
-  };
-  /**
-   * Push Screen View Events to Google Analytics
-   *
-   * @param{String}appThe name of the application
-   * @param{String}keyThe key or event of the data
-   */
-  Track.prototype.gtagView = function gtagView (app, key) {
-    if (
-      typeof gtag === 'undefined' ||
-      typeof data === 'undefined' ||
-      !this.desinations.includes('gtag')
-    )
-      { return false; }
-
-    var view = {
-      app_name: app,
-      screen_name: key
+    /**
+     * Data bus for tracking views in Webtrends and Google Analytics
+     *
+     * @param  {String}      app   The name of the Single Page Application to track
+     * @param  {String}      key   The key or event of the data
+     * @param  {Collection}  data  The data to track
+     */
+    view(app, key, data) {
+      let wt = this.webtrends(key, data);
+      let ga = this.gtagView(app, key);
+      /* eslint-enable no-console */
     };
 
-    /* eslint-disable no-undef */
-    gtag('event', 'screen_view', view);
-    /* eslint-enable no-undef */
+    /**
+     * Push Events to Webtrends
+     *
+     * @param  {String}      key   The key or event of the data
+     * @param  {Collection}  data  The data to track
+     */
+    webtrends(key, data) {
+      if (
+        typeof Webtrends === 'undefined' ||
+        typeof data === 'undefined' ||
+        !this.desinations.includes('webtrends')
+      )
+        return false;
 
-    return ['gtag', Track.key, 'screen_view', view];
-  };
+      let event = [{
+        'WT.ti': key
+      }];
+
+      if (data[0] && data[0].hasOwnProperty(Track.key))
+        event.push({
+          'DCS.dcsuri': data[0][Track.key]
+        });
+      else
+        Object.assign(event, data);
+
+      // Format data for Webtrends
+      let wtd = {argsa: event.flatMap(e => {
+        return Object.keys(e).flatMap(k => [k, e[k]]);
+      })};
+
+      // If 'action' is used as the key (for gtag.js), switch it to Webtrends
+      let action = data.argsa.indexOf('action');
+
+      if (action) data.argsa[action] = 'DCS.dcsuri';
+
+      // Webtrends doesn't send the page view for MultiTrack, add path to url
+      let dcsuri = data.argsa.indexOf('DCS.dcsuri');
+
+      if (dcsuri)
+        data.argsa[dcsuri + 1] = window.location.pathname + data.argsa[dcsuri + 1];
+
+      /* eslint-disable no-undef */
+      if (typeof Webtrends !== 'undefined')
+        Webtrends.multiTrack(wtd);
+      /* eslint-disable no-undef */
+
+      return ['Webtrends', wtd];
+    };
+
+    /**
+     * Push Click Events to Google Analytics
+     *
+     * @param  {String}      key   The key or event of the data
+     * @param  {Collection}  data  The data to track
+     */
+    gtag(key, data) {
+      if (
+        typeof gtag === 'undefined' ||
+        typeof data === 'undefined' ||
+        !this.desinations.includes('gtag')
+      )
+        return false;
+
+      let uri = data.find((element) => element.hasOwnProperty(Track.key));
+
+      let event = {
+        'event_category': key
+      };
+
+      /* eslint-disable no-undef */
+      gtag(Track.key, uri[Track.key], event);
+      /* eslint-enable no-undef */
+
+      return ['gtag', Track.key, uri[Track.key], event];
+    };
+
+    /**
+     * Push Screen View Events to Google Analytics
+     *
+     * @param  {String}  app  The name of the application
+     * @param  {String}  key  The key or event of the data
+     */
+    gtagView(app, key) {
+      if (
+        typeof gtag === 'undefined' ||
+        typeof data === 'undefined' ||
+        !this.desinations.includes('gtag')
+      )
+        return false;
+
+      let view = {
+        app_name: app,
+        screen_name: key
+      };
+
+      /* eslint-disable no-undef */
+      gtag('event', 'screen_view', view);
+      /* eslint-enable no-undef */
+
+      return ['gtag', Track.key, 'screen_view', view];
+    };
+  }
 
   /** @type {String} The main selector to add the tracking function to */
   Track.selector = '[data-js*="track"]';
@@ -1297,92 +1311,93 @@ var WorkingNyc = (function () {
   /**
    * Uses the Share API to t
    */
-  var WebShare = function WebShare(s) {
-    var this$1 = this;
-    if ( s === void 0 ) s = {};
+  class WebShare {
+    /**
+     * @constructor
+     */
+    constructor(s = {}) {
+      this.selector = (s.selector) ? s.selector : WebShare.selector;
 
-    this.selector = (s.selector) ? s.selector : WebShare.selector;
+      this.callback = (s.callback) ? s.callback : WebShare.callback;
 
-    this.callback = (s.callback) ? s.callback : WebShare.callback;
+      this.fallback = (s.fallback) ? s.fallback : WebShare.fallback;
 
-    this.fallback = (s.fallback) ? s.fallback : WebShare.fallback;
+      if (navigator.share) {
+        // Remove fallback aria toggling attributes
+        document.querySelectorAll(this.selector).forEach(item => {
+          item.removeAttribute('aria-controls');
+          item.removeAttribute('aria-expanded');
+        });
 
-    if (navigator.share) {
-      // Remove fallback aria toggling attributes
-      document.querySelectorAll(this.selector).forEach(function (item) {
-        item.removeAttribute('aria-controls');
-        item.removeAttribute('aria-expanded');
-      });
+        // Add event listener for the share click
+        document.querySelector('body').addEventListener('click', event => {
+          if (!event.target.matches(this.selector))
+            return;
 
-      // Add event listener for the share click
-      document.querySelector('body').addEventListener('click', function (event) {
-        if (!event.target.matches(this$1.selector))
-          { return; }
+          this.element = event.target;
 
-        this$1.element = event.target;
+          this.data = JSON.parse(this.element.dataset.webShare);
 
-        this$1.data = JSON.parse(this$1.element.dataset.webShare);
+          this.share(this.data);
+        });
+      } else
+        this.fallback(); // Execute the fallback
 
-        this$1.share(this$1.data);
-      });
-    } else
-      { this.fallback(); } // Execute the fallback
+      return this;
+    }
 
-    return this;
-  };
-
-  /**
-   * Web Share API handler
-   *
-   * @param {Object}dataAn object containing title, url, and text.
-   *
-   * @return{Promise}     The response of the .share() method.
-   */
-  WebShare.prototype.share = function share (data) {
-      var this$1 = this;
-      if ( data === void 0 ) data = {};
-
-    return navigator.share(data)
-      .then(function (res) {
-        this$1.callback(data);
-      }).catch(function (err) {
-      });
-  };
+    /**
+     * Web Share API handler
+     *
+     * @param   {Object}  data  An object containing title, url, and text.
+     *
+     * @return  {Promise}       The response of the .share() method.
+     */
+    share(data = {}) {
+      return navigator.share(data)
+        .then(res => {
+          this.callback(data);
+        }).catch(err => {
+        });
+    }
+  }
 
   /** The html selector for the component */
   WebShare.selector = '[data-js*="web-share"]';
 
   /** Placeholder callback for a successful send */
-  WebShare.callback = function () {
+  WebShare.callback = () => {
   };
 
   /** Placeholder for the WebShare fallback */
-  WebShare.fallback = function () {
+  WebShare.fallback = () => {
   };
 
   /**
    * @class  Set the the css variable '--100vh' to the size of the Window's inner height.
    */
-  var WindowVh = function WindowVh(s) {
-    var this$1 = this;
-    if ( s === void 0 ) s = {};
+  class WindowVh {
+    /**
+     * @constructor  Set event listeners
+     */
+    constructor(s = {}) {
+      this.property = (s.property) ? s.property : WindowVh.property;
 
-    this.property = (s.property) ? s.property : WindowVh.property;
+      window.addEventListener('load', () => {this.set();});
 
-    window.addEventListener('load', function () {this$1.set();});
+      window.addEventListener('resize', () => {this.set();});
 
-    window.addEventListener('resize', function () {this$1.set();});
+      return this;
+    }
 
-    return this;
-  };
-
-  /**
-   * Sets the css variable property
-   */
-  WindowVh.prototype.set = function set () {
-    document.documentElement.style
-      .setProperty(this.property, ((window.innerHeight) + "px"));
-  };
+    /**
+     * Sets the css variable property
+     */
+    set() {
+      document.documentElement.style
+        .setProperty(this.property, `${window.innerHeight}px`);
+    }
+  }
 
   /** @param  {String}  property  The css variable string to set */
   WindowVh.property = '--100vh';
@@ -1391,19 +1406,24 @@ var WorkingNyc = (function () {
    * The Accordion module
    * @class
    */
+  class Accordion {
+    /**
+     * @constructor
+     * @return {object} The class
+     */
+    constructor() {
+      this._toggle = new Toggle({
+        selector: Accordion.selector
+      });
 
-  var Accordion = function Accordion() {
-    this._toggle = new Toggle({
-      selector: Accordion.selector
-    });
-    return this;
-  };
+      return this;
+    }
+  }
+
   /**
    * The dom selector for the module
    * @type {String}
    */
-
-
   Accordion.selector = '[data-js*="accordion"]';
 
   /**
@@ -1426,69 +1446,85 @@ var WorkingNyc = (function () {
    * @attr  class="hidden"      Hidden class
    * @attr  aria-hidden="true"  Declares target open/closed when toggled
    */
+  class Dropdown {
+    /**
+     * @constructor  Instantiates dropdown and toggle method
+     *
+     * @return  {Object}  The instantiated dropdown with properties
+     */
+    constructor() {
+      this.selector = Dropdown.selector;
 
-  var Dropdown = function Dropdown() {
-    var this$1 = this;
+      this.selectors = Dropdown.selectors;
 
-    this.selector = Dropdown.selector;
-    this.selectors = Dropdown.selectors;
-    this.classes = Dropdown.classes;
-    this.dataAttrs = Dropdown.dataAttrs;
-    this.toggle = new Toggle({
-      selector: this.selector,
-      after: function (toggle) {
-        var active = toggle.target.classList.contains(Toggle.activeClass); // Lock the body from scrolling if lock attribute is present
+      this.classes = Dropdown.classes;
 
-        if (active && toggle.element.dataset[this$1.dataAttrs.LOCK] === 'true') {
-          // Scroll to the top of the page
-          window.scroll(0, 0); // Prevent scrolling on the body
+      this.dataAttrs = Dropdown.dataAttrs;
 
-          document.querySelector('body').classList.add(this$1.classes.OVERFLOW); // When the last focusable item in the list looses focus loop to the first
+      this.toggle = new Toggle({
+        selector: this.selector,
+        after: (toggle) => {
+          let active = toggle.target.classList.contains(Toggle.activeClass);
 
-          toggle.focusable.item(toggle.focusable.length - 1).addEventListener('blur', function () {
-            toggle.focusable.item(0).focus();
-          });
-        } else {
-          // Remove if all other dropdown body locks are inactive
-          var locks = document.querySelectorAll([this$1.selector, this$1.selectors.locks, ("." + (Toggle.activeClass))].join(''));
+          // Lock the body from scrolling if lock attribute is present
+          if (active && toggle.element.dataset[this.dataAttrs.LOCK] === 'true') {
+            // Scroll to the top of the page
+            window.scroll(0, 0);
 
-          if (locks.length === 0) {
-            document.querySelector('body').classList.remove(this$1.classes.OVERFLOW);
+            // Prevent scrolling on the body
+            document.querySelector('body').classList.add(this.classes.OVERFLOW);
+
+            // When the last focusable item in the list looses focus loop to the first
+            toggle.focusable.item(toggle.focusable.length - 1)
+              .addEventListener('blur', () => {
+                toggle.focusable.item(0).focus();
+              });
+          } else {
+            // Remove if all other dropdown body locks are inactive
+            let locks = document.querySelectorAll([
+                this.selector,
+                this.selectors.locks,
+                `.${Toggle.activeClass}`
+              ].join(''));
+
+            if (locks.length === 0) {
+              document.querySelector('body').classList.remove(this.classes.OVERFLOW);
+            }
           }
-        } // Focus on the close or open button if present
 
+          // Focus on the close or open button if present
+          let id = `[aria-controls="${toggle.target.getAttribute('id')}"]`;
+          let close = document.querySelector(this.selectors.CLOSE + id);
+          let open = document.querySelector(this.selectors.OPEN + id);
 
-        var id = "[aria-controls=\"" + (toggle.target.getAttribute('id')) + "\"]";
-        var close = document.querySelector(this$1.selectors.CLOSE + id);
-        var open = document.querySelector(this$1.selectors.OPEN + id);
-
-        if (active && close) {
-          close.focus();
-        } else if (open) {
-          open.focus();
+          if (active && close) {
+            close.focus();
+          } else if (open) {
+            open.focus();
+          }
         }
-      }
-    });
-    return this;
-  };
+      });
+
+      return this;
+    }
+  }
+
   /** @type  {String}  Main DOM selector */
-
-
   Dropdown.selector = '[data-js*=\"dropdown\"]';
-  /** @type  {Object}  Additional selectors used by the script */
 
+  /** @type  {Object}  Additional selectors used by the script */
   Dropdown.selectors = {
     CLOSE: '[data-dropdown*="close"]',
     OPEN: '[data-dropdown*="open"]',
     LOCKS: '[data-dropdown-lock="true"]'
   };
-  /** @type  {Object}  Data attribute namespaces */
 
+  /** @type  {Object}  Data attribute namespaces */
   Dropdown.dataAttrs = {
     LOCK: 'dropdownLock'
   };
-  /** @type  {Object}  Various classes used by the script */
 
+  /** @type  {Object}  Various classes used by the script */
   Dropdown.classes = {
     OVERFLOW: 'overflow-hidden'
   };
@@ -1498,35 +1534,43 @@ var WorkingNyc = (function () {
    *
    * @class
    */
+  class MobileMenu {
+    /**
+     * @constructor
+     *
+     * @return  {object}  The class
+     */
+    constructor() {
+      this.selector = MobileMenu.selector;
 
-  var MobileMenu = function MobileMenu() {
-    var this$1 = this;
+      this.selectors = MobileMenu.selectors;
 
-    this.selector = MobileMenu.selector;
-    this.selectors = MobileMenu.selectors;
-    this.toggle = new Toggle({
-      selector: this.selector,
-      after: function (toggle) {
-        // Shift focus from the open to the close button in the Mobile Menu when toggled
-        if (toggle.target.classList.contains(Toggle.activeClass)) {
-          toggle.target.querySelector(this$1.selectors.CLOSE).focus(); // When the last focusable item in the list looses focus loop to the first
+      this.toggle = new Toggle({
+        selector: this.selector,
+        after: toggle => {
+          // Shift focus from the open to the close button in the Mobile Menu when toggled
+          if (toggle.target.classList.contains(Toggle.activeClass)) {
+            toggle.target.querySelector(this.selectors.CLOSE).focus();
 
-          toggle.focusable.item(toggle.focusable.length - 1).addEventListener('blur', function () {
-            toggle.focusable.item(0).focus();
-          });
-        } else {
-          document.querySelector(this$1.selectors.OPEN).focus();
+            // When the last focusable item in the list looses focus loop to the first
+            toggle.focusable.item(toggle.focusable.length - 1)
+              .addEventListener('blur', () => {
+                toggle.focusable.item(0).focus();
+              });
+          } else {
+            document.querySelector(this.selectors.OPEN).focus();
+          }
         }
-      }
-    });
-    return this;
-  };
+      });
+
+      return this;
+    }
+  }
+
   /** @type  {String}  The dom selector for the module */
-
-
   MobileMenu.selector = '[data-js*="mobile-menu"]';
-  /** @type  {Object}  Additional selectors used by the script */
 
+  /** @type  {Object}  Additional selectors used by the script */
   MobileMenu.selectors = {
     CLOSE: '[data-js-mobile-menu*="close"]',
     OPEN: '[data-js-mobile-menu*="open"]'
@@ -1537,28 +1581,35 @@ var WorkingNyc = (function () {
    *
    * @class
    */
+  class Search {
+    /**
+     * @constructor
+     *
+     * @return {object} The class
+     */
+    constructor() {
+      this._toggle = new Toggle({
+        selector: Search.selector,
+        after: (toggle) => {
+          let el = document.querySelector(Search.selector);
+          let input = document.querySelector(Search.selectors.input);
 
-  var Search = function Search() {
-    this._toggle = new Toggle({
-      selector: Search.selector,
-      after: function (toggle) {
-        var el = document.querySelector(Search.selector);
-        var input = document.querySelector(Search.selectors.input);
-
-        if (el.className.includes('active') && input) {
-          input.focus();
+          if (el.className.includes('active') && input) {
+            input.focus();
+          }
         }
-      }
-    });
-    return this;
-  };
+      });
+
+      return this;
+    }
+  }
+
   /**
    * The dom selector for the module
    * @type {String}
    */
-
-
   Search.selector = '[data-js*="search"]';
+
   Search.selectors = {
     input: '[data-js*="search__input"]'
   };
@@ -1566,228 +1617,217 @@ var WorkingNyc = (function () {
   /**
    * @class  Main pattern module
    */
-
-  var main = function main() {
-    new WindowVh();
-  };
-  /**
-   * An API for the Icons Utility
-   *
-   * @param {String}pathThe path of the icon file
-   *
-   * @return{Object}      Instance of Icons
-   */
-
-
-  main.prototype.icons = function icons (path) {
-      if ( path === void 0 ) path = 'svg/icons.svg';
-
-    return new Icons(path);
-  };
-  /**
-   * An API for the Toggle Utility
-   *
-   * @param {Object}settingsSettings for the Toggle Class
-   *
-   * @return{Object}          Instance of Toggle
-   */
-
-
-  main.prototype.toggle = function toggle (settings) {
-      if ( settings === void 0 ) settings = false;
-
-    return settings ? new Toggle(settings) : new Toggle();
-  };
-  /**
-   * API for validating a form.
-   *
-   * @param{String}  selectorA custom selector for a form
-   * @param{Function}submit  A custom event handler for a form
-   */
-
-
-  main.prototype.validate = function validate (selector, submit) {
-      if ( selector === void 0 ) selector = '[data-js="validate"]';
-      if ( submit === void 0 ) submit = false;
-
-    if (document.querySelector(selector)) {
-      var form = new Forms(document.querySelector(selector));
-      form.submit = submit ? submit : function (event) {
-        event.target.submit();
-      };
-      form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
-      form.watch();
+  class main {
+    /**
+     * @constructor  Modules to be executed on main pattern instantiation here
+     */
+    constructor() {
+      new WindowVh();
     }
-  };
-  /**
-   * Validates a form and builds a URL search query on the action based on data.
-   *
-   * @param{String}selectorA custom selector for a form
-   */
 
-
-  main.prototype.validateAndQuery = function validateAndQuery (selector) {
-      if ( selector === void 0 ) selector = '[data-js="validate-and-query"]';
-
-    var element = document.querySelector(selector);
-
-    if (element) {
-      var form = new Forms(element);
-
-      form.submit = function (event) {
-        var data = serialize(event.target, {
-          hash: true
-        });
-        window.location = (event.target.action) + "?" + Object.keys(data).map(function (k) { return (k + "=" + (encodeURI(data[k]))); }).join('&');
-      };
-
-      form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
-      form.watch();
+    /**
+     * An API for the Icons Utility
+     *
+     * @param   {String}  path  The path of the icon file
+     *
+     * @return  {Object}        Instance of Icons
+     */
+    icons(path = 'svg/icons.svg') {
+      return new Icons(path);
     }
-  };
-  /**
-   * An API for the Accordion Component
-   *
-   * @return{Object}Instance of Accordion
-   */
 
+    /**
+     * An API for the Toggle Utility
+     *
+     * @param   {Object}  settings  Settings for the Toggle Class
+     *
+     * @return  {Object}            Instance of Toggle
+     */
+    toggle(settings = false) {
+      return (settings) ? new Toggle(settings) : new Toggle();
+    }
 
-  main.prototype.accordion = function accordion () {
-    return new Accordion();
-  };
-  /**
-   * An API for the Dropdown Component
-   *
-   * @return{Object}Instance of Dropdown
-   */
+    /**
+     * API for validating a form.
+     *
+     * @param  {String}    selector  A custom selector for a form
+     * @param  {Function}  submit    A custom event handler for a form
+     */
+    validate(selector = '[data-js="validate"]', submit = false) {
+      if (document.querySelector(selector)) {
+        let form = new Forms(document.querySelector(selector));
 
+        form.submit = (submit) ? submit : (event) => {
+          event.target.submit();
+        };
 
-  main.prototype.dropdown = function dropdown () {
-    return new Dropdown();
-  };
-  /**
-   * An API for the Copy Utility
-   *
-   * @return{Object}Instance of Copy
-   */
+        form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
 
+        form.watch();
+      }
+    }
 
-  main.prototype.copy = function copy () {
-    return new Copy();
-  };
-  /**
-   * An API for the Track Object
-   *
-   * @return{Object}Instance of Track
-   */
+    /**
+     * Validates a form and builds a URL search query on the action based on data.
+     *
+     * @param  {String}  selector  A custom selector for a form
+     */
+    validateAndQuery(selector = '[data-js="validate-and-query"]') {
+      let element = document.querySelector(selector);
 
+      if (element) {
+        let form = new Forms(element);
 
-  main.prototype.track = function track () {
-    return new Track();
-  };
-  /**
-   * An API for the Newsletter Object
-   *
-   * @return{Object}Instance of Newsletter
-   */
+        form.submit = event => {
+          let data = serialize(event.target, {hash: true});
 
+          window.location = `${event.target.action}?` + Object.keys(data)
+            .map(k => `${k}=${encodeURI(data[k])}`).join('&');
+        };
 
-  main.prototype.newsletter = function newsletter (endpoint) {
-      if ( endpoint === void 0 ) endpoint = '';
+        form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
 
-    var element = document.querySelector(Newsletter.selector);
+        form.watch();
+      }
+    }
 
-    if (element) {
-      var newsletter = new Newsletter(element);
-      newsletter.form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+    /**
+     * An API for the Accordion Component
+     *
+     * @return  {Object}  Instance of Accordion
+     */
+    accordion() {
+      return new Accordion();
+    }
 
-      window[newsletter.callback] = function (data) {
-        data.response = true;
-        data.email = element.querySelector('input[name="EMAIL"]').value;
-        window.location = endpoint + "?" + Object.keys(data).map(function (k) { return (k + "=" + (encodeURI(data[k]))); }).join('&');
-      };
+    /**
+     * An API for the Dropdown Component
+     *
+     * @return  {Object}  Instance of Dropdown
+     */
+    dropdown() {
+      return new Dropdown();
+    }
+
+    /**
+     * An API for the Copy Utility
+     *
+     * @return  {Object}  Instance of Copy
+     */
+    copy() {
+      return new Copy();
+    }
+
+    /**
+     * An API for the Track Object
+     *
+     * @return  {Object}  Instance of Track
+     */
+    track() {
+      return new Track();
+    }
+
+    /**
+     * An API for the Newsletter Object
+     *
+     * @return  {Object}  Instance of Newsletter
+     */
+    newsletter(endpoint = '') {
+      let element = document.querySelector(Newsletter.selector);
+
+      if (element) {
+        let newsletter = new Newsletter(element);
+
+        newsletter.form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+
+        window[newsletter.callback] = data => {
+          data.response = true;
+
+          data.email = element.querySelector('input[name="EMAIL"]').value;
+
+          window.location = `${endpoint}?` + Object.keys(data)
+            .map(k => `${k}=${encodeURI(data[k])}`).join('&');
+        };
+
+        return newsletter;
+      }
+    }
+
+    /**
+     * An API for the Newsletter Object
+     *
+     * @return  {Object}  Instance of Newsletter
+     */
+    newsletterForm(element = document.querySelector('[data-js="newsletter-form"]')) {
+      let params = new URLSearchParams(window.location.search);
+      let response = params.get('response');
+      let newsletter = null;
+
+      if (element) {
+        newsletter = new Newsletter(element);
+        newsletter.form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+      }
+
+      if (response && newsletter) {
+        let email = params.get('email');
+        let input = element.querySelector('input[name="EMAIL"]');
+
+        input.value = email;
+
+        newsletter._data = {
+          'result': params.get('result'),
+          'msg': params.get('msg'),
+          'EMAIL': email
+        };
+
+        newsletter._callback(newsletter._data);
+      }
 
       return newsletter;
     }
-  };
-  /**
-   * An API for the Newsletter Object
-   *
-   * @return{Object}Instance of Newsletter
-   */
 
+    // /**
+    //  * An API for the TextController Object
+    //  *
+    //  * @return  {Object}  Instance of TextController
+    //  */
+    // textController(element = document.querySelector(TextController.selector)) {
+    //   return (element) ? new TextController(element) : null;
+    // }
 
-  main.prototype.newsletterForm = function newsletterForm (element) {
-      if ( element === void 0 ) element = document.querySelector('[data-js="newsletter-form"]');
-
-    var params = new URLSearchParams(window.location.search);
-    var response = params.get('response');
-    var newsletter = null;
-
-    if (element) {
-      newsletter = new Newsletter(element);
-      newsletter.form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+    /**
+     * An API for the Mobile Nav
+     *
+     * @return  {Object}  Instance of MobileMenu
+     */
+    mobileMenu() {
+      return new MobileMenu();
     }
 
-    if (response && newsletter) {
-      var email = params.get('email');
-      var input = element.querySelector('input[name="EMAIL"]');
-      input.value = email;
-      newsletter._data = {
-        'result': params.get('result'),
-        'msg': params.get('msg'),
-        'EMAIL': email
-      };
-
-      newsletter._callback(newsletter._data);
+    /**
+     * An API for the Search
+     *
+     * @return  {Object}  Instance of Search
+     */
+    search() {
+      return new Search();
     }
 
-    return newsletter;
-  }; // /**
-  //* An API for the TextController Object
-  //*
-  //* @return{Object}Instance of TextController
-  //*/
-  // textController(element = document.querySelector(TextController.selector)) {
-  // return (element) ? new TextController(element) : null;
-  // }
-
-  /**
-   * An API for the Mobile Nav
-   *
-   * @return{Object}Instance of MobileMenu
-   */
-
-
-  main.prototype.mobileMenu = function mobileMenu () {
-    return new MobileMenu();
-  };
-  /**
-   * An API for the Search
-   *
-   * @return{Object}Instance of Search
-   */
-
-
-  main.prototype.search = function search () {
-    return new Search();
-  };
-  /**
-   * An API for Web Share
-   *
-   * @return{Object}Instance of WebShare
-   */
-
-
-  main.prototype.webShare = function webShare () {
-    return new WebShare({
-      fallback: function () {
-        new Toggle({
-          selector: WebShare.selector
-        });
-      }
-    });
-  };
+    /**
+     * An API for Web Share
+     *
+     * @return  {Object}  Instance of WebShare
+     */
+    webShare() {
+      return new WebShare({
+        fallback: () => {
+          new Toggle({
+            selector: WebShare.selector
+          });
+        }
+      });
+    }
+  }
 
   return main;
 
