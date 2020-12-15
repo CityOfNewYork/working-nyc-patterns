@@ -143,6 +143,12 @@
   .c-card__header {
     background-color: transparent !important;
     border-bottom: 1px solid var(--color-scale-4);
+
+    padding-top: 0;
+  }
+
+  .c-card__body {
+    padding-bottom: 0;
   }
 
   .c-card__header,

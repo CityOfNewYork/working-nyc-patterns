@@ -24,9 +24,12 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   justify-content: $justify;
 }
 
-@mixin grid-gap($gaps: (dimensions.$spacing-base, dimensions.$spacing-base)) {
-  row-gap: list.nth($gaps, 1); // x
-  gap: list.nth($gaps, 2); // y
+@mixin grid-gap($gaps: (1, 1)) {
+  $row-gap: dimensions.$spacing-base * list.nth($gaps, 1);
+  $column-gap: dimensions.$spacing-base * list.nth($gaps, 2);
+
+  row-gap: $row-gap; // x
+  column-gap: $column-gap; // y
 }
 
 @mixin grid-template-columns($repeat) {
@@ -38,9 +41,8 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   @include grid-template-columns($count);
 
   @if $gutter {
-    $gaps: (dimensions.$spacing-base * $gutter, dimensions.$spacing-base * $gutter);
-
-    @include grid-gap($gaps);
+    // $gaps: (dimensions.$spacing-base * $gutter, dimensions.$spacing-base * $gutter);
+    @include grid-gap($gutter);
   }
 }
 
@@ -122,7 +124,7 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 }
 
 @mixin rows-gutter() {
-  @include grid(1, 1);
+  @include grid(1, (1, 1));
 }
 
 @mixin rows-gutter-selector($variant: '') {
@@ -132,35 +134,38 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   }
 }
 
+//
+
+@mixin column-selector($variant: '', $columns: 2, $gap: false) {
+  $columns-selector: 'two';
+  $gap-selector-long: '';
+  $gap-selector: '';
+
+  @if $columns == 3 {
+    $columns-selector: 'three';
+  } @else if $columns == 4 {
+    $columns-selector: 'four';
+  }
+
+  @if $gap {
+    $gap-selector-long: '-gutter-#{list.nth($gap, 1)}-#{list.nth($gap, 2)}';
+    $gap-selector: '-gap-#{list.nth($gap, 1)}-#{list.nth($gap, 2)}';
+  }
+
+  .#{$variant}layout-#{$columns-selector}-columns#{$gap-selector-long},
+  .#{$variant}layout-col-#{$columns}#{$gap-selector} {
+    @include grid($columns, $gap);
+  }
+}
+
 // 4
 
 @mixin four-columns() {
   @include grid(4);
 }
 
-@mixin four-columns-gutter($gutter: 1) {
+@mixin four-columns-gutter($gutter: (1, 1)) {
   @include grid(4, $gutter);
-}
-
-@mixin four-columns-selector($variant: '') {
-  .#{$variant}layout-four-columns,
-  .#{$variant}layout-col-4 {
-    @include four-columns();
-  }
-}
-
-@mixin four-columns-gutter-selector($variant: '') {
-  .#{$variant}layout-four-columns-gutter,
-  .#{$variant}layout-col-4-gap {
-    @include four-columns-gutter();
-  }
-}
-
-@mixin four-columns-gutter-2-selector($variant: '') {
-  .#{$variant}layout-four-columns-gutter,
-  .#{$variant}layout-col-4-gap-2 {
-    @include four-columns-gutter(2);
-  }
 }
 
 // 3
@@ -169,29 +174,8 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   @include grid(3);
 }
 
-@mixin three-columns-gutter($gutter: 1) {
+@mixin three-columns-gutter($gutter: (1, 1)) {
   @include grid(3, $gutter);
-}
-
-@mixin three-columns-selector($variant: '') {
-  .#{$variant}layout-three-columns,
-  .#{$variant}layout-col-3 {
-    @include three-columns();
-  }
-}
-
-@mixin three-columns-gutter-selector($variant: '') {
-  .#{$variant}layout-three-columns-gutter,
-  .#{$variant}layout-col-3-gap {
-    @include three-columns-gutter();
-  }
-}
-
-@mixin three-columns-gutter-2-selector($variant: '') {
-  .#{$variant}layout-three-columns-gutter-2,
-  .#{$variant}layout-col-3-gap-2 {
-    @include three-columns-gutter(2);
-  }
 }
 
 // 2
@@ -200,29 +184,8 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   @include grid(2);
 }
 
-@mixin two-columns-gutter($gutter: 1) {
+@mixin two-columns-gutter($gutter: (1, 1)) {
   @include grid(2, $gutter);
-}
-
-@mixin two-columns-selector($variant: '') {
-  .#{$variant}layout-two-columns,
-  .#{$variant}layout-col-2 {
-    @include two-columns();
-  }
-}
-
-@mixin two-columns-gutter-selector($variant: '') {
-  .#{$variant}layout-two-columns-gutter,
-  .#{$variant}layout-col-2-gap {
-    @include two-columns-gutter();
-  }
-}
-
-@mixin two-columns-gutter-2-selector($variant: '') {
-  .#{$variant}layout-two-columns-gutter-2,
-  .#{$variant}layout-col-2-gap-2 {
-    @include two-columns-gutter(2);
-  }
 }
 
 // Special Layouts

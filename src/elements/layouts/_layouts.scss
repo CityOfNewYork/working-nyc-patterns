@@ -33,17 +33,24 @@
   @include layouts.page-min-selector($variant);
   @include layouts.page-max-selector($variant);
   @include layouts.page-min-max-selector($variant);
-  @include layouts.four-columns-selector($variant);
-  @include layouts.four-columns-gutter-selector($variant);
-  @include layouts.four-columns-gutter-2-selector($variant);
-  @include layouts.three-columns-selector($variant);
-  @include layouts.three-columns-gutter-selector($variant);
-  @include layouts.three-columns-gutter-2-selector($variant);
-  @include layouts.two-columns-selector($variant);
-  @include layouts.two-columns-gutter-selector($variant);
-  @include layouts.two-columns-gutter-2-selector($variant);
+
+  // Columns
+  @each $i in (4, 3, 2) {
+    // Variant, Columns, Gap Multiplier
+    @include layouts.column-selector($variant, $i, (2, 2));
+    @include layouts.column-selector($variant, $i, (2, 1));
+    @include layouts.column-selector($variant, $i, (2, 0));
+    @include layouts.column-selector($variant, $i, (1, 2));
+    @include layouts.column-selector($variant, $i, (1, 1));
+    @include layouts.column-selector($variant, $i, (1, 0));
+    @include layouts.column-selector($variant, $i, (0, 2));
+    @include layouts.column-selector($variant, $i, (0, 1));
+    @include layouts.column-selector($variant, $i);
+  }
+
   @include layouts.rows-selector($variant);
   @include layouts.rows-gutter-selector($variant);
+
   @include layouts.sidebar-selector($variant);
   @include layouts.sidebar-small-selector($variant);
   @include layouts.sidebar-gutter-selector($variant);

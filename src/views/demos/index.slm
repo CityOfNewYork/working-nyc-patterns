@@ -16,7 +16,7 @@
       = partial('/components/alert/alert')
 
     header class='o-banner page-max desktop:px-6'
-      div class='py-7 desktop:px-6 tablet:layout-two-columns-gutter'
+      div class='py-7 desktop:px-6 tablet:layout-two-columns-gutter-0-2'
         div class='pb-6 hidden tablet:flex'
         div class='pb-6 hidden tablet:flex'
 
@@ -90,7 +90,7 @@
               p Job training programs get you ready for a new career. Here are some programs that are looking for New Yorkers to apply now.
 
           div class='desktop:px-6'
-            div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:layout-col-2-gap desktop:layout-col-2-gap-2 desktop:px-6 wrap'
+            div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:layout-col-2-gap-1-1 desktop:layout-col-2-gap-2-2 desktop:px-6 wrap'
               - collection = this.programs.filter(p => p.collection === 'training')
               - for (let i in collection)
                 - card = collection[i]
@@ -117,7 +117,7 @@
               p These programs improve math and reading skills for high school equivalency (GED), help English learners prepare for work, and more.
 
           div class='desktop:px-6'
-            div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:layout-col-2-gap desktop:layout-col-2-gap-2 desktop:px-6 wrap'
+            div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:layout-col-2-gap-1-1 desktop:layout-col-2-gap-2-2 desktop:px-6 wrap'
               - collection = this.programs.filter(p => p.collection === 'adult-education')
               - for (let i in collection)
                 - card = collection[i]
@@ -141,7 +141,7 @@
             div class='wrap pb-2'
               h2 class='h4 font-normal text-alt mt-0' Announcements
 
-              div class='tablet:layout-col-2-gap-2'
+              div class='py-4 tablet:layout-col-2-gap-1-2'
                 - for (let i in this.announcements)
                   - card = this.announcements[i]
                   - card.class = 'c-card-transparent h-full'

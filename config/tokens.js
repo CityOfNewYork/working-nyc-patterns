@@ -219,7 +219,7 @@ const light = merge(colors, {
 });
 
 module.exports = {
-  'output': '"./src/config/_tokens.scss"',
+  'output': `"${process.env.PWD}/src/config/_tokens.scss"`,
   'version': package.version,
   'cdn': `"https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-wnyc-patterns@v${package.version}/dist/"`,
   'google-fonts': '"https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i%7CMontserrat:400,400i,700"',

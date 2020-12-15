@@ -658,7 +658,7 @@ module.exports = {
       summary: `<p>The HEAP Program is open from November 2, 2020 to March 15, 2021.</p>`,
       features: [
         {
-          icon: 'feather-calendar',
+          icon: 'feather-alert-triangle',
           text: '<span>Posted Tuesday, November 24th, 10:39am</span>'
         }
       ],
@@ -675,7 +675,7 @@ module.exports = {
       summary: '<p>Available to those who don\'t qualify for government-sponsored health insurance.</p>',
       features: [
         {
-          icon: 'feather-calendar',
+          icon: 'feather-alert-triangle',
           text: '<span>Posted Tuesday, November 24th, 10:39am</span>'
         }
       ],
@@ -692,7 +692,7 @@ module.exports = {
       summary: '<p>Available regardless of immigration status.</p>',
       features: [
         {
-          icon: 'feather-calendar',
+          icon: 'feather-alert-triangle',
           text: '<span>Posted Tuesday, November 24th, 10:39am</span>'
         }
       ],
@@ -709,7 +709,7 @@ module.exports = {
       summary: '<p>Open enrollment through the New York State of Health is from November 1, 2020 to January 31, 2021.</p>',
       features: [
         {
-          icon: 'feather-calendar',
+          icon: 'feather-alert-triangle',
           text: '<span>Posted Tuesday, November 24th, 10:39am</span>'
         }
       ],
