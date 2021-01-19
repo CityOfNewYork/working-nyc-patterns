@@ -53,7 +53,8 @@
   },
   "devDependencies": {
     "@hail2u/css-mqpacker": "^8.0.1",
-    "@nycopportunity/pttrn": "^1.0.2",
+    "@nycopportunity/pttrn": "^1.0.3",
+    "@nycopportunity/pttrn-plugin-feather": "^1.0.1",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "@rollup/plugin-replace": "^2.3.4",
