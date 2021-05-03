@@ -12,7 +12,7 @@
 = content('content')
   div class='bg-scale-1 bg-shape-wnyc-abc bg-fixed'
     div class='page-max wrap pt-3'
-      - alert = {icon: 'info', type: 'info', class: 'color-status-primary mb-5', body: '<p data-js-alert=\'text\'>Your current browser, Internet Explorer, is no longer supported. While we do our best to ensure that the content is still accessible we cannot guarantee that this site will perform properly. Please consider trying a <a href="#">different browser</a> or <a href="#">tell us why you can\'t change your browser</a>.</p>'}
+      - alert = {icon: 'info', type: 'info', class: 'color-status-primary', body: '<p data-js-alert=\'text\'>Your current browser, Internet Explorer, is no longer supported. While we do our best to ensure that the content is still accessible we cannot guarantee that this site will perform properly. Please consider trying a <a href="#">different browser</a> or <a href="#">tell us why you can\'t change your browser</a>.</p>'}
       = partial('/components/alert/alert')
 
     header class='o-banner page-max desktop:px-6'
@@ -141,12 +141,12 @@
             div class='wrap pb-2'
               h2 class='h4 font-normal text-alt mt-0' Announcements
 
-              div class='py-4 tablet:layout-col-2-gap-1-2'
+              div class='py-4 layout-rows-gutter tablet:layout-col-2-gap-1-2'
                 - for (let i in this.announcements)
                   - card = this.announcements[i]
                   - card.class = 'c-card-transparent h-full'
 
-                  div class='transform-none' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
+                  div class='transform-none aos-init mb-3 tablet:mb-0 aos-animate' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
                     = partial('/components/card/card')
 
       = partial('/objects/newsletter/newsletter')
