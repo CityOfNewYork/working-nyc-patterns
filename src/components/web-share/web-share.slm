@@ -52,7 +52,7 @@ div class='c-web-share ${this.webShare.class}'
         /! { @data-js       Initializes the copy-to-clipboard utility }
         /! { @data-copy     Identifies the target of the content to copy }
         /! { @aria-pressed  Will signify a pressed state to screen readers }
-        button tabindex='-1' data-js='copy' data-copy='web-share-url' aria-pressed='false' class='c-web-share__item c-web-share__copy btn btn-small btn-primary'
+        button tabindex='-1' data-js='copy' data-copy='web-share-url' aria-pressed='false' class='c-web-share__item c-web-share__copy btn btn-small btn-primary mx-0'
           svg class='icon icon-wnyc-ui'
             use xlink:href='#feather-copy'
 
@@ -62,14 +62,14 @@ div class='c-web-share ${this.webShare.class}'
           span Copy URL
 
         /! { Facebook Sharer }
-        a tabindex='-1' href='https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(this.webShare.data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary'
+        a tabindex='-1' href='https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(this.webShare.data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary mx-0'
           svg class='icon-wnyc-ui'
             use xlink:href='#feather-facebook'
 
           span Facebook
 
         /! { Twitter Tweet }
-        a tabindex='-1' href='https://twitter.com/intent/tweet?text=${encodeURIComponent(this.webShare.data.text + ' ' + this.webShare.data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary'
+        a tabindex='-1' href='https://twitter.com/intent/tweet?text=${encodeURIComponent(this.webShare.data.text + ' ' + this.webShare.data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary mx-0'
           svg class='icon-wnyc-ui'
             use xlink:href='#feather-twitter'
 
