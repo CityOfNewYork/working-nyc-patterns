@@ -1,4 +1,4 @@
-- this.title = 'WorkingNYC Patterns'
+- this.title = 'Working NYC Patterns'
 
 / Layout
 = extend('/slm/layouts/default')
@@ -24,6 +24,8 @@
 
     div class='c-accordion__body active'
       div class='c-accordion__padding text-center'
+        h4 Installation
+
         input class='font-code w-full bg-transparent border text-inherit mb-3' data-copy-target='npm-install' id='npm-install' name='npm-install' type='text' value='npm install @nycopportunity/working-patterns@v${this.tokens.version}'
 
         nav class='nav-block'
@@ -41,6 +43,27 @@
 
             span npm.org
 
+        div class='p-8 pb-4'
+          button aria-controls="main-menu" class="btn btn-primary mb-2" data-js="toggle"
+            | Browse the patterns
+
+          p
+            mark class='badge badge-small status-secondary me-1' Views
+
+            | are not available for all of the UI patterns while the package is in pre-release (however, it can be used in production environments). View the <a href="${this.package.cdn.source}">source code</a> to inspect them for documentation.
+
+  section class='c-accordion m-auto mb-4' style='max-width: 800px'
+    header class='c-accordion__header'
+      p class='flex items-center'
+        svg class='icon-wnyc-ui icon-3 me-1' aria-hidden='true'
+          use xlink:href='#feather-figma'
+
+        strong About
+
+    div class='c-accordion__body active'
+      div class='p-6 small'
+        == this.include('/docs/about.md')
+
   section class='c-accordion m-auto mb-4' style='max-width: 800px'
     header class='c-accordion__header'
       p class='flex items-center'
@@ -52,13 +75,16 @@
     div class='c-accordion__body active'
       iframe class='border-0 block w-full' allowfullscreen='true' height='450' src='https://www.figma.com/embed?embed_host=nyco-wnyc-patterns&url=https://www.figma.com/file/CH7ZOCW55SgsDnsTj3UrTi/Patterns'
 
-  section class='c-accordion m-auto mb-4' style='max-width: 800px'
+      div class='p-6 small'
+        == this.include('/docs/figma.md')
+
+  section#demo-pages class='c-accordion m-auto mb-4' style='max-width: 800px'
     header class='c-accordion__header'
       p class='flex items-center'
         svg class='icon-wnyc-ui icon-3 me-1' aria-hidden='true'
           use xlink:href='#feather-navigation'
 
-        strong Demos
+        strong Demo Pages
 
     div class='c-accordion__body active'
       div class='c-accordion__padding text-center'
@@ -67,18 +93,3 @@
           a href='${this.baseUrl}/demos/programs/index' Programs
           a href='${this.baseUrl}/demos/programs/red-hook-on-the-road' Programs Single (Red Hook on the Road)
           a href='${this.baseUrl}/demos/newsletter' Newsletter
-
-  section class='c-accordion m-auto mb-4' style='max-width: 800px'
-    header class='c-accordion__header'
-      p class='flex items-center'
-        svg class='icon-wnyc-ui icon-3 me-1' aria-hidden='true'
-          use xlink:href='#feather-hard-drive'
-
-        strong Files
-
-    div class='c-accordion__body active'
-      div class='c-accordion__padding text-center'
-        nav class='nav-block'
-          a href='https://drive.google.com/drive/folders/11Oj1weBV8qAe6Y61Fo5YAVpCCjliDqtk' Drive
-          / a href='demos/programs' Programs
-

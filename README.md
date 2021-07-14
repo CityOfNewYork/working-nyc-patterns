@@ -1,8 +1,12 @@
-# WorkingNYC Patterns
+# Working NYC Patterns
 
 To install, run:
 
-    npm install @nycopportunity/working-patterns
+```shell
+$ npm install @nycopportunity/working-patterns
+```
+
+More information is available in this [project's site](https://cityofnewyork.github.io/working-nyc-patterns/).
 
 ---
 

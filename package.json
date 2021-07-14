@@ -4,7 +4,7 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cityofnewyork/workingnyc-patterns.git"
+    "url": "https://github.com/cityofnewyork/working-nyc-patterns.git"
   },
   "keywords": [
     "nycopportunity",
@@ -38,7 +38,7 @@
   "instantiations": {
     "scripts": "WorkingNyc"
   },
-  "homepage": "https://cityofnewyork.github.io/workingnyc-patterns",
+  "homepage": "https://cityofnewyork.github.io/working-nyc-patterns",
   "main": "npm start",
   "scripts": {
     "start": "npm run development && cross-env NODE_ENV=development cross-env PORT=7000 concurrently \"pttrn default -w\" \"pttrn serve -w\" -p \"none\"",

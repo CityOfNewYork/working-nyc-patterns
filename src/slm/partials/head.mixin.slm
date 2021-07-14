@@ -5,9 +5,9 @@
     meta name='viewport' content='width=device-width, initial-scale=1'
 
     title
-      - if (this.title != 'WorkingNYC Patterns')
+      - if (this.title != 'Working NYC Patterns')
         = this.title;
-        = ' | WorkingNYC Patterns';
+        = ' | Working NYC Patterns';
       - else
         = this.title;
 
