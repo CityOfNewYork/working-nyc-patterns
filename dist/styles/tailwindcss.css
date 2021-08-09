@@ -5137,6 +5137,26 @@
     font-style: normal !important
   }
 
+  .max-width-offset\:whitespace-normal {
+    white-space: normal !important
+  }
+
+  .max-width-offset\:whitespace-nowrap {
+    white-space: nowrap !important
+  }
+
+  .max-width-offset\:whitespace-pre {
+    white-space: pre !important
+  }
+
+  .max-width-offset\:whitespace-pre-line {
+    white-space: pre-line !important
+  }
+
+  .max-width-offset\:whitespace-pre-wrap {
+    white-space: pre-wrap !important
+  }
+
   .max-width-offset\:w-0 {
     width: 0px !important
   }
@@ -7102,6 +7122,26 @@
 
   .small\:not-italic {
     font-style: normal !important
+  }
+
+  .small\:whitespace-normal {
+    white-space: normal !important
+  }
+
+  .small\:whitespace-nowrap {
+    white-space: nowrap !important
+  }
+
+  .small\:whitespace-pre {
+    white-space: pre !important
+  }
+
+  .small\:whitespace-pre-line {
+    white-space: pre-line !important
+  }
+
+  .small\:whitespace-pre-wrap {
+    white-space: pre-wrap !important
   }
 
   .small\:w-0 {
@@ -9071,6 +9111,26 @@
     font-style: normal !important
   }
 
+  .mobile\:whitespace-normal {
+    white-space: normal !important
+  }
+
+  .mobile\:whitespace-nowrap {
+    white-space: nowrap !important
+  }
+
+  .mobile\:whitespace-pre {
+    white-space: pre !important
+  }
+
+  .mobile\:whitespace-pre-line {
+    white-space: pre-line !important
+  }
+
+  .mobile\:whitespace-pre-wrap {
+    white-space: pre-wrap !important
+  }
+
   .mobile\:w-0 {
     width: 0px !important
   }
@@ -11038,6 +11098,26 @@
     font-style: normal !important
   }
 
+  .tablet\:whitespace-normal {
+    white-space: normal !important
+  }
+
+  .tablet\:whitespace-nowrap {
+    white-space: nowrap !important
+  }
+
+  .tablet\:whitespace-pre {
+    white-space: pre !important
+  }
+
+  .tablet\:whitespace-pre-line {
+    white-space: pre-line !important
+  }
+
+  .tablet\:whitespace-pre-wrap {
+    white-space: pre-wrap !important
+  }
+
   .tablet\:w-0 {
     width: 0px !important
   }
@@ -13003,6 +13083,26 @@
 
   .desktop\:not-italic {
     font-style: normal !important
+  }
+
+  .desktop\:whitespace-normal {
+    white-space: normal !important
+  }
+
+  .desktop\:whitespace-nowrap {
+    white-space: nowrap !important
+  }
+
+  .desktop\:whitespace-pre {
+    white-space: pre !important
+  }
+
+  .desktop\:whitespace-pre-line {
+    white-space: pre-line !important
+  }
+
+  .desktop\:whitespace-pre-wrap {
+    white-space: pre-wrap !important
   }
 
   .desktop\:w-0 {

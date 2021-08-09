@@ -129,83 +129,83 @@
 }
 
 .color .text-alt {
-  color: #122F5A;
+  color: #122F5A !important;
 }
 
 .color .bg-alt {
-  background-color: #122F5A;
+  background-color: #122F5A !important;
 }
 
 .color .border-alt {
-  border-color: #122F5A;
+  border-color: #122F5A !important;
 }
 
 .color .fill-alt {
-  fill: #122F5A;
+  fill: #122F5A !important;
 }
 
 .color .stroke-alt {
-  stroke: #122F5A;
+  stroke: #122F5A !important;
 }
 
 .color .text-primary {
-  color: #1E78BE;
+  color: #1E78BE !important;
 }
 
 .color .bg-primary {
-  background-color: #1E78BE;
+  background-color: #1E78BE !important;
 }
 
 .color .border-primary {
-  border-color: #1E78BE;
+  border-color: #1E78BE !important;
 }
 
 .color .fill-primary {
-  fill: #1E78BE;
+  fill: #1E78BE !important;
 }
 
 .color .stroke-primary {
-  stroke: #1E78BE;
+  stroke: #1E78BE !important;
 }
 
 .color .text-secondary {
-  color: #006333;
+  color: #006333 !important;
 }
 
 .color .bg-secondary {
-  background-color: #006333;
+  background-color: #006333 !important;
 }
 
 .color .border-secondary {
-  border-color: #006333;
+  border-color: #006333 !important;
 }
 
 .color .fill-secondary {
-  fill: #006333;
+  fill: #006333 !important;
 }
 
 .color .stroke-secondary {
-  stroke: #006333;
+  stroke: #006333 !important;
 }
 
 .color .text-tertiary {
-  color: #8F6F00;
+  color: #8F6F00 !important;
 }
 
 .color .bg-tertiary {
-  background-color: #8F6F00;
+  background-color: #8F6F00 !important;
 }
 
 .color .border-tertiary {
-  border-color: #8F6F00;
+  border-color: #8F6F00 !important;
 }
 
 .color .fill-tertiary {
-  fill: #8F6F00;
+  fill: #8F6F00 !important;
 }
 
 .color .stroke-tertiary {
-  stroke: #8F6F00;
+  stroke: #8F6F00 !important;
 }
 
 .color a:not(.btn), .color .btn-link, .color .button-link {
@@ -244,27 +244,102 @@
 
 .color .color-modal .text-alt,
 .color .o-search .text-alt, .color .o-mobile-menu .text-alt {
-  color: var(--color-scale-2);
+  color: var(--color-scale-2) !important;
 }
 
 .color .color-modal .bg-alt,
 .color .o-search .bg-alt, .color .o-mobile-menu .bg-alt {
-  background-color: var(--color-scale-2);
+  background-color: var(--color-scale-2) !important;
 }
 
 .color .color-modal .border-alt,
 .color .o-search .border-alt, .color .o-mobile-menu .border-alt {
-  border-color: var(--color-scale-2);
+  border-color: var(--color-scale-2) !important;
 }
 
 .color .color-modal .fill-alt,
 .color .o-search .fill-alt, .color .o-mobile-menu .fill-alt {
-  fill: var(--color-scale-2);
+  fill: var(--color-scale-2) !important;
 }
 
 .color .color-modal .stroke-alt,
 .color .o-search .stroke-alt, .color .o-mobile-menu .stroke-alt {
-  stroke: var(--color-scale-2);
+  stroke: var(--color-scale-2) !important;
+}
+
+.color .color-modal .text-primary,
+.color .o-search .text-primary, .color .o-mobile-menu .text-primary {
+  color: !important;
+}
+
+.color .color-modal .bg-primary,
+.color .o-search .bg-primary, .color .o-mobile-menu .bg-primary {
+  background-color: !important;
+}
+
+.color .color-modal .border-primary,
+.color .o-search .border-primary, .color .o-mobile-menu .border-primary {
+  border-color: !important;
+}
+
+.color .color-modal .fill-primary,
+.color .o-search .fill-primary, .color .o-mobile-menu .fill-primary {
+  fill: !important;
+}
+
+.color .color-modal .stroke-primary,
+.color .o-search .stroke-primary, .color .o-mobile-menu .stroke-primary {
+  stroke: !important;
+}
+
+.color .color-modal .text-secondary,
+.color .o-search .text-secondary, .color .o-mobile-menu .text-secondary {
+  color: !important;
+}
+
+.color .color-modal .bg-secondary,
+.color .o-search .bg-secondary, .color .o-mobile-menu .bg-secondary {
+  background-color: !important;
+}
+
+.color .color-modal .border-secondary,
+.color .o-search .border-secondary, .color .o-mobile-menu .border-secondary {
+  border-color: !important;
+}
+
+.color .color-modal .fill-secondary,
+.color .o-search .fill-secondary, .color .o-mobile-menu .fill-secondary {
+  fill: !important;
+}
+
+.color .color-modal .stroke-secondary,
+.color .o-search .stroke-secondary, .color .o-mobile-menu .stroke-secondary {
+  stroke: !important;
+}
+
+.color .color-modal .text-tertiary,
+.color .o-search .text-tertiary, .color .o-mobile-menu .text-tertiary {
+  color: !important;
+}
+
+.color .color-modal .bg-tertiary,
+.color .o-search .bg-tertiary, .color .o-mobile-menu .bg-tertiary {
+  background-color: !important;
+}
+
+.color .color-modal .border-tertiary,
+.color .o-search .border-tertiary, .color .o-mobile-menu .border-tertiary {
+  border-color: !important;
+}
+
+.color .color-modal .fill-tertiary,
+.color .o-search .fill-tertiary, .color .o-mobile-menu .fill-tertiary {
+  fill: !important;
+}
+
+.color .color-modal .stroke-tertiary,
+.color .o-search .stroke-tertiary, .color .o-mobile-menu .stroke-tertiary {
+  stroke: !important;
 }
 
 .color .color-modal a:not(.btn), .color .color-modal .btn-link, .color .color-modal .button-link,
