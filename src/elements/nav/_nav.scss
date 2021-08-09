@@ -8,7 +8,7 @@
 
 // Declarations
 @mixin nav($variant: '') {
-  .#{$variant}nav-inline {
+  .nav, .#{$variant}nav-inline {
     @include nav.inline($variant);
   }
 

@@ -65,11 +65,11 @@ $radius-tag: map-get($buttons, 'radius-tag');
 
   > [class*='icon']:first-child {
     // margin-#{direction.$start}: -($grid / 2);
-    margin-#{direction.$end}: $grid;
+    margin-#{direction.$end}: $grid * 0.75;
   }
 
   > [class*='icon']:last-child {
-    margin-#{direction.$start}: $grid;
+    margin-#{direction.$start}: $grid * 0.75;
     // margin-#{direction.$end}: -($grid / 2);
   }
 }

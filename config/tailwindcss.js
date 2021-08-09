@@ -111,7 +111,7 @@ module.exports = {
     userSelect: [],
     verticalAlign: [],
     visibility: [],
-    whitespace: [],
+    whitespace: ['responsive'],
     wordBreak: [],
     width: ['responsive'],
     zIndex: []

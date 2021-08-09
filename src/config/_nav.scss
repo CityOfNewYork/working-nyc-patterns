@@ -18,10 +18,10 @@
   }
 }
 
-@mixin inline($variant: '') {
+@mixin inline($variant: '', $childClass: 'nav__item') {
   list-style: none;
 
-  a, button {
+  a, button, .#{$childClass} {
     display: inline-flex;
     margin-#{direction.$end}: 1em;
 

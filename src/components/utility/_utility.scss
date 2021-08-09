@@ -13,13 +13,16 @@
 // Declarations
 .c-utility {
   @include typography.set('small');
-  @include nav.inline();
+  @include nav.inline('', 'c-utility__item');
   display: flex;
   justify-content: end;
+  align-items: center;
 
   @include layouts.wrap();
   padding-top: ($grid * 2);
   padding-bottom: ($grid * 2);
+
+  min-height: $grid * 8;
 
   // @include media.screen-and-min-width('tablet') {
   //   padding-left: dimensions.$spacing-base;
@@ -28,7 +31,7 @@
 }
 
 .pt-utility-anchor {
-  padding-top: $grid * 4;
+  padding-top: $grid * 8;
 }
 
 .pb-utility-anchor {
@@ -37,4 +40,8 @@
 
 .mt-utility-anchor {
   margin-top: $grid * 8;
+}
+
+.mb-utility-anchor {
+  margin-bottom: $grid * 8;
 }

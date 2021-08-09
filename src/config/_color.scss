@@ -10,23 +10,23 @@ $modes: map-get(tokens.$tokens, 'color-modes');
 
 @mixin utils($token-selector, $token-key) {
   .text-#{$token-selector} {
-    color: map-get($colors, $token-key);
+    color: map-get($colors, $token-key) !important;
   }
 
   .bg-#{$token-selector} {
-    background-color: map-get($colors, $token-key);
+    background-color: map-get($colors, $token-key) !important;
   }
 
   .border-#{$token-selector} {
-    border-color: map-get($colors, $token-key);
+    border-color: map-get($colors, $token-key) !important;
   }
 
   .fill-#{$token-selector} {
-    fill: map-get($colors, $token-key);
+    fill: map-get($colors, $token-key) !important;
   }
 
   .stroke-#{$token-selector} {
-    stroke: map-get($colors, $token-key);
+    stroke: map-get($colors, $token-key) !important;
   }
 }
 
