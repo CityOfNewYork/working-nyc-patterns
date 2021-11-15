@@ -1,0 +1,20 @@
+/**
+ * Status
+ */
+
+// Dependencies
+@use 'config/status';
+@use 'config/media';
+
+// Declarations
+@each $type in ('primary', 'secondary', 'tertiary', 'alt') {
+  .status-#{$type} {
+    @include status.base($type);
+  }
+
+  @include media.screens-and-prefers-scheme(light) using ($scheme) {
+    .#{$scheme}\:status-#{$type} {
+      @include status.base($type);
+    }
+  }
+}

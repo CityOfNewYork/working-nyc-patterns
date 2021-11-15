@@ -1,0 +1,42 @@
+div class='w-full wrap grid mobile:grid-cols-3 gap-3'
+  - for (key in this.tokens.color)
+    - value = this.tokens.color[key]
+    - name = key.split('-').join(' ');
+
+    - if (typeof base !== 'undefined' && base != name.split(' ')[0])
+      h3 class='capitalize col-span-full mb-0'
+        = name.split(' ')[0]
+
+    - base = name.split(' ')[0];
+
+    article class=''
+      button class='bg-${key} py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center' title='Copy to clipboard' aria-label='Copy to clipboard' aria-pressed='false' data-copy='copy-${key}-value' data-js='copy'
+        span class='inline-block bg-white p-1 rounded'
+          svg class='icon-wnyc-ui icon-3 block text-blue pointer' aria-hidden='true'
+            use xlink:href='#feather-copy'
+
+      div class=''
+        div class='p-1 pb-0 capitalize border-l border-r border-scale-4'
+          = name
+
+        div class='border rounded-t-none border-t-0 border-scale-4'
+          dl class='small p-1 grid grid-cols-3 gap-1'
+            dt class='border-4 border-transparent' Value
+            dd class='col-span-2'
+              input value='${value}' class='sr-only' data-copy-target='copy-${key}-value' tabindex='-1'
+              button title='Copy to clipboard' aria-label='Copy to clipboard' aria-pressed='false' class='w-full text-start border-4 border-transparent font-code text-code' data-copy='copy-${key}-value' data-js='copy' = value
+
+            dt class='border-4 border-transparent' Background
+            dd class=' col-span-2'
+              input value='bg-${key}' class='sr-only' data-copy-target='copy-${key}-bg' tabindex='-1'
+              button title='Copy to clipboard' aria-label='Copy to clipboard' aria-pressed='false' class='w-full text-start border-4 border-transparent font-code text-code' data-copy='copy-${key}-bg' data-js='copy' = `.bg-${key}`
+
+            dt class='border-4 border-transparent' Text
+            dd class='col-span-2'
+              input value='text-${key}' class='sr-only' data-copy-target='copy-${key}-text' tabindex='-1'
+              button title='Copy to clipboard' aria-label='Copy to clipboard' aria-pressed='false' class='w-full text-start border-4 border-transparent font-code text-code' data-copy='copy-${key}-text' data-js='copy' = `.text-${key}`
+
+            dt class='border-4 border-transparent' Border
+            dd class='col-span-2'
+              input value='border-${key}' class='sr-only' data-copy-target='copy-${key}-border' tabindex='-1'
+              button title='Copy to clipboard' aria-label='Copy to clipboard' aria-pressed='false' class='w-full text-start border-4 border-transparent font-code text-code' data-copy='copy-${key}-border' data-js='copy' = `.border-${key}`

@@ -1,40 +1,45 @@
 //
-// Mixins
+// Variables, Functions, and Mixins
 //
 
 // Dependencies
-@use 'config/tokens';
-
-$animate: map-get(tokens.$tokens, 'animate');
-$duration: map-get($animate, 'duration');
-$duration-without-easing: ($duration * 1/3);
-$ease-in: map-get($animate, 'ease-in');
-$ease-out: map-get($animate, 'ease-out');
-$timing-function: map-get($animate, 'timing-function');
+@use 'config/media';
 
 // Declarations
-@mixin animate($animation: none, $duration: $duration) {
-  @if $animation != none {
-    animation-name: $animation;
-  }
 
-  animation-fill-mode: both;
-  animation-duration: $duration;
-  animation-timing-function: $timing-function;
+/**
+ * Getter Function
+ */
+@function get($token) {
+  @return var(--wnyc-animate-#{$token});
+}
+
+@mixin animate($animation: none, $duration: get('duration')) {
+  @include media.screens-and-prefers-motion {
+    @if $animation != none {
+      animation-name: $animation;
+    }
+
+    animation-fill-mode: both;
+    animation-duration: get('duration');
+    animation-timing-function: get('timing-function');
+  }
 }
 
 @mixin transition() {
-  transition-property: background, color, border, box-shadow, transform, stroke, stroke-dashoffset, fill;
-  transition-duration: 0.25s;
-  backface-visibility: hidden;
+  @include media.screens-and-prefers-motion {
+    transition-property: background, color, border, box-shadow, transform, stroke, stroke-dashoffset, fill;
+    transition-duration: get('duration');
+    backface-visibility: hidden;
+  }
 }
 
 @mixin linear() {
-  transition-duration: $duration-without-easing;
+  transition-duration: calc(calc(get('duration') * 1) / 3);
   transition-timing-function: linear;
 }
 
 @mixin ease() {
-  transition-duration: $duration;
-  transition-timing-function: $ease-out;
+  transition-duration: get('duration');
+  transition-timing-function: get('ease-out');
 }

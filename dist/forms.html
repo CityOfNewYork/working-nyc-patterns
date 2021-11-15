@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="/svg/favicon.svg" rel="icon" type="image/x-icon" />
+  <title>Forms | Working NYC Patterns</title>
+  <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
+  <link href="/styles/tokens.css" rel="stylesheet" />
+  <link href="/styles/site-default.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function(event) {
+      hljs.configure({
+        languages: ['html', 'javascript', 'css', 'sass']
+      });
+      document.querySelectorAll('pre').forEach(function(pre) {
+        pre.setAttribute('tabindex', '0');
+        hljs.highlightBlock(pre);
+      });
+    });
+  </script>
+</head>
+
+<body class="color">
+  <a class="sr-only" href="#main-content">Skip to main content</a>
+  <header class="bg-scale-2" role="banner">
+    <div class="flex items-center justify-between py-2 wrap">
+      <div>
+        <h1 aria-level="1" class="flex m-0" role="heading">
+          <span class="sr-only">Working N Y C</span>
+          <svg aria-hidden="true" class="hidden tablet:inline icon-logo-standard-menu-item fill-text text-brand">
+            <use xlink:href="#logo-wnyc-standard"></use>
+          </svg>
+          <svg aria-hidden="true" class="tablet:hidden icon-logo-stacked-menu-item fill-text text-brand">
+            <use xlink:href="#logo-wnyc-stacked"></use>
+          </svg>
+        </h1>
+      </div>
+      <div class="flex items-center">
+        <h2 class="h5 m-0">Patterns</h2>
+        <nav aria-label="navigation-menu" class="nav-inline text-small font-primary flex items-center mis-2" role="navigation">
+          <a class="rounded-lg border no-underline px-1" href="https://github.com/cityofnewyork/working-nyc-patterns/releases/tag/v0.0.1-44">0.0.1-44</a>
+          <button aria-controls="main-menu" aria-expanded="false" data-js="toggle" id="main-menu-control">
+            <svg aria-hidden="true" class="icon-wnyc-ui">
+              <use xlink:href="#feather-menu"></use>
+            </svg>
+            <span>Menu</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-modal text-small hidden hidden:overflowFadeInUp animated" id="main-menu">
+    <div class="page-max py-4 animated">
+      <div class="tablet:flex">
+        <nav aria-labelledby="navigation-main-4062c55421e3b" class="tablet:flex-1 mb-1 px-1 tablet:px-2" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="navigation-main-4062c55421e3b">Main</span>
+          <a class="block p-1 no-underline align-middle" href="index" tabindex="-1">Home</a>
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1">Links</span>
+          <a class="block p-1 no-underline align-middle" href="https://www.npmjs.com/package/@nycopportunity/working-patterns" tabindex="-1">NPM Package</a>
+          <a class="block p-1 no-underline align-middle" href="https://github.com/cityofnewyork/working-nyc-patterns" tabindex="-1">GitHub Repository</a>
+        </nav>
+        <nav aria-labelledby="aria-lb-elements-4062c55421e3b" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-elements-4062c55421e3b">Elements</span>
+          <a class="block p-1 no-underline align-middle" href="badge" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Badge
+          </a>
+          <a class="block p-1 no-underline align-middle" href="buttons" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Buttons
+          </a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="code">Code</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="divider">Divider</a>
+          <a class="block p-1 no-underline align-middle" href="forms" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Forms
+          </a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="icons">Icons</a>
+          <a class="block p-1 no-underline align-middle" href="inputs" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Inputs
+          </a>
+          <a class="block p-1 no-underline align-middle" href="labels" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Labels
+          </a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="layouts">Layouts</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="links">Links</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="nav">Nav</a>
+          <a class="block p-1 no-underline align-middle" href="options" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Options
+          </a>
+          <a class="block p-1 no-underline align-middle" href="selects" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Selects
+          </a>
+          <a class="block p-1 no-underline align-middle" href="tables" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Tables
+          </a>
+        </nav>
+        <nav aria-labelledby="aria-lb-components-4062c55421e3b" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-components-4062c55421e3b">Components</span>
+          <a class="block p-1 no-underline align-middle" href="accordion" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Accordion
+          </a>
+          <a class="block p-1 no-underline align-middle" href="alert" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Alert
+          </a>
+          <a class="block p-1 no-underline align-middle" href="card" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Card
+          </a>
+          <a class="block p-1 no-underline align-middle" href="dropdown" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Dropdown
+          </a>
+          <a class="block p-1 no-underline align-middle" href="question" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Question
+          </a>
+          <a class="block p-1 no-underline align-middle" href="utility" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Utility
+          </a>
+          <a class="block p-1 no-underline align-middle" href="web-share" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Web Share
+          </a>
+        </nav>
+        <nav aria-labelledby="aria-lb-objects-4062c55421e3b" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-objects-4062c55421e3b">Objects</span>
+          <a class="block p-1 no-underline align-middle" href="banner" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Banner
+          </a>
+          <a class="block p-1 no-underline align-middle" href="feedback" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Feedback
+          </a>
+          <a class="block p-1 no-underline align-middle" href="footer" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Footer
+          </a>
+          <a class="block p-1 no-underline align-middle" href="header" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Header
+          </a>
+          <a class="block p-1 no-underline align-middle" href="menu" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Menu
+          </a>
+          <a class="block p-1 no-underline align-middle" href="navigation" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Navigation
+          </a>
+          <a class="block p-1 no-underline align-middle" href="newsletter" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Newsletter
+          </a>
+          <a class="block p-1 no-underline align-middle" href="search" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Search
+          </a>
+          <a class="block p-1 no-underline align-middle" href="text-controller" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Text Controller
+          </a>
+        </nav>
+        <nav aria-labelledby="aria-lb-utilities-4062c55421e3b" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-utilities-4062c55421e3b">Utilities</span>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="animate">Animate</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="cell">Cell</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="clearfix">Clearfix</a>
+          <a class="block p-1 no-underline align-middle" href="color" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Color
+          </a>
+          <a class="block p-1 no-underline align-middle" href="fonts" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Fonts
+          </a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="print">Print</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="scroll">Scroll</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="status">Status</a>
+          <a class="block p-1 no-underline align-middle" href="tailwindcss" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Tailwindcss
+          </a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="toggle">Toggle</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="typography">Typography</a>
+        </nav>
+      </div>
+      <div class="text-center">
+        <button aria-controls="main-menu" aria-expanded="false" data-js="toggle" data-pa11y="disable" tabindex="-1">Close Menu</button>
+      </div>
+    </div>
+  </aside>
+  <main class="py-4" id="main-content" role="main">
+    <article class="py-4 clearfix">
+      <header class="page-max layout-content">
+        <div class="wrap">
+          <h3>Forms</h3>
+        </div>
+      </header>
+      <section class="pb-4 mb-4" id="forms">
+        <header class="page-max layout-content py-4">
+          <div class="wrap">
+            <p class="flex items-center">
+              <svg class="icon-wnyc-ui mie-1" role="img">
+                <title>GitHub Source Link</title>
+                <use xlink:href="#feather-github"></use>
+              </svg>
+              <a href="https://github.com/cityofnewyork/working-nyc-patterns/tree/v0.0.1-44/src/elements/forms" target="_blank">src/elements/forms/forms</a>
+            </p>
+          </div>
+        </header>
+        <!--Section Text-->
+        <div class="page-max layout-content pb-6">
+          <div class="wrap"></div>
+        </div>
+        <div class="page-max layout-content pb-4">
+          <h5 class="wrap flex items-center" id="forms-example">Demonstration</h5>
+        </div>
+        <div class="bg-scale-0 py-6 mb-6">
+          <div class="page-max flex justify-center py-6">
+            <form>
+              <div class="fieldset">
+                <label class="label">Input</label>
+                <div class="input">
+                  <!--{ @required  required="true" specifies wether the input is required by a form }-->
+                  <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
+                  <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+                  <input id="372b9ff2c1849" name="input['372b9ff2c1849']" required="true" type="text" />
+                </div>
+              </div>
+              <div class="fieldset">
+                <label class="legend">Select</label>
+                <div class="select ">
+                  <select id="bdc011f38f011" name="select['bdc011f38f011']" required="true">
+                    <option selected="true" value="">Select an option</option>
+                  </select>
+                  <svg aria-hidden="true" class="select__graphic">
+                    <use xlink:href="#select-wnyc-chevrons"></use>
+                  </svg>
+                </div>
+              </div>
+              <fieldset>
+                <legend>True or False</legend>
+                <!--{ @for       Should match the id of the input }-->
+                <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+                <label class="option " for="b6059e39c9a5f">
+                  <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+                  <input id="b6059e39c9a5f" name="boolean" type="radio" value="true" />
+                  <span class="option__base">
+                    <svg aria-hidden="true" class="option__graphic">
+                      <use xlink:href="#option-wnyc-radio"></use>
+                    </svg>
+                    <span class="option__label">True</span>
+                  </span>
+                </label>
+                <!--{ @for       Should match the id of the input }-->
+                <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+                <label class="option " for="71592af53941e">
+                  <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
+                  <input id="71592af53941e" name="boolean" type="radio" value="false" />
+                  <span class="option__base">
+                    <svg aria-hidden="true" class="option__graphic">
+                      <use xlink:href="#option-wnyc-radio"></use>
+                    </svg>
+                    <span class="option__label">False</span>
+                  </span>
+                </label>
+              </fieldset>
+              <button class="btn btn-primary" type="submit">
+                <span>Submit</span>
+              </button>
+            </form>
+          </div>
+        </div>
+        <!--Section Markup-->
+        <div class="page-max layout-content pb-4">
+          <h5 class="wrap flex items-center" id="forms-markup">Markup</h5>
+        </div>
+        <div class="page-max layout-content">
+          <div class="wrap">
+            <div class="code-block mb-1">
+              <pre tabindex="0">&lt;form&gt;
+  &lt;div class=&quot;fieldset&quot;&gt;
+    &lt;label class=&quot;label&quot;&gt;Input&lt;/label&gt;
+    &lt;div class=&quot;input&quot;&gt;
+      &lt;!--{ @required  required=&quot;true&quot; specifies wether the input is required by a form }--&gt;
+      &lt;!--{ @pattern   pattern=&quot;{{ my regular expression }}&quot; a regular expression the input's value must match in order to validate }--&gt;
+      &lt;!--{ @tabindex  Add tabindex=&quot;-1&quot; to insure focusable elements are not visible when parent is hidden }--&gt;
+      &lt;input id=&quot;372b9ff2c1849&quot; name=&quot;input['372b9ff2c1849']&quot; required=&quot;true&quot; type=&quot;text&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;fieldset&quot;&gt;
+    &lt;label class=&quot;legend&quot;&gt;Select&lt;/label&gt;
+    &lt;div class=&quot;select &quot;&gt;
+      &lt;select id=&quot;d6431b5bb527f&quot; name=&quot;select['d6431b5bb527f']&quot; required=&quot;true&quot;&gt;
+        &lt;option selected=&quot;true&quot; value=&quot;&quot;&gt;Select an option&lt;/option&gt;
+      &lt;/select&gt;
+      &lt;svg aria-hidden=&quot;true&quot; class=&quot;select__graphic&quot;&gt;
+        &lt;use xlink:href=&quot;#select-wnyc-chevrons&quot;&gt;&lt;/use&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;True or False&lt;/legend&gt;
+    &lt;!--{ @for       Should match the id of the input }--&gt;
+    &lt;!--{ @tabindex  Add tabindex=&quot;-1&quot; to insure focusable elements are not visible when parent is hidden }--&gt;
+    &lt;label class=&quot;option &quot; for=&quot;21537ffba12a9&quot;&gt;
+      &lt;!--{ @tabindex  Add tabindex=&quot;-1&quot; to insure focusable elements are not visible when parent is hidden }--&gt;
+      &lt;input id=&quot;21537ffba12a9&quot; name=&quot;boolean&quot; type=&quot;radio&quot; value=&quot;true&quot; /&gt;
+      &lt;span class=&quot;option__base&quot;&gt;
+        &lt;svg aria-hidden=&quot;true&quot; class=&quot;option__graphic&quot;&gt;
+          &lt;use xlink:href=&quot;#option-wnyc-radio&quot;&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+        &lt;span class=&quot;option__label&quot;&gt;True&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/label&gt;
+    &lt;!--{ @for       Should match the id of the input }--&gt;
+    &lt;!--{ @tabindex  Add tabindex=&quot;-1&quot; to insure focusable elements are not visible when parent is hidden }--&gt;
+    &lt;label class=&quot;option &quot; for=&quot;cb213e786242b&quot;&gt;
+      &lt;!--{ @tabindex  Add tabindex=&quot;-1&quot; to insure focusable elements are not visible when parent is hidden }--&gt;
+      &lt;input id=&quot;cb213e786242b&quot; name=&quot;boolean&quot; type=&quot;radio&quot; value=&quot;false&quot; /&gt;
+      &lt;span class=&quot;option__base&quot;&gt;
+        &lt;svg aria-hidden=&quot;true&quot; class=&quot;option__graphic&quot;&gt;
+          &lt;use xlink:href=&quot;#option-wnyc-radio&quot;&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+        &lt;span class=&quot;option__label&quot;&gt;False&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/label&gt;
+  &lt;/fieldset&gt;
+  &lt;button class=&quot;btn btn-primary&quot; type=&quot;submit&quot;&gt;
+    &lt;span&gt;Submit&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/form&gt;</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="text-small py-4 z-20 relative" role="contentinfo">
+    <div class="layout-content page-max">
+      <div class="wrap mb-4">
+        <hr class="divider" />
+        <div class="py-4">
+          <p class="mb-1">Maintained by&nbsp;<a href="http://nyc.gov/opportunity">The Mayor's Office for Economic Opportunity</a>
+          </p>
+          <p>We are committed to sharing open source software that we use in our products. Feel free to ask questions and share feedback. Follow @nycopportunity on&nbsp;</p>
+          <div class="mb-3">
+            <nav class="nav-inline">
+              <a href="https://github.com/nycopportunity">GitHub</a>
+              <a href="https://twitter.com/nycopportunity">Twitter</a>
+              <a href="https://www.facebook.com/nycopportunity">Facebook</a>
+              <a href="https://www.instagram.com/nycopportunity">Instagram</a>
+            </nav>
+          </div>
+          <small>© City of New York, 2021 All Rights Reserved. NYC is a trademark and service mark of the City of New York.</small>
+        </div>
+      </div>
+    </div>
+    <div class="page-max pt-2">
+      <div class="tablet:flex">
+        <nav aria-labelledby="navigation-main-624691d20a5e9" class="tablet:flex-1 mb-1 px-1 tablet:px-2" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="navigation-main-624691d20a5e9">Main</span>
+          <a class="block p-1 no-underline align-middle" href="index">Home</a>
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1">Links</span>
+          <a class="block p-1 no-underline align-middle" href="https://www.npmjs.com/package/@nycopportunity/working-patterns">NPM Package</a>
+          <a class="block p-1 no-underline align-middle" href="https://github.com/cityofnewyork/working-nyc-patterns">GitHub Repository</a>
+        </nav>
+        <nav aria-labelledby="aria-lb-elements-624691d20a5e9" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-elements-624691d20a5e9">Elements</span>
+          <a class="block p-1 no-underline align-middle" href="badge">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Badge
+          </a>
+          <a class="block p-1 no-underline align-middle" href="buttons">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Buttons
+          </a>
+          <a class="block p-1 no-underline align-middle" xhref="code">Code</a>
+          <a class="block p-1 no-underline align-middle" xhref="divider">Divider</a>
+          <a class="block p-1 no-underline align-middle" href="forms">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Forms
+          </a>
+          <a class="block p-1 no-underline align-middle" xhref="icons">Icons</a>
+          <a class="block p-1 no-underline align-middle" href="inputs">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Inputs
+          </a>
+          <a class="block p-1 no-underline align-middle" href="labels">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Labels
+          </a>
+          <a class="block p-1 no-underline align-middle" xhref="layouts">Layouts</a>
+          <a class="block p-1 no-underline align-middle" xhref="links">Links</a>
+          <a class="block p-1 no-underline align-middle" xhref="nav">Nav</a>
+          <a class="block p-1 no-underline align-middle" href="options">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Options
+          </a>
+          <a class="block p-1 no-underline align-middle" href="selects">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Selects
+          </a>
+          <a class="block p-1 no-underline align-middle" href="tables">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Tables
+          </a>
+        </nav>
+        <nav aria-labelledby="aria-lb-components-624691d20a5e9" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-components-624691d20a5e9">Components</span>
+          <a class="block p-1 no-underline align-middle" href="accordion">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Accordion
+          </a>
+          <a class="block p-1 no-underline align-middle" href="alert">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Alert
+          </a>
+          <a class="block p-1 no-underline align-middle" href="card">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Card
+          </a>
+          <a class="block p-1 no-underline align-middle" href="dropdown">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Dropdown
+          </a>
+          <a class="block p-1 no-underline align-middle" href="question">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Question
+          </a>
+          <a class="block p-1 no-underline align-middle" href="utility">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Utility
+          </a>
+          <a class="block p-1 no-underline align-middle" href="web-share">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Web Share
+          </a>
+        </nav>
+        <nav aria-labelledby="aria-lb-objects-624691d20a5e9" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-objects-624691d20a5e9">Objects</span>
+          <a class="block p-1 no-underline align-middle" href="banner">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Banner
+          </a>
+          <a class="block p-1 no-underline align-middle" href="feedback">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Feedback
+          </a>
+          <a class="block p-1 no-underline align-middle" href="footer">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Footer
+          </a>
+          <a class="block p-1 no-underline align-middle" href="header">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Header
+          </a>
+          <a class="block p-1 no-underline align-middle" href="menu">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Menu
+          </a>
+          <a class="block p-1 no-underline align-middle" href="navigation">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Navigation
+          </a>
+          <a class="block p-1 no-underline align-middle" href="newsletter">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Newsletter
+          </a>
+          <a class="block p-1 no-underline align-middle" href="search">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Search
+          </a>
+          <a class="block p-1 no-underline align-middle" href="text-controller">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Text Controller
+          </a>
+        </nav>
+        <nav aria-labelledby="aria-lb-utilities-624691d20a5e9" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-utilities-624691d20a5e9">Utilities</span>
+          <a class="block p-1 no-underline align-middle" xhref="animate">Animate</a>
+          <a class="block p-1 no-underline align-middle" xhref="cell">Cell</a>
+          <a class="block p-1 no-underline align-middle" xhref="clearfix">Clearfix</a>
+          <a class="block p-1 no-underline align-middle" href="color">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Color
+          </a>
+          <a class="block p-1 no-underline align-middle" href="fonts">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Fonts
+          </a>
+          <a class="block p-1 no-underline align-middle" xhref="print">Print</a>
+          <a class="block p-1 no-underline align-middle" xhref="scroll">Scroll</a>
+          <a class="block p-1 no-underline align-middle" xhref="status">Status</a>
+          <a class="block p-1 no-underline align-middle" href="tailwindcss">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Tailwindcss
+          </a>
+          <a class="block p-1 no-underline align-middle" xhref="toggle">Toggle</a>
+          <a class="block p-1 no-underline align-middle" xhref="typography">Typography</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+  <script src="scripts/polyfills.js"></script>
+  <script src="scripts/main.js"></script>
+  <script type="text/javascript">
+    var patterns = new WorkingNyc();
+    patterns.icons();
+    patterns.icons('/svg/feather.svg');
+    patterns.toggle();
+    patterns.copy();
+  </script>
+  <script src="/reload/reload.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+//
+// Variables, Functions, and Mixins
+//
+
+// Dependencies
+@use 'config/media';
+
+// Declarations
+@mixin shapes($namespace, $variant: '') {
+  .bg-shape-wnyc-#{$namespace} {
+    background-image: url('../svg/shape-wnyc-#{$namespace}#{$variant}.svg');
+  }
+}
+
+@mixin shapes-combined($variant: '') {
+  .bg-shape-wnyc-abc {
+    background: url('../svg/shape-wnyc-a#{$variant}.svg') calc(100vw - 160px) calc(0vh - 74px) no-repeat,
+                url('../svg/shape-wnyc-b#{$variant}.svg') -124px 198px no-repeat,
+                url('../svg/shape-wnyc-c#{$variant}.svg') calc(100vw - 80px) calc(0vh + 226px) no-repeat;
+
+    @include media.screen-and-min-width('tablet') {
+      background-position: calc(100vw - 240px) calc(0vh - 54px),
+                          -86px 468px,
+                          calc(100vw - 190px) calc(0vh + 566px);
+
+      background-size: 15em;
+    }
+  }
+}

@@ -1,6 +1,11 @@
+//
+// Variables, Functions, and Mixins
+//
 
+// Dependencies
 @use 'config/tokens' as *;
 
+// Declarations
 $indexes: map-get($tokens, 'z');
 
 @function get($token) {

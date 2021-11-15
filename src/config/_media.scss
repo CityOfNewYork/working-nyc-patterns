@@ -1,8 +1,12 @@
+//
+// Variables, Functions, and Mixins
+//
+
 // Dependencies
 @use 'config/tokens' as *;
 
 // Configuration
-$screens: map-get($tokens, 'screens');
+$screens: map-get($tokens, 'screen');
 
 /**
  * Get a token value from the media set
@@ -63,6 +67,30 @@ $screens: map-get($tokens, 'screens');
       $variant: $token + '\\:';
 
       @content($variant);
+    }
+  }
+}
+
+/**
+ * Mixin for prefers reduced motion
+ */
+@mixin screens-and-prefers-motion($preference: no-preference) {
+  @media screen and (prefers-reduced-motion: $preference) {
+    @content;
+  }
+}
+
+/**
+ * Mixin for color scheme
+ */
+@mixin screens-and-prefers-scheme($scheme, $contrast: false) {
+  @if ($contrast) {
+    @media screen and (prefers-color-scheme: $scheme) and (prefers-contrast: $contrast) {
+      @content('#{$scheme}');
+    }
+  } @else {
+    @media screen and (prefers-color-scheme: $scheme) {
+      @content('#{$scheme}');
     }
   }
 }

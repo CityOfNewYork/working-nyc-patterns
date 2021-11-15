@@ -1,26 +1,28 @@
+//
+// Variables, Functions, and Mixins
+//
+
 // Dependencies
-@use 'config/tokens' as *;
-@use 'config/grid' as *;
-@use 'config/direction';
-@use 'config/dimensions';
 @use 'config/typography';
+@use 'config/interaction';
 
 // Declarations
-$selects: map-get($tokens, 'selects');
-
-@function get($token) {
-  @return map-get($selects, $token);
-}
-
 @mixin base() {
   @include typography.set('option');
-  line-height: get('inner-size');
-  text-overflow: ellipsis;
-  padding: ($grid * 2) - get('border-width');
-  padding-#{direction.$end}: ($grid * 7) - get('border-width');
-  border: get('border-width') get('border-style');
-  border-color: inherit;
+
   background-color: transparent;
+
+  line-height: var(--wnyc-select-inner-size);
+  text-overflow: ellipsis;
+
+  padding: calc(calc(var(--wnyc-grid) * 2) - var(--wnyc-select-border-width));
+  padding-inline-end: calc(calc(var(--wnyc-grid) * 7) - var(--wnyc-select-border-width));
+
+  border: var(--wnyc-select-border-width) var(--wnyc-select-border-style);
+  border-color: inherit;
+  border-radius: var(--wnyc-select-radius);
+
+  @include interaction.focus();
 
   &::-ms-expand {
     display: none;
@@ -30,17 +32,17 @@ $selects: map-get($tokens, 'selects');
 @mixin graphic() {
   fill: transparent;
   stroke: transparent;
-  stroke-width: get('stroke-width');
-  stroke-linecap: get('stroke-line');
-  stroke-linejoin: get('stroke-line');
+  stroke-width: var(--wnyc-select-stroke-width);
+  stroke-linecap: var(--wnyc-select-stroke-line);
+  stroke-linejoin: var(--wnyc-select-stroke-line);
 
   position: absolute;
-  #{direction.$end}: $grid * 2;
+  inset-inline-end: calc(var(--wnyc-grid) * 2);
   top: 50%;
-  margin-top: -(get('inner-size'));
+  margin-top: calc(var(--wnyc-select-inner-size) * -1);
 
-  width: get('inner-size');
-  height: get('inner-size') * 2;
+  width: var(--wnyc-select-inner-size);
+  height: calc(var(--wnyc-select-inner-size) * 2);
 
   pointer-events: none;
 }

@@ -44,6 +44,9 @@ module.exports = {
     }
   },
   baseUrl: (process.env.NODE_ENV === 'production') ? package.homepage : '',
+  urls: {
+    tailwindDocs: 'https://tailwindcss.com/docs/'
+  },
   links: {
     nycopportunity: {
       homepage: 'http://nyc.gov/opportunity',
@@ -68,31 +71,36 @@ module.exports = {
         id: 'mce-group[4369]-4369-0',
         name: 'group[4369][1]',
         value: '1',
-        label: 'Bronx'
+        label: 'Bronx',
+        class: 'mb-0'
       },
       {
         id: 'mce-group[4369]-4369-4',
         name: 'group[4369][16]',
         value: '16',
-        label: 'Staten Island'
+        label: 'Staten Island',
+        class: 'mb-0'
       },
       {
         id: 'mce-group[4369]-4369-3',
         name: 'group[4369][8]',
         value: '8',
-        label: 'Queens'
+        label: 'Queens',
+        class: 'mb-0'
       },
       {
         id: 'mce-group[4369]-4369-1',
         name: 'group[4369][2]',
         value: '2',
-        label: 'Brooklyn'
+        label: 'Brooklyn',
+        class: 'mb-0'
       },
       {
         id: 'mce-group[4369]-4369-2',
         name: 'group[4369][4]',
         value: '4',
-        label: 'Manhattan'
+        label: 'Manhattan',
+        class: 'mb-0'
       }
     ]
   },
@@ -109,11 +117,11 @@ module.exports = {
       subtitle: '<b data-program="title">Red Hook on the Road</b> by <span data-program="provider">Brooklyn Workforce Innovations</span>',
       url: '/demos/programs/red-hook-on-the-road',
       status: `
-        <mark class="badge status-alt me-2" data-program="recruiting">
+        <mark class="badge mie-2" data-program="recruiting">
           Actively recruiting
         </mark>
 
-        <!-- <span class="flex me-2" data-program="accessible">
+        <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>
           </svg>
@@ -121,7 +129,7 @@ module.exports = {
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
 
-        <!-- <span class="flex me-2" data-program="multilingual">
+        <!-- <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
             <use xlink:href="#icon-wnyc-translate"></use>
           </svg>
@@ -132,8 +140,8 @@ module.exports = {
       summary: `
         <p><span data-program="summary">Through this program students prepare
         to work as commercial drivers.</span> For
-        <b class="text-alt" data-program="taxonomy.population">Unemployed New
-        Yorkers</b> and <b class="text-alt" data-program="taxonomy.population">
+        <b class="text-em" data-program="taxonomy.population">Unemployed New
+        Yorkers</b> and <b class="text-em" data-program="taxonomy.population">
         Adults</b>.</p>`,
       features: [
         {
@@ -163,11 +171,11 @@ module.exports = {
       subtitle: '<span data-program="title">Advance & Earn<span>',
       url: '/demos/programs/red-hook-on-the-road',
       // status: `
-      //   <!-- <mark class="badge status-alt me-2" data-program="recruiting">
+      //   <!-- <mark class="badge mie-2" data-program="recruiting">
       //     Actively recruiting
       //   </mark> -->
 
-      //   <!-- <span class="flex me-2" data-program="accessible">
+      //   <!-- <span class="flex mie-2" data-program="accessible">
       //     <svg aria-hidden="true" class="icon text-alt">
       //       <use xlink:href="#icon-wnyc-accessible"></use>
       //     </svg>
@@ -175,7 +183,7 @@ module.exports = {
       //     <span class="sr-only">Accommodates Disabilities</span>
       //   </span> -->
 
-      //   <!-- <span class="flex me-2" data-program="multilingual">
+      //   <!-- <span class="flex mie-2" data-program="multilingual">
       //     <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
       //       <use xlink:href="#icon-wnyc-translate"></use>
       //     </svg>
@@ -186,8 +194,8 @@ module.exports = {
       summary: `
         <p><span data-program="summary">Create a plan to achieve career and
         educational goals.</span> For
-        <b class="text-alt" data-program="taxonomy.population">Unemployed New
-        Yorkers</b> and <b class="text-alt" data-program="taxonomy.population">
+        <b class="text-em" data-program="taxonomy.population">Unemployed New
+        Yorkers</b> and <b class="text-em" data-program="taxonomy.population">
         Youth (16–24)</b>.</p>`,
       features: [
         {
@@ -214,11 +222,11 @@ module.exports = {
       subtitle: '<span data-program="title">Web Development Fellowship at Fullstack Academy<span>',
       url: '/demos/programs/red-hook-on-the-road',
       status: `
-        <mark class="badge status-alt me-2" data-program="recruiting">
+        <mark class="badge mie-2" data-program="recruiting">
           Actively recruiting
         </mark>
 
-        <!-- <span class="flex me-2" data-program="accessible">
+        <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>
           </svg>
@@ -226,7 +234,7 @@ module.exports = {
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
 
-        <!-- <span class="flex me-2" data-program="multilingual">
+        <!-- <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
             <use xlink:href="#icon-wnyc-translate"></use>
           </svg>
@@ -236,9 +244,9 @@ module.exports = {
       `,
       summary: `<p><span data-program="summary">This program takes students
         from amateur to professional in 24 weeks.</span> For
-        <b class="text-alt" data-program="taxonomy.population">Unemployed New
-        Yorkers</b>, <b class="text-alt" data-program="taxonomy.population">
-        Adults</b>, and <b class="text-alt" data-program="taxonomy.population">
+        <b class="text-em" data-program="taxonomy.population">Unemployed New
+        Yorkers</b>, <b class="text-em" data-program="taxonomy.population">
+        Adults</b>, and <b class="text-em" data-program="taxonomy.population">
         Low-income</b>.</p>`,
       features: [
         {
@@ -269,11 +277,11 @@ module.exports = {
       subtitle: '<span data-program="title">SBS Home Health Aide Training<span>',
       url: '/demos/programs/red-hook-on-the-road',
       status: `
-        <mark class="badge status-alt me-2" data-program="recruiting">
+        <mark class="badge mie-2" data-program="recruiting">
           Actively recruiting
         </mark>
 
-        <!-- <span class="flex me-2" data-program="accessible">
+        <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>
           </svg>
@@ -281,7 +289,7 @@ module.exports = {
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
 
-        <!-- <span class="flex me-2" data-program="multilingual">
+        <!-- <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
             <use xlink:href="#icon-wnyc-translate"></use>
           </svg>
@@ -291,7 +299,7 @@ module.exports = {
       `,
       summary: `<p><span data-program="summary">Prepare for a job in the
         healthcare field.</span> For
-        <b class="text-alt" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
+        <b class="text-em" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
       features: [
         {
           icon: 'feather-award',
@@ -320,7 +328,7 @@ module.exports = {
       subtitle: '<span data-program="title">NYC DOE Basic Education Classes<span>',
       url: '/demos/programs/red-hook-on-the-road',
       // status: `
-      //   <!-- <span class="flex me-2" data-program="accessible">
+      //   <!-- <span class="flex mie-2" data-program="accessible">
       //     <svg aria-hidden="true" class="icon text-alt">
       //       <use xlink:href="#icon-wnyc-accessible"></use>
       //     </svg>
@@ -328,7 +336,7 @@ module.exports = {
       //     <span class="sr-only">Accommodates Disabilities</span>
       //   </span> -->
 
-      //   <!-- <span class="flex me-2" data-program="multilingual">
+      //   <!-- <span class="flex mie-2" data-program="multilingual">
       //     <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
       //       <use xlink:href="#icon-wnyc-translate"></use>
       //     </svg>
@@ -337,8 +345,8 @@ module.exports = {
       //   </span> -->
       // `,
       summary: `<p>For
-        <b class="text-alt" data-program="taxonomy.population">Adults</b> and
-        <b class="text-alt" data-program="taxonomy.population">Immigrant New
+        <b class="text-em" data-program="taxonomy.population">Adults</b> and
+        <b class="text-em" data-program="taxonomy.population">Immigrant New
         Yorkers</b>.</p>`,
       features: [
         {
@@ -364,7 +372,7 @@ module.exports = {
       subtitle: '<span data-program="title">English for Speakers of Other Languages<span>',
       url: '/demos/programs/red-hook-on-the-road',
       status: `
-        <!-- <span class="flex me-2" data-program="accessible">
+        <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>
           </svg>
@@ -372,7 +380,7 @@ module.exports = {
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
 
-        <span class="flex me-2" data-program="multilingual">
+        <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
             <use xlink:href="#icon-wnyc-translate"></use>
           </svg>
@@ -383,8 +391,8 @@ module.exports = {
       summary: `<p><span data-program="summary">English language learners in the
         Flatbush/East Flatbush communities get help with language and math
         skills.</span> For
-        <b class="text-alt" data-program="taxonomy.population">Immigrant New Yorkers</b> and
-        <b class="text-alt" data-program="taxonomy.population">Young Adults (16–24)</b>.</p>`,
+        <b class="text-em" data-program="taxonomy.population">Immigrant New Yorkers</b> and
+        <b class="text-em" data-program="taxonomy.population">Young Adults (16–24)</b>.</p>`,
       features: [
         {
           icon: 'feather-award',
@@ -409,7 +417,7 @@ module.exports = {
       subtitle: '<span data-program="title">NYPL English for Work Classes<span>',
       url: '/demos/programs/red-hook-on-the-road',
       status: `
-        <!-- <span class="flex me-2" data-program="accessible">
+        <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>
           </svg>
@@ -417,7 +425,7 @@ module.exports = {
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
 
-        <span class="flex me-2" data-program="multilingual">
+        <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
             <use xlink:href="#icon-wnyc-translate"></use>
           </svg>
@@ -428,8 +436,8 @@ module.exports = {
       summary: `<p><span data-program="summary">Intermediate and Advanced
         speakers can improve English skills aimed at finding a new job or
         career.</span> For
-        <b class="text-alt" data-program="taxonomy.population">Immigrant New Yorkers</b> and
-        <b class="text-alt" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
+        <b class="text-em" data-program="taxonomy.population">Immigrant New Yorkers</b> and
+        <b class="text-em" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
       features: [
         {
           icon: 'feather-award',
@@ -456,11 +464,11 @@ module.exports = {
       subtitle: '<span data-program="title">Sunset Park Bridge to Commercial Driving<span>',
       url: '/demos/programs/red-hook-on-the-road',
       status: `
-        <mark class="badge status-alt me-2" data-program="recruiting">
+        <mark class="badge mie-2" data-program="recruiting">
           Actively recruiting
         </mark>
 
-        <!-- <span class="flex me-2" data-program="accessible">
+        <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>
           </svg>
@@ -468,7 +476,7 @@ module.exports = {
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
 
-        <span class="flex me-2" data-program="multilingual">
+        <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
             <use xlink:href="#icon-wnyc-translate"></use>
           </svg>
@@ -479,8 +487,8 @@ module.exports = {
       summary: `<p><span data-program="summary">This program includes classes to
         improve English skills followed by training to become a commercial
         driver.</span> For
-        <b class="text-alt" data-program="taxonomy.population">Immigrant New Yorkers</b> and
-        <b class="text-alt" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
+        <b class="text-em" data-program="taxonomy.population">Immigrant New Yorkers</b> and
+        <b class="text-em" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
       features: [
         {
           icon: 'feather-award',
@@ -649,7 +657,7 @@ module.exports = {
   announcements: [
     {
       title: `
-        <mark class="badge status-alt">New</mark> Money for heat and utility expenses
+        <mark class="badge">New</mark> Money for heat and utility expenses
         <svg aria-hidden="true" class="icon-wnyc-ui">
           <use xlink:href="#feather-external-link"></use>
         </svg>

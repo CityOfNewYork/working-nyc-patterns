@@ -1,5 +1,10 @@
+//
+// Variables, Functions, and Mixins
+//
+
 // Dependencies
 @use 'sass:list';
+@use 'sass:math';
 
 @use 'config/grid' as *;
 @use 'config/tokens';
@@ -8,6 +13,7 @@
 @use 'config/media';
 
 // Variables
+
 $layouts: map-get(tokens.$tokens, 'layouts');
 
 // Mixins
@@ -25,11 +31,8 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 }
 
 @mixin grid-gap($gaps: (1, 1)) {
-  $row-gap: dimensions.$spacing-base * list.nth($gaps, 1);
-  $column-gap: dimensions.$spacing-base * list.nth($gaps, 2);
-
-  row-gap: $row-gap; // x
-  column-gap: $column-gap; // y
+  row-gap: calc(var(--wnyc-spacing-DEFAULT) * #{list.nth($gaps, 1)}); // x
+  column-gap: calc(var(--wnyc-spacing-DEFAULT) * #{list.nth($gaps, 2)}); // y
 }
 
 @mixin grid-template-columns($repeat) {
@@ -41,7 +44,6 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   @include grid-template-columns($count);
 
   @if $gutter {
-    // $gaps: (dimensions.$spacing-base * $gutter, dimensions.$spacing-base * $gutter);
     @include grid-gap($gutter);
   }
 }
@@ -49,28 +51,28 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 // Wrap
 
 @mixin wrap() {
-  padding-left: (dimensions.$spacing-base / 3) * 2;
-  padding-right: (dimensions.$spacing-base / 3) * 2;
+  padding-inline-start: var(--wnyc-spacing-2);
+  padding-inline-end: var(--wnyc-spacing-2);
 
   @include media.screen-and-min-width('tablet') {
-    padding-left: dimensions.$spacing-base;
-    padding-right: dimensions.$spacing-base
+    padding-inline-start: var(--wnyc-spacing-DEFAULT);
+    padding-inline-end: var(--wnyc-spacing-DEFAULT);
   }
 }
 
 @mixin wrap-end() {
-  padding-#{direction.$end}: (dimensions.$spacing-base / 3) * 2;
+  padding-inline-end: var(--wnyc-spacing-2);
 
   @include media.screen-and-min-width('tablet') {
-    padding-#{direction.$end}: dimensions.$spacing-base;
+    padding-inline-end: var(--wnyc-spacing-DEFAULT);
   }
 }
 
 @mixin wrap-start() {
-  padding-#{direction.$start}: (dimensions.$spacing-base / 3) * 2;
+  padding-inline-start: var(--wnyc-spacing-2);
 
   @include media.screen-and-min-width('tablet') {
-    padding-#{direction.$start}: dimensions.$spacing-base;
+    padding-inline-start: var(--wnyc-spacing-DEFAULT);
   }
 }
 
@@ -78,8 +80,9 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 
 @mixin page-min-max() {
   @include auto();
-  max-width: dimensions.get('site-max-width');
-  min-width: dimensions.get('site-min-width');
+
+  max-width: var(--wnyc-dimension-site-max-width);
+  min-width: var(--wnyc-dimension-site-min-width);
 }
 
 @mixin page-min-max-selector($variant: '') {
@@ -90,7 +93,8 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 
 @mixin page-min() {
   @include auto();
-  min-width: dimensions.get('site-min-width');
+
+  min-width: var(--wnyc-dimension-site-min-width);
 }
 
 @mixin page-min-selector($variant: '') {
@@ -101,9 +105,9 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 
 @mixin page-max() {
   @include auto();
-  max-width: dimensions.get('site-max-width');
-}
 
+  max-width: var(--wnyc-dimension-site-max-width);
+}
 @mixin page-max-selector($variant: '') {
   .#{$variant}page-max {
     @include page-max();
@@ -196,16 +200,16 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 
   > *:first-child,
   > .layout__column:first-child {
-    width: dimensions.get('side-bar-width');
-    max-width: dimensions.get('side-bar-width');
-    flex-basis: dimensions.get('side-bar-width')
+    width: var(--wnyc-dimension-side-bar-width);
+    max-width: var(--wnyc-dimension-side-bar-width);
+    flex-basis: var(--wnyc-dimension-side-bar-width)
   }
 
   > *:first-child + *,
   > .layout__column:first-child + .layout__column {
-    width: calc(100% - #{dimensions.get('side-bar-width')});
-    max-width: calc(100% - #{dimensions.get('side-bar-width')});
-    flex-basis: calc(100% - #{dimensions.get('side-bar-width')})
+    width: calc(100% - #{var(--wnyc-dimension-side-bar-width)});
+    max-width: calc(100% - #{var(--wnyc-dimension-side-bar-width)});
+    flex-basis: calc(100% - #{var(--wnyc-dimension-side-bar-width)})
   }
 }
 
@@ -221,16 +225,16 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 
   > *:first-child,
   > .layout__column:first-child {
-    width: dimensions.get('side-bar-width-small');
-    max-width: dimensions.get('side-bar-width-small');
-    flex-basis: dimensions.get('side-bar-width-small')
+    width: var(--wnyc-dimension-side-bar-width-small);
+    max-width: var(--wnyc-dimension-side-bar-width-small);
+    flex-basis: var(--wnyc-dimension-side-bar-width-small)
   }
 
   > *:first-child + *,
   > .layout__column:first-child + .layout__column {
-    width: calc(100% - #{dimensions.get('side-bar-width-small')});
-    max-width: calc(100% - #{dimensions.get('side-bar-width-small')});
-    flex-basis: calc(100% - #{dimensions.get('side-bar-width-small')})
+    width: calc(100% - #{var(--wnyc-dimension-side-bar-width-small)});
+    max-width: calc(100% - #{var(--wnyc-dimension-side-bar-width-small)});
+    flex-basis: calc(100% - #{var(--wnyc-dimension-side-bar-width-small)})
   }
 }
 
@@ -246,17 +250,17 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 
   > *:first-child,
   > .layout__column:first-child {
-    width: dimensions.get('side-bar-width');
-    max-width: dimensions.get('side-bar-width');
-    flex-basis: dimensions.get('side-bar-width');
-    margin-#{direction.$end}: dimensions.$spacing-base;
+    width: var(--wnyc-dimension-side-bar-width);
+    max-width: var(--wnyc-dimension-side-bar-width);
+    flex-basis: var(--wnyc-dimension-side-bar-width);
+    margin-inline-end: var(--wnyc-spacing-DEFAULT);
   }
 
   > *:first-child + *,
   > .layout__column:first-child + .layout__column {
-    width: calc(100% - #{dimensions.get('side-bar-width')} - #{dimensions.$spacing-base});
-    max-width: calc(100% - #{dimensions.get('side-bar-width')} - #{dimensions.$spacing-base});
-    flex-basis: calc(100% - #{dimensions.get('side-bar-width')} - #{dimensions.$spacing-base})
+    width: calc(100% - #{var(--wnyc-dimension-side-bar-width)} - var(--wnyc-spacing-DEFAULT));
+    max-width: calc(100% - #{var(--wnyc-dimension-side-bar-width)} - var(--wnyc-spacing-DEFAULT));
+    flex-basis: calc(100% - #{var(--wnyc-dimension-side-bar-width)} - var(--wnyc-spacing-DEFAULT))
   }
 }
 
@@ -272,17 +276,17 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 
   > *:first-child,
   > .layout__column:first-child {
-    width: dimensions.get('side-bar-width-small');
-    max-width: dimensions.get('side-bar-width-small');
-    flex-basis: dimensions.get('side-bar-width-small');
-    margin-#{direction.$end}: dimensions.$spacing-base;
+    width: var(--wnyc-dimension-side-bar-width-small);
+    max-width: var(--wnyc-dimension-side-bar-width-small);
+    flex-basis: var(--wnyc-dimension-side-bar-width-small);
+    margin-inline-end: var(--wnyc-spacing-DEFAULT);
   }
 
   > *:first-child + *,
   > .layout__column:first-child + .layout__column {
-    width: calc(100% - #{dimensions.get('side-bar-width-small')} - #{dimensions.$spacing-base});
-    max-width: calc(100% - #{dimensions.get('side-bar-width-small')} - #{dimensions.$spacing-base});
-    flex-basis: calc(100% - #{dimensions.get('side-bar-width-small')} - #{dimensions.$spacing-base})
+    width: calc(100% - #{var(--wnyc-dimension-side-bar-width-small)} - var(--wnyc-spacing-DEFAULT));
+    max-width: calc(100% - #{var(--wnyc-dimension-side-bar-width-small)} - var(--wnyc-spacing-DEFAULT));
+    flex-basis: calc(100% - #{var(--wnyc-dimension-side-bar-width-small)} - var(--wnyc-spacing-DEFAULT))
   }
 }
 
@@ -298,7 +302,8 @@ $layouts: map-get(tokens.$tokens, 'layouts');
   > *:first-child,
   > .layout__column:first-child {
     @include auto();
-    max-width: dimensions.get('content-width')
+
+    max-width: var(--wnyc-dimension-content-width)
   }
 }
 
@@ -311,14 +316,14 @@ $layouts: map-get(tokens.$tokens, 'layouts');
 @mixin topbar-selector($variant: '') {
   .#{$variant}layout-topbar {
     > *:first-child {
-      height: dimensions.get('topbar-height')
+      height: var(--wnyc-dimension-topbar-height)
     }
   }
 
   .#{$variant}layout-topbar {
     > *:first-child + * {
       position: relative;
-      height: calc(100vh - #{dimensions.get('topbar-height')});
+      height: calc(100vh - var(--wnyc-dimension-topbar-height));
       overflow: hidden
     }
   }

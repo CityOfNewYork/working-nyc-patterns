@@ -11,12 +11,8 @@ fieldset, legend {
   @include forms.fieldset-reset;
 }
 
-fieldset {
-  margin-bottom: question.$margin-bottom
-}
-
-legend {
-  margin-bottom: question.$margin-bottom-label
+fieldset, .fieldset {
+  margin-bottom: forms.$fieldset-margin-bottom;
 }
 
 input, textarea, select, optgroup {

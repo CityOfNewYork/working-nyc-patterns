@@ -3,17 +3,29 @@
  */
 
 // Dependencies
-@use 'config/tokens';
-@use 'config/cdn';
-@use 'config/color';
-@use 'config/direction';
-// @use 'bourbon/app/assets/stylesheets/addons/triangle';
+@use 'config/links';
+@use 'config/interaction';
 
 // Declarations
-a, .btn-link, .button-link {
-  font-weight: map-get(map-get(tokens.$tokens, 'links'), 'font-weight');
-  text-decoration: map-get(map-get(tokens.$tokens, 'links'), 'text-decoration');
+a {
+  @include links.base();
+  @include interaction.focus();
 
-  text-decoration: underline;
-  transition: color .2s ease-in;
+  &:visited {
+    color: var(--wnyc-link-visited);
+  }
+
+  &:hover {
+    @include links.hover();
+  }
+}
+
+.anchor {
+  &:visited {
+    color: var(--wnyc-link);
+  }
+
+  &:hover {
+    @include links.hover();
+  }
 }

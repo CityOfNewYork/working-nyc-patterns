@@ -1,7 +1,14 @@
 - this.navigation = (this.navigation) ? this.navigation : [];
 
-= mixin('section', 'path', 'config = {title: false, source: true}');
-  - id = (this.config.title && this.config.title !== '') ? this.config.title : this.title
+= mixin('section', 'path', 'config = {title: false, text: true, markup: true, demo: true}');
+  - this.config = (!this.config || typeof this.config === 'string') ? {} : this.config
+
+  - this.config.title = (this.config.hasOwnProperty('title')) ? this.config.title : false
+  - this.config.text = (this.config.hasOwnProperty('text')) ? this.config.text : true       // default
+  - this.config.markup = (this.config.hasOwnProperty('markup')) ? this.config.markup : true // default
+  - this.config.demo = (this.config.hasOwnProperty('demo')) ? this.config.demo : true // default
+
+  - id = (this.config.title) ? this.config.title : this.title;
   - id = id.toLowerCase().split(' ').join('-')
   - grid = (this.config.grid)
 
@@ -15,40 +22,65 @@
 
   section id=id class='pb-4 mb-4'
     / Render the Section header
-    header class='page-max layout-content pb-4'
+    header class='page-max layout-content py-4'
       div class='wrap'
         - if this.config.title
-          h4
-            a href='#${id}' = this.config.title;
+          h4 class='flex items-center'
+            a href='#${id}' class='mie-1 flex items-center'
+              svg class='icon-wnyc-ui' role='img'
+                title ${this.config.title} Anchor Link
+                use xlink:href='#feather-anchor'
 
-        p
-          = 'Source: ';
-          code
+            = this.config.title;
+
+        - if this.config.markup || this.config.demo
+          p class='flex items-center'
+            svg class='icon-wnyc-ui mie-1' role='img'
+              title GitHub Source Link
+              use xlink:href='#feather-github'
+
+            / code
             a href='${source}' target='_blank'
               = 'src' + this.path
 
-    / Render the component's text specs on the page
-    div class='page-max layout-content pb-6'
-      div class='wrap'
-        == this.include(this.path + '.md');
+    / Render the component text specs on the page
+    - if this.config.text
+      /! Section Text
+      div class='page-max layout-content pb-6'
+        div class='wrap'
+          == this.include(this.path + '.md');
 
     / Render the component on the page
-    div class='page-max layout-content pb-4'
-      h4 id='${id}-example' class='wrap'
-        a href='#${id}-example' Demonstration
+    - if this.config.markup
+      div class='page-max layout-content pb-4'
+        h5 id='${id}-example' class='wrap flex items-center'
+          / a href='#${id}-example' class='mie-1 flex items-center'
+          /   svg class='icon-wnyc-ui' role='img'
+          /     title Demonstration Anchor Link
+          /     use xlink:href='#feather-anchor'
 
-    div class='bg-scale-0 py-6 mb-6'
-      div class='page-max flex justify-center py-6'
-        div class='wrap'
+          | Demonstration
+
+    / Render the markup live demonstration
+    - if this.config.demo
+      div class='bg-scale-0 py-6 mb-6'
+        div class='page-max flex justify-center py-6'
           == this.include(this.path + '.slm');
 
     / Render the componet markup in the code block
-    div class='page-max layout-content pb-4'
-      h4 id='${id}-markup' class='wrap'
-        a href='#${id}-markup' Markup
+    - if this.config.markup
+      /! Section Markup
+      div class='page-max layout-content pb-4'
+        h5 id='${id}-markup' class='wrap flex items-center'
+          / a href='#${id}-markup' class='mie-1 flex items-center'
+          /   svg class='icon-wnyc-ui' role='img'
+          /     title Markup Anchor Link
+          /     use xlink:href='#feather-anchor'
 
-    div class='page-max layout-content'
-      div class='wrap'
-        div class='code-block mb-1'
-          pre tabindex='0'
-            = this.include(this.path);
+          | Markup
+
+      div class='page-max layout-content'
+        div class='wrap'
+          div class='code-block mb-1'
+            pre tabindex='0'
+              = this.include(this.path);

@@ -1,0 +1,26 @@
+//
+// Variables, Functions, and Mixins
+//
+
+// Dependencies
+// @use ...
+
+// Declarations
+@mixin base() {
+  color: var(--wnyc-link);
+  font-weight: var(--wnyc-fontWeight-link);
+  text-decoration: underline;
+
+  // &[href^='#']:visited {
+  //   color: var(--wnyc-link);
+  // }
+}
+
+@mixin hover() {
+  color: var(--wnyc-link-hover);
+  // color: var(--wnyc-link-hover) !important;
+
+  // &[href^='#']:visited {
+  //   color: var(--wnyc-link-hover);
+  // }
+}

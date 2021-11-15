@@ -1,6 +1,0 @@
-/
-/ Primary Button
-/
-
-button type='button' class='btn-primary'
-  | Primary Button

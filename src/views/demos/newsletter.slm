@@ -15,8 +15,8 @@
       div
         div class='layout-content sticky top-0 bg-scale-1 z-10'
           nav class='c-utility' aria-label='utility'
-            a href='${this.baseUrl}/demos/index' class='btn-link me-auto'
-              svg class='icon-wnyc-ui' aria-hidden='true'
+            a href='${this.baseUrl}/demos/index' class='mie-auto'
+              svg class='icon-wnyc-ui mie-1' aria-hidden='true'
                 use xlink:href='#feather-chevron-left'
 
               span Home
@@ -43,8 +43,10 @@
 
         section class='layout-content'
           div class='wrap'
-            div class='pb-6'
+            div class='pb-8 mb-8'
               = partial('/objects/newsletter/newsletter-form')
+
+      = partial('/objects/feedback/feedback')
 
 = content('script');
   / javascript:

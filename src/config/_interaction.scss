@@ -1,8 +1,34 @@
 //
-// Config
+// Variables, Functions, and Mixins
 //
 
 @mixin disable-pointer-events {
   pointer-events: none;
   display: inline-block; // for PE: none to work with Windows Edge and inline elements, this must be set
+}
+
+@mixin blurred() {
+  outline: 0px solid transparent;
+  outline-offset: var(--wnyc-focus-gap);
+}
+
+@mixin focused() {
+  outline-width: var(--wnyc-focus-width);
+  outline-color: var(--wnyc-focus);
+}
+
+// input:focus + .opt__base {
+@mixin focus() {
+  @include blurred();
+
+  &:focus {
+    @include focused()
+  }
+
+  // outline: none;
+  // box-shadow: 0 0 0 var(--wnyc-focus-width) var(--wnyc-focus);
+
+  // outline: none;
+  // box-shadow: 0 0 0 var(--wnyc-focus-gap) var(--wnyc-focus-background),
+              // 0 0 0 calc(var(--wnyc-focus-gap) + var(--wnyc-focus-width)) var(--wnyc-focus);
 }

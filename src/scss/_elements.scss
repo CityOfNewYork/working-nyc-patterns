@@ -4,13 +4,14 @@
 
 // Elements include universal styles, atomic patterns, and css systems. Examples
 // include classes that assign color, modify the display of elements, or set up
-// scaffolding like typography or grid systems. Uitilities will have their own
+// scaffolding like typography or grid systems. Utilities will have their own
 // namespace prefixes based on their attributes.
 
 @forward 'elements/base/base';
 @forward 'elements/badge/badge';
 @forward 'elements/buttons/buttons';
 @forward 'elements/code/code';
+@forward 'elements/description-lists/description-lists';
 @forward 'elements/divider/divider';
 @forward 'elements/forms/forms';
 @forward 'elements/icons/icons';
@@ -18,12 +19,7 @@
 @forward 'elements/labels/labels';
 @forward 'elements/layouts/layouts';
 @forward 'elements/links/links';
-// @forward 'elements/lists/lists';
 @forward 'elements/nav/nav';
 @forward 'elements/options/options';
-// @forward 'elements/overlay/overlay';
 @forward 'elements/selects/selects';
-// @forward 'elements/spinner/spinner';
 @forward 'elements/tables/tables';
-// @forward 'elements/toggles/toggles';
-// @forward 'elements/tooltips/tooltips';

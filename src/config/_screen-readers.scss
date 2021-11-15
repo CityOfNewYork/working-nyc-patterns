@@ -1,7 +1,11 @@
 //
-// Config
+// Variables, Functions, and Mixins
 //
 
+// Dependencies
+// @use ...
+
+// Declarations
 @mixin only {
   border: 0;
   clip: rect(0, 0, 0, 0);

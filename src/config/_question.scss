@@ -1,32 +1,25 @@
 //
-// Variables
+// Variables, Functions, and Mixins
 //
 
 // Dependencies
 @use 'config/grid' as *;
+@use 'config/forms';
+@use 'config/labels';
 @use 'config/dimensions';
 @use 'config/direction';
 @use 'config/typography';
 @use 'config/media';
 
 // Declarations
-$margin-bottom: $grid * 5;
-$margin-bottom-label: $grid;
-
 @mixin base() {
   @include typography.set('question');
-  margin-bottom: $margin-bottom;
+
+  margin-bottom: forms.$fieldset-margin-bottom;
 
   @include typography.selector-body-elements() {
     @include typography.set('question');
   }
-}
-
-@mixin label() {
-  font-weight: bold;
-  display: inline-block;
-  vertical-align: top;
-  margin-bottom: $margin-bottom-label;
 }
 
 @mixin error() {
@@ -36,16 +29,13 @@ $margin-bottom-label: $grid;
     &::before {
       content: '';
       position: absolute;
-      top: -($grid * 2);
-      bottom: -(dimensions.$spacing-base);
 
-      @if direction.$direction == 'rtl' {
-        right: -14px;
-      } @else {
-        left: -14px;
-      }
+      top: calc(var(--wnyc-grid) * -2);
+      bottom: calc(var(--wnyc-spacing-DEFAULT) * -1);
 
-      border-left: 4px solid;
+      inset-inline-start: calc(calc(var(--wnyc-grid) * -2) - var(--wnyc-input-error-border-width));
+
+      border-inline-start: var(--wnyc-input-error-border-width) solid var(--wnyc-error);
       display: block;
       width: 0;
     }
@@ -54,6 +44,8 @@ $margin-bottom-label: $grid;
 
 @mixin error-message() {
   @include typography.set('small');
-  margin-bottom: $grid * 2;
+
+  color: var(--wnyc-error);
+  margin-bottom: calc(var(--wnyc-grid) * 2);
   width: 100%;
 }

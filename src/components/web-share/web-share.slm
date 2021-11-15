@@ -31,7 +31,7 @@ div class='c-web-share ${this.webShare.class}'
         /! { @data-js        data-js="web-share" designates this element as a toggling element for the dropdown }
         /! { @aria-controls  Targets the element that will be shown and hidden by the toggle }
         /! { @aria-expanded  Indicates if the dropdown is open or not }
-        /! { @data-dropdown  data-dropdown="close" designates this element as the primary close toggle for the dropdown. It will be focused on when the dropdown is opened. Only one close toggle associated with this aria-controls value can exist on the page }
+        /! { @data-dialog  data-dialog="close" designates this element as the primary close toggle for the dropdown. It will be focused on when the dropdown is opened. Only one close toggle associated with this aria-controls value can exist on the page }
         /! { @tabindex       Set the tabindex to '-1' on focusable elements if this area is hidden when the page is rendered }
         button class='btn btn-primary btn-small m-0' data-js='web-share' aria-controls='aria-c-web-share-fallback-${this.webShare.id}' aria-expanded='false' tabindex='-1'
           svg class='icon-wnyc-ui' aria-hidden='true' tabindex='-1'
@@ -56,7 +56,7 @@ div class='c-web-share ${this.webShare.class}'
           svg class='icon icon-wnyc-ui'
             use xlink:href='#feather-copy'
 
-          svg class='icon-pressed icon-wnyc-ui me-1'
+          svg class='icon-pressed icon-wnyc-ui mie-1'
             use xlink:href='#feather-check'
 
           span Copy URL

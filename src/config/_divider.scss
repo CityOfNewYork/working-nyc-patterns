@@ -1,5 +1,11 @@
-@use 'config/dimensions';
+//
+// Variables, Functions, and Mixins
+//
 
+// Dependencies
+// @use ...
+
+// Declarations
 @mixin selector($variant: '', $type: '') {
   @if $type != '' {
     .#{$variant}divider-#{$type} {
@@ -19,19 +25,21 @@
   display: block;
   width: 100%;
   border-bottom: 1px solid;
-  border-color: var(--color-scale-3);
+  border-color: var(--wnyc-scale-3);
 }
 
 @mixin dividers($variant: '') {
   @include selector($variant) {
     @include base();
-    margin-top: 1.5 * dimensions.$spacing-base;
-    margin-bottom: 1.5 * dimensions.$spacing-base;
+
+    margin-top: calc(var(--wnyc-spacing-DEFAULT) * 1.5);
+    margin-bottom: calc(var(--wnyc-spacing-DEFAULT) * 1.5);
   }
 
   @include selector($variant, 'large') {
     @include base();
-    margin-top: 2.5 * dimensions.$spacing-base;
-    margin-bottom: 2.5 * dimensions.$spacing-base;
+
+    margin-top: calc(var(--wnyc-spacing-DEFAULT) * 2.5);
+    margin-bottom: calc(var(--wnyc-spacing-DEFAULT) * 2.5);
   }
 }

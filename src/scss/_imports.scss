@@ -47,6 +47,7 @@
  * Main
  */
 
+@forward 'tokens';
 @forward 'elements';
 @forward 'components';
 @forward 'objects';
@@ -55,6 +56,6 @@
  * Base elements that need to be included after other patterns to take effect
  */
 
-@forward 'elements/base/first-last';
-
 @forward 'utilities';
+
+@forward 'elements/base/first-last';

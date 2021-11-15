@@ -1,0 +1,13 @@
+/
+/ Disabled Button
+/
+
+div class='grid grid-cols-3 gap-3'
+  button type='button' disabled=true
+    | Disabled Button
+
+  button class='btn' type='button' disabled=true
+    | Disabled Button
+
+  button class='btn btn-primary' type='button' disabled=true
+    | Disabled Button

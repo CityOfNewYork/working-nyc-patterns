@@ -1,0 +1,16 @@
+//
+// Variables, Functions, and Mixins
+//
+
+// Dependencies
+// @import ...
+
+// Declarations
+$margin-bottom: var(--wnyc-grid);
+
+@mixin base() {
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: $margin-bottom;
+}

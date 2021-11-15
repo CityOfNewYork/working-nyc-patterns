@@ -2,100 +2,64 @@
  * Footer
  */
 
+@forward '@nycopportunity/pattern-attribution/src/attribution';
+
 // Dependencies
 @use 'config/grid' as *;
 @use 'config/dimensions';
-@use 'config/direction';
 @use 'config/layouts';
-@use 'config/media';
 @use 'config/nav';
+@use 'config/media';
 @use 'config/typography';
 @use 'config/z' as indexes;
 
 // Declarations
+:root {
+  --o-attribution-section-borders: 1px solid var(--wnyc-scale-3);
+}
+
 .o-footer {
   @include typography.set('small');
   @include layouts.wrap();
-  padding-top: dimensions.$spacing-base;
-  padding-bottom: dimensions.$spacing-base;
+
+  padding-top: var(--wnyc-spacing-DEFAULT);
+  padding-bottom: var(--wnyc-spacing-DEFAULT);
   width: 100%;
 
   @include media.screen-and-min-width('tablet') {
-    padding-top: $grid * 9;
-    padding-bottom: $grid * 9;
+    padding-top: calc(var(--wnyc-grid) * 9);
+    padding-bottom: calc(var(--wnyc-grid) * 9);
   }
 }
 
 .o-footer-fixed {
   @include media.screen-and-max-width('tablet') {
     position: fixed;
-    bottom: dimensions.get('navigation-height-mobile');
+    bottom: var(--wnyc-dimension-navigation-height-mobile);
     z-index: indexes.get('footer')
   }
 }
 
 .o-footer__divider {
-  border-bottom: 1px solid var(--color-scale-3);
+  border-bottom: 1px solid var(--wnyc-scale-3);
 }
 
 .o-footer__nav {
-  @include nav.block();
-
-  @include media.screen-and-max-width('tablet') {
-    .btn-link, a:not(.btn) {
-      padding-bottom: 0
-    }
-  }
-
-  margin-bottom: $grid * 2;
-  padding-bottom: $grid * 2;
-  border-bottom: 1px solid var(--color-scale-3);
+  @include nav.block;
 
   @include media.screen-and-min-width('tablet') {
-    border: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-}
+    @include nav.inline('', 'o-footer__item');
 
-.o-footer__wrap {
-  @include media.screen-and-min-width('tablet') {
     display: flex;
-    flex-wrap: wrap
+    align-items: center;
   }
 }
 
-.o-footer__break {
-  flex-basis: 100%;
+.o-footer__item, .o-footer__item:not(.btn) {
+  @include typography.font-family('primary');
 
   @include media.screen-and-min-width('tablet') {
-    display: none
-  }
-}
-
-.o-footer__nav-b,
-.o-footer__nav-a {
-  @include media.screen-and-min-width('tablet') {
-    flex-basis: 50%;
-    max-width: 50%;
-    width: 50%
-  }
-
-  @include media.screen-and-min-width('tablet') {
-    flex-basis: 22%;
-    max-width: 22%;
-    width: 22%
-  }
-}
-
-.o-footer__nav-c {
-  @include media.screen-and-max-width('tablet') {
-    flex-basis: 100%;
-    max-width: 100%;
-    width: 100%
-  }
-
-  @include media.screen-and-min-width('tablet') {
-    margin-#{direction.$start}: auto;
+    display: inline-flex;
+    padding: 0;
   }
 }

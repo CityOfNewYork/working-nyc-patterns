@@ -1,0 +1,1 @@
+The Mobile Menu Object contains the links and button elements for navigating different views and features that do not fit within the Navigation Object on mobile devices.

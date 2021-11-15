@@ -1,7 +1,12 @@
 {
   "name": "@nycopportunity/working-patterns",
+  "nice": "Working NYC Patterns",
+  "org": "NYC Opportunity",
+  "author": "products@nycopportunity.nyc.gov",
+  "license": "GPL-3.0+",
   "version": "0.0.1-44",
   "description": "",
+  "homepage": "https://cityofnewyork.github.io/working-nyc-patterns",
   "repository": {
     "type": "git",
     "url": "https://github.com/cityofnewyork/working-nyc-patterns.git"
@@ -12,23 +17,24 @@
     "patterns",
     "nyc"
   ],
-  "author": "products@nycopportunity.nyc.gov",
-  "license": "GPL-3.0+",
   "bugs": {
-    "url": "https://github.com/cityofnewyork/workingnyc-patterns/issues"
+    "url": "https://github.com/cityofnewyork/working-nyc-patterns/issues"
   },
   "cdn": {
-    "url": "https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-wnyc-patterns",
-    "source": "https://github.com/cityofnewyork/workingnyc-patterns",
-    "archive": "https://github.com/cityofnewyork/workingnyc-patterns/archive",
+    "url": "https://cdn.jsdelivr.net/gh/cityofnewyork/working-nyc-patterns",
+    "source": "https://github.com/cityofnewyork/working-nyc-patterns",
+    "archive": "https://github.com/cityofnewyork/working-nyc-patterns/archive",
+    "release": "https://github.com/cityofnewyork/working-nyc-patterns/tree/v",
     "npm": "https://www.npmjs.com/package/@nycopportunity/working-patterns",
     "figma": "https://www.figma.com/file/CH7ZOCW55SgsDnsTj3UrTi/Patterns",
     "styles": "/dist/styles/site-default.css",
+    "scripts": "/dist/scripts/main.js",
+    "svg": "/dist/svg/icons.svg",
+    "feather": "/dist/svg/feather.svg",
+    "fonts": "/dist/fonts",
     "tailwindcss": "/dist/styles/tailwindcss.css",
     "tailwindsass": "/dist/styles/_tailwindcss.scss",
-    "scripts": "/dist/scripts/main.js",
-    "polyfills": "/dist/scripts/polyfills.js",
-    "svg": "/dist/svg/icons.svg"
+    "favicon": "/dist/svg/favicon.svg"
   },
   "src": {
     "styles": "/src/scss/_imports.scss",
@@ -38,10 +44,12 @@
   "instantiations": {
     "scripts": "WorkingNyc"
   },
-  "homepage": "https://cityofnewyork.github.io/working-nyc-patterns",
+  "svgs": {
+    "primary": "icon-logo-primary"
+  },
   "main": "npm start",
   "scripts": {
-    "start": "npm run development && cross-env NODE_ENV=development cross-env PORT=7000 concurrently \"pttrn default -w\" \"pttrn serve -w\" -p \"none\"",
+    "start": "npm run development && cross-env NODE_ENV=development cross-env PORT=7000 concurrently \"pttrn default -w -np\" \"pttrn serve -w\" -p \"none\"",
     "development": "cross-env NODE_ENV=development pttrn default -np -nl",
     "production": "cross-env NODE_ENV=production pttrn default -np -nl",
     "default": "pttrn default -np -nl",
@@ -53,19 +61,26 @@
   },
   "devDependencies": {
     "@hail2u/css-mqpacker": "^8.0.1",
-    "@nycopportunity/pttrn": "^1.0.3",
-    "@nycopportunity/pttrn-plugin-feather": "^1.0.1",
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.0.0",
-    "@rollup/plugin-replace": "^2.3.4",
-    "cssnano": "^4.1.10",
+    "@nycopportunity/pttrn": "^1.3.0",
+    "@nycopportunity/pttrn-docs": "^1.0.6",
+    "@nycopportunity/pttrn-plugin-feather": "^1.0.2",
+    "@nycopportunity/pttrn-plugin-properties": "^1.1.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@rollup/plugin-replace": "^2.4.2",
+    "@tailwindcss/aspect-ratio": "^0.3.0",
+    "cssnano": "^5.0.10",
     "deepmerge": "^4.2.2",
-    "postcss": "^8.2.1"
+    "postcss": "^8.3.11",
+    "tailwindcss-logical": "^2.0.0"
   },
   "dependencies": {
-    "@nycopportunity/pttrn-scripts": "^1.0.1",
+    "@nycopportunity/pattern-attribution": "^1.0.3",
+    "@nycopportunity/pattern-menu": "^1.0.1",
+    "@nycopportunity/pattern-navigation": "^1.0.2",
+    "@nycopportunity/pttrn-scripts": "^1.0.8",
     "feather-icons": "^4.28.0",
-    "js-cookie": "^3.0.0-rc.1",
-    "whatwg-fetch": "^3.5.0"
+    "js-cookie": "^3.0.1",
+    "whatwg-fetch": "^3.6.2"
   }
 }

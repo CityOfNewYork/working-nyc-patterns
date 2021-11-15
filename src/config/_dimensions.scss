@@ -1,16 +1,9 @@
 //
-// Variables
+// Variables, Functions, and Mixins
 //
 
 // Dependencies
-@use 'config/tokens' as *;
-@use 'config/grid' as *;
-
-// Dimension Variables
-$dimensions: map-get($tokens, 'dimensions');
-
-// The calculated spacing for all elements
-$spacing-base: $grid * map-get($dimensions, 'spacing-base');
+// @use 'config/tokens' as *;
 
 /**
  * Get a token value from the dimension set
@@ -20,5 +13,5 @@ $spacing-base: $grid * map-get($dimensions, 'spacing-base');
  * @return  {Mixed}           The token value
  */
 @function get($token) {
-  @return map-get($dimensions, $token);
+  @return var(--wnyc-dimension-#{$token});
 }

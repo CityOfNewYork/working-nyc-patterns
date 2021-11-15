@@ -1,0 +1,11 @@
+/ Status
+
+/ Defaults
+- this['status'] = {}
+- this['status'].id = this.createId()
+
+/ Inherit overrides
+- if (typeof status !== 'undefined')
+  - this['status'] = Object.assign(this['status'], status);
+
+div class='status'

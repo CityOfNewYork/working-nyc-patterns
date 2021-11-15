@@ -13,14 +13,17 @@
   - this.button = Object.assign(this.button, button);
 
 - if (this.button.href)
-  a class='btn ${this.button.class}' tabindex=this.button.tabindex href=this.button.href
-    - if (this.button.type)
-      = partial(`/elements/buttons/buttons-${this.button.type}`)
-    - else
+  - if (this.button.type)
+    = partial(`/elements/buttons/buttons-${this.button.type}`)
+
+  - else
+    a class='btn ${this.button.class}' tabindex=this.button.tabindex href=this.button.href
       span = this.button.label
+
 - else
-  button class='btn ${this.button.class}' tabindex=this.button.tabindex type='button'
-    - if (this.button.type)
-      = partial(`/elements/buttons/buttons-${this.button.type}`)
-    - else
+  - if (this.button.type)
+    = partial(`/elements/buttons/buttons-${this.button.type}`)
+
+  - else
+    button class='${this.button.class}' tabindex=this.button.tabindex type='button'
       span = this.button.label

@@ -5,7 +5,6 @@
 // Dependencies
 @use 'config/grid';
 @use 'config/animate';
-@use 'config/color';
 @use 'config/dimensions';
 @use 'config/direction';
 @use 'config/buttons';
@@ -17,11 +16,9 @@ button {
   @include buttons.reset;
 }
 
-.btn, [class*='btn-'],
-.button, [class*='button-'] {
+.btn, [class*='btn-'] {
   @include buttons.base;
   @include buttons.icon-toggle();
-  @include animate.transition;
 }
 
 @mixin buttons($variant: '') {
@@ -29,26 +26,18 @@ button {
     @include buttons.normal();
   }
 
-  // Types
+  // Button Types
 
-  .#{$variant}btn-tag, .#{$variant}button-tag {
+  .#{$variant}btn-tag {
     @include buttons.tag();
   }
 
-  .#{$variant}btn-toggle, .#{$variant}button-toggle {
+  .#{$variant}btn-toggle {
     @include buttons.toggle();
   }
 
-  .#{$variant}btn-small, .#{$variant}button-small {
+  .#{$variant}btn-small {
     @include buttons.small();
-  }
-
-  .#{$variant}btn-link, .#{$variant}button-link {
-    @include buttons.link();
-  }
-
-  .#{$variant}btn-text, .#{$variant}button-text {
-    @include buttons.text();
   }
 }
 
@@ -56,10 +45,20 @@ button {
   @include buttons($variant);
 }
 
+@each $type in ('primary', 'secondary', 'tertiary') {
+  .btn-#{$type} {
+    @include buttons.color($type);
+  }
+
+  @include media.screens-and-prefers-scheme(light) using ($scheme) {
+    .#{$scheme}\:btn-#{$type} {
+      @include buttons.color($type);
+    }
+  }
+}
+
 .btn-next,
-.btn-previous,
-.button-next,
-.button-previous {
+.btn-previous {
   &[class*='-next'] {
     @include buttons.next;
   }

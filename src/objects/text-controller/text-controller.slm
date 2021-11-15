@@ -14,7 +14,7 @@ div id='aria-c-text-controller' class='o-text-controller bg-scale-1 ${this.textC
   div class='o-text-controller__inner'
     div
       div class='text-end'
-        button class='btn btn-primary btn-small' data-js='dropdown' aria-controls='aria-c-text-controller' aria-expanded='false' data-dropdown='close' tabindex=this.textController.tabindex
+        button class='btn btn-primary btn-small' data-js='dialog' aria-controls='aria-c-text-controller' aria-expanded='false' data-dialog='close' tabindex=this.textController.tabindex
           svg class='icon-wnyc-ui' aria-hidden='true' tabindex=this.textController.tabindex
             use xlink:href='#feather-x'
 
@@ -73,8 +73,8 @@ div id='aria-c-text-controller' class='o-text-controller bg-scale-1 ${this.textC
                   span বাংলা
 
           p
-            span class='sr-only' Powered by Google Translate
-            svg class='icon-logo-google-translate' aria-hidden='true' tabindex=this.textController.tabindex
+            svg class='icon-logo-google-translate' role='img' tabindex=this.textController.tabindex
+              title Powered by Google Translate
               use xlink:href='#logo-google-translate'
 
 

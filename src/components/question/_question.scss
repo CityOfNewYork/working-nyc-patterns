@@ -7,6 +7,7 @@
 @use 'config/direction';
 @use 'config/dimensions';
 @use 'config/inputs';
+@use 'config/labels';
 @use 'config/question';
 @use 'config/typography';
 
@@ -16,7 +17,7 @@
 }
 
 .c-question__container {
-  margin-top: $grid;
+  margin-top: var(--wnyc-grid);
 
   &.error {
     @include question.error;
@@ -28,7 +29,7 @@
 }
 
 .c-question__label {
-  @include question.label;
+  @include labels.base;
 }
 
 .c-question__info {
@@ -40,12 +41,16 @@
 
 .c-question-single {
   .c-question__input {
+    color: var(--wnyc-input-text);
+    background: var(--wnyc-input-background);
+    border-color: var(--wnyc-input-border);
+
     display: flex;
     align-items: center;
     align-items: stretch;
-    padding-#{direction.$end}: $grid;
+    padding-inline-end: var(--wnyc-grid);
 
-    border: inputs.get('border-width') inputs.get('border-style');
+    border: var(--wnyc-input-border-width) var(--wnyc-input-border-style);
 
     // .error & {
     //   border-color: $color-red
@@ -63,7 +68,7 @@
       input {
         width: 100%;
         text-overflow: ellipsis;
-        padding-#{direction.$end}: 0;
+        padding-inline-end: 0;
         min-width: 0;
         border: none;
       }
@@ -102,12 +107,13 @@
 
 .c-question__success {
   @include typography.set('small');
+
   font-weight: bold;
   display: none;
 
   .success & {
     display: block;
-    padding: (0.75 * dimensions.$spacing-base);
+    padding: calc(var(--wnyc-spacing-DEFAULT) * 0.75);
   }
 }
 
@@ -117,12 +123,6 @@
   display: none;
   justify-content: center;
   align-items: center;
-
-  // position: absolute;
-  // left: 50%;
-  // margin-left: -16px;
-  // top: 50%;
-  // margin-top: -16px;
 
   pointer-events: none;
 

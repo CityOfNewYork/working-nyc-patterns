@@ -1,10 +1,9 @@
 //
-// Variables
+// Variables, Functions, and Mixins
 //
 
 // Dependencies
-@use 'config/media';
-@use 'config/color';
+$fieldset-margin-bottom: calc(var(--wnyc-grid) * 5);
 
 @mixin fieldset-reset() {
   border-width: 0;

@@ -4,11 +4,9 @@
 = extend('/slm/layouts/default')
 
 / Partials
-= partial('/slm/partials/styles.slm')
 = partial('/slm/partials/head.mixin.slm')
 = partial('/slm/partials/content-header.mixin.slm')
 = partial('/slm/section/section.mixin.slm')
-= partial('/slm/section/section-text.mixin.slm')
 
 / Content blocks
 = content('head')
@@ -20,8 +18,8 @@
 = content('content')
   = mixin('content-header')
   = mixin('section', '/components/dropdown/dropdown')
-  = mixin('section-text', '/components/dropdown/readme')
+  = mixin('section', '/components/dropdown/readme', {title: 'Usage', markup: false, demo: false})
 
 = content('script')
   javascript:
-    patterns.dropdown();
+    patterns.dialog();

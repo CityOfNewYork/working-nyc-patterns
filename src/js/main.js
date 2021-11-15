@@ -9,22 +9,24 @@ import Toggle from '@nycopportunity/pttrn-scripts/src/toggle/toggle';
 import Track from '@nycopportunity/pttrn-scripts/src/track/track';
 import WebShare from '@nycopportunity/pttrn-scripts/src/web-share/web-share';
 import WindowVh from '@nycopportunity/pttrn-scripts/src/window-vh/window-vh';
+import Dialog from '@nycopportunity/pttrn-scripts/src/dialog/dialog';
+
+import serialize from 'for-cerial';
 
 // Elements
 // import ... from '../elements/...';
 
 // Components
 import Accordion from '../components/accordion/accordion';
-import Dropdown from '../components/dropdown/dropdown';
+import ActiveNavigation from '../components/active-navigation/active-navigation';
 // import ... from '../components/...';
 
 // Objects
-import MobileMenu from '../objects/mobile-menu/mobile-menu';
+import Menu from '@nycopportunity/pattern-menu/src/menu';
 import Search from '../objects/search/search';
 // import ... from '../objects/...';
-/** import modules here as they are written. */
 
-import serialize from 'for-cerial';
+/** import modules here as they are written. */
 
 /**
  * @class  Main pattern module
@@ -113,12 +115,12 @@ class main {
   }
 
   /**
-   * An API for the Dropdown Component
+   * An API for the Dialog Component
    *
-   * @return  {Object}  Instance of Dropdown
+   * @return  {Object}  Instance of Dialog
    */
-  dropdown() {
-    return new Dropdown();
+  dialog() {
+    return new Dialog();
   }
 
   /**
@@ -212,8 +214,8 @@ class main {
    *
    * @return  {Object}  Instance of MobileMenu
    */
-  mobileMenu() {
-    return new MobileMenu();
+  menu() {
+    return new Menu();
   }
 
   /**
@@ -238,6 +240,45 @@ class main {
         });
       }
     });
+  }
+
+  /**
+   * Active Navigation
+   */
+   activeNavigation() {
+    return new ActiveNavigation();
+  }
+
+  /**
+   * Set CSS properties of various element heights for calculating the true
+   * window bottom value in CSS.
+   */
+  setObjectHeights() {
+    const elements = [
+      {
+        'selector': '[data-js="navigation"]',
+        'property': '--wnyc-dimensions-navigation-height'
+      },
+      {
+        'selector': '[data-js="feedback"]',
+        'property': '--wnyc-dimensions-feedback-height'
+      }
+    ];
+
+    let setObjectHeights = (e) => {
+      let element = document.querySelector(e['selector']);
+
+      document.documentElement.style.setProperty(e['property'], `${element.clientHeight}px`);
+    };
+
+    for (let i = 0; i < elements.length; i++) {
+      if (document.querySelector(elements[i]['selector'])) {
+        window.addEventListener('load', () => setObjectHeights(elements[i]));
+        window.addEventListener('resize', () => setObjectHeights(elements[i]));
+      } else {
+        document.documentElement.style.setProperty(elements[i]['property'], '0px');
+      }
+    }
   }
 }
 

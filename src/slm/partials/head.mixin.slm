@@ -4,6 +4,8 @@
     meta http-equiv='X-UA-Compatible' content='IE=edge'
     meta name='viewport' content='width=device-width, initial-scale=1'
 
+    link rel='icon' type='image/x-icon' href='${this.baseUrl}/svg/favicon.svg'
+
     title
       - if (this.title != 'Working NYC Patterns')
         = this.title;
@@ -12,10 +14,10 @@
         = this.title;
 
     link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css'
-    link rel='stylesheet' href='styles/site-default.css'
-    link rel='stylesheet' href='styles/site-color-default.css'
+    link rel='stylesheet' href='${this.baseUrl}/styles/tokens.css'
+    link rel='stylesheet' href='${this.baseUrl}/styles/site-default.css'
 
-    script src='//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js'
+    script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js'
 
     javascript:
       document.addEventListener('DOMContentLoaded', function(event) {

@@ -1,0 +1,1 @@
+The Navigation Object contains the main link and button elements for navigating different views and features.

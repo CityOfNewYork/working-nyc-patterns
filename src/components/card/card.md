@@ -1,0 +1,1 @@
+Card Components are thumbnails of content and may include a full or partial set of elements.

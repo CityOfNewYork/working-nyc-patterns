@@ -4,7 +4,6 @@
 = extend('/slm/layouts/default')
 
 / Partials
-= partial('/slm/partials/styles.slm')
 = partial('/slm/partials/head.mixin.slm')
 = partial('/slm/partials/content-header.mixin.slm')
 = partial('/slm/section/section.mixin.slm')
@@ -19,7 +18,14 @@
 = content('content')
   = mixin('content-header')
 
-  - alert = {body: '<p data-js-alert=\'text\'>An alert message.</p>'}
+  - alert = {body: '<p data-js-alert=\'text\'>A standard alert message or callout.</p>'}
   = mixin('section', '/components/alert/alert')
-  = mixin('section', '/components/alert/alert-success', {title: 'Success Alert'})
-  = mixin('section', '/components/alert/alert-warning', {title: 'Warning Alert'})
+
+  - alert = {type: 'primary', class: 'status-primary', body: '<p data-js-alert=\'text\'>An informational message or callout.</p>'}
+  = mixin('section', '/components/alert/alert', {title: 'Information Alert', text: false})
+
+  - alert = {type: 'secondary', class: 'status-secondary', body: '<p data-js-alert=\'text\'>A successful message or callout.</p>'}
+  = mixin('section', '/components/alert/alert', {title: 'Success Alert', text: false})
+
+  - alert = {type: 'tertiart', class: 'status-tertiary', body: '<p data-js-alert=\'text\'>A warning message or callout.</p>'}
+  = mixin('section', '/components/alert/alert', {title: 'Warning Alert', text: false})

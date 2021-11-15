@@ -3,6 +3,7 @@
  */
 
 // Dependencies
+@use 'config/background';
 @use 'config/media';
 
 // Declarations
@@ -10,28 +11,16 @@
   background-repeat: no-repeat
 }
 
-.bg-shape-wnyc-a {
-  background-image: url('../svg/shape-wnyc-a.svg');
+@each $namespace in ('a', 'b', 'c') {
+  @include background.shapes($namespace);
 }
 
-.bg-shape-wnyc-b {
-  background-image: url('../svg/shape-wnyc-b.svg');
-}
+@include background.shapes-combined;
 
-.bg-shape-wnyc-c {
-  background-image: url('../svg/shape-wnyc-c.svg');
-}
-
-.bg-shape-wnyc-abc {
-  background: url('../svg/shape-wnyc-a.svg') calc(100vw - 160px) calc(0vh - 74px) no-repeat,
-              url('../svg/shape-wnyc-b.svg') -124px 198px no-repeat,
-              url('../svg/shape-wnyc-c.svg') calc(100vw - 80px) calc(0vh + 226px) no-repeat;
-
-  @include media.screen-and-min-width('tablet') {
-    background-position: calc(100vw - 240px) calc(0vh - 54px),
-                         -86px 468px,
-                         calc(100vw - 190px) calc(0vh + 566px);
-
-    background-size: 15em;
+@include media.screens-and-prefers-scheme(light) using ($scheme) {
+  @each $namespace in ('a', 'b', 'c') {
+    @include background.shapes($namespace, '@#{$scheme}');
   }
+
+  @include background.shapes-combined('@#{$scheme}');
 }

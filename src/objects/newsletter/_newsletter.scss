@@ -6,4 +6,14 @@
 // @use 'config/tokens';
 
 // Declarations
-// .o-newsletter { }
+.o-newsletter {
+  color: var(--wnyc-newsletter-text);
+  background-color: var(--wnyc-newsletter-background);
+
+  -webkit-font-smoothing: var(--wnyc-newsletter-webkit-font-smoothing);
+  -moz-osx-font-smoothing: var(--wnyc-newsletter-moz-osx-font-smoothing);
+}
+
+.o-newsletter__heading {
+  color: var(--wnyc-newsletter-heading);
+}

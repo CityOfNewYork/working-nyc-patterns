@@ -15,18 +15,18 @@
       div
         div class='c-dropdown layout-content sticky top-0 bg-scale-1 z-10'
           nav class='c-utility' aria-label='utility'
-            a href='${this.baseUrl}/demos/index' class='btn-link me-auto'
-              svg class='icon-wnyc-ui' aria-hidden='true'
+            a href='${this.baseUrl}/demos/index' class='mie-auto'
+              svg class='icon-wnyc-ui mie-1' aria-hidden='true'
                 use xlink:href='#feather-chevron-left'
 
               span Home
 
-            button class='btn btn-small btn-secondary' data-js='dropdown' aria-controls='aria-c-filter' aria-expanded='false' data-dropdown='open' data-dropdown-lock='true'
+            button class='btn btn-small btn-secondary light:btn-primary' data-js='dialog' aria-controls='aria-c-filter' aria-expanded='false' data-dialog='open' data-dialog-lock='true'
               / svg class='icon-wnyc-ui' aria-hidden='true'
                 / use xlink:href='#feather-sliders'
 
-              span class='me-1' Filter programs
-              span class='badge badge-small color-status-secondary' 99
+              span class='mie-1' Filter programs
+              span class='badge badge-small status-secondary light:status-primary' 99
 
             / button class='btn btn-small btn-primary' data-js='toggle' aria-controls='aria-c-saved' aria-expanded='false'
             /   svg class='icon-wnyc-ui' aria-hidden='true'
@@ -37,7 +37,7 @@
           div#aria-c-filter class='layout-content hidden' aria-hidden='true'
             div class='wrap'
               div class='text-end relative z-20'
-                button class='btn btn-primary btn-small' data-js='dropdown' aria-controls='aria-c-filter' aria-expanded='false' data-dropdown='close' tabindex='-1'
+                button class='btn btn-primary btn-small' data-js='dialog' aria-controls='aria-c-filter' aria-expanded='false' data-dialog='close' tabindex='-1'
                   svg class='icon-wnyc-ui' aria-hidden='true' tabindex='-1'
                     use xlink:href='#feather-x'
 
@@ -52,7 +52,7 @@
                     legend class='h4 block w-full m-0 py-2 ps-2 text-alt sticky top-0 z-10 bg-scale-1' tabindex='-1'
                       = filter.legend
 
-                    div class='layout-rows tablet:layout-two-columns-gutter'
+                    div class='layout-rows tablet:grid grid-cols-2 gap-3'
                       - for (let x in filter.options)
                         - option = this.filters[i].options[x]
                         - option.tabindex = '-1'
@@ -60,7 +60,7 @@
                         == this.include('/elements/options/options')
 
                 div class='py-2 sticky bottom-0 z-10 text-center bg-scale-1'
-                  button class='btn btn-secondary w-full' data-js='dropdown' aria-controls='aria-c-filter' tabindex='-1'
+                  button class='btn btn-secondary w-full' data-js='dialog' aria-controls='aria-c-filter' tabindex='-1'
                     | Close and see 99 programs
 
           / div#aria-c-saved class='layout-content hidden' aria-hidden='true'
@@ -76,26 +76,29 @@
               h1 class='o-header__title'
                 | Programs
 
-              nav class='o-header__breadcrumbs'
+              p Explore services and programs that can help you prepare for and connect to work. <button data-js="dialog" aria-controls="aria-c-filter" aria-expanded="false" data-dialog-lock="true">Use filters to narrow your choices</button>.
+
+              nav class='o-header__breadcrumbs' aria-label='Breadcrumb'
                 a href='${this.baseUrl}/demos/index' Home
 
                 svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
                   use xlink:href='#feather-chevron-right'
 
-                b Programs
+                b aria-current='page' Programs
 
         section class='page-max desktop:px-6'
-          div class='wrap desktop:px-6 layout-rows-gutter tablet:layout-col-2-gap-1-1 desktop:layout-col-2-gap-2-2'
+          div class='wrap desktop:px-6 tablet:grid tablet:grid-cols-2 tablet:gap-3 desktop:gap-5'
             - for (let i in this.programs)
               - card = this.programs[i]
+
               - if i < 6
                 = partial('/components/card/card')
 
           div class='layout-content py-6'
             div class='wrap'
-              button class='btn btn-secondary w-full mb-2' Show more
+              button class='btn btn-primary w-full mb-2' Show more
 
-              button class='btn btn-secondary w-full' aria-controls='aria-c-filter' aria-expanded='false' data-js='dropdown' data-dropdown-lock='true' Filter programs
+      = partial('/objects/feedback/feedback')
 
       = partial('/objects/newsletter/newsletter')
 

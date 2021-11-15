@@ -1,0 +1,76 @@
+- this.title = 'About'
+- this.description = ''
+- this.url = `${this.baseUrl}/demos/about`
+
+/ Layout
+= extend('/slm/layouts/demos')
+
+/ Content blocks
+= content('head')
+  = mixin('head')
+
+= content('content')
+  div class='bg-scale-2'
+    main class='bg-scale-1' id='content'
+      div class='layout-content'
+        header class='o-header'
+          div class='w-full'
+            h1 class='o-header__title' About
+
+            p Working NYC helps New Yorkers connect to the services and resources they need to find a new or better job.
+
+            p class='small'
+              span class='flex items-center'
+                svg aria-hidden='true' class='icon-wnyc-ui mie-1 icon-2'
+                  use xlink:href='#feather-info'
+
+                | Last updated on Dec 03, 2020
+
+        div class='layout-content sticky top-0 bg-scale-1 z-20'
+          div class='px-2 tablet:px-3'
+            div class='overflow-hidden overflow-x-scroll whitespace-nowrap' data-js='active-navigation-scroll'
+              nav class='c-utility text-secondary font-secondary inline-flex relative px-0' data-js='active-navigation' aria-label='Jump Navigation'
+                span class='c-utility__item' Jump to
+
+                a class='text-inherit' href='#content' Top of page
+                a class='text-inherit' href='#overview' Overview
+                a class='text-inherit' href='#section-two' Section Two
+                a class='text-inherit' href='#section-three' Section Three
+                a class='text-inherit' href='#section-four' Section Four
+
+        div class='bg-scale-2'
+          div class='layout-content'
+            div class='py-4 wrap' data-js='observe' data-js-observe-items='heading'
+              section data-js-observe-item='heading' class='pb-6' id='overview'
+                div class='pt-utility-anchor bg-scale-2 sticky top-0'
+                  h3 class='h5 mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3' Overview
+
+                p Working NYC is New York City’s front door to programs that help you prepare for and find a job. Through this easy-to-use tool, you can find the services that are right for you, figure out if you’re eligible, and learn about the next steps.
+
+              section data-js-observe-item='heading' class='pb-6' id='section-two'
+                div class='pt-utility-anchor bg-scale-2 sticky top-0'
+                  h3 class='h5 mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3' Section Two
+
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ullamcorper volutpat luctus. Maecenas in leo et quam imperdiet imperdiet. Nam bibendum maximus mi at vehicula. Etiam fringilla pulvinar tortor, quis elementum diam tempus id. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas id porta erat, non congue metus. Nunc eget mattis felis. Ut a viverra metus. Aenean aliquet lectus molestie maximus pellentesque. Nunc sit amet tortor aliquam, condimentum nisl ut, laoreet nulla. Praesent a erat et ante maximus euismod a eu nibh. Aliquam tempus ultrices elit eget finibus.
+
+              section data-js-observe-item='heading' class='pb-6' id='section-three'
+                div class='pt-utility-anchor bg-scale-2 sticky top-0'
+                  h3 class='h5 mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3' Section Three
+
+                p Quisque eget tincidunt velit. Etiam in imperdiet libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras lobortis neque ac dapibus imperdiet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec fringilla et arcu mattis luctus. Curabitur at quam efficitur, malesuada metus in, mollis nisi. Proin id mattis odio. Suspendisse volutpat lacus nec accumsan ultrices. Aenean fermentum dolor sit amet magna facilisis tincidunt. Pellentesque dignissim nisl quis odio pellentesque, sed efficitur leo bibendum.
+
+              section data-js-observe-item='heading' class='pb-6' id='section-four'
+                div class='pt-utility-anchor bg-scale-2 sticky top-0'
+                  h3 class='h5 mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3' Section Four
+
+                p Donec rhoncus mi neque, in consectetur tellus iaculis in. Sed tempor urna ut neque vestibulum, eu semper arcu placerat. Sed pellentesque, justo id pulvinar scelerisque, ligula velit pharetra diam, vel dictum erat orci sed purus. Vestibulum vitae felis accumsan, tincidunt orci sed, fringilla justo. Nulla non magna quis nisi eleifend fringilla id sed orci. Duis efficitur risus ut hendrerit finibus. Aliquam sodales lorem nulla. Proin sit amet risus eleifend, aliquet neque nec, imperdiet purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce nec finibus dolor, id ullamcorper mauris. Quisque molestie mauris ut aliquet tincidunt. Sed magna nibh, ullamcorper in libero a, ultricies sollicitudin leo. Sed accumsan, lectus sit amet aliquam volutpat, tellus neque pulvinar enim, ut volutpat lectus arcu id risus.
+
+          div class='layout-content sticky z-10 o-navigation-feedback-spacing-bottom'
+            div class='p-2 text-end'
+              a class='btn btn-small tablet:btn btn-secondary bg-scale-1' href='#content' Back to top
+
+      = partial('/objects/feedback/feedback')
+
+= content('script');
+  javascript:
+    patterns.activeNavigation();

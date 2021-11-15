@@ -3,10 +3,13 @@
  */
 
 // Dependencies
-@use 'config/grid';
+@use 'config/labels';
 
 // Declarations
-.label {
-  display: inline-block;
-  margin-bottom: grid.$grid * 2
+.label, legend, .legend {
+  @include labels.base
+}
+
+legend, .legend {
+  margin-bottom: labels.$margin-bottom
 }

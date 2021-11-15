@@ -3,26 +3,25 @@
  */
 
 // Dependencies
-@use 'config/badge';
-@use 'config/dimensions';
-@use 'config/typography';
+// @use 'config/tokens' as *;
 
 // Declarations
 .badge {
-  font-size: badge.$font-size;
-  font-weight: badge.$font-weight;
-  line-height: badge.$line-height;
-  text-transform: badge.$text-transform;
+  font-size: var(--wnyc-badge-font-size);
+  font-weight: var(--wnyc-badge-font-weight);
+  line-height: var(--wnyc-badge-line-height);
+  text-transform: var(--wnyc-badge-text-transform);
 
-  border-radius: badge.$radius;
+  color: var(--wnyc-badge-color);
+  background-color: var(--wnyc-badge-background);
+
+  border-radius: var(--wnyc-badge-radius);
   display: inline-block;
 
-  padding: badge.$padding;
+  padding: var(--wnyc-badge-padding);
 }
 
 .badge-small {
-  line-height: badge.$line-height-sm;
-  padding: badge.$padding-sm;
+  line-height: var(--wnyc-badge-small-line-height);
+  padding: var(--wnyc-badge-small-padding);
 }
-
-
