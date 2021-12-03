@@ -1173,8 +1173,8 @@ var WorkingNyc = (function () {
           return el;
         });
 
-      let wt = this.webtrends(key, d);
-      let ga = this.gtag(key, d);
+      this.webtrends(key, d);
+      this.gtag(key, d);
       /* eslint-enable no-console */
 
       return d;
@@ -1188,8 +1188,8 @@ var WorkingNyc = (function () {
      * @param  {Collection}  data  The data to track
      */
     view(app, key, data) {
-      let wt = this.webtrends(key, data);
-      let ga = this.gtagView(app, key);
+      this.webtrends(key, data);
+      this.gtagView(app, key);
       /* eslint-enable no-console */
     };
 
@@ -1309,7 +1309,7 @@ var WorkingNyc = (function () {
   ];
 
   /**
-   * Uses the Share API to t
+   * A wrapper around the navigator.share() API
    */
   class WebShare {
     /**
@@ -1403,6 +1403,104 @@ var WorkingNyc = (function () {
   WindowVh.property = '--100vh';
 
   /**
+   * @class  Dialog
+   *
+   * Usage
+   *
+   * Element Attributes. Either <a> or <button>
+   *
+   * @attr  data-js="dialog"         Instantiates the toggling method
+   * @attr  aria-controls=""         Targets the id of the dialog
+   * @attr  aria-expanded="false"    Declares target closed/open when toggled
+   * @attr  data-dialog="open"       Designates the primary opening element of the dialog
+   * @attr  data-dialog="close"      Designates the primary closing element of the dialog
+   * @attr  data-dialog-lock="true"  Wether to lock screen scrolling when dialog is open
+   *
+   * Target Attributes. Any <element>
+   *
+   * @attr  id=""               Matches aria-controls attr of Element
+   * @attr  class="hidden"      Hidden class
+   * @attr  aria-hidden="true"  Declares target open/closed when toggled
+   */
+  class Dialog {
+    /**
+     * @constructor  Instantiates dialog and toggle method
+     *
+     * @return  {Object}  The instantiated dialog with properties
+     */
+    constructor() {
+      this.selector = Dialog.selector;
+
+      this.selectors = Dialog.selectors;
+
+      this.classes = Dialog.classes;
+
+      this.dataAttrs = Dialog.dataAttrs;
+
+      this.toggle = new Toggle({
+        selector: this.selector,
+        after: (toggle) => {
+          let active = toggle.target.classList.contains(Toggle.activeClass);
+
+          // Lock the body from scrolling if lock attribute is present
+          if (active && toggle.element.dataset[this.dataAttrs.LOCK] === 'true') {
+            // Scroll to the top of the page
+            window.scroll(0, 0);
+
+            // Prevent scrolling on the body
+            document.querySelector('body').style.overflow = 'hidden';
+
+            // When the last focusable item in the list looses focus loop to the first
+            toggle.focusable.item(toggle.focusable.length - 1)
+              .addEventListener('blur', () => {
+                toggle.focusable.item(0).focus();
+              });
+          } else {
+            // Remove if all other dialog body locks are inactive
+            let locks = document.querySelectorAll([
+                this.selector,
+                this.selectors.locks,
+                `.${Toggle.activeClass}`
+              ].join(''));
+
+            if (locks.length === 0) {
+              document.querySelector('body').style.overflow = '';
+            }
+          }
+
+          // Focus on the close or open button if present
+          let id = `[aria-controls="${toggle.target.getAttribute('id')}"]`;
+          let close = document.querySelector(this.selectors.CLOSE + id);
+          let open = document.querySelector(this.selectors.OPEN + id);
+
+          if (active && close) {
+            close.focus();
+          } else if (open) {
+            open.focus();
+          }
+        }
+      });
+
+      return this;
+    }
+  }
+
+  /** @type  {String}  Main DOM selector */
+  Dialog.selector = '[data-js*=\"dialog\"]';
+
+  /** @type  {Object}  Additional selectors used by the script */
+  Dialog.selectors = {
+    CLOSE: '[data-dialog*="close"]',
+    OPEN: '[data-dialog*="open"]',
+    LOCKS: '[data-dialog-lock="true"]'
+  };
+
+  /** @type  {Object}  Data attribute namespaces */
+  Dialog.dataAttrs = {
+    LOCK: 'dialogLock'
+  };
+
+  /**
    * The Accordion module
    * @class
    */
@@ -1427,123 +1525,148 @@ var WorkingNyc = (function () {
   Accordion.selector = '[data-js*="accordion"]';
 
   /**
-   * @class  Dropdown
-   *
-   * Usage
-   *
-   * Element Attributes. Either <a> or <button>
-   *
-   * @attr  data-js="dropdown"         Instantiates the toggling method
-   * @attr  aria-controls=""           Targets the id of the dropdown
-   * @attr  aria-expanded="false"      Declares target closed/open when toggled
-   * @attr  data-dropdown="open"       Designates the primary opening element of the dropdown
-   * @attr  data-dropdown="close"      Designates the primary closing element of the dropdown
-   * @attr  data-dropdown-lock="true"  Wether to lock screen scrolling when drodown is open
-   *
-   * Target Attributes. Any <element>
-   *
-   * @attr  id=""               Matches aria-controls attr of Element
-   * @attr  class="hidden"      Hidden class
-   * @attr  aria-hidden="true"  Declares target open/closed when toggled
+   * A wrapper around Intersection Observer class
    */
-  class Dropdown {
-    /**
-     * @constructor  Instantiates dropdown and toggle method
-     *
-     * @return  {Object}  The instantiated dropdown with properties
-     */
-    constructor() {
-      this.selector = Dropdown.selector;
+  class Observe {
+    constructor(s) {
+      this.options = (s.options) ? Object.assign(Observe.options, s.options) : Observe.options;
 
-      this.selectors = Dropdown.selectors;
+      this.trigger = (s.trigger) ? s.trigger : Observe.trigger;
 
-      this.classes = Dropdown.classes;
+      // Instantiate the Intersection Observer
+      this.observer = new IntersectionObserver((entries, observer) => {
+        this.callback(entries, observer);
+      }, this.options);
 
-      this.dataAttrs = Dropdown.dataAttrs;
+      // Select all of the items to observe
+      this.items = s.element.querySelectorAll(`[data-js-observe-item="${s.element.dataset.jsObserveItems}"]`);
 
-      this.toggle = new Toggle({
-        selector: this.selector,
-        after: (toggle) => {
-          let active = toggle.target.classList.contains(Toggle.activeClass);
+      for (let i = 0; i < this.items.length; i++) {
+        const item = this.items[i];
 
-          // Lock the body from scrolling if lock attribute is present
-          if (active && toggle.element.dataset[this.dataAttrs.LOCK] === 'true') {
-            // Scroll to the top of the page
-            window.scroll(0, 0);
+        this.observer.observe(item);
+      }
+    }
 
-            // Prevent scrolling on the body
-            document.querySelector('body').classList.add(this.classes.OVERFLOW);
+    callback(entries, observer) {
+      let prevEntry = entries[0];
 
-            // When the last focusable item in the list looses focus loop to the first
-            toggle.focusable.item(toggle.focusable.length - 1)
-              .addEventListener('blur', () => {
-                toggle.focusable.item(0).focus();
-              });
-          } else {
-            // Remove if all other dropdown body locks are inactive
-            let locks = document.querySelectorAll([
-                this.selector,
-                this.selectors.locks,
-                `.${Toggle.activeClass}`
-              ].join(''));
+      for (let i = 0; i < entries.length; i++) {
+        const entry = entries[i];
 
-            if (locks.length === 0) {
-              document.querySelector('body').classList.remove(this.classes.OVERFLOW);
-            }
-          }
+        this.trigger(entry, prevEntry, observer);
 
-          // Focus on the close or open button if present
-          let id = `[aria-controls="${toggle.target.getAttribute('id')}"]`;
-          let close = document.querySelector(this.selectors.CLOSE + id);
-          let open = document.querySelector(this.selectors.OPEN + id);
-
-          if (active && close) {
-            close.focus();
-          } else if (open) {
-            open.focus();
-          }
-        }
-      });
-
-      return this;
+        prevEntry = entry;
+      }
     }
   }
 
-  /** @type  {String}  Main DOM selector */
-  Dropdown.selector = '[data-js*=\"dropdown\"]';
-
-  /** @type  {Object}  Additional selectors used by the script */
-  Dropdown.selectors = {
-    CLOSE: '[data-dropdown*="close"]',
-    OPEN: '[data-dropdown*="open"]',
-    LOCKS: '[data-dropdown-lock="true"]'
+  Observe.options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: [0.15]
   };
 
-  /** @type  {Object}  Data attribute namespaces */
-  Dropdown.dataAttrs = {
-    LOCK: 'dropdownLock'
+  Observe.trigger = entry => {
+    console.dir(entry);
+    console.dir('Observed! Create a entry trigger function and pass it to the instantiated Observe settings object.');
   };
 
-  /** @type  {Object}  Various classes used by the script */
-  Dropdown.classes = {
-    OVERFLOW: 'overflow-hidden'
-  };
+  Observe.selector = '[data-js*="observe"]';
+
+  class ActiveNavigation {
+    /**
+     * @constructor
+     *
+     * @return {Object}            The instantiated pattern
+     */
+    constructor() {
+      /**
+       * Method for toggling the jump navigation item, used by the click event
+       * handler and the intersection observer event handler.
+       *
+       * @var NodeElement
+       */
+       const jumpClassToggle = item => {
+        for (let i = 0; i < item.parentNode.children.length; i++) {
+          const sibling = item.parentNode.children[i];
+
+          if (sibling.classList.contains('no-underline'))
+            sibling.classList.remove('no-underline', 'text-alt');
+        }
+
+        item.classList.add('no-underline', 'text-alt');
+      };
+
+      /**
+       * Click event handler for jump navigation items
+       *
+       * @var NodeElement
+       */
+      (element => {
+        if (element) {
+          let activeNavigation = element.querySelectorAll('a[href]');
+
+          for (let i = 0; i < activeNavigation.length; i++) {
+            const a = activeNavigation[i];
+
+            a.addEventListener('click', event => {
+              setTimeout(() => {
+                jumpClassToggle(event.target);
+              }, 200);
+            });
+          }
+        }
+      })(document.querySelector('[data-js*="active-navigation"]'));
+
+      /**
+       * Intersection Observer event handler for jump navigation items
+       *
+       * @var NodeElementList
+       */
+      (elements => {
+        elements.forEach(element => {
+          new Observe({
+            element: element,
+            trigger: (entry) => {
+              if (!entry.isIntersecting) return;
+
+              let jumpItem = document.querySelector(`a[href="#${entry.target.id}"]`);
+
+              if (!jumpItem) return;
+
+              jumpItem.closest('[data-js*="active-navigation-scroll"]').scrollTo({
+                left: jumpItem.offsetLeft,
+                top: 0,
+                behavior: 'smooth'
+              });
+
+              jumpClassToggle(jumpItem);
+            }
+          });
+        });
+      })(document.querySelectorAll(Observe.selector));
+    }
+  }
+
+  /** @type  String  Main DOM selector */
+  ActiveNavigation.selector = '[data-js*=\"active-navigation\"]';
 
   /**
    * The Mobile Nav module
    *
    * @class
    */
-  class MobileMenu {
+  class Menu {
     /**
      * @constructor
      *
      * @return  {object}  The class
      */
     constructor() {
-      this.selector = MobileMenu.selector;
+      this.selector = Menu.selector;
 
-      this.selectors = MobileMenu.selectors;
+      this.selectors = Menu.selectors;
 
       this.toggle = new Toggle({
         selector: this.selector,
@@ -1568,12 +1691,12 @@ var WorkingNyc = (function () {
   }
 
   /** @type  {String}  The dom selector for the module */
-  MobileMenu.selector = '[data-js*="mobile-menu"]';
+  Menu.selector = '[data-js*="menu"]';
 
   /** @type  {Object}  Additional selectors used by the script */
-  MobileMenu.selectors = {
-    CLOSE: '[data-js-mobile-menu*="close"]',
-    OPEN: '[data-js-mobile-menu*="open"]'
+  Menu.selectors = {
+    CLOSE: '[data-js-menu*="close"]',
+    OPEN: '[data-js-menu*="open"]'
   };
 
   /**
@@ -1613,6 +1736,10 @@ var WorkingNyc = (function () {
   Search.selectors = {
     input: '[data-js*="search__input"]'
   };
+
+  // import ... from '../objects/...';
+
+  /** import modules here as they are written. */
 
   /**
    * @class  Main pattern module
@@ -1701,12 +1828,12 @@ var WorkingNyc = (function () {
     }
 
     /**
-     * An API for the Dropdown Component
+     * An API for the Dialog Component
      *
-     * @return  {Object}  Instance of Dropdown
+     * @return  {Object}  Instance of Dialog
      */
-    dropdown() {
-      return new Dropdown();
+    dialog() {
+      return new Dialog();
     }
 
     /**
@@ -1800,8 +1927,8 @@ var WorkingNyc = (function () {
      *
      * @return  {Object}  Instance of MobileMenu
      */
-    mobileMenu() {
-      return new MobileMenu();
+    menu() {
+      return new Menu();
     }
 
     /**
@@ -1827,8 +1954,47 @@ var WorkingNyc = (function () {
         }
       });
     }
+
+    /**
+     * Active Navigation
+     */
+     activeNavigation() {
+      return new ActiveNavigation();
+    }
+
+    /**
+     * Set CSS properties of various element heights for calculating the true
+     * window bottom value in CSS.
+     */
+    setObjectHeights() {
+      const elements = [
+        {
+          'selector': '[data-js="navigation"]',
+          'property': '--wnyc-dimensions-navigation-height'
+        },
+        {
+          'selector': '[data-js="feedback"]',
+          'property': '--wnyc-dimensions-feedback-height'
+        }
+      ];
+
+      let setObjectHeights = (e) => {
+        let element = document.querySelector(e['selector']);
+
+        document.documentElement.style.setProperty(e['property'], `${element.clientHeight}px`);
+      };
+
+      for (let i = 0; i < elements.length; i++) {
+        if (document.querySelector(elements[i]['selector'])) {
+          window.addEventListener('load', () => setObjectHeights(elements[i]));
+          window.addEventListener('resize', () => setObjectHeights(elements[i]));
+        } else {
+          document.documentElement.style.setProperty(elements[i]['property'], '0px');
+        }
+      }
+    }
   }
 
   return main;
 
-}());
+})();

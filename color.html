@@ -1,0 +1,2283 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="https://cityofnewyork.github.io/working-nyc-patterns/svg/favicon.svg" rel="icon" type="image/x-icon" />
+  <title>Color | Working NYC Patterns</title>
+  <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
+  <link href="https://cityofnewyork.github.io/working-nyc-patterns/styles/tokens.css" rel="stylesheet" />
+  <link href="https://cityofnewyork.github.io/working-nyc-patterns/styles/site-default.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function(event) {
+      hljs.configure({
+        languages: ['html', 'javascript', 'css', 'sass']
+      });
+      document.querySelectorAll('pre').forEach(function(pre) {
+        pre.setAttribute('tabindex', '0');
+        hljs.highlightBlock(pre);
+      });
+    });
+  </script>
+</head>
+
+<body class="color">
+  <a class="sr-only" href="#main-content">Skip to main content</a>
+  <header class="bg-scale-2" role="banner">
+    <div class="flex items-center justify-between py-2 wrap">
+      <div>
+        <h1 aria-level="1" class="flex m-0" role="heading">
+          <span class="sr-only">Working N Y C</span>
+          <svg aria-hidden="true" class="hidden tablet:inline icon-logo-standard-menu-item fill-text text-brand">
+            <use xlink:href="#logo-wnyc-standard"></use>
+          </svg>
+          <svg aria-hidden="true" class="tablet:hidden icon-logo-stacked-menu-item fill-text text-brand">
+            <use xlink:href="#logo-wnyc-stacked"></use>
+          </svg>
+        </h1>
+      </div>
+      <div class="flex items-center">
+        <h2 class="h5 m-0">Patterns</h2>
+        <nav aria-label="navigation-menu" class="nav-inline text-small font-primary flex items-center mis-2" role="navigation">
+          <a class="rounded-lg border no-underline px-1" href="https://github.com/cityofnewyork/working-nyc-patterns/releases/tag/v0.0.1-45">0.0.1-45</a>
+          <button aria-controls="main-menu" aria-expanded="false" data-js="toggle" id="main-menu-control">
+            <svg aria-hidden="true" class="icon-wnyc-ui">
+              <use xlink:href="#feather-menu"></use>
+            </svg>
+            <span>Menu</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-modal text-small hidden hidden:overflowFadeInUp animated" id="main-menu">
+    <div class="page-max py-4 animated">
+      <div class="tablet:flex">
+        <nav aria-labelledby="navigation-main-f963b3d3a6cee" class="tablet:flex-1 mb-1 px-1 tablet:px-2" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="navigation-main-f963b3d3a6cee">Main</span>
+          <a class="block p-1 no-underline align-middle" href="index" tabindex="-1">Home</a>
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1">Links</span>
+          <a class="block p-1 no-underline align-middle" href="https://www.npmjs.com/package/@nycopportunity/working-patterns" tabindex="-1">NPM Package</a>
+          <a class="block p-1 no-underline align-middle" href="https://github.com/cityofnewyork/working-nyc-patterns" tabindex="-1">GitHub Repository</a>
+        </nav>
+        <nav aria-labelledby="aria-lb-elements-f963b3d3a6cee" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-elements-f963b3d3a6cee">Elements</span>
+          <a class="block p-1 no-underline align-middle" href="badge" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Badge
+          </a>
+          <a class="block p-1 no-underline align-middle" href="buttons" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Buttons
+          </a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="code">Code</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="divider">Divider</a>
+          <a class="block p-1 no-underline align-middle" href="forms" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Forms
+          </a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="icons">Icons</a>
+          <a class="block p-1 no-underline align-middle" href="inputs" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Inputs
+          </a>
+          <a class="block p-1 no-underline align-middle" href="labels" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Labels
+          </a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="layouts">Layouts</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="links">Links</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="nav">Nav</a>
+          <a class="block p-1 no-underline align-middle" href="options" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Options
+          </a>
+          <a class="block p-1 no-underline align-middle" href="selects" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Selects
+          </a>
+          <a class="block p-1 no-underline align-middle" href="tables" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Tables
+          </a>
+        </nav>
+        <nav aria-labelledby="aria-lb-components-f963b3d3a6cee" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-components-f963b3d3a6cee">Components</span>
+          <a class="block p-1 no-underline align-middle" href="accordion" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Accordion
+          </a>
+          <a class="block p-1 no-underline align-middle" href="alert" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Alert
+          </a>
+          <a class="block p-1 no-underline align-middle" href="card" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Card
+          </a>
+          <a class="block p-1 no-underline align-middle" href="dropdown" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Dropdown
+          </a>
+          <a class="block p-1 no-underline align-middle" href="question" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Question
+          </a>
+          <a class="block p-1 no-underline align-middle" href="utility" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Utility
+          </a>
+          <a class="block p-1 no-underline align-middle" href="web-share" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Web Share
+          </a>
+        </nav>
+        <nav aria-labelledby="aria-lb-objects-f963b3d3a6cee" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-objects-f963b3d3a6cee">Objects</span>
+          <a class="block p-1 no-underline align-middle" href="banner" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Banner
+          </a>
+          <a class="block p-1 no-underline align-middle" href="feedback" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Feedback
+          </a>
+          <a class="block p-1 no-underline align-middle" href="footer" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Footer
+          </a>
+          <a class="block p-1 no-underline align-middle" href="header" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Header
+          </a>
+          <a class="block p-1 no-underline align-middle" href="menu" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Menu
+          </a>
+          <a class="block p-1 no-underline align-middle" href="navigation" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Navigation
+          </a>
+          <a class="block p-1 no-underline align-middle" href="newsletter" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Newsletter
+          </a>
+          <a class="block p-1 no-underline align-middle" href="search" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Search
+          </a>
+          <a class="block p-1 no-underline align-middle" href="text-controller" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Text Controller
+          </a>
+        </nav>
+        <nav aria-labelledby="aria-lb-utilities-f963b3d3a6cee" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-utilities-f963b3d3a6cee">Utilities</span>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="animate">Animate</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="cell">Cell</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="clearfix">Clearfix</a>
+          <a class="block p-1 no-underline align-middle" href="color" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Color
+          </a>
+          <a class="block p-1 no-underline align-middle" href="fonts" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Fonts
+          </a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="print">Print</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="scroll">Scroll</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="status">Status</a>
+          <a class="block p-1 no-underline align-middle" href="tailwindcss" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Tailwindcss
+          </a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="toggle">Toggle</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="typography">Typography</a>
+        </nav>
+      </div>
+      <div class="text-center">
+        <button aria-controls="main-menu" aria-expanded="false" data-js="toggle" data-pa11y="disable" tabindex="-1">Close Menu</button>
+      </div>
+    </div>
+  </aside>
+  <main class="py-4" id="main-content" role="main">
+    <article class="py-4 clearfix">
+      <header class="page-max layout-content">
+        <div class="wrap">
+          <h3>Color</h3>
+        </div>
+      </header>
+      <section class="pb-4 mb-4" id="color">
+        <header class="page-max layout-content py-4">
+          <div class="wrap">
+            <p class="flex items-center">
+              <svg class="icon-wnyc-ui mie-1" role="img">
+                <title>GitHub Source Link</title>
+                <use xlink:href="#feather-github"></use>
+              </svg>
+              <a href="https://github.com/cityofnewyork/working-nyc-patterns/tree/v0.0.1-45/src/utilities/color" target="_blank">src/utilities/color/color</a>
+            </p>
+          </div>
+        </header>
+        <!--Section Text-->
+        <div class="page-max layout-content pb-6">
+          <div class="wrap"></div>
+        </div>
+        <div class="bg-scale-0 py-6 mb-6">
+          <div class="page-max flex justify-center py-6">
+            <div class="w-full wrap grid mobile:grid-cols-3 gap-3">
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-default-0 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-default-0-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">default 0</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-0-value" tabindex="-1" value="#03142C" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-0-value" data-js="copy" title="Copy to clipboard">#03142C</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-0-bg" tabindex="-1" value="bg-default-0" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-0-bg" data-js="copy" title="Copy to clipboard">.bg-default-0</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-0-text" tabindex="-1" value="text-default-0" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-0-text" data-js="copy" title="Copy to clipboard">.text-default-0</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-0-border" tabindex="-1" value="border-default-0" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-0-border" data-js="copy" title="Copy to clipboard">.border-default-0</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-default-1 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-default-1-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">default 1</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-1-value" tabindex="-1" value="#031837" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-1-value" data-js="copy" title="Copy to clipboard">#031837</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-1-bg" tabindex="-1" value="bg-default-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-1-bg" data-js="copy" title="Copy to clipboard">.bg-default-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-1-text" tabindex="-1" value="text-default-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-1-text" data-js="copy" title="Copy to clipboard">.text-default-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-1-border" tabindex="-1" value="border-default-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-1-border" data-js="copy" title="Copy to clipboard">.border-default-1</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-default-2 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-default-2-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">default 2</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-2-value" tabindex="-1" value="#071F42" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-2-value" data-js="copy" title="Copy to clipboard">#071F42</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-2-bg" tabindex="-1" value="bg-default-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-2-bg" data-js="copy" title="Copy to clipboard">.bg-default-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-2-text" tabindex="-1" value="text-default-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-2-text" data-js="copy" title="Copy to clipboard">.text-default-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-2-border" tabindex="-1" value="border-default-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-2-border" data-js="copy" title="Copy to clipboard">.border-default-2</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-default-3 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-default-3-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">default 3</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-3-value" tabindex="-1" value="#0C264D" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-3-value" data-js="copy" title="Copy to clipboard">#0C264D</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-3-bg" tabindex="-1" value="bg-default-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-3-bg" data-js="copy" title="Copy to clipboard">.bg-default-3</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-3-text" tabindex="-1" value="text-default-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-3-text" data-js="copy" title="Copy to clipboard">.text-default-3</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-3-border" tabindex="-1" value="border-default-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-3-border" data-js="copy" title="Copy to clipboard">.border-default-3</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-default-4 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-default-4-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">default 4</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-4-value" tabindex="-1" value="#122F5A" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-4-value" data-js="copy" title="Copy to clipboard">#122F5A</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-4-bg" tabindex="-1" value="bg-default-4" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-4-bg" data-js="copy" title="Copy to clipboard">.bg-default-4</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-4-text" tabindex="-1" value="text-default-4" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-4-text" data-js="copy" title="Copy to clipboard">.text-default-4</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-default-4-border" tabindex="-1" value="border-default-4" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-default-4-border" data-js="copy" title="Copy to clipboard">.border-default-4</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">light</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-light-0 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-light-0-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">light 0</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-0-value" tabindex="-1" value="#FFFFFF" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-0-value" data-js="copy" title="Copy to clipboard">#FFFFFF</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-0-bg" tabindex="-1" value="bg-light-0" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-0-bg" data-js="copy" title="Copy to clipboard">.bg-light-0</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-0-text" tabindex="-1" value="text-light-0" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-0-text" data-js="copy" title="Copy to clipboard">.text-light-0</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-0-border" tabindex="-1" value="border-light-0" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-0-border" data-js="copy" title="Copy to clipboard">.border-light-0</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-light-1 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-light-1-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">light 1</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-1-value" tabindex="-1" value="#FAFDFF" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-1-value" data-js="copy" title="Copy to clipboard">#FAFDFF</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-1-bg" tabindex="-1" value="bg-light-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-1-bg" data-js="copy" title="Copy to clipboard">.bg-light-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-1-text" tabindex="-1" value="text-light-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-1-text" data-js="copy" title="Copy to clipboard">.text-light-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-1-border" tabindex="-1" value="border-light-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-1-border" data-js="copy" title="Copy to clipboard">.border-light-1</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-light-2 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-light-2-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">light 2</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-2-value" tabindex="-1" value="#F0F6FA" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-2-value" data-js="copy" title="Copy to clipboard">#F0F6FA</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-2-bg" tabindex="-1" value="bg-light-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-2-bg" data-js="copy" title="Copy to clipboard">.bg-light-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-2-text" tabindex="-1" value="text-light-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-2-text" data-js="copy" title="Copy to clipboard">.text-light-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-2-border" tabindex="-1" value="border-light-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-2-border" data-js="copy" title="Copy to clipboard">.border-light-2</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-light-3 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-light-3-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">light 3</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-3-value" tabindex="-1" value="#E3F1FD" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-3-value" data-js="copy" title="Copy to clipboard">#E3F1FD</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-3-bg" tabindex="-1" value="bg-light-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-3-bg" data-js="copy" title="Copy to clipboard">.bg-light-3</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-3-text" tabindex="-1" value="text-light-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-3-text" data-js="copy" title="Copy to clipboard">.text-light-3</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-3-border" tabindex="-1" value="border-light-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-3-border" data-js="copy" title="Copy to clipboard">.border-light-3</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-light-4 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-light-4-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">light 4</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-4-value" tabindex="-1" value="#C9E7FC" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-4-value" data-js="copy" title="Copy to clipboard">#C9E7FC</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-4-bg" tabindex="-1" value="bg-light-4" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-4-bg" data-js="copy" title="Copy to clipboard">.bg-light-4</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-4-text" tabindex="-1" value="text-light-4" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-4-text" data-js="copy" title="Copy to clipboard">.text-light-4</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-4-border" tabindex="-1" value="border-light-4" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-4-border" data-js="copy" title="Copy to clipboard">.border-light-4</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-light-5 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-light-5-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">light 5</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-5-value" tabindex="-1" value="#B8E0FC" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-5-value" data-js="copy" title="Copy to clipboard">#B8E0FC</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-5-bg" tabindex="-1" value="bg-light-5" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-5-bg" data-js="copy" title="Copy to clipboard">.bg-light-5</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-5-text" tabindex="-1" value="text-light-5" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-5-text" data-js="copy" title="Copy to clipboard">.text-light-5</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-light-5-border" tabindex="-1" value="border-light-5" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-light-5-border" data-js="copy" title="Copy to clipboard">.border-light-5</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">blue</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-blue-d-1 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-blue-d-1-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">blue d 1</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-d-1-value" tabindex="-1" value="#00369F" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-d-1-value" data-js="copy" title="Copy to clipboard">#00369F</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-d-1-bg" tabindex="-1" value="bg-blue-d-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-d-1-bg" data-js="copy" title="Copy to clipboard">.bg-blue-d-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-d-1-text" tabindex="-1" value="text-blue-d-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-d-1-text" data-js="copy" title="Copy to clipboard">.text-blue-d-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-d-1-border" tabindex="-1" value="border-blue-d-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-d-1-border" data-js="copy" title="Copy to clipboard">.border-blue-d-1</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-blue py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-blue-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">blue</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-value" tabindex="-1" value="#004CBE" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-value" data-js="copy" title="Copy to clipboard">#004CBE</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-bg" tabindex="-1" value="bg-blue" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-bg" data-js="copy" title="Copy to clipboard">.bg-blue</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-text" tabindex="-1" value="text-blue" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-text" data-js="copy" title="Copy to clipboard">.text-blue</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-border" tabindex="-1" value="border-blue" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-border" data-js="copy" title="Copy to clipboard">.border-blue</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-blue-l-1 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-blue-l-1-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">blue l 1</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-l-1-value" tabindex="-1" value="#217CEB" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-l-1-value" data-js="copy" title="Copy to clipboard">#217CEB</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-l-1-bg" tabindex="-1" value="bg-blue-l-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-l-1-bg" data-js="copy" title="Copy to clipboard">.bg-blue-l-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-l-1-text" tabindex="-1" value="text-blue-l-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-l-1-text" data-js="copy" title="Copy to clipboard">.text-blue-l-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-l-1-border" tabindex="-1" value="border-blue-l-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-l-1-border" data-js="copy" title="Copy to clipboard">.border-blue-l-1</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-blue-l-2 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-blue-l-2-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">blue l 2</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-l-2-value" tabindex="-1" value="#53B3FC" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-l-2-value" data-js="copy" title="Copy to clipboard">#53B3FC</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-l-2-bg" tabindex="-1" value="bg-blue-l-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-l-2-bg" data-js="copy" title="Copy to clipboard">.bg-blue-l-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-l-2-text" tabindex="-1" value="text-blue-l-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-l-2-text" data-js="copy" title="Copy to clipboard">.text-blue-l-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-l-2-border" tabindex="-1" value="border-blue-l-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-l-2-border" data-js="copy" title="Copy to clipboard">.border-blue-l-2</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-blue-l-3 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-blue-l-3-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">blue l 3</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-l-3-value" tabindex="-1" value="#C9EEFE" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-l-3-value" data-js="copy" title="Copy to clipboard">#C9EEFE</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-l-3-bg" tabindex="-1" value="bg-blue-l-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-l-3-bg" data-js="copy" title="Copy to clipboard">.bg-blue-l-3</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-l-3-text" tabindex="-1" value="text-blue-l-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-l-3-text" data-js="copy" title="Copy to clipboard">.text-blue-l-3</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-blue-l-3-border" tabindex="-1" value="border-blue-l-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-blue-l-3-border" data-js="copy" title="Copy to clipboard">.border-blue-l-3</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">green</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-green-d-1 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-green-d-1-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">green d 1</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-d-1-value" tabindex="-1" value="#007539" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-d-1-value" data-js="copy" title="Copy to clipboard">#007539</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-d-1-bg" tabindex="-1" value="bg-green-d-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-d-1-bg" data-js="copy" title="Copy to clipboard">.bg-green-d-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-d-1-text" tabindex="-1" value="text-green-d-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-d-1-text" data-js="copy" title="Copy to clipboard">.text-green-d-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-d-1-border" tabindex="-1" value="border-green-d-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-d-1-border" data-js="copy" title="Copy to clipboard">.border-green-d-1</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-green py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-green-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">green</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-value" tabindex="-1" value="#006333" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-value" data-js="copy" title="Copy to clipboard">#006333</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-bg" tabindex="-1" value="bg-green" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-bg" data-js="copy" title="Copy to clipboard">.bg-green</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-text" tabindex="-1" value="text-green" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-text" data-js="copy" title="Copy to clipboard">.text-green</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-border" tabindex="-1" value="border-green" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-border" data-js="copy" title="Copy to clipboard">.border-green</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-green-l-1 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-green-l-1-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">green l 1</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-1-value" tabindex="-1" value="#008E46" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-1-value" data-js="copy" title="Copy to clipboard">#008E46</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-1-bg" tabindex="-1" value="bg-green-l-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-1-bg" data-js="copy" title="Copy to clipboard">.bg-green-l-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-1-text" tabindex="-1" value="text-green-l-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-1-text" data-js="copy" title="Copy to clipboard">.text-green-l-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-1-border" tabindex="-1" value="border-green-l-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-1-border" data-js="copy" title="Copy to clipboard">.border-green-l-1</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-green-l-2 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-green-l-2-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">green l 2</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-2-value" tabindex="-1" value="#4BAC4C" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-2-value" data-js="copy" title="Copy to clipboard">#4BAC4C</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-2-bg" tabindex="-1" value="bg-green-l-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-2-bg" data-js="copy" title="Copy to clipboard">.bg-green-l-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-2-text" tabindex="-1" value="text-green-l-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-2-text" data-js="copy" title="Copy to clipboard">.text-green-l-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-2-border" tabindex="-1" value="border-green-l-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-2-border" data-js="copy" title="Copy to clipboard">.border-green-l-2</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-green-l-3 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-green-l-3-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">green l 3</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-3-value" tabindex="-1" value="#A8DD7C" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-3-value" data-js="copy" title="Copy to clipboard">#A8DD7C</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-3-bg" tabindex="-1" value="bg-green-l-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-3-bg" data-js="copy" title="Copy to clipboard">.bg-green-l-3</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-3-text" tabindex="-1" value="text-green-l-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-3-text" data-js="copy" title="Copy to clipboard">.text-green-l-3</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-3-border" tabindex="-1" value="border-green-l-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-3-border" data-js="copy" title="Copy to clipboard">.border-green-l-3</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-green-l-4 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-green-l-4-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">green l 4</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-4-value" tabindex="-1" value="#DFEED2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-4-value" data-js="copy" title="Copy to clipboard">#DFEED2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-4-bg" tabindex="-1" value="bg-green-l-4" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-4-bg" data-js="copy" title="Copy to clipboard">.bg-green-l-4</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-4-text" tabindex="-1" value="text-green-l-4" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-4-text" data-js="copy" title="Copy to clipboard">.text-green-l-4</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-green-l-4-border" tabindex="-1" value="border-green-l-4" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-green-l-4-border" data-js="copy" title="Copy to clipboard">.border-green-l-4</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">yellow</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-yellow-d-4 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-yellow-d-4-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">yellow d 4</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-4-value" tabindex="-1" value="#5C3D00" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-4-value" data-js="copy" title="Copy to clipboard">#5C3D00</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-4-bg" tabindex="-1" value="bg-yellow-d-4" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-4-bg" data-js="copy" title="Copy to clipboard">.bg-yellow-d-4</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-4-text" tabindex="-1" value="text-yellow-d-4" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-4-text" data-js="copy" title="Copy to clipboard">.text-yellow-d-4</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-4-border" tabindex="-1" value="border-yellow-d-4" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-4-border" data-js="copy" title="Copy to clipboard">.border-yellow-d-4</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-yellow-d-3 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-yellow-d-3-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">yellow d 3</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-3-value" tabindex="-1" value="#8F5F00" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-3-value" data-js="copy" title="Copy to clipboard">#8F5F00</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-3-bg" tabindex="-1" value="bg-yellow-d-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-3-bg" data-js="copy" title="Copy to clipboard">.bg-yellow-d-3</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-3-text" tabindex="-1" value="text-yellow-d-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-3-text" data-js="copy" title="Copy to clipboard">.text-yellow-d-3</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-3-border" tabindex="-1" value="border-yellow-d-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-3-border" data-js="copy" title="Copy to clipboard">.border-yellow-d-3</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-yellow-d-2 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-yellow-d-2-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">yellow d 2</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-2-value" tabindex="-1" value="#AD7200" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-2-value" data-js="copy" title="Copy to clipboard">#AD7200</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-2-bg" tabindex="-1" value="bg-yellow-d-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-2-bg" data-js="copy" title="Copy to clipboard">.bg-yellow-d-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-2-text" tabindex="-1" value="text-yellow-d-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-2-text" data-js="copy" title="Copy to clipboard">.text-yellow-d-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-2-border" tabindex="-1" value="border-yellow-d-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-2-border" data-js="copy" title="Copy to clipboard">.border-yellow-d-2</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-yellow-d-1 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-yellow-d-1-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">yellow d 1</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-1-value" tabindex="-1" value="#D99000" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-1-value" data-js="copy" title="Copy to clipboard">#D99000</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-1-bg" tabindex="-1" value="bg-yellow-d-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-1-bg" data-js="copy" title="Copy to clipboard">.bg-yellow-d-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-1-text" tabindex="-1" value="text-yellow-d-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-1-text" data-js="copy" title="Copy to clipboard">.text-yellow-d-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-d-1-border" tabindex="-1" value="border-yellow-d-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-d-1-border" data-js="copy" title="Copy to clipboard">.border-yellow-d-1</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-yellow py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-yellow-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">yellow</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-value" tabindex="-1" value="#FFBE17" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-value" data-js="copy" title="Copy to clipboard">#FFBE17</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-bg" tabindex="-1" value="bg-yellow" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-bg" data-js="copy" title="Copy to clipboard">.bg-yellow</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-text" tabindex="-1" value="text-yellow" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-text" data-js="copy" title="Copy to clipboard">.text-yellow</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-border" tabindex="-1" value="border-yellow" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-border" data-js="copy" title="Copy to clipboard">.border-yellow</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-yellow-l-1 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-yellow-l-1-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">yellow l 1</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-l-1-value" tabindex="-1" value="#FFD466" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-l-1-value" data-js="copy" title="Copy to clipboard">#FFD466</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-l-1-bg" tabindex="-1" value="bg-yellow-l-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-l-1-bg" data-js="copy" title="Copy to clipboard">.bg-yellow-l-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-l-1-text" tabindex="-1" value="text-yellow-l-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-l-1-text" data-js="copy" title="Copy to clipboard">.text-yellow-l-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-l-1-border" tabindex="-1" value="border-yellow-l-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-l-1-border" data-js="copy" title="Copy to clipboard">.border-yellow-l-1</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-yellow-l-2 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-yellow-l-2-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">yellow l 2</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-l-2-value" tabindex="-1" value="#FFDF8D" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-l-2-value" data-js="copy" title="Copy to clipboard">#FFDF8D</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-l-2-bg" tabindex="-1" value="bg-yellow-l-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-l-2-bg" data-js="copy" title="Copy to clipboard">.bg-yellow-l-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-l-2-text" tabindex="-1" value="text-yellow-l-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-l-2-text" data-js="copy" title="Copy to clipboard">.text-yellow-l-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-l-2-border" tabindex="-1" value="border-yellow-l-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-l-2-border" data-js="copy" title="Copy to clipboard">.border-yellow-l-2</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-yellow-l-3 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-yellow-l-3-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">yellow l 3</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-l-3-value" tabindex="-1" value="#FFF0C7" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-l-3-value" data-js="copy" title="Copy to clipboard">#FFF0C7</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-l-3-bg" tabindex="-1" value="bg-yellow-l-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-l-3-bg" data-js="copy" title="Copy to clipboard">.bg-yellow-l-3</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-l-3-text" tabindex="-1" value="text-yellow-l-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-l-3-text" data-js="copy" title="Copy to clipboard">.text-yellow-l-3</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-yellow-l-3-border" tabindex="-1" value="border-yellow-l-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-yellow-l-3-border" data-js="copy" title="Copy to clipboard">.border-yellow-l-3</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">red</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-red py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-red-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">red</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-red-value" tabindex="-1" value="#CF2A46" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-red-value" data-js="copy" title="Copy to clipboard">#CF2A46</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-red-bg" tabindex="-1" value="bg-red" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-red-bg" data-js="copy" title="Copy to clipboard">.bg-red</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-red-text" tabindex="-1" value="text-red" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-red-text" data-js="copy" title="Copy to clipboard">.text-red</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-red-border" tabindex="-1" value="border-red" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-red-border" data-js="copy" title="Copy to clipboard">.border-red</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-red-l-2 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-red-l-2-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">red l 2</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-red-l-2-value" tabindex="-1" value="#FC9CAC" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-red-l-2-value" data-js="copy" title="Copy to clipboard">#FC9CAC</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-red-l-2-bg" tabindex="-1" value="bg-red-l-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-red-l-2-bg" data-js="copy" title="Copy to clipboard">.bg-red-l-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-red-l-2-text" tabindex="-1" value="text-red-l-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-red-l-2-text" data-js="copy" title="Copy to clipboard">.text-red-l-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-red-l-2-border" tabindex="-1" value="border-red-l-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-red-l-2-border" data-js="copy" title="Copy to clipboard">.border-red-l-2</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-red-l-1 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-red-l-1-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">red l 1</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-red-l-1-value" tabindex="-1" value="#F1647C" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-red-l-1-value" data-js="copy" title="Copy to clipboard">#F1647C</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-red-l-1-bg" tabindex="-1" value="bg-red-l-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-red-l-1-bg" data-js="copy" title="Copy to clipboard">.bg-red-l-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-red-l-1-text" tabindex="-1" value="text-red-l-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-red-l-1-text" data-js="copy" title="Copy to clipboard">.text-red-l-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-red-l-1-border" tabindex="-1" value="border-red-l-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-red-l-1-border" data-js="copy" title="Copy to clipboard">.border-red-l-1</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">purple</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-purple py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-purple-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">purple</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-purple-value" tabindex="-1" value="#4439BE" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-purple-value" data-js="copy" title="Copy to clipboard">#4439BE</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-purple-bg" tabindex="-1" value="bg-purple" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-purple-bg" data-js="copy" title="Copy to clipboard">.bg-purple</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-purple-text" tabindex="-1" value="text-purple" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-purple-text" data-js="copy" title="Copy to clipboard">.text-purple</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-purple-border" tabindex="-1" value="border-purple" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-purple-border" data-js="copy" title="Copy to clipboard">.border-purple</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-purple-l-1 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-purple-l-1-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">purple l 1</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-purple-l-1-value" tabindex="-1" value="#7C72ED" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-purple-l-1-value" data-js="copy" title="Copy to clipboard">#7C72ED</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-purple-l-1-bg" tabindex="-1" value="bg-purple-l-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-purple-l-1-bg" data-js="copy" title="Copy to clipboard">.bg-purple-l-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-purple-l-1-text" tabindex="-1" value="text-purple-l-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-purple-l-1-text" data-js="copy" title="Copy to clipboard">.text-purple-l-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-purple-l-1-border" tabindex="-1" value="border-purple-l-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-purple-l-1-border" data-js="copy" title="Copy to clipboard">.border-purple-l-1</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-purple-l-2 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-purple-l-2-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">purple l 2</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-purple-l-2-value" tabindex="-1" value="#A9ACFC" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-purple-l-2-value" data-js="copy" title="Copy to clipboard">#A9ACFC</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-purple-l-2-bg" tabindex="-1" value="bg-purple-l-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-purple-l-2-bg" data-js="copy" title="Copy to clipboard">.bg-purple-l-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-purple-l-2-text" tabindex="-1" value="text-purple-l-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-purple-l-2-text" data-js="copy" title="Copy to clipboard">.text-purple-l-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-purple-l-2-border" tabindex="-1" value="border-purple-l-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-purple-l-2-border" data-js="copy" title="Copy to clipboard">.border-purple-l-2</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">black</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-black py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-black-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">black</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-black-value" tabindex="-1" value="#000000" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-black-value" data-js="copy" title="Copy to clipboard">#000000</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-black-bg" tabindex="-1" value="bg-black" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-black-bg" data-js="copy" title="Copy to clipboard">.bg-black</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-black-text" tabindex="-1" value="text-black" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-black-text" data-js="copy" title="Copy to clipboard">.text-black</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-black-border" tabindex="-1" value="border-black" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-black-border" data-js="copy" title="Copy to clipboard">.border-black</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">white</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-white py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-white-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">white</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-white-value" tabindex="-1" value="#FFFFFF" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-white-value" data-js="copy" title="Copy to clipboard">#FFFFFF</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-white-bg" tabindex="-1" value="bg-white" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-white-bg" data-js="copy" title="Copy to clipboard">.bg-white</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-white-text" tabindex="-1" value="text-white" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-white-text" data-js="copy" title="Copy to clipboard">.text-white</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-white-border" tabindex="-1" value="border-white" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-white-border" data-js="copy" title="Copy to clipboard">.border-white</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">transparent</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-transparent py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-transparent-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">transparent</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-transparent-value" tabindex="-1" value="rgba(255, 255, 255, 0)" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-transparent-value" data-js="copy" title="Copy to clipboard">rgba(255, 255, 255, 0)</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-transparent-bg" tabindex="-1" value="bg-transparent" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-transparent-bg" data-js="copy" title="Copy to clipboard">.bg-transparent</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-transparent-text" tabindex="-1" value="text-transparent" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-transparent-text" data-js="copy" title="Copy to clipboard">.text-transparent</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-transparent-border" tabindex="-1" value="border-transparent" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-transparent-border" data-js="copy" title="Copy to clipboard">.border-transparent</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">inherit</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-inherit py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-inherit-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">inherit</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-inherit-value" tabindex="-1" value="inherit" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-inherit-value" data-js="copy" title="Copy to clipboard">inherit</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-inherit-bg" tabindex="-1" value="bg-inherit" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-inherit-bg" data-js="copy" title="Copy to clipboard">.bg-inherit</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-inherit-text" tabindex="-1" value="text-inherit" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-inherit-text" data-js="copy" title="Copy to clipboard">.text-inherit</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-inherit-border" tabindex="-1" value="border-inherit" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-inherit-border" data-js="copy" title="Copy to clipboard">.border-inherit</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">text</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-text py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-text-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">text</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-text-value" tabindex="-1" value="var(--wnyc-text)" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-text-value" data-js="copy" title="Copy to clipboard">var(--wnyc-text)</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-text-bg" tabindex="-1" value="bg-text" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-text-bg" data-js="copy" title="Copy to clipboard">.bg-text</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-text-text" tabindex="-1" value="text-text" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-text-text" data-js="copy" title="Copy to clipboard">.text-text</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-text-border" tabindex="-1" value="border-text" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-text-border" data-js="copy" title="Copy to clipboard">.border-text</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">brand</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-brand py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-brand-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">brand</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-brand-value" tabindex="-1" value="var(--wnyc-brand)" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-brand-value" data-js="copy" title="Copy to clipboard">var(--wnyc-brand)</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-brand-bg" tabindex="-1" value="bg-brand" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-brand-bg" data-js="copy" title="Copy to clipboard">.bg-brand</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-brand-text" tabindex="-1" value="text-brand" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-brand-text" data-js="copy" title="Copy to clipboard">.text-brand</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-brand-border" tabindex="-1" value="border-brand" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-brand-border" data-js="copy" title="Copy to clipboard">.border-brand</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">alt</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-alt py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-alt-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">alt</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-alt-value" tabindex="-1" value="var(--wnyc-alt)" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-alt-value" data-js="copy" title="Copy to clipboard">var(--wnyc-alt)</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-alt-bg" tabindex="-1" value="bg-alt" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-alt-bg" data-js="copy" title="Copy to clipboard">.bg-alt</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-alt-text" tabindex="-1" value="text-alt" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-alt-text" data-js="copy" title="Copy to clipboard">.text-alt</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-alt-border" tabindex="-1" value="border-alt" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-alt-border" data-js="copy" title="Copy to clipboard">.border-alt</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">em</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-em py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-em-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">em</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-em-value" tabindex="-1" value="var(--wnyc-em)" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-em-value" data-js="copy" title="Copy to clipboard">var(--wnyc-em)</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-em-bg" tabindex="-1" value="bg-em" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-em-bg" data-js="copy" title="Copy to clipboard">.bg-em</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-em-text" tabindex="-1" value="text-em" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-em-text" data-js="copy" title="Copy to clipboard">.text-em</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-em-border" tabindex="-1" value="border-em" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-em-border" data-js="copy" title="Copy to clipboard">.border-em</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">primary</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-primary py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-primary-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">primary</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-primary-value" tabindex="-1" value="var(--wnyc-primary)" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-primary-value" data-js="copy" title="Copy to clipboard">var(--wnyc-primary)</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-primary-bg" tabindex="-1" value="bg-primary" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-primary-bg" data-js="copy" title="Copy to clipboard">.bg-primary</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-primary-text" tabindex="-1" value="text-primary" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-primary-text" data-js="copy" title="Copy to clipboard">.text-primary</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-primary-border" tabindex="-1" value="border-primary" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-primary-border" data-js="copy" title="Copy to clipboard">.border-primary</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">secondary</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-secondary py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-secondary-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">secondary</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-secondary-value" tabindex="-1" value="var(--wnyc-secondary)" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-secondary-value" data-js="copy" title="Copy to clipboard">var(--wnyc-secondary)</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-secondary-bg" tabindex="-1" value="bg-secondary" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-secondary-bg" data-js="copy" title="Copy to clipboard">.bg-secondary</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-secondary-text" tabindex="-1" value="text-secondary" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-secondary-text" data-js="copy" title="Copy to clipboard">.text-secondary</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-secondary-border" tabindex="-1" value="border-secondary" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-secondary-border" data-js="copy" title="Copy to clipboard">.border-secondary</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">tertiary</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-tertiary py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-tertiary-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">tertiary</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-tertiary-value" tabindex="-1" value="var(--wnyc-tertiary)" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-tertiary-value" data-js="copy" title="Copy to clipboard">var(--wnyc-tertiary)</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-tertiary-bg" tabindex="-1" value="bg-tertiary" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-tertiary-bg" data-js="copy" title="Copy to clipboard">.bg-tertiary</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-tertiary-text" tabindex="-1" value="text-tertiary" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-tertiary-text" data-js="copy" title="Copy to clipboard">.text-tertiary</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-tertiary-border" tabindex="-1" value="border-tertiary" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-tertiary-border" data-js="copy" title="Copy to clipboard">.border-tertiary</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <h3 class="capitalize col-span-full mb-0">scale</h3>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-scale-0 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-scale-0-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">scale 0</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-0-value" tabindex="-1" value="var(--wnyc-scale-0)" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-0-value" data-js="copy" title="Copy to clipboard">var(--wnyc-scale-0)</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-0-bg" tabindex="-1" value="bg-scale-0" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-0-bg" data-js="copy" title="Copy to clipboard">.bg-scale-0</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-0-text" tabindex="-1" value="text-scale-0" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-0-text" data-js="copy" title="Copy to clipboard">.text-scale-0</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-0-border" tabindex="-1" value="border-scale-0" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-0-border" data-js="copy" title="Copy to clipboard">.border-scale-0</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-scale-1 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-scale-1-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">scale 1</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-1-value" tabindex="-1" value="var(--wnyc-scale-1)" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-1-value" data-js="copy" title="Copy to clipboard">var(--wnyc-scale-1)</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-1-bg" tabindex="-1" value="bg-scale-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-1-bg" data-js="copy" title="Copy to clipboard">.bg-scale-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-1-text" tabindex="-1" value="text-scale-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-1-text" data-js="copy" title="Copy to clipboard">.text-scale-1</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-1-border" tabindex="-1" value="border-scale-1" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-1-border" data-js="copy" title="Copy to clipboard">.border-scale-1</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-scale-2 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-scale-2-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">scale 2</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-2-value" tabindex="-1" value="var(--wnyc-scale-2)" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-2-value" data-js="copy" title="Copy to clipboard">var(--wnyc-scale-2)</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-2-bg" tabindex="-1" value="bg-scale-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-2-bg" data-js="copy" title="Copy to clipboard">.bg-scale-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-2-text" tabindex="-1" value="text-scale-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-2-text" data-js="copy" title="Copy to clipboard">.text-scale-2</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-2-border" tabindex="-1" value="border-scale-2" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-2-border" data-js="copy" title="Copy to clipboard">.border-scale-2</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-scale-3 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-scale-3-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">scale 3</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-3-value" tabindex="-1" value="var(--wnyc-scale-3)" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-3-value" data-js="copy" title="Copy to clipboard">var(--wnyc-scale-3)</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-3-bg" tabindex="-1" value="bg-scale-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-3-bg" data-js="copy" title="Copy to clipboard">.bg-scale-3</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-3-text" tabindex="-1" value="text-scale-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-3-text" data-js="copy" title="Copy to clipboard">.text-scale-3</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-3-border" tabindex="-1" value="border-scale-3" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-3-border" data-js="copy" title="Copy to clipboard">.border-scale-3</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <button aria-label="Copy to clipboard" aria-pressed="false" class="bg-scale-4 py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center" data-copy="copy-scale-4-value" data-js="copy" title="Copy to clipboard">
+                  <span class="inline-block bg-white p-1 rounded">
+                    <svg aria-hidden="true" class="icon-wnyc-ui icon-3 block text-blue pointer">
+                      <use xlink:href="#feather-copy"></use>
+                    </svg>
+                  </span>
+                </button>
+                <div>
+                  <div class="p-1 pb-0 capitalize border-l border-r border-scale-4">scale 4</div>
+                  <div class="border rounded-t-none border-t-0 border-scale-4">
+                    <dl class="small p-1 grid grid-cols-3 gap-1">
+                      <dt class="border-4 border-transparent">Value</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-4-value" tabindex="-1" value="var(--wnyc-scale-4)" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-4-value" data-js="copy" title="Copy to clipboard">var(--wnyc-scale-4)</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Background</dt>
+                      <dd class=" col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-4-bg" tabindex="-1" value="bg-scale-4" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-4-bg" data-js="copy" title="Copy to clipboard">.bg-scale-4</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Text</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-4-text" tabindex="-1" value="text-scale-4" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-4-text" data-js="copy" title="Copy to clipboard">.text-scale-4</button>
+                      </dd>
+                      <dt class="border-4 border-transparent">Border</dt>
+                      <dd class="col-span-2">
+                        <input class="sr-only" data-copy-target="copy-scale-4-border" tabindex="-1" value="border-scale-4" />
+                        <button aria-label="Copy to clipboard" aria-pressed="false" class="w-full text-start border-4 border-transparent font-code text-code" data-copy="copy-scale-4-border" data-js="copy" title="Copy to clipboard">.border-scale-4</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pb-4 mb-4" id="figma-color-page">
+        <header class="page-max layout-content py-4">
+          <div class="wrap">
+            <h4 class="flex items-center">
+              <a class="mie-1 flex items-center" href="#figma-color-page">
+                <svg class="icon-wnyc-ui" role="img">
+                  <title>Figma Color Page Anchor Link</title>
+                  <use xlink:href="#feather-anchor"></use>
+                </svg>
+              </a>Figma Color Page
+            </h4>
+            <p class="flex items-center">
+              <svg class="icon-wnyc-ui mie-1" role="img">
+                <title>GitHub Source Link</title>
+                <use xlink:href="#feather-github"></use>
+              </svg>
+              <a href="https://github.com/cityofnewyork/working-nyc-patterns/tree/v0.0.1-45/src/utilities/color" target="_blank">src/utilities/color/color-figma</a>
+            </p>
+          </div>
+        </header>
+        <!--Section Text-->
+        <div class="page-max layout-content pb-6">
+          <div class="wrap"></div>
+        </div>
+        <div class="bg-scale-0 py-6 mb-6">
+          <div class="page-max flex justify-center py-6">
+            <div class="wrap aspect-w-16 aspect-h-9">
+              <iframe allowfullscreen="true" src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Ffile%2FCH7ZOCW55SgsDnsTj3UrTi%2FPT-Working-NYC-Patterns%3Fnode-id%3D1%253A292"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="text-small py-4 z-20 relative" role="contentinfo">
+    <div class="layout-content page-max">
+      <div class="wrap mb-4">
+        <hr class="divider" />
+        <div class="py-4">
+          <p class="mb-1">Maintained by&nbsp;<a href="http://nyc.gov/opportunity">The Mayor's Office for Economic Opportunity</a>
+          </p>
+          <p>We are committed to sharing open source software that we use in our products. Feel free to ask questions and share feedback. Follow @nycopportunity on&nbsp;</p>
+          <div class="mb-3">
+            <nav class="nav-inline">
+              <a href="https://github.com/nycopportunity">GitHub</a>
+              <a href="https://twitter.com/nycopportunity">Twitter</a>
+              <a href="https://www.facebook.com/nycopportunity">Facebook</a>
+              <a href="https://www.instagram.com/nycopportunity">Instagram</a>
+            </nav>
+          </div>
+          <small>© City of New York, 2021 All Rights Reserved. NYC is a trademark and service mark of the City of New York.</small>
+        </div>
+      </div>
+    </div>
+    <div class="page-max pt-2">
+      <div class="tablet:flex">
+        <nav aria-labelledby="navigation-main-74db623cdaf54" class="tablet:flex-1 mb-1 px-1 tablet:px-2" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="navigation-main-74db623cdaf54">Main</span>
+          <a class="block p-1 no-underline align-middle" href="index">Home</a>
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1">Links</span>
+          <a class="block p-1 no-underline align-middle" href="https://www.npmjs.com/package/@nycopportunity/working-patterns">NPM Package</a>
+          <a class="block p-1 no-underline align-middle" href="https://github.com/cityofnewyork/working-nyc-patterns">GitHub Repository</a>
+        </nav>
+        <nav aria-labelledby="aria-lb-elements-74db623cdaf54" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-elements-74db623cdaf54">Elements</span>
+          <a class="block p-1 no-underline align-middle" href="badge">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Badge
+          </a>
+          <a class="block p-1 no-underline align-middle" href="buttons">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Buttons
+          </a>
+          <a class="block p-1 no-underline align-middle" xhref="code">Code</a>
+          <a class="block p-1 no-underline align-middle" xhref="divider">Divider</a>
+          <a class="block p-1 no-underline align-middle" href="forms">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Forms
+          </a>
+          <a class="block p-1 no-underline align-middle" xhref="icons">Icons</a>
+          <a class="block p-1 no-underline align-middle" href="inputs">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Inputs
+          </a>
+          <a class="block p-1 no-underline align-middle" href="labels">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Labels
+          </a>
+          <a class="block p-1 no-underline align-middle" xhref="layouts">Layouts</a>
+          <a class="block p-1 no-underline align-middle" xhref="links">Links</a>
+          <a class="block p-1 no-underline align-middle" xhref="nav">Nav</a>
+          <a class="block p-1 no-underline align-middle" href="options">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Options
+          </a>
+          <a class="block p-1 no-underline align-middle" href="selects">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Selects
+          </a>
+          <a class="block p-1 no-underline align-middle" href="tables">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Tables
+          </a>
+        </nav>
+        <nav aria-labelledby="aria-lb-components-74db623cdaf54" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-components-74db623cdaf54">Components</span>
+          <a class="block p-1 no-underline align-middle" href="accordion">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Accordion
+          </a>
+          <a class="block p-1 no-underline align-middle" href="alert">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Alert
+          </a>
+          <a class="block p-1 no-underline align-middle" href="card">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Card
+          </a>
+          <a class="block p-1 no-underline align-middle" href="dropdown">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Dropdown
+          </a>
+          <a class="block p-1 no-underline align-middle" href="question">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Question
+          </a>
+          <a class="block p-1 no-underline align-middle" href="utility">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Utility
+          </a>
+          <a class="block p-1 no-underline align-middle" href="web-share">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Web Share
+          </a>
+        </nav>
+        <nav aria-labelledby="aria-lb-objects-74db623cdaf54" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-objects-74db623cdaf54">Objects</span>
+          <a class="block p-1 no-underline align-middle" href="banner">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Banner
+          </a>
+          <a class="block p-1 no-underline align-middle" href="feedback">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Feedback
+          </a>
+          <a class="block p-1 no-underline align-middle" href="footer">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Footer
+          </a>
+          <a class="block p-1 no-underline align-middle" href="header">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Header
+          </a>
+          <a class="block p-1 no-underline align-middle" href="menu">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Menu
+          </a>
+          <a class="block p-1 no-underline align-middle" href="navigation">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Navigation
+          </a>
+          <a class="block p-1 no-underline align-middle" href="newsletter">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Newsletter
+          </a>
+          <a class="block p-1 no-underline align-middle" href="search">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Search
+          </a>
+          <a class="block p-1 no-underline align-middle" href="text-controller">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Text Controller
+          </a>
+        </nav>
+        <nav aria-labelledby="aria-lb-utilities-74db623cdaf54" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-utilities-74db623cdaf54">Utilities</span>
+          <a class="block p-1 no-underline align-middle" xhref="animate">Animate</a>
+          <a class="block p-1 no-underline align-middle" xhref="cell">Cell</a>
+          <a class="block p-1 no-underline align-middle" xhref="clearfix">Clearfix</a>
+          <a class="block p-1 no-underline align-middle" href="color">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Color
+          </a>
+          <a class="block p-1 no-underline align-middle" href="fonts">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Fonts
+          </a>
+          <a class="block p-1 no-underline align-middle" xhref="print">Print</a>
+          <a class="block p-1 no-underline align-middle" xhref="scroll">Scroll</a>
+          <a class="block p-1 no-underline align-middle" xhref="status">Status</a>
+          <a class="block p-1 no-underline align-middle" href="tailwindcss">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Tailwindcss
+          </a>
+          <a class="block p-1 no-underline align-middle" xhref="toggle">Toggle</a>
+          <a class="block p-1 no-underline align-middle" xhref="typography">Typography</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+  <script src="scripts/polyfills.js"></script>
+  <script src="scripts/main.js"></script>
+  <script type="text/javascript">
+    var patterns = new WorkingNyc();
+    patterns.icons();
+    patterns.icons('https://cityofnewyork.github.io/working-nyc-patterns/svg/feather.svg');
+    patterns.toggle();
+    patterns.copy();
+  </script>
+</body>
+
+</html>

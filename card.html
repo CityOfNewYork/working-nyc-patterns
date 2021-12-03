@@ -5,11 +5,12 @@
   <meta charset="utf-8" />
   <meta content="IE=edge" http-equiv="X-UA-Compatible" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="https://cityofnewyork.github.io/working-nyc-patterns/svg/favicon.svg" rel="icon" type="image/x-icon" />
   <title>Card | Working NYC Patterns</title>
   <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
-  <link href="styles/site-default.css" rel="stylesheet" />
-  <link href="styles/site-color-default.css" rel="stylesheet" />
-  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+  <link href="https://cityofnewyork.github.io/working-nyc-patterns/styles/tokens.css" rel="stylesheet" />
+  <link href="https://cityofnewyork.github.io/working-nyc-patterns/styles/site-default.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function(event) {
       hljs.configure({
@@ -30,19 +31,19 @@
       <div>
         <h1 aria-level="1" class="flex m-0" role="heading">
           <span class="sr-only">Working N Y C</span>
-          <svg aria-hidden="true" class="hidden tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2">
+          <svg aria-hidden="true" class="hidden tablet:inline icon-logo-standard-menu-item fill-text text-brand">
             <use xlink:href="#logo-wnyc-standard"></use>
           </svg>
-          <svg aria-hidden="true" class="tablet:hidden icon-logo-stacked-menu-item fill-white text-blue-l-2">
+          <svg aria-hidden="true" class="tablet:hidden icon-logo-stacked-menu-item fill-text text-brand">
             <use xlink:href="#logo-wnyc-stacked"></use>
           </svg>
         </h1>
       </div>
       <div class="flex items-center">
-        <h2 class="text-body font-normal m-0">Patterns</h2>
-        <nav aria-label="navigation-menu" class="nav-inline text-small flex items-center ms-2" role="navigation">
-          <a class="rounded-lg border no-underline px-1" href="https://github.com/cityofnewyork/workingnyc-patterns/releases/tag/v0.0.1-44">0.0.1-44</a>
-          <button aria-controls="main-menu" aria-expanded="false" class="btn btn-link" data-js="toggle" id="main-menu-control">
+        <h2 class="h5 m-0">Patterns</h2>
+        <nav aria-label="navigation-menu" class="nav-inline text-small font-primary flex items-center mis-2" role="navigation">
+          <a class="rounded-lg border no-underline px-1" href="https://github.com/cityofnewyork/working-nyc-patterns/releases/tag/v0.0.1-45">0.0.1-45</a>
+          <button aria-controls="main-menu" aria-expanded="false" data-js="toggle" id="main-menu-control">
             <svg aria-hidden="true" class="icon-wnyc-ui">
               <use xlink:href="#feather-menu"></use>
             </svg>
@@ -55,106 +56,123 @@
   <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-modal text-small hidden hidden:overflowFadeInUp animated" id="main-menu">
     <div class="page-max py-4 animated">
       <div class="tablet:flex">
-        <nav aria-labelledby="navigation-main-364edaff12f12" class="tablet:flex-1 mb-1 px-1 tablet:px-2" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="navigation-main-364edaff12f12">Main</span>
+        <nav aria-labelledby="navigation-main-a116ffcc848e5" class="tablet:flex-1 mb-1 px-1 tablet:px-2" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="navigation-main-a116ffcc848e5">Main</span>
           <a class="block p-1 no-underline align-middle" href="index" tabindex="-1">Home</a>
           <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1">Links</span>
-          <a class="block p-1 no-underline align-middle" data-toggle-tabindex="10" tabindex="-1" xhref="https://www.npmjs.com/package/@nycopportunity/working-patterns">NPM Package</a>
-          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="https://github.com/cityofnewyork/workingnyc-patterns">GitHub Repository</a>
+          <a class="block p-1 no-underline align-middle" href="https://www.npmjs.com/package/@nycopportunity/working-patterns" tabindex="-1">NPM Package</a>
+          <a class="block p-1 no-underline align-middle" href="https://github.com/cityofnewyork/working-nyc-patterns" tabindex="-1">GitHub Repository</a>
         </nav>
-        <nav aria-labelledby="aria-lb-elements-364edaff12f12" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-elements-364edaff12f12">Elements</span>
-          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="badge">Badge</a>
-          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="buttons">Buttons</a>
+        <nav aria-labelledby="aria-lb-elements-a116ffcc848e5" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-elements-a116ffcc848e5">Elements</span>
+          <a class="block p-1 no-underline align-middle" href="badge" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Badge
+          </a>
+          <a class="block p-1 no-underline align-middle" href="buttons" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Buttons
+          </a>
           <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="code">Code</a>
           <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="divider">Divider</a>
-          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="forms">Forms</a>
+          <a class="block p-1 no-underline align-middle" href="forms" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Forms
+          </a>
           <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="icons">Icons</a>
           <a class="block p-1 no-underline align-middle" href="inputs" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Inputs
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Inputs
           </a>
-          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="labels">Labels</a>
+          <a class="block p-1 no-underline align-middle" href="labels" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Labels
+          </a>
           <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="layouts">Layouts</a>
           <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="links">Links</a>
           <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="nav">Nav</a>
           <a class="block p-1 no-underline align-middle" href="options" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Options
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Options
           </a>
           <a class="block p-1 no-underline align-middle" href="selects" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Selects
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Selects
           </a>
           <a class="block p-1 no-underline align-middle" href="tables" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Tables
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Tables
           </a>
         </nav>
-        <nav aria-labelledby="aria-lb-components-364edaff12f12" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-components-364edaff12f12">Components</span>
+        <nav aria-labelledby="aria-lb-components-a116ffcc848e5" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-components-a116ffcc848e5">Components</span>
           <a class="block p-1 no-underline align-middle" href="accordion" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Accordion
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Accordion
           </a>
           <a class="block p-1 no-underline align-middle" href="alert" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Alert
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Alert
           </a>
           <a class="block p-1 no-underline align-middle" href="card" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Card
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Card
           </a>
           <a class="block p-1 no-underline align-middle" href="dropdown" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Dropdown
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Dropdown
           </a>
           <a class="block p-1 no-underline align-middle" href="question" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Question
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Question
           </a>
           <a class="block p-1 no-underline align-middle" href="utility" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Utility
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Utility
           </a>
           <a class="block p-1 no-underline align-middle" href="web-share" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Web Share
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Web Share
           </a>
         </nav>
-        <nav aria-labelledby="aria-lb-objects-364edaff12f12" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-objects-364edaff12f12">Objects</span>
+        <nav aria-labelledby="aria-lb-objects-a116ffcc848e5" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-objects-a116ffcc848e5">Objects</span>
           <a class="block p-1 no-underline align-middle" href="banner" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Banner
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Banner
           </a>
-          <a class="block p-1 no-underline align-middle" href="header" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Header
+          <a class="block p-1 no-underline align-middle" href="feedback" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Feedback
           </a>
           <a class="block p-1 no-underline align-middle" href="footer" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Footer
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Footer
           </a>
-          <a class="block p-1 no-underline align-middle" href="mobile-menu" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Mobile Menu
+          <a class="block p-1 no-underline align-middle" href="header" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Header
+          </a>
+          <a class="block p-1 no-underline align-middle" href="menu" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Menu
           </a>
           <a class="block p-1 no-underline align-middle" href="navigation" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Navigation
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Navigation
           </a>
           <a class="block p-1 no-underline align-middle" href="newsletter" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Newsletter
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Newsletter
           </a>
           <a class="block p-1 no-underline align-middle" href="search" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Search
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Search
           </a>
           <a class="block p-1 no-underline align-middle" href="text-controller" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Text Controller
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Text Controller
           </a>
         </nav>
-        <nav aria-labelledby="aria-lb-utilities-364edaff12f12" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-utilities-364edaff12f12">Utilities</span>
+        <nav aria-labelledby="aria-lb-utilities-a116ffcc848e5" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-utilities-a116ffcc848e5">Utilities</span>
           <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="animate">Animate</a>
-          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="color">Color</a>
-          <a class="block p-1 no-underline align-middle" href="fonts" tabindex="-1">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Fonts
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="cell">Cell</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="clearfix">Clearfix</a>
+          <a class="block p-1 no-underline align-middle" href="color" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Color
           </a>
-          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="margin">Margin</a>
-          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="padding">Padding</a>
-          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="tailwindcss">tailwindcss</a>
-          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="text">Text</a>
+          <a class="block p-1 no-underline align-middle" href="fonts" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Fonts
+          </a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="print">Print</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="scroll">Scroll</a>
+          <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="status">Status</a>
+          <a class="block p-1 no-underline align-middle" href="tailwindcss" tabindex="-1">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Tailwindcss
+          </a>
           <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="toggle">Toggle</a>
           <a class="block p-1 no-underline align-middle" tabindex="-1" xhref="typography">Typography</a>
         </nav>
       </div>
       <div class="text-center">
-        <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle" data-pa11y="disable" tabindex="-1">Close Menu</button>
+        <button aria-controls="main-menu" aria-expanded="false" data-js="toggle" data-pa11y="disable" tabindex="-1">Close Menu</button>
       </div>
     </div>
   </aside>
@@ -166,99 +184,98 @@
         </div>
       </header>
       <section class="pb-4 mb-4" id="card">
-        <header class="page-max layout-content pb-4">
+        <header class="page-max layout-content py-4">
           <div class="wrap">
-            <p>Source: <code>
-                <a href="https://github.com/cityofnewyork/workingnyc-patterns/tree/v0.0.1-44/src/components/card" target="_blank">src/components/card/card</a>
-              </code>
+            <p class="flex items-center">
+              <svg class="icon-wnyc-ui mie-1" role="img">
+                <title>GitHub Source Link</title>
+                <use xlink:href="#feather-github"></use>
+              </svg>
+              <a href="https://github.com/cityofnewyork/working-nyc-patterns/tree/v0.0.1-45/src/components/card" target="_blank">src/components/card/card</a>
             </p>
           </div>
         </header>
+        <!--Section Text-->
         <div class="page-max layout-content pb-6">
           <div class="wrap">
             <p>Card Components are thumbnails of content and may include a full or partial set of elements.</p>
           </div>
         </div>
         <div class="page-max layout-content pb-4">
-          <h4 class="wrap" id="card-example">
-            <a href="#card-example">Demonstration</a>
-          </h4>
+          <h5 class="wrap flex items-center" id="card-example">Demonstration</h5>
         </div>
         <div class="bg-scale-0 py-6 mb-6">
           <div class="page-max flex justify-center py-6">
-            <div class="wrap">
-              <article class="c-card ">
-                <header class="c-card__header">
-                  <h2 class="c-card__title">
-                    <a href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
-                      <span data-program="plain-language-name">Commercial driver training</span>
-                    </a>
-                  </h2>
-                  <h3 class="c-card__subtitle text-alt">
-                    <b data-program="title">Red Hook on the Road</b> by <span data-program="provider">Brooklyn Workforce Innovations</span>
-                  </h3>
-                </header>
-                <div class="c-card__body">
-                  <p class="c-card__status flex items-center">
-                    <mark class="badge status-alt me-2" data-program="recruiting"> Actively recruiting </mark>
-                    <!-- <span class="flex me-2" data-program="accessible">
+            <article class="c-card ">
+              <header class="c-card__header">
+                <h2 class="c-card__title">
+                  <a href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
+                    <span data-program="plain-language-name">Commercial driver training</span>
+                  </a>
+                </h2>
+                <h3 class="c-card__subtitle text-alt">
+                  <b data-program="title">Red Hook on the Road</b> by <span data-program="provider">Brooklyn Workforce Innovations</span>
+                </h3>
+              </header>
+              <div class="c-card__body">
+                <p class="c-card__status flex items-center">
+                  <mark class="badge mie-2" data-program="recruiting"> Actively recruiting </mark>
+                  <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
             <use xlink:href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
-                    <!-- <span class="flex me-2" data-program="multilingual">
+                  <!-- <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
             <use xlink:href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
         </span> -->
+                </p>
+                <div class="c-card__summary">
+                  <p>
+                    <span data-program="summary">Through this program students prepare to work as commercial drivers.</span> For <b class="text-em" data-program="taxonomy.population">Unemployed New Yorkers</b> and <b class="text-em" data-program="taxonomy.population"> Adults</b>.
                   </p>
-                  <div class="c-card__summary">
-                    <p>
-                      <span data-program="summary">Through this program students prepare to work as commercial drivers.</span> For <b class="text-alt" data-program="taxonomy.population">Unemployed New Yorkers</b> and <b class="text-alt" data-program="taxonomy.population"> Adults</b>.
-                    </p>
-                  </div>
-                  <ul class="c-card__features">
-                    <li class="flex items-center">
-                      <svg aria-hidden="true" class="icon-wnyc-ui me-1">
-                        <use xlink:href="#feather-award"></use>
-                      </svg>
-                      <span>
-                        <span data-program="taxonomy.services">Training for a new career</span>,&nbsp; <span data-program="taxonomy.services">job certification</span>
-                      </span>
-                    </li>
-                    <li class="flex items-center">
-                      <svg aria-hidden="true" class="icon-wnyc-ui me-1">
-                        <use xlink:href="#feather-calendar"></use>
-                      </svg>
-                      <span>
-                        <span data-program="taxonomy.duration">4 weeks</span>,&nbsp; <span data-program="taxonomy.schedule">evening</span>&nbsp;schedule
-                      </span>
-                    </li>
-                  </ul>
-                  <a class="c-card__cta btn btn-secondary btn-next" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
-                    <svg aria-hidden="true" class="icon-wnyc-ui">
-                      <use xlink:href="#feather-arrow-left"></use>
-                    </svg>
-                    <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Commercial driver training</span>
-                      </span>
-                    </span>
-                    <svg aria-hidden="true" class="icon-wnyc-ui">
-                      <use xlink:href="#feather-arrow-right"></use>
-                    </svg>
-                  </a>
                 </div>
-              </article>
-            </div>
+                <ul class="c-card__features">
+                  <li class="flex items-center">
+                    <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
+                      <use xlink:href="#feather-award"></use>
+                    </svg>
+                    <span>
+                      <span data-program="taxonomy.services">Training for a new career</span>,&nbsp; <span data-program="taxonomy.services">job certification</span>
+                    </span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
+                      <use xlink:href="#feather-calendar"></use>
+                    </svg>
+                    <span>
+                      <span data-program="taxonomy.duration">4 weeks</span>,&nbsp; <span data-program="taxonomy.schedule">evening</span>&nbsp;schedule
+                    </span>
+                  </li>
+                </ul>
+                <a class="c-card__cta" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
+                  <svg aria-hidden="true" class="icon-wnyc-ui">
+                    <use xlink:href="#feather-arrow-left"></use>
+                  </svg>
+                  <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Commercial driver training</span>
+                    </span>
+                  </span>
+                  <svg aria-hidden="true" class="icon-wnyc-ui">
+                    <use xlink:href="#feather-arrow-right"></use>
+                  </svg>
+                </a>
+              </div>
+            </article>
           </div>
         </div>
+        <!--Section Markup-->
         <div class="page-max layout-content pb-4">
-          <h4 class="wrap" id="card-markup">
-            <a href="#card-markup">Markup</a>
-          </h4>
+          <h5 class="wrap flex items-center" id="card-markup">Markup</h5>
         </div>
         <div class="page-max layout-content">
           <div class="wrap">
@@ -276,15 +293,15 @@
   &lt;/header&gt;
   &lt;div class=&quot;c-card__body&quot;&gt;
     &lt;p class=&quot;c-card__status flex items-center&quot;&gt;
-      &lt;mark class=&quot;badge status-alt me-2&quot; data-program=&quot;recruiting&quot;&gt; Actively recruiting &lt;/mark&gt;
-      &lt;!-- &lt;span class=&quot;flex me-2&quot; data-program=&quot;accessible&quot;&gt;
+      &lt;mark class=&quot;badge mie-2&quot; data-program=&quot;recruiting&quot;&gt; Actively recruiting &lt;/mark&gt;
+      &lt;!-- &lt;span class=&quot;flex mie-2&quot; data-program=&quot;accessible&quot;&gt;
           &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon text-alt&quot;&gt;
             &lt;use xlink:href=&quot;#icon-wnyc-accessible&quot;&gt;&lt;/use&gt;
           &lt;/svg&gt;
 
           &lt;span class=&quot;sr-only&quot;&gt;Accommodates Disabilities&lt;/span&gt;
         &lt;/span&gt; --&gt;
-      &lt;!-- &lt;span class=&quot;flex me-2&quot; data-program=&quot;multilingual&quot;&gt;
+      &lt;!-- &lt;span class=&quot;flex mie-2&quot; data-program=&quot;multilingual&quot;&gt;
           &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-wnyc-ui text-alt&quot;&gt;
             &lt;use xlink:href=&quot;#icon-wnyc-translate&quot;&gt;&lt;/use&gt;
           &lt;/svg&gt;
@@ -294,12 +311,12 @@
     &lt;/p&gt;
     &lt;div class=&quot;c-card__summary&quot;&gt;
       &lt;p&gt;
-        &lt;span data-program=&quot;summary&quot;&gt;Through this program students prepare to work as commercial drivers.&lt;/span&gt; For &lt;b class=&quot;text-alt&quot; data-program=&quot;taxonomy.population&quot;&gt;Unemployed New Yorkers&lt;/b&gt; and &lt;b class=&quot;text-alt&quot; data-program=&quot;taxonomy.population&quot;&gt; Adults&lt;/b&gt;.
+        &lt;span data-program=&quot;summary&quot;&gt;Through this program students prepare to work as commercial drivers.&lt;/span&gt; For &lt;b class=&quot;text-em&quot; data-program=&quot;taxonomy.population&quot;&gt;Unemployed New Yorkers&lt;/b&gt; and &lt;b class=&quot;text-em&quot; data-program=&quot;taxonomy.population&quot;&gt; Adults&lt;/b&gt;.
       &lt;/p&gt;
     &lt;/div&gt;
     &lt;ul class=&quot;c-card__features&quot;&gt;
       &lt;li class=&quot;flex items-center&quot;&gt;
-        &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-wnyc-ui me-1&quot;&gt;
+        &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-wnyc-ui mie-1&quot;&gt;
           &lt;use xlink:href=&quot;#feather-award&quot;&gt;&lt;/use&gt;
         &lt;/svg&gt;
         &lt;span&gt;
@@ -307,7 +324,7 @@
         &lt;/span&gt;
       &lt;/li&gt;
       &lt;li class=&quot;flex items-center&quot;&gt;
-        &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-wnyc-ui me-1&quot;&gt;
+        &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-wnyc-ui mie-1&quot;&gt;
           &lt;use xlink:href=&quot;#feather-calendar&quot;&gt;&lt;/use&gt;
         &lt;/svg&gt;
         &lt;span&gt;
@@ -315,7 +332,7 @@
         &lt;/span&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
-    &lt;a class=&quot;c-card__cta btn btn-secondary btn-next&quot; href=&quot;https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road&quot;&gt;
+    &lt;a class=&quot;c-card__cta&quot; href=&quot;https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road&quot;&gt;
       &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-wnyc-ui&quot;&gt;
         &lt;use xlink:href=&quot;#feather-arrow-left&quot;&gt;&lt;/use&gt;
       &lt;/svg&gt;
@@ -356,100 +373,117 @@
     </div>
     <div class="page-max pt-2">
       <div class="tablet:flex">
-        <nav aria-labelledby="navigation-main-23997c59d8c6" class="tablet:flex-1 mb-1 px-1 tablet:px-2" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="navigation-main-23997c59d8c6">Main</span>
+        <nav aria-labelledby="navigation-main-dc4c0454c5ed8" class="tablet:flex-1 mb-1 px-1 tablet:px-2" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="navigation-main-dc4c0454c5ed8">Main</span>
           <a class="block p-1 no-underline align-middle" href="index">Home</a>
           <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1">Links</span>
-          <a class="block p-1 no-underline align-middle" data-toggle-tabindex="10" xhref="https://www.npmjs.com/package/@nycopportunity/working-patterns">NPM Package</a>
-          <a class="block p-1 no-underline align-middle" xhref="https://github.com/cityofnewyork/workingnyc-patterns">GitHub Repository</a>
+          <a class="block p-1 no-underline align-middle" href="https://www.npmjs.com/package/@nycopportunity/working-patterns">NPM Package</a>
+          <a class="block p-1 no-underline align-middle" href="https://github.com/cityofnewyork/working-nyc-patterns">GitHub Repository</a>
         </nav>
-        <nav aria-labelledby="aria-lb-elements-23997c59d8c6" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-elements-23997c59d8c6">Elements</span>
-          <a class="block p-1 no-underline align-middle" xhref="badge">Badge</a>
-          <a class="block p-1 no-underline align-middle" xhref="buttons">Buttons</a>
+        <nav aria-labelledby="aria-lb-elements-dc4c0454c5ed8" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-elements-dc4c0454c5ed8">Elements</span>
+          <a class="block p-1 no-underline align-middle" href="badge">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Badge
+          </a>
+          <a class="block p-1 no-underline align-middle" href="buttons">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Buttons
+          </a>
           <a class="block p-1 no-underline align-middle" xhref="code">Code</a>
           <a class="block p-1 no-underline align-middle" xhref="divider">Divider</a>
-          <a class="block p-1 no-underline align-middle" xhref="forms">Forms</a>
+          <a class="block p-1 no-underline align-middle" href="forms">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Forms
+          </a>
           <a class="block p-1 no-underline align-middle" xhref="icons">Icons</a>
           <a class="block p-1 no-underline align-middle" href="inputs">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Inputs
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Inputs
           </a>
-          <a class="block p-1 no-underline align-middle" xhref="labels">Labels</a>
+          <a class="block p-1 no-underline align-middle" href="labels">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Labels
+          </a>
           <a class="block p-1 no-underline align-middle" xhref="layouts">Layouts</a>
           <a class="block p-1 no-underline align-middle" xhref="links">Links</a>
           <a class="block p-1 no-underline align-middle" xhref="nav">Nav</a>
           <a class="block p-1 no-underline align-middle" href="options">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Options
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Options
           </a>
           <a class="block p-1 no-underline align-middle" href="selects">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Selects
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Selects
           </a>
           <a class="block p-1 no-underline align-middle" href="tables">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Tables
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Tables
           </a>
         </nav>
-        <nav aria-labelledby="aria-lb-components-23997c59d8c6" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-components-23997c59d8c6">Components</span>
+        <nav aria-labelledby="aria-lb-components-dc4c0454c5ed8" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-components-dc4c0454c5ed8">Components</span>
           <a class="block p-1 no-underline align-middle" href="accordion">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Accordion
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Accordion
           </a>
           <a class="block p-1 no-underline align-middle" href="alert">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Alert
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Alert
           </a>
           <a class="block p-1 no-underline align-middle" href="card">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Card
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Card
           </a>
           <a class="block p-1 no-underline align-middle" href="dropdown">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Dropdown
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Dropdown
           </a>
           <a class="block p-1 no-underline align-middle" href="question">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Question
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Question
           </a>
           <a class="block p-1 no-underline align-middle" href="utility">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Utility
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Utility
           </a>
           <a class="block p-1 no-underline align-middle" href="web-share">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Web Share
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Web Share
           </a>
         </nav>
-        <nav aria-labelledby="aria-lb-objects-23997c59d8c6" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-objects-23997c59d8c6">Objects</span>
+        <nav aria-labelledby="aria-lb-objects-dc4c0454c5ed8" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-objects-dc4c0454c5ed8">Objects</span>
           <a class="block p-1 no-underline align-middle" href="banner">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Banner
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Banner
           </a>
-          <a class="block p-1 no-underline align-middle" href="header">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Header
+          <a class="block p-1 no-underline align-middle" href="feedback">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Feedback
           </a>
           <a class="block p-1 no-underline align-middle" href="footer">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Footer
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Footer
           </a>
-          <a class="block p-1 no-underline align-middle" href="mobile-menu">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Mobile Menu
+          <a class="block p-1 no-underline align-middle" href="header">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Header
+          </a>
+          <a class="block p-1 no-underline align-middle" href="menu">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Menu
           </a>
           <a class="block p-1 no-underline align-middle" href="navigation">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Navigation
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Navigation
           </a>
           <a class="block p-1 no-underline align-middle" href="newsletter">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Newsletter
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Newsletter
           </a>
           <a class="block p-1 no-underline align-middle" href="search">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Search
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Search
           </a>
           <a class="block p-1 no-underline align-middle" href="text-controller">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Text Controller
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Text Controller
           </a>
         </nav>
-        <nav aria-labelledby="aria-lb-utilities-23997c59d8c6" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
-          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-utilities-23997c59d8c6">Utilities</span>
+        <nav aria-labelledby="aria-lb-utilities-dc4c0454c5ed8" class="tablet:flex-1 mb-1 px-1 tablet:px-2 desktop:ps-4" role="navigation">
+          <span class="h3 text-small p-1 block border-b border-scale-3 mb-1 mt-1" id="aria-lb-utilities-dc4c0454c5ed8">Utilities</span>
           <a class="block p-1 no-underline align-middle" xhref="animate">Animate</a>
-          <a class="block p-1 no-underline align-middle" xhref="color">Color</a>
-          <a class="block p-1 no-underline align-middle" href="fonts">
-            <mark class="badge badge-small status-secondary">View</mark>&nbsp;Fonts
+          <a class="block p-1 no-underline align-middle" xhref="cell">Cell</a>
+          <a class="block p-1 no-underline align-middle" xhref="clearfix">Clearfix</a>
+          <a class="block p-1 no-underline align-middle" href="color">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Color
           </a>
-          <a class="block p-1 no-underline align-middle" xhref="margin">Margin</a>
-          <a class="block p-1 no-underline align-middle" xhref="padding">Padding</a>
-          <a class="block p-1 no-underline align-middle" xhref="tailwindcss">tailwindcss</a>
-          <a class="block p-1 no-underline align-middle" xhref="text">Text</a>
+          <a class="block p-1 no-underline align-middle" href="fonts">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Fonts
+          </a>
+          <a class="block p-1 no-underline align-middle" xhref="print">Print</a>
+          <a class="block p-1 no-underline align-middle" xhref="scroll">Scroll</a>
+          <a class="block p-1 no-underline align-middle" xhref="status">Status</a>
+          <a class="block p-1 no-underline align-middle" href="tailwindcss">
+            <mark class="badge badge-small status-secondary px-1 mie-1">&nbsp;</mark>Tailwindcss
+          </a>
           <a class="block p-1 no-underline align-middle" xhref="toggle">Toggle</a>
           <a class="block p-1 no-underline align-middle" xhref="typography">Typography</a>
         </nav>
