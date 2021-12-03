@@ -1,12 +1,9 @@
 / Banner
 
-header class='o-banner layout-map__map layout__column bg-scale-2 flex items-center '
-  div class='o-banner__inner my-4'
-    h2 class='h3 m-0'
-      span class='' Welcome to
+header class='o-banner bg-scale-1 layout-content flex items-center'
+  div
+    svg class='icon-logo-homepage fill-text text-brand' role='img'
+      title Working N Y C logo
+      use xlink:href='#logo-wnyc-standard'
 
-      a href='/' class='text-white uppercase no-underline'
-        span class='sr-only' Working N Y C
-
-        svg class='icon-logo-standard-tagline fill-white text-blue-l-2' aria-hidden='true'
-          use xlink:href='#logo-wnyc-standard'
+    h2 class='h4 font-primary tablet:font-normal tablet:text-h3 font-bold text-alt mb-5' Find and connect to services and resources that can help you prepare for and get a job.

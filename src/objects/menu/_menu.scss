@@ -1,0 +1,24 @@
+/**
+ * Menu
+ */
+
+@forward '@nycopportunity/pattern-menu/src/menu';
+
+// Dependencies
+@use 'config/typography';
+
+// Declarations
+:root {
+  --o-menu-display: grid
+}
+
+.o-menu {
+  background-color: var(--wnyc-scale-2);
+  padding: calc(var(--wnyc-grid) * 3);
+
+  align-items: center;
+}
+
+.o-menu__nav-item:not(.btn) {
+  @include typography.font-family('primary');
+}

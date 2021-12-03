@@ -1,47 +1,58 @@
+//
+// Variables, Functions, and Mixins
+//
+
 // Dependencies
-@use 'config/grid' as *;
-@use 'config/tokens' as *;
-@use 'config/checkboxes';
-@use 'config/direction';
-@use 'config/dimensions';
 @use 'config/typography';
-
-$options: map-get($tokens, 'options');
-
-@function get($token) {
-  @return map-get($options, $token);
-}
+@use 'config/interaction';
 
 // Declarations
 @mixin base() {
+  color: var(--wnyc-option-text);
+  background-color: var(--wnyc-option-background);
+
   @include typography.set('option');
-  line-height: get('inner-size');
+
+  line-height: var(--wnyc-option-inner-size);
   text-decoration: none;
 
   display: flex;
-  padding: ($grid * 2) - get('border-width');
-  border: get('border-width') get('border-style');
+  padding: calc(calc(var(--wnyc-grid) * 2) - var(--wnyc-option-border-width));
+  border: var(--wnyc-option-border-width) var(--wnyc-option-border-style);
   border-color: transparent;
-  border-radius: get('radius');
+  border-radius: var(--wnyc-option-radius);
 
   cursor: pointer;
+
+  @include interaction.blurred();
+}
+
+@mixin hover() {
+  color: var(--wnyc-option-text-hover);
+  border-color: var(--wnyc-option-border-hover);
+  background-color: var(--wnyc-option-background-hover)
 }
 
 @mixin graphic() {
   fill: transparent;
   stroke: transparent;
 
-  stroke-width: get('stroke-width');
-  stroke-linecap: get('stroke-line');
-  stroke-linejoin: get('stroke-line');
+  stroke-width: var(--wnyc-option-stroke-width);
+  stroke-linecap: var(--wnyc-select-stroke-line);
+  stroke-linejoin: var(--wnyc-select-stroke-line);
 
-  width: get('inner-size');
-  height: get('inner-size');
-  margin-#{direction.$end}: $grid;
+  width: var(--wnyc-option-inner-size);
+  height: var(--wnyc-option-inner-size);
+  margin-inline-end: var(--wnyc-grid);
 }
 
 @mixin focused() {
-  border-color: currentColor;
+  @include interaction.focused();
+}
+
+@mixin checked() {
+  color: var(--wnyc-option-text-checked);
+  background-color: var(--wnyc-option-background-checked);
 }
 
 @mixin graphic-checked() {
@@ -50,4 +61,12 @@ $options: map-get($tokens, 'options');
   // This is just a placeholder or default specification.
   // Checked colors depend on definitions in config/colors.
   stroke: black;
+}
+
+@mixin checkbox-graphic() {
+  stroke: var(--wnyc-option-graphic-checkbox);
+}
+
+@mixin checkbox-graphic-checked() {
+  stroke: var(--wnyc-option-graphic-checkbox-checked);
 }

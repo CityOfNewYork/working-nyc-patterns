@@ -11,8 +11,12 @@
 
 // Declarations
 .select {
+  color: var(--wnyc-input-text);
+  background: var(--wnyc-input-background);
+  border-color: var(--wnyc-input-border);
+
   position: relative;
-  border-radius: selects.get('radius');
+  border-radius: var(--wnyc-select-radius);
 
   select {
     @include selects.base();

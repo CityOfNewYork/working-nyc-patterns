@@ -1,10 +1,15 @@
+//
+// Variables, Functions, and Mixins
+//
+
+// Dependencies
 @use 'config/grid' as *;
-@use 'config/color';
 @use 'config/typography';
 @use 'config/media';
 @use 'config/direction';
 @use 'config/dimensions';
 
+// Declarations
 @mixin icon {
   svg {
     text-decoration: none;
@@ -12,7 +17,7 @@
   }
 
   .icon {
-    margin-#{direction.$end}: $grid;
+    margin-inline-end: $grid;
     vertical-align: middle;
     margin-top: -2px
   }
@@ -21,16 +26,21 @@
 @mixin inline($variant: '', $childClass: 'nav__item') {
   list-style: none;
 
-  a, button, .#{$childClass} {
+  a:not(.btn) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  a:not(.btn), button, .btn, .#{$childClass} {
     display: inline-flex;
-    margin-#{direction.$end}: 1em;
+    margin-inline-end: 1em;
 
     &:first-child {
-      margin-#{direction.$start}: 0;
+      margin-inline-start: 0;
     }
 
     &:last-child {
-      margin-#{direction.$end}: 0;
+      margin-inline-end: 0;
     }
   }
 
@@ -55,26 +65,26 @@
 
 @mixin block($variant: '') {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  // margin: 0;
+  // padding: 0;
 
-  a:not(.btn), .btn-link {
+  a:not(.btn) {
     display: block;
     padding-left: 0;
     padding-right: 0;
 
-    padding-top: ($grid * 2);
-    padding-bottom: ($grid * 2);
+    padding-top: calc(var(--wnyc-grid) * 2);
+    padding-bottom: calc(var(--wnyc-grid) * 2);
 
     @include media.screen-and-max-width('small') {
-      padding-top: $grid;
-      padding-bottom: $grid;
+      padding-top: var(--wnyc-grid);
+      padding-bottom: var(--wnyc-grid);
     }
   }
 
   button, .btn {
     display: flex;
-    margin-bottom: $grid * 2;
+    margin-bottom: calc(var(--wnyc-grid) * 2);
     width: 100%;
 
     &:last-child {

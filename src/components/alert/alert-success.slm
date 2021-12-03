@@ -1,2 +1,0 @@
-- alert = {icon: 'info', type: 'success', class: 'color-status-secondary', body: '<p data-js-alert=\'text\'>A successful feedback message.</p>'}
-= partial('/components/alert/alert')

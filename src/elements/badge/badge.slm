@@ -2,5 +2,4 @@
 / Badges
 /
 
-mark class='badge color-info-status'
-  | New
+mark class='badge' New

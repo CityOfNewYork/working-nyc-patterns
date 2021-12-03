@@ -1,0 +1,5 @@
+The Question Component allows a user to enter information into a form. This pattern follows the usage guidelines of the [U.S. Web Design System’s Form Control](https://designsystem.digital.gov/components/form-controls/).
+
+#### Validation and Accessibility
+
+Question Components in this demonstration use validation from the [Form Utility in the NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework). This script will display visual feedback regarding missing and invalid answers to the user as well as toggle appropriate aria attributes for announcing feedback to screen readers. The `aria-live=”polite”` attribute on the message announces a new element that was not previously visible in the default Question Component state. Additionally, the `aria-invalid=”true”` attribute illustrates to screen readers that the input is not valid and the `aria-describedby` attribute indicates the input’s error description. See [more details about using validation below](#validation).

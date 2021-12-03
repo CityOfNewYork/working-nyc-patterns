@@ -4,7 +4,6 @@
 = extend('/slm/layouts/default')
 
 / Partials
-= partial('/slm/partials/styles.slm')
 = partial('/slm/partials/head.mixin.slm')
 = partial('/slm/partials/content-header.mixin.slm')
 = partial('/slm/section/section.mixin.slm')
@@ -18,4 +17,6 @@
 
 = content('content')
   = mixin('content-header')
+
+  - textController = {class: 'w-full mx-3'}
   = mixin('section', '/objects/text-controller/text-controller')

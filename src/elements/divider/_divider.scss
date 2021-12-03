@@ -7,6 +7,10 @@
 @use 'config/media';
 
 // Declarations
+hr {
+  @include divider.base
+}
+
 @include media.screens-and-min-width() using ($variant) {
   @include divider.dividers($variant);
 }

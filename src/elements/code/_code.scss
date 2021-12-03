@@ -6,6 +6,7 @@
 @use 'config/dimensions';
 @use 'config/media';
 @use 'config/typography';
+@use 'config/interaction';
 
 // Declarations
 code, pre, .hljs {
@@ -20,6 +21,12 @@ code, pre, .hljs {
 
 code, pre {
   @include typography.set('code');
+
+  a, a:visited, a:hover {
+    color: var(--wnyc-code-link);
+  }
+
+  @include interaction.focus();
 }
 
 .code {
@@ -53,21 +60,19 @@ pre, .hljs {
   max-width: 100%;
   overflow: hidden;
   overflow-x: auto;
-  margin-bottom: dimensions.$spacing-base;
 
-  padding: dimensions.$spacing-base;
+  margin-bottom: var(--wnyc-spacing-DEFAULT);
+  padding: var(--wnyc-spacing-DEFAULT);
+
   @include media.screen-and-min-width('tablet') {
-    padding: (dimensions.$spacing-base * 2);
+    padding: calc(var(--wnyc-spacing-DEFAULT) * 2);
   }
 }
 
 .code-block {
   display: inline-block;
   display: block;
-  // max-width: 100%;
-  // overflow: hidden;
-  // overflow-x: auto;
-  margin-bottom: dimensions.$spacing-base;
+  margin-bottom: var(--wnyc-spacing-DEFAULT);
 
   pre, .hljs {
     color: inherit;
@@ -77,9 +82,64 @@ pre, .hljs {
     border: none;
     margin-bottom: 0;
 
-    padding: dimensions.$spacing-base;
+    padding: var(--wnyc-spacing-DEFAULT);
+
     @include media.screen-and-min-width('tablet') {
-      padding: (dimensions.$spacing-base * 2);
+      padding: calc(var(--wnyc-spacing-DEFAULT) * 2);
     }
   }
+}
+
+code, .code, .code-block, pre, .hljs {
+  color: var(--wnyc-code-text);
+  background-color: var(--wnyc-code-background);
+  border-color: var(--wnyc-code-border);
+
+  --webkit-font-smoothing: var(--wnyc-code-webkit-font-smoothing);
+  --moz-osx-font-smoothing: var(--wnyc-code-moz-osx-font-smoothing);
+}
+
+p code, li code, td code {
+  color: var(--wnyc-code-text-code);
+}
+
+// pre, .hljs {
+  // color: var(--wnyc-code-text-base);
+  // background-color: var(--wnyc-code-background);
+  // border-color: transparent;
+// }
+
+/**
+ * Highlight.js Overrides
+ */
+
+.css {
+  color: var(--wnyc-code-text-css)
+}
+
+.javascript {
+  color: var(--wnyc-code-text-javascript)
+}
+
+.hljs-attr, .hljs-name {
+  color: var(--wnyc-code-text)
+}
+
+.hljs-comment {
+  color: var(--wnyc-code-text-comment)
+}
+
+.hljs-keyword, .hljs-attribute, .hljs-selector-tag,
+.hljs-meta-keyword, .hljs-doctag, .hljs-name, .hljs-built_in {
+  color: var(--wnyc-code-text-keyword)
+}
+
+.hljs-type, .hljs-string, .hljs-subst, .hljs-number, .hljs-selector-id,
+.hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+  color: var(--wnyc-code-text-string)
+}
+
+.hljs-regexp, .hljs-symbol, .hljs-variable, .hljs-template-variable,
+.hljs-link, .hljs-selector-attr, .hljs-selector-pseudo {
+  color: var(--wnyc-code-text-symbol)
 }

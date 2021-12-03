@@ -1,0 +1,43 @@
+/**
+ * Description Lists
+ */
+
+// Dependencies
+@use 'config/media';
+
+// Declarations
+@include media.screens-and-min-width() using ($variant) {
+  .#{$variant}description-list, [class*='#{$variant}description-list-'] {
+    display: grid;
+    grid-template-columns: clamp(8rem, 33.33%, 16rem) 1fr;
+
+    dt {
+      color: var(--wnyc-descriptionList-term);
+    }
+
+    dt, dd {
+      margin: 0;
+      padding: var(--wnyc-cell-padding);
+
+      &:nth-child(4n+1),
+      &:nth-child(4n+2) {
+        background-color: var(--wnyc-descriptionList-odd);
+      }
+
+      &:nth-child(4n+3),
+      &:nth-child(4n+4) {
+        background-color: var(--wnyc-descriptionList-even);
+      }
+    }
+  }
+
+  .#{$variant}description-list-bordered {
+    dt, dd {
+      &:nth-child(n) {
+        background-color: transparent
+      }
+
+      border-bottom: 1px solid var(--wnyc-descriptionList-border);
+    }
+  }
+}

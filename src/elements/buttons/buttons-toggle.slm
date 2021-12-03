@@ -2,11 +2,12 @@
 / Toggle Button
 /
 
-button#btn-toggle type='button' class='btn-toggle btn-primary w-full mb-2' data-js='toggle' aria-controls='btn-toggle-target' aria-expanded='true'
-  span Toggle Button
+div class='layout-content w-full'
+  div
+    button#btn-toggle type='button' class='btn-toggle btn-primary w-full mb-2' data-js='toggle' aria-controls='btn-toggle-target' aria-expanded='true'
+      span Toggle Button
 
-  svg class='icon-wnyc-ui icon-4' aria-hidden='true'
-    use xlink:href='#feather-chevron-down'
+      svg class='icon-wnyc-ui icon-4' aria-hidden='true'
+        use xlink:href='#feather-chevron-down'
 
-
-div#btn-toggle-target class='bg-blue-light p-4 text-center active' aria-hidden='false' Toggle button target element
+    div#btn-toggle-target class='bg-scale-1 p-4 text-center active' aria-hidden='false' Toggle button target element area

@@ -33,6 +33,7 @@ const plugins = [
   }),
   commonjs(),
   replace({
+    'preventAssignment': true,
     'process.env.NODE_ENV': `'${process.env.NODE_ENV}'`,
     'SCREEN_DESKTOP': 960,
     'SCREEN_TABLET': 768,
@@ -54,19 +55,6 @@ module.exports = [
       name: 'WorkingNyc',
       file: `./dist/scripts/main.js`,
       sourcemap: (process.env.NODE_ENV === 'production') ? false : rollup.sourcemap,
-      format: rollup.format,
-      strict: rollup.strict
-    }],
-    plugins: plugins,
-    devModule: true
-  },
-  {
-    input: './src/js/polyfills.js',
-    output: [{
-      name: 'Polyfills',
-      file: `./dist/scripts/polyfills.js`,
-      sourcemap: (process.env.NODE_ENV === 'production')
-        ? false : rollup.sourcemap,
       format: rollup.format,
       strict: rollup.strict
     }],

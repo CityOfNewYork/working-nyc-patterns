@@ -4,7 +4,6 @@
 = extend('/slm/layouts/default')
 
 / Partials
-= partial('/slm/partials/styles.slm')
 = partial('/slm/partials/head.mixin.slm')
 = partial('/slm/partials/content-header.mixin.slm')
 = partial('/slm/section/section.mixin.slm')
@@ -19,5 +18,8 @@
 = content('content')
   = mixin('content-header')
 
-  - option = {}
-  = mixin('section', '/elements/options/options', {title: false})
+  - option = {label: 'Checkbox Option'}
+  = mixin('section', '/elements/options/options', {title: 'Checkbox Option', text: false})
+
+  - option = {type: 'radio', label: 'Radio Option'}
+  = mixin('section', '/elements/options/options', {title: 'Radio Option', text: false})

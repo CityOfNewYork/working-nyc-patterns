@@ -4,11 +4,9 @@
 = extend('/slm/layouts/default')
 
 / Partials
-= partial('/slm/partials/styles.slm')
 = partial('/slm/partials/head.mixin.slm')
 = partial('/slm/partials/content-header.mixin.slm')
 = partial('/slm/section/section.mixin.slm')
-= partial('/slm/section/section-text.mixin.slm')
 
 / Content blocks
 = content('head')
@@ -27,7 +25,10 @@
     - question = {description: 'Feel free to select more than one option.'}
     = mixin('section', '/components/question/question-options', {title: 'Multiple Choice Questions'})
 
-  = mixin('section-text', '/components/question/readme', {title: 'Validation'})
+    - question = {label: 'Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.', placeholder: 'Enter your email', type: 'email', name: 'EMAIL', required: 'true', class: 'c-question-single', button: 'Submit'}
+    = mixin('section', '/components/question/question', {title: 'Single Field Question', text: false})
+
+  = mixin('section', '/components/question/readme', {title: 'Validation', markup: false, demo: false})
 
 = content('script');
   javascript:

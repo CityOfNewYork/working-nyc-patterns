@@ -3,15 +3,13 @@
  */
 
 // Dependencies
-@use 'config/grid' as *;
 @use 'config/options';
-@use 'config/checkboxes';
 @use 'config/screen-readers';
 
 // Declarations
 .option {
   display: inline-block;
-  margin-bottom: $grid;
+  margin-bottom: var(--wnyc-grid);
 
   &:last-of-type {
     margin-bottom: 0
@@ -19,6 +17,10 @@
 
   > input {
     @include screen-readers.only()
+  }
+
+  &:hover > .option__base {
+    @include options.hover();
   }
 }
 
@@ -35,7 +37,21 @@ input:focus + .option__base {
 }
 
 input:checked + .option__base {
+  @include options.checked();
+
   > .option__graphic {
     @include options.graphic-checked()
   }
+}
+
+/**
+ * Checkbox Graphic
+ */
+
+input[type='checkbox'] + .option__base > .option__graphic {
+  @include options.checkbox-graphic();
+}
+
+input[type='checkbox']:checked + .option__base > .option__graphic {
+  @include options.checkbox-graphic-checked();
 }

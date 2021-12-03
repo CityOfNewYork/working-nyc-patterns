@@ -14,7 +14,7 @@ html lang='en' dir='ltr'
           = partial('/slm/partials/nav.slm');
 
         div class='text-center'
-          button tabindex='-1' class='btn-link' aria-controls='main-menu' aria-expanded='false' data-js='toggle' data-pa11y='disable'
+          button tabindex='-1' aria-controls='main-menu' aria-expanded='false' data-js='toggle' data-pa11y='disable'
             / pa11y has trouble calculating the color contrast of this element so it is disabled
             | Close Menu
 

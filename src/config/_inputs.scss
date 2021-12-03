@@ -1,32 +1,37 @@
+//
+// Variables, Functions, and Mixins
+//
+
 // Dependencies
-@use 'config/tokens' as *;
-@use 'config/grid' as *;
-@use 'config/dimensions';
-@use 'config/media';
-@use 'config/typography';
+// @use 'config/tokens' as *;
+// @use 'config/grid' as *;
+// @use 'config/dimensions';
+// @use 'config/media';
+// @use 'config/typography';
+@use 'config/interaction';
 
 // Declarations
-$inputs: map-get($tokens, 'inputs');
-
-@function get($token) {
-  @return map-get($inputs, $token);
-}
-
 @mixin base() {
-  @include typography.set('question');
-  line-height: get('inner-size');
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: normal;
+  font-style: normal;
+
+  line-height: var(--wnyc-input-inner-size);
   text-overflow: ellipsis;
-  padding: ($grid * 2) - get('border-width');
-  border: get('border-width') get('border-style');
+  padding: calc(calc(var(--wnyc-grid ) * 2) - var(--wnyc-input-border-width));
+  border: var(--wnyc-input-border-width) var(--wnyc-input-border-style);
   border-color: inherit;
-  border-radius: get('radius');
+  border-radius: var(--wnyc-input-radius);
+
+  @include interaction.focus();
 }
 
 @mixin icon() {
-  padding-left: 30px;
+  padding-inline-end: var(--wnyc-input-icon-padding);
 }
 
 @mixin currency-icon() {
-  font-size: 22px;
+  font-size: var(--wnyc-input-currency-font-size);
   font-weight: bold;
 }

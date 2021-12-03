@@ -3,17 +3,14 @@
  */
 
 // Dependencies
-@use 'config/dimensions';
 @use 'config/print';
 @use 'config/media';
 
 // Declarations
 
+// Works with the Window Vh JavaScript Utility to set
+// this property based on the window's innerHeight.
 :root {
-  /**
-   * Works with the Window Vh JavaScript Utility to set
-   * this property based on the window's inner height.
-   */
   --100vh: 100vh;
 }
 
@@ -35,22 +32,22 @@ body {
   padding: 0;
 }
 
-// for IE < 11, see:
-// <http://caniuse.com/#feat=hidden>
+// For IE < 11, see http://caniuse.com/#feat=hidden
 [hidden] {
-  // scss-lint:disable ImportantRule
   display: none !important;
 }
 
-// Fix for IE <= 11 where use elements within svgs would swallow click events
-// and prevent the event from propagating up.
-// See: https://connect.microsoft.com/IE/feedback/details/796745/mouse-events-are
-// -not-delivered-at-all-anymore-when-inside-an-svg-a-use-is-removed-from-the-dom
-use {
+// Where elements would swallow click events
+// and prevent them from propagating up.
+svg,
+use,
+a > *,
+button > * {
   pointer-events: none;
 }
 
-// Tailwind.css requires this border setting for it's borders to work properly
+// tailwindcss requires this border setting
+// for it's borders to work properly
 [class*='border'] {
   border-style: solid;
   border-width: 0
@@ -71,13 +68,12 @@ figure, figcaption {
   display: block
 }
 
-// *:first-child {
-//   margin-top: 0;
-// }
-
-// *:last-child {
-//   margin-bottom: 0;
-// }
+iframe {
+  width: 99999px;
+  max-width: 100%;
+  border: none;
+  aspect-ratio: 16 / 9;
+}
 
 @include media.print() {
   @include print.base();

@@ -4,7 +4,7 @@
 - this.question = {}
 - this.question.id = this.createId()
 - this.question.label = 'Will you please select an option from the list below?'
-- this.question.options = [{label: 'Option 1'}, {label: 'Option 2'}, {label: 'Option 3'}, {label: 'Option 4'}]
+- this.question.options = [{label: 'Option 1', class: 'mb-0'}, {label: 'Option 2', class: 'mb-0'}, {label: 'Option 3', class: 'mb-0'}, {label: 'Option 4', class: 'mb-0'}]
 - this.question.tabindex = false
 - this.question.required = 'true'
 - this.question.ariaHidden = false
@@ -23,8 +23,9 @@ fieldset id='${this.question.id}' class='c-question' aria-hidden=this.question.a
   - if (this.question.description)
     p = this.question.description
 
-  div class='c-question__container layout-rows tablet:layout-two-columns-gutter'
+  div class='c-question__container tablet:grid grid-cols-2 gap-2'
     - input = this.question;
     - input.class = false;
     - input.ariaHidden = false;
-    = partial(`/elements/inputs/inputs-options.slm`);
+
+    = partial('/elements/inputs/inputs-options.slm');

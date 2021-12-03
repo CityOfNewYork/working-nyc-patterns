@@ -1,0 +1,1 @@
+The Footer Object provides a secondary navigation and content information for views. Add `.o-footer-fixed` to the `<footer>` tag and `.p-body` class to the `<body>` tag in production layouts to achieve the fixed positioning effect.

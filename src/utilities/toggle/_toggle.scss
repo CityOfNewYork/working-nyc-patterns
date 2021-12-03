@@ -96,7 +96,7 @@
   .animated.hidden\:overflowFadeInUp {
     transition-property: max-height;
     transition-duration: 0.5s;
-    transition-timing-function: map-get(animate.$animate, 'ease-out-quint');
+    transition-timing-function: animate.get('ease-out-quint');
   }
 
   .animated.active.hidden\:overflow,

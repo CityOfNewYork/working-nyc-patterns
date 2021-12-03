@@ -33,6 +33,7 @@
 .o-text-controller__languages {
   ul {
     @include layouts.rows-gutter();
+
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -49,10 +50,18 @@
 
   a {
     @include options.base();
+
+    &:focus {
+      @include options.focused();
+    }
+
+    &:hover {
+      @include options.hover();
+    }
   }
 
   > div {
-    margin-bottom: dimensions.$spacing-base;
+    margin-bottom: var(--wnyc-spacing-DEFAULT);
 
     @include media.screen-and-min-width('tablet') {
       margin-bottom: 0;

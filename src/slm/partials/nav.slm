@@ -9,8 +9,7 @@
 nav role='navigation' aria-labelledby='navigation-main-${this.nav.id}' class='${this.nav.class.main}'
   span id='navigation-main-${this.nav.id}' class='${this.nav.class.heading} ${this.nav.class.divider}' Main
 
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='index'
-    | Home
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='index' Home
 
   / span class='${this.nav.class.heading} ${this.nav.class.divider}' Guides
 
@@ -22,140 +21,149 @@ nav role='navigation' aria-labelledby='navigation-main-${this.nav.id}' class='${
   / span class='${this.nav.class.heading} ${this.nav.class.divider}' Collections
   / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item} ${this.nav.class.divider}' xhref='covid-response' COVID Response
 
-  span class='${this.nav.class.heading} ${this.nav.class.divider}'
-    | Links
+  span class='${this.nav.class.heading} ${this.nav.class.divider}' Links
 
-  a data-toggle-tabindex='10' tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='${this.package.cdn.npm}' NPM Package
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='${this.package.cdn.source}' GitHub Repository
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='${this.package.cdn.npm}' NPM Package
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='${this.package.cdn.source}' GitHub Repository
 
 nav role='navigation' aria-labelledby='aria-lb-elements-${this.nav.id}' class='${this.nav.class.main} desktop:ps-4'
   span id='aria-lb-elements-${this.nav.id}' class='${this.nav.class.heading} ${this.nav.class.divider}' Elements
 
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='badge' Badge
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='buttons' Buttons
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='badge'
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Badge
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='buttons'
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Buttons
+
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='code' Code
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='divider' Divider
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='forms' Forms
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='icons' Icons
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='inputs'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Inputs
 
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='labels' Labels
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='forms'
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Forms
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='icons' Icons
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='inputs'
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Inputs
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='labels'
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Labels
+
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='layouts' Layouts
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='links' Links
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='lists' Lists
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='nav' Nav
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='options'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Options
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Options
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='selects'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Selects
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Selects
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='tables'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Tables
-
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='tooltips' Tooltips
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='toggles' Toggles
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='selects' Selects
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Tables
 
 nav role='navigation' aria-labelledby='aria-lb-components-${this.nav.id}' class='${this.nav.class.main} desktop:ps-4'
   span id='aria-lb-components-${this.nav.id}' class='${this.nav.class.heading} ${this.nav.class.divider}'
     | Components
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='accordion'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Accordion
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Accordion
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='alert'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Alert
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Alert
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='card'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Card
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Card
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='dropdown'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Dropdown
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Dropdown
 
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='disclaimer' Disclaimer
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='filter' Filter
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='nearby-stops' Nearby Stops
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='question'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Question
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Question
 
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='share-form' Share Form
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='share-links' Share Links
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='side-nav' Side Nav
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='utility'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Utility
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Utility
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='web-share'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Web Share
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Web Share
 
 nav role='navigation' aria-labelledby='aria-lb-objects-${this.nav.id}' class='${this.nav.class.main} desktop:ps-4'
   span id='aria-lb-objects-${this.nav.id}' class='${this.nav.class.heading} ${this.nav.class.divider}' Objects
 
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='alert-banner' Alert Banner
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='announcements' Announcements
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='banner'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Banner
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Banner
 
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='card-list' Card Lists
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='come-back-later' Come Back Later
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='content' Content
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='header'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Header
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='feedback'
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Feedback
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='footer'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Footer
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Footer
 
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='mobile-menu'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Mobile Menu
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='header'
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Header
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='menu'
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Menu
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='navigation'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Navigation
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Navigation
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='newsletter'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Newsletter
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Newsletter
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='search'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Search
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Search
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='text-controller'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Text Controller
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Text Controller
 
 nav role='navigation' aria-labelledby='aria-lb-utilities-${this.nav.id}' class='${this.nav.class.main} desktop:ps-4'
   span id='aria-lb-utilities-${this.nav.id}' class='${this.nav.class.heading} ${this.nav.class.divider}' Utilities
 
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='animate' Animate
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='clearfix' Clearfix
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='color' Color
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='fonts'
-    mark class='badge badge-small status-secondary' View
-    | &nbsp;Fonts
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='cell' Cell
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='clearfix' Clearfix
 
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='language' Language
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='margin' Margin
-  / a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='media' Media
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='padding' Padding
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='tailwindcss' tailwindcss
-  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='text' Text
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='color'
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Color
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='fonts'
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Fonts
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='print' Print
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='scroll' Scroll
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='status' Status
+
+  a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' href='tailwindcss'
+    mark class='badge badge-small status-secondary px-1 mie-1' &nbsp;
+    | Tailwindcss
+
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='toggle' Toggle
   a tabindex=(this.nav.tabindex ? '-1' : false) class='${this.nav.class.item}' xhref='typography' Typography

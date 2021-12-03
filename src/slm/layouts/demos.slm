@@ -5,35 +5,32 @@ html lang='en'
     meta http-equiv='X-UA-Compatible' content='IE=edge'
     meta name='viewport' content='width=device-width, initial-scale=1'
 
-    / link rel='icon' type='image/x-icon' href='../images/favicon.ico'
+    link rel='icon' type='image/x-icon' href='${this.baseUrl}/svg/favicon.svg'
 
+    link rel='stylesheet' href='${this.baseUrl}/styles/tokens.css'
     link rel='stylesheet' href='${this.baseUrl}/styles/site-default.css'
-    link rel='stylesheet' href='${this.baseUrl}/styles/site-color-default.css'
-    / link rel='stylesheet' href='${this.baseUrl}/styles/site-color-light.css'
 
-    - if (this.title != 'WorkingNYC')
-      title ${this.title} | WorkingNYC
+    - if (this.title != 'Working NYC')
+      title ${this.title} | Working NYC
     - else
       title ${this.title}
-
-    = partial('/slm/partials/favicon.slm')
 
     = content('head')
 
   body class='color bg-scale-2 p-body'
-    div class='relative z-10 shadow-up tablet:shadow-none'
-      - navigation = {class: 'o-navigation-fixed'}
-      - mobileMenu = {class: 'o-mobile-menu-fixed hidden', tabindex: '-1', ariaHidden: 'true'}
-      - search = {class: 'o-search-fixed hidden', tabindex: '-1', ariaHidden: 'true'}
-      - textController = {class: 'o-text-controller-fixed hidden', tabindex: '-1', ariaHidden: 'true'}
-      - footer = {class: 'o-footer-fixed', role: 'contentinfo'}
+    / div class='relative z-10 shadow-up tablet:shadow-none'
+    - navigation = {class: 'o-navigation-fixed'}
+    - mobileMenu = {class: 'o-menu-fixed hidden', tabindex: '-1', ariaHidden: 'true'}
+    - search = {class: 'o-search-fixed hidden', tabindex: '-1', ariaHidden: 'true'}
+    - textController = {class: 'o-text-controller-fixed hidden', tabindex: '-1', ariaHidden: 'true'}
+    - footer = {role: 'contentinfo'}
 
-      = partial('/objects/navigation/navigation.slm')
-      = partial('/objects/mobile-menu/mobile-menu.slm')
-      / = partial('/objects/search/search.slm')
-      = partial('/objects/text-controller/text-controller.slm')
+    = partial('/objects/navigation/navigation.slm')
+    = partial('/objects/menu/menu.slm')
+    / = partial('/objects/search/search.slm')
+    = partial('/objects/text-controller/text-controller.slm')
 
-      = content('content')
+    = content('content')
 
     = partial('/objects/footer/footer.slm')
 
@@ -50,11 +47,11 @@ html lang='en'
       var patterns = new WorkingNyc();
 
       patterns.accordion();
-      patterns.dropdown();
+      patterns.dialog();
       patterns.copy();
       patterns.icons('${this.baseUrl}/svg/icons.svg');
       patterns.icons('${this.baseUrl}/svg/feather.svg');
-      patterns.mobileMenu();
+      patterns.menu();
       patterns.search();
       patterns.toggle();
       patterns.webShare();
@@ -63,6 +60,8 @@ html lang='en'
       patterns.newsletterForm();
 
       patterns.validateAndQuery();
+
+      patterns.setObjectHeights();
 
     = content('script');
 

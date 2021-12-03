@@ -27,6 +27,6 @@ article class='c-accordion mb-1'
 
         span class='sr-only' show this list
 
-  div id='aria-c-${this.accordion.id}' role='region' class='c-accordion__body bg-scale-3 print:active hidden:overflow animated ${this.accordion.active ? 'active' : 'hidden'}' aria-labelledby='aria-lb-${this.accordion.id}' aria-hidden='${this.accordion.active ? 'false' : 'true'}'
+  div id='aria-c-${this.accordion.id}' role='region' class='c-accordion__body print:active hidden:overflow animated ${this.accordion.active ? 'active' : 'hidden'}' aria-labelledby='aria-lb-${this.accordion.id}' aria-hidden='${this.accordion.active ? 'false' : 'true'}'
     div class='c-accordion__padding'
       = this.accordion.body

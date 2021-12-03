@@ -9,22 +9,22 @@
 @use 'config/typography';
 
 html {
-  font-size: map-get(typography.$typography, 'small');
+  font-size: var(--wnyc-typography-small);
 
   @if direction.$direction == 'rtl' {
     direction: rtl;
   }
 
   @media screen and (min-width: media.get('small')) {
-    font-size: map-get(typography.$typography, 'mobile');
+    font-size: var(--wnyc-typography-mobile);
   }
 
   @include media.screen-and-min-width('tablet') {
-    font-size: map-get(typography.$typography, 'tablet');
+    font-size: var(--wnyc-typography-tablet);
   }
 
   @include media.screen-and-min-width('desktop') {
-    font-size: map-get(typography.$typography, 'desktop');
+    font-size: var(--wnyc-typography-desktop);
   }
 }
 
@@ -34,22 +34,26 @@ body {
 
 h1, .h1 {
   @include typography.set('h1');
-  letter-spacing: 0.01em;
+
+  // letter-spacing: 0.01em;
 }
 
 h2, .h2 {
   @include typography.set('h2');
-  letter-spacing: 0.01em;
+
+  // letter-spacing: 0.01em;
 }
 
 h3, .h3 {
   @include typography.set('h3');
-  letter-spacing: 0.01em;
+
+  // letter-spacing: 0.01em;
 }
 
 h4, .h4 {
   @include typography.set('h4');
-  letter-spacing: 0.01em;
+
+  // letter-spacing: 0.01em;
 }
 
 h5, .h5 {
@@ -66,10 +70,10 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  margin-top: typography.get('margin-bottom') * 2;
-  margin-bottom: typography.get('margin-bottom');
+  margin-top: calc(var(--wnyc-typography-margin-bottom) * 2);
+  margin-bottom: var(--wnyc-typography-margin-bottom);
 
-  a {
+  a:not(.btn) {
     font-weight: inherit
   }
 }
@@ -82,10 +86,10 @@ blockquote, .blockquote {
   @include typography.set('blockquote');
   margin-left: 0;
   margin-right: 0;
-  margin-bottom: typography.get('margin-bottom');
+  margin-bottom: var(--wnyc-typography-margin-bottom);
 
   @include media.screen-and-min-width('tablet') {
-    margin-#{direction.$start}: -($grid * 9);
+    margin-inline-start: calc(var(--wnyc-grid) * -9);
   }
 
   p {
@@ -94,14 +98,14 @@ blockquote, .blockquote {
     line-height: inherit;
 
     @include media.screen-and-min-width('tablet') {
-      padding-#{direction.$start}: $grid * 9;
+      padding-inline-start: calc(var(--wnyc-grid) * 9);
     }
   }
 
   footer {
     font-size: 65%;
     font-weight: normal;
-    padding-left: $grid * 4;
+    padding-left: calc(var(--wnyc-grid) * 4);
   }
 
   cite {
@@ -120,16 +124,20 @@ blockquote, .blockquote {
 
 p, li {
   @include typography.set('p');
+
+  a:not(.btn), b {
+    font-weight: var(--wnyc-fontWeight-bold, bold);
+  }
 }
 
 @include typography.selector-body-elements() {
   margin-top: 0;
-  margin-bottom: typography.get('margin-bottom');
+  margin-bottom: var(--wnyc-typography-margin-bottom);
 }
 
 @include typography.selector-lists() {
-  padding-#{direction.$start}: typography.get('list-indent');
-  margin-bottom: typography.get('margin-bottom') * 2;
+  padding-inline-start: var(--wnyc-typography-list-indent);
+  margin-bottom: calc(var(--wnyc-typography-margin-bottom) * 2);
 }
 
 // .font-primary {

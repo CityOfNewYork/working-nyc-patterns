@@ -2,124 +2,80 @@
  * Navigation
  */
 
+@forward '@nycopportunity/pattern-navigation/src/navigation';
+
 // Dependencies
-@use 'config/tokens' as *;
-@use 'config/grid' as *;
-@use 'config/color';
-@use 'config/direction';
-@use 'config/dimensions';
-@use 'config/layouts';
 @use 'config/media';
-@use 'config/nav';
 @use 'config/typography';
-@use 'config/z';
 
 // Declarations
-.o-navigation {
-  @include typography.set('small');
-  line-height: 1rem;
+:root {
+  --o-navigation-item-color: var(--wnyc-link);
+  --o-navigation-font-size: var(--wnyc-fontSize-small);
+  --o-navigation-item-font-weight: bold;
+  --o-navigation-item-text-decoration: underline;
+  --o-navigation-menu-item-font-size: inherit;
+}
 
-  @include layouts.wrap();
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  flex: 1;
-
-  width: 100%;
-  max-width: 100%;
-
-  @include media.screen-and-max-width('tablet') {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  @include media.screen-and-min-width('tablet') {
-    @include nav.inline();
-    padding-top: $grid * 2;
-    padding-bottom: $grid * 2;
-    justify-content: flex-end;
+@include media.screen-and-min-width('tablet') {
+  :root {
+    --o-navigation-position: static;
   }
 }
 
-.o-navigation-fixed {
-  box-shadow: var(--shadow-up);
-  position: fixed;
-  bottom: 0;
+.o-navigation__item:not(.btn),
+.o-navigation__menu-item:not(.btn) {
+  @include typography.font-family('primary');
+}
 
-  @include media.screen-and-max-width('desktop') {
-    z-index: map-get(z.$indexes, 'navigation');
+body, .o-navigation-spacing {
+  padding-bottom: var(--wnyc-dimensions-navigation-height);
+}
+
+.o-navigation-spacing-bottom {
+  bottom: var(--wnyc-dimensions-navigation-height);
+}
+
+.o-navigation-spacing-top {
+  top: 0px;
+}
+
+.o-navigation-spacing-bottom {
+  bottom: var(--wnyc-dimensions-navigation-height);
+}
+
+.o-navigation-feedback-spacing-bottom {
+  bottom: calc(var(--wnyc-dimensions-navigation-height) + var(--wnyc-dimensions-feedback-height));
+}
+
+@include media.screen-and-min-width('tablet') {
+  body, .o-navigation-spacing {
+    padding-bottom: 0px;
   }
 
-  @include media.screen-and-min-width('tablet') {
-    position: sticky;
-    top: 0;
-    box-shadow: none;
+  .o-navigation-spacing-bottom {
+    bottom: 0px;
   }
 
-  @include media.screen-and-min-width('desktop') {
-    position: static;
+  .o-navigation-spacing-top {
+    top: var(--wnyc-dimensions-navigation-height);
+  }
+
+  .o-navigation-feedback-spacing-bottom {
+    bottom: var(--wnyc-dimensions-feedback-height);
   }
 }
 
-.o-navigation__logo {
-  background-color: var(--color-scale-1);
-  min-width: dimensions.get('navigation-logo');
-  margin-#{direction.$end}: $grid;
-  align-items: center;
-  text-decoration: none;
-
-  @include media.screen-and-min-width('tablet') {
-    background-color: transparent;
-    margin-#{direction.$end}: auto !important;
-    padding-#{direction.$end}: $grid * 4;
-  }
-}
-
-// Mobile Menu Items
-@include media.screen-and-max-width('tablet') {
-  .o-navigation__menu-item {
-    padding: $grid * 2;
-
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    text-align: center;
-    line-height: normal;
+@include media.screen-and-min-width('desktop') {
+  .o-navigation-spacing-top {
+    top: 0px;
   }
 
-  [class*=btn-].o-navigation__menu-item > [class*=icon]:first-child {
-    margin: 0;
+  .o-navigation-spacing-bottom {
+    bottom: 0px;
   }
-}
 
-@include media.screen-and-max-width('tablet') {
-  .o-navigation__menu-icon {
-    width: $grid * 4 !important;
-    height: $grid * 4 !important;
-  }
-}
-
-.o-navigation__menu-label {
-  display: block;
-}
-
-.o-navigation__toggle,
-.o-navigation__search-toggle {
-  margin-#{direction.$start}: $grid * 2;
-
-  a:link {
-    text-decoration: none
-  }
-}
-
-.o-navigation__toggle {
-  flex: 1 1 auto;
-  text-align: direction.$end;
-
-  @include media.screen-and-min-width('desktop') {
-    display: none
+  .o-navigation-feedback-spacing-bottom {
+    bottom: var(--wnyc-dimensions-feedback-height);
   }
 }

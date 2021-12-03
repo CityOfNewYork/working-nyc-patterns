@@ -3,7 +3,6 @@
  */
 
 // Dependencies
-@use 'config/color';
 @use 'config/direction';
 @use 'config/dimensions';
 @use 'config/layouts';
@@ -13,22 +12,26 @@
 
 // Declarations
 .o-search {
+  background-color: var(--wnyc-scale-2);
+
   @include layouts.wrap();
-  padding-top: dimensions.$spacing-base;
-  padding-bottom: dimensions.$spacing-base;
+
+  padding-top: var(--wnyc-spacing-DEFAULT);
+  padding-bottom: var(--wnyc-spacing-DEFAULT);
 }
 
 .o-search__close {
   @include typography.set('small');
+
   text-align: direction.$end;
 }
 
 .o-search__form {
-  padding-top: dimensions.$spacing-base;
+  padding-top: var(--wnyc-spacing-DEFAULT);
 }
 
 // .o-search__suggestions-header {
-//   margin-bottom: dimensions.$spacing-base;
+//   margin-bottom: var(--wnyc-spacing-DEFAULT);
 
 //   @include media.screen-and-min-width('tablet') {
 //     display: flex;
@@ -42,7 +45,7 @@
 // }
 
 // .o-search__suggestions-body {
-//   padding-bottom: dimensions.$spacing-base;
+//   padding-bottom: var(--wnyc-spacing-DEFAULT);
 
 //   @include media.screen-and-min-width('tablet') {
 //     align-items: flex-start;
@@ -52,8 +55,8 @@
 // }
 
 // .o-search__suggestions-item {
-//   padding-#{direction.$end}: dimensions.$spacing-base;
-//   margin-bottom: dimensions.$spacing-base;
+//   padding-inline-end: var(--wnyc-spacing-DEFAULT);
+//   margin-bottom: var(--wnyc-spacing-DEFAULT);
 
 //   @include media.screen-and-min-width('tablet') {
 //     width: 33.33%;
@@ -72,7 +75,7 @@
 
   @include media.screen-and-max-width('tablet') {
     bottom: 0;
-    padding-bottom: dimensions.$spacing-base + dimensions.get('navigation-height-mobile')
+    padding-bottom: calc(var(--wnyc-spacing-DEFAULT) + var(--wnyc-dimension-navigation-height-mobile))
   }
 
   @include media.screen-and-min-width('tablet') {
@@ -90,8 +93,8 @@
 .o-search-fixed.hidden {
   display: initial !important;
   box-shadow: none !important;
-
   transform: translateY(100%);
+
   @include animate.linear();
 
   @include media.screen-and-min-width('tablet') {

@@ -3,15 +3,12 @@
  */
 
 // Dependencies
-@use 'config/color';
-
-$mode: 'default' !default;
 
 // Declarations
-:root {
-  @include color.set-scale-vars($mode);
-}
+body, .bg {
+  color: var(--wnyc-text);
+  background-color: var(--wnyc-background);
 
-.color {
-  @include color.combination($mode);
+  -moz-osx-font-smoothing: var(--wnyc-moz-osx-font-smoothing);
+   -webkit-font-smoothing: var(--wnyc-webkit-font-smoothing);
 }

@@ -1,39 +1,52 @@
 //
-// Variables
+// Variables, Functions, and Mixins
 //
 
 // Dependencies
-@use 'config/tokens' as *;
-@use 'config/grid' as *;
-@use 'config/color';
-@use 'config/dimensions';
 @use 'config/direction';
+@use 'config/media';
 @use 'config/typography';
-@use 'scss/functions/rem';
+@use 'config/links';
+@use 'config/interaction';
 
-// Declaration
-$buttons: map-get($tokens, 'buttons');
-$inner-size: map-get($buttons, 'inner-size');
-$radius: map-get($buttons, 'radius');
-$radius-tag: map-get($buttons, 'radius-tag');
+// Declarations
+@function get($token) {
+  @return #{var(--wnyc-button-#{$token})};
+}
 
 @mixin reset() {
-  color: inherit;
-  font-size: inherit;
-  font-weight: inherit;
+  @include links.base();
+
   font-family: inherit;
+  font-size: inherit;
   background: transparent;
   border: none;
   padding: 0;
   overflow: visible;
-  cursor: pointer;
+
+  &:disabled {
+    color: var(--wnyc-button-disabled-text);
+    opacity: 0.8;
+  }
+
+  &:not([disabled]):hover {
+    @include links.hover();
+  }
+
+  &:not([disabled]) {
+    cursor: pointer;
+  }
+
+  @include icon-spacing;
+
+  @include interaction.focus();
 }
 
 @mixin normal() {
   @include typography.set('button');
-  line-height: $inner-size;
-  padding: ($grid * 2) dimensions.$spacing-base;
-  cursor: pointer;
+
+  padding: calc(calc(var(--wnyc-grid) * 2) - get('border-width')) calc(var(--wnyc-spacing-DEFAULT) - get('border-width'));
+  line-height: get('inner-size');
 
   * {
     pointer-events: none;
@@ -44,9 +57,10 @@ $radius-tag: map-get($buttons, 'radius-tag');
   @include normal();
 
   appearance: none;
-  background-color: lightgrey;
-  border: 0;
-  border-radius: $radius;
+  background-color: transparent;
+
+  border: get('border-width') get('border-style') currentColor;
+  border-radius: get('radius');
 
   display: inline-flex;
   align-items: center;
@@ -54,23 +68,26 @@ $radius-tag: map-get($buttons, 'radius-tag');
 
   text-align: center;
   text-decoration: none;
-  cursor: pointer;
 
-  transition: background .2s ease-in, color .2s ease-in;
+  &:not([disabled]) {
+    cursor: pointer;
+  }
 
+  @include icon-spacing;
+}
+
+@mixin icon-spacing() {
   > [class*='icon'] {
     width: 1rem;
     height: 1rem
   }
 
   > [class*='icon']:first-child {
-    // margin-#{direction.$start}: -($grid / 2);
-    margin-#{direction.$end}: $grid * 0.75;
+    margin-inline-end: calc(var(--wnyc-grid) * 0.75);
   }
 
   > [class*='icon']:last-child {
-    margin-#{direction.$start}: $grid * 0.75;
-    // margin-#{direction.$end}: -($grid / 2);
+    margin-inline-start: calc(var(--wnyc-grid) * 0.75);
   }
 }
 
@@ -121,22 +138,22 @@ $radius-tag: map-get($buttons, 'radius-tag');
 }
 
 @mixin tag() {
-  font-size: map-get(typography.$font-size, 'small');
-  text-transform: uppercase;
-
-  padding: $grid ($grid * 2);
-  border-radius: map-get($buttons, 'radius-tag');
+  font-size: var(--wnyc-fontSize-small);
+  padding: var(--wnyc-grid) calc(var(--wnyc-grid) * 2);
+  border-radius: get('radius-tag');
 }
 
 @mixin toggle() {
-  text-align: direction.$start;
+  text-align: start;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   > [class*='icon'] {
-    transition: transform 0.25s
+    @include media.screens-and-prefers-motion {
+      transition: transform var(--wnyc-animate-duration)
+    }
   }
 
   &.active {
@@ -147,45 +164,27 @@ $radius-tag: map-get($buttons, 'radius-tag');
 }
 
 @mixin small() {
-  font-size: map-get(typography.$font-size, 'small');
-
-  padding: ($grid / 2) $grid;
+  font-size: var(--wnyc-fontSize-small);
+  padding: calc(var(--wnyc-grid) / 2) var(--wnyc-grid);
 }
 
-@mixin link() {
-  @include typography.font-family('body');
+@mixin color($type) {
+  color: var(--wnyc-button-#{$type}-text);
+  background-color: var(--wnyc-button-#{$type}-background);
+  border-color: transparent;
 
-  font-size: inherit;
-  text-align: inherit;
-  line-height: normal;
-
-  appearance: none;
-  border: none;
-  background: transparent !important;
-  padding: 0;
-  border-radius: 0;
-
-  > [class*='icon']:first-child {
-    margin-#{direction.$start}: initial;
+  &:visited {
+    color: var(--wnyc-button-#{$type}-text);
+    background-color: var(--wnyc-button-#{$type}-background);
   }
 
-  > [class*='icon']:last-child {
-    margin-#{direction.$end}: initial;
-  }
-}
-
-@mixin text() {
-  text-align: inherit;
-  background: none;
-  border: 0;
-  border-radius: 0;
-  padding: 0;
-
-  > [class*='icon']:first-child {
-    margin-#{direction.$start}: initial;
+  &:hover:not([disabled]),
+  &:active:not([disabled]) {
+    color: var(--wnyc-button-#{$type}-text-hover);
+    background-color: var(--wnyc-button-#{$type}-background-hover);
   }
 
-  > [class*='icon']:last-child {
-    margin-#{direction.$end}: initial;
+  &:disabled {
+    background-color: var(--wnyc-button-disabled-background);
   }
 }

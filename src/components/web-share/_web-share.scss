@@ -13,58 +13,60 @@
 // Declarations
 .c-web-share {
   position: relative;
-  text-align: direction.$start;
+  text-align: start;
   pointer-events: auto;
 }
 
 .c-web-share__fallback {
   @include typography.set('small');
 
-  position: absolute;
-  margin-top: $grid;
-  margin-bottom: $grid;
+  background-color: var(--wnyc-card-body);
 
-  width: dimensions.get('webshare-fallback');
-  max-width: calc(100vw - #{$grid * 6});
+  position: absolute;
+  margin-top: var(--wnyc-grid);
+  margin-bottom: var(--wnyc-grid);
+
+  width: var(--wnyc-dimension-webshare-fallback);
+  max-width: calc(100vw - var(--wnyc-spacing-6));
 
   @include media.screen-and-min-width('tablet') {
-    margin-top: $grid * 2;
-    margin-bottom: $grid * 2;
+    margin-top: calc(var(--wnyc-grid) * 2);
+    margin-bottom: calc(var(--wnyc-grid) * 2);
   }
 }
 
 .c-web-share__fallback-body {
-  padding: $grid * 2;
-  padding-bottom: $grid;
+  padding: calc(var(--wnyc-grid) * 2);
+  padding-bottom: var(--wnyc-grid);
 
   @include media.screen-and-min-width('tablet') {
-    padding: $grid * 3;
-    padding-bottom: $grid * 2;
+    padding: calc(var(--wnyc-grid) * 3);
+    padding-bottom: calc(var(--wnyc-grid) * 2);
   }
 
   > *:last-child {
-    margin-#{direction.$end}: 0;
+    margin-inline-end: 0;
   }
 }
 
 .c-web-share__label {
   font-weight: bold;
   display: block;
-  margin-bottom: $grid;
+  margin-bottom: var(--wnyc-grid);
 }
 
 .c-web-share__input {
   width: 100%;
-  margin-bottom: $grid * 2;
+  margin-bottom: calc(var(--wnyc-grid) * 2);
 
   input {
-    padding: $grid;
+    padding: var(--wnyc-grid);
   }
 }
 
 .c-web-share__items a,
 .c-web-share__items button {
-  margin-bottom: $grid;
+  margin-bottom: var(--wnyc-grid);
   white-space: nowrap;
 }
 
@@ -73,11 +75,12 @@
 
   @include media.screen-and-min-width('mobile') {
     @include layouts.three-columns();
-    gap: $grid;
+
+    gap: var(--wnyc-grid);
   }
 }
 
 .c-web-share__icon {
-  width: $grid * 2;
-  height: $grid * 2;
+  width: calc(var(--wnyc-grid) * 2);
+  height: calc(var(--wnyc-grid) * 2);
 }

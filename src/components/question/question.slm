@@ -27,21 +27,20 @@ div id='${this.question.id}' class='c-question ${this.question.class}' aria-hidd
     p = this.question.description
 
   div class='c-question__container'
-    div class='c-question__input'
-      - input = this.question
-      / - input.name = this.question.name
-      - input.id = this.question.for
-      - delete input.class
-      - delete input.ariaHidden
-      - type = (['text', 'email'].includes(this.question.type)) ? '' : `-${this.question.type}`;
+    - input = this.question
+    / - input.name = this.question.name
+    - input.id = this.question.for
+    - delete input.class
+    - delete input.ariaHidden
+    - type = (['text', 'email'].includes(this.question.type)) ? '' : `-${this.question.type}`;
+
+    - if this.question.button
+      div class='c-question__input'
+        = partial(`/elements/inputs/inputs${type}.slm`);
+
+        - if this.question.button
+          div class='c-question__button'
+            button class='btn btn-primary btn-small' type='submit' = this.question.button
+
+    - else
       = partial(`/elements/inputs/inputs${type}.slm`);
-
-      - if this.question.button
-        div class='c-question__button'
-          button class='btn btn-primary btn-small' type='submit' = this.question.button
-
-          / div aria-hidden='true' class='c-question__spinner' data-js='spinner'
-            / svg class='spinner' version='1.1' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
-              / circle class='spinner__path' cx='12' cy='12' fill='currentColor' r='10'
-
-          / div class='c-question__success' data-js='success' Success

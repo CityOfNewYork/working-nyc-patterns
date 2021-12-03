@@ -1,18 +1,19 @@
 //
-// Mixins
+// Variables, Functions, and Mixins
 //
 
-@use 'config/tokens';
+// Dependencies
+@use 'config/tokens' as *;
 @use 'config/language';
 
-$typography: map-get(tokens.$tokens, 'typography');
+// Declarations
+$typography: map-get($tokens, 'typography');
 
-$font: map-get(tokens.$tokens, 'font');
-$font-family: map-get(tokens.$tokens, 'font-family');
-$font-size: map-get(tokens.$tokens, 'font-size');
-$font-weight: map-get(tokens.$tokens, 'font-weight');
-$font-style: map-get(tokens.$tokens, 'font-style');
-$line-height: map-get(tokens.$tokens, 'line-height');
+$font-family: map-get($tokens, 'fontFamily');
+$font-size: map-get($tokens, 'fontSize');
+$font-weight: map-get($tokens, 'fontWeight');
+$font-style: map-get($tokens, 'fontStyle');
+$line-height: map-get($tokens, 'lineHeight');
 
 /**
  * Get a token value from the $typography set
@@ -33,13 +34,13 @@ $line-height: map-get(tokens.$tokens, 'line-height');
  * @return  {String}        The font family value
  */
 @function get-font-family($key: 'body') {
-  $font-family-key: '#{map-get($font, $key)}-#{language.$language}';
+  $font-family-key: '--wnyc-fontFamily-#{$key}-#{language.$language}';
 
   @if language.$language == '' {
-    $font-family-key: '#{map-get($font, $key)}';
+    $font-family-key: '--wnyc-fontFamily-#{$key}';
   }
 
-  @return map-get($font-family, $font-family-key);
+  @return var(#{$font-family-key});
 }
 
 /**
@@ -64,6 +65,19 @@ $line-height: map-get(tokens.$tokens, 'line-height');
   font-style: map-get($font-style, $key);
   line-height: map-get($line-height, $key);
 }
+
+/**
+ * Render all font attributes by token
+ *
+ * @param  {String}  $key  The font set token
+ */
+@mixin features($key: 'body') {
+  font-size: map-get($font-size, $key);
+  font-weight: map-get($font-weight, $key);
+  font-style: map-get($font-style, $key);
+  line-height: map-get($line-height, $key);
+}
+
 
 /**
  * Render styling within body type element selectors

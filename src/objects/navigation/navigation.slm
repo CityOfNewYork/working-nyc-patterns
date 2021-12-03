@@ -11,47 +11,46 @@
 /! { @role        Use role='navigation' in production layouts. Identifies the nav as a major landmark }
 /! { @aria-label  Ensures a unique landmark }
 /! { @class       Add "o-navigation-fixed" in production layouts }
-nav role='navigation' aria-label='Primary Navigation' class='o-navigation bg-scale-2 ${this.navigation.class}'
-  a href='${this.baseUrl}/demos/index' class='o-navigation__logo o-navigation__menu-item'
+nav role='navigation' aria-label='Primary Navigation' data-js='navigation' class='o-navigation bg-scale-2 ${this.navigation.class}'
+  a href='${this.baseUrl}/demos/index' class='o-navigation__logo o-navigation__menu-item bg-scale-1 tablet:bg-transparent tablet:p-0'
     span class='sr-only' Working N Y C
 
-    svg class='hidden tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2' aria-hidden='true'
+    svg class='hidden tablet:inline icon-logo-standard-menu-item fill-text text-brand' aria-hidden='true'
       use xlink:href='#logo-wnyc-standard'
 
-    svg class='tablet:hidden icon-logo-stacked-menu-item fill-white text-blue-l-2' aria-hidden='true'
+    svg class='tablet:hidden icon-logo-stacked-menu-item fill-text text-brand' aria-hidden='true'
       use xlink:href='#logo-wnyc-stacked'
 
   /! { @class  Hide menu items for mobile using utilities }
-  a class='hidden desktop:inline-flex' href='${this.baseUrl}/demos/programs/index' Programs
+  a class='o-navigation__item' href='${this.baseUrl}/demos/programs/index' Programs
 
-  a class='hidden desktop:inline-flex' href='#' Opportunities
+  a class='o-navigation__item' href='#' Opportunities
 
-  a class='hidden desktop:inline-flex' href='${this.baseUrl}/demos/newsletter' Newsletter
+  a class='o-navigation__item' href='${this.baseUrl}/demos/newsletter' Newsletter
 
-  / a class='hidden desktop:inline-flex' href='${this.baseUrl}/demos/events' Events
+  / a class='o-navigation__item' href='${this.baseUrl}/demos/events' Events
 
-  / a class='hidden desktop:inline-flex' href='${this.baseUrl}/demos/trainings' Trainings
+  / a class='o-navigation__item' href='${this.baseUrl}/demos/trainings' Trainings
 
-  /! { @class  The nav supports button elements using "btn-link" }
-  /! button class='o-navigation__menu-item btn-link' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
+  /! button class='o-navigation__menu-item' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
   /!   svg class='o-navigation__menu-icon icon-wnyc-ui'
   /!     use xlink:href='#feather-search'
 
   /!   span class='o-navigation__menu-label' Search
 
-  button class='o-navigation__menu-item btn-link desktop:m-0' data-js='dropdown' data-dropdown='open' data-dropdown-lock='true' aria-controls='aria-c-text-controller' aria-expanded='false'
+  button class='o-navigation__menu-item desktop:m-0' data-js='dialog' data-dialog='open' data-dialog-lock='true' aria-controls='aria-c-text-controller' aria-expanded='false'
     svg class='o-navigation__menu-icon icon-wnyc-ui'
       use xlink:href='#icon-wnyc-translate'
 
     span class='o-navigation__menu-label' Translate
 
-  / button class='o-navigation__menu-item btn-link tablet:hidden' data-js='dropdown' aria-controls='aria-c-filter' aria-expanded='false'
+  / button class='o-navigation__menu-item tablet:hidden' data-js='dialog' aria-controls='aria-c-filter' aria-expanded='false'
   /   svg class='o-navigation__menu-icon icon-wnyc-ui'
   /     use xlink:href='#feather-sliders'
 
   /   span class='o-navigation__menu-label' Filter
 
-  button class='o-navigation__menu-item btn-link desktop:hidden' data-js='mobile-menu' data-js-mobile-menu='open' aria-controls='aria-c-mobile-menu' aria-expanded='false'
+  button class='o-navigation__menu-item desktop:hidden mie-0' data-js='mobile-menu' data-js-mobile-menu='open' aria-controls='aria-c-mobile-menu' aria-expanded='false'
     svg class='o-navigation__menu-icon icon-wnyc-ui'
       use xlink:href='#feather-menu'
 

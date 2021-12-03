@@ -1,8 +1,13 @@
+//
+// Variables, Functions, and Mixins
+//
+
 // Dependencies
 @use 'config/dimensions';
 @use 'config/layouts';
 @use 'config/media';
 
+// Declarations
 @mixin base() {
   overflow: hidden;
   overflow-y: auto;
@@ -18,24 +23,16 @@
 }
 
 @mixin max-height() {
-  max-height: calc(var(--100vh) - #{dimensions.get('navigation-height-mobile')});
-
-  @include media.screen-and-min-width('tablet') {
-    max-height: calc(var(--100vh) - #{dimensions.get('navigation-height')});
-  }
+  max-height: calc(var(--100vh) - var(--wnyc-dimensions-navigation-height));
 }
 
 @mixin min-height() {
-  min-height: calc(var(--100vh) - #{dimensions.get('navigation-height-mobile')});
-
-  @include media.screen-and-min-width('tablet') {
-    min-height: calc(var(--100vh) - #{dimensions.get('navigation-height')});
-  }
+  min-height: calc(var(--100vh) - var(--wnyc-dimensions-navigation-height));
 }
 
 @mixin inner() {
   @include layouts.wrap();
 
-  padding-top: dimensions.$spacing-base;
-  padding-bottom: dimensions.$spacing-base;
+  padding-top: var(--wnyc-spacing-DEFAULT);
+  padding-bottom: var(--wnyc-spacing-DEFAULT);
 }
