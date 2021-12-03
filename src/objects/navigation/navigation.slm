@@ -11,7 +11,7 @@
 /! { @role        Use role='navigation' in production layouts. Identifies the nav as a major landmark }
 /! { @aria-label  Ensures a unique landmark }
 /! { @class       Add "o-navigation-fixed" in production layouts }
-nav role='navigation' aria-label='Primary Navigation' data-js='navigation' class='o-navigation bg-scale-2 ${this.navigation.class}'
+nav role='navigation' aria-label='Navigation' data-js='navigation' class='o-navigation bg-scale-2 ${this.navigation.class}'
   a href='${this.baseUrl}/demos/index' class='o-navigation__logo o-navigation__menu-item bg-scale-1 tablet:bg-transparent tablet:p-0'
     span class='sr-only' Working N Y C
 

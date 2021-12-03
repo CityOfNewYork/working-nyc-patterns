@@ -11,10 +11,10 @@
 - if (typeof footer !== 'undefined')
   - this.footer = Object.assign(this.footer, footer);
 
-footer role=this.footer.role aria-label='Primary Footer' class='o-footer bg-scale-2 ${this.footer.class}'
+footer role=this.footer.role aria-label='Footer' class='o-footer bg-scale-2 ${this.footer.class}'
   div class='page-max'
     div class='o-attribution'
-      nav aria-label='Footer Primary Navigation' class='o-footer__nav'
+      nav aria-label='Footer Navigation' class='o-footer__nav'
         a class='o-footer__item uppercase text-small no-underline' href='${this.baseUrl}/demos/index'
           span class='sr-only' Working N Y C
 
@@ -52,7 +52,7 @@ footer role=this.footer.role aria-label='Primary Footer' class='o-footer bg-scal
 
             | NYC is a trademark and service mark of the City of New York.
 
-        nav class='o-footer__nav' aria-label='Footer Tertiary Navigation'
+        nav class='o-footer__nav' aria-label='Sitemap and Legal Information'
           a class='o-footer__item' href='#'
             | Sitemap
 

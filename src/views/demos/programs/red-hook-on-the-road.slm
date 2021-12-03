@@ -106,7 +106,7 @@
               p Training takes place Monday–Friday, 8am to 5pm, with one week in class and three weeks of behind-the-wheel learning. New sessions begin every month.
 
             section
-              div#disability-accommodation class='pt-utility-anchor'
+              div#disability-accommodation class='pt-utility-anchor bg-scale-2 sticky top-0'
                 h3 class='h5 flex items-center mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3'
                   a class='anchor flex mie-1' href='#disability-accommodation'
                     svg class='icon' role='img'
@@ -177,7 +177,7 @@
 
       section#contact class='bg-scale-1 layout-content py-2 pb-1 tablet:py-4 tablet:pb-3'
         div class='wrap'
-          nav class='tablet:layout-three-columns-gutter' aria-label='Contact'
+          nav class='tablet:layout-three-columns-gutter' aria-label='Contact Information'
             a href='https://bwiny.org/red-hook-on-the-road/overview/' class='btn btn-secondary btn-next mb-1 w-full'
               svg class='icon-wnyc-ui' aria-hidden='true'
                 use xlink:href='#feather-arrow-left'

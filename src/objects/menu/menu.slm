@@ -15,7 +15,7 @@
 aside#aria-c-mobile-menu class='o-menu ${this.mobileMenu.class}' aria-hidden=this.mobileMenu.ariaHidden
   div
     /! { @aria-label  Ensures landmarks are unique }
-    nav class='o-menu__nav' aria-label='mobile menu'
+    nav class='o-menu__nav' aria-label='Menu'
       /! { @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
       a class='o-menu__nav-item' tabindex=this.mobileMenu.tabindex href='${this.baseUrl}/demos/index' Home
 
