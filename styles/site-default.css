@@ -2,7 +2,7 @@
  * Fonts
  */
 
-@import url();
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,800,800i%7CMontserrat:400,400i,700");
 
 @import url("tokens-default.css") screen and (prefers-color-scheme: dark);
 
