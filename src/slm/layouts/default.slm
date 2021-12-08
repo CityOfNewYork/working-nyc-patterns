@@ -34,6 +34,7 @@ html lang='en' dir='ltr'
 
       patterns.icons();
       patterns.icons('${this.baseUrl}/svg/feather.svg');
+      patterns.themes();
       patterns.toggle();
       patterns.copy();
 

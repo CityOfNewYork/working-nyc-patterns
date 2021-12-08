@@ -1,8 +1,9 @@
+
 @forward '@nycopportunity/pattern-attribution/src/tokens';
 @forward '@nycopportunity/pattern-menu/src/tokens';
 @forward '@nycopportunity/pattern-navigation/src/tokens';
 
 @use 'config/media';
 
-@import url('tokens-default.css') screen and (prefers-color-scheme: dark);
-@import url('tokens-light.css') screen and (prefers-color-scheme: light);
+@import url('tokens-default.css');
+@import url('tokens-light.css');

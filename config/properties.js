@@ -24,6 +24,7 @@ module.exports = [
   },
   {
     'dist': 'dist/styles/tokens-default.css',
+    'ruleset': ':root, .default',
     'properties': {
       'wnyc': {
         ...dark
@@ -32,6 +33,7 @@ module.exports = [
   },
   {
     'dist': 'dist/styles/tokens-light.css',
+    'ruleset': '.light',
     'properties': {
       'wnyc': {
         ...light

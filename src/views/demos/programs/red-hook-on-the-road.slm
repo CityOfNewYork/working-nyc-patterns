@@ -46,7 +46,7 @@
                   a class='anchor flex mie-1' href='#services'
                     svg class='icon-wnyc-ui' role='img'
                       title Services
-                      use xlink:href='#feather-award'
+                      use href='#feather-award'
 
                   | Services
 
@@ -62,7 +62,7 @@
                   a class='anchor flex mie-1' href='#eligibility'
                     svg class='icon-wnyc-ui' role='img'
                       title Eligibility
-                      use xlink:href='#feather-users'
+                      use href='#feather-users'
 
                   | Who it's for
 
@@ -95,7 +95,7 @@
                   a class='anchor flex mie-1' href='#schedule'
                     svg class='icon-wnyc-ui' role='img'
                       title Schedule
-                      use xlink:href='#feather-calendar'
+                      use href='#feather-calendar'
 
                   | Schedule
 
@@ -111,7 +111,7 @@
                   a class='anchor flex mie-1' href='#disability-accommodation'
                     svg class='icon' role='img'
                       title Disability Accommodations
-                      use xlink:href='#icon-wnyc-accessible'
+                      use href='#icon-wnyc-accessible'
 
                   | Disability Accommodation
 
@@ -141,7 +141,7 @@
                   a class='anchor flex mie-1' href='#language-access'
                     svg class='icon-wnyc-ui' role='img'
                       title Language Accommodation
-                      use xlink:href='#icon-wnyc-translate'
+                      use href='#icon-wnyc-translate'
 
                   | Language access
 
@@ -180,12 +180,12 @@
           nav class='tablet:layout-three-columns-gutter' aria-label='Contact Information'
             a href='https://bwiny.org/red-hook-on-the-road/overview/' class='btn btn-secondary btn-next mb-1 w-full'
               svg class='icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#feather-arrow-left'
+                use href='#feather-arrow-left'
 
               | Learn more
 
               svg class='icon-wnyc-ui' aria-hidden='true'
-                use xlink:href='#feather-arrow-right'
+                use href='#feather-arrow-right'
 
             a href='tel:7182372017' class='btn btn-secondary mb-1 w-full'
               | Call (718) 237-2017
@@ -198,12 +198,12 @@
           / nav
           /   a href='#' class='btn btn-primary btn-next w-full'
           /     svg class='icon-wnyc-ui' aria-hidden='true'
-          /       use xlink:href='#feather-arrow-left'
+          /       use href='#feather-arrow-left'
 
           /     | More programs at Brooklyn Workforce Innovations
 
           /     svg class='icon-wnyc-ui' aria-hidden='true'
-          /       use xlink:href='#feather-arrow-right'
+          /       use href='#feather-arrow-right'
 
       = partial('/objects/feedback/feedback')
 

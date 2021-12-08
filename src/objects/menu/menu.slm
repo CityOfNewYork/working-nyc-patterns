@@ -13,7 +13,13 @@
 /! { @id     Identifies the Mobile Menu for toggling }
 /! { @class  Add "o-menu-fixed" in production layouts }
 aside#aria-c-mobile-menu class='o-menu ${this.mobileMenu.class}' aria-hidden=this.mobileMenu.ariaHidden
-  div
+  button class='flex items-center justify-self-end mb-auto' data-js='themes'
+    svg class='o-navigation__menu-icon icon-wnyc-ui'
+      use href='#feather-sun' data-js-themes='icon'
+
+    span class='o-navigation__menu-label' data-js-themes='label' Theme
+
+  div class='mb-auto'
     /! { @aria-label  Ensures landmarks are unique }
     nav class='o-menu__nav' aria-label='Menu'
       /! { @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
@@ -41,7 +47,7 @@ aside#aria-c-mobile-menu class='o-menu ${this.mobileMenu.class}' aria-hidden=thi
     button class='o-menu__nav-item flex items-center' data-js='mobile-menu' data-js-mobile-menu='close' aria-controls='aria-c-mobile-menu' aria-expanded='${this.mobileMenu.ariaHidden ? 'false' : 'true' }' tabindex=this.mobileMenu.tabindex
       /! { @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }
       svg aria-hidden='true' class='icon-wnyc-ui'
-        use xlink:href='#feather-x'
+        use href='#feather-x'
 
       span Close
       / span class='sr-only' = ' and return to site'

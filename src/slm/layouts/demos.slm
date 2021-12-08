@@ -52,16 +52,14 @@ html lang='en'
       patterns.icons('${this.baseUrl}/svg/icons.svg');
       patterns.icons('${this.baseUrl}/svg/feather.svg');
       patterns.menu();
-      patterns.search();
-      patterns.toggle();
-      patterns.webShare();
-
       patterns.newsletter('${this.baseUrl}/demos/newsletter');
       patterns.newsletterForm();
-
-      patterns.validateAndQuery();
-
+      patterns.search();
       patterns.setObjectHeights();
+      patterns.themes();
+      patterns.toggle();
+      patterns.webShare();
+      patterns.validateAndQuery();
 
     = content('script');
 

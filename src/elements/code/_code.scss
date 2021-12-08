@@ -95,8 +95,8 @@ code, .code, .code-block, pre, .hljs {
   background-color: var(--wnyc-code-background);
   border-color: var(--wnyc-code-border);
 
-  --webkit-font-smoothing: var(--wnyc-code-webkit-font-smoothing);
   --moz-osx-font-smoothing: var(--wnyc-code-moz-osx-font-smoothing);
+    -webkit-font-smoothing: var(--wnyc-code-webkit-font-smoothing);
 }
 
 p code, li code, td code {

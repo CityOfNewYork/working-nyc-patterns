@@ -1,15 +1,16 @@
 'use strict';
 
 // Utilities
+import Dialog from '@nycopportunity/pttrn-scripts/src/dialog/dialog';
 import Copy from '@nycopportunity/pttrn-scripts/src/copy/copy';
 import Forms from '@nycopportunity/pttrn-scripts/src/forms/forms';
 import Icons from '@nycopportunity/pttrn-scripts/src/icons/icons';
 import Newsletter from '@nycopportunity/pttrn-scripts/src/newsletter/newsletter';
+import Themes from '@nycopportunity/pttrn-scripts/src/themes/themes';
 import Toggle from '@nycopportunity/pttrn-scripts/src/toggle/toggle';
 import Track from '@nycopportunity/pttrn-scripts/src/track/track';
 import WebShare from '@nycopportunity/pttrn-scripts/src/web-share/web-share';
 import WindowVh from '@nycopportunity/pttrn-scripts/src/window-vh/window-vh';
-import Dialog from '@nycopportunity/pttrn-scripts/src/dialog/dialog';
 
 import serialize from 'for-cerial';
 
@@ -40,72 +41,6 @@ class main {
   }
 
   /**
-   * An API for the Icons Utility
-   *
-   * @param   {String}  path  The path of the icon file
-   *
-   * @return  {Object}        Instance of Icons
-   */
-  icons(path = 'svg/icons.svg') {
-    return new Icons(path);
-  }
-
-  /**
-   * An API for the Toggle Utility
-   *
-   * @param   {Object}  settings  Settings for the Toggle Class
-   *
-   * @return  {Object}            Instance of Toggle
-   */
-  toggle(settings = false) {
-    return (settings) ? new Toggle(settings) : new Toggle();
-  }
-
-  /**
-   * API for validating a form.
-   *
-   * @param  {String}    selector  A custom selector for a form
-   * @param  {Function}  submit    A custom event handler for a form
-   */
-  validate(selector = '[data-js="validate"]', submit = false) {
-    if (document.querySelector(selector)) {
-      let form = new Forms(document.querySelector(selector));
-
-      form.submit = (submit) ? submit : (event) => {
-        event.target.submit();
-      };
-
-      form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
-
-      form.watch();
-    }
-  }
-
-  /**
-   * Validates a form and builds a URL search query on the action based on data.
-   *
-   * @param  {String}  selector  A custom selector for a form
-   */
-  validateAndQuery(selector = '[data-js="validate-and-query"]') {
-    let element = document.querySelector(selector);
-
-    if (element) {
-      let form = new Forms(element);
-
-      form.submit = event => {
-        let data = serialize(event.target, {hash: true});
-
-        window.location = `${event.target.action}?` + Object.keys(data)
-          .map(k => `${k}=${encodeURI(data[k])}`).join('&');
-      };
-
-      form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
-
-      form.watch();
-    }
-  }
-
-  /**
    * An API for the Accordion Component
    *
    * @return  {Object}  Instance of Accordion
@@ -115,12 +50,12 @@ class main {
   }
 
   /**
-   * An API for the Dialog Component
+   * An API for the Active Navigation component
    *
-   * @return  {Object}  Instance of Dialog
+   * @return  {Object}  Instance of ActiveNavigation
    */
-  dialog() {
-    return new Dialog();
+  activeNavigation() {
+    return new ActiveNavigation();
   }
 
   /**
@@ -133,12 +68,32 @@ class main {
   }
 
   /**
-   * An API for the Track Object
+   * An API for the Dialog Component
    *
-   * @return  {Object}  Instance of Track
+   * @return  {Object}  Instance of Dialog
    */
-  track() {
-    return new Track();
+  dialog() {
+    return new Dialog();
+  }
+
+  /**
+   * An API for the Icons Utility
+   *
+   * @param   {String}  path  The path of the icon file
+   *
+   * @return  {Object}        Instance of Icons
+   */
+  icons(path = 'svg/icons.svg') {
+    return new Icons(path);
+  }
+
+  /**
+   * An API for the Mobile Nav
+   *
+   * @return  {Object}  Instance of MobileMenu
+   */
+  menu() {
+    return new Menu();
   }
 
   /**
@@ -200,24 +155,6 @@ class main {
     return newsletter;
   }
 
-  // /**
-  //  * An API for the TextController Object
-  //  *
-  //  * @return  {Object}  Instance of TextController
-  //  */
-  // textController(element = document.querySelector(TextController.selector)) {
-  //   return (element) ? new TextController(element) : null;
-  // }
-
-  /**
-   * An API for the Mobile Nav
-   *
-   * @return  {Object}  Instance of MobileMenu
-   */
-  menu() {
-    return new Menu();
-  }
-
   /**
    * An API for the Search
    *
@@ -225,28 +162,6 @@ class main {
    */
   search() {
     return new Search();
-  }
-
-  /**
-   * An API for Web Share
-   *
-   * @return  {Object}  Instance of WebShare
-   */
-  webShare() {
-    return new WebShare({
-      fallback: () => {
-        new Toggle({
-          selector: WebShare.selector
-        });
-      }
-    });
-  }
-
-  /**
-   * Active Navigation
-   */
-   activeNavigation() {
-    return new ActiveNavigation();
   }
 
   /**
@@ -278,6 +193,112 @@ class main {
       } else {
         document.documentElement.style.setProperty(elements[i]['property'], '0px');
       }
+    }
+  }
+
+  /**
+   * An API for the Themes Utility
+   *
+   * @return  {Object}  Instance of Themes
+   */
+  themes() {
+    return new Themes({
+      themes: [
+        {
+          label: 'Light Theme',
+          classname: 'default',
+          icon: 'feather-sun'
+        },
+        {
+          label: 'Dark Theme',
+          classname: 'light',
+          icon: 'feather-moon'
+        }
+      ],
+      after: thms => document.querySelectorAll(thms.selectors.TOGGLE)
+        .forEach(element => {
+          element.querySelector('[data-js-themes="icon"]')
+            .setAttribute('href', `#${thms.theme.icon}`);
+        })
+    });
+  }
+
+  /**
+   * An API for the Toggle Utility
+   *
+   * @param   {Object}  settings  Settings for the Toggle Class
+   *
+   * @return  {Object}            Instance of Toggle
+   */
+  toggle(settings = false) {
+    return (settings) ? new Toggle(settings) : new Toggle();
+  }
+
+  /**
+   * An API for the Track Object
+   *
+   * @return  {Object}  Instance of Track
+   */
+  track() {
+    return new Track();
+  }
+
+  /**
+   * An API for Web Share
+   *
+   * @return  {Object}  Instance of WebShare
+   */
+  webShare() {
+    return new WebShare({
+      fallback: () => {
+        new Toggle({
+          selector: WebShare.selector
+        });
+      }
+    });
+  }
+
+  /**
+   * API for validating a form.
+   *
+   * @param  {String}    selector  A custom selector for a form
+   * @param  {Function}  submit    A custom event handler for a form
+   */
+  validate(selector = '[data-js="validate"]', submit = false) {
+    if (document.querySelector(selector)) {
+      let form = new Forms(document.querySelector(selector));
+
+      form.submit = (submit) ? submit : (event) => {
+        event.target.submit();
+      };
+
+      form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+
+      form.watch();
+    }
+  }
+
+  /**
+   * Validates a form and builds a URL search query on the action based on data.
+   *
+   * @param  {String}  selector  A custom selector for a form
+   */
+  validateAndQuery(selector = '[data-js="validate-and-query"]') {
+    let element = document.querySelector(selector);
+
+    if (element) {
+      let form = new Forms(element);
+
+      form.submit = event => {
+        let data = serialize(event.target, {hash: true});
+
+        window.location = `${event.target.action}?` + Object.keys(data)
+          .map(k => `${k}=${encodeURI(data[k])}`).join('&');
+      };
+
+      form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+
+      form.watch();
     }
   }
 }

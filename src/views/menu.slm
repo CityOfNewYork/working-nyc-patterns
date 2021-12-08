@@ -18,5 +18,5 @@
 = content('content')
   = mixin('content-header')
 
-  - mobileMenu = {class: 'flex'}
+  - mobileMenu = {class: 'grid'}
   = mixin('section', '/objects/menu/menu')

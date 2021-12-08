@@ -89,7 +89,8 @@ $screens: map-get($tokens, 'screen');
       @content('#{$scheme}');
     }
   } @else {
-    @media screen and (prefers-color-scheme: $scheme) {
+    html.#{$scheme} {
+    // @media screen and (prefers-color-scheme: $scheme) {
       @content('#{$scheme}');
     }
   }

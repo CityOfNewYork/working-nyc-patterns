@@ -609,7 +609,8 @@ module.exports = {
     'radius': '5px',
     'radius-tag': '50px',
     'border-style': 'solid',
-    'border-width': '2px'
+    'border-width': '2px',
+    'variants': ['primary', 'secondary', 'tertiary']
   },
   'input': {
     'inner-size': '1rem',
