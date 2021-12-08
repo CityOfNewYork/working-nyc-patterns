@@ -8,6 +8,7 @@
 @use 'config/dimensions';
 @use 'config/direction';
 @use 'config/buttons';
+@use 'config/tokens' as *;
 @use 'config/typography';
 @use 'config/media';
 
@@ -45,7 +46,7 @@ button {
   @include buttons($variant);
 }
 
-@each $type in ('primary', 'secondary', 'tertiary') {
+@each $type in map-get(map-get($tokens, 'button'), 'variants') {
   .btn-#{$type} {
     @include buttons.color($type);
   }
