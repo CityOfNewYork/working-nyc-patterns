@@ -18,7 +18,7 @@ div class='c-web-share ${this.webShare.class}'
   /! { @aria-expanded   Indicates if the Web Share fallback is open or not }
   button data-js='web-share' data-web-share='${JSON.stringify(this.webShare.data)}' aria-controls='aria-c-web-share-fallback-${this.webShare.id}' aria-expanded='false' class='btn btn-small btn-primary m-0'
     svg class='c-web-share__icon icon-wnyc-ui'
-      use xlink:href='#feather-share-2'
+      use href='#feather-share-2'
 
     span Share
 
@@ -35,7 +35,7 @@ div class='c-web-share ${this.webShare.class}'
         /! { @tabindex       Set the tabindex to '-1' on focusable elements if this area is hidden when the page is rendered }
         button class='btn btn-primary btn-small m-0' data-js='web-share' aria-controls='aria-c-web-share-fallback-${this.webShare.id}' aria-expanded='false' tabindex='-1'
           svg class='icon-wnyc-ui' aria-hidden='true' tabindex='-1'
-            use xlink:href='#feather-x'
+            use href='#feather-x'
 
           span Close
 
@@ -54,23 +54,23 @@ div class='c-web-share ${this.webShare.class}'
         /! { @aria-pressed  Will signify a pressed state to screen readers }
         button tabindex='-1' data-js='copy' data-copy='web-share-url' aria-pressed='false' class='c-web-share__item c-web-share__copy btn btn-small btn-primary mx-0'
           svg class='icon icon-wnyc-ui'
-            use xlink:href='#feather-copy'
+            use href='#feather-copy'
 
           svg class='icon-pressed icon-wnyc-ui mie-1'
-            use xlink:href='#feather-check'
+            use href='#feather-check'
 
           span Copy URL
 
         /! { Facebook Sharer }
         a tabindex='-1' href='https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(this.webShare.data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary mx-0'
           svg class='icon-wnyc-ui'
-            use xlink:href='#feather-facebook'
+            use href='#feather-facebook'
 
           span Facebook
 
         /! { Twitter Tweet }
         a tabindex='-1' href='https://twitter.com/intent/tweet?text=${encodeURIComponent(this.webShare.data.text + ' ' + this.webShare.data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary mx-0'
           svg class='icon-wnyc-ui'
-            use xlink:href='#feather-twitter'
+            use href='#feather-twitter'
 
           span Twitter

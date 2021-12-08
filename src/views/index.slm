@@ -17,7 +17,7 @@
     header class='c-card__header'
       h2 class='c-card__title'
         svg class='icon-wnyc-ui icon-3 mie-1' aria-hidden='true'
-          use xlink:href='#feather-package'
+          use href='#feather-package'
 
         strong Package
 
@@ -31,13 +31,13 @@
 
         a href='${this.package.cdn.source}/releases/tag/v${this.tokens.version}' target='_blank' class='btn btn-secondary'
           svg class='icon-wnyc-ui' aria-hidden='true'
-            use xlink:href='#feather-github'
+            use href='#feather-github'
 
           span GitHub
 
         a href='${this.package.cdn.npm}' target='_blank' class='btn btn-tertiary'
           svg class='icon-wnyc-ui' aria-hidden='true'
-            use xlink:href='#feather-package'
+            use href='#feather-package'
 
           span npm.org
 
@@ -54,7 +54,7 @@
     header class='c-card__header'
       h2 class='c-card__title'
         svg class='icon-wnyc-ui icon-3 mie-1' aria-hidden='true'
-          use xlink:href='#feather-figma'
+          use href='#feather-figma'
 
         strong About
 
@@ -65,7 +65,7 @@
     header class='c-card__header'
       h2 class='c-card__title'
         svg class='icon-wnyc-ui icon-3 mie-1' aria-hidden='true'
-          use xlink:href='#feather-figma'
+          use href='#feather-figma'
 
         strong Figma
 
@@ -79,7 +79,7 @@
     header class='c-card__header'
       h2 class='c-card__title'
         svg class='icon-wnyc-ui icon-3 mie-1' aria-hidden='true'
-          use xlink:href='#feather-navigation'
+          use href='#feather-navigation'
 
         strong Demo Pages
 

@@ -23,7 +23,7 @@ label class='option ${this.option.class}' tabindex=this.option.tabindex for='${t
 
   span class='option__base'
     svg class='option__graphic' aria-hidden='true'
-      use xlink:href='#option-wnyc-${this.option.type}'
+      use href='#option-wnyc-${this.option.type}'
 
     span class='option__label'
       = this.option.label;

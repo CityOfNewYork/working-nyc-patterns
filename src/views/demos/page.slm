@@ -22,7 +22,7 @@
             p class='small'
               span class='flex items-center'
                 svg aria-hidden='true' class='icon-wnyc-ui mie-1 icon-2'
-                  use xlink:href='#feather-info'
+                  use href='#feather-info'
 
                 | Last updated on Dec 03, 2020
 

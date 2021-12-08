@@ -19,7 +19,7 @@ footer role=this.footer.role aria-label='Footer' class='o-footer bg-scale-2 ${th
           span class='sr-only' Working N Y C
 
           svg aria-hidden='true' class='icon-logo-standard-menu-item fill-text text-brand'
-            use xlink:href='#logo-wnyc-standard'
+            use href='#logo-wnyc-standard'
 
         a class='o-footer__item' href='${this.baseUrl}/demos/programs/index' Programs
 

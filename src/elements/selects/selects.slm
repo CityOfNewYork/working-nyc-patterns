@@ -25,4 +25,4 @@ div class='select ${this.select.class}'
       option value='${value}' = option.label
 
   svg class='select__graphic' aria-hidden='true'
-    use xlink:href='#select-wnyc-chevrons'
+    use href='#select-wnyc-chevrons'

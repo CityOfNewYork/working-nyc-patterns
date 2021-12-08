@@ -33,7 +33,7 @@ The first option allows you to inline an SVG with the `use` tag. This is the pre
     <svg class="icon-logo-full text-blue-dark" role="img">
       <title id="icon-logo-full-title">ACCESS NYC Logo</title>
 
-      <use xlink:href="#icon-logo-full"></use>
+      <use href="#icon-logo-full"></use>
     </svg>
 
 ##### Background Images

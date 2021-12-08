@@ -8,6 +8,6 @@ div class='layout-content w-full'
       span Toggle Button
 
       svg class='icon-wnyc-ui icon-4' aria-hidden='true'
-        use xlink:href='#feather-chevron-down'
+        use href='#feather-chevron-down'
 
     div#btn-toggle-target class='bg-scale-1 p-4 text-center active' aria-hidden='false' Toggle button target element area

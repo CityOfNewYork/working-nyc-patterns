@@ -10,5 +10,5 @@ nav class='nav-inline'
 
   a class='no-underline' href='#search'
     svg class='icon icon-wnyc-ui icon-3'
-      use xlink:href='#feather-search'
+      use href='#feather-search'
     | Search

@@ -13,7 +13,7 @@ div class='w-full wrap grid mobile:grid-cols-3 gap-3'
       button class='bg-${key} py-6 border border-b-0 border-scale-4 rounded-t w-full justify-center' title='Copy to clipboard' aria-label='Copy to clipboard' aria-pressed='false' data-copy='copy-${key}-value' data-js='copy'
         span class='inline-block bg-white p-1 rounded'
           svg class='icon-wnyc-ui icon-3 block text-blue pointer' aria-hidden='true'
-            use xlink:href='#feather-copy'
+            use href='#feather-copy'
 
       div class=''
         div class='p-1 pb-0 capitalize border-l border-r border-scale-4'

@@ -13,8 +13,8 @@ section class='layout-content bg-scale-2' data-js='feedback'
     article class='c-alert status-primary' data-js='alert-warning'
       div class='c-alert__graphic'
         svg aria-hidden='true' class='icon-wnyc-ui'
-          use xlink:href='#feather-help-circle'
+          use href='#feather-help-circle'
 
       div class='c-alert__body'
         p data-js-alert='text'
-          | How can we improve this website? Let us know by <a class='inline-flex items-center' href='https://airtable.com/shrfQGpXvo9mmmHpJ' target='_blank'>sending us feedback <svg aria-hidden='true' class='icon-wnyc-ui' style='margin-left: 5px;'><use xlink:href='#feather-external-link'></use></svg></a>
+          | How can we improve this website? Let us know by <a class='inline-flex items-center' href='https://airtable.com/shrfQGpXvo9mmmHpJ' target='_blank'>sending us feedback <svg aria-hidden='true' class='icon-wnyc-ui' style='margin-left: 5px;'><use href='#feather-external-link'></use></svg></a>

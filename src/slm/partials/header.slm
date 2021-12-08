@@ -5,10 +5,10 @@ header role='banner' class='bg-scale-2'
         span class='sr-only' Working N Y C
 
         svg class='hidden tablet:inline icon-logo-standard-menu-item fill-text text-brand' aria-hidden='true'
-          use xlink:href='#logo-wnyc-standard'
+          use href='#logo-wnyc-standard'
 
         svg class='tablet:hidden icon-logo-stacked-menu-item fill-text text-brand' aria-hidden='true'
-          use xlink:href='#logo-wnyc-stacked'
+          use href='#logo-wnyc-stacked'
 
     div class='flex items-center'
       h2 class='h5 m-0'
@@ -20,6 +20,6 @@ header role='banner' class='bg-scale-2'
 
         button#main-menu-control aria-controls='main-menu' aria-expanded='false' data-js='toggle'
           svg class='icon-wnyc-ui' aria-hidden='true'
-            use xlink:href='#feather-menu'
+            use href='#feather-menu'
 
           span Menu

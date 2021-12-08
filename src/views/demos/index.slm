@@ -26,7 +26,7 @@
             h1 class='sr-only' Working N Y C
 
             svg class='icon-logo-homepage fill-text text-brand'
-              use xlink:href='#logo-wnyc-standard'
+              use href='#logo-wnyc-standard'
 
             h2 class='h4 font-primary tablet:font-normal tablet:text-h3 font-bold text-alt mb-5' Find and connect to services and resources that can help you prepare for and get a job.
 
@@ -40,7 +40,7 @@
               span Scroll to browse programs
               br class='tablet:hidden'
               svg class='icon-wnyc-ui m-0 mt-1' aria-hidden='true'
-                use xlink:href='#feather-chevron-down'
+                use href='#feather-chevron-down'
 
           form class='c-card' data-js='validate-and-query' method='post' action='${this.baseUrl}/demos/programs/index'
             div class='p-3 desktop:p-4'

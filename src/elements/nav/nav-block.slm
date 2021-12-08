@@ -7,5 +7,5 @@ nav class='nav-block'
   a href='#' Find help
   a class='no-underline' href='#search'
     svg class='icon icon-wnyc-ui-search'
-      use xlink:href='#feather-search'
+      use href='#feather-search'
     | Search

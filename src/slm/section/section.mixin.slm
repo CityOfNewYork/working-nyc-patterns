@@ -29,7 +29,7 @@
             a href='#${id}' class='mie-1 flex items-center'
               svg class='icon-wnyc-ui' role='img'
                 title ${this.config.title} Anchor Link
-                use xlink:href='#feather-anchor'
+                use href='#feather-anchor'
 
             = this.config.title;
 
@@ -37,7 +37,7 @@
           p class='flex items-center'
             svg class='icon-wnyc-ui mie-1' role='img'
               title GitHub Source Link
-              use xlink:href='#feather-github'
+              use href='#feather-github'
 
             / code
             a href='${source}' target='_blank'
@@ -54,17 +54,12 @@
     - if this.config.markup
       div class='page-max layout-content pb-4'
         h5 id='${id}-example' class='wrap flex items-center'
-          / a href='#${id}-example' class='mie-1 flex items-center'
-          /   svg class='icon-wnyc-ui' role='img'
-          /     title Demonstration Anchor Link
-          /     use xlink:href='#feather-anchor'
-
           | Demonstration
 
     / Render the markup live demonstration
     - if this.config.demo
       div class='bg-scale-0 py-6 mb-6'
-        div class='page-max flex justify-center py-6'
+        div class='page-max flex justify-center py-6 wrap'
           == this.include(this.path + '.slm');
 
     / Render the componet markup in the code block
@@ -72,11 +67,6 @@
       /! Section Markup
       div class='page-max layout-content pb-4'
         h5 id='${id}-markup' class='wrap flex items-center'
-          / a href='#${id}-markup' class='mie-1 flex items-center'
-          /   svg class='icon-wnyc-ui' role='img'
-          /     title Markup Anchor Link
-          /     use xlink:href='#feather-anchor'
-
           | Markup
 
       div class='page-max layout-content'

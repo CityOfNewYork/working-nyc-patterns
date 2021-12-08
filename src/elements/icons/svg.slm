@@ -5,4 +5,4 @@
   svg class='${classAttr}'
     title id='${this.svg}-title' ${this.svg.replace(/-/g, ' ')}
 
-    use xlink:href='#${this.svg.split("--")[0]}'
+    use href='#${this.svg.split("--")[0]}'

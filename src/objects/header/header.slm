@@ -29,12 +29,12 @@ header class='o-header'
       a href='${this.baseUrl}/demos/index' Home
 
       svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-blue-l-3' aria-hidden='true'
-        use xlink:href='#feather-chevron-right'
+        use href='#feather-chevron-right'
 
       a href='${this.baseUrl}/demos/programs/index' Programs
 
       svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-blue-l-3' aria-hidden='true'
-        use xlink:href='#feather-chevron-right'
+        use href='#feather-chevron-right'
 
       b aria-current='page' = this.header.breadcrumb
 
@@ -48,7 +48,7 @@ header class='o-header'
         a class='anchor inline-flex mie-1' href='#services'
           svg class='icon-wnyc-ui icon-2' role='img'
             title Services
-            use xlink:href='#feather-award'
+            use href='#feather-award'
 
         == this.header.certification
 
@@ -57,7 +57,7 @@ header class='o-header'
         a class='anchor inline-flex mie-1' href='#eligibility'
           svg class='icon-wnyc-ui icon-2' role='img'
             title Eligibility
-            use xlink:href='#feather-users'
+            use href='#feather-users'
 
         == this.header.eligibility
 
@@ -66,7 +66,7 @@ header class='o-header'
         a class='anchor inline-flex mie-1' href='#schedule'
           svg class='icon-wnyc-ui icon-2' role='img'
             title Schedule
-            use xlink:href='#feather-calendar'
+            use href='#feather-calendar'
 
         == this.header.schedule
 
@@ -75,7 +75,7 @@ header class='o-header'
         a class='anchor inline-flex mie-1' href='#disability-accommodation'
           svg class='icon icon-2' role='img'
             title Disability Accommodations
-            use xlink:href='#icon-wnyc-accessible'
+            use href='#icon-wnyc-accessible'
 
         span Accommodates Disabilities
 
@@ -84,7 +84,7 @@ header class='o-header'
         a class='anchor inline-flex mie-1' href='#language-access'
           svg class='icon-wnyc-ui icon-2' role='img'
             title Language Accommodation
-            use xlink:href='#icon-wnyc-translate'
+            use href='#icon-wnyc-translate'
 
         span Accommodates Multiple Languages
 
@@ -92,7 +92,7 @@ header class='o-header'
       p class='small flex items-center'
         svg class='icon-wnyc-ui mie-1 icon-2' role='img'
           title Sector Information
-          use xlink:href='#feather-info'
+          use href='#feather-info'
 
         = this.header.info
 
@@ -100,6 +100,6 @@ header class='o-header'
       p class='small flex items-center'
         svg class='icon-wnyc-ui mie-1 icon-2' role='img'
           title Timestamp
-          use xlink:href='#feather-alert-triangle'
+          use href='#feather-alert-triangle'
 
         = this.header.timestamp

@@ -16,7 +16,7 @@ div id='aria-c-text-controller' class='o-text-controller bg-scale-1 ${this.textC
       div class='text-end'
         button class='btn btn-primary btn-small' data-js='dialog' aria-controls='aria-c-text-controller' aria-expanded='false' data-dialog='close' tabindex=this.textController.tabindex
           svg class='icon-wnyc-ui' aria-hidden='true' tabindex=this.textController.tabindex
-            use xlink:href='#feather-x'
+            use href='#feather-x'
 
           span Close
 
@@ -75,7 +75,7 @@ div id='aria-c-text-controller' class='o-text-controller bg-scale-1 ${this.textC
           p
             svg class='icon-logo-google-translate' role='img' tabindex=this.textController.tabindex
               title Powered by Google Translate
-              use xlink:href='#logo-google-translate'
+              use href='#logo-google-translate'
 
 
         / div class='o-text-controller__sizer'
@@ -83,10 +83,10 @@ div id='aria-c-text-controller' class='o-text-controller bg-scale-1 ${this.textC
 
         /   button class='o-text-controller__sizer-btn btn-text' data-js='text-larger'
         /     svg class='icon icon-wnyc-ui icon-3 mr-0'
-        /       use xlink:href='#feather-plus-circle'
+        /       use href='#feather-plus-circle'
         /     div class='sr-only' Larger
 
         /   button class='o-text-controller__sizer-btn btn-text' data-js='text-smaller'
         /     svg class='icon icon-wnyc-ui icon-3 mr-0'
-        /       use xlink:href='#feather-minus-circle'
+        /       use href='#feather-minus-circle'
         /     div class='sr-only' Smaller

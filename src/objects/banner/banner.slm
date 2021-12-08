@@ -4,6 +4,6 @@ header class='o-banner bg-scale-1 layout-content flex items-center'
   div
     svg class='icon-logo-homepage fill-text text-brand' role='img'
       title Working N Y C logo
-      use xlink:href='#logo-wnyc-standard'
+      use href='#logo-wnyc-standard'
 
     h2 class='h4 font-primary tablet:font-normal tablet:text-h3 font-bold text-alt mb-5' Find and connect to services and resources that can help you prepare for and get a job.

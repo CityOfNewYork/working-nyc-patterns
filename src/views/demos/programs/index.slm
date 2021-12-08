@@ -17,20 +17,20 @@
           div class='c-utility'
             a href='${this.baseUrl}/demos/index' class='mie-auto'
               svg class='icon-wnyc-ui mie-1' aria-hidden='true'
-                use xlink:href='#feather-chevron-left'
+                use href='#feather-chevron-left'
 
               span Home
 
             button class='btn btn-small btn-secondary light:btn-primary' data-js='dialog' aria-controls='aria-c-filter' aria-expanded='false' data-dialog='open' data-dialog-lock='true'
               / svg class='icon-wnyc-ui' aria-hidden='true'
-                / use xlink:href='#feather-sliders'
+                / use href='#feather-sliders'
 
               span class='mie-1' Filter programs
               span class='badge badge-small status-secondary light:status-primary' 99
 
             / button class='btn btn-small btn-primary' data-js='toggle' aria-controls='aria-c-saved' aria-expanded='false'
             /   svg class='icon-wnyc-ui' aria-hidden='true'
-            /     use xlink:href='#feather-bookmark'
+            /     use href='#feather-bookmark'
 
             /   span Saved
 
@@ -39,7 +39,7 @@
               div class='text-end relative z-20'
                 button class='btn btn-primary btn-small' data-js='dialog' aria-controls='aria-c-filter' aria-expanded='false' data-dialog='close' tabindex='-1'
                   svg class='icon-wnyc-ui' aria-hidden='true' tabindex='-1'
-                    use xlink:href='#feather-x'
+                    use href='#feather-x'
 
                   span Close
 
@@ -82,7 +82,7 @@
                 a href='${this.baseUrl}/demos/index' Home
 
                 svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
-                  use xlink:href='#feather-chevron-right'
+                  use href='#feather-chevron-right'
 
                 b aria-current='page' Programs
 
