@@ -15,33 +15,39 @@
   <!--{ @role        Use role='navigation' in production layouts. Identifies the nav as a major landmark }-->
   <!--{ @aria-label  Ensures a unique landmark }-->
   <!--{ @class       Add "o-navigation-fixed" in production layouts }-->
-  <nav aria-label="Primary Navigation" class="o-navigation bg-scale-2 o-navigation-fixed" data-js="navigation" role="navigation">
+  <nav aria-label="Navigation" class="o-navigation bg-scale-2 o-navigation-fixed" data-js="navigation" role="navigation">
     <a class="o-navigation__logo o-navigation__menu-item bg-scale-1 tablet:bg-transparent tablet:p-0" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/index">
       <span class="sr-only">Working N Y C</span>
       <svg aria-hidden="true" class="hidden tablet:inline icon-logo-standard-menu-item fill-text text-brand">
-        <use xlink:href="#logo-wnyc-standard"></use>
+        <use href="#logo-wnyc-standard"></use>
       </svg>
       <svg aria-hidden="true" class="tablet:hidden icon-logo-stacked-menu-item fill-text text-brand">
-        <use xlink:href="#logo-wnyc-stacked"></use>
+        <use href="#logo-wnyc-stacked"></use>
       </svg>
     </a>
     <!--{ @class  Hide menu items for mobile using utilities }-->
     <a class="o-navigation__item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/index">Programs</a>
     <a class="o-navigation__item" href="#">Opportunities</a>
     <a class="o-navigation__item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/newsletter">Newsletter</a>
+    <button class="o-navigation__item" data-js="themes">
+      <svg class="o-navigation__menu-icon icon-wnyc-ui">
+        <use data-js-themes="icon" href="#feather-sun"></use>
+      </svg>
+      <span class="o-navigation__menu-label" data-js-themes="label">Theme</span>
+    </button>
     <!--button class='o-navigation__menu-item' data-js='search' aria-controls='aria-c-search' aria-expanded='false'-->
     <!--  svg class='o-navigation__menu-icon icon-wnyc-ui'-->
-    <!--    use xlink:href='#feather-search'-->
+    <!--    use href='#feather-search'-->
     <!--  span class='o-navigation__menu-label' Search-->
     <button aria-controls="aria-c-text-controller" aria-expanded="false" class="o-navigation__menu-item desktop:m-0" data-dialog="open" data-dialog-lock="true" data-js="dialog">
       <svg class="o-navigation__menu-icon icon-wnyc-ui">
-        <use xlink:href="#icon-wnyc-translate"></use>
+        <use href="#icon-wnyc-translate"></use>
       </svg>
       <span class="o-navigation__menu-label">Translate</span>
     </button>
     <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-navigation__menu-item desktop:hidden mie-0" data-js="mobile-menu" data-js-mobile-menu="open">
       <svg class="o-navigation__menu-icon icon-wnyc-ui">
-        <use xlink:href="#feather-menu"></use>
+        <use href="#feather-menu"></use>
       </svg>
       <span class="o-navigation__menu-label">Menu</span>
     </button>
@@ -49,9 +55,15 @@
   <!--{ @id     Identifies the Mobile Menu for toggling }-->
   <!--{ @class  Add "o-menu-fixed" in production layouts }-->
   <aside aria-hidden="true" class="o-menu o-menu-fixed hidden" id="aria-c-mobile-menu">
-    <div>
+    <button class="flex items-center justify-self-end mb-auto" data-js="themes">
+      <svg class="o-navigation__menu-icon icon-wnyc-ui">
+        <use data-js-themes="icon" href="#feather-sun"></use>
+      </svg>
+      <span class="o-navigation__menu-label" data-js-themes="label">Theme</span>
+    </button>
+    <div class="mb-auto">
       <!--{ @aria-label  Ensures landmarks are unique }-->
-      <nav aria-label="mobile menu" class="o-menu__nav">
+      <nav aria-label="Menu" class="o-menu__nav">
         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
         <a class="o-menu__nav-item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/index" tabindex="-1">Home</a>
         <a class="o-menu__nav-item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/index" tabindex="-1">Programs</a>
@@ -66,7 +78,7 @@
       <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-menu__nav-item flex items-center" data-js="mobile-menu" data-js-mobile-menu="close" tabindex="-1">
         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
         <svg aria-hidden="true" class="icon-wnyc-ui">
-          <use xlink:href="#feather-x"></use>
+          <use href="#feather-x"></use>
         </svg>
         <span>Close</span>
       </button>
@@ -78,7 +90,7 @@
         <div class="text-end">
           <button aria-controls="aria-c-text-controller" aria-expanded="false" class="btn btn-primary btn-small" data-dialog="close" data-js="dialog" tabindex="-1">
             <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
-              <use xlink:href="#feather-x"></use>
+              <use href="#feather-x"></use>
             </svg>
             <span>Close</span>
             <span class="sr-only">and return to site</span>
@@ -149,7 +161,7 @@
             <p>
               <svg class="icon-logo-google-translate" role="img" tabindex="-1">
                 <title>Powered by Google Translate</title>
-                <use xlink:href="#logo-google-translate"></use>
+                <use href="#logo-google-translate"></use>
               </svg>
             </p>
           </div>
@@ -166,7 +178,7 @@
           <div class="tablet:pe-4 tablet:py-4 tablet:sticky desktop:py-8 top-0">
             <h1 class="sr-only">Working N Y C</h1>
             <svg class="icon-logo-homepage fill-text text-brand">
-              <use xlink:href="#logo-wnyc-standard"></use>
+              <use href="#logo-wnyc-standard"></use>
             </svg>
             <h2 class="h4 font-primary tablet:font-normal tablet:text-h3 font-bold text-alt mb-5">Find and connect to services and resources that can help you prepare for and get a job.</h2>
           </div>
@@ -180,7 +192,7 @@
               <span>Scroll to browse programs</span>
               <br class="tablet:hidden" />
               <svg aria-hidden="true" class="icon-wnyc-ui m-0 mt-1">
-                <use xlink:href="#feather-chevron-down"></use>
+                <use href="#feather-chevron-down"></use>
               </svg>
             </a>
           </p>
@@ -188,12 +200,12 @@
             <div class="p-3 desktop:p-4">
               <fieldset class="mb-2">
                 <legend class="text-alt small">Question 1</legend>
-                <div class="c-question " id="85330a7a0828f">
-                  <label class="c-question__label" for="question-85330a7a0828f">Which of these options best describes you?</label>
+                <div class="c-question " id="4653f95b795a">
+                  <label class="c-question__label" for="question-4653f95b795a">Which of these options best describes you?</label>
                   <p>Select one. You can choose more later.</p>
                   <div class="c-question__container">
                     <div class="select ">
-                      <select aria-controls="aria-c-schedules" data-js="toggle" id="question-85330a7a0828f" name="population">
+                      <select aria-controls="aria-c-schedules" data-js="toggle" id="question-4653f95b795a" name="population">
                         <option selected="true" value="">Select an option</option>
                         <option value="youre-between-16-and-24-years-old">You’re between 16 and 24 years old</option>
                         <option value="youre-over-55-years-old">You’re over 55 years old</option>
@@ -207,7 +219,7 @@
                         <option value="youre-not-sure">You’re not sure</option>
                       </select>
                       <svg aria-hidden="true" class="select__graphic">
-                        <use xlink:href="#select-wnyc-chevrons"></use>
+                        <use href="#select-wnyc-chevrons"></use>
                       </svg>
                     </div>
                   </div>
@@ -215,11 +227,11 @@
               </fieldset>
               <fieldset aria-hidden="true" class="hidden mt-3" id="aria-c-schedules">
                 <legend class="text-alt small" tabindex="-1">Question 2</legend>
-                <div class="c-question " id="fb834f9e0c844">
-                  <label class="c-question__label" for="question-fb834f9e0c844" tabindex="-1">What kind of program fits your schedule best?</label>
+                <div class="c-question " id="d0407e9d4b55c">
+                  <label class="c-question__label" for="question-d0407e9d4b55c" tabindex="-1">What kind of program fits your schedule best?</label>
                   <div class="c-question__container">
                     <div class="select ">
-                      <select aria-controls="aria-c-services" data-js="toggle" id="question-fb834f9e0c844" name="schedule" tabindex="-1">
+                      <select aria-controls="aria-c-services" data-js="toggle" id="question-d0407e9d4b55c" name="schedule" tabindex="-1">
                         <option selected="true" value="">Select an option</option>
                         <option value="daytime">Daytime</option>
                         <option value="evening">Evening</option>
@@ -230,7 +242,7 @@
                         <option value="youre-not-sure">You’re not sure</option>
                       </select>
                       <svg aria-hidden="true" class="select__graphic">
-                        <use xlink:href="#select-wnyc-chevrons"></use>
+                        <use href="#select-wnyc-chevrons"></use>
                       </svg>
                     </div>
                   </div>
@@ -238,11 +250,11 @@
               </fieldset>
               <fieldset aria-hidden="true" class="hidden" id="aria-c-services">
                 <legend class="text-alt small" tabindex="-1">Question 3</legend>
-                <div class="c-question " id="41c0fb67a45ee">
-                  <label class="c-question__label" for="question-41c0fb67a45ee" tabindex="-1">What do you want to gain from job services?</label>
+                <div class="c-question " id="033742e59503f">
+                  <label class="c-question__label" for="question-033742e59503f" tabindex="-1">What do you want to gain from job services?</label>
                   <div class="c-question__container">
                     <div class="select ">
-                      <select aria-controls="aria-c-messaging" data-js="toggle" id="question-41c0fb67a45ee" name="service" tabindex="-1">
+                      <select aria-controls="aria-c-messaging" data-js="toggle" id="question-033742e59503f" name="service" tabindex="-1">
                         <option selected="true" value="">Select an option</option>
                         <option value="skills-for-a-new-job-or-career">Skills for a new job or career</option>
                         <option value="help-applying-for-jobs">Help applying for jobs</option>
@@ -252,7 +264,7 @@
                         <option value="im-not-sure">I'm not sure</option>
                       </select>
                       <svg aria-hidden="true" class="select__graphic">
-                        <use xlink:href="#select-wnyc-chevrons"></use>
+                        <use href="#select-wnyc-chevrons"></use>
                       </svg>
                     </div>
                   </div>
@@ -263,7 +275,7 @@
                 <article class="c-alert status-secondary mb-5" data-js="alert-success">
                   <div class="c-alert__graphic">
                     <svg aria-hidden="true" class="icon-wnyc-ui">
-                      <use xlink:href="#feather-info"></use>
+                      <use href="#feather-info"></use>
                     </svg>
                   </div>
                   <!--{ @aria-live  Setting aria-live="polite" dynamically is recommended for new content that appears based on user interaction }-->
@@ -276,7 +288,7 @@
                 <article class="c-alert status-tertiary mb-5" data-js="alert-warning">
                   <div class="c-alert__graphic">
                     <svg aria-hidden="true" class="icon-wnyc-ui">
-                      <use xlink:href="#feather-info"></use>
+                      <use href="#feather-info"></use>
                     </svg>
                   </div>
                   <!--{ @aria-live  Setting aria-live="polite" dynamically is recommended for new content that appears based on user interaction }-->
@@ -289,7 +301,7 @@
                 <article class="c-alert status-tertiary mb-5" data-js="alert-warning">
                   <div class="c-alert__graphic">
                     <svg aria-hidden="true" class="icon-wnyc-ui">
-                      <use xlink:href="#feather-info"></use>
+                      <use href="#feather-info"></use>
                     </svg>
                   </div>
                   <!--{ @aria-live  Setting aria-live="polite" dynamically is recommended for new content that appears based on user interaction }-->
@@ -355,7 +367,7 @@
                     <ul class="c-card__features">
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-award"></use>
+                          <use href="#feather-award"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.services">Training for a new career</span>,&nbsp; <span data-program="taxonomy.services">job certification</span>
@@ -363,7 +375,7 @@
                       </li>
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-calendar"></use>
+                          <use href="#feather-calendar"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.duration">4 weeks</span>,&nbsp; <span data-program="taxonomy.schedule">evening</span>&nbsp;schedule
@@ -372,13 +384,13 @@
                     </ul>
                     <a class="c-card__cta" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-left"></use>
+                        <use href="#feather-arrow-left"></use>
                       </svg>
                       <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Commercial driver training</span>
                         </span>
                       </span>
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-right"></use>
+                        <use href="#feather-arrow-right"></use>
                       </svg>
                     </a>
                   </div>
@@ -422,7 +434,7 @@
                     <ul class="c-card__features">
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-award"></use>
+                          <use href="#feather-award"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.services">Job training</span>,&nbsp; <span data-program="taxonomy.services">job prep</span>
@@ -430,7 +442,7 @@
                       </li>
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-calendar"></use>
+                          <use href="#feather-calendar"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.duration">6 months</span>,&nbsp; <span data-program="taxonomy.schedule">full time</span>&nbsp;schedule
@@ -439,13 +451,13 @@
                     </ul>
                     <a class="c-card__cta" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-left"></use>
+                        <use href="#feather-arrow-left"></use>
                       </svg>
                       <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Web development training</span>
                         </span>
                       </span>
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-right"></use>
+                        <use href="#feather-arrow-right"></use>
                       </svg>
                     </a>
                   </div>
@@ -489,7 +501,7 @@
                     <ul class="c-card__features">
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-award"></use>
+                          <use href="#feather-award"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.services">Job training</span>,&nbsp; <span data-program="taxonomy.services">job certification</span>
@@ -497,7 +509,7 @@
                       </li>
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-calendar"></use>
+                          <use href="#feather-calendar"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.duration">100 hours</span>,&nbsp; <span data-program="taxonomy.schedule">flexible</span>&nbsp;schedule <span>
@@ -505,13 +517,13 @@
                     </ul>
                     <a class="c-card__cta" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-left"></use>
+                        <use href="#feather-arrow-left"></use>
                       </svg>
                       <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Home health aide training</span>
                         </span>
                       </span>
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-right"></use>
+                        <use href="#feather-arrow-right"></use>
                       </svg>
                     </a>
                   </div>
@@ -554,7 +566,7 @@
                     <ul class="c-card__features">
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-award"></use>
+                          <use href="#feather-award"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.services">Training for a new career</span>,&nbsp; <span data-program="taxonomy.services">English language learning</span>
@@ -562,7 +574,7 @@
                       </li>
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-calendar"></use>
+                          <use href="#feather-calendar"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.duration">Less than 3 months</span>,&nbsp; <span data-program="taxonomy.schedule">full-time</span>
@@ -571,13 +583,13 @@
                     </ul>
                     <a class="c-card__cta" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-left"></use>
+                        <use href="#feather-arrow-left"></use>
                       </svg>
                       <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Bilingual commercial driver training</span>
                         </span>
                       </span>
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-right"></use>
+                        <use href="#feather-arrow-right"></use>
                       </svg>
                     </a>
                   </div>
@@ -586,11 +598,11 @@
               <div class="wrap relative tablet:hidden">
                 <button class="btn btn-secondary light:btn-primary btn-next flex w-full h-full" type="button">
                   <svg aria-hidden="true" class="icon-wnyc-ui">
-                    <use xlink:href="#feather-arrow-left"></use>
+                    <use href="#feather-arrow-left"></use>
                   </svg>
                   <span>View more programs</span>
                   <svg aria-hidden="true" class="icon-wnyc-ui">
-                    <use xlink:href="#feather-arrow-right"></use>
+                    <use href="#feather-arrow-right"></use>
                   </svg>
                 </button>
               </div>
@@ -599,11 +611,11 @@
               <div class="wrap tablet:py-6">
                 <button class="btn btn-secondary light:btn-primary btn-next flex w-full" type="button">
                   <svg aria-hidden="true" class="icon-wnyc-ui">
-                    <use xlink:href="#feather-arrow-left"></use>
+                    <use href="#feather-arrow-left"></use>
                   </svg>
                   <span>View more programs</span>
                   <svg aria-hidden="true" class="icon-wnyc-ui">
-                    <use xlink:href="#feather-arrow-right"></use>
+                    <use href="#feather-arrow-right"></use>
                   </svg>
                 </button>
               </div>
@@ -642,7 +654,7 @@
                     <ul class="c-card__features">
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-award"></use>
+                          <use href="#feather-award"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.services">Academic help</span>,&nbsp; <span data-program="taxonomy.services">paid work</span>,&nbsp; <span data-program="taxonomy.services">skill building</span>
@@ -650,7 +662,7 @@
                       </li>
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-calendar"></use>
+                          <use href="#feather-calendar"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.duration">6 months</span>,&nbsp; <span data-program="taxonomy.schedule">full-time</span>&nbsp;schedule
@@ -659,13 +671,13 @@
                     </ul>
                     <a class="c-card__cta" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-left"></use>
+                        <use href="#feather-arrow-left"></use>
                       </svg>
                       <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">HSE and job prep for youth</span>
                         </span>
                       </span>
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-right"></use>
+                        <use href="#feather-arrow-right"></use>
                       </svg>
                     </a>
                   </div>
@@ -690,7 +702,7 @@
                     <ul class="c-card__features">
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-award"></use>
+                          <use href="#feather-award"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.services">Adult education</span>,&nbsp; <span data-program="taxonomy.services">HSE prep</span>
@@ -698,7 +710,7 @@
                       </li>
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-calendar"></use>
+                          <use href="#feather-calendar"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.duration">3 months</span>,&nbsp; <span data-program="taxonomy.schedule">varied</span>&nbsp;schedule
@@ -707,13 +719,13 @@
                     </ul>
                     <a class="c-card__cta" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-left"></use>
+                        <use href="#feather-arrow-left"></use>
                       </svg>
                       <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Math and reading for HSE Prep</span>
                         </span>
                       </span>
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-right"></use>
+                        <use href="#feather-arrow-right"></use>
                       </svg>
                     </a>
                   </div>
@@ -755,7 +767,7 @@
                     <ul class="c-card__features">
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-award"></use>
+                          <use href="#feather-award"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.services">Improving English skills</span>
@@ -763,7 +775,7 @@
                       </li>
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-calendar"></use>
+                          <use href="#feather-calendar"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.duration">3 months</span>,&nbsp; <span data-program="taxonomy.schedule">daytime</span>, or&nbsp; <span data-program="taxonomy.schedule">part-time</span>
@@ -772,13 +784,13 @@
                     </ul>
                     <a class="c-card__cta" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-left"></use>
+                        <use href="#feather-arrow-left"></use>
                       </svg>
                       <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Classes to improve English skills</span>
                         </span>
                       </span>
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-right"></use>
+                        <use href="#feather-arrow-right"></use>
                       </svg>
                     </a>
                   </div>
@@ -820,7 +832,7 @@
                     <ul class="c-card__features">
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-award"></use>
+                          <use href="#feather-award"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.services">English language learning</span>,&nbsp; <span data-program="taxonomy.services">help finding work</span>
@@ -828,7 +840,7 @@
                       </li>
                       <li class="flex items-center">
                         <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                          <use xlink:href="#feather-calendar"></use>
+                          <use href="#feather-calendar"></use>
                         </svg>
                         <span>
                           <span data-program="taxonomy.duration">Less than 3 months</span>,&nbsp; <span data-program="taxonomy.schedule">evening</span>,&nbsp; <span data-program="taxonomy.schedule">weekend</span>, or&nbsp; <span data-program="taxonomy.schedule">part-time</span>
@@ -837,13 +849,13 @@
                     </ul>
                     <a class="c-card__cta" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-left"></use>
+                        <use href="#feather-arrow-left"></use>
                       </svg>
                       <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Career-focused English learning</span>
                         </span>
                       </span>
                       <svg aria-hidden="true" class="icon-wnyc-ui">
-                        <use xlink:href="#feather-arrow-right"></use>
+                        <use href="#feather-arrow-right"></use>
                       </svg>
                     </a>
                   </div>
@@ -852,11 +864,11 @@
               <div class="wrap relative tablet:hidden">
                 <button class="btn btn-secondary light:btn-primary btn-next flex w-full h-full" type="button">
                   <svg aria-hidden="true" class="icon-wnyc-ui">
-                    <use xlink:href="#feather-arrow-left"></use>
+                    <use href="#feather-arrow-left"></use>
                   </svg>
                   <span>View more programs</span>
                   <svg aria-hidden="true" class="icon-wnyc-ui">
-                    <use xlink:href="#feather-arrow-right"></use>
+                    <use href="#feather-arrow-right"></use>
                   </svg>
                 </button>
               </div>
@@ -865,11 +877,11 @@
               <div class="wrap tablet:py-6">
                 <button class="btn btn-secondary light:btn-primary btn-next flex w-full" type="button">
                   <svg aria-hidden="true" class="icon-wnyc-ui">
-                    <use xlink:href="#feather-arrow-left"></use>
+                    <use href="#feather-arrow-left"></use>
                   </svg>
                   <span>View more programs</span>
                   <svg aria-hidden="true" class="icon-wnyc-ui">
-                    <use xlink:href="#feather-arrow-right"></use>
+                    <use href="#feather-arrow-right"></use>
                   </svg>
                 </button>
               </div>
@@ -901,7 +913,7 @@
                       <ul class="c-card__features">
                         <li class="flex items-center">
                           <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                            <use xlink:href="#feather-alert-triangle"></use>
+                            <use href="#feather-alert-triangle"></use>
                           </svg>
                           <span>Posted Tuesday, November 24th, 10:39am</span>
                         </li>
@@ -911,16 +923,16 @@
                         <!--{ @data-web-share  Data attribute for holding data sent to the navigator.share() method. Note, in the Markup quotes are escaped as "&quot;" however, they must be regular quotes; "". Inspect the source of the Demostration to see the real example }-->
                         <!--{ @aria-controls   Targets the Web Share fallback }-->
                         <!--{ @aria-expanded   Indicates if the Web Share fallback is open or not }-->
-                        <button aria-controls="aria-c-web-share-fallback-140dc7473b5ec" aria-expanded="false" class="btn btn-small btn-primary m-0" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;\n        &lt;mark class=\&quot;badge\&quot;&gt;New&lt;/mark&gt; Money for heat and utility expenses\n        &lt;svg aria-hidden=\&quot;true\&quot; class=\&quot;icon-wnyc-ui\&quot;&gt;\n          &lt;use xlink:href=\&quot;#feather-external-link\&quot;&gt;&lt;/use&gt;\n        &lt;/svg&gt;\n      &quot;,&quot;text&quot;:&quot;&lt;p&gt;The HEAP Program is open from November 2, 2020 to March 15, 2021.&lt;/p&gt;&quot;,&quot;url&quot;:&quot;https://cityofnewyork.github.io/working-nyc-patterns/demos/news/#&quot;}">
+                        <button aria-controls="aria-c-web-share-fallback-14d653ef867f2" aria-expanded="false" class="btn btn-small btn-primary m-0" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;\n        &lt;mark class=\&quot;badge\&quot;&gt;New&lt;/mark&gt; Money for heat and utility expenses\n        &lt;svg aria-hidden=\&quot;true\&quot; class=\&quot;icon-wnyc-ui\&quot;&gt;\n          &lt;use xlink:href=\&quot;#feather-external-link\&quot;&gt;&lt;/use&gt;\n        &lt;/svg&gt;\n      &quot;,&quot;text&quot;:&quot;&lt;p&gt;The HEAP Program is open from November 2, 2020 to March 15, 2021.&lt;/p&gt;&quot;,&quot;url&quot;:&quot;https://cityofnewyork.github.io/working-nyc-patterns/demos/news/#&quot;}">
                           <svg class="c-web-share__icon icon-wnyc-ui">
-                            <use xlink:href="#feather-share-2"></use>
+                            <use href="#feather-share-2"></use>
                           </svg>
                           <span>Share</span>
                         </button>
                         <!--{ Web Share Fallback }-->
                         <!--{ @id    Toggle target of the web share button. Must match the "aria-controls" attribute of the toggling button }-->
                         <!--{ @role  Indicates an area of significance }-->
-                        <div aria-hidden="true" class="c-web-share__fallback color-card hidden " id="aria-c-web-share-fallback-140dc7473b5ec" role="region">
+                        <div aria-hidden="true" class="c-web-share__fallback color-card hidden " id="aria-c-web-share-fallback-14d653ef867f2" role="region">
                           <div class="c-web-share__fallback-body">
                             <div class="flex mb-1 items-center flex-row-reverse">
                               <!--{ @data-js        data-js="web-share" designates this element as a toggling element for the dropdown }-->
@@ -928,9 +940,9 @@
                               <!--{ @aria-expanded  Indicates if the dropdown is open or not }-->
                               <!--{ @data-dialog  data-dialog="close" designates this element as the primary close toggle for the dropdown. It will be focused on when the dropdown is opened. Only one close toggle associated with this aria-controls value can exist on the page }-->
                               <!--{ @tabindex       Set the tabindex to '-1' on focusable elements if this area is hidden when the page is rendered }-->
-                              <button aria-controls="aria-c-web-share-fallback-140dc7473b5ec" aria-expanded="false" class="btn btn-primary btn-small m-0" data-js="web-share" tabindex="-1">
+                              <button aria-controls="aria-c-web-share-fallback-14d653ef867f2" aria-expanded="false" class="btn btn-primary btn-small m-0" data-js="web-share" tabindex="-1">
                                 <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
-                                  <use xlink:href="#feather-x"></use>
+                                  <use href="#feather-x"></use>
                                 </svg>
                                 <span>Close</span>
                               </button>
@@ -948,24 +960,24 @@
                               <!--{ @aria-pressed  Will signify a pressed state to screen readers }-->
                               <button aria-pressed="false" class="c-web-share__item c-web-share__copy btn btn-small btn-primary mx-0" data-copy="web-share-url" data-js="copy" tabindex="-1">
                                 <svg class="icon icon-wnyc-ui">
-                                  <use xlink:href="#feather-copy"></use>
+                                  <use href="#feather-copy"></use>
                                 </svg>
                                 <svg class="icon-pressed icon-wnyc-ui mie-1">
-                                  <use xlink:href="#feather-check"></use>
+                                  <use href="#feather-check"></use>
                                 </svg>
                                 <span>Copy URL</span>
                               </button>
                               <!--{ Facebook Sharer }-->
                               <a class="c-web-share__item btn btn-small btn-primary mx-0" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcityofnewyork.github.io%2Fworking-nyc-patterns%2Fdemos%2Fnews%2F%23" tabindex="-1" target="_blank">
                                 <svg class="icon-wnyc-ui">
-                                  <use xlink:href="#feather-facebook"></use>
+                                  <use href="#feather-facebook"></use>
                                 </svg>
                                 <span>Facebook</span>
                               </a>
                               <!--{ Twitter Tweet }-->
                               <a class="c-web-share__item btn btn-small btn-primary mx-0" href="https://twitter.com/intent/tweet?text=%3Cp%3EThe%20HEAP%20Program%20is%20open%20from%20November%202%2C%202020%20to%20March%2015%2C%202021.%3C%2Fp%3E%20https%3A%2F%2Fcityofnewyork.github.io%2Fworking-nyc-patterns%2Fdemos%2Fnews%2F%23" tabindex="-1" target="_blank">
                                 <svg class="icon-wnyc-ui">
-                                  <use xlink:href="#feather-twitter"></use>
+                                  <use href="#feather-twitter"></use>
                                 </svg>
                                 <span>Twitter</span>
                               </a>
@@ -995,7 +1007,7 @@
                       <ul class="c-card__features">
                         <li class="flex items-center">
                           <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                            <use xlink:href="#feather-alert-triangle"></use>
+                            <use href="#feather-alert-triangle"></use>
                           </svg>
                           <span>Posted Tuesday, November 24th, 10:39am</span>
                         </li>
@@ -1005,16 +1017,16 @@
                         <!--{ @data-web-share  Data attribute for holding data sent to the navigator.share() method. Note, in the Markup quotes are escaped as "&quot;" however, they must be regular quotes; "". Inspect the source of the Demostration to see the real example }-->
                         <!--{ @aria-controls   Targets the Web Share fallback }-->
                         <!--{ @aria-expanded   Indicates if the Web Share fallback is open or not }-->
-                        <button aria-controls="aria-c-web-share-fallback-3e566d0681889" aria-expanded="false" class="btn btn-small btn-primary m-0" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;\n        Get no-cost or low-cost healthcare\n        &lt;svg aria-hidden=\&quot;true\&quot; class=\&quot;icon-wnyc-ui\&quot;&gt;\n          &lt;use xlink:href=\&quot;#feather-external-link\&quot;&gt;&lt;/use&gt;\n        &lt;/svg&gt;\n      &quot;,&quot;text&quot;:&quot;&lt;p&gt;Available to those who don't qualify for government-sponsored health insurance.&lt;/p&gt;&quot;,&quot;url&quot;:&quot;https://cityofnewyork.github.io/working-nyc-patterns/demos/news/#&quot;}">
+                        <button aria-controls="aria-c-web-share-fallback-fc8433efaac3b" aria-expanded="false" class="btn btn-small btn-primary m-0" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;\n        Get no-cost or low-cost healthcare\n        &lt;svg aria-hidden=\&quot;true\&quot; class=\&quot;icon-wnyc-ui\&quot;&gt;\n          &lt;use xlink:href=\&quot;#feather-external-link\&quot;&gt;&lt;/use&gt;\n        &lt;/svg&gt;\n      &quot;,&quot;text&quot;:&quot;&lt;p&gt;Available to those who don't qualify for government-sponsored health insurance.&lt;/p&gt;&quot;,&quot;url&quot;:&quot;https://cityofnewyork.github.io/working-nyc-patterns/demos/news/#&quot;}">
                           <svg class="c-web-share__icon icon-wnyc-ui">
-                            <use xlink:href="#feather-share-2"></use>
+                            <use href="#feather-share-2"></use>
                           </svg>
                           <span>Share</span>
                         </button>
                         <!--{ Web Share Fallback }-->
                         <!--{ @id    Toggle target of the web share button. Must match the "aria-controls" attribute of the toggling button }-->
                         <!--{ @role  Indicates an area of significance }-->
-                        <div aria-hidden="true" class="c-web-share__fallback color-card hidden " id="aria-c-web-share-fallback-3e566d0681889" role="region">
+                        <div aria-hidden="true" class="c-web-share__fallback color-card hidden " id="aria-c-web-share-fallback-fc8433efaac3b" role="region">
                           <div class="c-web-share__fallback-body">
                             <div class="flex mb-1 items-center flex-row-reverse">
                               <!--{ @data-js        data-js="web-share" designates this element as a toggling element for the dropdown }-->
@@ -1022,9 +1034,9 @@
                               <!--{ @aria-expanded  Indicates if the dropdown is open or not }-->
                               <!--{ @data-dialog  data-dialog="close" designates this element as the primary close toggle for the dropdown. It will be focused on when the dropdown is opened. Only one close toggle associated with this aria-controls value can exist on the page }-->
                               <!--{ @tabindex       Set the tabindex to '-1' on focusable elements if this area is hidden when the page is rendered }-->
-                              <button aria-controls="aria-c-web-share-fallback-3e566d0681889" aria-expanded="false" class="btn btn-primary btn-small m-0" data-js="web-share" tabindex="-1">
+                              <button aria-controls="aria-c-web-share-fallback-fc8433efaac3b" aria-expanded="false" class="btn btn-primary btn-small m-0" data-js="web-share" tabindex="-1">
                                 <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
-                                  <use xlink:href="#feather-x"></use>
+                                  <use href="#feather-x"></use>
                                 </svg>
                                 <span>Close</span>
                               </button>
@@ -1042,24 +1054,24 @@
                               <!--{ @aria-pressed  Will signify a pressed state to screen readers }-->
                               <button aria-pressed="false" class="c-web-share__item c-web-share__copy btn btn-small btn-primary mx-0" data-copy="web-share-url" data-js="copy" tabindex="-1">
                                 <svg class="icon icon-wnyc-ui">
-                                  <use xlink:href="#feather-copy"></use>
+                                  <use href="#feather-copy"></use>
                                 </svg>
                                 <svg class="icon-pressed icon-wnyc-ui mie-1">
-                                  <use xlink:href="#feather-check"></use>
+                                  <use href="#feather-check"></use>
                                 </svg>
                                 <span>Copy URL</span>
                               </button>
                               <!--{ Facebook Sharer }-->
                               <a class="c-web-share__item btn btn-small btn-primary mx-0" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcityofnewyork.github.io%2Fworking-nyc-patterns%2Fdemos%2Fnews%2F%23" tabindex="-1" target="_blank">
                                 <svg class="icon-wnyc-ui">
-                                  <use xlink:href="#feather-facebook"></use>
+                                  <use href="#feather-facebook"></use>
                                 </svg>
                                 <span>Facebook</span>
                               </a>
                               <!--{ Twitter Tweet }-->
                               <a class="c-web-share__item btn btn-small btn-primary mx-0" href="https://twitter.com/intent/tweet?text=%3Cp%3EAvailable%20to%20those%20who%20don't%20qualify%20for%20government-sponsored%20health%20insurance.%3C%2Fp%3E%20https%3A%2F%2Fcityofnewyork.github.io%2Fworking-nyc-patterns%2Fdemos%2Fnews%2F%23" tabindex="-1" target="_blank">
                                 <svg class="icon-wnyc-ui">
-                                  <use xlink:href="#feather-twitter"></use>
+                                  <use href="#feather-twitter"></use>
                                 </svg>
                                 <span>Twitter</span>
                               </a>
@@ -1089,7 +1101,7 @@
                       <ul class="c-card__features">
                         <li class="flex items-center">
                           <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                            <use xlink:href="#feather-alert-triangle"></use>
+                            <use href="#feather-alert-triangle"></use>
                           </svg>
                           <span>Posted Tuesday, November 24th, 10:39am</span>
                         </li>
@@ -1099,16 +1111,16 @@
                         <!--{ @data-web-share  Data attribute for holding data sent to the navigator.share() method. Note, in the Markup quotes are escaped as "&quot;" however, they must be regular quotes; "". Inspect the source of the Demostration to see the real example }-->
                         <!--{ @aria-controls   Targets the Web Share fallback }-->
                         <!--{ @aria-expanded   Indicates if the Web Share fallback is open or not }-->
-                        <button aria-controls="aria-c-web-share-fallback-8f792af030799" aria-expanded="false" class="btn btn-small btn-primary m-0" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;\n        Help Avoiding Eviction\n        &lt;svg aria-hidden=\&quot;true\&quot; class=\&quot;icon-wnyc-ui\&quot;&gt;\n          &lt;use xlink:href=\&quot;#feather-external-link\&quot;&gt;&lt;/use&gt;\n        &lt;/svg&gt;\n      &quot;,&quot;text&quot;:&quot;&lt;p&gt;Available regardless of immigration status.&lt;/p&gt;&quot;,&quot;url&quot;:&quot;https://cityofnewyork.github.io/working-nyc-patterns/demos/news/#&quot;}">
+                        <button aria-controls="aria-c-web-share-fallback-c89a209776939" aria-expanded="false" class="btn btn-small btn-primary m-0" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;\n        Help Avoiding Eviction\n        &lt;svg aria-hidden=\&quot;true\&quot; class=\&quot;icon-wnyc-ui\&quot;&gt;\n          &lt;use xlink:href=\&quot;#feather-external-link\&quot;&gt;&lt;/use&gt;\n        &lt;/svg&gt;\n      &quot;,&quot;text&quot;:&quot;&lt;p&gt;Available regardless of immigration status.&lt;/p&gt;&quot;,&quot;url&quot;:&quot;https://cityofnewyork.github.io/working-nyc-patterns/demos/news/#&quot;}">
                           <svg class="c-web-share__icon icon-wnyc-ui">
-                            <use xlink:href="#feather-share-2"></use>
+                            <use href="#feather-share-2"></use>
                           </svg>
                           <span>Share</span>
                         </button>
                         <!--{ Web Share Fallback }-->
                         <!--{ @id    Toggle target of the web share button. Must match the "aria-controls" attribute of the toggling button }-->
                         <!--{ @role  Indicates an area of significance }-->
-                        <div aria-hidden="true" class="c-web-share__fallback color-card hidden " id="aria-c-web-share-fallback-8f792af030799" role="region">
+                        <div aria-hidden="true" class="c-web-share__fallback color-card hidden " id="aria-c-web-share-fallback-c89a209776939" role="region">
                           <div class="c-web-share__fallback-body">
                             <div class="flex mb-1 items-center flex-row-reverse">
                               <!--{ @data-js        data-js="web-share" designates this element as a toggling element for the dropdown }-->
@@ -1116,9 +1128,9 @@
                               <!--{ @aria-expanded  Indicates if the dropdown is open or not }-->
                               <!--{ @data-dialog  data-dialog="close" designates this element as the primary close toggle for the dropdown. It will be focused on when the dropdown is opened. Only one close toggle associated with this aria-controls value can exist on the page }-->
                               <!--{ @tabindex       Set the tabindex to '-1' on focusable elements if this area is hidden when the page is rendered }-->
-                              <button aria-controls="aria-c-web-share-fallback-8f792af030799" aria-expanded="false" class="btn btn-primary btn-small m-0" data-js="web-share" tabindex="-1">
+                              <button aria-controls="aria-c-web-share-fallback-c89a209776939" aria-expanded="false" class="btn btn-primary btn-small m-0" data-js="web-share" tabindex="-1">
                                 <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
-                                  <use xlink:href="#feather-x"></use>
+                                  <use href="#feather-x"></use>
                                 </svg>
                                 <span>Close</span>
                               </button>
@@ -1136,24 +1148,24 @@
                               <!--{ @aria-pressed  Will signify a pressed state to screen readers }-->
                               <button aria-pressed="false" class="c-web-share__item c-web-share__copy btn btn-small btn-primary mx-0" data-copy="web-share-url" data-js="copy" tabindex="-1">
                                 <svg class="icon icon-wnyc-ui">
-                                  <use xlink:href="#feather-copy"></use>
+                                  <use href="#feather-copy"></use>
                                 </svg>
                                 <svg class="icon-pressed icon-wnyc-ui mie-1">
-                                  <use xlink:href="#feather-check"></use>
+                                  <use href="#feather-check"></use>
                                 </svg>
                                 <span>Copy URL</span>
                               </button>
                               <!--{ Facebook Sharer }-->
                               <a class="c-web-share__item btn btn-small btn-primary mx-0" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcityofnewyork.github.io%2Fworking-nyc-patterns%2Fdemos%2Fnews%2F%23" tabindex="-1" target="_blank">
                                 <svg class="icon-wnyc-ui">
-                                  <use xlink:href="#feather-facebook"></use>
+                                  <use href="#feather-facebook"></use>
                                 </svg>
                                 <span>Facebook</span>
                               </a>
                               <!--{ Twitter Tweet }-->
                               <a class="c-web-share__item btn btn-small btn-primary mx-0" href="https://twitter.com/intent/tweet?text=%3Cp%3EAvailable%20regardless%20of%20immigration%20status.%3C%2Fp%3E%20https%3A%2F%2Fcityofnewyork.github.io%2Fworking-nyc-patterns%2Fdemos%2Fnews%2F%23" tabindex="-1" target="_blank">
                                 <svg class="icon-wnyc-ui">
-                                  <use xlink:href="#feather-twitter"></use>
+                                  <use href="#feather-twitter"></use>
                                 </svg>
                                 <span>Twitter</span>
                               </a>
@@ -1183,7 +1195,7 @@
                       <ul class="c-card__features">
                         <li class="flex items-center">
                           <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
-                            <use xlink:href="#feather-alert-triangle"></use>
+                            <use href="#feather-alert-triangle"></use>
                           </svg>
                           <span>Posted Tuesday, November 24th, 10:39am</span>
                         </li>
@@ -1193,16 +1205,16 @@
                         <!--{ @data-web-share  Data attribute for holding data sent to the navigator.share() method. Note, in the Markup quotes are escaped as "&quot;" however, they must be regular quotes; "". Inspect the source of the Demostration to see the real example }-->
                         <!--{ @aria-controls   Targets the Web Share fallback }-->
                         <!--{ @aria-expanded   Indicates if the Web Share fallback is open or not }-->
-                        <button aria-controls="aria-c-web-share-fallback-26596bb9abd0e" aria-expanded="false" class="btn btn-small btn-primary m-0" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;\n        Low-cost and free health insurance\n        &lt;svg aria-hidden=\&quot;true\&quot; class=\&quot;icon-wnyc-ui\&quot;&gt;\n          &lt;use xlink:href=\&quot;#feather-external-link\&quot;&gt;&lt;/use&gt;\n        &lt;/svg&gt;\n      &quot;,&quot;text&quot;:&quot;&lt;p&gt;Open enrollment through the New York State of Health is from November 1, 2020 to January 31, 2021.&lt;/p&gt;&quot;,&quot;url&quot;:&quot;https://cityofnewyork.github.io/working-nyc-patterns/demos/news/#&quot;}">
+                        <button aria-controls="aria-c-web-share-fallback-165e3cf806b28" aria-expanded="false" class="btn btn-small btn-primary m-0" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;\n        Low-cost and free health insurance\n        &lt;svg aria-hidden=\&quot;true\&quot; class=\&quot;icon-wnyc-ui\&quot;&gt;\n          &lt;use xlink:href=\&quot;#feather-external-link\&quot;&gt;&lt;/use&gt;\n        &lt;/svg&gt;\n      &quot;,&quot;text&quot;:&quot;&lt;p&gt;Open enrollment through the New York State of Health is from November 1, 2020 to January 31, 2021.&lt;/p&gt;&quot;,&quot;url&quot;:&quot;https://cityofnewyork.github.io/working-nyc-patterns/demos/news/#&quot;}">
                           <svg class="c-web-share__icon icon-wnyc-ui">
-                            <use xlink:href="#feather-share-2"></use>
+                            <use href="#feather-share-2"></use>
                           </svg>
                           <span>Share</span>
                         </button>
                         <!--{ Web Share Fallback }-->
                         <!--{ @id    Toggle target of the web share button. Must match the "aria-controls" attribute of the toggling button }-->
                         <!--{ @role  Indicates an area of significance }-->
-                        <div aria-hidden="true" class="c-web-share__fallback color-card hidden " id="aria-c-web-share-fallback-26596bb9abd0e" role="region">
+                        <div aria-hidden="true" class="c-web-share__fallback color-card hidden " id="aria-c-web-share-fallback-165e3cf806b28" role="region">
                           <div class="c-web-share__fallback-body">
                             <div class="flex mb-1 items-center flex-row-reverse">
                               <!--{ @data-js        data-js="web-share" designates this element as a toggling element for the dropdown }-->
@@ -1210,9 +1222,9 @@
                               <!--{ @aria-expanded  Indicates if the dropdown is open or not }-->
                               <!--{ @data-dialog  data-dialog="close" designates this element as the primary close toggle for the dropdown. It will be focused on when the dropdown is opened. Only one close toggle associated with this aria-controls value can exist on the page }-->
                               <!--{ @tabindex       Set the tabindex to '-1' on focusable elements if this area is hidden when the page is rendered }-->
-                              <button aria-controls="aria-c-web-share-fallback-26596bb9abd0e" aria-expanded="false" class="btn btn-primary btn-small m-0" data-js="web-share" tabindex="-1">
+                              <button aria-controls="aria-c-web-share-fallback-165e3cf806b28" aria-expanded="false" class="btn btn-primary btn-small m-0" data-js="web-share" tabindex="-1">
                                 <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
-                                  <use xlink:href="#feather-x"></use>
+                                  <use href="#feather-x"></use>
                                 </svg>
                                 <span>Close</span>
                               </button>
@@ -1230,24 +1242,24 @@
                               <!--{ @aria-pressed  Will signify a pressed state to screen readers }-->
                               <button aria-pressed="false" class="c-web-share__item c-web-share__copy btn btn-small btn-primary mx-0" data-copy="web-share-url" data-js="copy" tabindex="-1">
                                 <svg class="icon icon-wnyc-ui">
-                                  <use xlink:href="#feather-copy"></use>
+                                  <use href="#feather-copy"></use>
                                 </svg>
                                 <svg class="icon-pressed icon-wnyc-ui mie-1">
-                                  <use xlink:href="#feather-check"></use>
+                                  <use href="#feather-check"></use>
                                 </svg>
                                 <span>Copy URL</span>
                               </button>
                               <!--{ Facebook Sharer }-->
                               <a class="c-web-share__item btn btn-small btn-primary mx-0" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcityofnewyork.github.io%2Fworking-nyc-patterns%2Fdemos%2Fnews%2F%23" tabindex="-1" target="_blank">
                                 <svg class="icon-wnyc-ui">
-                                  <use xlink:href="#feather-facebook"></use>
+                                  <use href="#feather-facebook"></use>
                                 </svg>
                                 <span>Facebook</span>
                               </a>
                               <!--{ Twitter Tweet }-->
                               <a class="c-web-share__item btn btn-small btn-primary mx-0" href="https://twitter.com/intent/tweet?text=%3Cp%3EOpen%20enrollment%20through%20the%20New%20York%20State%20of%20Health%20is%20from%20November%201%2C%202020%20to%20January%2031%2C%202021.%3C%2Fp%3E%20https%3A%2F%2Fcityofnewyork.github.io%2Fworking-nyc-patterns%2Fdemos%2Fnews%2F%23" tabindex="-1" target="_blank">
                                 <svg class="icon-wnyc-ui">
-                                  <use xlink:href="#feather-twitter"></use>
+                                  <use href="#feather-twitter"></use>
                                 </svg>
                                 <span>Twitter</span>
                               </a>
@@ -1270,12 +1282,12 @@
           <article class="c-alert status-primary" data-js="alert-warning">
             <div class="c-alert__graphic">
               <svg aria-hidden="true" class="icon-wnyc-ui">
-                <use xlink:href="#feather-help-circle"></use>
+                <use href="#feather-help-circle"></use>
               </svg>
             </div>
             <div class="c-alert__body">
               <p data-js-alert="text">How can we improve this website? Let us know by <a class='inline-flex items-center' href='https://airtable.com/shrfQGpXvo9mmmHpJ' target='_blank'>sending us feedback <svg aria-hidden='true' class='icon-wnyc-ui' style='margin-left: 5px;'>
-                    <use xlink:href='#feather-external-link'></use>
+                    <use href='#feather-external-link'></use>
                   </svg>
                 </a>
               </p>
@@ -1287,16 +1299,16 @@
         <div class="pt-2 pb-3 wrap">
           <h2 class="o-newsletter__heading h4 font-normal">Newsletter</h2>
           <form action="https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;id=aa67394696" id="mc-embedded-subscribe-form" method="post" target="_blank">
-            <div class="c-question c-question-single" id="7972bc75cf70e">
+            <div class="c-question c-question-single" id="939a24b71b854">
               <!--{ @for  Should match the id of the input }-->
-              <label class="c-question__label" for="question-7972bc75cf70e">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
+              <label class="c-question__label" for="question-939a24b71b854">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
               <div class="c-question__container">
                 <div class="c-question__input">
                   <div class="input">
                     <!--{ @required  required="true" specifies wether the input is required by a form }-->
                     <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <input id="question-7972bc75cf70e" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
+                    <input id="question-939a24b71b854" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
                   </div>
                   <div class="c-question__button">
                     <button class="btn btn-primary btn-small" type="submit">Submit</button>
@@ -1309,14 +1321,14 @@
       </section>
     </main>
   </div>
-  <footer aria-label="Primary Footer" class="o-footer bg-scale-2 " role="contentinfo">
+  <footer aria-label="Footer" class="o-footer bg-scale-2 " role="contentinfo">
     <div class="page-max">
       <div class="o-attribution">
-        <nav aria-label="Footer Primary Navigation" class="o-footer__nav">
+        <nav aria-label="Footer Navigation" class="o-footer__nav">
           <a class="o-footer__item uppercase text-small no-underline" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/index">
             <span class="sr-only">Working N Y C</span>
             <svg aria-hidden="true" class="icon-logo-standard-menu-item fill-text text-brand">
-              <use xlink:href="#logo-wnyc-standard"></use>
+              <use href="#logo-wnyc-standard"></use>
             </svg>
           </a>
           <a class="o-footer__item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/index">Programs</a>
@@ -1346,7 +1358,7 @@
               <br />NYC is a trademark and service mark of the City of New York.
             </p>
           </div>
-          <nav aria-label="Footer Tertiary Navigation" class="o-footer__nav">
+          <nav aria-label="Sitemap and Legal Information" class="o-footer__nav">
             <a class="o-footer__item" href="#">Sitemap</a>
             <a class="o-footer__item" href="https://www1.nyc.gov/home/privacy-policy.page" rel="nofollow noopener" target="_blank">Privacy Policy</a>
             <a class="o-footer__item" href="https://www1.nyc.gov/home/terms-of-use.page" rel="nofollow noopener" target="_blank">Terms of Use</a>
@@ -1365,13 +1377,14 @@
     patterns.icons('https://cityofnewyork.github.io/working-nyc-patterns/svg/icons.svg');
     patterns.icons('https://cityofnewyork.github.io/working-nyc-patterns/svg/feather.svg');
     patterns.menu();
-    patterns.search();
-    patterns.toggle();
-    patterns.webShare();
     patterns.newsletter('https://cityofnewyork.github.io/working-nyc-patterns/demos/newsletter');
     patterns.newsletterForm();
-    patterns.validateAndQuery();
+    patterns.search();
     patterns.setObjectHeights();
+    patterns.themes();
+    patterns.toggle();
+    patterns.webShare();
+    patterns.validateAndQuery();
   </script>
 </body>
 

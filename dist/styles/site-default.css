@@ -2,11 +2,11 @@
  * Fonts
  */
 
-@import url();
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,800,800i%7CMontserrat:400,400i,700");
 
-@import url("tokens-default.css") screen and (prefers-color-scheme: dark);
+@import url("tokens-default.css");
 
-@import url("tokens-light.css") screen and (prefers-color-scheme: light);
+@import url("tokens-light.css");
 
 :root {
   --o-attribution-grid-base: 8px;
@@ -446,6 +446,26 @@ button:focus {
   background-color: var(--wnyc-button-disabled-background);
 }
 
+html.light .light\:btn-primary {
+  color: var(--wnyc-button-primary-text);
+  background-color: var(--wnyc-button-primary-background);
+  border-color: transparent;
+}
+
+html.light .light\:btn-primary:visited {
+  color: var(--wnyc-button-primary-text);
+  background-color: var(--wnyc-button-primary-background);
+}
+
+html.light .light\:btn-primary:hover:not([disabled]), html.light .light\:btn-primary:active:not([disabled]) {
+  color: var(--wnyc-button-primary-text-hover);
+  background-color: var(--wnyc-button-primary-background-hover);
+}
+
+html.light .light\:btn-primary:disabled {
+  background-color: var(--wnyc-button-disabled-background);
+}
+
 .btn-secondary {
   color: var(--wnyc-button-secondary-text);
   background-color: var(--wnyc-button-secondary-background);
@@ -466,6 +486,26 @@ button:focus {
   background-color: var(--wnyc-button-disabled-background);
 }
 
+html.light .light\:btn-secondary {
+  color: var(--wnyc-button-secondary-text);
+  background-color: var(--wnyc-button-secondary-background);
+  border-color: transparent;
+}
+
+html.light .light\:btn-secondary:visited {
+  color: var(--wnyc-button-secondary-text);
+  background-color: var(--wnyc-button-secondary-background);
+}
+
+html.light .light\:btn-secondary:hover:not([disabled]), html.light .light\:btn-secondary:active:not([disabled]) {
+  color: var(--wnyc-button-secondary-text-hover);
+  background-color: var(--wnyc-button-secondary-background-hover);
+}
+
+html.light .light\:btn-secondary:disabled {
+  background-color: var(--wnyc-button-disabled-background);
+}
+
 .btn-tertiary {
   color: var(--wnyc-button-tertiary-text);
   background-color: var(--wnyc-button-tertiary-background);
@@ -483,6 +523,26 @@ button:focus {
 }
 
 .btn-tertiary:disabled {
+  background-color: var(--wnyc-button-disabled-background);
+}
+
+html.light .light\:btn-tertiary {
+  color: var(--wnyc-button-tertiary-text);
+  background-color: var(--wnyc-button-tertiary-background);
+  border-color: transparent;
+}
+
+html.light .light\:btn-tertiary:visited {
+  color: var(--wnyc-button-tertiary-text);
+  background-color: var(--wnyc-button-tertiary-background);
+}
+
+html.light .light\:btn-tertiary:hover:not([disabled]), html.light .light\:btn-tertiary:active:not([disabled]) {
+  color: var(--wnyc-button-tertiary-text-hover);
+  background-color: var(--wnyc-button-tertiary-background-hover);
+}
+
+html.light .light\:btn-tertiary:disabled {
   background-color: var(--wnyc-button-disabled-background);
 }
 
@@ -582,8 +642,8 @@ code, .code, .code-block, pre, .hljs {
   color: var(--wnyc-code-text);
   background-color: var(--wnyc-code-background);
   border-color: var(--wnyc-code-border);
-  --webkit-font-smoothing: var(--wnyc-code-webkit-font-smoothing);
   --moz-osx-font-smoothing: var(--wnyc-code-moz-osx-font-smoothing);
+  -webkit-font-smoothing: var(--wnyc-code-webkit-font-smoothing);
 }
 
 p code, li code, td code {
@@ -20597,6 +20657,22 @@ body {
   background: url("../svg/shape-wnyc-a.svg") calc(100vw - 160px) calc(0vh - 74px) no-repeat, url("../svg/shape-wnyc-b.svg") -124px 198px no-repeat, url("../svg/shape-wnyc-c.svg") calc(100vw - 80px) calc(0vh + 226px) no-repeat;
 }
 
+html.light .bg-shape-wnyc-a {
+  background-image: url("../svg/shape-wnyc-a@light.svg");
+}
+
+html.light .bg-shape-wnyc-b {
+  background-image: url("../svg/shape-wnyc-b@light.svg");
+}
+
+html.light .bg-shape-wnyc-c {
+  background-image: url("../svg/shape-wnyc-c@light.svg");
+}
+
+html.light .bg-shape-wnyc-abc {
+  background: url("../svg/shape-wnyc-a@light.svg") calc(100vw - 160px) calc(0vh - 74px) no-repeat, url("../svg/shape-wnyc-b@light.svg") -124px 198px no-repeat, url("../svg/shape-wnyc-c@light.svg") calc(100vw - 80px) calc(0vh + 226px) no-repeat;
+}
+
 .cell-padding {
   padding: var(--wnyc-cell-padding);
 }
@@ -20702,12 +20778,30 @@ body, .bg {
   color: inherit !important;
 }
 
+html.light .light\:status-primary {
+  color: var(--wnyc-statuses-primary-text);
+  background-color: var(--wnyc-statuses-primary-background);
+}
+
+html.light .light\:status-primary a:not(.btn), html.light .light\:status-primary a:not(.btn):hover {
+  color: inherit !important;
+}
+
 .status-secondary {
   color: var(--wnyc-statuses-secondary-text);
   background-color: var(--wnyc-statuses-secondary-background);
 }
 
 .status-secondary a:not(.btn), .status-secondary a:not(.btn):hover {
+  color: inherit !important;
+}
+
+html.light .light\:status-secondary {
+  color: var(--wnyc-statuses-secondary-text);
+  background-color: var(--wnyc-statuses-secondary-background);
+}
+
+html.light .light\:status-secondary a:not(.btn), html.light .light\:status-secondary a:not(.btn):hover {
   color: inherit !important;
 }
 
@@ -20720,12 +20814,30 @@ body, .bg {
   color: inherit !important;
 }
 
+html.light .light\:status-tertiary {
+  color: var(--wnyc-statuses-tertiary-text);
+  background-color: var(--wnyc-statuses-tertiary-background);
+}
+
+html.light .light\:status-tertiary a:not(.btn), html.light .light\:status-tertiary a:not(.btn):hover {
+  color: inherit !important;
+}
+
 .status-alt {
   color: var(--wnyc-statuses-alt-text);
   background-color: var(--wnyc-statuses-alt-background);
 }
 
 .status-alt a:not(.btn), .status-alt a:not(.btn):hover {
+  color: inherit !important;
+}
+
+html.light .light\:status-alt {
+  color: var(--wnyc-statuses-alt-text);
+  background-color: var(--wnyc-statuses-alt-background);
+}
+
+html.light .light\:status-alt a:not(.btn), html.light .light\:status-alt a:not(.btn):hover {
   color: inherit !important;
 }
 
@@ -49556,6 +49668,10 @@ ul, ol {
     background-position: calc(100vw - 240px) calc(0vh - 54px), -86px 468px, calc(100vw - 190px) calc(0vh + 566px);
     background-size: 15em;
   }
+  html.light .bg-shape-wnyc-abc {
+    background-position: calc(100vw - 240px) calc(0vh - 54px), -86px 468px, calc(100vw - 190px) calc(0vh + 566px);
+    background-size: 15em;
+  }
   .tablet\:scroll-reset {
     overflow: visible;
   }
@@ -49596,13 +49712,6 @@ ul, ol {
   .tablet\:nav-block a:not(.btn) {
     padding-top: var(--wnyc-grid);
     padding-bottom: var(--wnyc-grid);
-  }
-}
-
-@media screen and (prefers-color-scheme: light) and (min-width: 768px) {
-  .bg-shape-wnyc-abc {
-    background-position: calc(100vw - 240px) calc(0vh - 54px), -86px 468px, calc(100vw - 190px) calc(0vh + 566px);
-    background-size: 15em;
   }
 }
 
@@ -67736,113 +67845,6 @@ ul, ol {
             animation-duration: var(--wnyc-animate-duration);
     -webkit-animation-timing-function: var(--wnyc-animate-timing-function);
             animation-timing-function: var(--wnyc-animate-timing-function);
-  }
-}
-
-@media screen and (prefers-color-scheme: light) {
-  .light\:btn-primary {
-    color: var(--wnyc-button-primary-text);
-    background-color: var(--wnyc-button-primary-background);
-    border-color: transparent;
-  }
-
-  .light\:btn-primary:visited {
-    color: var(--wnyc-button-primary-text);
-    background-color: var(--wnyc-button-primary-background);
-  }
-
-  .light\:btn-primary:hover:not([disabled]), .light\:btn-primary:active:not([disabled]) {
-    color: var(--wnyc-button-primary-text-hover);
-    background-color: var(--wnyc-button-primary-background-hover);
-  }
-
-  .light\:btn-primary:disabled {
-    background-color: var(--wnyc-button-disabled-background);
-  }
-  .light\:btn-secondary {
-    color: var(--wnyc-button-secondary-text);
-    background-color: var(--wnyc-button-secondary-background);
-    border-color: transparent;
-  }
-
-  .light\:btn-secondary:visited {
-    color: var(--wnyc-button-secondary-text);
-    background-color: var(--wnyc-button-secondary-background);
-  }
-
-  .light\:btn-secondary:hover:not([disabled]), .light\:btn-secondary:active:not([disabled]) {
-    color: var(--wnyc-button-secondary-text-hover);
-    background-color: var(--wnyc-button-secondary-background-hover);
-  }
-
-  .light\:btn-secondary:disabled {
-    background-color: var(--wnyc-button-disabled-background);
-  }
-  .light\:btn-tertiary {
-    color: var(--wnyc-button-tertiary-text);
-    background-color: var(--wnyc-button-tertiary-background);
-    border-color: transparent;
-  }
-
-  .light\:btn-tertiary:visited {
-    color: var(--wnyc-button-tertiary-text);
-    background-color: var(--wnyc-button-tertiary-background);
-  }
-
-  .light\:btn-tertiary:hover:not([disabled]), .light\:btn-tertiary:active:not([disabled]) {
-    color: var(--wnyc-button-tertiary-text-hover);
-    background-color: var(--wnyc-button-tertiary-background-hover);
-  }
-
-  .light\:btn-tertiary:disabled {
-    background-color: var(--wnyc-button-disabled-background);
-  }
-  .bg-shape-wnyc-a {
-    background-image: url("../svg/shape-wnyc-a@light.svg");
-  }
-
-  .bg-shape-wnyc-b {
-    background-image: url("../svg/shape-wnyc-b@light.svg");
-  }
-
-  .bg-shape-wnyc-c {
-    background-image: url("../svg/shape-wnyc-c@light.svg");
-  }
-
-  .bg-shape-wnyc-abc {
-    background: url("../svg/shape-wnyc-a@light.svg") calc(100vw - 160px) calc(0vh - 74px) no-repeat, url("../svg/shape-wnyc-b@light.svg") -124px 198px no-repeat, url("../svg/shape-wnyc-c@light.svg") calc(100vw - 80px) calc(0vh + 226px) no-repeat;
-  }
-  .light\:status-primary {
-    color: var(--wnyc-statuses-primary-text);
-    background-color: var(--wnyc-statuses-primary-background);
-  }
-
-  .light\:status-primary a:not(.btn), .light\:status-primary a:not(.btn):hover {
-    color: inherit !important;
-  }
-  .light\:status-secondary {
-    color: var(--wnyc-statuses-secondary-text);
-    background-color: var(--wnyc-statuses-secondary-background);
-  }
-
-  .light\:status-secondary a:not(.btn), .light\:status-secondary a:not(.btn):hover {
-    color: inherit !important;
-  }
-  .light\:status-tertiary {
-    color: var(--wnyc-statuses-tertiary-text);
-    background-color: var(--wnyc-statuses-tertiary-background);
-  }
-
-  .light\:status-tertiary a:not(.btn), .light\:status-tertiary a:not(.btn):hover {
-    color: inherit !important;
-  }
-  .light\:status-alt {
-    color: var(--wnyc-statuses-alt-text);
-    background-color: var(--wnyc-statuses-alt-background);
-  }
-
-  .light\:status-alt a:not(.btn), .light\:status-alt a:not(.btn):hover {
-    color: inherit !important;
   }
 }
 

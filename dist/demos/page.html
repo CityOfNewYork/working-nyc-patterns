@@ -15,33 +15,39 @@
   <!--{ @role        Use role='navigation' in production layouts. Identifies the nav as a major landmark }-->
   <!--{ @aria-label  Ensures a unique landmark }-->
   <!--{ @class       Add "o-navigation-fixed" in production layouts }-->
-  <nav aria-label="Primary Navigation" class="o-navigation bg-scale-2 o-navigation-fixed" data-js="navigation" role="navigation">
+  <nav aria-label="Navigation" class="o-navigation bg-scale-2 o-navigation-fixed" data-js="navigation" role="navigation">
     <a class="o-navigation__logo o-navigation__menu-item bg-scale-1 tablet:bg-transparent tablet:p-0" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/index">
       <span class="sr-only">Working N Y C</span>
       <svg aria-hidden="true" class="hidden tablet:inline icon-logo-standard-menu-item fill-text text-brand">
-        <use xlink:href="#logo-wnyc-standard"></use>
+        <use href="#logo-wnyc-standard"></use>
       </svg>
       <svg aria-hidden="true" class="tablet:hidden icon-logo-stacked-menu-item fill-text text-brand">
-        <use xlink:href="#logo-wnyc-stacked"></use>
+        <use href="#logo-wnyc-stacked"></use>
       </svg>
     </a>
     <!--{ @class  Hide menu items for mobile using utilities }-->
     <a class="o-navigation__item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/index">Programs</a>
     <a class="o-navigation__item" href="#">Opportunities</a>
     <a class="o-navigation__item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/newsletter">Newsletter</a>
+    <button class="o-navigation__item" data-js="themes">
+      <svg class="o-navigation__menu-icon icon-wnyc-ui">
+        <use data-js-themes="icon" href="#feather-sun"></use>
+      </svg>
+      <span class="o-navigation__menu-label" data-js-themes="label">Theme</span>
+    </button>
     <!--button class='o-navigation__menu-item' data-js='search' aria-controls='aria-c-search' aria-expanded='false'-->
     <!--  svg class='o-navigation__menu-icon icon-wnyc-ui'-->
-    <!--    use xlink:href='#feather-search'-->
+    <!--    use href='#feather-search'-->
     <!--  span class='o-navigation__menu-label' Search-->
     <button aria-controls="aria-c-text-controller" aria-expanded="false" class="o-navigation__menu-item desktop:m-0" data-dialog="open" data-dialog-lock="true" data-js="dialog">
       <svg class="o-navigation__menu-icon icon-wnyc-ui">
-        <use xlink:href="#icon-wnyc-translate"></use>
+        <use href="#icon-wnyc-translate"></use>
       </svg>
       <span class="o-navigation__menu-label">Translate</span>
     </button>
     <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-navigation__menu-item desktop:hidden mie-0" data-js="mobile-menu" data-js-mobile-menu="open">
       <svg class="o-navigation__menu-icon icon-wnyc-ui">
-        <use xlink:href="#feather-menu"></use>
+        <use href="#feather-menu"></use>
       </svg>
       <span class="o-navigation__menu-label">Menu</span>
     </button>
@@ -49,9 +55,15 @@
   <!--{ @id     Identifies the Mobile Menu for toggling }-->
   <!--{ @class  Add "o-menu-fixed" in production layouts }-->
   <aside aria-hidden="true" class="o-menu o-menu-fixed hidden" id="aria-c-mobile-menu">
-    <div>
+    <button class="flex items-center justify-self-end mb-auto" data-js="themes">
+      <svg class="o-navigation__menu-icon icon-wnyc-ui">
+        <use data-js-themes="icon" href="#feather-sun"></use>
+      </svg>
+      <span class="o-navigation__menu-label" data-js-themes="label">Theme</span>
+    </button>
+    <div class="mb-auto">
       <!--{ @aria-label  Ensures landmarks are unique }-->
-      <nav aria-label="mobile menu" class="o-menu__nav">
+      <nav aria-label="Menu" class="o-menu__nav">
         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
         <a class="o-menu__nav-item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/index" tabindex="-1">Home</a>
         <a class="o-menu__nav-item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/index" tabindex="-1">Programs</a>
@@ -66,7 +78,7 @@
       <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-menu__nav-item flex items-center" data-js="mobile-menu" data-js-mobile-menu="close" tabindex="-1">
         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
         <svg aria-hidden="true" class="icon-wnyc-ui">
-          <use xlink:href="#feather-x"></use>
+          <use href="#feather-x"></use>
         </svg>
         <span>Close</span>
       </button>
@@ -78,7 +90,7 @@
         <div class="text-end">
           <button aria-controls="aria-c-text-controller" aria-expanded="false" class="btn btn-primary btn-small" data-dialog="close" data-js="dialog" tabindex="-1">
             <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
-              <use xlink:href="#feather-x"></use>
+              <use href="#feather-x"></use>
             </svg>
             <span>Close</span>
             <span class="sr-only">and return to site</span>
@@ -149,7 +161,7 @@
             <p>
               <svg class="icon-logo-google-translate" role="img" tabindex="-1">
                 <title>Powered by Google Translate</title>
-                <use xlink:href="#logo-google-translate"></use>
+                <use href="#logo-google-translate"></use>
               </svg>
             </p>
           </div>
@@ -167,7 +179,7 @@
             <p class="small">
               <span class="flex items-center">
                 <svg aria-hidden="true" class="icon-wnyc-ui mie-1 icon-2">
-                  <use xlink:href="#feather-info"></use>
+                  <use href="#feather-info"></use>
                 </svg>Last updated on Dec 03, 2020
               </span>
             </p>
@@ -228,12 +240,12 @@
           <article class="c-alert status-primary" data-js="alert-warning">
             <div class="c-alert__graphic">
               <svg aria-hidden="true" class="icon-wnyc-ui">
-                <use xlink:href="#feather-help-circle"></use>
+                <use href="#feather-help-circle"></use>
               </svg>
             </div>
             <div class="c-alert__body">
               <p data-js-alert="text">How can we improve this website? Let us know by <a class='inline-flex items-center' href='https://airtable.com/shrfQGpXvo9mmmHpJ' target='_blank'>sending us feedback <svg aria-hidden='true' class='icon-wnyc-ui' style='margin-left: 5px;'>
-                    <use xlink:href='#feather-external-link'></use>
+                    <use href='#feather-external-link'></use>
                   </svg>
                 </a>
               </p>
@@ -243,14 +255,14 @@
       </section>
     </main>
   </div>
-  <footer aria-label="Primary Footer" class="o-footer bg-scale-2 " role="contentinfo">
+  <footer aria-label="Footer" class="o-footer bg-scale-2 " role="contentinfo">
     <div class="page-max">
       <div class="o-attribution">
-        <nav aria-label="Footer Primary Navigation" class="o-footer__nav">
+        <nav aria-label="Footer Navigation" class="o-footer__nav">
           <a class="o-footer__item uppercase text-small no-underline" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/index">
             <span class="sr-only">Working N Y C</span>
             <svg aria-hidden="true" class="icon-logo-standard-menu-item fill-text text-brand">
-              <use xlink:href="#logo-wnyc-standard"></use>
+              <use href="#logo-wnyc-standard"></use>
             </svg>
           </a>
           <a class="o-footer__item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/index">Programs</a>
@@ -280,7 +292,7 @@
               <br />NYC is a trademark and service mark of the City of New York.
             </p>
           </div>
-          <nav aria-label="Footer Tertiary Navigation" class="o-footer__nav">
+          <nav aria-label="Sitemap and Legal Information" class="o-footer__nav">
             <a class="o-footer__item" href="#">Sitemap</a>
             <a class="o-footer__item" href="https://www1.nyc.gov/home/privacy-policy.page" rel="nofollow noopener" target="_blank">Privacy Policy</a>
             <a class="o-footer__item" href="https://www1.nyc.gov/home/terms-of-use.page" rel="nofollow noopener" target="_blank">Terms of Use</a>
@@ -299,13 +311,14 @@
     patterns.icons('https://cityofnewyork.github.io/working-nyc-patterns/svg/icons.svg');
     patterns.icons('https://cityofnewyork.github.io/working-nyc-patterns/svg/feather.svg');
     patterns.menu();
-    patterns.search();
-    patterns.toggle();
-    patterns.webShare();
     patterns.newsletter('https://cityofnewyork.github.io/working-nyc-patterns/demos/newsletter');
     patterns.newsletterForm();
-    patterns.validateAndQuery();
+    patterns.search();
     patterns.setObjectHeights();
+    patterns.themes();
+    patterns.toggle();
+    patterns.webShare();
+    patterns.validateAndQuery();
   </script>
   <script type="text/javascript">
     patterns.activeNavigation();
