@@ -22,7 +22,7 @@
         div class='pb-6 hidden tablet:flex'
 
         div
-          div class='tablet:pe-4 tablet:py-4 tablet:sticky desktop:py-8 top-0'
+          div class='tablet:pe-4 tablet:py-4 tablet:sticky desktop:py-7 top-0'
             h1 class='sr-only' Working N Y C
 
             svg class='icon-logo-homepage fill-text text-brand'
@@ -32,15 +32,7 @@
 
         section#answer-a-few-questions data-aos='fade-up' data-aos-anchor-placement='top-bottom'
           p class='mb-5 text-center tablet:mb-3'
-            a class='text-inherit' href='#answer-a-few-questions' Answer a few questions to get started
-            br class='tablet:hidden'
-            | or
-            br
-            a class='text-inherit block tablet:inline-flex' href='#content'
-              span Scroll to browse programs
-              br class='tablet:hidden'
-              svg class='icon-wnyc-ui m-0 mt-1' aria-hidden='true'
-                use href='#feather-chevron-down'
+            | Let's find some programs that work for you.
 
           form class='c-card' data-js='validate-and-query' method='post' action='${this.baseUrl}/demos/programs/index'
             div class='p-3 desktop:p-4'
@@ -102,9 +94,9 @@
                 div class='wrap-start tablet:p-0 transform-none' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
                   = partial('/components/card/card')
 
-              div class='wrap relative tablet:hidden'
-                - button = {label: 'View more programs', class: 'btn-secondary light:btn-primary btn-next flex w-full h-full', href: `${this.baseUrl}/demos/programs/index`, type: 'next-previous'}
-                = partial('/elements/buttons/buttons')
+              / div class='wrap relative tablet:hidden'
+              /   - button = {label: 'View more programs', class: 'btn-secondary light:btn-primary btn-next flex w-full', href: `${this.baseUrl}/demos/programs/index`, type: 'next-previous'}
+              /   = partial('/elements/buttons/buttons')
 
             div class='layout-content'
               div class='wrap tablet:py-6'
@@ -129,9 +121,9 @@
                 div class='wrap-start tablet:p-0 transform-none' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
                   = partial('/components/card/card')
 
-              div class='wrap relative tablet:hidden'
-                - button = {label: 'View more programs', class: 'btn-secondary light:btn-primary btn-next flex w-full h-full', href: `${this.baseUrl}/demos/programs/index`, type: 'next-previous'}
-                = partial('/elements/buttons/buttons')
+              / div class='wrap relative tablet:hidden'
+              /   - button = {label: 'View more programs', class: 'btn-secondary light:btn-primary btn-next flex w-full h-full', href: `${this.baseUrl}/demos/programs/index`, type: 'next-previous'}
+              /   = partial('/elements/buttons/buttons')
 
             div class='layout-content'
               div class='wrap tablet:py-6'

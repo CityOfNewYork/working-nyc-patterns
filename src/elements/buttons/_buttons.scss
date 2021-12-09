@@ -3,11 +3,11 @@
  */
 
 // Dependencies
-@use 'config/grid';
 @use 'config/animate';
+@use 'config/buttons';
 @use 'config/dimensions';
 @use 'config/direction';
-@use 'config/buttons';
+@use 'config/grid';
 @use 'config/tokens' as *;
 @use 'config/typography';
 @use 'config/media';

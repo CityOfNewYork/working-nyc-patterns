@@ -1,10 +1,10 @@
 / Next/Previous Button
 
 button class='btn ${this.button.class}' tabindex=this.button.tabindex type='button'
-  svg class='icon-wnyc-ui' aria-hidden='true' tabindex=this.button.tabindex
+  svg class='icon-wnyc-ui rtl:flip' aria-hidden='true' tabindex=this.button.tabindex
     use href='#feather-arrow-left'
 
   span = this.button.label
 
-  svg class='icon-wnyc-ui' aria-hidden='true' tabindex=this.button.tabindex
+  svg class='icon-wnyc-ui rtl:flip' aria-hidden='true' tabindex=this.button.tabindex
     use href='#feather-arrow-right'

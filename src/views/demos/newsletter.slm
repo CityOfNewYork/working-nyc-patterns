@@ -16,7 +16,7 @@
         div class='layout-content sticky top-0 bg-scale-1 z-10'
           div class='c-utility'
             a href='${this.baseUrl}/demos/index' class='mie-auto'
-              svg class='icon-wnyc-ui mie-1' aria-hidden='true'
+              svg class='icon-wnyc-ui rtl:flip' aria-hidden='true'
                 use href='#feather-chevron-left'
 
               span Home
@@ -36,7 +36,7 @@
               nav class='o-header__breadcrumbs'
                 a href='${this.baseUrl}/demos/index' Home
 
-                svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4' aria-hidden='true'
+                svg class='o-header__breadcrumbs-chevron icon-wnyc-ui rtl:flip' aria-hidden='true'
                   use href='#feather-chevron-right'
 
                 b Newsletter

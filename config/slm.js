@@ -123,7 +123,7 @@ module.exports = {
 
         <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
-            <use xlink:href="#icon-wnyc-accessible"></use>
+            <use href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
@@ -131,7 +131,7 @@ module.exports = {
 
         <!-- <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-translate"></use>
+            <use href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
@@ -177,7 +177,7 @@ module.exports = {
 
       //   <!-- <span class="flex mie-2" data-program="accessible">
       //     <svg aria-hidden="true" class="icon text-alt">
-      //       <use xlink:href="#icon-wnyc-accessible"></use>
+      //       <use href="#icon-wnyc-accessible"></use>
       //     </svg>
 
       //     <span class="sr-only">Accommodates Disabilities</span>
@@ -185,7 +185,7 @@ module.exports = {
 
       //   <!-- <span class="flex mie-2" data-program="multilingual">
       //     <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-      //       <use xlink:href="#icon-wnyc-translate"></use>
+      //       <use href="#icon-wnyc-translate"></use>
       //     </svg>
 
       //     <span class="sr-only">Accommodates Multiple Languages</span>
@@ -228,7 +228,7 @@ module.exports = {
 
         <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
-            <use xlink:href="#icon-wnyc-accessible"></use>
+            <use href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
@@ -236,7 +236,7 @@ module.exports = {
 
         <!-- <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-translate"></use>
+            <use href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
@@ -283,7 +283,7 @@ module.exports = {
 
         <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
-            <use xlink:href="#icon-wnyc-accessible"></use>
+            <use href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
@@ -291,7 +291,7 @@ module.exports = {
 
         <!-- <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-translate"></use>
+            <use href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
@@ -330,7 +330,7 @@ module.exports = {
       // status: `
       //   <!-- <span class="flex mie-2" data-program="accessible">
       //     <svg aria-hidden="true" class="icon text-alt">
-      //       <use xlink:href="#icon-wnyc-accessible"></use>
+      //       <use href="#icon-wnyc-accessible"></use>
       //     </svg>
 
       //     <span class="sr-only">Accommodates Disabilities</span>
@@ -338,7 +338,7 @@ module.exports = {
 
       //   <!-- <span class="flex mie-2" data-program="multilingual">
       //     <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-      //       <use xlink:href="#icon-wnyc-translate"></use>
+      //       <use href="#icon-wnyc-translate"></use>
       //     </svg>
 
       //     <span class="sr-only">Accommodates Multiple Languages</span>
@@ -374,7 +374,7 @@ module.exports = {
       status: `
         <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
-            <use xlink:href="#icon-wnyc-accessible"></use>
+            <use href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
@@ -382,7 +382,7 @@ module.exports = {
 
         <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-translate"></use>
+            <use href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
@@ -419,7 +419,7 @@ module.exports = {
       status: `
         <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
-            <use xlink:href="#icon-wnyc-accessible"></use>
+            <use href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
@@ -427,7 +427,7 @@ module.exports = {
 
         <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-translate"></use>
+            <use href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
@@ -470,7 +470,7 @@ module.exports = {
 
         <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
-            <use xlink:href="#icon-wnyc-accessible"></use>
+            <use href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
@@ -478,7 +478,7 @@ module.exports = {
 
         <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-translate"></use>
+            <use href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
@@ -658,8 +658,8 @@ module.exports = {
     {
       title: `
         <mark class="badge">New</mark> Money for heat and utility expenses
-        <svg aria-hidden="true" class="icon-wnyc-ui">
-          <use xlink:href="#feather-external-link"></use>
+        <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
+          <use href="#feather-external-link"></use>
         </svg>
       `,
       url: '/demos/news/#',
@@ -675,8 +675,8 @@ module.exports = {
     {
       title: `
         Get no-cost or low-cost healthcare
-        <svg aria-hidden="true" class="icon-wnyc-ui">
-          <use xlink:href="#feather-external-link"></use>
+        <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
+          <use href="#feather-external-link"></use>
         </svg>
       `,
       url: '/demos/news/#',
@@ -692,8 +692,8 @@ module.exports = {
     {
       title: `
         Help Avoiding Eviction
-        <svg aria-hidden="true" class="icon-wnyc-ui">
-          <use xlink:href="#feather-external-link"></use>
+        <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
+          <use href="#feather-external-link"></use>
         </svg>
       `,
       url: '/demos/news/#',
@@ -709,8 +709,8 @@ module.exports = {
     {
       title: `
         Low-cost and free health insurance
-        <svg aria-hidden="true" class="icon-wnyc-ui">
-          <use xlink:href="#feather-external-link"></use>
+        <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
+          <use href="#feather-external-link"></use>
         </svg>
       `,
       url: '/demos/news/#',

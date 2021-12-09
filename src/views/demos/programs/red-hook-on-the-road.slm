@@ -42,8 +42,8 @@
 
             section
               div#services class='pt-utility-anchor bg-scale-2 sticky top-0'
-                h3 class='h5 flex items-center mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3'
-                  a class='anchor flex mie-1' href='#services'
+                h3 class='h5 flex items-center mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3'
+                  a class='link-anchor flex mie-1' href='#services'
                     svg class='icon-wnyc-ui' role='img'
                       title Services
                       use href='#feather-award'
@@ -58,8 +58,8 @@
 
             section
               div#eligibility class='pt-utility-anchor bg-scale-2 sticky top-0'
-                h3 class='h5 flex items-center mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3 '
-                  a class='anchor flex mie-1' href='#eligibility'
+                h3 class='h5 flex items-center mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3'
+                  a class='link-anchor flex mie-1' href='#eligibility'
                     svg class='icon-wnyc-ui' role='img'
                       title Eligibility
                       use href='#feather-users'
@@ -91,8 +91,8 @@
 
             section
               div#schedule class='pt-utility-anchor bg-scale-2 sticky top-0'
-                h3 class='h5 flex items-center mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3'
-                  a class='anchor flex mie-1' href='#schedule'
+                h3 class='h5 flex items-center mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3'
+                  a class='link-anchor flex mie-1' href='#schedule'
                     svg class='icon-wnyc-ui' role='img'
                       title Schedule
                       use href='#feather-calendar'
@@ -107,38 +107,38 @@
 
             section
               div#disability-accommodation class='pt-utility-anchor bg-scale-2 sticky top-0'
-                h3 class='h5 flex items-center mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3'
-                  a class='anchor flex mie-1' href='#disability-accommodation'
+                h3 class='h5 flex items-center mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3'
+                  a class='link-anchor flex mie-1' href='#disability-accommodation'
                     svg class='icon' role='img'
                       title Disability Accommodations
                       use href='#icon-wnyc-accessible'
 
                   | Disability Accommodation
 
-                p The following accommodations are available:
+              p The following accommodations are available:
 
-                ul
-                  li Wheelchair Accessible
-                  li Blind or Low Vision Accessible
-                  li Audio Description for TV, Film
-                  li Telephone Typewriter
-                  li Assistive Listening (Telephone)
-                  li Sign Language Interpretation
-                  li Open Captioning
-                  li Assistive Listening (Ear)
-                  li Large Print
-                  li Universal Information
-                  li Hearing with T-Coil
-                  li Closed Captioning
-                  li Braille
-                  li Communication Access Real-Time Translation
+              ul
+                li Wheelchair Accessible
+                li Blind or Low Vision Accessible
+                li Audio Description for TV, Film
+                li Telephone Typewriter
+                li Assistive Listening (Telephone)
+                li Sign Language Interpretation
+                li Open Captioning
+                li Assistive Listening (Ear)
+                li Large Print
+                li Universal Information
+                li Hearing with T-Coil
+                li Closed Captioning
+                li Braille
+                li Communication Access Real-Time Translation
 
-                p Attendees who need additional accommodation for disability such as a sign language translation should contact ____________ by calling <a>1 (800) 333-1122</a> or emailing <a>ada@email.gov</a>.
+              p Attendees who need additional accommodation for disability such as a sign language translation should contact ____________ by calling <a>1 (800) 333-1122</a> or emailing <a>ada@email.gov</a>.
 
             section
               div#language-access class='pt-utility-anchor bg-scale-2 sticky top-0'
-                h3 class='h5 flex items-center mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3'
-                  a class='anchor flex mie-1' href='#language-access'
+                h3 class='h5 flex items-center mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3'
+                  a class='link-anchor flex mie-1' href='#language-access'
                     svg class='icon-wnyc-ui' role='img'
                       title Language Accommodation
                       use href='#icon-wnyc-translate'
@@ -162,13 +162,8 @@
 
             section
               div#next-steps class='pt-utility-anchor bg-scale-2 sticky top-0'
-                h3 class='anchor h5 mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3'
-                  / a href='#next-steps' class='text-inherit'
+                h3 class='h5 mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3'
                   | Next Steps
-
-              / blockquote class='text-alt mt-0'
-              /   span class='blockquote__mark' aria-hidden='true' —
-              /   p To apply for the program
 
               ol
                 li == 'Email a driving record ("<a href="https://dmv.ny.gov/dmv-records/get-my-own-driving-record-abstract" target="_blank">driving abstract</a>") that\'s less than 30 days old to Isteak Hossain at <a href="mailto:ihossain@bwiny.org" target="_blank">ihossain@bwiny.org</a>'
@@ -193,17 +188,17 @@
             a href='mailto:ihossain@bwiny.org' class='btn btn-secondary mb-1 w-full'
               | Email ihossain@bwiny.org
 
-          / div class='text-center text-alt mb-1' —
+      section class='layout-content bg-scale-1' id='suggest-update'
+        div class='pt-2 pb-3 wrap'
+          article class='c-alert' data-js='alert-help'
+            div class='c-alert__graphic'
+              svg aria-hidden='true' class='icon-wnyc-ui'
+                use href='#feather-help-circle'
 
-          / nav
-          /   a href='#' class='btn btn-primary btn-next w-full'
-          /     svg class='icon-wnyc-ui' aria-hidden='true'
-          /       use href='#feather-arrow-left'
+            div class='c-alert__body'
+              b class='text-alt mb-1' Suggest an update
 
-          /     | More programs at Brooklyn Workforce Innovations
-
-          /     svg class='icon-wnyc-ui' aria-hidden='true'
-          /       use href='#feather-arrow-right'
+              p data-js-alert='text' See something out of date on this page? <a href='#' class='link-icon' target='_blank'>Suggest an update to this program <svg aria-hidden='true' class='icon-wnyc-ui rtl:flip'><use href='#feather-external-link'></use></svg></a>
 
       = partial('/objects/feedback/feedback')
 

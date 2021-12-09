@@ -4,12 +4,13 @@
 
 // Dependencies
 @use 'config/links';
+@use 'config/icons';
 @use 'config/interaction';
 
 // Declarations
 a {
-  @include links.base();
-  @include interaction.focus();
+  @include links.base;
+  @include interaction.focus;
 
   &:visited {
     color: var(--wnyc-link-visited);
@@ -20,7 +21,14 @@ a {
   }
 }
 
-.anchor {
+.link-icon {
+  display: inline-flex;
+  align-items: center;
+
+  @include icons.spacing;
+}
+
+.link-anchor {
   &:visited {
     color: var(--wnyc-link);
   }

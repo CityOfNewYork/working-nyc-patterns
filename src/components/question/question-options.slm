@@ -23,7 +23,7 @@ fieldset id='${this.question.id}' class='c-question' aria-hidden=this.question.a
   - if (this.question.description)
     p = this.question.description
 
-  div class='c-question__container tablet:grid grid-cols-2 gap-2'
+  div class='c-question__container grid grid-cols-1 tablet:grid-cols-2 gap-2'
     - input = this.question;
     - input.class = false;
     - input.ariaHidden = false;

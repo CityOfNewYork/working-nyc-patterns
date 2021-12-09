@@ -10,7 +10,7 @@ $sizes: map-get($tokens, 'iconSize');
 
 // Declarations
 @mixin selector() {
-  [class*='icon'] {
+  svg[class*='icon'] {
     @content;
   }
 }
@@ -28,6 +28,21 @@ $sizes: map-get($tokens, 'iconSize');
       width: nth($var, 1) !important;
       height: nth($var, 2) !important;
     }
+  }
+}
+
+@mixin spacing() {
+  > [class*='icon'] {
+    width: 1rem;
+    height: 1rem
+  }
+
+  > [class*='icon']:first-child {
+    margin-inline-end: calc(var(--wnyc-grid) * 0.75);
+  }
+
+  > [class*='icon']:last-child {
+    margin-inline-start: calc(var(--wnyc-grid) * 0.75);
   }
 }
 

@@ -28,12 +28,12 @@ header class='o-header'
     nav class='o-header__breadcrumbs' aria-label='Breadcrumb'
       a href='${this.baseUrl}/demos/index' Home
 
-      svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-blue-l-3' aria-hidden='true'
+      svg class='o-header__breadcrumbs-chevron icon-wnyc-ui rtl:flip' aria-hidden='true'
         use href='#feather-chevron-right'
 
       a href='${this.baseUrl}/demos/programs/index' Programs
 
-      svg class='o-header__breadcrumbs-chevron icon-wnyc-ui text-blue-l-3' aria-hidden='true'
+      svg class='o-header__breadcrumbs-chevron icon-wnyc-ui rtl:flip' aria-hidden='true'
         use href='#feather-chevron-right'
 
       b aria-current='page' = this.header.breadcrumb
@@ -45,7 +45,7 @@ header class='o-header'
 
     - if this.header.certification
       p class='small flex items-center'
-        a class='anchor inline-flex mie-1' href='#services'
+        a class='link-anchor inline-flex mie-1' href='#services'
           svg class='icon-wnyc-ui icon-2' role='img'
             title Services
             use href='#feather-award'
@@ -54,7 +54,7 @@ header class='o-header'
 
     - if this.header.eligibility
       p class='small flex items-center'
-        a class='anchor inline-flex mie-1' href='#eligibility'
+        a class='link-anchor inline-flex mie-1' href='#eligibility'
           svg class='icon-wnyc-ui icon-2' role='img'
             title Eligibility
             use href='#feather-users'
@@ -63,7 +63,7 @@ header class='o-header'
 
     - if this.header.schedule
       p class='small flex items-center'
-        a class='anchor inline-flex mie-1' href='#schedule'
+        a class='link-anchor inline-flex mie-1' href='#schedule'
           svg class='icon-wnyc-ui icon-2' role='img'
             title Schedule
             use href='#feather-calendar'
@@ -72,7 +72,7 @@ header class='o-header'
 
     - if this.header.accessible
       p class='small flex items-center'
-        a class='anchor inline-flex mie-1' href='#disability-accommodation'
+        a class='link-anchor inline-flex mie-1' href='#disability-accommodation'
           svg class='icon icon-2' role='img'
             title Disability Accommodations
             use href='#icon-wnyc-accessible'
@@ -81,7 +81,7 @@ header class='o-header'
 
     - if this.header.multilingual
       p class='small flex items-center'
-        a class='anchor inline-flex mie-1' href='#language-access'
+        a class='link-anchor inline-flex mie-1' href='#language-access'
           svg class='icon-wnyc-ui icon-2' role='img'
             title Language Accommodation
             use href='#icon-wnyc-translate'

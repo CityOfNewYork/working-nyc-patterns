@@ -7,6 +7,7 @@
 @use 'config/media';
 @use 'config/typography';
 @use 'config/links';
+@use 'config/icons';
 @use 'config/interaction';
 
 // Declarations
@@ -15,7 +16,7 @@
 }
 
 @mixin reset() {
-  @include links.base();
+  @include links.base;
 
   font-family: inherit;
   font-size: inherit;
@@ -30,16 +31,16 @@
   }
 
   &:not([disabled]):hover {
-    @include links.hover();
+    @include links.hover;
   }
 
   &:not([disabled]) {
     cursor: pointer;
   }
 
-  @include icon-spacing;
+  @include icons.spacing;
 
-  @include interaction.focus();
+  @include interaction.focus;
 }
 
 @mixin normal() {
@@ -73,22 +74,7 @@
     cursor: pointer;
   }
 
-  @include icon-spacing;
-}
-
-@mixin icon-spacing() {
-  > [class*='icon'] {
-    width: 1rem;
-    height: 1rem
-  }
-
-  > [class*='icon']:first-child {
-    margin-inline-end: calc(var(--wnyc-grid) * 0.75);
-  }
-
-  > [class*='icon']:last-child {
-    margin-inline-start: calc(var(--wnyc-grid) * 0.75);
-  }
+  @include icons.spacing;
 }
 
 @mixin icon-toggle() {

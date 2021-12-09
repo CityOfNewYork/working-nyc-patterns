@@ -37,7 +37,9 @@
   stroke-linejoin: var(--wnyc-select-stroke-line);
 
   position: absolute;
+
   inset-inline-end: calc(var(--wnyc-grid) * 2);
+
   top: 50%;
   margin-top: calc(var(--wnyc-select-inner-size) * -1);
 

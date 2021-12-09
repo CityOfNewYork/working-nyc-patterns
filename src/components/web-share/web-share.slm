@@ -56,7 +56,7 @@ div class='c-web-share ${this.webShare.class}'
           svg class='icon icon-wnyc-ui'
             use href='#feather-copy'
 
-          svg class='icon-pressed icon-wnyc-ui mie-1'
+          svg class='icon-pressed icon-wnyc-ui'
             use href='#feather-check'
 
           span Copy URL

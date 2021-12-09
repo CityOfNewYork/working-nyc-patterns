@@ -1,8 +1,8 @@
 / Utility
 
 div class='c-utility'
-  a href='${this.baseUrl}/demos/programs/index' class='mie-auto'
-    svg class='icon-wnyc-ui mie-1' aria-hidden='true'
+  a href='${this.baseUrl}/demos/programs/index' class='link-icon mie-auto'
+    svg class='icon-wnyc-ui rtl:flip' aria-hidden='true'
       use href='#feather-chevron-left'
 
     span Programs

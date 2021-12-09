@@ -2,6 +2,7 @@
 
 // Utilities
 import Dialog from '@nycopportunity/pttrn-scripts/src/dialog/dialog';
+import Direction from '@nycopportunity/pttrn-scripts/src/direction/direction';
 import Copy from '@nycopportunity/pttrn-scripts/src/copy/copy';
 import Forms from '@nycopportunity/pttrn-scripts/src/forms/forms';
 import Icons from '@nycopportunity/pttrn-scripts/src/icons/icons';
@@ -77,6 +78,15 @@ class main {
   }
 
   /**
+   * An API for the Direction Utility
+   *
+   * @return  {Object}  Instance of Direction
+   */
+  direction() {
+    return new Direction();
+  }
+
+  /**
    * An API for the Icons Utility
    *
    * @param   {String}  path  The path of the icon file
@@ -88,9 +98,9 @@ class main {
   }
 
   /**
-   * An API for the Mobile Nav
+   * An API for the Menu
    *
-   * @return  {Object}  Instance of MobileMenu
+   * @return  {Object}  Instance of Menu
    */
   menu() {
     return new Menu();

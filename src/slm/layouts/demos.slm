@@ -48,6 +48,7 @@ html lang='en'
 
       patterns.accordion();
       patterns.dialog();
+      patterns.direction();
       patterns.copy();
       patterns.icons('${this.baseUrl}/svg/icons.svg');
       patterns.icons('${this.baseUrl}/svg/feather.svg');

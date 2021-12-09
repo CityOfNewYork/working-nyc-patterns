@@ -21,16 +21,11 @@ nav role='navigation' aria-label='Navigation' data-js='navigation' class='o-navi
     svg class='tablet:hidden icon-logo-stacked-menu-item fill-text text-brand' aria-hidden='true'
       use href='#logo-wnyc-stacked'
 
-  /! { @class  Hide menu items for mobile using utilities }
   a class='o-navigation__item' href='${this.baseUrl}/demos/programs/index' Programs
 
   a class='o-navigation__item' href='#' Opportunities
 
   a class='o-navigation__item' href='${this.baseUrl}/demos/newsletter' Newsletter
-
-  / a class='o-navigation__item' href='${this.baseUrl}/demos/events' Events
-
-  / a class='o-navigation__item' href='${this.baseUrl}/demos/trainings' Trainings
 
   button class='o-navigation__item' data-js='themes'
     svg class='o-navigation__menu-icon icon-wnyc-ui'
@@ -38,19 +33,13 @@ nav role='navigation' aria-label='Navigation' data-js='navigation' class='o-navi
 
     span class='o-navigation__menu-label' data-js-themes='label' Theme
 
-  /! button class='o-navigation__menu-item' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
-  /!   svg class='o-navigation__menu-icon icon-wnyc-ui'
-  /!     use href='#feather-search'
-
-  /!   span class='o-navigation__menu-label' Search
-
   button class='o-navigation__menu-item desktop:m-0' data-js='dialog' data-dialog='open' data-dialog-lock='true' aria-controls='aria-c-text-controller' aria-expanded='false'
     svg class='o-navigation__menu-icon icon-wnyc-ui'
       use href='#icon-wnyc-translate'
 
     span class='o-navigation__menu-label' Translate
 
-  button class='o-navigation__menu-item desktop:hidden mie-0' data-js='mobile-menu' data-js-mobile-menu='open' aria-controls='aria-c-mobile-menu' aria-expanded='false'
+  button class='o-navigation__menu-item desktop:hidden mie-0' data-js='menu' data-js-menu='open' aria-controls='aria-c-menu' aria-expanded='false'
     svg class='o-navigation__menu-icon icon-wnyc-ui'
       use href='#feather-menu'
 
