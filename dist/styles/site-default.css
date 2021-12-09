@@ -208,14 +208,6 @@ iframe {
  */
 
 /**
- * Get a token value from the dimension set
- *
- * @param   {String}  $token  [$token description]
- *
- * @return  {Mixed}           The token value
- */
-
-/**
  * Get a token value from the $typography set
  *
  * @param   {String}  $token  A token within the typography set
@@ -263,6 +255,14 @@ iframe {
 
 /**
  * Render default font smoothing (unset font smoothing) attributes
+ */
+
+/**
+ * Get a token value from the dimension set
+ *
+ * @param   {String}  $token  [$token description]
+ *
+ * @return  {Mixed}           The token value
  */
 
 /**
@@ -794,7 +794,7 @@ input, textarea, select, optgroup {
  * Icons
  */
 
-[class*=icon] {
+svg[class*=icon] {
   overflow: visible !important;
   max-width: 100%;
   width: 1rem;
@@ -1102,11 +1102,35 @@ a:hover {
   color: var(--wnyc-link-hover);
 }
 
-.anchor:visited {
+.link-icon {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.link-icon > [class*=icon] {
+  width: 1rem;
+  height: 1rem;
+}
+
+.link-icon > [class*=icon]:first-child {
+  -webkit-margin-end: calc(var(--wnyc-grid) * 0.75);
+          margin-inline-end: calc(var(--wnyc-grid) * 0.75);
+}
+
+.link-icon > [class*=icon]:last-child {
+  -webkit-margin-start: calc(var(--wnyc-grid) * 0.75);
+          margin-inline-start: calc(var(--wnyc-grid) * 0.75);
+}
+
+.link-anchor:visited {
   color: var(--wnyc-link);
 }
 
-.anchor:hover {
+.link-anchor:hover {
   color: var(--wnyc-link-hover);
 }
 
@@ -20693,6 +20717,18 @@ body, .bg {
   background-color: var(--wnyc-background);
   -moz-osx-font-smoothing: var(--wnyc-moz-osx-font-smoothing);
   -webkit-font-smoothing: var(--wnyc-webkit-font-smoothing);
+}
+
+[dir=rtl] .rtl\:flip {
+  -webkit-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+[dir=ltr] .ltr\:flip {
+  -webkit-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 
 /**

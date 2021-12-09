@@ -25,7 +25,6 @@
         <use href="#logo-wnyc-stacked"></use>
       </svg>
     </a>
-    <!--{ @class  Hide menu items for mobile using utilities }-->
     <a class="o-navigation__item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/index">Programs</a>
     <a class="o-navigation__item" href="#">Opportunities</a>
     <a class="o-navigation__item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/newsletter">Newsletter</a>
@@ -35,17 +34,13 @@
       </svg>
       <span class="o-navigation__menu-label" data-js-themes="label">Theme</span>
     </button>
-    <!--button class='o-navigation__menu-item' data-js='search' aria-controls='aria-c-search' aria-expanded='false'-->
-    <!--  svg class='o-navigation__menu-icon icon-wnyc-ui'-->
-    <!--    use href='#feather-search'-->
-    <!--  span class='o-navigation__menu-label' Search-->
     <button aria-controls="aria-c-text-controller" aria-expanded="false" class="o-navigation__menu-item desktop:m-0" data-dialog="open" data-dialog-lock="true" data-js="dialog">
       <svg class="o-navigation__menu-icon icon-wnyc-ui">
         <use href="#icon-wnyc-translate"></use>
       </svg>
       <span class="o-navigation__menu-label">Translate</span>
     </button>
-    <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-navigation__menu-item desktop:hidden mie-0" data-js="mobile-menu" data-js-mobile-menu="open">
+    <button aria-controls="aria-c-menu" aria-expanded="false" class="o-navigation__menu-item desktop:hidden mie-0" data-js="menu" data-js-menu="open">
       <svg class="o-navigation__menu-icon icon-wnyc-ui">
         <use href="#feather-menu"></use>
       </svg>
@@ -54,12 +49,12 @@
   </nav>
   <!--{ @id     Identifies the Mobile Menu for toggling }-->
   <!--{ @class  Add "o-menu-fixed" in production layouts }-->
-  <aside aria-hidden="true" class="o-menu o-menu-fixed hidden" id="aria-c-mobile-menu">
-    <button class="flex items-center justify-self-end mb-auto" data-js="themes">
-      <svg class="o-navigation__menu-icon icon-wnyc-ui">
+  <aside aria-hidden="true" class="o-menu o-menu-fixed hidden" id="aria-c-menu">
+    <button class="flex items-center justify-self-end mb-auto" data-js="themes" tabindex="-1">
+      <svg class="icon-wnyc-ui" tabindex="-1">
         <use data-js-themes="icon" href="#feather-sun"></use>
       </svg>
-      <span class="o-navigation__menu-label" data-js-themes="label">Theme</span>
+      <span data-js-themes="label">Theme</span>
     </button>
     <div class="mb-auto">
       <!--{ @aria-label  Ensures landmarks are unique }-->
@@ -70,14 +65,14 @@
         <a class="o-menu__nav-item" href="#" tabindex="-1">Opportunities</a>
         <a class="o-menu__nav-item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/newsletter" tabindex="-1">Newsletter</a>
       </nav>
-      <!--{ @data-js              "mobile-menu" Adds the toggling utility to close the menu }-->
-      <!--{ @data-js-mobile-menu  "close" indicates that this is the primary closing button for the menu. Focus will shift from the open button to the close button when the menu is opened. }-->
+      <!--{ @data-js              "menu" Adds the toggling utility to close the menu }-->
+      <!--{ @data-js-menu  "close" indicates that this is the primary closing button for the menu. Focus will shift from the open button to the close button when the menu is opened. }-->
       <!--{ @aria-controls        Targets the Mobile Menu ID for toggling }-->
       <!--{ @aria-expanded        Indicates the toggled state of the target }-->
       <!--{ @tabindex             Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-      <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-menu__nav-item flex items-center" data-js="mobile-menu" data-js-mobile-menu="close" tabindex="-1">
+      <button aria-controls="aria-c-menu" aria-expanded="false" class="o-menu__nav-item flex items-center" data-js="menu" data-js-menu="close" tabindex="-1">
         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-        <svg aria-hidden="true" class="icon-wnyc-ui">
+        <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
           <use href="#feather-x"></use>
         </svg>
         <span>Close</span>
@@ -174,8 +169,8 @@
       <div>
         <div class="layout-content sticky top-0 bg-scale-1 z-10">
           <div class="c-utility">
-            <a class="mie-auto" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/index">
-              <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
+            <a class="link-icon mie-auto" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/index">
+              <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
                 <use href="#feather-chevron-left"></use>
               </svg>
               <span>Programs</span>
@@ -186,7 +181,7 @@
               <!--{ @data-web-share  Data attribute for holding data sent to the navigator.share() method. Note, in the Markup quotes are escaped as "&quot;" however, they must be regular quotes; "". Inspect the source of the Demostration to see the real example }-->
               <!--{ @aria-controls   Targets the Web Share fallback }-->
               <!--{ @aria-expanded   Indicates if the Web Share fallback is open or not }-->
-              <button aria-controls="aria-c-web-share-fallback-4a04bdb22c627" aria-expanded="false" class="btn btn-small btn-primary m-0" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;The share title&quot;,&quot;text&quot;:&quot;What users should say about this.&quot;,&quot;url&quot;:&quot;https://cityofnewyork.github.io/nyco-wnyc-patterns&quot;}">
+              <button aria-controls="aria-c-web-share-fallback-32161254fd783" aria-expanded="false" class="btn btn-small btn-primary m-0" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;The share title&quot;,&quot;text&quot;:&quot;What users should say about this.&quot;,&quot;url&quot;:&quot;https://cityofnewyork.github.io/nyco-wnyc-patterns&quot;}">
                 <svg class="c-web-share__icon icon-wnyc-ui">
                   <use href="#feather-share-2"></use>
                 </svg>
@@ -195,7 +190,7 @@
               <!--{ Web Share Fallback }-->
               <!--{ @id    Toggle target of the web share button. Must match the "aria-controls" attribute of the toggling button }-->
               <!--{ @role  Indicates an area of significance }-->
-              <div aria-hidden="true" class="c-web-share__fallback color-card hidden right-0" id="aria-c-web-share-fallback-4a04bdb22c627" role="region">
+              <div aria-hidden="true" class="c-web-share__fallback color-card hidden right-0" id="aria-c-web-share-fallback-32161254fd783" role="region">
                 <div class="c-web-share__fallback-body">
                   <div class="flex mb-1 items-center flex-row-reverse">
                     <!--{ @data-js        data-js="web-share" designates this element as a toggling element for the dropdown }-->
@@ -203,7 +198,7 @@
                     <!--{ @aria-expanded  Indicates if the dropdown is open or not }-->
                     <!--{ @data-dialog  data-dialog="close" designates this element as the primary close toggle for the dropdown. It will be focused on when the dropdown is opened. Only one close toggle associated with this aria-controls value can exist on the page }-->
                     <!--{ @tabindex       Set the tabindex to '-1' on focusable elements if this area is hidden when the page is rendered }-->
-                    <button aria-controls="aria-c-web-share-fallback-4a04bdb22c627" aria-expanded="false" class="btn btn-primary btn-small m-0" data-js="web-share" tabindex="-1">
+                    <button aria-controls="aria-c-web-share-fallback-32161254fd783" aria-expanded="false" class="btn btn-primary btn-small m-0" data-js="web-share" tabindex="-1">
                       <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
                         <use href="#feather-x"></use>
                       </svg>
@@ -225,7 +220,7 @@
                       <svg class="icon icon-wnyc-ui">
                         <use href="#feather-copy"></use>
                       </svg>
-                      <svg class="icon-pressed icon-wnyc-ui mie-1">
+                      <svg class="icon-pressed icon-wnyc-ui">
                         <use href="#feather-check"></use>
                       </svg>
                       <span>Copy URL</span>
@@ -259,11 +254,11 @@
               </h2>
               <nav aria-label="Breadcrumb" class="o-header__breadcrumbs">
                 <a href="https://cityofnewyork.github.io/working-nyc-patterns/demos/index">Home</a>
-                <svg aria-hidden="true" class="o-header__breadcrumbs-chevron icon-wnyc-ui text-blue-l-3">
+                <svg aria-hidden="true" class="o-header__breadcrumbs-chevron icon-wnyc-ui rtl:flip">
                   <use href="#feather-chevron-right"></use>
                 </svg>
                 <a href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/index">Programs</a>
-                <svg aria-hidden="true" class="o-header__breadcrumbs-chevron icon-wnyc-ui text-blue-l-3">
+                <svg aria-hidden="true" class="o-header__breadcrumbs-chevron icon-wnyc-ui rtl:flip">
                   <use href="#feather-chevron-right"></use>
                 </svg>
                 <b aria-current="page">Red Hook on the Road</b>
@@ -272,7 +267,7 @@
                 <mark class="badge mie-2">Recruiting now</mark>
               </p>
               <p class="small flex items-center">
-                <a class="anchor inline-flex mie-1" href="#services">
+                <a class="link-anchor inline-flex mie-1" href="#services">
                   <svg class="icon-wnyc-ui icon-2" role="img">
                     <title>Services</title>
                     <use href="#feather-award"></use>
@@ -280,7 +275,7 @@
                 </a>Job training, certification
               </p>
               <p class="small flex items-center">
-                <a class="anchor inline-flex mie-1" href="#eligibility">
+                <a class="link-anchor inline-flex mie-1" href="#eligibility">
                   <svg class="icon-wnyc-ui icon-2" role="img">
                     <title>Eligibility</title>
                     <use href="#feather-users"></use>
@@ -288,7 +283,7 @@
                 </a>For adults (18+), unemployed, low-income, and justice-involved New Yorkers
               </p>
               <p class="small flex items-center">
-                <a class="anchor inline-flex mie-1" href="#schedule">
+                <a class="link-anchor inline-flex mie-1" href="#schedule">
                   <svg class="icon-wnyc-ui icon-2" role="img">
                     <title>Schedule</title>
                     <use href="#feather-calendar"></use>
@@ -296,7 +291,7 @@
                 </a>Four weeks,&nbsp;<span>full-time</span>
               </p>
               <p class="small flex items-center">
-                <a class="anchor inline-flex mie-1" href="#disability-accommodation">
+                <a class="link-anchor inline-flex mie-1" href="#disability-accommodation">
                   <svg class="icon icon-2" role="img">
                     <title>Disability Accommodations</title>
                     <use href="#icon-wnyc-accessible"></use>
@@ -305,7 +300,7 @@
                 <span>Accommodates Disabilities</span>
               </p>
               <p class="small flex items-center">
-                <a class="anchor inline-flex mie-1" href="#language-access">
+                <a class="link-anchor inline-flex mie-1" href="#language-access">
                   <svg class="icon-wnyc-ui icon-2" role="img">
                     <title>Language Accommodation</title>
                     <use href="#icon-wnyc-translate"></use>
@@ -339,8 +334,8 @@
             </div>
             <section>
               <div class="pt-utility-anchor bg-scale-2 sticky top-0" id="services">
-                <h3 class="h5 flex items-center mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3">
-                  <a class="anchor flex mie-1" href="#services">
+                <h3 class="h5 flex items-center mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3">
+                  <a class="link-anchor flex mie-1" href="#services">
                     <svg class="icon-wnyc-ui" role="img">
                       <title>Services</title>
                       <use href="#feather-award"></use>
@@ -352,8 +347,8 @@
             </section>
             <section>
               <div class="pt-utility-anchor bg-scale-2 sticky top-0" id="eligibility">
-                <h3 class="h5 flex items-center mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3 ">
-                  <a class="anchor flex mie-1" href="#eligibility">
+                <h3 class="h5 flex items-center mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3">
+                  <a class="link-anchor flex mie-1" href="#eligibility">
                     <svg class="icon-wnyc-ui" role="img">
                       <title>Eligibility</title>
                       <use href="#feather-users"></use>
@@ -383,8 +378,8 @@
             </section>
             <section>
               <div class="pt-utility-anchor bg-scale-2 sticky top-0" id="schedule">
-                <h3 class="h5 flex items-center mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3">
-                  <a class="anchor flex mie-1" href="#schedule">
+                <h3 class="h5 flex items-center mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3">
+                  <a class="link-anchor flex mie-1" href="#schedule">
                     <svg class="icon-wnyc-ui" role="img">
                       <title>Schedule</title>
                       <use href="#feather-calendar"></use>
@@ -396,38 +391,38 @@
             </section>
             <section>
               <div class="pt-utility-anchor bg-scale-2 sticky top-0" id="disability-accommodation">
-                <h3 class="h5 flex items-center mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3">
-                  <a class="anchor flex mie-1" href="#disability-accommodation">
+                <h3 class="h5 flex items-center mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3">
+                  <a class="link-anchor flex mie-1" href="#disability-accommodation">
                     <svg class="icon" role="img">
                       <title>Disability Accommodations</title>
                       <use href="#icon-wnyc-accessible"></use>
                     </svg>
                   </a>Disability Accommodation
                 </h3>
-                <p>The following accommodations are available:</p>
-                <ul>
-                  <li>Wheelchair Accessible</li>
-                  <li>Blind or Low Vision Accessible</li>
-                  <li>Audio Description for TV, Film</li>
-                  <li>Telephone Typewriter</li>
-                  <li>Assistive Listening (Telephone)</li>
-                  <li>Sign Language Interpretation</li>
-                  <li>Open Captioning</li>
-                  <li>Assistive Listening (Ear)</li>
-                  <li>Large Print</li>
-                  <li>Universal Information</li>
-                  <li>Hearing with T-Coil</li>
-                  <li>Closed Captioning</li>
-                  <li>Braille</li>
-                  <li>Communication Access Real-Time Translation</li>
-                </ul>
-                <p>Attendees who need additional accommodation for disability such as a sign language translation should contact ____________ by calling <a>1 (800) 333-1122</a> or emailing <a>ada@email.gov</a>.</p>
               </div>
+              <p>The following accommodations are available:</p>
+              <ul>
+                <li>Wheelchair Accessible</li>
+                <li>Blind or Low Vision Accessible</li>
+                <li>Audio Description for TV, Film</li>
+                <li>Telephone Typewriter</li>
+                <li>Assistive Listening (Telephone)</li>
+                <li>Sign Language Interpretation</li>
+                <li>Open Captioning</li>
+                <li>Assistive Listening (Ear)</li>
+                <li>Large Print</li>
+                <li>Universal Information</li>
+                <li>Hearing with T-Coil</li>
+                <li>Closed Captioning</li>
+                <li>Braille</li>
+                <li>Communication Access Real-Time Translation</li>
+              </ul>
+              <p>Attendees who need additional accommodation for disability such as a sign language translation should contact ____________ by calling <a>1 (800) 333-1122</a> or emailing <a>ada@email.gov</a>.</p>
             </section>
             <section>
               <div class="pt-utility-anchor bg-scale-2 sticky top-0" id="language-access">
-                <h3 class="h5 flex items-center mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3">
-                  <a class="anchor flex mie-1" href="#language-access">
+                <h3 class="h5 flex items-center mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3">
+                  <a class="link-anchor flex mie-1" href="#language-access">
                     <svg class="icon-wnyc-ui" role="img">
                       <title>Language Accommodation</title>
                       <use href="#icon-wnyc-translate"></use>
@@ -452,7 +447,7 @@
             </section>
             <section>
               <div class="pt-utility-anchor bg-scale-2 sticky top-0" id="next-steps">
-                <h3 class="anchor h5 mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3">Next Steps</h3>
+                <h3 class="h5 mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3">Next Steps</h3>
               </div>
               <ol>
                 <li>Email a driving record ("<a href="https://dmv.ny.gov/dmv-records/get-my-own-driving-record-abstract" target="_blank">driving abstract</a>") that's less than 30 days old to Isteak Hossain at <a href="mailto:ihossain@bwiny.org" target="_blank">ihossain@bwiny.org</a>
@@ -480,16 +475,17 @@
           </nav>
         </div>
       </section>
-      <section class="layout-content bg-scale-2" data-js="feedback">
-        <div class="tablet:p-3">
-          <article class="c-alert status-primary" data-js="alert-warning">
+      <section class="layout-content bg-scale-1" id="suggest-update">
+        <div class="pt-2 pb-3 wrap">
+          <article class="c-alert" data-js="alert-help">
             <div class="c-alert__graphic">
               <svg aria-hidden="true" class="icon-wnyc-ui">
                 <use href="#feather-help-circle"></use>
               </svg>
             </div>
             <div class="c-alert__body">
-              <p data-js-alert="text">How can we improve this website? Let us know by <a class='inline-flex items-center' href='https://airtable.com/shrfQGpXvo9mmmHpJ' target='_blank'>sending us feedback <svg aria-hidden='true' class='icon-wnyc-ui' style='margin-left: 5px;'>
+              <b class="text-alt mb-1">Suggest an update</b>
+              <p data-js-alert="text">See something out of date on this page? <a href='#' class='link-icon' target='_blank'>Suggest an update to this program <svg aria-hidden='true' class='icon-wnyc-ui rtl:flip'>
                     <use href='#feather-external-link'></use>
                   </svg>
                 </a>
@@ -498,20 +494,42 @@
           </article>
         </div>
       </section>
+      <section class="pt-2 z-10 sticky o-navigation-spacing-bottom" data-js="feedback">
+        <div class="layout-content bg-scale-2">
+          <div class="tablet:px-3 tablet:py-2">
+            <article class="c-alert status-primary" data-js="alert-warning">
+              <div class="c-alert__graphic py-1 ps-1 me-1">
+                <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <use href="#feather-help-circle"></use>
+                </svg>
+              </div>
+              <div class="c-alert__body py-2 pe-2">
+                <p data-js-alert="text">How can we improve this website? Let us know by <a class='link-icon' href='#' target='_blank'>
+                    <span>sending us feedback</span>
+                    <svg aria-hidden='true' class='icon-wnyc-ui rtl:flip'>
+                      <use href='#feather-external-link'></use>
+                    </svg>
+                  </a>
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
       <section class="o-newsletter layout-content py-6" data-js="newsletter">
         <div class="pt-2 pb-3 wrap">
           <h2 class="o-newsletter__heading h4 font-normal">Newsletter</h2>
           <form action="https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;id=aa67394696" id="mc-embedded-subscribe-form" method="post" target="_blank">
-            <div class="c-question c-question-single" id="61a1818b0be5e">
+            <div class="c-question c-question-single" id="8d784f10c539c">
               <!--{ @for  Should match the id of the input }-->
-              <label class="c-question__label" for="question-61a1818b0be5e">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
+              <label class="c-question__label" for="question-8d784f10c539c">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
               <div class="c-question__container">
                 <div class="c-question__input">
                   <div class="input">
                     <!--{ @required  required="true" specifies wether the input is required by a form }-->
                     <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <input id="question-61a1818b0be5e" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
+                    <input id="question-8d784f10c539c" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
                   </div>
                   <div class="c-question__button">
                     <button class="btn btn-primary btn-small" type="submit">Submit</button>
@@ -576,6 +594,7 @@
     var patterns = new WorkingNyc();
     patterns.accordion();
     patterns.dialog();
+    patterns.direction();
     patterns.copy();
     patterns.icons('https://cityofnewyork.github.io/working-nyc-patterns/svg/icons.svg');
     patterns.icons('https://cityofnewyork.github.io/working-nyc-patterns/svg/feather.svg');

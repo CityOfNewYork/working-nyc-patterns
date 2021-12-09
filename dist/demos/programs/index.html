@@ -25,7 +25,6 @@
         <use href="#logo-wnyc-stacked"></use>
       </svg>
     </a>
-    <!--{ @class  Hide menu items for mobile using utilities }-->
     <a class="o-navigation__item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/index">Programs</a>
     <a class="o-navigation__item" href="#">Opportunities</a>
     <a class="o-navigation__item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/newsletter">Newsletter</a>
@@ -35,17 +34,13 @@
       </svg>
       <span class="o-navigation__menu-label" data-js-themes="label">Theme</span>
     </button>
-    <!--button class='o-navigation__menu-item' data-js='search' aria-controls='aria-c-search' aria-expanded='false'-->
-    <!--  svg class='o-navigation__menu-icon icon-wnyc-ui'-->
-    <!--    use href='#feather-search'-->
-    <!--  span class='o-navigation__menu-label' Search-->
     <button aria-controls="aria-c-text-controller" aria-expanded="false" class="o-navigation__menu-item desktop:m-0" data-dialog="open" data-dialog-lock="true" data-js="dialog">
       <svg class="o-navigation__menu-icon icon-wnyc-ui">
         <use href="#icon-wnyc-translate"></use>
       </svg>
       <span class="o-navigation__menu-label">Translate</span>
     </button>
-    <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-navigation__menu-item desktop:hidden mie-0" data-js="mobile-menu" data-js-mobile-menu="open">
+    <button aria-controls="aria-c-menu" aria-expanded="false" class="o-navigation__menu-item desktop:hidden mie-0" data-js="menu" data-js-menu="open">
       <svg class="o-navigation__menu-icon icon-wnyc-ui">
         <use href="#feather-menu"></use>
       </svg>
@@ -54,12 +49,12 @@
   </nav>
   <!--{ @id     Identifies the Mobile Menu for toggling }-->
   <!--{ @class  Add "o-menu-fixed" in production layouts }-->
-  <aside aria-hidden="true" class="o-menu o-menu-fixed hidden" id="aria-c-mobile-menu">
-    <button class="flex items-center justify-self-end mb-auto" data-js="themes">
-      <svg class="o-navigation__menu-icon icon-wnyc-ui">
+  <aside aria-hidden="true" class="o-menu o-menu-fixed hidden" id="aria-c-menu">
+    <button class="flex items-center justify-self-end mb-auto" data-js="themes" tabindex="-1">
+      <svg class="icon-wnyc-ui" tabindex="-1">
         <use data-js-themes="icon" href="#feather-sun"></use>
       </svg>
-      <span class="o-navigation__menu-label" data-js-themes="label">Theme</span>
+      <span data-js-themes="label">Theme</span>
     </button>
     <div class="mb-auto">
       <!--{ @aria-label  Ensures landmarks are unique }-->
@@ -70,14 +65,14 @@
         <a class="o-menu__nav-item" href="#" tabindex="-1">Opportunities</a>
         <a class="o-menu__nav-item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/newsletter" tabindex="-1">Newsletter</a>
       </nav>
-      <!--{ @data-js              "mobile-menu" Adds the toggling utility to close the menu }-->
-      <!--{ @data-js-mobile-menu  "close" indicates that this is the primary closing button for the menu. Focus will shift from the open button to the close button when the menu is opened. }-->
+      <!--{ @data-js              "menu" Adds the toggling utility to close the menu }-->
+      <!--{ @data-js-menu  "close" indicates that this is the primary closing button for the menu. Focus will shift from the open button to the close button when the menu is opened. }-->
       <!--{ @aria-controls        Targets the Mobile Menu ID for toggling }-->
       <!--{ @aria-expanded        Indicates the toggled state of the target }-->
       <!--{ @tabindex             Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-      <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-menu__nav-item flex items-center" data-js="mobile-menu" data-js-mobile-menu="close" tabindex="-1">
+      <button aria-controls="aria-c-menu" aria-expanded="false" class="o-menu__nav-item flex items-center" data-js="menu" data-js-menu="close" tabindex="-1">
         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-        <svg aria-hidden="true" class="icon-wnyc-ui">
+        <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
           <use href="#feather-x"></use>
         </svg>
         <span>Close</span>
@@ -174,8 +169,8 @@
       <div>
         <div class="c-dropdown layout-content sticky top-0 bg-scale-1 z-10">
           <div class="c-utility">
-            <a class="mie-auto" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/index">
-              <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
+            <a class="link-icon mie-auto" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/index">
+              <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
                 <use href="#feather-chevron-left"></use>
               </svg>
               <span>Home</span>
@@ -198,13 +193,13 @@
               </div>
               <form class="layout-rows" tabindex="-1">
                 <fieldset tabindex="-1">
-                  <legend class="h4 block w-full m-0 py-2 ps-2 text-alt sticky top-0 z-10 bg-scale-1" tabindex="-1">Services</legend>
+                  <legend class="h5 block w-full m-0 py-2 tablet:py-3 pis-2 text-alt sticky top-0 z-10 bg-scale-1" tabindex="-1">Services</legend>
                   <div class="layout-rows tablet:grid grid-cols-2 gap-3">
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="4e9e68b33b39c" tabindex="-1">
+                    <label class="option w-full" for="2d0ddd7c59a47" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="4e9e68b33b39c" name="option['4e9e68b33b39c']" tabindex="-1" type="checkbox" value="training-for-a-new-career" />
+                      <input id="2d0ddd7c59a47" name="option['2d0ddd7c59a47']" tabindex="-1" type="checkbox" value="training-for-a-new-career" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -214,9 +209,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="1126d23f0a75d" tabindex="-1">
+                    <label class="option w-full" for="8da8ca88fdcd7" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="1126d23f0a75d" name="option['1126d23f0a75d']" tabindex="-1" type="checkbox" value="help-applying-for-work" />
+                      <input id="8da8ca88fdcd7" name="option['8da8ca88fdcd7']" tabindex="-1" type="checkbox" value="help-applying-for-work" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -226,9 +221,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="57377c111fd28" tabindex="-1">
+                    <label class="option w-full" for="27e90b0e98991" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="57377c111fd28" name="option['57377c111fd28']" tabindex="-1" type="checkbox" value="internship-and-shortterm-work" />
+                      <input id="27e90b0e98991" name="option['27e90b0e98991']" tabindex="-1" type="checkbox" value="internship-and-shortterm-work" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -238,9 +233,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="aaebbdd9f461d" tabindex="-1">
+                    <label class="option w-full" for="bc2ab42cd641" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="aaebbdd9f461d" name="option['aaebbdd9f461d']" tabindex="-1" type="checkbox" value="high-school-equivalency-ged-prep" />
+                      <input id="bc2ab42cd641" name="option['bc2ab42cd641']" tabindex="-1" type="checkbox" value="high-school-equivalency-ged-prep" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -250,9 +245,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="f07c521b41da2" tabindex="-1">
+                    <label class="option w-full" for="3ccb734e11034" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="f07c521b41da2" name="option['f07c521b41da2']" tabindex="-1" type="checkbox" value="english-language-learning" />
+                      <input id="3ccb734e11034" name="option['3ccb734e11034']" tabindex="-1" type="checkbox" value="english-language-learning" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -263,13 +258,13 @@
                   </div>
                 </fieldset>
                 <fieldset tabindex="-1">
-                  <legend class="h4 block w-full m-0 py-2 ps-2 text-alt sticky top-0 z-10 bg-scale-1" tabindex="-1">Population</legend>
+                  <legend class="h5 block w-full m-0 py-2 tablet:py-3 pis-2 text-alt sticky top-0 z-10 bg-scale-1" tabindex="-1">Population</legend>
                   <div class="layout-rows tablet:grid grid-cols-2 gap-3">
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="762a78597b75d" tabindex="-1">
+                    <label class="option w-full" for="0cce0f185f1" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="762a78597b75d" name="option['762a78597b75d']" tabindex="-1" type="checkbox" value="young-adults-1624" />
+                      <input id="0cce0f185f1" name="option['0cce0f185f1']" tabindex="-1" type="checkbox" value="young-adults-1624" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -279,9 +274,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="d4ad2ca5f68ba" tabindex="-1">
+                    <label class="option w-full" for="c072b9e0efbb6" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="d4ad2ca5f68ba" name="option['d4ad2ca5f68ba']" tabindex="-1" type="checkbox" value="adults-18" />
+                      <input id="c072b9e0efbb6" name="option['c072b9e0efbb6']" tabindex="-1" type="checkbox" value="adults-18" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -291,9 +286,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="77e53daac4704" tabindex="-1">
+                    <label class="option w-full" for="187d77a9834e7" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="77e53daac4704" name="option['77e53daac4704']" tabindex="-1" type="checkbox" value="older-adults-55" />
+                      <input id="187d77a9834e7" name="option['187d77a9834e7']" tabindex="-1" type="checkbox" value="older-adults-55" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -303,9 +298,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="07253748daeff" tabindex="-1">
+                    <label class="option w-full" for="d6a4e41d568ca" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="07253748daeff" name="option['07253748daeff']" tabindex="-1" type="checkbox" value="immigrant-new-yorker" />
+                      <input id="d6a4e41d568ca" name="option['d6a4e41d568ca']" tabindex="-1" type="checkbox" value="immigrant-new-yorker" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -315,9 +310,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="d3103b47a0138" tabindex="-1">
+                    <label class="option w-full" for="fc47f2653c0d1" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="d3103b47a0138" name="option['d3103b47a0138']" tabindex="-1" type="checkbox" value="nycha-residents" />
+                      <input id="fc47f2653c0d1" name="option['fc47f2653c0d1']" tabindex="-1" type="checkbox" value="nycha-residents" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -327,9 +322,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="4c5a1730dee22" tabindex="-1">
+                    <label class="option w-full" for="26363019aa665" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="4c5a1730dee22" name="option['4c5a1730dee22']" tabindex="-1" type="checkbox" value="people-with-disabilities" />
+                      <input id="26363019aa665" name="option['26363019aa665']" tabindex="-1" type="checkbox" value="people-with-disabilities" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -339,9 +334,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="4d0729a49a94c" tabindex="-1">
+                    <label class="option w-full" for="17700f9a0341a" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="4d0729a49a94c" name="option['4d0729a49a94c']" tabindex="-1" type="checkbox" value="people-with-justice-involvement" />
+                      <input id="17700f9a0341a" name="option['17700f9a0341a']" tabindex="-1" type="checkbox" value="people-with-justice-involvement" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -351,9 +346,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="0684ea0fb3a84" tabindex="-1">
+                    <label class="option w-full" for="0acc7c7714b6a" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="0684ea0fb3a84" name="option['0684ea0fb3a84']" tabindex="-1" type="checkbox" value="public-assistance-recipients" />
+                      <input id="0acc7c7714b6a" name="option['0acc7c7714b6a']" tabindex="-1" type="checkbox" value="public-assistance-recipients" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -363,9 +358,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="90563fb7abb3b" tabindex="-1">
+                    <label class="option w-full" for="b390855c59f0d" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="90563fb7abb3b" name="option['90563fb7abb3b']" tabindex="-1" type="checkbox" value="lowincome-new-yorker" />
+                      <input id="b390855c59f0d" name="option['b390855c59f0d']" tabindex="-1" type="checkbox" value="lowincome-new-yorker" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -376,13 +371,13 @@
                   </div>
                 </fieldset>
                 <fieldset tabindex="-1">
-                  <legend class="h4 block w-full m-0 py-2 ps-2 text-alt sticky top-0 z-10 bg-scale-1" tabindex="-1">Schedule</legend>
+                  <legend class="h5 block w-full m-0 py-2 tablet:py-3 pis-2 text-alt sticky top-0 z-10 bg-scale-1" tabindex="-1">Schedule</legend>
                   <div class="layout-rows tablet:grid grid-cols-2 gap-3">
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="422869a9f5eeb" tabindex="-1">
+                    <label class="option w-full" for="98ca7c432db3d" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="422869a9f5eeb" name="option['422869a9f5eeb']" tabindex="-1" type="checkbox" value="daytime" />
+                      <input id="98ca7c432db3d" name="option['98ca7c432db3d']" tabindex="-1" type="checkbox" value="daytime" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -392,9 +387,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="a94c90f6655f8" tabindex="-1">
+                    <label class="option w-full" for="e0e867976516" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="a94c90f6655f8" name="option['a94c90f6655f8']" tabindex="-1" type="checkbox" value="evening" />
+                      <input id="e0e867976516" name="option['e0e867976516']" tabindex="-1" type="checkbox" value="evening" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -404,9 +399,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="3af237a32d76c" tabindex="-1">
+                    <label class="option w-full" for="270d46be5ec28" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="3af237a32d76c" name="option['3af237a32d76c']" tabindex="-1" type="checkbox" value="weekend" />
+                      <input id="270d46be5ec28" name="option['270d46be5ec28']" tabindex="-1" type="checkbox" value="weekend" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -416,9 +411,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="6a321df319e6e" tabindex="-1">
+                    <label class="option w-full" for="ae24f4d3836c" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="6a321df319e6e" name="option['6a321df319e6e']" tabindex="-1" type="checkbox" value="parttime" />
+                      <input id="ae24f4d3836c" name="option['ae24f4d3836c']" tabindex="-1" type="checkbox" value="parttime" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -428,9 +423,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="c4140329a802" tabindex="-1">
+                    <label class="option w-full" for="59cbcba1c47ae" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="c4140329a802" name="option['c4140329a802']" tabindex="-1" type="checkbox" value="fulltime" />
+                      <input id="59cbcba1c47ae" name="option['59cbcba1c47ae']" tabindex="-1" type="checkbox" value="fulltime" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -440,9 +435,9 @@
                     </label>
                     <!--{ @for       Should match the id of the input }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <label class="option w-full" for="48b245cd28186" tabindex="-1">
+                    <label class="option w-full" for="cf95d270f52dc" tabindex="-1">
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                      <input id="48b245cd28186" name="option['48b245cd28186']" tabindex="-1" type="checkbox" value="flexible" />
+                      <input id="cf95d270f52dc" name="option['cf95d270f52dc']" tabindex="-1" type="checkbox" value="flexible" />
                       <span class="option__base">
                         <svg aria-hidden="true" class="option__graphic">
                           <use href="#option-wnyc-checkbox"></use>
@@ -466,7 +461,7 @@
               <p>Explore services and programs that can help you prepare for and connect to work. <button data-js="dialog" aria-controls="aria-c-filter" aria-expanded="false" data-dialog-lock="true">Use filters to narrow your choices</button>.</p>
               <nav aria-label="Breadcrumb" class="o-header__breadcrumbs">
                 <a href="https://cityofnewyork.github.io/working-nyc-patterns/demos/index">Home</a>
-                <svg aria-hidden="true" class="o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4">
+                <svg aria-hidden="true" class="o-header__breadcrumbs-chevron icon-wnyc-ui rtl:flip">
                   <use href="#feather-chevron-right"></use>
                 </svg>
                 <b aria-current="page">Programs</b>
@@ -475,7 +470,7 @@
           </header>
         </div>
         <section class="page-max desktop:px-6">
-          <div class="wrap desktop:px-6 tablet:grid tablet:grid-cols-2 tablet:gap-3 desktop:gap-5">
+          <div class="wrap desktop:px-6 grid gap-3 tablet:grid-cols-2 desktop:gap-5">
             <article class="c-card ">
               <header class="c-card__header">
                 <h2 class="c-card__title">
@@ -492,14 +487,14 @@
                   <mark class="badge mie-2" data-program="recruiting"> Actively recruiting </mark>
                   <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
-            <use xlink:href="#icon-wnyc-accessible"></use>
+            <use href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
                   <!-- <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-translate"></use>
+            <use href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
@@ -529,13 +524,13 @@
                   </li>
                 </ul>
                 <a class="c-card__cta" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
-                  <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
                     <use href="#feather-arrow-left"></use>
                   </svg>
                   <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Commercial driver training</span>
                     </span>
                   </span>
-                  <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
                     <use href="#feather-arrow-right"></use>
                   </svg>
                 </a>
@@ -577,13 +572,13 @@
                   </li>
                 </ul>
                 <a class="c-card__cta" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
-                  <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
                     <use href="#feather-arrow-left"></use>
                   </svg>
                   <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">HSE and job prep for youth</span>
                     </span>
                   </span>
-                  <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
                     <use href="#feather-arrow-right"></use>
                   </svg>
                 </a>
@@ -605,14 +600,14 @@
                   <mark class="badge mie-2" data-program="recruiting"> Actively recruiting </mark>
                   <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
-            <use xlink:href="#icon-wnyc-accessible"></use>
+            <use href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
                   <!-- <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-translate"></use>
+            <use href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
@@ -642,13 +637,13 @@
                   </li>
                 </ul>
                 <a class="c-card__cta" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
-                  <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
                     <use href="#feather-arrow-left"></use>
                   </svg>
                   <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Web development training</span>
                     </span>
                   </span>
-                  <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
                     <use href="#feather-arrow-right"></use>
                   </svg>
                 </a>
@@ -670,14 +665,14 @@
                   <mark class="badge mie-2" data-program="recruiting"> Actively recruiting </mark>
                   <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
-            <use xlink:href="#icon-wnyc-accessible"></use>
+            <use href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
                   <!-- <span class="flex mie-2" data-program="multilingual">
           <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-            <use xlink:href="#icon-wnyc-translate"></use>
+            <use href="#icon-wnyc-translate"></use>
           </svg>
 
           <span class="sr-only">Accommodates Multiple Languages</span>
@@ -706,13 +701,13 @@
                   </li>
                 </ul>
                 <a class="c-card__cta" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
-                  <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
                     <use href="#feather-arrow-left"></use>
                   </svg>
                   <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Home health aide training</span>
                     </span>
                   </span>
-                  <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
                     <use href="#feather-arrow-right"></use>
                   </svg>
                 </a>
@@ -752,13 +747,13 @@
                   </li>
                 </ul>
                 <a class="c-card__cta" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
-                  <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
                     <use href="#feather-arrow-left"></use>
                   </svg>
                   <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Math and reading for HSE Prep</span>
                     </span>
                   </span>
-                  <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
                     <use href="#feather-arrow-right"></use>
                   </svg>
                 </a>
@@ -779,14 +774,14 @@
                 <p class="c-card__status flex items-center">
                   <!-- <span class="flex mie-2" data-program="accessible">
           <svg aria-hidden="true" class="icon text-alt">
-            <use xlink:href="#icon-wnyc-accessible"></use>
+            <use href="#icon-wnyc-accessible"></use>
           </svg>
 
           <span class="sr-only">Accommodates Disabilities</span>
         </span> -->
                   <span class="flex mie-2" data-program="multilingual">
                     <svg aria-hidden="true" class="icon-wnyc-ui text-alt">
-                      <use xlink:href="#icon-wnyc-translate"></use>
+                      <use href="#icon-wnyc-translate"></use>
                     </svg>
                     <span class="sr-only">Accommodates Multiple Languages</span>
                   </span>
@@ -815,13 +810,13 @@
                   </li>
                 </ul>
                 <a class="c-card__cta" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/red-hook-on-the-road">
-                  <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
                     <use href="#feather-arrow-left"></use>
                   </svg>
                   <span>Learn more&nbsp;<span class="sr-only">about&nbsp;<span data-program="plain-language-name">Classes to improve English skills</span>
                     </span>
                   </span>
-                  <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
                     <use href="#feather-arrow-right"></use>
                   </svg>
                 </a>
@@ -835,38 +830,42 @@
           </div>
         </section>
       </div>
-      <section class="layout-content bg-scale-2" data-js="feedback">
-        <div class="tablet:p-3">
-          <article class="c-alert status-primary" data-js="alert-warning">
-            <div class="c-alert__graphic">
-              <svg aria-hidden="true" class="icon-wnyc-ui">
-                <use href="#feather-help-circle"></use>
-              </svg>
-            </div>
-            <div class="c-alert__body">
-              <p data-js-alert="text">How can we improve this website? Let us know by <a class='inline-flex items-center' href='https://airtable.com/shrfQGpXvo9mmmHpJ' target='_blank'>sending us feedback <svg aria-hidden='true' class='icon-wnyc-ui' style='margin-left: 5px;'>
-                    <use href='#feather-external-link'></use>
-                  </svg>
-                </a>
-              </p>
-            </div>
-          </article>
+      <section class="pt-2 z-10 sticky o-navigation-spacing-bottom" data-js="feedback">
+        <div class="layout-content bg-scale-2">
+          <div class="tablet:px-3 tablet:py-2">
+            <article class="c-alert status-primary" data-js="alert-warning">
+              <div class="c-alert__graphic py-1 ps-1 me-1">
+                <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <use href="#feather-help-circle"></use>
+                </svg>
+              </div>
+              <div class="c-alert__body py-2 pe-2">
+                <p data-js-alert="text">How can we improve this website? Let us know by <a class='link-icon' href='#' target='_blank'>
+                    <span>sending us feedback</span>
+                    <svg aria-hidden='true' class='icon-wnyc-ui rtl:flip'>
+                      <use href='#feather-external-link'></use>
+                    </svg>
+                  </a>
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
       <section class="o-newsletter layout-content py-6" data-js="newsletter">
         <div class="pt-2 pb-3 wrap">
           <h2 class="o-newsletter__heading h4 font-normal">Newsletter</h2>
           <form action="https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;id=aa67394696" id="mc-embedded-subscribe-form" method="post" target="_blank">
-            <div class="c-question c-question-single" id="9bfe536deb07">
+            <div class="c-question c-question-single" id="e97f67b44b392">
               <!--{ @for  Should match the id of the input }-->
-              <label class="c-question__label" for="question-9bfe536deb07">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
+              <label class="c-question__label" for="question-e97f67b44b392">Enter your email to sign up for our newsletter and stay up-to-date with careers, training, and events.</label>
               <div class="c-question__container">
                 <div class="c-question__input">
                   <div class="input">
                     <!--{ @required  required="true" specifies wether the input is required by a form }-->
                     <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                     <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                    <input id="question-9bfe536deb07" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
+                    <input id="question-e97f67b44b392" name="EMAIL" placeholder="Enter your email" required="true" type="email" />
                   </div>
                   <div class="c-question__button">
                     <button class="btn btn-primary btn-small" type="submit">Submit</button>
@@ -931,6 +930,7 @@
     var patterns = new WorkingNyc();
     patterns.accordion();
     patterns.dialog();
+    patterns.direction();
     patterns.copy();
     patterns.icons('https://cityofnewyork.github.io/working-nyc-patterns/svg/icons.svg');
     patterns.icons('https://cityofnewyork.github.io/working-nyc-patterns/svg/feather.svg');
