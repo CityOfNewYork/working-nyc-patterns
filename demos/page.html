@@ -25,7 +25,6 @@
         <use href="#logo-wnyc-stacked"></use>
       </svg>
     </a>
-    <!--{ @class  Hide menu items for mobile using utilities }-->
     <a class="o-navigation__item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/index">Programs</a>
     <a class="o-navigation__item" href="#">Opportunities</a>
     <a class="o-navigation__item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/newsletter">Newsletter</a>
@@ -35,17 +34,13 @@
       </svg>
       <span class="o-navigation__menu-label" data-js-themes="label">Theme</span>
     </button>
-    <!--button class='o-navigation__menu-item' data-js='search' aria-controls='aria-c-search' aria-expanded='false'-->
-    <!--  svg class='o-navigation__menu-icon icon-wnyc-ui'-->
-    <!--    use href='#feather-search'-->
-    <!--  span class='o-navigation__menu-label' Search-->
     <button aria-controls="aria-c-text-controller" aria-expanded="false" class="o-navigation__menu-item desktop:m-0" data-dialog="open" data-dialog-lock="true" data-js="dialog">
       <svg class="o-navigation__menu-icon icon-wnyc-ui">
         <use href="#icon-wnyc-translate"></use>
       </svg>
       <span class="o-navigation__menu-label">Translate</span>
     </button>
-    <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-navigation__menu-item desktop:hidden mie-0" data-js="mobile-menu" data-js-mobile-menu="open">
+    <button aria-controls="aria-c-menu" aria-expanded="false" class="o-navigation__menu-item desktop:hidden mie-0" data-js="menu" data-js-menu="open">
       <svg class="o-navigation__menu-icon icon-wnyc-ui">
         <use href="#feather-menu"></use>
       </svg>
@@ -54,12 +49,12 @@
   </nav>
   <!--{ @id     Identifies the Mobile Menu for toggling }-->
   <!--{ @class  Add "o-menu-fixed" in production layouts }-->
-  <aside aria-hidden="true" class="o-menu o-menu-fixed hidden" id="aria-c-mobile-menu">
-    <button class="flex items-center justify-self-end mb-auto" data-js="themes">
-      <svg class="o-navigation__menu-icon icon-wnyc-ui">
+  <aside aria-hidden="true" class="o-menu o-menu-fixed hidden" id="aria-c-menu">
+    <button class="flex items-center justify-self-end mb-auto" data-js="themes" tabindex="-1">
+      <svg class="icon-wnyc-ui" tabindex="-1">
         <use data-js-themes="icon" href="#feather-sun"></use>
       </svg>
-      <span class="o-navigation__menu-label" data-js-themes="label">Theme</span>
+      <span data-js-themes="label">Theme</span>
     </button>
     <div class="mb-auto">
       <!--{ @aria-label  Ensures landmarks are unique }-->
@@ -70,14 +65,14 @@
         <a class="o-menu__nav-item" href="#" tabindex="-1">Opportunities</a>
         <a class="o-menu__nav-item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/newsletter" tabindex="-1">Newsletter</a>
       </nav>
-      <!--{ @data-js              "mobile-menu" Adds the toggling utility to close the menu }-->
-      <!--{ @data-js-mobile-menu  "close" indicates that this is the primary closing button for the menu. Focus will shift from the open button to the close button when the menu is opened. }-->
+      <!--{ @data-js              "menu" Adds the toggling utility to close the menu }-->
+      <!--{ @data-js-menu  "close" indicates that this is the primary closing button for the menu. Focus will shift from the open button to the close button when the menu is opened. }-->
       <!--{ @aria-controls        Targets the Mobile Menu ID for toggling }-->
       <!--{ @aria-expanded        Indicates the toggled state of the target }-->
       <!--{ @tabindex             Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-      <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-menu__nav-item flex items-center" data-js="mobile-menu" data-js-mobile-menu="close" tabindex="-1">
+      <button aria-controls="aria-c-menu" aria-expanded="false" class="o-menu__nav-item flex items-center" data-js="menu" data-js-menu="close" tabindex="-1">
         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-        <svg aria-hidden="true" class="icon-wnyc-ui">
+        <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
           <use href="#feather-x"></use>
         </svg>
         <span>Close</span>
@@ -189,7 +184,7 @@
           <div class="px-2 tablet:px-3">
             <div class="overflow-hidden overflow-x-scroll whitespace-nowrap" data-js="active-navigation-scroll">
               <nav aria-label="Jump Navigation" class="c-utility text-secondary font-secondary inline-flex relative px-0" data-js="active-navigation">
-                <span class="c-utility__item">Jump to</span>
+                <span class="c-utility__item text-alt">Jump to</span>
                 <a class="text-inherit" href="#content">Top of page</a>
                 <a class="text-inherit" href="#overview">Overview</a>
                 <a class="text-inherit" href="#section-two">Section Two</a>
@@ -204,53 +199,57 @@
             <div class="py-4 wrap" data-js="observe" data-js-observe-items="heading">
               <section class="pb-6" data-js-observe-item="heading" id="overview">
                 <div class="pt-utility-anchor bg-scale-2 sticky top-0">
-                  <h3 class="h5 mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3">Overview</h3>
+                  <h3 class="h5 mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3">Overview</h3>
                 </div>
                 <p>Working NYC is New York City’s front door to programs that help you prepare for and find a job. Through this easy-to-use tool, you can find the services that are right for you, figure out if you’re eligible, and learn about the next steps.</p>
               </section>
               <section class="pb-6" data-js-observe-item="heading" id="section-two">
                 <div class="pt-utility-anchor bg-scale-2 sticky top-0">
-                  <h3 class="h5 mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3">Section Two</h3>
+                  <h3 class="h5 mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3">Section Two</h3>
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ullamcorper volutpat luctus. Maecenas in leo et quam imperdiet imperdiet. Nam bibendum maximus mi at vehicula. Etiam fringilla pulvinar tortor, quis elementum diam tempus id. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas id porta erat, non congue metus. Nunc eget mattis felis. Ut a viverra metus. Aenean aliquet lectus molestie maximus pellentesque. Nunc sit amet tortor aliquam, condimentum nisl ut, laoreet nulla. Praesent a erat et ante maximus euismod a eu nibh. Aliquam tempus ultrices elit eget finibus.</p>
               </section>
               <section class="pb-6" data-js-observe-item="heading" id="section-three">
                 <div class="pt-utility-anchor bg-scale-2 sticky top-0">
-                  <h3 class="h5 mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3">Section Three</h3>
+                  <h3 class="h5 mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3">Section Three</h3>
                 </div>
                 <p>Quisque eget tincidunt velit. Etiam in imperdiet libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras lobortis neque ac dapibus imperdiet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec fringilla et arcu mattis luctus. Curabitur at quam efficitur, malesuada metus in, mollis nisi. Proin id mattis odio. Suspendisse volutpat lacus nec accumsan ultrices. Aenean fermentum dolor sit amet magna facilisis tincidunt. Pellentesque dignissim nisl quis odio pellentesque, sed efficitur leo bibendum.</p>
               </section>
               <section class="pb-6" data-js-observe-item="heading" id="section-four">
                 <div class="pt-utility-anchor bg-scale-2 sticky top-0">
-                  <h3 class="h5 mt-0 text-alt border-b border-scale-4 py-2 tablet:py-3">Section Four</h3>
+                  <h3 class="h5 mb-3 text-alt border-b border-scale-4 py-2 tablet:py-3">Section Four</h3>
                 </div>
                 <p>Donec rhoncus mi neque, in consectetur tellus iaculis in. Sed tempor urna ut neque vestibulum, eu semper arcu placerat. Sed pellentesque, justo id pulvinar scelerisque, ligula velit pharetra diam, vel dictum erat orci sed purus. Vestibulum vitae felis accumsan, tincidunt orci sed, fringilla justo. Nulla non magna quis nisi eleifend fringilla id sed orci. Duis efficitur risus ut hendrerit finibus. Aliquam sodales lorem nulla. Proin sit amet risus eleifend, aliquet neque nec, imperdiet purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce nec finibus dolor, id ullamcorper mauris. Quisque molestie mauris ut aliquet tincidunt. Sed magna nibh, ullamcorper in libero a, ultricies sollicitudin leo. Sed accumsan, lectus sit amet aliquam volutpat, tellus neque pulvinar enim, ut volutpat lectus arcu id risus.</p>
               </section>
             </div>
           </div>
           <div class="layout-content sticky z-10 o-navigation-feedback-spacing-bottom">
-            <div class="p-2 text-end">
-              <a class="btn btn-small tablet:btn btn-secondary bg-scale-1" href="#content">Back to top</a>
+            <div class="px-2 tablet:px-3 pt-2 pb-0 text-end">
+              <a class="btn btn-small tablet:btn btn-secondary" href="#content">Back to top</a>
             </div>
           </div>
         </div>
       </div>
-      <section class="layout-content bg-scale-2" data-js="feedback">
-        <div class="tablet:p-3">
-          <article class="c-alert status-primary" data-js="alert-warning">
-            <div class="c-alert__graphic">
-              <svg aria-hidden="true" class="icon-wnyc-ui">
-                <use href="#feather-help-circle"></use>
-              </svg>
-            </div>
-            <div class="c-alert__body">
-              <p data-js-alert="text">How can we improve this website? Let us know by <a class='inline-flex items-center' href='https://airtable.com/shrfQGpXvo9mmmHpJ' target='_blank'>sending us feedback <svg aria-hidden='true' class='icon-wnyc-ui' style='margin-left: 5px;'>
-                    <use href='#feather-external-link'></use>
-                  </svg>
-                </a>
-              </p>
-            </div>
-          </article>
+      <section class="pt-2 z-10 sticky o-navigation-spacing-bottom" data-js="feedback">
+        <div class="layout-content bg-scale-2">
+          <div class="tablet:px-3 tablet:py-2">
+            <article class="c-alert status-primary" data-js="alert-warning">
+              <div class="c-alert__graphic py-1 ps-1 me-1">
+                <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <use href="#feather-help-circle"></use>
+                </svg>
+              </div>
+              <div class="c-alert__body py-2 pe-2">
+                <p data-js-alert="text">How can we improve this website? Let us know by <a class='link-icon' href='#' target='_blank'>
+                    <span>sending us feedback</span>
+                    <svg aria-hidden='true' class='icon-wnyc-ui rtl:flip'>
+                      <use href='#feather-external-link'></use>
+                    </svg>
+                  </a>
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
     </main>
@@ -307,6 +306,7 @@
     var patterns = new WorkingNyc();
     patterns.accordion();
     patterns.dialog();
+    patterns.direction();
     patterns.copy();
     patterns.icons('https://cityofnewyork.github.io/working-nyc-patterns/svg/icons.svg');
     patterns.icons('https://cityofnewyork.github.io/working-nyc-patterns/svg/feather.svg');

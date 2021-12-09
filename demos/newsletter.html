@@ -25,7 +25,6 @@
         <use href="#logo-wnyc-stacked"></use>
       </svg>
     </a>
-    <!--{ @class  Hide menu items for mobile using utilities }-->
     <a class="o-navigation__item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/programs/index">Programs</a>
     <a class="o-navigation__item" href="#">Opportunities</a>
     <a class="o-navigation__item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/newsletter">Newsletter</a>
@@ -35,17 +34,13 @@
       </svg>
       <span class="o-navigation__menu-label" data-js-themes="label">Theme</span>
     </button>
-    <!--button class='o-navigation__menu-item' data-js='search' aria-controls='aria-c-search' aria-expanded='false'-->
-    <!--  svg class='o-navigation__menu-icon icon-wnyc-ui'-->
-    <!--    use href='#feather-search'-->
-    <!--  span class='o-navigation__menu-label' Search-->
     <button aria-controls="aria-c-text-controller" aria-expanded="false" class="o-navigation__menu-item desktop:m-0" data-dialog="open" data-dialog-lock="true" data-js="dialog">
       <svg class="o-navigation__menu-icon icon-wnyc-ui">
         <use href="#icon-wnyc-translate"></use>
       </svg>
       <span class="o-navigation__menu-label">Translate</span>
     </button>
-    <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-navigation__menu-item desktop:hidden mie-0" data-js="mobile-menu" data-js-mobile-menu="open">
+    <button aria-controls="aria-c-menu" aria-expanded="false" class="o-navigation__menu-item desktop:hidden mie-0" data-js="menu" data-js-menu="open">
       <svg class="o-navigation__menu-icon icon-wnyc-ui">
         <use href="#feather-menu"></use>
       </svg>
@@ -54,12 +49,12 @@
   </nav>
   <!--{ @id     Identifies the Mobile Menu for toggling }-->
   <!--{ @class  Add "o-menu-fixed" in production layouts }-->
-  <aside aria-hidden="true" class="o-menu o-menu-fixed hidden" id="aria-c-mobile-menu">
-    <button class="flex items-center justify-self-end mb-auto" data-js="themes">
-      <svg class="o-navigation__menu-icon icon-wnyc-ui">
+  <aside aria-hidden="true" class="o-menu o-menu-fixed hidden" id="aria-c-menu">
+    <button class="flex items-center justify-self-end mb-auto" data-js="themes" tabindex="-1">
+      <svg class="icon-wnyc-ui" tabindex="-1">
         <use data-js-themes="icon" href="#feather-sun"></use>
       </svg>
-      <span class="o-navigation__menu-label" data-js-themes="label">Theme</span>
+      <span data-js-themes="label">Theme</span>
     </button>
     <div class="mb-auto">
       <!--{ @aria-label  Ensures landmarks are unique }-->
@@ -70,14 +65,14 @@
         <a class="o-menu__nav-item" href="#" tabindex="-1">Opportunities</a>
         <a class="o-menu__nav-item" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/newsletter" tabindex="-1">Newsletter</a>
       </nav>
-      <!--{ @data-js              "mobile-menu" Adds the toggling utility to close the menu }-->
-      <!--{ @data-js-mobile-menu  "close" indicates that this is the primary closing button for the menu. Focus will shift from the open button to the close button when the menu is opened. }-->
+      <!--{ @data-js              "menu" Adds the toggling utility to close the menu }-->
+      <!--{ @data-js-menu  "close" indicates that this is the primary closing button for the menu. Focus will shift from the open button to the close button when the menu is opened. }-->
       <!--{ @aria-controls        Targets the Mobile Menu ID for toggling }-->
       <!--{ @aria-expanded        Indicates the toggled state of the target }-->
       <!--{ @tabindex             Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-      <button aria-controls="aria-c-mobile-menu" aria-expanded="false" class="o-menu__nav-item flex items-center" data-js="mobile-menu" data-js-mobile-menu="close" tabindex="-1">
+      <button aria-controls="aria-c-menu" aria-expanded="false" class="o-menu__nav-item flex items-center" data-js="menu" data-js-menu="close" tabindex="-1">
         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-        <svg aria-hidden="true" class="icon-wnyc-ui">
+        <svg aria-hidden="true" class="icon-wnyc-ui" tabindex="-1">
           <use href="#feather-x"></use>
         </svg>
         <span>Close</span>
@@ -175,7 +170,7 @@
         <div class="layout-content sticky top-0 bg-scale-1 z-10">
           <div class="c-utility">
             <a class="mie-auto" href="https://cityofnewyork.github.io/working-nyc-patterns/demos/index">
-              <svg aria-hidden="true" class="icon-wnyc-ui mie-1">
+              <svg aria-hidden="true" class="icon-wnyc-ui rtl:flip">
                 <use href="#feather-chevron-left"></use>
               </svg>
               <span>Home</span>
@@ -194,7 +189,7 @@
               <h1 class="o-header__title">Newsletter</h1>
               <nav class="o-header__breadcrumbs">
                 <a href="https://cityofnewyork.github.io/working-nyc-patterns/demos/index">Home</a>
-                <svg aria-hidden="true" class="o-header__breadcrumbs-chevron icon-wnyc-ui text-scale-4">
+                <svg aria-hidden="true" class="o-header__breadcrumbs-chevron icon-wnyc-ui rtl:flip">
                   <use href="#feather-chevron-right"></use>
                 </svg>
                 <b>Newsletter</b>
@@ -234,35 +229,35 @@
                       <p data-js-alert='text'></p>
                     </div>
                   </article>
-                  <div class="c-question " id="20775b6856405">
+                  <div class="c-question " id="cda69937036bf">
                     <!--{ @for  Should match the id of the input }-->
-                    <label class="c-question__label" for="question-20775b6856405">Your email address.</label>
+                    <label class="c-question__label" for="question-cda69937036bf">Your email address.</label>
                     <div class="c-question__container">
                       <div class="input">
                         <!--{ @required  required="true" specifies wether the input is required by a form }-->
                         <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="question-20775b6856405" name="EMAIL" required="true" type="email" />
+                        <input id="question-cda69937036bf" name="EMAIL" required="true" type="email" />
                       </div>
                     </div>
                   </div>
-                  <div class="c-question " id="8f4b0f28a06e8">
+                  <div class="c-question " id="228868bfecac9">
                     <!--{ @for  Should match the id of the input }-->
-                    <label class="c-question__label" for="question-8f4b0f28a06e8">What is your zip code?</label>
+                    <label class="c-question__label" for="question-228868bfecac9">What is your zip code?</label>
                     <div class="c-question__container">
                       <div class="input">
                         <!--{ @required  required="true" specifies wether the input is required by a form }-->
                         <!--{ @pattern   pattern="{{ my regular expression }}" a regular expression the input's value must match in order to validate }-->
                         <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
-                        <input id="question-8f4b0f28a06e8" name="ZIPCODE" required="true" type="text" />
+                        <input id="question-228868bfecac9" name="ZIPCODE" required="true" type="text" />
                       </div>
                     </div>
                   </div>
                   <!--{ @fieldset  Checkbox and radio input groups should be grouped in fieldset tags }-->
-                  <fieldset class="c-question" id="a51f684663de">
+                  <fieldset class="c-question" id="6af9547766936">
                     <!--{ @legend  Checkboxes and radio input groups should be labeled by legend tags }-->
                     <legend class="c-question__label">Which borough(s) would you like to recieve updates for?</legend>
-                    <div class="c-question__container tablet:grid grid-cols-2 gap-2">
+                    <div class="c-question__container grid grid-cols-1 tablet:grid-cols-2 gap-2">
                       <!--{ @for       Should match the id of the input }-->
                       <!--{ @tabindex  Add tabindex="-1" to insure focusable elements are not visible when parent is hidden }-->
                       <label class="option mb-0" for="mce-group[4369]-4369-0">
@@ -337,22 +332,26 @@
           </div>
         </section>
       </div>
-      <section class="layout-content bg-scale-2" data-js="feedback">
-        <div class="tablet:p-3">
-          <article class="c-alert status-primary" data-js="alert-warning">
-            <div class="c-alert__graphic">
-              <svg aria-hidden="true" class="icon-wnyc-ui">
-                <use href="#feather-help-circle"></use>
-              </svg>
-            </div>
-            <div class="c-alert__body">
-              <p data-js-alert="text">How can we improve this website? Let us know by <a class='inline-flex items-center' href='https://airtable.com/shrfQGpXvo9mmmHpJ' target='_blank'>sending us feedback <svg aria-hidden='true' class='icon-wnyc-ui' style='margin-left: 5px;'>
-                    <use href='#feather-external-link'></use>
-                  </svg>
-                </a>
-              </p>
-            </div>
-          </article>
+      <section class="pt-2 z-10 sticky o-navigation-spacing-bottom" data-js="feedback">
+        <div class="layout-content bg-scale-2">
+          <div class="tablet:px-3 tablet:py-2">
+            <article class="c-alert status-primary" data-js="alert-warning">
+              <div class="c-alert__graphic py-1 ps-1 me-1">
+                <svg aria-hidden="true" class="icon-wnyc-ui">
+                  <use href="#feather-help-circle"></use>
+                </svg>
+              </div>
+              <div class="c-alert__body py-2 pe-2">
+                <p data-js-alert="text">How can we improve this website? Let us know by <a class='link-icon' href='#' target='_blank'>
+                    <span>sending us feedback</span>
+                    <svg aria-hidden='true' class='icon-wnyc-ui rtl:flip'>
+                      <use href='#feather-external-link'></use>
+                    </svg>
+                  </a>
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
     </main>
@@ -409,6 +408,7 @@
     var patterns = new WorkingNyc();
     patterns.accordion();
     patterns.dialog();
+    patterns.direction();
     patterns.copy();
     patterns.icons('https://cityofnewyork.github.io/working-nyc-patterns/svg/icons.svg');
     patterns.icons('https://cityofnewyork.github.io/working-nyc-patterns/svg/feather.svg');
