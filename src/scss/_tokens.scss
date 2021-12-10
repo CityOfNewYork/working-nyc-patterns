@@ -1,9 +1,8 @@
+@forward '../dist/styles/tokens.css';
 
 @forward '@nycopportunity/pattern-attribution/src/tokens';
 @forward '@nycopportunity/pattern-menu/src/tokens';
 @forward '@nycopportunity/pattern-navigation/src/tokens';
 
-@use 'config/media';
-
-@import url('tokens-default.css');
-@import url('tokens-light.css');
+@forward '../dist/styles/tokens-default.css';
+@forward '../dist/styles/tokens-light.css';

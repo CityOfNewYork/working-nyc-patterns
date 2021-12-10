@@ -14,7 +14,6 @@
         = this.title;
 
     link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css'
-    link rel='stylesheet' href='${this.baseUrl}/styles/tokens.css'
     link rel='stylesheet' href='${this.baseUrl}/styles/site-default.css'
 
     script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js'

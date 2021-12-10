@@ -7,7 +7,6 @@ html lang='en'
 
     link rel='icon' type='image/x-icon' href='${this.baseUrl}/svg/favicon.svg'
 
-    link rel='stylesheet' href='${this.baseUrl}/styles/tokens.css'
     link rel='stylesheet' href='${this.baseUrl}/styles/site-default.css'
 
     - if (this.title != 'Working NYC')
