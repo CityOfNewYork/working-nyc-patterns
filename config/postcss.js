@@ -27,6 +27,12 @@ module.exports = {
     tailwindcss(require('./tailwindcss.js')),
     autoprefixer('last 4 version'),
     mqpacker({sort: true}),
-    // cssnano() // not yet supported by PostCSS 8, if reading this check cssnano
+    cssnano({
+      preset: [
+        'default', {
+          calc: false // The current calc preset is not up-to-date with postcss-calc so this needs to be disabled for now https://github.com/postcss/postcss-simple-vars/issues/94
+        }
+      ]
+    })
   ]
 };
