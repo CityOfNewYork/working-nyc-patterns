@@ -4,7 +4,6 @@
 
 const tokens = require('./tokens.js');
 const logical = require('tailwindcss-logical');
-const aspectRatio = require('@tailwindcss/aspect-ratio');
 
 /**
  * Config
@@ -56,7 +55,6 @@ module.exports = {
     alignSelf: ['responsive'],
     animation: [],
     appearance: [],
-    aspectRatio: ['responsive'],
     backgroundAttachment: [],
     backgroundClip: [],
     backgroundColor: ['responsive', 'hover', 'focus'],
@@ -172,7 +170,6 @@ module.exports = {
   },
 
   plugins: [
-    aspectRatio,
     logical
   ],
 
