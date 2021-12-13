@@ -1,43 +1,45 @@
 /**
+ * Plugin options for SVGO
+ *
+ * @source https://github.com/svg/svgo#built-in-plugins
+ */
+const svgo = {
+  plugins: [
+    {
+      name: 'preset-default',
+      params: {
+        overrides: {
+          removeViewBox: false,
+          convertPathData: false,
+          inlineStyles: false,
+          cleanupIDs: false
+        }
+      }
+    }
+  ]
+};
+
+/**
  * Config
  *
  * @type {Object}
  */
-module.exports = {
-  /**
-   * Prefix to prepend to optimized svgs
-   *
-   * @type {String}
-   */
-  prefix: '',
-
-  /**
-   * Plugin options for SVGO
-   *
-   * @source https://github.com/svg/svgo#built-in-plugins
-   */
-  svgo: {
-    plugins: [
-      {
-        name: 'preset-default',
-        params: {
-          overrides: {
-            convertPathData: false,
-            inlineStyles: false,
-            cleanupIDs: false
-          }
-        }
-      }
-    ]
+module.exports = [
+  {
+    source: './src/svg',
+    dist: './dist/svg',
+    prefix: '',
+    file: 'icons.svg',
+    svgo: svgo
   },
-
-  /**
-   * Plugin options for svgstore
-   *
-   * @source https://github.com/svgstore/svgstore#options
-   */
-  svgstore: {
-    /** Filename of the sprite. It will not use the prefix defined above. */
-    file: 'svg/icons.svg'
+  {
+    source: './node_modules/feather-icons/dist/icons',
+    dist: './dist/svg',
+    prefix: 'feather-',
+    file: 'feather.svg',
+    svgo: svgo,
+    write: {
+      source: false
+    }
   }
-};
+];
