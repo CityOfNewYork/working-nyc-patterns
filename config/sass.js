@@ -24,20 +24,6 @@ let modules = [
     sourceMapEmbed: sass.sourceMapEmbed,
     devModule: true
   },
-  // {
-  //   file: './src/scss/site-color-default.scss',
-  //   outDir: './dist/styles/',
-  //   outFile: 'site-color-default.css',
-  //   sourceMapEmbed: sass.sourceMapEmbed,
-  //   devModule: true
-  // },
-  // {
-  //   file: './src/scss/site-color-light.scss',
-  //   outDir: './dist/styles/',
-  //   outFile: 'site-color-light.css',
-  //   sourceMapEmbed: sass.sourceMapEmbed,
-  //   devModule: true
-  // },
   {
     file: './src/utilities/tailwindcss/_tailwindcss.scss',
     outDir: './dist/styles/',
