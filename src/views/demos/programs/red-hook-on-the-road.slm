@@ -172,15 +172,12 @@
 
       section#contact class='bg-scale-1 layout-content py-2 pb-1 tablet:py-4 tablet:pb-3'
         div class='wrap'
-          nav class='tablet:layout-three-columns-gutter' aria-label='Contact Information'
-            a href='https://bwiny.org/red-hook-on-the-road/overview/' class='btn btn-secondary btn-next mb-1 w-full'
-              svg class='icon-wnyc-ui' aria-hidden='true'
-                use href='#feather-arrow-left'
+          nav aria-label='Contact Information'
+            a href='https://bwiny.org/red-hook-on-the-road/overview/' class='btn btn-secondary mb-1 w-full'
+              span Learn more
 
-              | Learn more
-
-              svg class='icon-wnyc-ui' aria-hidden='true'
-                use href='#feather-arrow-right'
+              svg class='icon-wnyc-ui rtl:flip' aria-hidden='true'
+                use href='#feather-external-link'
 
             a href='tel:7182372017' class='btn btn-secondary mb-1 w-full'
               | Call (718) 237-2017

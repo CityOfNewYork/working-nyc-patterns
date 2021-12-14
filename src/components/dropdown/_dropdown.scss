@@ -8,9 +8,18 @@
 @use 'config/media';
 
 // Declarations
+:root {
+  --wnyc-dropdown-max-height: calc(var(--100vh) - var(--wnyc-dimensions-navigation-height));
+  --wnyc-dropdown-min-height: calc(var(--100vh) - var(--wnyc-dimensions-navigation-height));
+}
+
 @include media.screens-and-min-width() using ($variant) {
   @include dropdown.selector($variant) {
     @include dropdown.base();
+  }
+
+  @include dropdown.selector($variant, '-max') {
+    @include dropdown.max-height();
   }
 
   @include dropdown.selector($variant, '-min') {

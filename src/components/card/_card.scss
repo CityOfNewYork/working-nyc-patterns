@@ -49,7 +49,7 @@
 }
 
 .c-card__body {
-  padding-top: var(--wnyc-grid);
+  padding-top: calc(var(--wnyc-grid) * 2);
 
   @include media.screen-and-min-width('tablet') {
     padding-top: calc(var(--wnyc-grid) * 3);

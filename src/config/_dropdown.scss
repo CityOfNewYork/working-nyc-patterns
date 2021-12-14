@@ -12,8 +12,6 @@
   overflow: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-
-  @include max-height();
 }
 
 @mixin selector($variant: '', $type: '') {
@@ -23,11 +21,11 @@
 }
 
 @mixin max-height() {
-  max-height: calc(var(--100vh) - var(--wnyc-dimensions-navigation-height));
+  max-height: var(--wnyc-dropdown-max-height);
 }
 
 @mixin min-height() {
-  min-height: calc(var(--100vh) - var(--wnyc-dimensions-navigation-height));
+  min-height: var(--wnyc-dropdown-max-height);
 }
 
 @mixin inner() {

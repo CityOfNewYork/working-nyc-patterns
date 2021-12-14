@@ -13,7 +13,7 @@
   div class='bg-scale-2'
     main id='content' class='bg-scale-1'
       div
-        div class='c-dropdown layout-content sticky top-0 bg-scale-1 z-10'
+        div class='c-dropdown c-dropdown-max layout-content sticky top-0 bg-scale-1 z-20'
           div class='c-utility'
             a href='${this.baseUrl}/demos/index' class='link-icon mie-auto'
               svg class='icon-wnyc-ui rtl:flip' aria-hidden='true'
@@ -34,20 +34,18 @@
 
                   span Close
 
-                  span class='sr-only' and return to site
-
-              form class='layout-rows' tabindex='-1'
+              form tabindex='-1'
                 - for (let i in this.filters)
                   - filter = this.filters[i]
                   fieldset tabindex='-1'
                     legend class='h5 block w-full m-0 py-2 tablet:py-3 pis-2 text-alt sticky top-0 z-10 bg-scale-1' tabindex='-1'
                       = filter.legend
 
-                    div class='layout-rows tablet:grid grid-cols-2 gap-3'
+                    div class='grid gap-2 tablet:grid-cols-2 tablet:gap-3'
                       - for (let x in filter.options)
                         - option = this.filters[i].options[x]
                         - option.tabindex = '-1'
-                        - option.class = 'w-full'
+                        - option.class = 'w-full m-0'
                         == this.include('/elements/options/options')
 
                 div class='py-2 sticky bottom-0 z-10 text-center bg-scale-1'

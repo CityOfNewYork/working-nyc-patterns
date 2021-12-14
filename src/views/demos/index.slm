@@ -136,12 +136,12 @@
             div class='wrap pb-2'
               h2 class='h4 font-normal text-alt mt-0' Announcements
 
-              div class='py-4 tablet:grid tablet:grid-cols-2 tablet:gap-3'
+              div class='py-4 grid tablet:grid-cols-2 gap-6 tablet:gap-8'
                 - for (let i in this.announcements)
                   - card = this.announcements[i]
                   - card.class = 'c-card-transparent h-full'
 
-                  div class='transform-none aos-init mb-3 tablet:mb-0 aos-animate' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
+                  div class='transform-none aos-init aos-animate' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
                     = partial('/components/card/card')
 
       = partial('/objects/feedback/feedback')
