@@ -39,7 +39,7 @@
                 a class='text-inherit' href='#section-four' Section Four
 
         div class='bg-scale-2'
-          div class='layout-content'
+          div class='layout-content pb-2'
             div class='py-4 wrap' data-js='observe' data-js-observe-items='heading'
               section data-js-observe-item='heading' class='pb-6' id='overview'
                 div class='pt-utility-anchor bg-scale-2 sticky top-0'
@@ -65,8 +65,8 @@
 
                 p Donec rhoncus mi neque, in consectetur tellus iaculis in. Sed tempor urna ut neque vestibulum, eu semper arcu placerat. Sed pellentesque, justo id pulvinar scelerisque, ligula velit pharetra diam, vel dictum erat orci sed purus. Vestibulum vitae felis accumsan, tincidunt orci sed, fringilla justo. Nulla non magna quis nisi eleifend fringilla id sed orci. Duis efficitur risus ut hendrerit finibus. Aliquam sodales lorem nulla. Proin sit amet risus eleifend, aliquet neque nec, imperdiet purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce nec finibus dolor, id ullamcorper mauris. Quisque molestie mauris ut aliquet tincidunt. Sed magna nibh, ullamcorper in libero a, ultricies sollicitudin leo. Sed accumsan, lectus sit amet aliquam volutpat, tellus neque pulvinar enim, ut volutpat lectus arcu id risus.
 
-          div class='layout-content sticky z-10 o-navigation-feedback-spacing-bottom'
-            div class='px-2 tablet:px-3 pt-2 pb-0 text-end'
+          div class='layout-content pb-2 sticky z-10 o-navigation-feedback-spacing-bottom'
+            div class='wrap text-end'
               a class='btn btn-small tablet:btn btn-secondary' href='#content' Back to top
 
       = partial('/objects/feedback/feedback')

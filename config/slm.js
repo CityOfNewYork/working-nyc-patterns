@@ -145,6 +145,7 @@ module.exports = {
         Adults</b>.</p>`,
       features: [
         {
+          feature: 'Services',
           icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">Training for a new career</span>,&nbsp;
@@ -156,6 +157,7 @@ module.exports = {
         //   text: '<span data-program="taxonomy.sector">Transportation</span>'
         // },
         {
+          feature: 'Schedule',
           icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">4 weeks</span>,&nbsp;
@@ -199,6 +201,7 @@ module.exports = {
         Youth (16–24)</b>.</p>`,
       features: [
         {
+          feature: 'Services',
           icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">Academic help</span>,&nbsp;
@@ -207,6 +210,7 @@ module.exports = {
             </span>`
         },
         {
+          feature: 'Schedule',
           icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">6 months</span>,&nbsp;
@@ -250,6 +254,7 @@ module.exports = {
         Low-income</b>.</p>`,
       features: [
         {
+          feature: 'Services',
           icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">Job training</span>,&nbsp;
@@ -261,6 +266,7 @@ module.exports = {
         //   text: '<span data-program="taxonomy.sector">Technology</span>'
         // },
         {
+          feature: 'Schedule',
           icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">6 months</span>,&nbsp;
@@ -302,6 +308,7 @@ module.exports = {
         <b class="text-em" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
       features: [
         {
+          feature: 'Services',
           icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">Job training</span>,&nbsp;
@@ -313,6 +320,7 @@ module.exports = {
         //   text: '<span data-program="taxonomy.sector">Health care</span>'
         // },
         {
+          feature: 'Schedule',
           icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">100 hours</span>,&nbsp;
@@ -350,6 +358,7 @@ module.exports = {
         Yorkers</b>.</p>`,
       features: [
         {
+          feature: 'Services',
           icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">Adult education</span>,&nbsp;
@@ -357,6 +366,7 @@ module.exports = {
             </span>`
         },
         {
+          feature: 'Schedule',
           icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">3 months</span>,&nbsp;
@@ -395,12 +405,14 @@ module.exports = {
         <b class="text-em" data-program="taxonomy.population">Young Adults (16–24)</b>.</p>`,
       features: [
         {
+          feature: 'Services',
           icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">Improving English skills</span>
             </span>`
         },
         {
+          feature: 'Schedule',
           icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">3 months</span>,&nbsp;
@@ -440,6 +452,7 @@ module.exports = {
         <b class="text-em" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
       features: [
         {
+          feature: 'Services',
           icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">English language learning</span>,&nbsp;
@@ -447,6 +460,7 @@ module.exports = {
             </span>`
         },
         {
+          feature: 'Schedule',
           icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">Less than 3 months</span>,&nbsp;
@@ -491,6 +505,7 @@ module.exports = {
         <b class="text-em" data-program="taxonomy.population">Adults (18+)</b>.</p>`,
       features: [
         {
+          feature: 'Services',
           icon: 'feather-award',
           text: `<span>
             <span data-program="taxonomy.services">Training for a new career</span>,&nbsp;
@@ -498,6 +513,7 @@ module.exports = {
             </span>`
         },
         {
+          feature: 'Schedule',
           icon: 'feather-calendar',
           text: `<span>
             <span data-program="taxonomy.duration">Less than 3 months</span>,&nbsp;
@@ -666,6 +682,7 @@ module.exports = {
       summary: `<p>The HEAP Program is open from November 2, 2020 to March 15, 2021.</p>`,
       features: [
         {
+          feature: 'Last Updated',
           icon: 'feather-alert-triangle',
           text: '<span>Posted Tuesday, November 24th, 10:39am</span>'
         }
@@ -683,6 +700,7 @@ module.exports = {
       summary: '<p>Available to those who don\'t qualify for government-sponsored health insurance.</p>',
       features: [
         {
+          feature: 'Last Updated',
           icon: 'feather-alert-triangle',
           text: '<span>Posted Tuesday, November 24th, 10:39am</span>'
         }
@@ -700,6 +718,7 @@ module.exports = {
       summary: '<p>Available regardless of immigration status.</p>',
       features: [
         {
+          feature: 'Last Updated',
           icon: 'feather-alert-triangle',
           text: '<span>Posted Tuesday, November 24th, 10:39am</span>'
         }
@@ -717,6 +736,7 @@ module.exports = {
       summary: '<p>Open enrollment through the New York State of Health is from November 1, 2020 to January 31, 2021.</p>',
       features: [
         {
+          feature: 'Last Updated',
           icon: 'feather-alert-triangle',
           text: '<span>Posted Tuesday, November 24th, 10:39am</span>'
         }

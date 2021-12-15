@@ -9,8 +9,10 @@
 
 // Declarations
 .c-accordion {
+  margin-bottom: var(--wnyc-spacing-DEFAULT);
+
   background-color: var(--wnyc-card-body);
-  margin: 0 0 var(--wnyc-spacing-DEFAULT);
+  box-shadow: var(--wnyc-shadow-up);
 }
 
 .c-accordion__header {

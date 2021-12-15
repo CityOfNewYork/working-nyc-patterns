@@ -8,7 +8,7 @@
 - if (typeof feedback !== 'undefined')
   - this['feedback'] = Object.assign(this['feedback'], feedback);
 
-section class='pt-2 z-10 sticky o-navigation-spacing-bottom' data-js='feedback'
+section class='z-10 sticky o-navigation-spacing-bottom' data-js='feedback'
   div class='layout-content bg-scale-2'
     div class='tablet:px-3 tablet:py-2'
       article class='c-alert status-primary' data-js='alert-warning'

@@ -170,23 +170,22 @@
                 li == 'Complete the <a href="https://docs.google.com/forms/d/e/1FAIpQLSdiC88MgYh-dQf0c3uR_dzxVBSS-Kn9-wz29NGlkibCfg7hRA/viewform" target="_blank">Red Hook on the Road Intake Form</a>'
                 li After you submit the form, staff will reach out to invite you to an online information session to learn more.
 
-      section#contact class='bg-scale-1 layout-content py-2 pb-1 tablet:py-4 tablet:pb-3'
+      section#contact class='layout-content bg-scale-1 py-4 pb-8'
+        nav class='wrap grid gap-1' aria-label='Contact Information'
+          a class='btn btn-secondary w-full' href='https://bwiny.org/red-hook-on-the-road/overview/'
+            span Learn more
+
+            svg class='icon-wnyc-ui rtl:flip' aria-hidden='true'
+              use href='#feather-external-link'
+
+          a class='btn btn-secondary w-full' href='tel:7182372017'
+            | Call (718) 237-2017
+
+          a class='btn btn-secondary w-full' href='mailto:ihossain@bwiny.org'
+            | Email ihossain@bwiny.org
+
+      section class='layout-content bg-scale-1 pb-4 pb-8 mb-8' id='suggest-update'
         div class='wrap'
-          nav aria-label='Contact Information'
-            a href='https://bwiny.org/red-hook-on-the-road/overview/' class='btn btn-secondary mb-1 w-full'
-              span Learn more
-
-              svg class='icon-wnyc-ui rtl:flip' aria-hidden='true'
-                use href='#feather-external-link'
-
-            a href='tel:7182372017' class='btn btn-secondary mb-1 w-full'
-              | Call (718) 237-2017
-
-            a href='mailto:ihossain@bwiny.org' class='btn btn-secondary mb-1 w-full'
-              | Email ihossain@bwiny.org
-
-      section class='layout-content bg-scale-1' id='suggest-update'
-        div class='pt-2 pb-3 wrap'
           article class='c-alert' data-js='alert-help'
             div class='c-alert__graphic'
               svg aria-hidden='true' class='icon-wnyc-ui'

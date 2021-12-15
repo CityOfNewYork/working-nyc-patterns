@@ -16,6 +16,8 @@
   padding-top: calc(var(--wnyc-grid) * 4);
   padding-bottom: calc(var(--wnyc-grid) * 4);
   display: block;
+
   width: 100%;
-  min-height: 80vh;
+  height: 80vh;
+  max-height: 700px;
 }

@@ -34,7 +34,8 @@ article class='c-card ${this.card.class}'
           - feature = this.card.features[i]
 
           li class='flex items-center'
-            svg class='icon-wnyc-ui mie-1' aria-hidden='true'
+            svg class='icon-wnyc-ui mie-1' role='img'
+              title = feature.feature
               use href='#${feature.icon}'
 
             == feature.text
