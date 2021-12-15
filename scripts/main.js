@@ -1872,11 +1872,19 @@ var WorkingNyc = (function () {
         for (let i = 0; i < item.parentNode.children.length; i++) {
           const sibling = item.parentNode.children[i];
 
-          if (sibling.classList.contains('no-underline'))
-            sibling.classList.remove('no-underline', 'text-alt');
+          if ('activeNavigationItem' in sibling.dataset) {
+            let classActive = sibling.dataset.activeNavigationItem.split(' ');
+            let classInactive = sibling.dataset.inactiveNavigationItem.split(' ');
+
+            if (sibling.classList.contains(...classActive)) {
+              sibling.classList.remove(...classActive);
+              sibling.classList.add(...classInactive);
+            }
+          }
         }
 
-        item.classList.add('no-underline', 'text-alt');
+        item.classList.remove(...item.dataset.inactiveNavigationItem.split(' '));
+        item.classList.add(...item.dataset.activeNavigationItem.split(' '));
       };
 
       /**
@@ -1886,7 +1894,7 @@ var WorkingNyc = (function () {
        */
       (element => {
         if (element) {
-          let activeNavigation = element.querySelectorAll('a[href]');
+          let activeNavigation = element.querySelectorAll('a[data-active-navigation-item]');
 
           for (let i = 0; i < activeNavigation.length; i++) {
             const a = activeNavigation[i];
