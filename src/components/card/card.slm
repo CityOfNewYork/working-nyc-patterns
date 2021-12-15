@@ -10,13 +10,13 @@
 
 article class='c-card ${this.card.class}'
   header class='c-card__header'
-    h2 class='c-card__title'
+    h3 class='c-card__title'
       - if this.card.title
         a href='${this.baseUrl}${this.card.url}'
           == this.card.title
 
     - if this.card.subtitle
-      h3 class='c-card__subtitle text-alt'
+      h4 class='c-card__subtitle text-alt'
         == this.card.subtitle
 
   div class='c-card__body'
