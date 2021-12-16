@@ -84,13 +84,15 @@
             p Job training programs get you ready for a new career. Here are some programs that are looking for New Yorkers to apply now.
 
         div class='desktop:px-6'
-          div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:grid tablet:grid-cols-2 tablet:gap-3 desktop:gap-5 desktop:px-6 wrap'
+          div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:grid tablet:grid-cols-2 tablet:gap-3 desktop:gap-5 tablet:px-3 desktop:px-6'
             - collection = this.programs.filter(p => p.collection === 'training')
+
             - for (let i in collection)
+              - wrapEnd = (i == collection.length - 1) ? 'wrap-end' : '';
               - card = collection[i]
               - card.class = 'h-full'
 
-              div class='wrap-start tablet:p-0 transform-none' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
+              div class='wrap-start ${wrapEnd} tablet:p-0 transform-none' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
                 = partial('/components/card/card')
 
           div class='layout-content'
@@ -106,14 +108,15 @@
             p These programs improve math and reading skills for high school equivalency (GED), help English learners prepare for work, and more.
 
         div class='desktop:px-6'
-          div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:grid tablet:grid-cols-2 tablet:gap-3 desktop:gap-5 desktop:px-6 wrap'
+          div class='scroll py-3 scroll-x scroll-x-snap-start scroll-peek tablet:scroll-reset tablet:pb-0 tablet:grid tablet:grid-cols-2 tablet:gap-3 desktop:gap-5 tablet:px-3 desktop:px-6'
             - collection = this.programs.filter(p => p.collection === 'adult-education')
 
             - for (let i in collection)
+              - wrapEnd = (i == collection.length - 1) ? 'wrap-end' : '';
               - card = collection[i]
               - card.class = 'h-full'
 
-              div class='wrap-start tablet:p-0 transform-none' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
+              div class='wrap-start ${wrapEnd} tablet:p-0 transform-none' data-aos='fade-in' data-aos-anchor-placement='top-bottom' data-aos-delay='300'
                 = partial('/components/card/card')
 
           div class='layout-content'

@@ -16,9 +16,11 @@ div class='c-utility'
 
   /   span Save
   - webShare = {}
-  - webShare.fallbackClass = 'right-0'
+  - webShare.fallbackClass = 'right-0 z-30'
+
   = partial('/components/web-share/web-share.slm')
-  - webShare = {}
+
+  - webShare = {} // reset
 
   / a href='#' class='btn btn-small btn-primary' data-js='web-share' data-web-share='{"title":"${this.title}","text":"${this.description}","url":"${this.url}"}'
   /   svg class='icon-wnyc-ui' aria-hidden='true'

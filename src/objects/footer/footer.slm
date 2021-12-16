@@ -11,7 +11,7 @@
 - if (typeof footer !== 'undefined')
   - this.footer = Object.assign(this.footer, footer);
 
-footer role=this.footer.role aria-label='Footer' class='o-footer bg-scale-2 ${this.footer.class}'
+footer role=this.footer.role aria-label='Footer' class='o-footer relative z-10 bg-scale-2 ${this.footer.class}'
   div class='page-max'
     div class='o-attribution'
       nav aria-label='Footer Navigation' class='o-footer__nav'

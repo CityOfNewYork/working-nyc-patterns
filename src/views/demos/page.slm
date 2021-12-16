@@ -71,6 +71,8 @@
 
       = partial('/objects/feedback/feedback')
 
+      = partial('/objects/newsletter/newsletter')
+
 = content('script');
   javascript:
     patterns.activeNavigation();

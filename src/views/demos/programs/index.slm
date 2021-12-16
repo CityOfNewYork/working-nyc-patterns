@@ -25,8 +25,8 @@
               span class='mie-1' Filter programs
               span class='badge badge-small status-secondary light:status-primary' 99
 
-          div#aria-c-filter class='layout-content hidden' aria-hidden='true'
-            div
+          div#aria-c-filter class='hidden' aria-hidden='true'
+            div class='layout-content'
               div class='wrap text-end relative z-20'
                 button class='btn btn-primary btn-small' data-js='dialog' aria-controls='aria-c-filter' aria-expanded='false' data-dialog='close' tabindex='-1'
                   svg class='icon-wnyc-ui' aria-hidden='true' tabindex='-1'
@@ -34,24 +34,27 @@
 
                   span Close
 
-              form tabindex='-1'
-                - for (let i in this.filters)
-                  - filter = this.filters[i]
+            form tabindex='-1'
+              div class='layout-content'
+                div
+                  - for (let i in this.filters)
+                    - filter = this.filters[i]
 
-                  fieldset tabindex='-1'
-                    legend class='h5 block w-full m-0 py-2 mb-1 tablet:py-3 pis-4 text-alt sticky top-0 z-10 bg-scale-1' tabindex='-1'
-                      = filter.legend
+                    fieldset class='mb-8' tabindex='-1'
+                      legend class='h5 block w-full m-0 py-2 mb-1 tablet:py-3 pis-4 text-alt sticky top-0 z-10 bg-scale-1' tabindex='-1'
+                        = filter.legend
 
-                    div class='wrap grid gap-2 tablet:grid-cols-2 tablet:gap-3'
-                      - for (let x in filter.options)
-                        - option = this.filters[i].options[x]
-                        - option.tabindex = '-1'
-                        - option.class = 'w-full m-0'
-                        == this.include('/elements/options/options')
+                      div class='wrap grid gap-2 tablet:grid-cols-2 tablet:gap-3'
+                        - for (let x in filter.options)
+                          - option = this.filters[i].options[x]
+                          - option.tabindex = '-1'
+                          - option.class = 'w-full m-0'
+                          == this.include('/elements/options/options')
 
-                div class='wrap py-2 pb-8 sticky bottom-0 z-10 text-center bg-scale-1'
-                  button class='btn btn-secondary w-full' data-js='dialog' aria-controls='aria-c-filter' tabindex='-1'
-                    | Close and see 99 programs
+            div class='layout-content shadow-up py-2 sticky bottom-0 z-10 text-center bg-scale-1'
+              div class='wrap'
+                button class='btn btn-secondary w-full' data-js='dialog' aria-controls='aria-c-filter' tabindex='-1'
+                  | Close and see 99 programs
 
           / div#aria-c-saved class='layout-content hidden' aria-hidden='true'
           /   div class='page-max wrap py-2'

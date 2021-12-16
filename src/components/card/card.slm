@@ -43,12 +43,12 @@ article class='c-card ${this.card.class}'
     - if this.card.webShare
       - webShare = {}
       - webShare.data = {title: this.card.title, text: this.card.summary, url: `${this.baseUrl}${this.card.url}`};
-      - webShare.class = 'c-card__web-share z-10'
-      - webShare.fallbackClass
+      - webShare.class = 'c-card__web-share'
+      - webShare.fallbackClass = 'z-30'
 
       = partial('/components/web-share/web-share.slm')
 
-      - webShare = {}
+      - webShare = {} // reset
 
     - if this.card.cta
       a href='${this.baseUrl}${this.card.url}' class='c-card__cta'

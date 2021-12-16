@@ -9,7 +9,8 @@
 
 // Declarations
 :root {
-  --o-menu-display: grid
+  --o-menu-display: grid;
+  --o-menu-shadow: var(--wnyc-shadow-up);
 }
 
 .o-menu {

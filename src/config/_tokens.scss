@@ -440,7 +440,7 @@ $tokens:(
         moz-osx-font-smoothing: grayscale
       ),
       shadow: (
-        up: 0 3px 12px 2px rgba(0, 0, 0, 0.15)
+        up: 0 3px 12px 2px rgba(21, 60, 96, 0.13)
       )
     )
   ),
@@ -590,7 +590,7 @@ $tokens:(
   ),
   shadow: (
     up-default: 0 3px 12px 2px rgba(0, 0, 0, 0.15),
-    up-light: 0 3px 12px 2px rgba(0, 0, 0, 0.15),
+    up-light: 0 3px 12px 2px rgba(21, 60, 96, 0.13),
     up: var(--wnyc-shadow-up),
     none: none
   ),

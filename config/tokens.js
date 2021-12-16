@@ -379,7 +379,7 @@ const light = merge(colorTokens, {
 
 const shadow = {
   'up-default': '0 3px 12px 2px rgba(0, 0, 0, 0.15)',
-  'up-light': '0 3px 12px 2px rgba(0, 0, 0, 0.15)'
+  'up-light': '0 3px 12px 2px rgba(21, 60, 96, 0.13)'
 };
 
 module.exports = {

@@ -21,6 +21,7 @@
   @include typography.set('small');
 
   background-color: var(--wnyc-card-body);
+  box-shadow: var(--wnyc-shadow-up);
 
   position: absolute;
   margin-top: var(--wnyc-grid);
@@ -37,11 +38,9 @@
 
 .c-web-share__fallback-body {
   padding: calc(var(--wnyc-grid) * 2);
-  padding-bottom: var(--wnyc-grid);
 
   @include media.screen-and-min-width('tablet') {
     padding: calc(var(--wnyc-grid) * 3);
-    padding-bottom: calc(var(--wnyc-grid) * 2);
   }
 
   > *:last-child {
@@ -66,17 +65,17 @@
 
 .c-web-share__items a,
 .c-web-share__items button {
-  margin-bottom: var(--wnyc-grid);
+  // margin-bottom: var(--wnyc-grid);
   white-space: nowrap;
 }
 
 .c-web-share__items {
   @include layouts.rows();
 
+  gap: var(--wnyc-grid);
+
   @include media.screen-and-min-width('mobile') {
     @include layouts.three-columns();
-
-    gap: var(--wnyc-grid);
   }
 }
 
