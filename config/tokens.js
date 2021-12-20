@@ -57,8 +57,8 @@ const color = {
   'yellow-l-3': '#FFF0C7',
 
   'red': '#CF2A46',
-  'red-l-2': '#FC9CAC',
   'red-l-1': '#F1647C',
+  'red-l-2': '#FC9CAC',
 
   'purple': '#4439BE',
   'purple-l-1': '#7C72ED',
