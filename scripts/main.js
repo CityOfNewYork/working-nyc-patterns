@@ -1231,7 +1231,7 @@ var WorkingNyc = (function () {
       );
 
       // Screen Readers
-      target.setAttribute('aria-hidden', 'true');
+      target.setAttribute('aria-hidden', 'false');
 
       if (content) {
         content.setAttribute('aria-live', 'polite');
