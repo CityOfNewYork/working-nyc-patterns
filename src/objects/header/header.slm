@@ -22,9 +22,6 @@
 
 header class='o-header'
   div
-    h1 class='o-header__title' == this.header.title
-    h2 class='o-header__subtitle' == this.header.subtitle
-
     nav class='o-header__breadcrumbs' aria-label='Breadcrumb'
       a href='${this.baseUrl}/demos/index' Home
 
@@ -37,6 +34,10 @@ header class='o-header'
         use href='#feather-chevron-right'
 
       b aria-current='page' = this.header.breadcrumb
+
+    h1 class='o-header__title' == this.header.title
+
+    h2 class='o-header__subtitle' == this.header.subtitle
 
     - if this.header.recruitment
       p

@@ -30,9 +30,6 @@
         div class='layout-content'
           header class='o-header'
             div
-              h1 class='o-header__title'
-                | Newsletter
-
               nav class='o-header__breadcrumbs'
                 a href='${this.baseUrl}/demos/index' Home
 
@@ -40,6 +37,9 @@
                   use href='#feather-chevron-right'
 
                 b Newsletter
+
+              h1 class='o-header__title'
+                | Newsletter
 
         section class='layout-content'
           div class='wrap'

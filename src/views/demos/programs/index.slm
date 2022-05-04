@@ -66,14 +66,6 @@
         div class='layout-content'
           header class='o-header'
             div
-              h1 class='o-header__title'
-                | Programs
-
-              h2 class='o-header__subtitle'
-                | Exploring High School Equivalency (HSE or GED) prep, Improving English skills, Adult reading, writing, and math, Veterans, and Low-income New Yorkers.
-
-              p Explore services and programs that can help you prepare for and connect to work. <button data-js="dialog" aria-controls="aria-c-filter" aria-expanded="false" data-dialog-lock="true">Use filters to narrow your choices</button>.
-
               nav class='o-header__breadcrumbs' aria-label='Breadcrumb'
                 a href='${this.baseUrl}/demos/index' Home
 
@@ -81,6 +73,14 @@
                   use href='#feather-chevron-right'
 
                 b aria-current='page' Programs
+
+              h1 class='o-header__title'
+                | Programs
+
+              h2 class='o-header__subtitle'
+                | Exploring High School Equivalency (HSE or GED) prep, Improving English skills, Adult reading, writing, and math, Veterans, and Low-income New Yorkers.
+
+              p Explore services and programs that can help you prepare for and connect to work. <button data-js="dialog" aria-controls="aria-c-filter" aria-expanded="false" data-dialog-lock="true">Use filters to narrow your choices</button>.
 
         section class='page-max desktop:px-6'
           div class='wrap desktop:px-6 grid gap-3 tablet:grid-cols-2 desktop:gap-5'
