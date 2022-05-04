@@ -45,10 +45,6 @@
   @include media.screen-and-min-width('desktop') {
     padding-bottom: calc(var(--wnyc-grid) * 4);
   }
-
-  > a {
-    display: inline-block
-  }
 }
 
 .c-card__body {
@@ -63,11 +59,16 @@
   }
 }
 
+.c-card__header-link {
+  display: inline-block;
+  margin-bottom: var(--wnyc-grid)
+}
+
 .c-card__title {
   @include typography.set('h4');
 
   margin-top: 0;
-  margin-bottom: var(--wnyc-grid);
+  margin-bottom: var(--wnyc-grid)
 }
 
 .c-card__subtitle {

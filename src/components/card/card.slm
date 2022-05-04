@@ -11,7 +11,7 @@
 article class='c-card ${this.card.class}'
   header class='c-card__header'
     - if this.card.title
-      a href='${this.baseUrl}${this.card.url}'
+      a class='c-card__header-link' href='${this.baseUrl}${this.card.url}'
         h3 class='c-card__title'
             == this.card.title
 
