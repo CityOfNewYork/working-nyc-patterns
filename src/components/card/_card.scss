@@ -10,6 +10,7 @@
 @use 'config/layouts';
 @use 'config/media';
 @use 'config/typography';
+@use 'config/screen-readers';
 
 // Declarations
 .c-card {
@@ -133,7 +134,7 @@
   background-color: transparent;
 
   > * {
-    visibility: hidden
+    @include screen-readers.only
   }
 
   @include media.screen-and-min-width('desktop') {
@@ -149,7 +150,7 @@
     height: auto;
 
     > * {
-      visibility: visible
+      @include screen-readers.only-unset
     }
   }
 }

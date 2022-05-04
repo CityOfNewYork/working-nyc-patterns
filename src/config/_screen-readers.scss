@@ -17,6 +17,17 @@
   width: 1px;
 }
 
+@mixin only-unset {
+  border: unset;
+  clip: unset;
+  height: unset;
+  margin: unset;
+  overflow: unset;
+  padding: unset;
+  position: unset;
+  width: unset;
+}
+
 @mixin only-focusable {
   &:active,
   &:focus {
