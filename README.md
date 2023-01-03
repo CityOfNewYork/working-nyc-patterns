@@ -1,5 +1,11 @@
 # Working NYC Patterns
 
+---
+
+As of January 3rd, 2023 the **Working NYC Pattern library package is deprecated** in favor of the <a href="https://nycopportunity.github.io/standard" target="_blank" rel="noopener">NYC Opportunity Standard</a> which contains updated user interface elements and usability guidance.
+
+---
+
 To install, run:
 
 ```shell

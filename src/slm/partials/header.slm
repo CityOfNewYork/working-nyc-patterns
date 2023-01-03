@@ -23,3 +23,12 @@ header role='banner' class='bg-scale-2'
             use href='#feather-menu'
 
           span Menu
+
+  div class='flex items-center justify-between pb-2 wrap'
+    article class='c-alert status-primary' role='alert' aria-labelledby='aria-lb-site-alert'
+      div class='c-alert__graphic'
+        svg aria-hidden='true' class='icon-wnyc-ui'
+          use href='#feather-info'
+
+      div class='c-alert__body' id='aria-lb-site-alert'
+        p As of January 3rd, 2023 the <b>Working NYC Pattern library package is deprecated</b> in favor of the <a href="https://nycopportunity.github.io/standard" target="_blank" rel="noopener">NYC Opportunity Standard</a> which contains updated user interface elements and usability guidance.

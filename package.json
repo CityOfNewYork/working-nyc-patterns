@@ -4,7 +4,7 @@
   "org": "NYC Opportunity",
   "author": "products@nycopportunity.nyc.gov",
   "license": "GPL-3.0+",
-  "version": "0.0.1-60",
+  "version": "0.0.1",
   "description": "",
   "homepage": "https://cityofnewyork.github.io/working-nyc-patterns",
   "repository": {
@@ -54,7 +54,7 @@
     "production": "cross-env NODE_ENV=production pttrn default -np -nl",
     "default": "pttrn default -np -nl",
     "predeploy": "npm run production",
-    "version": "npm run predeploy && git add .",
+    "version": "git add .",
     "prepublishOnly": "git push && git push --tags",
     "publish": "npm run ghpages",
     "ghpages": "cross-env NODE_ENV=production pttrn publish"
